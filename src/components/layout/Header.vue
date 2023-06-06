@@ -5,8 +5,8 @@
         <a class="logo" href="#">Grow 学習サイト</a>
         <ul class="nav-menu">
           <li><a href="#">ホーム</a></li>
-          <li><a href="#">コース</a></li>
           <li><a href="#">カリキュラムの流れ</a></li>
+          <li><a href="#">コース</a></li>
           <li><a href="#">お知らせ</a></li>
         </ul>
       </nav>

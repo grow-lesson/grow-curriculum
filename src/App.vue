@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import "normalize.css";
 import MenuPage from "./components/MenuPage.vue";
 
 export default {
