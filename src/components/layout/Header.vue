@@ -3,11 +3,11 @@
     <header class="header">
       <nav class="navbar">
         <a class="logo" href="#">Grow 学習サイト</a>
-        <ul class="nav-menu">
-          <li><a href="#">ホーム</a></li>
-          <li><a href="#">カリキュラムの流れ</a></li>
-          <li><a href="#">コース</a></li>
-          <li><a href="#">お知らせ</a></li>
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#">ホーム</a></li>
+          <li class="nav-item"><a href="#">カリキュラムの流れ</a></li>
+          <li class="nav-item"><a href="#">コース</a></li>
+          <li class="nav-item"><a href="#">お知らせ</a></li>
         </ul>
       </nav>
     </header>
@@ -41,7 +41,7 @@ export default {
   color: #333;
 }
 
-.nav-menu li {
+.nav-item {
   display: inline-block;
   margin-left: 10px;
 }

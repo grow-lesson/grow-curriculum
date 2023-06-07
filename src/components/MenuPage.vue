@@ -1,7 +1,6 @@
 <template>
   <div>
     <Header />
-
     <main class="main-content">
       <div class="hero">
         <div class="hero-content">
@@ -9,16 +8,16 @@
         </div>
       </div>
       <section class="flow">
-        <h2>フロントエンドの基礎を学ぼう！</h2>
+        <h2 class="flow-title">フロントエンドの基礎を学ぼう！</h2>
         <ul class="flow-list">
-          <li class="flow-item"><a href="#">インストールや環境構築の手順を知る</a></li>
-          <li class="flow-item"><a href="#">Growカリキュラムの始め方</a></li>
-          <li class="flow-item"><a href="#">Grow学習サイトの使い方</a></li>
+          <li class="flow-item"><a href="#" class="flow-link">インストールや環境構築の手順を知る</a></li>
+          <li class="flow-item"><a href="#" class="flow-link">Growカリキュラムの始め方</a></li>
+          <li class="flow-item"><a href="#" class="flow-link">Grow学習サイトの使い方</a></li>
         </ul>
       </section>
       <div class="hero">
         <div class="hero-content">
-          <h1 class="hero-title">コース</h1>
+          <h1 class="hero-title">初級コース</h1>
         </div>
       </div>
       <section class="course">
@@ -76,13 +75,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-/* Global Styles */
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #f5f5f5;
-}
-
 /* Hero */
 .hero {
   background-color: #f9f9f9;
@@ -95,30 +87,45 @@ body {
   margin-bottom: 20px;
 }
 
-.hero-content p {
-  font-size: 18px;
-  color: #666;
-  margin-bottom: 30px;
-}
 /* flow */
 .flow {
   margin: 0 auto;
-  width: 500px;
   height: 300px;
+  background-color: #fff;
+}
+.flow-title {
+  font-size: 26px;
+  text-align: center;
 }
 
 .flow-list {
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  border: 1px solid #4285f4;
+  align-items: center;
+  width: 600px;
+  border: 1px solid #5492f5;
 }
-
+.flow-item {
+  list-style-type: decimal;
+  height: 50px;
+  margin-top: 30px;
+}
+.flow-link {
+  color: #666;
+  font-size: 18px;
+  text-decoration: none;
+  border-bottom: 3px solid #5492f5;
+}
 /* course */
 .course {
   display: flex;
   justify-content: space-around;
   padding: 60px;
   background-color: #fff;
+}
+.course-title {
+  text-align: center;
 }
 .course-item {
   display: flex;
@@ -132,6 +139,7 @@ body {
 }
 
 .course-explanation {
+  text-align: center;
   color: #666;
 }
 
@@ -148,6 +156,7 @@ body {
 }
 .course-button {
   display: inline-block;
+  text-align: center;
   width: 120px;
   margin: 0 auto;
   padding: 10px 20px;

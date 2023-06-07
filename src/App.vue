@@ -1,25 +1,28 @@
 <template>
-  <MenuPage />
+  <div id="app">
+    <router-view />
+  </div>
 </template>
 
 <script>
 import "normalize.css";
-import MenuPage from "./components/MenuPage.vue";
+import "destyle.css";
 
 export default {
   name: "App",
-  components: {
-    MenuPage,
-  },
 };
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+}
+/* Global Styles */
+body {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
   color: #2c3e50;
 }
 </style>
