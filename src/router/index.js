@@ -15,7 +15,36 @@ const routes = [
     path: "/menu",
     name: "MenuPage",
     component: () => import("../components/MenuPage.vue"),
-    // meta: { requiresAuth: true }, // ログインが必要なページ
+  },
+  {
+    path: "/html-lesson-menu",
+    name: "HtmlMenuPage",
+    component: () => import("../components/course/course-1/HtmlMenuPage.vue"),
+  },
+  {
+    path: "/html-lesson-1",
+    name: "HtmlPage1",
+    component: () => import("../components/course/course-1/HtmlPage1.vue"),
+  },
+  {
+    path: "/html-lesson-2",
+    name: "HtmlPage2",
+    component: () => import("../components/course/course-1/HtmlPage2.vue"),
+  },
+  {
+    path: "/html-lesson-3",
+    name: "HtmlPage3",
+    component: () => import("../components/course/course-1/HtmlPage3.vue"),
+  },
+  {
+    path: "/commandline-lesson-menu",
+    name: "CommandLineMenuPage",
+    component: () => import("../components/course/course-2/CommandLineMenuPage.vue"),
+  },
+  {
+    path: "/commandline-lesson-1",
+    name: "CommadLinePage1",
+    component: () => import("../components/course/course-2/CommadLinePage1.vue"),
   },
 ];
 

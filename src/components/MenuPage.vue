@@ -29,7 +29,7 @@
               <img src="../assets/command-line.jpg" class="course-icon" alt="html" />
             </div>
           </div>
-          <a href="#" class="course-button">受講する</a>
+          <a class="course-button" @click="goToCommandLineMenuPage">受講する</a>
         </div>
         <div class="course-item">
           <h2 class="course-title">HTML・CSS</h2>
@@ -42,7 +42,7 @@
               <img src="../assets/css.png" class="course-icon" alt="css" />
             </div>
           </div>
-          <a href="#" class="course-button">受講する</a>
+          <a class="course-button" @click="goToHtmlMenuPage">受講する</a>
         </div>
         <div class="course-item">
           <h2 class="course-title">Git</h2>
@@ -52,7 +52,7 @@
               <img src="../assets/git.png" class="course-icon" alt="git" />
             </div>
           </div>
-          <a href="#" class="course-button">受講する</a>
+          <a class="course-button" @click="goToHtmlMenuPage">受講する</a>
         </div>
       </section>
     </main>
@@ -66,6 +66,14 @@ import Footer from "./layout/Footer.vue";
 
 export default {
   name: "MenuPage",
+  methods: {
+    goToHtmlMenuPage() {
+      this.$router.push({ name: "HtmlMenuPage" });
+    },
+    goToCommandLineMenuPage() {
+      this.$router.push({ name: "CommandLineMenuPage" });
+    },
+  },
   components: {
     Header,
     Footer,
