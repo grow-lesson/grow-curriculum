@@ -1,33 +1,27 @@
 <template>
   <div>
     <header class="header">
-      <nav class="navbar">
+      <div class="logo-nav">
         <a class="logo" href="#">Grow 学習サイト</a>
-        <button class="hamburger" @click="toggleMenu" v-show="isMobile && !isMenuOpen">
-          <span class="hamburger-icon"></span>
-          <span class="hamburger-icon"></span>
-          <span class="hamburger-icon"></span>
-        </button>
-        <button class="close-button" @click="toggleMenu" v-show="isMobile && isMenuOpen">
-          <span class="close-icon">&times;</span>
-        </button>
-        <div class="menu-wrapper" v-show="!isMobile || isMenuOpen">
-          <ul class="nav-list">
-            <li class="nav-item"><a href="#">ホーム</a></li>
-            <li class="nav-item"><a href="#">カリキュラムの流れ</a></li>
-            <li class="nav-item"><a href="#">コース</a></li>
-            <li class="nav-item"><a href="#">お知らせ</a></li>
+        <nav class="navigation">
+          <ul class="navigation__list">
+            <li class="navigation__item">TOP</li>
+            <li class="navigation__item">ABOUT</li>
+            <li class="navigation__item">CONTACT</li>
           </ul>
-        </div>
-        <div class="dropdown-menu" v-show="isMobile && isMenuOpen">
-          <ul>
-            <li><a href="#">ホーム</a></li>
-            <li><a href="#">カリキュラムの流れ</a></li>
-            <li><a href="#">コース</a></li>
-            <li><a href="#">お知らせ</a></li>
-          </ul>
-        </div>
-      </nav>
+        </nav>
+      </div>
+      <button type="button" class="menu-btn" v-on:click="open = !open">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+      <div class="menu" v-bind:class="{ 'is-active': open }">
+        <div class="menu__item">TOP</div>
+        <div class="menu__item">ABOUT</div>
+        <div class="menu__item">BLOG</div>
+        <div class="menu__item">CONTACT</div>
+      </div>
     </header>
   </div>
 </template>
@@ -37,30 +31,17 @@ export default {
   name: "Header",
   data() {
     return {
-      isMobile: false,
-      isMenuOpen: false,
+      open: false,
     };
   },
   mounted() {
-    this.checkMobile();
-    window.addEventListener("resize", this.checkMobile);
+
   },
   beforeUnmount() {
-    window.removeEventListener("resize", this.checkMobile);
+
   },
   methods: {
-    checkMobile() {
-      this.isMobile = window.innerWidth < 648;
-      if (this.isMobile) {
-        this.closeMenu();
-      }
-    },
-    toggleMenu() {
-      this.isMenuOpen = !this.isMenuOpen;
-    },
-    closeMenu() {
-      this.isMenuOpen = false;
-    },
+
   },
 };
 </script>
@@ -72,12 +53,6 @@ export default {
   padding: 20px;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .logo {
   font-size: 24px;
   font-weight: bold;
@@ -85,104 +60,97 @@ export default {
   color: #333;
 }
 
-.nav-item {
-  display: inline-block;
-  margin-left: 10px;
-}
-
-.nav-list {
+.logo-nav {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
 }
 
-.nav-list li:first-child {
-  margin-left: 0;
+.navigation {
+  display: none;
 }
 
-.nav-list a {
-  text-decoration: none;
-  color: #666;
-}
-
-.hamburger {
-  background: none;
-  border: none;
-  cursor: pointer;
+.menu-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 3;
+  width: 40px;
+  height: 40px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 24px;
-  height: 18px;
-}
-
-.hamburger-icon {
-  width: 100%;
-  height: 2px;
-  background-color: #333;
-}
-
-.close-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
   justify-content: center;
   align-items: center;
-  width: 24px;
-  height: 24px;
+  border: none;
+  cursor: pointer;
 }
 
-.close-icon {
-  font-size: 18px;
-  color: #333;
+.menu-btn .hamburger {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin-bottom: 4px;
 }
 
-.menu-wrapper {
-  position: relative;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: calc(100% + 10px);
+/*----------------------------
+* メニュー本体
+*----------------------------*/
+.menu {
+  position: fixed;
+  top: 0;
   right: 0;
-  background-color: #fff;
-  padding: 10px;
-  list-style-type: none;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  display: none;
-  z-index: 10;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #555;
+  transition: all 0s linear;
+  transform: translateX(100vw);
 }
 
-.dropdown-menu ul {
-  margin: 0;
-  padding: 0;
+.menu__item {
+  width: 100%;
+  height: auto;
+  padding: 0.5em 1em;
+  text-align: center;
+  color: #fff;
+  box-sizing: border-box;
 }
 
-.dropdown-menu li {
-  margin-bottom: 10px;
+/*----------------------------
+* アニメーション部分
+*----------------------------*/
+.menu.is-active {
+  transform: translateX(0);
 }
 
-.dropdown-menu a {
-  text-decoration: none;
-  color: #333;
-}
+/* Media Query */
+@media (min-width: 648px) {
+  .menu-btn {
+    display: none;
+  }
 
-/* 吹き出しスタイル */
-.dropdown-menu::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  right: 15px;
-  border: 10px solid transparent;
-  border-bottom-color: #fff;
-}
+  .navigation {
+    display: flex;
+    justify-content: flex-end;
+  }
 
-.dropdown-menu::after {
-  content: "";
-  position: absolute;
-  top: -8px;
-  right: 15px;
-  border: 9px solid transparent;
-  border-bottom-color: rgba(0, 0, 0, 0.2);
+  .navigation__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  .navigation__item {
+    margin-left: 10px;
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+  }
 }
 </style>
