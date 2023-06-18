@@ -34,15 +34,9 @@ export default {
       open: false,
     };
   },
-  mounted() {
-
-  },
-  beforeUnmount() {
-
-  },
-  methods: {
-
-  },
+  mounted() {},
+  beforeUnmount() {},
+  methods: {},
 };
 </script>
 
