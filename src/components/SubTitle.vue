@@ -1,13 +1,13 @@
 <template>
-  <div class="fancy-title">
-    <h1>{{ title }}</h1>
+  <div class="sub-title">
+    <h2 class="title_word">{{ subTitle }}</h2>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    title: {
+    subTitle: {
       type: String,
       required: true,
     },
@@ -16,15 +16,17 @@ export default {
 </script>
 
 <style scoped>
-.fancy-title {
-  background-color: #5ebff0;
+.sub-title {
+  background-color: #606060;
   color: #fff;
-  padding: 10px;
-  font-size: 24px;
+  padding: 8px;
+  font-size: 20px;
   font-weight: bold;
   border-radius: 4px;
+  margin: 10px auto;
+  width: 70%;
+}
+.title_word {
   text-align: center;
-  width: 80%;
-  margin: 30px auto 0;
 }
 </style>
