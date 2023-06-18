@@ -1,17 +1,18 @@
 <template>
   <div class="terminal">
     <div class="clipboard">
-      <div class="terminal-title">{{ fileName }}</div>
+      <div class="terminal-header">
+        <fancy-title :title="fileName"></fancy-title>
+      </div>
       <div class="terminal-content">
         <div class="terminal-textarea-wrapper">
           <pre class="terminal-textarea" ref="textarea" @click="deselectText">
             <code :class="lang">{{ copiedText }}</code>
           </pre>
+          <button @click="copyText" class="terminal-button">{{ buttonText }}</button>
         </div>
       </div>
     </div>
-    <button @click="copyText" class="terminal-button">コピー</button>
-    <div v-if="copySuccess" class="copy-feedback">コピーしました</div>
   </div>
 </template>
 
@@ -40,7 +41,7 @@ export default {
   },
   data() {
     return {
-      copySuccess: false, // コピー成功フラグ
+      buttonText: "コピー", // ボタンテキスト
     };
   },
   computed: {
@@ -56,11 +57,11 @@ export default {
         .writeText(text)
         .then(() => {
           this.$emit("copied");
-          this.copySuccess = true; // コピー成功フラグを設定
+          this.buttonText = "コピーしました"; // ボタンテキストを変更
 
-          // 2秒後にコピー成功フラグをリセット
+          // 2秒後にコピー成功フラグとボタンテキストをリセット
           setTimeout(() => {
-            this.copySuccess = false;
+            this.buttonText = "コピー";
           }, 2000);
         })
         .catch((error) => {
@@ -90,14 +91,10 @@ export default {
   overflow-x: auto;
 }
 
-.terminal-title {
-  background-color: #282c34;
-  color: #fff;
-  padding: 8px;
-  font-size: 16px;
-  font-weight: bold;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+.terminal-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .terminal-content {
@@ -153,10 +150,6 @@ export default {
   padding: 8px 16px;
   cursor: pointer;
 }
-.copy-feedback {
-  margin-top: 10px;
-  color: green;
-}
 
 pre code {
   text-shadow: none;
@@ -165,6 +158,7 @@ pre code {
 .terminal-textarea code {
   color: #fff;
 }
+
 @media (max-width: 648px) {
   .clipboard {
     max-width: 100%;

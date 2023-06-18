@@ -67,5 +67,14 @@ export const terminalData = {
     `,
     language: "language-html",
   },
+  file2: {
+    filename: "ターミナル",
+    code: `
+cd /path/to/directory:
+ls -l
+npm install
+    `,
+    language: "language-bash",
+  },
   // 他のデータを追加できます
 };
