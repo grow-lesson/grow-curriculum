@@ -8,19 +8,16 @@
 
 <style scoped>
 .fancy-document {
-  background-color: #ffffff;
-  padding: 40px;
-  margin: 20px 50px;
+  background-color: #f9fffec2;
+  padding: 20px;
+  margin: 0 50px 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .content {
-  margin-bottom: 20px;
   color: #333;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.markup-word {
-  color: rgb(37, 139, 255);
-}
 </style>

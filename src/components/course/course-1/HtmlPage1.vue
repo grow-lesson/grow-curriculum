@@ -1,11 +1,32 @@
 <template>
   <div>
     <Title title="HTML・CSS 1"></Title>
-    <SubTitle subTitle="1. HTMLについて深く知る"></SubTitle>
+    <!-- section 1 -->
+    <SubTitle subTitle="1. HTMLとCSSについて深く知る"></SubTitle>
+    <Document>
+      <p>スマートフォンやタブレット、PCなどで表示されるサービスやWebサイトのデザインができる技術を学んでいくセクションになります。</p>
+      <p>Webデザインの目的は、情報を正しく、わかりやすく提供することです。</p>
+      <p>ユーザーが操作をしやすくほしい情報にいち早く遷移できるデザインを目指していきましょう!</p>
+    </Document>
     <HighlightWord word="HTML(Hyper Text Markup Language)"></HighlightWord>
     <Document>
       <p>・Webサイトを作成する際に、コンピューターへ構成指示を出し、表示したい文章や写真などの情報を形作るマークアップ言語のこと。</p>
-      <p><span class="markup-word">マークアップ</span>…文章の構成や役割を示すこと。</p>
+      <p><span class="markup-word">→マークアップ</span>…文章の構成や役割を示すこと。</p>
+    </Document>
+
+    <HighlightWord word="CSS(Cascading Style Sheets)"></HighlightWord>
+    <Document>
+      <p>・Webページの文字の色や大きさ、背景、配置といったスタイル（見た目）を設定する言語のこと。</p>
+    </Document>
+
+    <SubTitle subTitle="2. プログラミングとコーディングの違いは？"></SubTitle>
+    <HighlightWord word="プログラミング"></HighlightWord>
+    <Document>
+      <p>・プログラムを作成する作業全般の事をさします。</p>
+    </Document>
+    <HighlightWord word="コーディング"></HighlightWord>
+    <Document>
+      <p>・プログラミング言語を使ってソースコードを作成する事です。</p>
     </Document>
 
     <Terminal :fileName="terminalData.file1.filename" :copiedText="terminalData.file1.code" :lang="terminalData.file1.language" />
@@ -36,3 +57,11 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.markup-word {
+  white-space: pre;
+  color: rgb(37, 139, 255);
+  font-weight: bold;
+}
+</style>
