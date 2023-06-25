@@ -52,7 +52,7 @@
               <img src="../assets/git.png" class="course-icon" alt="git" />
             </div>
           </div>
-          <a class="course-button" @click="goToHtmlMenuPage">受講する</a>
+          <a class="course-button" @click="goToGitMenuPage">受講する</a>
         </div>
       </section>
     </main>
@@ -72,6 +72,9 @@ export default {
     },
     goToCommandLineMenuPage() {
       this.$router.push({ name: "CommandLineMenuPage" });
+    },
+    goToGitMenuPage() {
+      this.$router.push({ name: "GitMenuPage" });
     },
   },
   components: {
