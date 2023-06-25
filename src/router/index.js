@@ -12,6 +12,16 @@ const routes = [
     component: () => import("../components/LoginPage.vue"),
   },
   {
+    path: "/environment",
+    name: "Environment",
+    component: () => import("../components/init/Environment.vue"),
+  },
+  {
+    path: "/procedure",
+    name: "Procedure",
+    component: () => import("../components/init/Procedure.vue"),
+  },
+  {
     path: "/menu",
     name: "MenuPage",
     component: () => import("../components/MenuPage.vue"),

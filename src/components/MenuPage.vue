@@ -10,8 +10,8 @@
       <section class="flow">
         <h2 class="flow-title">フロントエンドの基礎を学ぼう！</h2>
         <ul class="flow-list">
-          <li class="flow-item"><a href="#" class="flow-link">インストールや環境構築の手順を知る</a></li>
-          <li class="flow-item"><a href="#" class="flow-link">Growカリキュラムの始め方</a></li>
+          <li class="flow-item"><a class="flow-link" @click="goToEnvironmentPage">インストールや環境構築の手順を知る</a></li>
+          <li class="flow-item"><a class="flow-link" @click="goToProcedurePage">Growカリキュラムの始め方</a></li>
           <li class="flow-item"><a href="#" class="flow-link">Grow学習サイトの使い方</a></li>
         </ul>
       </section>
@@ -75,6 +75,12 @@ export default {
     },
     goToGitMenuPage() {
       this.$router.push({ name: "GitMenuPage" });
+    },
+    goToEnvironmentPage() {
+      this.$router.push({ name: "Environment" });
+    },
+    goToProcedurePage() {
+      this.$router.push({ name: "Procedure" });
     },
   },
   components: {
