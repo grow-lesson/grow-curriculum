@@ -18,7 +18,6 @@ export default {
 <style scoped>
 .word-wrapper {
   display: inline-block;
-  margin-left: 40px;
   padding: 5px;
 }
 .highlighted-word {
