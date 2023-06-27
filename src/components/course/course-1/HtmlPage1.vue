@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Header />
     <Title title="HTML・CSS 1"></Title>
     <Document>
       <p>スマートフォンやタブレット、PCなどで表示されるサービスやWebサイトのデザインができる技術を学んでいくセクションになります。</p>
@@ -53,10 +54,13 @@
 
     <Terminal :fileName="terminalData.file1.filename" :copiedText="terminalData.file1.code" :lang="terminalData.file1.language" />
     <Terminal :fileName="terminalData.file2.filename" :copiedText="terminalData.file2.code" :lang="terminalData.file2.language" />
+    <Footer />
   </div>
 </template>
 
 <script>
+import Header from "@/components/layout/Header.vue";
+import Footer from "@/components/layout/Footer.vue";
 import Title from "@/components/Title.vue";
 import SubTitle from "@/components/SubTitle.vue";
 import SectionTitle from "@/components/SectionTitle.vue";
@@ -67,6 +71,8 @@ import { terminalData } from "@/data/terminalData.js";
 
 export default {
   components: {
+    Header,
+    Footer,
     Title,
     SubTitle,
     SectionTitle,

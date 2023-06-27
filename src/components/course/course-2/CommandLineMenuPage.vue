@@ -1,4 +1,5 @@
 <template>
+  <Header />
   <div class="container">
     <h1 class="header">Command Lineを選ぼう</h1>
     <ul class="lesson-list">
@@ -6,11 +7,19 @@
         <a class="lesson-link btn" @click="goToPageLesson1">Command Line 1</a>
       </li>
     </ul>
+    <Footer />
   </div>
 </template>
 
 <script>
+import Header from "@/components/layout/Header.vue";
+import Footer from "@/components/layout/Footer.vue";
+
 export default {
+  components: {
+    Header,
+    Footer,
+  },
   methods: {
     goToPageLesson1() {
       this.$router.push({ name: "CommadLinePage1" });

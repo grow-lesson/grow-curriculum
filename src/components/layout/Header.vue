@@ -2,31 +2,30 @@
   <div>
     <header class="header">
       <div class="logo-nav">
-        <a class="logo" href="#">Grow 学習サイト</a>
+        <a class="logo" href="/menu">Grow 学習サイト</a>
         <nav class="navigation">
           <ul class="navigation__list">
-            <li class="navigation__item">TOP</li>
-            <li class="navigation__item">ABOUT</li>
-            <li class="navigation__item">CONTACT</li>
+            <li class="navigation__item">サイトについて</li>
+            <li class="navigation__item">環境構築やインストール</li>
+            <li class="navigation__item">コース一覧</li>
+            <li class="navigation__item">マイページ</li>
+            <li class="navigation__item">お問い合わせ</li>
           </ul>
         </nav>
       </div>
-      <button type="button" class="menu-btn" v-on:click="open = !open">
-        <span class="hamburger"></span>
-        <span class="hamburger"></span>
-        <span class="hamburger"></span>
-      </button>
-      <div class="menu" v-bind:class="{ 'is-active': open }">
-        <div class="menu__item">TOP</div>
-        <div class="menu__item">ABOUT</div>
-        <div class="menu__item">BLOG</div>
-        <div class="menu__item">CONTACT</div>
+      <div class="menu">
+        <div class="menu__item">このサイトについて</div>
+        <div class="menu__item">環境構築やインストール</div>
+        <div class="menu__item">コース一覧</div>
+        <div class="menu__item">マイページ</div>
+        <div class="menu__item">お問い合わせ</div>
       </div>
     </header>
   </div>
 </template>
 
 <script>
+
 export default {
   name: "Header",
   data() {
@@ -34,9 +33,9 @@ export default {
       open: false,
     };
   },
-  mounted() {},
-  beforeUnmount() {},
-  methods: {},
+  methods: {
+
+  },
 };
 </script>
 
@@ -65,31 +64,6 @@ export default {
   display: none;
 }
 
-.menu-btn {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 3;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  cursor: pointer;
-}
-
-.menu-btn .hamburger {
-  width: 25px;
-  height: 3px;
-  background-color: black;
-  margin-bottom: 4px;
-}
-
-/*----------------------------
-* メニュー本体
-*----------------------------*/
 .menu {
   position: fixed;
   top: 0;
@@ -102,8 +76,9 @@ export default {
   align-items: center;
   justify-content: center;
   background: #555;
-  transition: all 0s linear;
-  transform: translateX(100vw);
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .menu__item {
@@ -115,18 +90,13 @@ export default {
   box-sizing: border-box;
 }
 
-/*----------------------------
-* アニメーション部分
-*----------------------------*/
-.menu.is-active {
-  transform: translateX(0);
+
+.navigation__item:hover {
+  text-decoration: underline;
 }
 
 /* Media Query */
 @media (min-width: 648px) {
-  .menu-btn {
-    display: none;
-  }
 
   .navigation {
     display: flex;

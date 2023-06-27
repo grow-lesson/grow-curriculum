@@ -1,7 +1,9 @@
 <template>
   <div>
+    <Header />
     <Title title="インストールや環境構築をしよう！"></Title>
     <SubTitle subTitle="1. カリキュラムに必要なツールをインストールする"></SubTitle>
+    <SectionTitle sectionTitle="1-1. ブラウザをインストールしよう!"></SectionTitle>
     <Document>
       <p>カリキュラムはブラウザ上で確認しながらにWebデザインをしていきます。</p>
       <p>今回はブラウザはGoogle ChromeとFire Foxどちらかを使いましょう。</p>
@@ -11,6 +13,7 @@
         <a class="download-link" href="https://www.mozilla.org/ja/firefox/new/">Fire Foxをダウンロードする</a>
       </div>
     </Document>
+    <SectionTitle sectionTitle="1-2. テキストエディタをインストールしよう!"></SectionTitle>
     <Document>
       <p>カリキュラムで制作したWebデザインをコーディングするテキストエディタをインストールしましょう!</p>
       <p>テキストエディタとは文字を入力したり、編集や保存ができるツールのことです。</p>
@@ -20,6 +23,7 @@
         <a class="download-link" href="https://code.visualstudio.com/">Visual Studio Codeをダウンロードする</a>
       </div>
     </Document>
+    <SectionTitle sectionTitle="1-3. Visual Studio Codeの拡張機能をインストールしよう!"></SectionTitle>
     <Document>
       <p>
         Visual Studio Codeをインストールしたら早速開いてみましょう!<br>
@@ -64,9 +68,10 @@
       <!-- <img src="" alt="ユーザー設定変更画像②"> --><br>
       <Terminal :fileName="environmentData.file1.filename" :copiedText="environmentData.file1.code" :lang="environmentData.file1.language" />
     </Document>
+    <SectionTitle sectionTitle="1-4. Sourcetreeの拡張機能をインストールしよう!"></SectionTitle>
     <Document>
       <p>
-        次にカリキュラムをbacklog上にアップロードするためのツールをインストールしましょう!<br>
+        次にカリキュラムの課題をbacklog上にアップロードするためのツールをインストールしましょう!<br>
         今回使うSource treeと呼ばれるツールは本来はコンピュータ上でソフトウェアの開発をするためのツールです。<br>
         ソフトウェアの開発では、複数の人が同じプログラムを一緒に作業したり、プログラムのバージョン管理を行ったりします。<br>
         また、プログラムのバージョン管理システムであるGitを使いやすくするためのツールです。<br>
@@ -123,12 +128,16 @@
       <br>
     </Document>
     <HighlightWord word=""></HighlightWord>
+    <Footer />
   </div>
 </template>
 
 <script>
+import Header from "@/components/layout/Header.vue";
+import Footer from "@/components/layout/Footer.vue";
 import Title from "@/components/Title.vue";
 import SubTitle from "@/components/SubTitle.vue";
+import SectionTitle from "@/components/SectionTitle.vue";
 import HighlightWord from "@/components/HighlightWord.vue";
 import Document from "@/components/Document.vue";
 import Terminal from "@/components/Terminal.vue";
@@ -137,8 +146,11 @@ import { environmentData } from "@/data/environmentData.js";
 export default {
   name: "Environment",
   components: {
+    Header,
+    Footer,
     Title,
     SubTitle,
+    SectionTitle,
     HighlightWord,
     Document,
     Terminal,
@@ -152,9 +164,14 @@ export default {
 </script>
 
 <style scoped>
-.markup-word {
+.markup-word-blue {
   white-space: pre;
   color: rgb(37, 139, 255);
+  font-weight: bold;
+}
+.markup-word-red {
+  white-space: pre;
+  color: rgb(255, 37, 37);
   font-weight: bold;
 }
 

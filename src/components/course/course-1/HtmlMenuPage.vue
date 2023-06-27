@@ -1,16 +1,25 @@
 <template>
   <div class="container">
+    <Header />
     <h1 class="header">HTML・CSSコースを選ぼう</h1>
     <ul class="lesson-list">
       <li class="lesson-item"><a class="lesson-link btn" @click="goToPageLesson1">HTML・CSS 1</a></li>
       <li class="lesson-item"><a class="lesson-link btn" @click="goToPageLesson2">HTML・CSS 2</a></li>
       <li class="lesson-item"><a class="lesson-link btn" @click="goToPageLesson3">HTML・CSS 3</a></li>
     </ul>
+    <Footer />
   </div>
 </template>
 
 <script>
+import Header from "@/components/layout/Header.vue";
+import Footer from "@/components/layout/Footer.vue";
+
 export default {
+  components: {
+    Header,
+    Footer,
+  },
   methods: {
     goToPageLesson1() {
       this.$router.push({ name: "HtmlPage1" });

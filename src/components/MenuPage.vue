@@ -131,6 +131,7 @@ export default {
 .flow-link {
   color: #666;
   font-size: 18px;
+  cursor: pointer;
   text-decoration: none;
   border-bottom: 3px solid #5492f5;
 }
@@ -179,6 +180,7 @@ export default {
   padding: 10px 20px;
   background-color: #4285f4;
   color: #fff;
+  cursor: pointer;
   text-decoration: none;
   border-radius: 4px;
 }
