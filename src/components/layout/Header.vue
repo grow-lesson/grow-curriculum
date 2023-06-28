@@ -1,9 +1,9 @@
 <template>
   <div>
-    <header class="header">
+    <header :class="{'header': true, 'is-mobile': isMobile}">
       <div class="logo-nav">
         <a class="logo" href="/menu">Grow 学習サイト</a>
-        <nav class="navigation">
+        <nav class="navigation" v-show="!isMobile">
           <ul class="navigation__list">
             <li class="navigation__item">サイトについて</li>
             <li class="navigation__item">環境構築やインストール</li>
@@ -13,7 +13,7 @@
           </ul>
         </nav>
       </div>
-      <div class="menu">
+      <div class="menu" v-show="isMobile">
         <div class="menu__item">このサイトについて</div>
         <div class="menu__item">環境構築やインストール</div>
         <div class="menu__item">コース一覧</div>
@@ -25,17 +25,24 @@
 </template>
 
 <script>
-
 export default {
-  name: "Header",
   data() {
     return {
-      open: false,
+      isMobile: false
     };
   },
-  methods: {
-
+  mounted() {
+    this.checkMobileScreen();
+    window.addEventListener('resize', this.checkMobileScreen);
   },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.checkMobileScreen);
+  },
+  methods: {
+    checkMobileScreen() {
+      this.isMobile = window.innerWidth <= 648;
+    }
+  }
 };
 </script>
 
@@ -90,6 +97,10 @@ export default {
   box-sizing: border-box;
 }
 
+.is-mobile .menu {
+  opacity: 1;
+  pointer-events: auto;
+}
 
 .navigation__item:hover {
   text-decoration: underline;
@@ -97,7 +108,6 @@ export default {
 
 /* Media Query */
 @media (min-width: 648px) {
-
   .navigation {
     display: flex;
     justify-content: flex-end;
@@ -115,6 +125,10 @@ export default {
     color: #333;
     text-decoration: none;
     cursor: pointer;
+  }
+
+  .menu {
+    display: none;
   }
 }
 </style>
