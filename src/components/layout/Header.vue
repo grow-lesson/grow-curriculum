@@ -13,6 +13,10 @@
           </ul>
         </nav>
         <div class="menu" v-show="isMobile && showMenu">
+          <button class="close-button" @click="toggleMenu">
+            <span class="close-button__line"></span>
+            <span class="close-button__line"></span>
+          </button>
           <div class="menu__item">このサイトについて</div>
           <div class="menu__item">環境構築やインストール</div>
           <div class="menu__item">コース一覧</div>
@@ -104,6 +108,46 @@ export default {
   text-align: center;
   color: #fff;
   box-sizing: border-box;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.close-button__line {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+
+.close-button__line:before,
+.close-button__line:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+}
+
+.close-button__line:before {
+  transform: rotate(90deg);
+}
+
+.close-button__line:after {
+  transform: rotate(180deg);
 }
 
 .is-mobile .menu,
