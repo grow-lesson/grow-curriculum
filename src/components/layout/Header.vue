@@ -3,7 +3,7 @@
     <header :class="{'header': true, 'is-mobile': isMobile}">
       <div class="logo-nav">
         <a class="logo" href="/menu">Grow 学習サイト</a>
-        <nav class="navigation" v-show="!isMobile || showMenu">
+        <nav class="navigation" :class="{ 'show-menu': showMenu }">
           <ul class="navigation__list">
             <li class="navigation__item">サイトについて</li>
             <li class="navigation__item">環境構築やインストール</li>
@@ -12,17 +12,6 @@
             <li class="navigation__item">お問い合わせ</li>
           </ul>
         </nav>
-        <div class="menu" v-show="isMobile && showMenu">
-          <button class="close-button" @click="toggleMenu">
-            <span class="close-button__line"></span>
-            <span class="close-button__line"></span>
-          </button>
-          <div class="menu__item">このサイトについて</div>
-          <div class="menu__item">環境構築やインストール</div>
-          <div class="menu__item">コース一覧</div>
-          <div class="menu__item">マイページ</div>
-          <div class="menu__item">お問い合わせ</div>
-        </div>
         <button class="hamburger-button" v-show="isMobile" @click="toggleMenu">
           <span></span>
           <span></span>
@@ -30,6 +19,17 @@
         </button>
       </div>
     </header>
+    <div class="menu" :class="{ 'show-menu': showMenu }">
+      <button class="close-button" @click="toggleMenu">
+        <span class="close-button__line"></span>
+        <span class="close-button__line"></span>
+      </button>
+      <div class="menu__item">このサイトについて</div>
+      <div class="menu__item">環境構築やインストール</div>
+      <div class="menu__item">コース一覧</div>
+      <div class="menu__item">マイページ</div>
+      <div class="menu__item">お問い合わせ</div>
+    </div>
   </div>
 </template>
 
@@ -93,10 +93,11 @@ export default {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   background: #555;
-  transition: opacity 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(100%);
   opacity: 0;
   pointer-events: none;
 }
@@ -152,6 +153,7 @@ export default {
 
 .is-mobile .menu,
 .show-menu {
+  transform: translateX(0%);
   opacity: 1;
   pointer-events: auto;
 }
