@@ -1,8 +1,11 @@
 <template>
   <div>
+    <!-- ヘッダー -->
     <header :class="{'header': true, 'is-mobile': isMobile}">
       <div class="logo-nav">
+        <!-- ロゴ -->
         <a class="logo" href="/menu">Grow 学習サイト</a>
+        <!-- ナビゲーションメニュー -->
         <nav class="navigation" :class="{ 'show-menu': showMenu }">
           <ul class="navigation__list">
             <li class="navigation__item">サイトについて</li>
@@ -12,6 +15,7 @@
             <li class="navigation__item">お問い合わせ</li>
           </ul>
         </nav>
+        <!-- ハンバーガーメニューボタン -->
         <button class="hamburger-button" v-show="isMobile" @click="toggleMenu">
           <span></span>
           <span></span>
@@ -19,11 +23,14 @@
         </button>
       </div>
     </header>
+    <!-- メニューコンテンツ -->
     <div class="menu" :class="{ 'show-menu': showMenu }">
+      <!-- 閉じるボタン -->
       <button class="close-button" @click="toggleMenu">
         <span class="close-button__line"></span>
         <span class="close-button__line"></span>
       </button>
+      <!-- メニューアイテム -->
       <div class="menu__item">このサイトについて</div>
       <div class="menu__item">環境構築やインストール</div>
       <div class="menu__item">コース一覧</div>
@@ -42,16 +49,20 @@ export default {
     };
   },
   mounted() {
+    // ページロード時とウィンドウリサイズ時にモバイル画面の判定を行う
     this.checkMobileScreen();
     window.addEventListener('resize', this.checkMobileScreen);
   },
   beforeUnmount() {
+    // イベントリスナーの削除
     window.removeEventListener('resize', this.checkMobileScreen);
   },
   methods: {
+    // モバイル画面の判定を行うメソッド
     checkMobileScreen() {
       this.isMobile = window.innerWidth <= 648;
     },
+    // メニューの表示切替を行うメソッド
     toggleMenu() {
       this.showMenu = !this.showMenu;
     }
@@ -60,7 +71,7 @@ export default {
 </script>
 
 <style scoped>
-/* Header */
+/* ヘッダー */
 .header {
   background-color: #fff;
   padding: 20px;
@@ -81,7 +92,7 @@ export default {
 }
 
 .navigation {
-  display: none;
+  display: none; /* メニューは初期状態では非表示 */
 }
 
 .menu {
@@ -97,9 +108,9 @@ export default {
   justify-content: center;
   background: #555;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  transform: translateX(100%);
-  opacity: 0;
-  pointer-events: none;
+  transform: translateX(100%); /* 初期状態ではメニューは画面外に移動 */
+  opacity: 0; /* 初期状態ではメニューは透明 */
+  pointer-events: none; /* 初期状態ではメニューはクリックイベントを受け付けない */
 }
 
 .menu__item {
@@ -153,9 +164,9 @@ export default {
 
 .is-mobile .menu,
 .show-menu {
-  transform: translateX(0%);
-  opacity: 1;
-  pointer-events: auto;
+  transform: translateX(0%); /* メニューが表示されるときは画面内に移動 */
+  opacity: 1; /* メニューが表示されるときは不透明になる */
+  pointer-events: auto; /* メニューが表示されるときはクリックイベントを受け付ける */
 }
 
 .navigation__item:hover {
@@ -223,7 +234,7 @@ export default {
   transform: rotate(0);
 }
 
-/* Media Query */
+/* メディアクエリ */
 @media (min-width: 648px) {
   .navigation {
     display: flex;
@@ -245,11 +256,11 @@ export default {
   }
 
   .menu {
-    display: none;
+    display: none; /* メニューは非表示 */
   }
 
   .hamburger-button {
-    display: none;
+    display: none; /* ハンバーガーメニューボタンは非表示 */
   }
 }
 </style>
