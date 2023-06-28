@@ -3,7 +3,7 @@
     <header :class="{'header': true, 'is-mobile': isMobile}">
       <div class="logo-nav">
         <a class="logo" href="/menu">Grow 学習サイト</a>
-        <nav class="navigation" v-show="!isMobile">
+        <nav class="navigation" v-show="!isMobile || showMenu">
           <ul class="navigation__list">
             <li class="navigation__item">サイトについて</li>
             <li class="navigation__item">環境構築やインストール</li>
@@ -12,13 +12,18 @@
             <li class="navigation__item">お問い合わせ</li>
           </ul>
         </nav>
-      </div>
-      <div class="menu" v-show="isMobile">
-        <div class="menu__item">このサイトについて</div>
-        <div class="menu__item">環境構築やインストール</div>
-        <div class="menu__item">コース一覧</div>
-        <div class="menu__item">マイページ</div>
-        <div class="menu__item">お問い合わせ</div>
+        <div class="menu" v-show="isMobile && showMenu">
+          <div class="menu__item">このサイトについて</div>
+          <div class="menu__item">環境構築やインストール</div>
+          <div class="menu__item">コース一覧</div>
+          <div class="menu__item">マイページ</div>
+          <div class="menu__item">お問い合わせ</div>
+        </div>
+        <button class="hamburger-button" v-show="isMobile" @click="toggleMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </header>
   </div>
@@ -28,7 +33,8 @@
 export default {
   data() {
     return {
-      isMobile: false
+      isMobile: false,
+      showMenu: false
     };
   },
   mounted() {
@@ -41,6 +47,9 @@ export default {
   methods: {
     checkMobileScreen() {
       this.isMobile = window.innerWidth <= 648;
+    },
+    toggleMenu() {
+      this.showMenu = !this.showMenu;
     }
   }
 };
@@ -97,13 +106,63 @@ export default {
   box-sizing: border-box;
 }
 
-.is-mobile .menu {
+.is-mobile .menu,
+.show-menu {
   opacity: 1;
   pointer-events: auto;
 }
 
 .navigation__item:hover {
   text-decoration: underline;
+}
+
+.hamburger-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hamburger-button span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+}
+
+.hamburger-button span:nth-child(1) {
+  transform-origin: top left;
+  transform: rotate(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.hamburger-button span:nth-child(2) {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.hamburger-button span:nth-child(3) {
+  transform-origin: bottom left;
+  transform: rotate(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.show-menu .hamburger-button span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.show-menu .hamburger-button span:nth-child(2) {
+  opacity: 0;
+}
+
+.show-menu .hamburger-button span:nth-child(3) {
+  transform: rotate(-45deg);
 }
 
 /* Media Query */
@@ -128,6 +187,10 @@ export default {
   }
 
   .menu {
+    display: none;
+  }
+
+  .hamburger-button {
     display: none;
   }
 }
