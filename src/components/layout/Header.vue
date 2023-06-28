@@ -8,11 +8,11 @@
         <!-- ナビゲーションメニュー -->
         <nav class="navigation" :class="{ 'show-menu': showMenu }">
           <ul class="navigation__list">
-            <li class="navigation__item">サイトについて</li>
-            <li class="navigation__item">環境構築やインストール</li>
-            <li class="navigation__item">コース一覧</li>
-            <li class="navigation__item">マイページ</li>
-            <li class="navigation__item">お問い合わせ</li>
+            <li class="navigation__item"><a href="/menu">このサイトについて</a></li>
+            <li class="navigation__item"><a href="/menu">環境構築やインストール</a></li>
+            <li class="navigation__item"><a href="/menu">コース一覧</a></li>
+            <li class="navigation__item"><a href="/menu">マイページ</a></li>
+            <li class="navigation__item"><a href="/menu">お問い合わせ</a></li>
           </ul>
         </nav>
         <!-- ハンバーガーメニューボタン -->
@@ -31,11 +31,13 @@
         <span class="close-button__line"></span>
       </button>
       <!-- メニューアイテム -->
-      <div class="menu__item">このサイトについて</div>
-      <div class="menu__item">環境構築やインストール</div>
-      <div class="menu__item">コース一覧</div>
-      <div class="menu__item">マイページ</div>
-      <div class="menu__item">お問い合わせ</div>
+      <ul class="menu__list">
+        <li class="menu__item"><a href="/menu">このサイトについて</a></li>
+        <li class="menu__item"><a href="/menu">環境構築やインストール</a></li>
+        <li class="menu__item"><a href="/menu">コース一覧</a></li>
+        <li class="menu__item"><a href="/menu">マイページ</a></li>
+        <li class="menu__item"><a href="/menu">お問い合わせ</a></li>
+      </ul>
     </div>
   </div>
 </template>
@@ -60,11 +62,11 @@ export default {
   methods: {
     // モバイル画面の判定を行うメソッド
     checkMobileScreen() {
-      this.isMobile = window.innerWidth <= 648;
+      this.isMobile = window.innerWidth <= 648; // 648px以下だとモバイルサイズなのでtrueとなる
     },
     // メニューの表示切替を行うメソッド
     toggleMenu() {
-      this.showMenu = !this.showMenu;
+      this.showMenu = !this.showMenu; // クリックした時のbooleanの判定を逆にする
     }
   }
 };
@@ -120,6 +122,9 @@ export default {
   text-align: center;
   color: #fff;
   box-sizing: border-box;
+}
+.menu__item :hover{
+  text-decoration: underline;
 }
 
 .close-button {
