@@ -96,7 +96,7 @@ export default {
   align-items: flex-end;
   justify-content: center;
   background: #555;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   transform: translateX(100%);
   opacity: 0;
   pointer-events: none;
@@ -209,6 +209,18 @@ export default {
 
 .show-menu .hamburger-button span:nth-child(3) {
   transform: rotate(-45deg);
+}
+
+.show-menu .close-button__line {
+  transform: rotate(-45deg);
+}
+
+.show-menu .close-button__line:before {
+  transform: rotate(-90deg);
+}
+
+.show-menu .close-button__line:after {
+  transform: rotate(0);
 }
 
 /* Media Query */
