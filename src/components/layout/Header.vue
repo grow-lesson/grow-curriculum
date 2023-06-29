@@ -102,13 +102,13 @@ export default {
   top: 0;
   right: 0;
   z-index: 1;
-  width: 100vw;
-  height: 100vh;
+  width: 50vw;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  background: #555;
+  background: #5ac3d3;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   transform: translateX(100%); /* 初期状態ではメニューは画面外に移動 */
   opacity: 0; /* 初期状態ではメニューは透明 */
@@ -179,6 +179,9 @@ export default {
 }
 
 .hamburger-button {
+  position: fixed;
+  top: 30px;
+  left: 90%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
