@@ -1,12 +1,14 @@
 <template>
-  <Header />
-  <div class="container">
-    <h1 class="header">Command Lineを選ぼう</h1>
-    <ul class="lesson-list">
-      <li class="lesson-item">
-        <a class="lesson-link btn" @click="goToPageLesson1">Command Line 1</a>
-      </li>
-    </ul>
+  <div>
+    <Header />
+    <div class="container">
+      <h1 class="header">Command Lineを選ぼう</h1>
+      <ul class="lesson-list">
+        <li class="lesson-item">
+          <a class="lesson-link btn" @click="goToPageLesson1">Command Line 1</a>
+        </li>
+      </ul>
+    </div>
     <Footer />
   </div>
 </template>

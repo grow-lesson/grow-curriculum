@@ -1,12 +1,14 @@
 <template>
-  <div class="container">
+  <div>
     <Header />
-    <h1 class="header">HTML・CSSコースを選ぼう</h1>
-    <ul class="lesson-list">
-      <li class="lesson-item"><a class="lesson-link btn" @click="goToPageLesson1">HTML・CSS 1</a></li>
-      <li class="lesson-item"><a class="lesson-link btn" @click="goToPageLesson2">HTML・CSS 2</a></li>
-      <li class="lesson-item"><a class="lesson-link btn" @click="goToPageLesson3">HTML・CSS 3</a></li>
-    </ul>
+    <div class="container">
+      <h1 class="header">HTML・CSSコースを選ぼう</h1>
+      <ul class="lesson-list">
+        <li class="lesson-item"><a class="lesson-link btn" @click="goToPageLesson1">HTML・CSS 1</a></li>
+        <li class="lesson-item"><a class="lesson-link btn" @click="goToPageLesson2">HTML・CSS 2</a></li>
+        <li class="lesson-item"><a class="lesson-link btn" @click="goToPageLesson3">HTML・CSS 3</a></li>
+      </ul>
+    </div>
     <Footer />
   </div>
 </template>
