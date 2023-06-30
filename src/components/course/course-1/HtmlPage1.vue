@@ -105,9 +105,9 @@ export default {
       terminalData: terminalData,
       sections: [
         { id: "Title", title: "HTML・CSS 1" },
-        { id: "subTitle1", title: "1. HTMLとCSSについて知る" },
-        { id: "subTitle2", title: "2. プログラミングとコーディング" },
-        { id: "subTitle3", title: "3. HTMLの仕組み" },
+        { id: "subTitle1", title: "  1. HTMLとCSSについて知る" },
+        { id: "subTitle2", title: "  2. プログラミングとコーディング" },
+        { id: "subTitle3", title: "  3. HTMLの仕組み" },
       ],
     };
   },

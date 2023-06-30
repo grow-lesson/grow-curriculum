@@ -35,6 +35,8 @@ export default {
 
 <style scoped>
 .sidebar {
+  position: fixed;
+
   grid-column: 2 / span 1;
 }
 
@@ -46,5 +48,6 @@ export default {
 .menu-item {
   margin-bottom: 0.5em;
   cursor: pointer;
+  white-space: pre-wrap;
 }
 </style>
