@@ -1,53 +1,79 @@
 <template>
   <div>
-    <header class="header">
+    <!-- ヘッダー -->
+    <header :class="{'header': true, 'is-mobile': isMobile}">
       <div class="logo-nav">
-        <a class="logo" href="#">Grow 学習サイト</a>
-        <nav class="navigation">
+        <!-- ロゴ -->
+        <a class="logo" href="/menu">Grow 学習サイト</a>
+        <!-- ナビゲーションメニュー -->
+        <nav class="navigation" :class="{ 'show-menu': showMenu }">
           <ul class="navigation__list">
-            <li class="navigation__item">TOP</li>
-            <li class="navigation__item">ABOUT</li>
-            <li class="navigation__item">CONTACT</li>
+            <li class="navigation__item"><a href="/menu">このサイトについて</a></li>
+            <li class="navigation__item"><a href="/menu">環境構築やインストール</a></li>
+            <li class="navigation__item"><a href="/menu">コース一覧</a></li>
+            <li class="navigation__item"><a href="/menu">マイページ</a></li>
+            <li class="navigation__item"><a href="/menu">お問い合わせ</a></li>
           </ul>
         </nav>
-      </div>
-      <button type="button" class="menu-btn" v-on:click="open = !open">
-        <span class="hamburger"></span>
-        <span class="hamburger"></span>
-        <span class="hamburger"></span>
-      </button>
-      <div class="menu" v-bind:class="{ 'is-active': open }">
-        <div class="menu__item">TOP</div>
-        <div class="menu__item">ABOUT</div>
-        <div class="menu__item">BLOG</div>
-        <div class="menu__item">CONTACT</div>
+        <!-- ハンバーガーメニューボタン -->
+        <button class="hamburger-button" v-show="isMobile" @click="toggleMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </header>
+    <!-- メニューコンテンツ -->
+    <div class="menu" :class="{ 'show-menu': showMenu }">
+      <!-- 閉じるボタン -->
+      <button class="close-button" @click="toggleMenu">
+        <span class="close-button__line"></span>
+        <span class="close-button__line"></span>
+      </button>
+      <!-- メニューアイテム -->
+      <ul class="menu__list">
+        <li class="menu__item"><a href="/menu">このサイトについて</a></li>
+        <li class="menu__item"><a href="/menu">環境構築やインストール</a></li>
+        <li class="menu__item"><a href="/menu">コース一覧</a></li>
+        <li class="menu__item"><a href="/menu">マイページ</a></li>
+        <li class="menu__item"><a href="/menu">お問い合わせ</a></li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Header",
   data() {
     return {
-      open: false,
+      isMobile: false,
+      showMenu: false
     };
   },
   mounted() {
-
+    // ページロード時とウィンドウリサイズ時にモバイル画面の判定を行う
+    this.checkMobileScreen();
+    window.addEventListener('resize', this.checkMobileScreen);
   },
   beforeUnmount() {
-
+    // イベントリスナーの削除
+    window.removeEventListener('resize', this.checkMobileScreen);
   },
   methods: {
-
-  },
+    // モバイル画面の判定を行うメソッド
+    checkMobileScreen() {
+      this.isMobile = window.innerWidth <= 648; // 648px以下だとモバイルサイズなのでtrueとなる
+    },
+    // メニューの表示切替を行うメソッド
+    toggleMenu() {
+      this.showMenu = !this.showMenu; // クリックした時のbooleanの判定を逆にする
+    }
+  }
 };
 </script>
 
 <style scoped>
-/* Header */
+/* ヘッダー */
 .header {
   background-color: #fff;
   padding: 20px;
@@ -68,48 +94,25 @@ export default {
 }
 
 .navigation {
-  display: none;
+  display: none; /* メニューは初期状態では非表示 */
 }
 
-.menu-btn {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 3;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  cursor: pointer;
-}
-
-.menu-btn .hamburger {
-  width: 25px;
-  height: 3px;
-  background-color: black;
-  margin-bottom: 4px;
-}
-
-/*----------------------------
-* メニュー本体
-*----------------------------*/
 .menu {
   position: fixed;
   top: 0;
   right: 0;
   z-index: 1;
-  width: 100vw;
-  height: 100vh;
+  width: 50vw;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  background: #555;
-  transition: all 0s linear;
-  transform: translateX(100vw);
+  background: #5ac3d3;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transform: translateX(100%); /* 初期状態ではメニューは画面外に移動 */
+  opacity: 0; /* 初期状態ではメニューは透明 */
+  pointer-events: none; /* 初期状態ではメニューはクリックイベントを受け付けない */
 }
 
 .menu__item {
@@ -120,20 +123,127 @@ export default {
   color: #fff;
   box-sizing: border-box;
 }
-
-/*----------------------------
-* アニメーション部分
-*----------------------------*/
-.menu.is-active {
-  transform: translateX(0);
+.menu__item :hover{
+  text-decoration: underline;
 }
 
-/* Media Query */
-@media (min-width: 648px) {
-  .menu-btn {
-    display: none;
-  }
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
 
+.close-button__line {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+
+.close-button__line:before,
+.close-button__line:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+}
+
+.close-button__line:before {
+  transform: rotate(90deg);
+}
+
+.close-button__line:after {
+  transform: rotate(180deg);
+}
+
+.is-mobile .menu,
+.show-menu {
+  transform: translateX(0%); /* メニューが表示されるときは画面内に移動 */
+  opacity: 1; /* メニューが表示されるときは不透明になる */
+  pointer-events: auto; /* メニューが表示されるときはクリックイベントを受け付ける */
+}
+
+.navigation__item:hover {
+  text-decoration: underline;
+}
+
+.hamburger-button {
+  position: fixed;
+  top: 30px;
+  left: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hamburger-button span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+}
+
+.hamburger-button span:nth-child(1) {
+  transform-origin: top left;
+  transform: rotate(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.hamburger-button span:nth-child(2) {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.hamburger-button span:nth-child(3) {
+  transform-origin: bottom left;
+  transform: rotate(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.show-menu .hamburger-button span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.show-menu .hamburger-button span:nth-child(2) {
+  opacity: 0;
+}
+
+.show-menu .hamburger-button span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.show-menu .close-button__line {
+  transform: rotate(-45deg);
+}
+
+.show-menu .close-button__line:before {
+  transform: rotate(-90deg);
+}
+
+.show-menu .close-button__line:after {
+  transform: rotate(0);
+}
+
+/* メディアクエリ */
+@media (min-width: 648px) {
   .navigation {
     display: flex;
     justify-content: flex-end;
@@ -151,6 +261,14 @@ export default {
     color: #333;
     text-decoration: none;
     cursor: pointer;
+  }
+
+  .menu {
+    display: none; /* メニューは非表示 */
+  }
+
+  .hamburger-button {
+    display: none; /* ハンバーガーメニューボタンは非表示 */
   }
 }
 </style>

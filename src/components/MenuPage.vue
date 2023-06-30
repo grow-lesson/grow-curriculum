@@ -10,8 +10,8 @@
       <section class="flow">
         <h2 class="flow-title">フロントエンドの基礎を学ぼう！</h2>
         <ul class="flow-list">
-          <li class="flow-item"><a href="#" class="flow-link">インストールや環境構築の手順を知る</a></li>
-          <li class="flow-item"><a href="#" class="flow-link">Growカリキュラムの始め方</a></li>
+          <li class="flow-item"><a class="flow-link" @click="goToEnvironmentPage">インストールや環境構築の手順を知る</a></li>
+          <li class="flow-item"><a class="flow-link" @click="goToProcedurePage">Growカリキュラムの始め方</a></li>
           <li class="flow-item"><a href="#" class="flow-link">Grow学習サイトの使い方</a></li>
         </ul>
       </section>
@@ -52,7 +52,7 @@
               <img src="../assets/git.png" class="course-icon" alt="git" />
             </div>
           </div>
-          <a class="course-button" @click="goToHtmlMenuPage">受講する</a>
+          <a class="course-button" @click="goToGitMenuPage">受講する</a>
         </div>
       </section>
     </main>
@@ -72,6 +72,15 @@ export default {
     },
     goToCommandLineMenuPage() {
       this.$router.push({ name: "CommandLineMenuPage" });
+    },
+    goToGitMenuPage() {
+      this.$router.push({ name: "GitMenuPage" });
+    },
+    goToEnvironmentPage() {
+      this.$router.push({ name: "Environment" });
+    },
+    goToProcedurePage() {
+      this.$router.push({ name: "Procedure" });
     },
   },
   components: {
@@ -122,6 +131,7 @@ export default {
 .flow-link {
   color: #666;
   font-size: 18px;
+  cursor: pointer;
   text-decoration: none;
   border-bottom: 3px solid #5492f5;
 }
@@ -170,6 +180,7 @@ export default {
   padding: 10px 20px;
   background-color: #4285f4;
   color: #fff;
+  cursor: pointer;
   text-decoration: none;
   border-radius: 4px;
 }

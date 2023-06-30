@@ -12,6 +12,16 @@ const routes = [
     component: () => import("../components/LoginPage.vue"),
   },
   {
+    path: "/environment",
+    name: "Environment",
+    component: () => import("../components/init/Environment.vue"),
+  },
+  {
+    path: "/procedure",
+    name: "Procedure",
+    component: () => import("../components/init/Procedure.vue"),
+  },
+  {
     path: "/menu",
     name: "MenuPage",
     component: () => import("../components/MenuPage.vue"),
@@ -45,6 +55,26 @@ const routes = [
     path: "/commandline-lesson-1",
     name: "CommadLinePage1",
     component: () => import("../components/course/course-2/CommadLinePage1.vue"),
+  },
+  {
+    path: "/Git-lesson-menu",
+    name: "GitMenuPage",
+    component: () => import("../components/course/course-3/GitMenuPage.vue"),
+  },
+  {
+    path: "/Git-lesson-1",
+    name: "GitPage1",
+    component: () => import("../components/course/course-3/GitPage1.vue"),
+  },
+  {
+    path: "/Git-lesson-2",
+    name: "GitPage2",
+    component: () => import("../components/course/course-3/GitPage2.vue"),
+  },
+  {
+    path: "/Git-lesson-3",
+    name: "GitPage3",
+    component: () => import("../components/course/course-3/GitPage3.vue"),
   },
 ];
 
