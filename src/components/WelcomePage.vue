@@ -4,7 +4,9 @@
       <a href="/" class="logo">Grow 学習サイト</a>
     </div>
     <div class="box">
-      <div class="background-image" :style="backgroundStyle"></div>
+      <transition name="fade">
+        <div class="background-image" :style="backgroundStyle"></div>
+      </transition>
       <h1 class="title" :class="{ floating: isFloating }">カリキュラムを<span>受講しよう！</span></h1>
       <button class="btn_04" @click="goToLogin" @focus="buttonFocus" @blur="buttonBlur">ログインはこちら</button>
     </div>
@@ -30,6 +32,7 @@ export default {
     backgroundStyle() {
       return {
         backgroundImage: `url(${this.backgroundImages[this.currentImageIndex]})`,
+        opacity: this.isFloating ? 1 : 0,
       };
     },
   },
@@ -49,7 +52,13 @@ export default {
     },
   },
   mounted() {
-    setInterval(this.changeBackgroundImage, 5000); // 5秒ごとに背景画像を変更
+    setInterval(() => {
+      this.changeBackgroundImage();
+      this.isFloating = true;
+      setTimeout(() => {
+        this.isFloating = false;
+      }, 500);
+    }, 4000);
   },
 };
 </script>
@@ -93,6 +102,16 @@ export default {
   justify-content: center;
 }
 
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1.5s ease;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
 .title {
   font-size: 32px;
   margin-bottom: 20px;
@@ -127,6 +146,7 @@ export default {
   text-decoration: none;
   transition-duration: 0.3s;
 }
+
 .btn_04:before {
   content: '';
   width: 8px;
@@ -140,10 +160,12 @@ export default {
   left: 25px;
   margin-top: -6px;
 }
+
 .btn_04:hover {
   background: #fff;
   color: #228bc8;
 }
+
 .btn_04:hover:before {
   border-top: 2px solid #228bc8;
   border-right: 2px solid #228bc8;
@@ -164,18 +186,17 @@ export default {
 }
 
 @media (max-width: 648px) {
-  .welcome-header{
+  .welcome-header {
     padding: 10px;
   }
 
-  .logo{
+  .logo {
     padding: 0 10px;
   }
 
   .background-image {
     width: 100%;
     filter: brightness(0.6);
-    /* 背景画像をやや暗くする */
   }
 
   .box {
@@ -186,7 +207,7 @@ export default {
     color: #fff;
   }
 
-  .btn_04{
+  .btn_04 {
     width: 250px;
     color: #fff;
   }
