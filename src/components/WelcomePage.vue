@@ -1,14 +1,17 @@
 <template>
-  <div class="container">
+  <div>
     <div class="welcome-header">
       <a href="/" class="logo">Grow 学習サイト</a>
     </div>
-    <div class="box">
-      <transition name="fade">
-        <div class="background-image" :style="backgroundStyle"></div>
-      </transition>
-      <h1 class="title" :class="{ floating: isFloating }">カリキュラムを<span>受講しよう！</span></h1>
-      <button class="btn_04" @click="goToLogin" @focus="buttonFocus" @blur="buttonBlur">ログインはこちら</button>
+    <div class="welcome-container">
+      <div class="box">
+        <!-- フェードトランジションの名前を指定 -->
+        <transition name="fade">
+          <div class="background-image" :style="backgroundStyle"></div>
+        </transition>
+        <h1 class="title" :class="{ floating: isFloating }">カリキュラムを<span>受講しよう！</span></h1>
+        <button class="btn_04" @click="goToLogin" @focus="buttonFocus" @blur="buttonBlur">ログインはこちら</button>
+      </div>
     </div>
   </div>
 </template>
@@ -31,7 +34,9 @@ export default {
   computed: {
     backgroundStyle() {
       return {
+        // 現在の背景画像をスタイルに反映
         backgroundImage: `url(${this.backgroundImages[this.currentImageIndex]})`,
+        // フローティング状態の場合は不透明度を1に、そうでない場合は0に設定
         opacity: this.isFloating ? 1 : 0,
       };
     },
@@ -41,23 +46,29 @@ export default {
       this.$router.push({ name: "Login" });
     },
     changeBackgroundImage() {
+      // 背景画像を次のインデックスに変更
       this.currentImageIndex =
         (this.currentImageIndex + 1) % this.backgroundImages.length;
     },
     buttonFocus() {
+      // ボタンにフォーカスが当たったときにフローティング状態に設定
       this.isFloating = true;
     },
     buttonBlur() {
+      // ボタンからフォーカスが外れたときにフローティング状態を解除
       this.isFloating = false;
     },
   },
   mounted() {
     setInterval(() => {
+      // 4秒ごとに背景画像を切り替え
       this.changeBackgroundImage();
+      // フローティング状態を設定
       this.isFloating = true;
       setTimeout(() => {
+        // 1.5秒後にフローティング状態を解除
         this.isFloating = false;
-      }, 500);
+      }, 1500);
     }, 4000);
   },
 };
@@ -82,7 +93,7 @@ export default {
   padding-left: 20px;
 }
 
-.container {
+.welcome-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -102,13 +113,16 @@ export default {
   justify-content: center;
 }
 
+/* フェードトランジションのクラス */
 .fade-enter-active,
 .fade-leave-active {
+  /* opacityプロパティの変化を1.5秒かけて行う */
   transition: opacity 1.5s ease;
 }
 
 .fade-enter,
 .fade-leave-to {
+  /* 初期状態と終了状態のopacityを0に設定し、フェードイン・フェードアウトの効果を実現 */
   opacity: 0;
 }
 
@@ -124,6 +138,7 @@ export default {
 }
 
 .title.floating {
+  /* フローティング状態の場合、タイトルを上に浮かせるアニメーション */
   transform: translateY(-5px);
 }
 
@@ -204,7 +219,7 @@ export default {
   }
 
   .title {
-    color: #fff;
+    color: #8f84f7;
   }
 
   .btn_04 {
