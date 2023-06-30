@@ -104,8 +104,8 @@ export default {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
-  background-color: rgba(255, 255, 255, 0.3);
-  border: none;
+  background-color: rgb(0 0 0 / 30%);
+  border: 1px solid black;
   border-radius: 4px;
   color: #fff;
   font-family: 'Exo', sans-serif;
