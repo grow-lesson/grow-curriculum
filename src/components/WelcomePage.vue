@@ -1,8 +1,13 @@
 <template>
   <div class="container">
-    <div class="background-image" :style="backgroundStyle"></div>
-    <h1 class="title" :class="{ floating: isFloating }">カリキュラムを受講しよう！</h1>
-    <button class="button" @click="goToLogin" @focus="buttonFocus" @blur="buttonBlur">Log in</button>
+    <div class="welcome-header">
+      <a href="/" class="logo">Grow 学習サイト</a>
+    </div>
+    <div class="box">
+      <div class="background-image" :style="backgroundStyle"></div>
+      <h1 class="title" :class="{ floating: isFloating }">カリキュラムを<span>受講しよう！</span></h1>
+      <button class="btn_04" @click="goToLogin" @focus="buttonFocus" @blur="buttonBlur">ログインはこちら</button>
+    </div>
   </div>
 </template>
 
@@ -14,6 +19,8 @@ export default {
         require("../assets/welcome1.jpg"),
         require("../assets/welcome2.jpg"),
         require("../assets/welcome3.jpg"),
+        require("../assets/welcome4.jpg"),
+        require("../assets/welcome5.jpg"),
       ],
       currentImageIndex: 0,
       isFloating: false,
@@ -48,45 +55,98 @@ export default {
 </script>
 
 <style>
+.welcome-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.welcome-header .logo {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  padding-left: 20px;
+}
+
 .container {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.box {
+  margin-left: auto;
+  width: 40%;
+  height: 300px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .title {
-  font-size: 24px;
+  font-size: 32px;
   margin-bottom: 20px;
   padding: 10px 20px;
-  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 4px;
   transition: transform 0.3s ease;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .title.floating {
   transform: translateY(-5px);
 }
 
-.button {
-  padding: 10px 20px;
-  background-color: #007bff;
+.btn_04 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 50px;
+  position: relative;
+  background: #228bc8;
+  border: 1px solid #228bc8;
+  box-sizing: border-box;
+  padding: 0 25px 0 40px;
   color: #fff;
-  border: none;
-  border-radius: 4px;
   font-size: 16px;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
+  letter-spacing: 0.1em;
+  line-height: 1.3;
+  text-align: left;
+  text-decoration: none;
+  transition-duration: 0.3s;
 }
-
-.button:hover {
-  background-color: #0056b3;
+.btn_04:before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border: 0;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  left: 25px;
+  margin-top: -6px;
 }
-
-.button:focus {
-  opacity: 0.8;
+.btn_04:hover {
+  background: #fff;
+  color: #228bc8;
+}
+.btn_04:hover:before {
+  border-top: 2px solid #228bc8;
+  border-right: 2px solid #228bc8;
 }
 
 .background-image {
@@ -96,10 +156,39 @@ export default {
   right: 0;
   bottom: 0;
   z-index: -1;
-  opacity: 0.5;
   transition: opacity 0.5s ease;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  width: 60%;
+}
+
+@media (max-width: 648px) {
+  .welcome-header{
+    padding: 10px;
+  }
+
+  .logo{
+    padding: 0 10px;
+  }
+
+  .background-image {
+    width: 100%;
+    filter: brightness(0.6);
+    /* 背景画像をやや暗くする */
+  }
+
+  .box {
+    width: 100%;
+  }
+
+  .title {
+    color: #fff;
+  }
+
+  .btn_04{
+    width: 250px;
+    color: #fff;
+  }
 }
 </style>
