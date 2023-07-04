@@ -22,6 +22,11 @@ const routes = [
     component: () => import("../components/init/Procedure.vue"),
   },
   {
+    path: "/users",
+    name: "UserList",
+    component: () => import("../components/users/UserList.vue"),
+  },
+  {
     path: "/menu",
     name: "MenuPage",
     component: () => import("../components/MenuPage.vue"),

@@ -26,7 +26,7 @@
           <p class="course-explanation">ファイル・フォルダの作成や編集・移動・削除を学べるコース</p>
           <div class="course-image">
             <div class="course-logo">
-              <img src="../assets/command-line.jpg" class="course-icon" alt="html" />
+              <img src="../assets/command-line.jpg" class="course-icon" alt="commandline" />
             </div>
           </div>
           <a class="course-button" @click="goToCommandLineMenuPage">受講する</a>
