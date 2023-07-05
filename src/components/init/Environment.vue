@@ -372,9 +372,6 @@ export default {
   display: flex;
   width: 100%;
 }
-.main-content{
-  width: 75%;
-}
 .btn_04 {
   display: flex;
   justify-content: center;
@@ -418,6 +415,10 @@ export default {
 .btn_04:hover:before {
   border-top: 2px solid #228bc8;
   border-right: 2px solid #228bc8;
+}
+
+.main-content{
+  width: 75%;
 }
 
 .side-content{
