@@ -10,7 +10,9 @@
           <div class="background-image" :style="backgroundStyle"></div>
         </transition>
         <h1 class="title" :class="{ floating: isFloating }">カリキュラムを<span>受講しよう！</span></h1>
-        <button class="btn_04" @click="goToLogin" @focus="buttonFocus" @blur="buttonBlur">ログインはこちら</button>
+        <button class="btn_04 production" @click="goToLogin" @focus="buttonFocus" @blur="buttonBlur" disabled="true">ログインはこちら</button>
+        <!-- TODO: ログイン機能ができたら削除 -->
+        <button class="btn_04 dummy" @click="goToMenuPage" @focus="buttonFocus" @blur="buttonBlur">β版ページへ</button>
       </div>
     </div>
   </div>
@@ -44,6 +46,10 @@ export default {
   methods: {
     goToLogin() {
       this.$router.push({ name: "Login" });
+    },
+    // TODO: ログイン機能ができたら削除
+    goToMenuPage() {
+      this.$router.push({ name: "MenuPage" });
     },
     changeBackgroundImage() {
       // 背景画像を次のインデックスに変更
@@ -185,6 +191,27 @@ export default {
   border-top: 2px solid #228bc8;
   border-right: 2px solid #228bc8;
 }
+
+/* TODO: ログイン機能ができたら削除 */
+.dummy{
+  margin-top: 40px;
+}
+
+.production {
+  background-color: gray;
+}
+
+.production:hover {
+  color: #fff;
+  background-color: gray;
+}
+
+.production:hover:before {
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+}
+
+/* TODO: ここまで */
 
 .background-image {
   position: absolute;
