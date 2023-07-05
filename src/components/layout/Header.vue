@@ -8,7 +8,7 @@
         <!-- ナビゲーションメニュー -->
         <nav class="navigation" :class="{ 'show-menu': showMenu }">
           <ul class="navigation__list">
-            <li class="navigation__item"><a href="/menu">このサイトについて</a></li>
+            <li class="navigation__item"><a href="/menu">Grow学習サイトの使い方</a></li>
             <li class="navigation__item"><a href="/menu">環境構築やインストール</a></li>
             <li class="navigation__item"><a href="/menu">コース一覧</a></li>
             <li class="navigation__item"><a @click="goToUserPage">マイページ</a></li>
