@@ -372,7 +372,7 @@
           <br>
           <p>
             ⑥<br>
-            環境構築とインストールからダウンロードしたSourceTreeを開きましょう。開いたら上部にあるクローンを押しましょう。<br>
+            環境構築とインストールからダウンロードしたSourceTreeを開きましょう。開いたら上部にある「新規」をクリックし「URLからクローン」を押しましょう。<br>
           </p><br>
           <div>
             <img src="../../assets/images/procedure/SourceTree-mac-6.png" alt="手順⑥" class="screen-image">
@@ -388,7 +388,7 @@
           <br>
           <p>
             ⑧<br>
-            するとこのようなタブが開かれるのでbacklogで設定したUsernameにメールアドレスを入れパスワードを入力して「Continue」を押しましょう。<br>
+            するとこのようなタブが開かれるのでbacklogで設定したUsernameにメールアドレスを入れパスワードを入力して「OK」を押しましょう。<br>
           </p><br>
           <div>
             <img src="../../assets/images/procedure/SourceTree-mac-8.png" alt="手順⑧" class="screen-image">
@@ -396,11 +396,7 @@
           <br>
           <p>
             ⑨<br>
-            二番目にあるテキストフィールドはカリキュラム資材をクローン場所を決める場所です。<br>
-            格納先はCドライブ直下に「grow」フォルダを右クリックで作成しそのフォルダを参照しましょう。<br>
-            作れれば画像のようなフォルダパスになっています。<br>
-            三番目のテキストフィールドはそのカリキュラム資材をどういうフォルダで格納するかを指定するので初級カリキュラムであればそのまま「grow-frontend-beginner」としておきましょう。<br>
-            中級以降でも同じ操作をするので中級ではその名前にしてください。<br>
+            ⑦でURLをいれればフォーカスを外すと自動的にパスとフォルダが記載されます。<br>
           </p><br>
           <div>
             <img src="../../assets/images/procedure/SourceTree-mac-9.png" alt="手順⑨" class="screen-image">
@@ -456,9 +452,15 @@
           <br>
           <p>
             ⑯<br>
-            画面から「Windows(C:)」をクリックしCドライブを開きます。<br>
-            クローンした時の「grow」ファルダができているのでそこを開くとダウンロードしたカリキュラムの資材がありますのでそのフォルダをワンクリックし選択状態にしたら右下の「フォルダーの選択」を押してください。<br>
+            ファイル選択画面から家マークの「ホームディレクトリ」をクリックします。<br>
+            「ホームディレクトリ」がない場合は<span><a href="https://dtmmethod.com/mac-finder-home" class="markup-word-red">こちら</a></span>をクリックして下さい。<br>
           </p><br>
+          <div>
+            <img src="../../assets/images/procedure/home-1.png" alt="手順⑯" class="screen-image">
+          </div><br>
+          <p>
+            クローンした時の「grow-frontend-beginner」ファルダができているのでのフォルダをワンクリックし選択状態にしたら右下の「フォルダーの選択」を押してください。<br>
+          </p>
           <div>
             <img src="../../assets/images/procedure/vscode-mac-3.png" alt="手順⑯" class="screen-image">
           </div>
@@ -572,7 +574,7 @@
             問題ないことを確認して「プッシュ」を押せばbacklog上にアップロード完了です。<br>
           </p><br>
           <div>
-            <img src="../../assets/images/procedure/SourceTree-mac-16.png" alt="手順㉗" class="screen-image">
+            <img src="../../assets/images/procedure/SourceTree-mac-17.png" alt="手順㉗" class="screen-image">
           </div>
           <br>
           <p>
