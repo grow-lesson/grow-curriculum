@@ -375,7 +375,7 @@
             環境構築とインストールからダウンロードしたSourceTreeを開きましょう。開いたら上部にあるクローンを押しましょう。<br>
           </p><br>
           <div>
-            <img src="../../assets/images/procedure/SourceTree-win-6.png" alt="手順⑥" class="screen-image">
+            <img src="../../assets/images/procedure/SourceTree-mac-6.png" alt="手順⑥" class="screen-image">
           </div>
           <br>
           <p>
@@ -383,7 +383,7 @@
             次に画面のテキストフィールドの一番上に先ほどコピーしたURLをペーストして下さい。<br>
           </p><br>
           <div>
-            <img src="../../assets/images/procedure/SourceTree-win-7.png" alt="手順⑦" class="screen-image">
+            <img src="../../assets/images/procedure/SourceTree-mac-7.png" alt="手順⑦" class="screen-image">
           </div>
           <br>
           <p>
@@ -391,7 +391,7 @@
             するとこのようなタブが開かれるのでbacklogで設定したUsernameにメールアドレスを入れパスワードを入力して「Continue」を押しましょう。<br>
           </p><br>
           <div>
-            <img src="../../assets/images/procedure/SourceTree-win-8.png" alt="手順⑧" class="screen-image">
+            <img src="../../assets/images/procedure/SourceTree-mac-8.png" alt="手順⑧" class="screen-image">
           </div>
           <br>
           <p>
@@ -403,7 +403,7 @@
             中級以降でも同じ操作をするので中級ではその名前にしてください。<br>
           </p><br>
           <div>
-            <img src="../../assets/images/procedure/SourceTree-win-9.png" alt="手順⑨" class="screen-image">
+            <img src="../../assets/images/procedure/SourceTree-mac-9.png" alt="手順⑨" class="screen-image">
           </div>
           <br>
           <p>
@@ -411,7 +411,7 @@
             クローンに成功すればこのような画面が表示されます。<br>
           </p><br>
           <div>
-            <img src="../../assets/images/procedure/SourceTree-win-10.png" alt="手順⑩" class="screen-image">
+            <img src="../../assets/images/procedure/SourceTree-mac-10.png" alt="手順⑩" class="screen-image">
           </div>
           <br>
           <p>
@@ -421,7 +421,7 @@
             その後にブランチの作成を押して準備は完了です。<br>
           </p><br>
           <div>
-            <img src="../../assets/images/procedure/SourceTree-win-11.png" alt="手順⑪" class="screen-image">
+            <img src="../../assets/images/procedure/SourceTree-mac-11.png" alt="手順⑪" class="screen-image">
           </div>
           <br>
           <p>
@@ -430,7 +430,7 @@
             ここまでできればカリキュラムのダウンロードと提出までの準備は完了です。<br>
           </p><br>
           <div>
-            <img src="../../assets/images/procedure/SourceTree-win-12.png" alt="手順⑫" class="screen-image">
+            <img src="../../assets/images/procedure/SourceTree-mac-12.png" alt="手順⑫" class="screen-image">
           </div>
           <br>
         </Document>
@@ -442,7 +442,7 @@
             開くとこのような画面が出てきます。<br>
           </p><br>
           <div>
-            <img src="../../assets/images/procedure/vscode-win-1.png" alt="手順⑮" class="screen-image">
+            <img src="../../assets/images/procedure/vscode-mac-1.png" alt="手順⑮" class="screen-image">
           </div>
           <br>
           <p>
@@ -451,7 +451,7 @@
             「フォルダーを開く」を選択してください。<br>
           </p><br>
           <div>
-            <img src="../../assets/images/procedure/vscode-win-2.png" alt="手順⑮" class="screen-image">
+            <img src="../../assets/images/procedure/vscode-mac-2.png" alt="手順⑮" class="screen-image">
           </div>
           <br>
           <p>
@@ -460,7 +460,7 @@
             クローンした時の「grow」ファルダができているのでそこを開くとダウンロードしたカリキュラムの資材がありますのでそのフォルダをワンクリックし選択状態にしたら右下の「フォルダーの選択」を押してください。<br>
           </p><br>
           <div>
-            <img src="../../assets/images/procedure/vscode-win-3.png" alt="手順⑯" class="screen-image">
+            <img src="../../assets/images/procedure/vscode-mac-3.png" alt="手順⑯" class="screen-image">
           </div>
           <br>
           <p>
@@ -468,7 +468,7 @@
             するとそのフォルダの中身がVisual Studio Codeに表示されます。<br>
           </p><br>
           <div>
-            <img src="../../assets/images/procedure/vscode-win-4.png" alt="手順⑰" class="screen-image">
+            <img src="../../assets/images/procedure/vscode-mac-4.png" alt="手順⑰" class="screen-image">
           </div>
           <br>
           <p>
@@ -479,7 +479,7 @@
             今回使うのは「work」と書かれた所にある課題を開きましょう。<br>
           </p><br>
           <div>
-            <img src="../../assets/images/procedure/vscode-win-5.png" alt="手順⑱" class="screen-image">
+            <img src="../../assets/images/procedure/vscode-mac-5.png" alt="手順⑱" class="screen-image">
           </div>
           <br>
           <p>
@@ -488,7 +488,7 @@
             画面のようにに画面にするときは左の2つのファイルをドラッグアンドドロップで引っ張ると分けることができます。<br>
           </p><br>
           <div>
-            <img src="../../assets/images/procedure/vscode-win-6.png" alt="手順⑲" class="screen-image">
+            <img src="../../assets/images/procedure/vscode-mac-5.png" alt="手順⑲" class="screen-image">
           </div>
           <br>
           <p>
@@ -498,7 +498,7 @@
             今記述している事はあくまでも例になるのでbacklogの完成図を見て作りましょう。<br>
           </p><br>
           <div>
-            <img src="../../assets/images/procedure/vscode-win-7.png" alt="手順⑳" class="screen-image">
+            <img src="../../assets/images/procedure/vscode-mac-5.png" alt="手順⑳" class="screen-image">
           </div>
           <br>
           <p>
@@ -515,7 +515,7 @@
             手順⑳の時にはついていたファイル名の隣にある白い丸がなくなれば保存完了です。<br>
           </p><br>
           <div>
-            <img src="../../assets/images/procedure/vscode-win-8.png" alt="手順㉒" class="screen-image">
+            <img src="../../assets/images/procedure/vscode-mac-5.png" alt="手順㉒" class="screen-image">
           </div>
           <br>
           <p>
@@ -524,7 +524,7 @@
             すると以下のような画面になります。<br>
           </p><br>
           <div>
-            <img src="../../assets/images/procedure/SourceTree-win-13.png" alt="手順㉓" class="screen-image">
+            <img src="../../assets/images/procedure/SourceTree-mac-13.png" alt="手順㉓" class="screen-image">
           </div>
           <br>
           <p>
@@ -533,7 +533,7 @@
             すると以下のような画面になります。ファイルをクリックすると画面右部分に差分を見ることができます。<br>
           </p><br>
           <div>
-            <img src="../../assets/images/procedure/SourceTree-win-14.png" alt="手順㉔" class="screen-image">
+            <img src="../../assets/images/procedure/SourceTree-mac-14.png" alt="手順㉔" class="screen-image">
           </div>
           <br>
           <p>
@@ -543,7 +543,7 @@
             入力できたら右下の「コミット」ボタンを押しましょう。<br>
           </p><br>
           <div>
-            <img src="../../assets/images/procedure/SourceTree-win-15.png" alt="手順㉕" class="screen-image">
+            <img src="../../assets/images/procedure/SourceTree-mac-15.png" alt="手順㉕" class="screen-image">
           </div>
           <br>
           <p>
@@ -553,7 +553,7 @@
             入力できたら右下の「コミット」ボタンを押しましょう。<br>
           </p><br>
           <div>
-            <img src="../../assets/images/procedure/SourceTree-win-15.png" alt="手順㉕" class="screen-image">
+            <img src="../../assets/images/procedure/SourceTree-mac-15.png" alt="手順㉕" class="screen-image">
           </div>
           <br>
           <p>
@@ -562,7 +562,7 @@
             すると以下のような表示が出てきます。<br>
           </p><br>
           <div>
-            <img src="../../assets/images/procedure/SourceTree-win-16.png" alt="手順㉖" class="screen-image">
+            <img src="../../assets/images/procedure/SourceTree-mac-16.png" alt="手順㉖" class="screen-image">
           </div>
           <br>
           <p>
@@ -572,7 +572,7 @@
             問題ないことを確認して「プッシュ」を押せばbacklog上にアップロード完了です。<br>
           </p><br>
           <div>
-            <img src="../../assets/images/procedure/SourceTree-win-17.png" alt="手順㉗" class="screen-image">
+            <img src="../../assets/images/procedure/SourceTree-mac-16.png" alt="手順㉗" class="screen-image">
           </div>
           <br>
           <p>
@@ -651,7 +651,7 @@ export default {
       isWindows: true,
       isSmallScreen: false,
       windowsSections: [
-        { id: "Title-w", title: "カリキュラムの進めるための準備をしよう!" },
+        { id: "Title-w", title: "カリキュラムの進めるための準備をしよう!(Windows版)" },
         { id: "subTitle1-w", title: "  1. backlogにて課題を担当者に見てもらえるようにしよう!" },
         { id: "subTitle2-w", title: "  2. カリキュラム資材を自分のPCにダウンロードしよう!" },
         { id: "subTitle3-w", title: "  3. カリキュラムを進めて提出しよう!" },
