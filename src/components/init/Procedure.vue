@@ -5,8 +5,8 @@
     <div class="container">
       <!-- Windows版の説明 -->
       <div class="main-content" v-show="isWindows">
-        <Title title="カリキュラムの進めるための準備をしよう!(Windows版)" id="Title"></Title>
-        <SubTitle subTitle="1. backlogにて課題を担当者に見てもらえるようにしよう!" id="subTitle1"></SubTitle>
+        <Title title="カリキュラムの進めるための準備をしよう!(Windows版)" id="Title-w"></Title>
+        <SubTitle subTitle="1. backlogにて課題を担当者に見てもらえるようにしよう!" id="subTitle1-w"></SubTitle>
         <Document>
           <p>
             Growではbacklogはカリキュラムをダウンロードしたり自分がカリキュラムの課題をアップロードし、それを課題をチェックする担当者とやりとりするツールとして使います。<br>
@@ -43,7 +43,7 @@
           </div>
           <br>
         </Document>
-        <SubTitle subTitle="2. カリキュラム資材を自分のPCにダウンロードしよう!" id="subTitle2"></SubTitle>
+        <SubTitle subTitle="2. カリキュラム資材を自分のPCにダウンロードしよう!" id="subTitle2-w"></SubTitle>
         <Document>
           <p>
             backlog上にあるカリキュラムの資材をダウンロードしよう!<br>
@@ -129,7 +129,7 @@
           </div>
           <br>
         </Document>
-        <SubTitle subTitle="3. カリキュラムを進めて提出しよう!" id="subTitle3"></SubTitle>
+        <SubTitle subTitle="3. カリキュラムを進めて提出しよう!" id="subTitle3-w"></SubTitle>
         <Document>
           <p>
             ⑭<br>
@@ -262,7 +262,8 @@
           <br>
           <p>
             ㉗<br>
-            自分が作ったブランチのみにチェックを入れましょう。<span class="markup-word-red">絶対にmasterの方にチェックを入れないようにしましょう!</span><br>
+            自分が作ったブランチのみにチェックを入れましょう。<br>
+            <HighlightWord word="絶対にmasterの方にチェックを入れないようにしましょう!"></HighlightWord><br>
             問題ないことを確認して「プッシュ」を押せばbacklog上にアップロード完了です。<br>
           </p><br>
           <div>
@@ -309,8 +310,8 @@
       </div>
       <!-- Mac版の説明 -->
       <div class="main-content" v-show="!isWindows">
-        <Title title="カリキュラムの進めるための準備をしよう!(Mac版)" id="Title"></Title>
-        <SubTitle subTitle="1. backlogにて課題を担当者に見てもらえるようにしよう!" id="subTitle1"></SubTitle>
+        <Title title="カリキュラムの進めるための準備をしよう!(Mac版)" id="Title-m"></Title>
+        <SubTitle subTitle="1. backlogにて課題を担当者に見てもらえるようにしよう!" id="subTitle1-m"></SubTitle>
         <Document>
           <p>
             Growではbacklogはカリキュラムをダウンロードしたり自分がカリキュラムの課題をアップロードし、それを課題をチェックする担当者とやりとりするツールとして使います。<br>
@@ -347,7 +348,7 @@
           </div>
           <br>
         </Document>
-        <SubTitle subTitle="2. カリキュラム資材を自分のPCにダウンロードしよう!" id="subTitle2"></SubTitle>
+        <SubTitle subTitle="2. カリキュラム資材を自分のPCにダウンロードしよう!" id="subTitle2-m"></SubTitle>
         <Document>
           <p>
             backlog上にあるカリキュラムの資材をダウンロードしよう!<br>
@@ -433,7 +434,7 @@
           </div>
           <br>
         </Document>
-        <SubTitle subTitle="3. カリキュラムを進めて提出しよう!" id="subTitle3"></SubTitle>
+        <SubTitle subTitle="3. カリキュラムを進めて提出しよう!" id="subTitle3-m"></SubTitle>
         <Document>
           <p>
             ⑭<br>
@@ -566,7 +567,8 @@
           <br>
           <p>
             ㉗<br>
-            自分が作ったブランチのみにチェックを入れましょう。<span class="markup-word-red">絶対にmasterの方にチェックを入れないようにしましょう!</span><br>
+            自分が作ったブランチのみにチェックを入れましょう。<br>
+            <HighlightWord word="絶対にmasterの方にチェックを入れないようにしましょう!"></HighlightWord><br>
             問題ないことを確認して「プッシュ」を押せばbacklog上にアップロード完了です。<br>
           </p><br>
           <div>
@@ -611,8 +613,13 @@
         </Document>
 
       </div>
-      <div class="side-content">
-        <TableOfContents :sections="sections" />
+      <!-- Windows版の目次 -->
+      <div class="side-content" v-show="isWindows && !isSmallScreen">
+        <TableOfContents :sections="windowsSections" />
+      </div>
+      <!-- Mac版の目次 -->
+      <div class="side-content" v-show="!isWindows && !isSmallScreen">
+        <TableOfContents :sections="macSections" />
       </div>
     </div>
     <Footer />
@@ -624,6 +631,7 @@ import Header from "@/components/layout/Header.vue";
 import Footer from "@/components/layout/Footer.vue";
 import Title from "@/components/Title.vue";
 import SubTitle from "@/components/SubTitle.vue";
+import HighlightWord from "@/components/HighlightWord.vue";
 import Document from "@/components/Document.vue";
 import TableOfContents from "@/components/TableOfContents.vue";
 
@@ -634,21 +642,39 @@ export default {
     Footer,
     Title,
     SubTitle,
+    HighlightWord,
     Document,
     TableOfContents,
   },
   data() {
     return {
       isWindows: true,
-      sections: [
-        { id: "Title", title: "カリキュラムの進めるための準備をしよう!" },
-        { id: "subTitle1", title: "  1. backlogにて課題を担当者に見てもらえるようにしよう!" },
-        { id: "subTitle2", title: "  2. カリキュラム資材を自分のPCにダウンロードしよう!" },
-        { id: "subTitle3", title: "  3. カリキュラムを進めて提出しよう!" },
+      isSmallScreen: false,
+      windowsSections: [
+        { id: "Title-w", title: "カリキュラムの進めるための準備をしよう!" },
+        { id: "subTitle1-w", title: "  1. backlogにて課題を担当者に見てもらえるようにしよう!" },
+        { id: "subTitle2-w", title: "  2. カリキュラム資材を自分のPCにダウンロードしよう!" },
+        { id: "subTitle3-w", title: "  3. カリキュラムを進めて提出しよう!" },
+      ],
+      macSections: [
+        { id: "Title-m", title: "カリキュラムの進めるための準備をしよう!(Mac版)" },
+        { id: "subTitle1-m", title: "  1. backlogにて課題を担当者に見てもらえるようにしよう!" },
+        { id: "subTitle1-m", title: "  2. カリキュラム資材を自分のPCにダウンロードしよう!" },
+        { id: "subTitle1-m", title: "  3. カリキュラムを進めて提出しよう" },
       ],
     };
   },
+  mounted() {
+    window.addEventListener('resize', this.handleResize);
+    this.handleResize();
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.handleResize);
+  },
   methods: {
+    handleResize() {
+      this.isSmallScreen = window.innerWidth <= 648;
+    },
     buttonFocus() {
       // ボタンにフォーカスが当たったときにフローティング状態に設定
       this.isFloating = true;
@@ -735,4 +761,21 @@ export default {
   font-weight: bold;
 }
 
+/* タブレット版 */
+@media (max-width: 834px) {
+  .main-content{
+    width: 100%;
+  }
+  .side-content {
+    display: none;
+  }
+}
+
+/* スマホ版 */
+@media (max-width: 648px) {
+  .btn_04 {
+    width: 70%;
+    font-size: small;
+  }
+}
 </style>

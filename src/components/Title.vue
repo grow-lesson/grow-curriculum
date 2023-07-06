@@ -1,6 +1,6 @@
 <template>
-  <div class="fancy-title">
-    <h1>{{ title }}</h1>
+  <div class="main-title">
+    <h1 class="main-title-word">{{ title }}</h1>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style scoped>
-.fancy-title {
+.main-title {
   background-color: #5ebff0;
   color: #fff;
   padding: 10px;
@@ -26,5 +26,15 @@ export default {
   text-align: center;
   width: 80%;
   margin: 30px auto 0;
+}
+
+@media (max-width: 648px) {
+  .main-title{
+    width: 90%;
+  }
+
+  .main-title-word {
+    font-size: 12px;
+  }
 }
 </style>

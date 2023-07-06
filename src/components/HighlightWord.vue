@@ -1,6 +1,6 @@
 <template>
-  <div class="word-wrapper">
-    <span class="highlighted-word">{{ word }}</span>
+  <div class="highlighted">
+    <p class="highlighted-word">{{ word }}</p>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style scoped>
-.word-wrapper {
+.highlighted {
   display: inline-block;
   padding: 5px;
 }
@@ -25,5 +25,11 @@ export default {
   font-size: large;
   font-weight: bold;
   margin: 0 auto;
+}
+
+@media (max-width: 648px) {
+  .highlighted-word {
+    font-size: small;
+  }
 }
 </style>

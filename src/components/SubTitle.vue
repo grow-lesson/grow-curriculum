@@ -1,6 +1,6 @@
 <template>
   <div class="sub-title">
-    <h2 class="title_word">{{ subTitle }}</h2>
+    <h2 class="sub-title-word">{{ subTitle }}</h2>
   </div>
 </template>
 
@@ -26,7 +26,17 @@ export default {
   margin: 10px auto;
   width: 70%;
 }
-.title_word {
+.sub-title-word {
   text-align: center;
+}
+
+@media (max-width: 648px) {
+  .sub-title{
+    width: 80%;
+  }
+
+  .sub-title-word {
+    font-size: 10px;
+  }
 }
 </style>

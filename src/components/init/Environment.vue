@@ -293,10 +293,10 @@
           <br>
         </Document>
       </div>
-      <div class="side-content" v-show="isWindows">
+      <div class="side-content" v-show="isWindows && !isSmallScreen">
         <TableOfContents :sections="windowsSections" />
       </div>
-      <div class="side-content" v-show="!isWindows">
+      <div class="side-content" v-show="!isWindows && !isSmallScreen">
         <TableOfContents :sections="macSections" />
       </div>
     </div>
@@ -332,6 +332,7 @@ export default {
   data() {
     return {
       isWindows: true,
+      isSmallScreen: false,
       environmentData: environmentData,
       windowsSections: [
         { id: "Title-w", title: "インストールや環境構築をしよう！(Windows版)" },
@@ -351,7 +352,17 @@ export default {
       ],
     };
   },
+  mounted() {
+    window.addEventListener('resize', this.handleResize);
+    this.handleResize();
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.handleResize);
+  }, 
   methods: {
+    handleResize() {
+      this.isSmallScreen = window.innerWidth <= 648;
+    },
     buttonFocus() {
       // ボタンにフォーカスが当たったときにフローティング状態に設定
       this.isFloating = true;
@@ -472,5 +483,23 @@ export default {
 .screen-image{
   max-width: 100%;
   height: auto;
+}
+
+/* タブレット版 */
+@media (max-width: 834px) {
+  .main-content{
+    width: 100%;
+  }
+  .side-content {
+    display: none;
+  }
+}
+
+/* スマホ版 */
+@media (max-width: 648px) {
+  .btn_04 {
+    width: 70%;
+    font-size: small;
+  }
 }
 </style>

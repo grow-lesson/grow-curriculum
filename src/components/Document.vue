@@ -20,4 +20,13 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+@media (max-width: 648px) {
+  .fancy-document {
+    padding: 20px;
+    margin: 0 10px 20px;
+  }
+  .content {
+    font-size: small;
+  }
+}
 </style>

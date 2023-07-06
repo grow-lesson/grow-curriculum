@@ -1,6 +1,6 @@
 <template>
   <div class="section-title">
-    <h2 class="title_word">{{ sectionTitle }}</h2>
+    <h2 class="section-title-word">{{ sectionTitle }}</h2>
   </div>
 </template>
 
@@ -17,7 +17,7 @@ export default {
 
 <style scoped>
 .section-title {
-  background-color: #4ed6ff;
+  background-color: #ffd96f;
   color: #fff;
   padding: 8px;
   font-size: 15px;
@@ -26,7 +26,17 @@ export default {
   margin: 10px auto;
   width: 60%;
 }
-.title_word {
+.section-title-word {
   text-align: center;
+}
+
+@media (max-width: 648px) {
+  .section-title{
+    width: 70%;
+  }
+
+  .section-title-word {
+    font-size: 10px;
+  }
 }
 </style>
