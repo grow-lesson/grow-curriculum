@@ -17,7 +17,7 @@ export default {
 
 <style scoped>
 .section-title {
-  background-color: #ffd96f;
+  background-color: #34dc47;
   color: #fff;
   padding: 8px;
   font-size: 15px;
