@@ -4,7 +4,7 @@
     <header :class="{'header': true, 'is-mobile': isMobile}">
       <div class="logo-nav">
         <!-- ロゴ -->
-        <a class="logo" href="/menu">Grow 学習サイト</a>
+        <a class="logo" href="/menu">GROW 学習サイト</a>
         <!-- ナビゲーションメニュー -->
         <nav class="navigation" :class="{ 'show-menu': showMenu }">
           <ul class="navigation__list">

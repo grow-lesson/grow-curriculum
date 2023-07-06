@@ -127,6 +127,7 @@ export default {
   list-style-type: decimal;
   height: 50px;
   margin-top: 30px;
+  cursor: pointer;
 }
 .flow-link {
   color: #666;
@@ -187,14 +188,12 @@ export default {
 @media (max-width: 648px) {
   /* Hero */
   .hero {
-    background-color: #f9f9f9;
-    padding: 30px;
-    text-align: center;
+    padding: 10px;
   }
 
   .hero-title {
     font-size: 24px;
-    margin-bottom: 20px;
+    margin: auto;
   }
 
   /* flow */
@@ -226,11 +225,12 @@ export default {
     height: auto;
     margin-top: 10px;
     padding: 5px;
+    font-size: small;
   }
 
   .flow-link {
     color: #666;
-    font-size: 16px;
+    font-size: small;
     text-decoration: none;
     border-bottom: 2px solid #5492f5;
   }
