@@ -1,23 +1,21 @@
-上記のコードを比較すると、2つの違いがあります。
-
 vue.config.js の設定:
-javascript
-Copy code
+
 module.exports = {
   publicPath: "/grow-curriculum/",
   outputDir: "docs",
   assetsDir: "",
 };
-これにより、ビルドされたファイルが /grow-curriculum/ のパスの下に配置されます。
+これにより、ビルドされたファイルが /grow-curriculum/ のパスの下に配置される。
 
 createWebHistory の引数:
-javascript
-Copy code
+
 history: createWebHistory("/grow-curriculum/"),
-これにより、Vue Router はルーティングの基準パスとして /grow-curriculum/ を使用します。
+これにより、Vue Router はルーティングの基準パスとして /grow-curriculum/ を使用。
 
-この2つの設定が一致していることにより、GitHub Pages 上で正しく表示されるようになりました。
+この2つの設定が一致していることにより、GitHub Pages 上で正しく表示されるようになる。
 
-注意点として、GitHub Pages で表示する場合、リポジトリ名とプロジェクトのディレクトリ名が一致している必要があります。つまり、GitHub リポジトリの名前を grow-curriculum に設定し、かつ、outputDir を "docs" に指定しているため、ビルドされたファイルは https://<GitHubユーザー名>.github.io/grow-curriculum/ のパスでアクセス可能になります。
+注意点として、GitHub Pages で表示する場合、リポジトリ名とプロジェクトのディレクトリ名が一致している必要がある。
+つまり、GitHub リポジトリの名前を grow-curriculum に設定し、かつ、outputDir を "docs" に指定しているため、
+ビルドされたファイルは https://<GitHubユーザー名>.github.io/grow-curriculum/ のパスでアクセス可能になる。
 
-上記の設定によって、Vue Router のルーティングとファイルの配置パスが一致しているため、GitHub Pages 上で正しく表示されるようになりました。
+上記の設定によって、Vue Router のルーティングとファイルの配置パスが一致しているため、GitHub Pages 上で正しく表示されるようになる。
