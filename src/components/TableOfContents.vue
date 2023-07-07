@@ -22,9 +22,7 @@ export default {
   },
   methods: {
     scrollToSection(sectionId) {
-      console.log(sectionId);
       const sectionElement = document.getElementById(sectionId);
-      console.log(sectionElement);
       if (sectionElement) {
         sectionElement.scrollIntoView({ behavior: "smooth" });
       }
@@ -36,8 +34,8 @@ export default {
 <style scoped>
 .sidebar {
   position: fixed;
-
   grid-column: 2 / span 1;
+  padding-right: 40px;
 }
 
 .menu {
