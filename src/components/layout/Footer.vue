@@ -1,7 +1,7 @@
 <template>
   <div>
     <footer class="footer">
-      <p>&copy; 2023 Grow 学習サイト. All rights reserved.</p>
+      <p class="footer-text">&copy; 2023 GROW 学習サイト. All rights reserved.</p>
     </footer>
   </div>
 </template>
@@ -21,7 +21,14 @@ export default {
   text-align: center;
 }
 
-.footer p {
+.footer-text {
   color: #fff;
+}
+
+/* スマホ版 */
+@media (max-width: 648px) {
+  .footer-text {
+    font-size: small;
+  }
 }
 </style>
