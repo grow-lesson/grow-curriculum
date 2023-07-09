@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <button class="btn_04" @click="toggleOS" @focus="buttonFocus" @blur="buttonBlur">{{ isWindows ? 'Macをお持ちの方はこちら' : 'Windowsをお持ちの方はこちら' }}</button>
+    <button class="btn_04" @click="toggleOS" @focus="buttonFocus" @blur="buttonBlur">{{ isWindows ? "Macをお持ちの方はこちら" : "Windowsをお持ちの方はこちら" }}</button>
     <div class="container">
       <!-- Windows版の説明 -->
       <div class="main-content" v-show="isWindows">
@@ -35,13 +35,14 @@
           <p>
             ①<br>
             Visual Studio Codeをインストールしたら早速開いてみましょう!<br>
-            開いたら画像の赤丸部分をクリックしましょう。<br>
+            開いたら画像の左側の赤丸部分をクリックしましょう。<br>
             その開いた部分はVisual Studio Codeの拡張機能と呼ばれ、VS Codeというコンピューターのプログラムをもっと便利にするための追加機能です。<br>
             クリックしたら以下の表にある名前を検索窓で検索しインストールしましょう!
           </p>
           <div>
-            <img src="../../assets/images/enviroment/vscode-win-1.png" alt="手順①" class="screen-image">
-          </div><br>
+            <img src="../../assets/images/environment/vscode-win-1.png" alt="手順①" class="screen-image" />
+          </div>
+          <br>
           <table class="table">
             <thead>
               <tr class="table-header">
@@ -71,28 +72,35 @@
                 <td class="table-cell">VS Codeのメニューの日本語化ツールです。</td>
               </tr>
             </tbody>
-          </table><br>
+          </table>
+          <br>
           <p>
             ②<br>
             次にユーザー設定変更をしましょう!<br>
             ユーザー設定は、エディタの動作や外観、拡張機能の設定などをカスタマイズするための機能です。<br>
             画面上部のメニューバーから「ファイル」をクリックし、「基本設定」→「設定」を選択します。または、キーボードで「Ctrl」を押しながら「,」を押しましょう。
-          </p><br>
+          </p>
+          <br>
           <div>
-            <img src="../../assets/images/enviroment/vscode-win-2.png" alt="手順②" class="screen-image">
-          </div><br>
+            <img src="../../assets/images/environment/vscode-win-2.png" alt="手順②" class="screen-image" />
+          </div>
+          <br>
           ③<br>
           <p>ショートカットキーを押した後は画像部分をクリックしましょう。</p>
           <div>
-            <img src="../../assets/images/enviroment/vscode-win-mac-1.png" alt="手順③" class="screen-image">
-          </div><br>
+            <img src="../../assets/images/environment/vscode-win-mac-1.png" alt="手順③" class="screen-image" />
+          </div>
+          <br>
           ④<br>
-          <p>以下の記述をsetting.jsonに加えてください。</p><br>
+          <p>以下の記述をsetting.jsonに加えてください。</p>
+          <br>
           <Terminal :fileName="environmentData.file1.filename" :copiedText="environmentData.file1.code" :lang="environmentData.file1.language" /><br>
-          <p>このようになればOKです。</p><br>
+          <p>このようになればOKです。</p>
+          <br>
           <div>
-            <img src="../../assets/images/enviroment/vscode-win-mac-2.png" alt="手順④" class="screen-image">
-          </div><br>
+            <img src="../../assets/images/environment/vscode-win-mac-2.png" alt="手順④" class="screen-image" />
+          </div>
+          <br>
           <Terminal :fileName="environmentData.file1.filename" :copiedText="environmentData.file1.code" :lang="environmentData.file1.language" />
         </Document>
         <SectionTitle sectionTitle="1-4. Sourcetreeの拡張機能をインストールしよう!" id="sectionTitle4-w"></SectionTitle>
@@ -104,54 +112,58 @@
             また、プログラムのバージョン管理システムであるGitを使いやすくするためのツールです。<br>
             Gitはプログラムの変更履歴を管理したり、複数の人が同じプログラムを一緒に作業する際の協力を支援したりするためのシステムです。<br>
             Gitに関しての詳しい説明は講座を通して学べるので今は課題をbacklog上にアップロードするためのツールとして考えておきましょう。
-          </p><br>
+          </p>
+          <br>
           <div class="download">
             <a class="download-link" href="https://www.sourcetreeapp.com/">Source treeをダウンロードする</a>
           </div>
           <br>
-          <p>
-            Source treeの初期設定をしよう!<br>
-          </p>
+          <p>Source treeの初期設定をしよう!<br></p>
           <br>
           <p>
             ①<br>
             インストールしたSourceを開きましょう。<br>
             ここBitbucketアカウントとの紐づけを行いますがカリキュラムでは不要なのでスキップし「次へ」を押して下さい。<br>
-          </p><br>
+          </p>
+          <br>
           <div>
-            <img src="../../assets/images/enviroment/SourceTree-win-1.png" alt="手順①" class="screen-image">
+            <img src="../../assets/images/environment/SourceTree-win-1.png" alt="手順①" class="screen-image" />
           </div>
           <br>
           <p>
             ②<br>
             ツールのインストール画面が表示されます。ツールは特に使用しないので「Mercurial」のチェックを外しても問題ないです。必要であればチェックは残して「次へ」を押して下さい。<br>
-          </p><br>
+          </p>
+          <br>
           <div>
-            <img src="../../assets/images/enviroment/SourceTree-win-2.png" alt="手順②" class="screen-image">
+            <img src="../../assets/images/environment/SourceTree-win-2.png" alt="手順②" class="screen-image" />
           </div>
           <br>
           <p>
             ③<br>
             ツール（Mercurial）のインストールを選択した場合は上のような画面が表示されるので、「次へ」をクリックして進みます。<br>
-          </p><br>
+          </p>
+          <br>
           <div>
-            <img src="../../assets/images/enviroment/SourceTree-win-3.png" alt="手順③" class="screen-image">
+            <img src="../../assets/images/environment/SourceTree-win-3.png" alt="手順③" class="screen-image" />
           </div>
           <br>
           <p>
             ④<br>
             環境設定画面が表示されたら、任意のユーザー名とメールアドレスを入力し、「次へ」をクリックして進みます。
-          </p><br>
+          </p>
+          <br>
           <div>
-            <img src="../../assets/images/enviroment/SourceTree-win-4.png" alt="手順④" class="screen-image">
+            <img src="../../assets/images/environment/SourceTree-win-4.png" alt="手順④" class="screen-image" />
           </div>
           <br>
           <p>
             ⑤<br>
             SSHキーを読み込むかどうかのポップアップが表示されます。「いいえ」を押してスキップします。<br>
-          </p><br>
+          </p>
+          <br>
           <div>
-            <img src="../../assets/images/enviroment/SourceTree-win-5.png" alt="手順⑤" class="screen-image">
+            <img src="../../assets/images/environment/SourceTree-win-5.png" alt="手順⑤" class="screen-image" />
           </div>
           <br>
         </Document>
@@ -193,8 +205,9 @@
             クリックしたら以下の表にある名前を検索窓で検索しインストールしましょう!
           </p>
           <div>
-            <img src="../../assets/images/enviroment/vscode-mac-1.png" alt="手順①" class="screen-image">
-          </div><br>
+            <img src="../../assets/images/environment/vscode-mac-1.png" alt="手順①" class="screen-image" />
+          </div>
+          <br>
           <table class="table">
             <thead>
               <tr class="table-header">
@@ -224,29 +237,35 @@
                 <td class="table-cell">VS Codeのメニューの日本語化ツールです。</td>
               </tr>
             </tbody>
-          </table><br>
+          </table>
+          <br>
           ②<br>
           <p>
             次にユーザー設定変更をしましょう!<br>
             ユーザー設定は、エディタの動作や外観、拡張機能の設定などをカスタマイズするための機能です。<br>
-            画面上部のメニューバーから「ファイル」をクリックし、「基本設定」→「設定」を選択します。または、キーボードで「Command」を押しながら「,」を押しましょう。
-            すると設定画面が開きます。
-          </p><br>
+            画面上部のメニューバーから「ファイル」をクリックし、「基本設定」→「設定」を選択します。または、キーボードで「Command」を押しながら「,」を押しましょう。 すると設定画面が開きます。
+          </p>
+          <br>
           <div>
-            <img src="../../assets/images/enviroment/vscode-mac-2.png" alt="手順②" class="screen-image">
-          </div><br>
+            <img src="../../assets/images/environment/vscode-mac-2.png" alt="手順②" class="screen-image" />
+          </div>
+          <br>
           ③<br>
           <p>ショートカットキーを押した後は画像部分をクリックしましょう。</p>
           <div>
-            <img src="../../assets/images/enviroment/vscode-win-mac-1.png" alt="手順③" class="screen-image">
-          </div><br>
+            <img src="../../assets/images/environment/vscode-win-mac-1.png" alt="手順③" class="screen-image" />
+          </div>
+          <br>
           ④<br>
-          <p>以下の記述をsetting.jsonに加えてください。</p><br>
+          <p>以下の記述をsetting.jsonに加えてください。</p>
+          <br>
           <Terminal :fileName="environmentData.file1.filename" :copiedText="environmentData.file1.code" :lang="environmentData.file1.language" /><br>
-          <p>このようになればOKです。</p><br>
+          <p>このようになればOKです。</p>
+          <br>
           <div>
-            <img src="../../assets/images/enviroment/vscode-win-mac-2.png" alt="手順④" class="screen-image">
-          </div><br>
+            <img src="../../assets/images/environment/vscode-win-mac-2.png" alt="手順④" class="screen-image" />
+          </div>
+          <br>
         </Document>
         <SectionTitle sectionTitle="1-4. Sourcetreeの拡張機能をインストールしよう!" id="sectionTitle4-m"></SectionTitle>
         <Document>
@@ -257,38 +276,40 @@
             また、プログラムのバージョン管理システムであるGitを使いやすくするためのツールです。<br>
             Gitはプログラムの変更履歴を管理したり、複数の人が同じプログラムを一緒に作業する際の協力を支援したりするためのシステムです。<br>
             Gitに関しての詳しい説明は講座を通して学べるので今は課題をbacklog上にアップロードするためのツールとして考えておきましょう。
-          </p><br>
+          </p>
+          <br>
           <div class="download">
             <a class="download-link" href="https://www.sourcetreeapp.com/">Source treeをダウンロードする</a>
           </div>
           <br>
-          <p>
-            Source treeの初期設定をしよう!<br>
-          </p>
+          <p>Source treeの初期設定をしよう!<br></p>
           <br>
           <p>
             ①<br>
             インストールしたSourceを開きましょう。<br>
             ここBitbucketアカウントとの紐づけを行いますがカリキュラムでは不要なのでスキップし「続行」をクリックして進みます。<br>
-          </p><br>
+          </p>
+          <br>
           <div>
-            <img src="../../assets/images/enviroment/SourceTree-mac-1.png" alt="手順①" class="screen-image">
+            <img src="../../assets/images/environment/SourceTree-mac-1.png" alt="手順①" class="screen-image" />
           </div>
           <br>
           <p>
             ②<br>
             任意のユーザー名とメールアドレスを入力し、「完了」をクリックして進みます。
-          </p><br>
+          </p>
+          <br>
           <div>
-            <img src="../../assets/images/enviroment/SourceTree-mac-2.png" alt="手順②" class="screen-image">
+            <img src="../../assets/images/environment/SourceTree-mac-2.png" alt="手順②" class="screen-image" />
           </div>
           <br>
           <p>
             ③<br>
             この画面が出れば完了です。<br>
-          </p><br>
+          </p>
+          <br>
           <div>
-            <img src="../../assets/images/enviroment/SourceTree-mac-3.png" alt="手順③" class="screen-image">
+            <img src="../../assets/images/environment/SourceTree-mac-3.png" alt="手順③" class="screen-image" />
           </div>
           <br>
         </Document>
@@ -353,12 +374,12 @@ export default {
     };
   },
   mounted() {
-    window.addEventListener('resize', this.handleResize);
+    window.addEventListener("resize", this.handleResize);
     this.handleResize();
   },
   beforeUnmount() {
-    window.removeEventListener('resize', this.handleResize);
-  }, 
+    window.removeEventListener("resize", this.handleResize);
+  },
   methods: {
     handleResize() {
       this.isSmallScreen = window.innerWidth <= 648;
@@ -374,7 +395,7 @@ export default {
     toggleOS() {
       this.isWindows = !this.isWindows;
     },
-  }
+  },
 };
 </script>
 
@@ -405,7 +426,7 @@ export default {
 }
 
 .btn_04:before {
-  content: '';
+  content: "";
   width: 8px;
   height: 8px;
   border: 0;
@@ -428,11 +449,11 @@ export default {
   border-right: 2px solid #228bc8;
 }
 
-.main-content{
+.main-content {
   width: 75%;
 }
 
-.side-content{
+.side-content {
   margin-left: 1%;
   margin-top: 20px;
   width: 24%;
@@ -455,13 +476,13 @@ export default {
   margin-left: 50px;
 }
 
-.download{
+.download {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.download-link{
+.download-link {
   color: rgb(72, 0, 255);
 }
 
@@ -480,14 +501,14 @@ export default {
   padding: 10px;
 }
 
-.screen-image{
+.screen-image {
   max-width: 100%;
   height: auto;
 }
 
 /* タブレット版 */
 @media (max-width: 834px) {
-  .main-content{
+  .main-content {
     width: 100%;
   }
   .side-content {
