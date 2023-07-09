@@ -4,56 +4,45 @@
     <header class="header">
       <div class="header-wrapper">
         <div class="logo" v-show="isMobile">
-          <img src="../../assets/logo.png" alt="GROWロゴ" class="logo-image">
+          <a @click="goToMenuPage"><img src="../../assets/logo.png" alt="GROWロゴ" class="logo-image" /></a>
         </div>
-        <p class="header-title" v-show="!isMobile">GROW 学習サイト</p>
+        <p class="header-title" v-show="!isMobile"><a @click="goToMenuPage">GROW 学習サイト</a></p>
         <!-- ナビゲーションメニュー -->
-        <div class="gnavi__wrap" v-show="!isMobile">
-            <ul class="gnavi__lists">
-                <li class="gnavi__list">
-                  <a href="#">サイトについて</a>
-                  <ul class="dropdown__lists">
-                    <li class="dropdown__list"><a href="#" class="dropdown__link">ご挨拶</a></li>
-                    <li class="dropdown__list"><a href="#" class="dropdown__link">サイトで学べる事</a></li>
-                    <li class="dropdown__list"><a href="#" class="dropdown__link">サイトの利用方法</a></li>
-                  </ul>
-                </li>
-                <li class="gnavi__list">
-                  <a href="#">準備と提出</a>
-                  <ul class="dropdown__lists">
-                    <li class="dropdown__list"><a href="#" class="dropdown__link">PCの初期設定</a></li>
-                    <li class="dropdown__list"><a href="#" class="dropdown__link">環境構築やインストール</a></li>
-                    <li class="dropdown__list"><a href="#" class="dropdown__link">カリキュラムの始め方</a></li>
-                  </ul>
-                </li>
-                <li class="gnavi__list">
-                  <a href="#">コース一覧</a>
-                  <ul class="dropdown__lists">
-                    <li class="dropdown__list"><a href="#" class="dropdown__link">コマンドライン</a></li>
-                    <li class="dropdown__list"><a href="#" class="dropdown__link">HTML・CSS</a></li>
-                    <li class="dropdown__list"><a href="#" class="dropdown__link">Git</a></li>
-                    <li class="dropdown__list"><a href="#" class="dropdown__link">Javascript</a></li>
-                    <li class="dropdown__list"><a href="#" class="dropdown__link">情報工学</a></li>
-                  </ul>
-                </li>
-                <li class="gnavi__list">
-                  <a href="#">マイページ</a>
-                  <ul class="dropdown__lists">
-                    <li class="dropdown__list"><a href="#" class="dropdown__link">プロフィール</a></li>
-                    <li class="dropdown__list"><a href="#" class="dropdown__link">進捗管理</a></li>
-                    <li class="dropdown__list"><a href="#" class="dropdown__link">給与の確認</a></li>
-                    <li class="dropdown__list"><a href="#" class="dropdown__link">勤怠表を提出する</a></li>
-                  </ul>
-                </li>
-                <li class="gnavi__list">
-                  <a href="#">その他</a>
-                  <ul class="dropdown__lists">
-                    <li class="dropdown__list"><a href="#" class="dropdown__link">お問い合わせ</a></li>
-                    <li class="dropdown__list"><a href="#" class="dropdown__link">会社のホームページを見る</a></li>
-                    <li class="dropdown__list"><a href="#" class="dropdown__link">Wantedllyを見る</a></li>
-                  </ul>
-                </li>
-            </ul>
+        <div class="navigation-wrap" v-show="!isMobile">
+          <ul class="navigation-list">
+            <li class="navigation-item">
+              <button class="navigation-btn" @click="goToIntroducePage">サイトについて</button>
+            </li>
+
+            <li class="navigation-item">
+              <button class="navigation-btn">準備と提出</button>
+              <ul class="dropdown-list">
+                <li class="dropdown-item"><a href="#" class="dropdown-link">PCの初期設定</a></li>
+                <li class="dropdown-item"><a @click="goToEnvironmentPage" class="dropdown-link">環境構築やインストール</a></li>
+                <li class="dropdown-item"><a @click="goToProcedurePage" class="dropdown-link">カリキュラムの始め方</a></li>
+              </ul>
+            </li>
+            <li class="navigation-item">
+              <button class="navigation-btn" @click="goToCourseMenuPage">コース一覧</button>
+            </li>
+            <li class="navigation-item">
+              <button class="navigation-btn">マイページ</button>
+              <ul class="dropdown-list">
+                <li class="dropdown-item"><a href="#" class="dropdown-link">プロフィール</a></li>
+                <li class="dropdown-item"><a href="#" class="dropdown-link">進捗管理</a></li>
+                <li class="dropdown-item"><a href="#" class="dropdown-link">給与の確認</a></li>
+                <li class="dropdown-item"><a href="#" class="dropdown-link">勤怠表を提出する</a></li>
+              </ul>
+            </li>
+            <li class="navigation-item">
+              <button class="navigation-btn">その他</button>
+              <ul class="dropdown-list">
+                <li class="dropdown-item"><a @click="goToContactPage" class="dropdown-link">お問い合わせ</a></li>
+                <li class="dropdown-item"><a href="https://grow-infotech.com" class="dropdown-link">会社のホームページを見る</a></li>
+                <li class="dropdown-item"><a href="https://www.wantedly.com/companies/company_7305723" class="dropdown-link">Wantedllyを見る</a></li>
+              </ul>
+            </li>
+          </ul>
         </div>
         <!-- ハンバーガーメニューボタン -->
         <button class="hamburger-button" v-show="isMobile" @click="toggleMenu">
@@ -71,48 +60,36 @@
         <span class="close-button__line"></span>
       </button>
       <!-- メニューアイテム -->
-      <ul class="menu__list">
-        <li class="menu__item">
-          <a href="/menu">サイトについて</a>
-          <ul class="dropdown__lists is-menu">
-            <li class="dropdown__list"><a href="#" class="dropdown__link">ご挨拶</a></li>
-            <li class="dropdown__list"><a href="#" class="dropdown__link">サイトで学べる事</a></li>
-            <li class="dropdown__list"><a href="#" class="dropdown__link">サイトの利用方法</a></li>
+      <ul class="menu-list">
+        <li class="menu-item">
+          <button @click="goToIntroducePage">サイトについて</button>
+        </li>
+        <li class="menu-item">
+          <button>準備と提出</button>
+          <ul class="dropdown-list">
+            <li class="dropdown-item"><a href="#" class="dropdown-link">PCの初期設定</a></li>
+            <li class="dropdown-item"><a @click="goToEnvironmentPage" class="dropdown-link">環境構築やインストール</a></li>
+            <li class="dropdown-item"><a @click="goToProcedurePage" class="dropdown-link">カリキュラムの始め方</a></li>
           </ul>
         </li>
-        <li class="menu__item">
-          <a href="/menu">準備と提出</a>
-          <ul class="dropdown__lists is-menu">
-            <li class="dropdown__list"><a href="#" class="dropdown__link">PCの初期設定</a></li>
-            <li class="dropdown__list"><a href="#" class="dropdown__link">環境構築やインストール</a></li>
-            <li class="dropdown__list"><a href="#" class="dropdown__link">カリキュラムの始め方</a></li>
+        <li class="menu-item">
+          <button @click="goToCourseMenuPage">コース一覧</button>
+        </li>
+        <li class="menu-item">
+          <button>マイページ</button>
+          <ul class="dropdown-list">
+            <li class="dropdown-item"><a href="#" class="dropdown-link">プロフィール</a></li>
+            <li class="dropdown-item"><a href="#" class="dropdown-link">進捗管理</a></li>
+            <li class="dropdown-item"><a href="#" class="dropdown-link">給与の確認</a></li>
+            <li class="dropdown-item"><a href="#" class="dropdown-link">勤怠表を提出する</a></li>
           </ul>
         </li>
-        <li class="menu__item">
-          <a href="/menu">コース一覧</a>
-          <ul class="dropdown__lists is-menu">
-            <li class="dropdown__list"><a href="#" class="dropdown__link">コマンドライン</a></li>
-            <li class="dropdown__list"><a href="#" class="dropdown__link">HTML・CSS</a></li>
-            <li class="dropdown__list"><a href="#" class="dropdown__link">Git</a></li>
-            <li class="dropdown__list"><a href="#" class="dropdown__link">Javascript</a></li>
-            <li class="dropdown__list"><a href="#" class="dropdown__link">情報工学</a></li>
-          </ul>        
-        </li>
-        <li class="menu__item">
-          <a href="/menu">マイページ</a>
-          <ul class="dropdown__lists is-menu">
-            <li class="dropdown__list"><a href="#" class="dropdown__link">プロフィール</a></li>
-            <li class="dropdown__list"><a href="#" class="dropdown__link">進捗管理</a></li>
-            <li class="dropdown__list"><a href="#" class="dropdown__link">給与の確認</a></li>
-            <li class="dropdown__list"><a href="#" class="dropdown__link">勤怠表を提出する</a></li>
-          </ul>
-        </li>
-        <li class="menu__item">
-          <a href="/menu">その他</a>
-          <ul class="dropdown__lists is-menu">
-            <li class="dropdown__list"><a href="#" class="dropdown__link">お問い合わせ</a></li>
-            <li class="dropdown__list"><a href="#" class="dropdown__link">会社のホームページを見る</a></li>
-            <li class="dropdown__list"><a href="#" class="dropdown__link">Wantedllyを見る</a></li>
+        <li class="menu-item">
+          <button>その他</button>
+          <ul class="dropdown-list">
+            <li class="dropdown-item"><a @click="goToContactPage" class="dropdown-link">お問い合わせ</a></li>
+            <li class="dropdown-item"><a href="https://grow-infotech.com" class="dropdown-link">会社のホームページを見る</a></li>
+            <li class="dropdown-item"><a href="https://www.wantedly.com/companies/company_7305723" class="dropdown-link">Wantedllyを見る</a></li>
           </ul>
         </li>
       </ul>
@@ -125,17 +102,17 @@ export default {
   data() {
     return {
       isMobile: false,
-      showMenu: false
+      showMenu: false,
     };
   },
   mounted() {
     // ページロード時とウィンドウリサイズ時にモバイル画面の判定を行う
     this.checkMobileScreen();
-    window.addEventListener('resize', this.checkMobileScreen);
+    window.addEventListener("resize", this.checkMobileScreen);
   },
   beforeUnmount() {
     // イベントリスナーの削除
-    window.removeEventListener('resize', this.checkMobileScreen);
+    window.removeEventListener("resize", this.checkMobileScreen);
   },
   methods: {
     // モバイル画面の判定を行うメソッド
@@ -146,10 +123,28 @@ export default {
     toggleMenu() {
       this.showMenu = !this.showMenu; // クリックした時のbooleanの判定を逆にする
     },
+    goToMenuPage() {
+      this.$router.push({ name: "MenuPage" });
+    },
+    goToIntroducePage() {
+      this.$router.push({ name: "Introduce" });
+    },
+    goToEnvironmentPage() {
+      this.$router.push({ name: "Environment" });
+    },
+    goToProcedurePage() {
+      this.$router.push({ name: "Procedure" });
+    },
+    goToCourseMenuPage() {
+      this.$router.push({ name: "CourseMenu" });
+    },
     goToUserPage() {
       this.$router.push({ name: "UserList" });
     },
-  }
+    goToContactPage() {
+      this.$router.push({ name: "Contact" });
+    },
+  },
 };
 </script>
 
@@ -171,6 +166,7 @@ export default {
 .logo {
   width: 50px;
   height: 50px;
+  cursor: pointer;
 }
 
 .logo-image {
@@ -178,56 +174,58 @@ export default {
   width: 100%;
 }
 
-.header-title{
+.header-title {
   font-size: large;
   font-weight: bold;
+  cursor: pointer;
 }
 
-.gnavi__wrap {
-    width: 80%;
-    margin-left: auto;
+.navigation-wrap {
+  width: 80%;
+  margin-left: auto;
 }
-.gnavi__lists {
-    display: flex;
+.navigation-list {
+  display: flex;
 }
-.gnavi__list {
-    width: 20%;
-    height: 60px;
-    background-color: #E5F0F8;
-    position: relative;
-    transition: all .3s;
+.navigation-item {
+  width: 20%;
+  height: 60px;
+  background-color: #e5f0f8;
+  position: relative;
+  transition: all 0.3s;
 }
-.gnavi__list:hover {
-    background-color: #0071BB;
+.navigation-item:hover {
+  background-color: #0071bb;
 }
-.gnavi__list:not(:first-child)::before {
-    content: "";
-    width: 1px;
-    height: 100%;
-    background-color: #fff;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: all .3s;
+.navigation-item:not(:first-child)::before {
+  content: "";
+  width: 1px;
+  height: 100%;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.3s;
 }
-.gnavi__list:hover::before {
-    background-color: #0071BB;
+.navigation-item:hover::before {
+  background-color: #0071bb;
 }
-.gnavi__list a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-    color: #1b4059;
-    font-size: 15px;
-    letter-spacing: 0.05em;
-    font-weight: 600;
-    transition: all .3s;
+.navigation-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #1b4059;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  transition: all 0.3s;
+  cursor: pointer;
 }
-.gnavi__list:hover a {
-    color: #fff;
+.navigation-btn:hover {
+  color: #fff;
 }
 
 .menu {
@@ -248,7 +246,8 @@ export default {
   pointer-events: none; /* 初期状態ではメニューはクリックイベントを受け付けない */
 }
 
-.menu__item {
+.menu-item {
+  position: relative;
   width: 100%;
   height: auto;
   padding: 0.5em 1em;
@@ -258,51 +257,56 @@ export default {
   cursor: pointer;
 }
 
-.menu__item:hover .dropdown__lists {
-  text-decoration: underline;
-  display: block;  /* ナビメニューにホバーしたら表示 */
+.menu-item:hover .dropdown-list {
+  display: block; /* ナビメニューにホバーしたら表示 */
 }
 
-.dropdown__lists {
-  display: none;/*デフォルトでは非表示の状態にしておく*/
-  width: 100%;
+.dropdown-list {
+  display: none; /*デフォルトでは非表示の状態にしておく*/
+  width: 160%;
   position: absolute;
   top: 60px;
+  left: -60%;
+  z-index: 1;
+}
+
+.navigation-item:hover .dropdown-list {
+  display: block; /* ナビメニューにホバーしたら表示 */
+}
+
+.dropdown-item {
+  background-color: #004d80;
+  height: 60px;
+  transition: all 0.3s;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown-item:not(:first-child)::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #3492d1;
+  position: absolute;
+  top: 0;
   left: 0;
 }
 
-.gnavi__list:hover .dropdown__lists {
-  display: block;/* ナビメニューにホバーしたら表示 */
+.dropdown-item:hover {
+  background-color: #003558;
 }
 
-.dropdown__list {
-    background-color: #004d80;
-    height: 60px;
-    transition: all .3s;
-    position: relative;
-}
-
-.dropdown__list:not(:first-child)::before{
-    content: "";
-    width: 100%;
-    height: 1px;
-    background-color: #3492d1;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.dropdown__list:hover {
-    background-color: #003558;
-}
-
-.dropdown__link {
+.dropdown-link {
   color: #fff;
   text-decoration: none;
+  cursor: pointer;
 }
 
-.dropdown__link::before {  /* ドロップダウンの矢印部分 */
-  content: '';
+.dropdown-link::before {
+  /* ドロップダウンの矢印部分 */
+  content: "";
   display: block;
   width: 6px;
   height: 6px;
@@ -313,13 +317,6 @@ export default {
   right: 15px;
   top: calc(50% - 5px);
 }
-
-.is-menu {
-  width: 90%;
-  top: 65%; /* スマホ版ように位置を上書き */
-  left: 25px;
-}
-
 .close-button {
   position: absolute;
   top: 20px;
@@ -369,7 +366,7 @@ export default {
 
 .hamburger-button {
   position: fixed;
-  top: 30px;
+  top: 25px;
   left: 90%;
   display: flex;
   flex-direction: column;
@@ -431,7 +428,6 @@ export default {
   transform: rotate(0);
 }
 
-
 /* PC版 */
 @media (min-width: 834px) {
   .menu {
@@ -445,7 +441,13 @@ export default {
 
 /* タブレット版 */
 @media (max-width: 834px) {
-  .dropdown__link{
+  .dropdown-list {
+    position: absolute;
+    width: 200px;
+    top: 30px; /* スマホ版用に位置を上書き */
+    left: -50%;
+  }
+  .dropdown-link {
     font-size: small;
   }
 }
