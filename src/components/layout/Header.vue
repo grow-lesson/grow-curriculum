@@ -164,8 +164,6 @@ export default {
 }
 
 .logo {
-  width: 50px;
-  height: 50px;
   cursor: pointer;
 }
 
@@ -181,14 +179,15 @@ export default {
 }
 
 .navigation-wrap {
-  width: 80%;
+  width: 60%;
   margin-left: auto;
 }
 .navigation-list {
   display: flex;
+  justify-content: flex-end;
 }
 .navigation-item {
-  width: 20%;
+  width: 15%;
   height: 60px;
   background-color: #e5f0f8;
   position: relative;
@@ -366,7 +365,6 @@ export default {
 
 .hamburger-button {
   position: fixed;
-  top: 25px;
   left: 90%;
   display: flex;
   flex-direction: column;
@@ -435,12 +433,17 @@ export default {
   }
 
   .hamburger-button {
+    top: 25px;
     display: none; /* ハンバーガーメニューボタンは非表示 */
   }
 }
 
 /* タブレット版 */
 @media (max-width: 834px) {
+  .logo{
+    width: 30px;
+    height: 30px;
+  }
   .dropdown-list {
     position: absolute;
     width: 200px;
@@ -449,6 +452,9 @@ export default {
   }
   .dropdown-link {
     font-size: small;
+  }
+  .hamburger-button {
+    top: 15px;
   }
 }
 </style>
