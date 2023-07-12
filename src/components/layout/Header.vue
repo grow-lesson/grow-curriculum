@@ -4,7 +4,7 @@
     <header class="header">
       <div class="header-wrapper">
         <div class="logo" v-show="isMobile">
-          <a @click="goToMenuPage"><img src="../../assets/logo.png" alt="GROWロゴ" class="logo-image" /></a>
+          <a @click="goToMenuPage"><img src="../../assets/images/header/logo.png" alt="GROWロゴ" class="logo-image" /></a>
         </div>
         <p class="header-title" v-show="!isMobile"><a @click="goToMenuPage">GROW 学習サイト</a></p>
         <!-- ナビゲーションメニュー -->
@@ -179,15 +179,16 @@ export default {
 }
 
 .navigation-wrap {
-  width: 60%;
+  width: 70%;
   margin-left: auto;
 }
 .navigation-list {
+  width: 100%;
   display: flex;
   justify-content: flex-end;
 }
 .navigation-item {
-  width: 15%;
+  width: 35%;
   height: 60px;
   background-color: #e5f0f8;
   position: relative;

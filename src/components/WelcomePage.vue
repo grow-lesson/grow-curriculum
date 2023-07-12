@@ -23,11 +23,12 @@ export default {
   data() {
     return {
       backgroundImages: [
-        require("../assets/welcome1.jpg"),
-        require("../assets/welcome2.jpg"),
-        require("../assets/welcome3.jpg"),
-        require("../assets/welcome4.jpg"),
-        require("../assets/welcome5.jpg"),
+        require("../assets/images/welcome/welcome-1.jpg"),
+        require("../assets/images/welcome/welcome-2.jpg"),
+        require("../assets/images/welcome/welcome-3.jpg"),
+        require("../assets/images/welcome/welcome-4.jpg"),
+        require("../assets/images/welcome/welcome-5.jpg"),
+        require("../assets/images/welcome/welcome-6.jpg"),
       ],
       currentImageIndex: 0,
       isFloating: false,

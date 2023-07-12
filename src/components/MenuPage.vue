@@ -26,7 +26,7 @@
           <p class="course-explanation">ファイル・フォルダの作成や編集・移動・削除を学べるコース</p>
           <div class="course-image">
             <div class="course-logo">
-              <img src="../assets/command-line.jpg" class="course-icon" alt="commandline" />
+              <img src="../assets/images/menu/command-line.jpg" class="course-icon" alt="commandline" />
             </div>
           </div>
           <a class="course-button" @click="goToCommandLineMenuPage">受講する</a>
@@ -36,10 +36,10 @@
           <p class="course-explanation">ウェブサイトの作成に必要な骨組みやデザインを学べるコース</p>
           <div class="course-image">
             <div class="course-logo">
-              <img src="../assets/html.png" class="course-icon" alt="html" />
+              <img src="../assets/images/menu/html.png" class="course-icon" alt="html" />
             </div>
             <div class="course-logo">
-              <img src="../assets/css.png" class="course-icon" alt="css" />
+              <img src="../assets/images/menu/css.png" class="course-icon" alt="css" />
             </div>
           </div>
           <a class="course-button" @click="goToHtmlMenuPage">受講する</a>
@@ -49,7 +49,7 @@
           <p class="course-explanation">ソースプログラムなどを保存・共有を学べるコース</p>
           <div class="course-image">
             <div class="course-logo">
-              <img src="../assets/git.png" class="course-icon" alt="git" />
+              <img src="../assets/images/menu/git.png" class="course-icon" alt="git" />
             </div>
           </div>
           <a class="course-button" @click="goToGitMenuPage">受講する</a>
