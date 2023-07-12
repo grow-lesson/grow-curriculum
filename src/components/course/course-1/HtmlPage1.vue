@@ -93,7 +93,7 @@
           </div>
         </Document>
         
-        <SectionTitle sectionTitle="2-3. 要素とプロパティ" id="section3"></SectionTitle>
+        <SectionTitle sectionTitle="2-3. 要素とプロパティ①" id="section3"></SectionTitle>
         <Document>
           <p>
             まずはHTMLの要素から覚えていきましょう!<br>
@@ -222,6 +222,24 @@
           <div>
             <img src="../../../assets/images/course/html-css-1/web-1.png" class="screen-image" alt="web-1" />
           </div><br>
+        </Document>
+        <SectionTitle sectionTitle="2-3. 要素とプロパティ②" id="section3"></SectionTitle>
+        <Document>
+          <p>
+            次にCSSのプロパティを覚えていきましょう!<br>
+            <HighlightWord word="color: [色の名前(rgb値・色コード)];"></HighlightWord><br>
+            ・文字の色を変えるプロパティでcolorプロパティと呼ばれます。<br><br>
+            <HighlightWord word="font-size: [文字のサイズ(px,rem,%など)];"></HighlightWord><br>
+            ・文字の大きさを変えるプロパティでfont-sizeプロパティと呼ばれます。<br><br>
+            <HighlightWord word="font-family: [フォント名]; "></HighlightWord><br>
+            ・文字の種類を変えるプロパティでfont-familyプロパティと呼ばれます。
+            フォント名が「serif」のような1単語でなく「Lucida Grande」の様に2単語になった時は「 "Lucida Grande"」とダブルクオーテーションで囲みましょう。
+          </p><br>
+          <div>
+            <!-- css適用画像 -->
+            <img src="../../../assets/images/course/html-css-1/tag-1.png" class="powerpoint-image" alt="tag-1" />
+          </div>
+          
         </Document>
 
         <Terminal :fileName="terminalData.file1.filename" :copiedText="terminalData.file1.code" :lang="terminalData.file1.language" />
