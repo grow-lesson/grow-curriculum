@@ -10,5 +10,13 @@ module.exports = {
         changeOrigin: true
       }
     }
+  },
+  // ハッシュモードに変更
+  configureWebpack: {
+    devServer: {
+      historyApiFallback: {
+        index: '/grow-curriculum/index.html'
+      }
+    }
   }
 };
