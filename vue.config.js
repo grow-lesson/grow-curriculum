@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: "/grow-curriculum/",
+  publicPath: process.env.NODE_ENV === 'production' ? '/grow-curriculum/' : '/',
   outputDir: "docs",
   assetsDir: "",
   devServer: {
