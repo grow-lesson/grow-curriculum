@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/grow-curriculum/' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/' : '/',
   outputDir: "docs",
   assetsDir: "",
   devServer: {
@@ -8,14 +8,6 @@ module.exports = {
         target: 'http://localhost:3000',
         ws: true,
         changeOrigin: true
-      }
-    }
-  },
-  // ハッシュモードに変更
-  configureWebpack: {
-    devServer: {
-      historyApiFallback: {
-        index: '/grow-curriculum/index.html'
       }
     }
   }
