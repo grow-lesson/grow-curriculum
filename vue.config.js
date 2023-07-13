@@ -17,5 +17,13 @@ module.exports = {
         changeOrigin: true
       }
     }
+  },
+  // ハッシュモードに変更するための設定
+  configureWebpack: {
+    devServer: {
+      historyApiFallback: {
+        index: 'index.html'
+      }
+    }
   }
 };
