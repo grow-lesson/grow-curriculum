@@ -9,6 +9,7 @@
           <p>Webデザインの目的は、情報を正しく、わかりやすく提供することです。</p>
           <p>ユーザーが操作をしやすくほしい情報にいち早く遷移できるデザインを目指していきましょう!</p>
         </Document><br>
+
         <!-- section 1 -->
         <SubTitle subTitle="1. HTMLとCSSについて知る"></SubTitle>
         <Document>
@@ -64,8 +65,8 @@
         </Document>
 
         <!-- section 3 -->
-        <SubTitle subTitle="2. HTMLの仕組み"></SubTitle>
-        <SectionTitle sectionTitle="2-1. HTMLの名称"></SectionTitle>
+        <SubTitle subTitle="3. HTMLとCSSの仕組み"></SubTitle>
+        <SectionTitle sectionTitle="3-1. HTMLの名称"></SectionTitle>
         <Document>
           <p>まずはHTMLについて学んでいきましょう!</p>
           <p>
@@ -81,7 +82,7 @@
             <img src="../../../assets/images/course/html-css-1/html-1.png" class="powerpoint-image" alt="html-1" />
           </div>
         </Document>
-        <SectionTitle sectionTitle="2-2. CSSの名称"></SectionTitle>
+        <SectionTitle sectionTitle="3-2. CSSの名称"></SectionTitle>
         <Document>
           <p>次にCSSについて学んでいきましょう!</p>
           <p>
@@ -92,8 +93,7 @@
             <img src="../../../assets/images/course/html-css-1/css-1.png" class="powerpoint-image" alt="css-1" />
           </div>
         </Document>
-        
-        <SectionTitle sectionTitle="2-3. 要素とプロパティ①" id="section3"></SectionTitle>
+        <SectionTitle sectionTitle="3-3. 要素とプロパティ①" id="section3"></SectionTitle>
         <Document>
           <p>
             まずはHTMLの要素から覚えていきましょう!<br>
@@ -109,9 +109,7 @@
           </p>
           <div>
             <img src="../../../assets/images/course/html-css-1/tag-1.png" class="powerpoint-image" alt="tag-1" />
-          </div>
-        </Document>
-        <Document>
+          </div><br><br>
           <p>
             さっそくテキストエディタに書いて練習してみましょう!<br><br>
             ①<br>
@@ -223,7 +221,7 @@
             <img src="../../../assets/images/course/html-css-1/web-1.png" class="screen-image" alt="web-1" />
           </div><br>
         </Document>
-        <SectionTitle sectionTitle="2-3. 要素とプロパティ②" id="section3"></SectionTitle>
+        <SectionTitle sectionTitle="3-4. 要素とプロパティ②" id="section3"></SectionTitle>
         <Document>
           <p>
             次にCSSのプロパティを覚えていきましょう!<br>
@@ -233,13 +231,100 @@
             ・文字の大きさを変えるプロパティでfont-sizeプロパティと呼ばれます。<br><br>
             <HighlightWord word="font-family: [フォント名]; "></HighlightWord><br>
             ・文字の種類を変えるプロパティでfont-familyプロパティと呼ばれます。
-            フォント名が「serif」のような1単語でなく「Lucida Grande」の様に2単語になった時は「 "Lucida Grande"」とダブルクオーテーションで囲みましょう。
+            フォント名が「serif」のような1単語でなく「Lucida Grande」の様に2単語になった時は必ず「 "Lucida Grande"」とダブルクオーテーションで囲みましょう。<br><br>
+            それではCSSを適用してみましょう。<br>
+            ①<br>
+            テキストエディタの「style.css」に以下を入力しましょう<br>
           </p><br>
           <div>
-            <!-- css適用画像 -->
-            <img src="../../../assets/images/course/html-css-1/tag-1.png" class="powerpoint-image" alt="tag-1" />
+            <img src="../../../assets/images/course/html-css-1/vscode-12.png" class="screen-image" alt="vscode-12" />
           </div>
-          
+          <p>
+            ②<br>
+            ブラウザを更新してこのようなスタイルになればOKです。<br>
+          </p><br>
+          <div>
+            <img src="../../../assets/images/course/html-css-1/web-2.png" class="screen-image" alt="web-2" />
+          </div><br>
+        </Document>
+        <SectionTitle sectionTitle="3-5. 要素とプロパティ③" id="section3"></SectionTitle>
+        <Document>
+          <p>
+            ここまででHTMLとCSSの役割がわかったと思います。<br>
+            さらにここから要素やプロパティを覚えましょう。<br>
+            要素<br>
+            <HighlightWord word="<a href='飛ばしたいURL'>・・・</a>"></HighlightWord><br>
+            ・リンクを作成する要素でこのタグはaタグと呼ばれます。<br>
+            クリックしたら他のページへ飛ぶ事ができます。<br><br>
+            <HighlightWord word="<img src='画像があるディレクトリのパス''>"></HighlightWord><br>
+            ・画像を表示する要素でこのタグはimgタグと呼ばれます。<br>
+            <span class="markup-word-red">注意</span> : imgタグでは終了タグがないことに注意しましょう。<br>
+            このような開始タグと終了タグの中に要素内容を記述できない要素の事を<span class="markup-word-blue">空要素</span>といいます。<br><br>
+            また、aタグやimgタグの中にある「href」や「src」の事を<span class="markup-word-blue">属性</span>といいます。<br><br>
+          </p>
+          <div>
+            <img src="../../../assets/images/course/html-css-1/tag-2.png" class="powerpoint-image" alt="tag-2" />
+          </div><br><br>
+          <p>
+            ・それではaタグで画面遷移と画像を使って表示させてみましょう。<br>
+            ①<br>
+            ・以下の画像を右クリックでダウンロードして下さい。
+          </p><br>
+          <div>
+            <img src="../../../assets/images/course/html-css-1/cat.jpg" class="screen-image" alt="cat" />
+          </div><br>
+          <p>
+            ②<br>
+            テキストエディタでassetsフォルダを作り、さらにその中にimagesフォルダを作りましょう。<br>
+            正しく作られたらこのような表示になります。<br>
+          </p><br>
+          <div>
+            <img src="../../../assets/images/course/html-css-1/vscode-13.png" class="screen-image" alt="vscode-13" />
+          </div><br>
+          <p>
+            ③<br>
+            フォルダを作ったら先ほど保存した画像をimagesフォルダにドラッグアンドドロップで保存しましょう。<br>
+          </p><br>
+          <div>
+            <img src="../../../assets/images/course/html-css-1/vscode-14.png" class="screen-image" alt="vscode-14" />
+          </div><br>
+          <p>
+            ④<br>
+            次に「index.html」に以下の画像のように要素を追記しましょう。<br>
+          </p><br>
+          <div>
+            <img src="../../../assets/images/course/html-css-1/vscode-15.png" class="screen-image" alt="vscode-15" />
+          </div><br>
+          <p>
+            ⑤<br>
+            ブラウザを確認すると、リンクと画像が表示されます。<br>
+          </p><br>
+          <div>
+            <img src="../../../assets/images/course/html-css-1/web-3.png" class="screen-image" alt="web-3" />
+          </div><br>
+        </Document>
+
+        <!-- section 4 -->
+        <SubTitle subTitle="4. HTMLとCSSの関係性"></SubTitle>
+        <SectionTitle sectionTitle="4-1. HTMLの親子関係"></SectionTitle>
+        <Document>
+          <p>
+            ここからHTMLの要素の関係に深堀りしていきましょう。<br>
+            要素一つ一つにはそれぞれ親子関係や兄弟関係が必ず存在します。<br>
+            要素の構造は入れ子構造になっており、一つの要素の事を大きな箱だと考えるとイメージがしやすいです。<br>
+            要素<br>
+            <HighlightWord word="<a href='飛ばしたいURL'>・・・</a>"></HighlightWord><br>
+            ・リンクを作成する要素でこのタグはaタグと呼ばれます。<br>
+            クリックしたら他のページへ飛ぶ事ができます。<br><br>
+            <HighlightWord word="<img src='画像があるディレクトリのパス''>"></HighlightWord><br>
+            ・画像を表示する要素でこのタグはimgタグと呼ばれます。<br>
+            <span class="markup-word-red">注意</span> : imgタグでは終了タグがないことに注意しましょう。<br>
+            このような開始タグと終了タグの中に要素内容を記述できない要素の事を<span class="markup-word-blue">空要素</span>といいます。<br><br>
+            また、aタグやimgタグの中にある「href」や「src」の事を<span class="markup-word-blue">属性</span>といいます。<br><br>
+          </p>
+          <div>
+            <img src="../../../assets/images/course/html-css-1/tag-2.png" class="powerpoint-image" alt="tag-2" />
+          </div><br><br>
         </Document>
 
         <Terminal :fileName="terminalData.file1.filename" :copiedText="terminalData.file1.code" :lang="terminalData.file1.language" />
