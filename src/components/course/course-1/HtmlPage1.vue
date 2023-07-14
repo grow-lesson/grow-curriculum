@@ -310,12 +310,12 @@
         <Document>
           <p>
             ここからHTMLの要素の関係に深堀りしていきましょう。<br>
-            要素一つ一つにはそれぞれ親子関係や兄弟関係が必ず存在します。<br>
+            要素一つ一つにはそれぞれ<span class="markup-word-red">親子関係</span>や<span class="markup-word-red">兄弟関係</span>が必ず存在します。<br>
             要素の構造は入れ子構造になっており、一つの要素の事を大きな箱だと考えるとイメージがしやすいです。<br>
-            要素<br>
-            <HighlightWord word="<a href='飛ばしたいURL'>・・・</a>"></HighlightWord><br>
-            ・リンクを作成する要素でこのタグはaタグと呼ばれます。<br>
-            クリックしたら他のページへ飛ぶ事ができます。<br><br>
+            それでは入れ子構造とは何か学びましょう!<br><br>
+            <HighlightWord word="入れ子"></HighlightWord><br>
+            ・開始タグと終了タグで囲むことを入れ子といいます。<br>
+            その入れ子の中にさらに入れ子がある構造を<span class="markup-word-blue">入れ子構造</span>と呼びます。<br><br>
             <HighlightWord word="<img src='画像があるディレクトリのパス''>"></HighlightWord><br>
             ・画像を表示する要素でこのタグはimgタグと呼ばれます。<br>
             <span class="markup-word-red">注意</span> : imgタグでは終了タグがないことに注意しましょう。<br>
