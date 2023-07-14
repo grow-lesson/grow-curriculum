@@ -13,8 +13,8 @@
             <div class="lesson-itemWrap">
               <div class="lesson-itemTitle">LESSON１</div>
               <p class="lesson-itemText">全角６０字までサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテ</p>
-              <div class="lesson-btn btn" @click="goToPageLesson1">
-                <a href=''></a>
+              <div class="lesson-btn btn">
+                <a class="lesson-link btn" @click="goToPageLesson1"></a>
               </div>
             </div>
           </li>
@@ -23,8 +23,8 @@
               <div class="lesson-itemWrap">
                 <div class="lesson-itemTitle">LESSON１</div>
                 <p class="lesson-itemText">全角６０字までサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテ</p>
-                <div class="lesson-btn btn" @click="goToPageLesson2">
-                  <a href=''></a>
+                <div class="lesson-btn btn">
+                  <a class="lesson-link btn" @click="goToPageLesson2"></a>
                 </div>
               </div>
             </li>
@@ -33,8 +33,8 @@
               <div class="lesson-itemWrap">
                 <div class="lesson-itemTitle">LESSON１</div>
                 <p class="lesson-itemText">全角６０字までサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテ</p>
-                <div class="lesson-btn btn" @click="goToPageLesson3">
-                  <a href=''></a>
+                <div class="lesson-btn btn">
+                  <a class="lesson-link btn" @click="goToPageLesson3"></a>
                 </div>
               </div>
             </li>
