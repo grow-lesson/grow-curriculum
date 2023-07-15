@@ -3,38 +3,47 @@
     <Header />
     <div class="lesson-container">
       <div class="lesson-title">
+        <div class="breadcrumb">
+          <a href="">初級コース</a> > HTML・CSSコースを選ぼう
+        </div>
         <h1 class="lesson-heading">HTML・CSSコースを選ぼう</h1>
       </div>
       <div class="lesson-sidebar"></div>
       <div class="lesson-main">
         <ul class="lesson-list">
           <li class="lesson-item">
-            <div class="lesson-itemImg"></div>
+            <div class="lesson-itemImg">
+              <img src="../../../assets/lesson-menu.png" alt="SAMPLE" />
+            </div>
             <div class="lesson-itemWrap">
               <div class="lesson-itemTitle">LESSON１</div>
               <p class="lesson-itemText">全角６０字までサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテ</p>
-              <div class="lesson-btn btn" @click="goToPageLesson1">
-                <a href=''></a>
+              <div class="lesson-btn btn">
+                <a class="lesson-link btn" @click="goToPageLesson1"></a>
               </div>
             </div>
           </li>
           <li class="lesson-item">
-              <div class="lesson-itemImg"></div>
+              <div class="lesson-itemImg">
+                <img src="../../../assets/lesson-menu.png" alt="SAMPLE" />
+              </div>
               <div class="lesson-itemWrap">
-                <div class="lesson-itemTitle">LESSON１</div>
+                <div class="lesson-itemTitle">LESSON２</div>
                 <p class="lesson-itemText">全角６０字までサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテ</p>
-                <div class="lesson-btn btn" @click="goToPageLesson2">
-                  <a href=''></a>
+                <div class="lesson-btn btn">
+                  <a class="lesson-link btn" @click="goToPageLesson2"></a>
                 </div>
               </div>
             </li>
             <li class="lesson-item">
-              <div class="lesson-itemImg"></div>
+              <div class="lesson-itemImg">
+                <img src="../../../assets/lesson-menu.png" alt="SAMPLE" />
+              </div>
               <div class="lesson-itemWrap">
-                <div class="lesson-itemTitle">LESSON１</div>
+                <div class="lesson-itemTitle">LESSON３</div>
                 <p class="lesson-itemText">全角６０字までサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテ</p>
-                <div class="lesson-btn btn" @click="goToPageLesson3">
-                  <a href=''></a>
+                <div class="lesson-btn btn">
+                  <a class="lesson-link btn" @click="goToPageLesson3"></a>
                 </div>
               </div>
             </li>
@@ -74,6 +83,10 @@ export default {
   /* max-width: 600px; */
 }
 
+.breadcrumb{
+  margin-left: 100px;
+}
+
 .lesson-title{
   width: 100%;
   padding: 30px 0;
@@ -108,6 +121,11 @@ export default {
   background-color: #FFFFFF;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+}
+
+.lesson-itemImg img{
+  widows: 100%;
+  height: 100%;
 }
 
 .lesson-itemWrap{
