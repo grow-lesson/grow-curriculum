@@ -351,6 +351,7 @@
             <br>
             ②「html-css-lesson-2」フォルダを作り、「index.html」と「style.css」フォルダをlesson-1の時の様に作りましょう!<br>
             <!-- img -->
+            <h1>test</h1>
             <br>
             ③以下の画像の様にhtmlファイルとcssファイルを編集しましょう。
             <!-- img -->
