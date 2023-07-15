@@ -4,7 +4,7 @@
     <div class="lesson-container">
       <div class="lesson-title">
         <div class="breadcrumb">
-          <a href="">初級コース</a> > HTML・CSSコースを選ぼう
+          <a href="/menu">初級コース</a> > HTML・CSSコースを選ぼう
         </div>
         <h1 class="lesson-heading">HTML・CSSコースを選ぼう</h1>
       </div>
