@@ -174,7 +174,7 @@
             ⑧<br>
             次に「index.html」に以下の内容をコピーして貼り付けましょう<br>
           </p><br>
-          <Terminal :fileName="terminalData.file1.filename" :copiedText="terminalData.file1.code" :lang="terminalData.file1.language" />
+          <Terminal :fileName="htmlSourceData.file1.filename" :copiedText="htmlSourceData.file1.code" :lang="htmlSourceData.file1.language" />
           <br>
           <p>
             以下のようになればOKです。<br>
@@ -224,7 +224,8 @@
         <SectionTitle sectionTitle="3-4. 要素とプロパティ②" id="section3"></SectionTitle>
         <Document>
           <p>
-            次にCSSのプロパティを覚えていきましょう!<br>
+            次にCSSのプロパティを覚えていきましょう!<br><br>
+            プロパティ<br><br>
             <HighlightWord word="color: [色の名前(rgb値・色コード)];"></HighlightWord><br>
             ・文字の色を変えるプロパティでcolorプロパティと呼ばれます。<br><br>
             <HighlightWord word="font-size: [文字のサイズ(px,rem,%など)];"></HighlightWord><br>
@@ -251,7 +252,7 @@
         <Document>
           <p>
             ここまででHTMLとCSSの役割がわかったと思います。<br>
-            さらにここから要素やプロパティを覚えましょう。<br>
+            さらにここから要素やプロパティを覚えましょう。<br><br>
             要素<br>
             <HighlightWord word="<a href='飛ばしたいURL'>・・・</a>"></HighlightWord><br>
             ・リンクを作成する要素でこのタグはaタグと呼ばれます。<br>
@@ -261,12 +262,16 @@
             <span class="markup-word-red">注意</span> : imgタグでは終了タグがないことに注意しましょう。<br>
             このような開始タグと終了タグの中に要素内容を記述できない要素の事を<span class="markup-word-blue">空要素</span>といいます。<br><br>
             また、aタグやimgタグの中にある「href」や「src」の事を<span class="markup-word-blue">属性</span>といいます。<br><br>
-          </p>
+            では今出てきた属性について覚えましょう!<br>
+            <span class="markup-word-blue">href属性</span>→この属性を付与している属性をクリックすると遷移するURLを指定します。<br>
+            <span class="markup-word-blue">src属性</span>→どこの画像を表示するか、参照するフォルダの場所を指定します。<br><br>
+            以下の画像はイメージです。<br>
+          </p><br>
           <div>
             <img src="../../../assets/images/course/html-css-1/tag-2.png" class="powerpoint-image" alt="tag-2" />
           </div><br><br>
           <p>
-            ・それではaタグで画面遷移と画像を使って表示させてみましょう。<br>
+            それではaタグで画面遷移と画像を使って表示させてみましょう。<br>
             ①<br>
             ・以下の画像を右クリックでダウンロードして下さい。
           </p><br>
@@ -314,21 +319,48 @@
             要素の構造は入れ子構造になっており、一つの要素の事を大きな箱だと考えるとイメージがしやすいです。<br>
             それでは入れ子構造とは何か学びましょう!<br><br>
             <HighlightWord word="入れ子"></HighlightWord><br>
-            ・開始タグと終了タグで囲むことを入れ子といいます。<br>
-            その入れ子の中にさらに入れ子がある構造を<span class="markup-word-blue">入れ子構造</span>と呼びます。<br><br>
-            <HighlightWord word="<img src='画像があるディレクトリのパス''>"></HighlightWord><br>
-            ・画像を表示する要素でこのタグはimgタグと呼ばれます。<br>
-            <span class="markup-word-red">注意</span> : imgタグでは終了タグがないことに注意しましょう。<br>
-            このような開始タグと終了タグの中に要素内容を記述できない要素の事を<span class="markup-word-blue">空要素</span>といいます。<br><br>
-            また、aタグやimgタグの中にある「href」や「src」の事を<span class="markup-word-blue">属性</span>といいます。<br><br>
+            ・開始タグと終了タグで囲むことを入れ子といいます。<br><br>
+            
+            その入れ子の中にさらに入れ子がある構造を<span class="markup-word-blue">入れ子構造</span>と呼びます。<br>
+            箱の中に箱が入る様なイメージです<br><br>
           </p>
           <div>
-            <img src="../../../assets/images/course/html-css-1/tag-2.png" class="powerpoint-image" alt="tag-2" />
+            <img src="../../../assets/images/course/html-css-1/box.jpg" class="screen-image" alt="tag-2" />
           </div><br><br>
         </Document>
+        <Document>
+          <SectionTitle sectionTitle="4-2. 要素とプロパティ④"></SectionTitle>
+          <p>
+            それではここからHTMLの要素の入れ子関係を理解できる様に新しい要素を覚えましょう。<br><br>
+            要素<br><br>
+            <HighlightWord word="<div>・・・</div>"></HighlightWord><br>
+            ・文書に構造を付加する何も意味を持たない要素でこのタグはdivタグと呼ばれます。<br><br>
+            ここで新しい属性を覚えましょう。<br>
+            <span class="markup-word-blue">class属性</span>→要素に名前をつけることができる属性です。
+            ほとんどの要素に付与できます。<br><br>
+            プロパティ<br><br>
+            <HighlightWord word="background-color: [色の名前(rgb値・色コード)];"></HighlightWord><br>
+            ・背景色を変えるプロパティでbackground-colorプロパティと呼ばれます。<br><br>
+            <HighlightWord word="width: [横幅のサイズ(px,rem,%など)];"></HighlightWord><br>
+            ・要素の横幅を変えるプロパティでwidthプロパティと呼ばれます。<br><br>
+            <HighlightWord word="height: [縦幅のサイズ(px,rem,%など)];"></HighlightWord><br>
+            ・要素の縦幅を変えるプロパティでheightプロパティと呼ばれます。<br><br>
+            それでは実践して試してみましょう!<br>
+            ①以下をコピーしてください。<br>
+            <Terminal :fileName="htmlSourceData.file1.filename" :copiedText="htmlSourceData.file1.code" :lang="htmlSourceData.file1.language" />
+            <br>
+            ②「html-css-lesson-2」フォルダを作り、「index.html」と「style.css」フォルダをlesson-1の時の様に作りましょう!<br>
+            <!-- img -->
+            <br>
+            ③以下の画像の様にhtmlファイルとcssファイルを編集しましょう。
+            <!-- img -->
+            <br>
+            ④以下の様な
 
-        <Terminal :fileName="terminalData.file1.filename" :copiedText="terminalData.file1.code" :lang="terminalData.file1.language" />
-        <Terminal :fileName="terminalData.file2.filename" :copiedText="terminalData.file2.code" :lang="terminalData.file2.language" />
+          </p>
+        </Document>
+
+        <Terminal :fileName="htmlSourceData.file2.filename" :copiedText="htmlSourceData.file2.code" :lang="htmlSourceData.file2.language" />
       </div>
       <div class="side-content">
         <TableOfContents :sections="sections" />
@@ -348,7 +380,7 @@ import HighlightWord from "@/components/HighlightWord.vue";
 import Document from "@/components/Document.vue";
 import Terminal from "@/components/Terminal.vue";
 import TableOfContents from "@/components/TableOfContents.vue";
-import { terminalData } from "@/data/terminalData.js";
+import { htmlSourceData } from "@/data/htmlSourceData.js";
 
 
 export default {
@@ -365,7 +397,7 @@ export default {
   },
   data() {
     return {
-      terminalData: terminalData,
+      htmlSourceData: htmlSourceData,
       sections: [
         { id: "Title", title: "HTML・CSS 1" },
         { id: "subTitle1", title: "  1. HTMLとCSSについて知る" },

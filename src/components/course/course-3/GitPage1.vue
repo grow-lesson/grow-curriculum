@@ -29,8 +29,8 @@
       <p>・プログラミング言語を使ってソースコードを作成する事です。</p>
     </Document>
 
-    <Terminal :fileName="terminalData.file1.filename" :copiedText="terminalData.file1.code" :lang="terminalData.file1.language" />
-    <Terminal :fileName="terminalData.file2.filename" :copiedText="terminalData.file2.code" :lang="terminalData.file2.language" />
+    <Terminal :fileName="htmlSourceData.file1.filename" :copiedText="htmlSourceData.file1.code" :lang="htmlSourceData.file1.language" />
+    <Terminal :fileName="htmlSourceData.file2.filename" :copiedText="htmlSourceData.file2.code" :lang="htmlSourceData.file2.language" />
   </div>
 </template>
 
@@ -40,7 +40,7 @@ import SubTitle from "@/components/SubTitle.vue";
 import HighlightWord from "@/components/HighlightWord.vue";
 import Document from "@/components/Document.vue";
 import Terminal from "@/components/Terminal.vue";
-import { terminalData } from "@/data/terminalData.js";
+import { htmlSourceData } from "@/data/htmlSourceData.js";
 
 export default {
   components: {
@@ -52,7 +52,7 @@ export default {
   },
   data() {
     return {
-      terminalData: terminalData,
+      htmlSourceData: htmlSourceData,
     };
   },
 };
