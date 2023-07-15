@@ -25,7 +25,7 @@ export default {
   border-radius: 4px;
   text-align: center;
   width: 80%;
-  margin: 30px auto 0;
+  margin: 30px auto 20px;
 }
 
 @media (max-width: 648px) {

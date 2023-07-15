@@ -12,6 +12,11 @@ const routes = [
     component: () => import("../components/LoginPage.vue"),
   },
   {
+    path: "/introduce",
+    name: "Introduce",
+    component: () => import("../components/about/Introduce.vue"),
+  },
+  {
     path: "/environment",
     name: "Environment",
     component: () => import("../components/init/Environment.vue"),
@@ -22,14 +27,14 @@ const routes = [
     component: () => import("../components/init/Procedure.vue"),
   },
   {
-    path: "/users",
-    name: "UserList",
-    component: () => import("../components/users/UserList.vue"),
-  },
-  {
     path: "/menu",
     name: "MenuPage",
     component: () => import("../components/MenuPage.vue"),
+  },
+  {
+    path: "/course-menu",
+    name: "CourseMenu",
+    component: () => import("../components/course/CourseMenu.vue"),
   },
   {
     path: "/html-lesson-menu",
@@ -58,8 +63,8 @@ const routes = [
   },
   {
     path: "/commandline-lesson-1",
-    name: "CommadLinePage1",
-    component: () => import("../components/course/course-2/CommadLinePage1.vue"),
+    name: "CommandLinePage1",
+    component: () => import("../components/course/course-2/CommandLinePage1.vue"),
   },
   {
     path: "/Git-lesson-menu",
@@ -80,6 +85,16 @@ const routes = [
     path: "/Git-lesson-3",
     name: "GitPage3",
     component: () => import("../components/course/course-3/GitPage3.vue"),
+  },
+  {
+    path: "/users",
+    name: "UserList",
+    component: () => import("../components/users/UserList.vue"),
+  },
+  {
+    path: "/contact",
+    name: "Contact",
+    component: () => import("../components/others/Contact.vue"),
   },
 ];
 

@@ -2,7 +2,7 @@
   <div class="terminal">
     <div class="clipboard">
       <div class="terminal-header">
-        <fancy-title :title="fileName"></fancy-title>
+        <h2 class="terminal-title">{{ fileName }}</h2>
       </div>
       <div class="terminal-content">
         <div class="terminal-textarea-wrapper">

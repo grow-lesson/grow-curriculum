@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="welcome-header">
-      <a href="/" class="logo">Grow 学習サイト</a>
+      <p class="welcome-title">GROW 学習サイト</p>
     </div>
     <div class="welcome-container">
       <div class="box">
@@ -23,11 +23,12 @@ export default {
   data() {
     return {
       backgroundImages: [
-        require("../assets/welcome1.jpg"),
-        require("../assets/welcome2.jpg"),
-        require("../assets/welcome3.jpg"),
-        require("../assets/welcome4.jpg"),
-        require("../assets/welcome5.jpg"),
+        require("../assets/images/welcome/welcome-1.jpg"),
+        require("../assets/images/welcome/welcome-2.jpg"),
+        require("../assets/images/welcome/welcome-3.jpg"),
+        require("../assets/images/welcome/welcome-4.jpg"),
+        require("../assets/images/welcome/welcome-5.jpg"),
+        require("../assets/images/welcome/welcome-6.jpg"),
       ],
       currentImageIndex: 0,
       isFloating: false,
@@ -88,15 +89,14 @@ export default {
   background-color: rgba(255, 255, 255, 0.9);
   display: flex;
   align-items: center;
-  padding: 20px;
+  padding: 25px 30px;
 }
 
-.welcome-header .logo {
-  font-size: 24px;
+.welcome-title {
+  font-size: large;
   font-weight: bold;
   text-decoration: none;
   color: #333;
-  padding-left: 20px;
 }
 
 .welcome-container {
@@ -232,7 +232,7 @@ export default {
     padding: 10px;
   }
 
-  .logo {
+  .welcome-title {
     padding: 0 10px;
   }
 
