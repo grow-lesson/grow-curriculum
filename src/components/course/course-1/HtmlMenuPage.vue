@@ -9,7 +9,9 @@
       <div class="lesson-main">
         <ul class="lesson-list">
           <li class="lesson-item">
-            <div class="lesson-itemImg"></div>
+            <div class="lesson-itemImg">
+              <img src="../../../assets/lesson-menu.png" alt="SAMPLE" />
+            </div>
             <div class="lesson-itemWrap">
               <div class="lesson-itemTitle">LESSON１</div>
               <p class="lesson-itemText">全角６０字までサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテ</p>
@@ -19,9 +21,11 @@
             </div>
           </li>
           <li class="lesson-item">
-              <div class="lesson-itemImg"></div>
+              <div class="lesson-itemImg">
+                <img src="../../../assets/lesson-menu.png" alt="SAMPLE" />
+              </div>
               <div class="lesson-itemWrap">
-                <div class="lesson-itemTitle">LESSON１</div>
+                <div class="lesson-itemTitle">LESSON２</div>
                 <p class="lesson-itemText">全角６０字までサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテ</p>
                 <div class="lesson-btn btn">
                   <a class="lesson-link btn" @click="goToPageLesson2"></a>
@@ -29,9 +33,11 @@
               </div>
             </li>
             <li class="lesson-item">
-              <div class="lesson-itemImg"></div>
+              <div class="lesson-itemImg">
+                <img src="../../../assets/lesson-menu.png" alt="SAMPLE" />
+              </div>
               <div class="lesson-itemWrap">
-                <div class="lesson-itemTitle">LESSON１</div>
+                <div class="lesson-itemTitle">LESSON３</div>
                 <p class="lesson-itemText">全角６０字までサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテ</p>
                 <div class="lesson-btn btn">
                   <a class="lesson-link btn" @click="goToPageLesson3"></a>
@@ -108,6 +114,11 @@ export default {
   background-color: #FFFFFF;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+}
+
+.lesson-itemImg img{
+  widows: 100%;
+  height: 100%;
 }
 
 .lesson-itemWrap{
