@@ -13,7 +13,7 @@
         <ul class="lesson-list">
           <li class="lesson-item">
             <div class="lesson-itemImg">
-              <img src="../../../assets/lesson-menu.png" alt="SAMPLE" />
+              <img src="../../../assets/images/menu/lesson-menu.png" alt="SAMPLE" />
             </div>
             <div class="lesson-itemWrap">
               <div class="lesson-itemTitle">LESSON１</div>
@@ -25,7 +25,7 @@
           </li>
           <li class="lesson-item">
               <div class="lesson-itemImg">
-                <img src="../../../assets/lesson-menu.png" alt="SAMPLE" />
+                <img src="../../../assets/images/menu/lesson-menu.png" alt="SAMPLE" />
               </div>
               <div class="lesson-itemWrap">
                 <div class="lesson-itemTitle">LESSON２</div>
@@ -37,7 +37,7 @@
             </li>
             <li class="lesson-item">
               <div class="lesson-itemImg">
-                <img src="../../../assets/lesson-menu.png" alt="SAMPLE" />
+                <img src="../../../assets/images/menu/lesson-menu.png" alt="SAMPLE" />
               </div>
               <div class="lesson-itemWrap">
                 <div class="lesson-itemTitle">LESSON３</div>
