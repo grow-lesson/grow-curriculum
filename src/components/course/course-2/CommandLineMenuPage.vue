@@ -1,14 +1,31 @@
 <template>
   <div>
     <Header />
-    <div class="container">
-      <h1 class="header">Command Lineを選ぼう</h1>
-      <ul class="lesson-list">
-        <li class="lesson-item">
-          <a class="lesson-link btn" @click="goToPageLesson1">Command Line 1</a>
-        </li>
-      </ul>
-    </div>
+    <div class="lesson-container">
+        <div class="lesson-title">
+          <div class="breadcrumb">
+            <a href="/menu">初級コース</a> > Command Lineを選ぼう
+          </div>
+          <h1 class="lesson-heading">Command Lineを選ぼう</h1>
+        </div>
+        <div class="lesson-sidebar"></div>
+        <div class="lesson-main">
+          <ul class="lesson-list">
+            <li class="lesson-item">
+              <div class="lesson-itemImg">
+                <img src="../../../assets/images/menu/lesson-menu.png" alt="SAMPLE" />
+              </div>
+              <div class="lesson-itemWrap">
+                <div class="lesson-itemTitle">LESSON１</div>
+                <p class="lesson-itemText">全角６０字までサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテ</p>
+                <div class="lesson-btn btn">
+                  <a class="lesson-link btn" @click="goToPageLesson1"></a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
     <Footer />
   </div>
 </template>
@@ -31,57 +48,125 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  width: 100%;
+.lesson-container {
   margin: 0 auto;
-  padding: 1em;
-  max-width: 600px;
+  /* max-width: 600px; */
 }
 
-.header {
+.breadcrumb{
+  margin-left: 100px;
+}
+
+.lesson-title{
+  width: 100%;
+  padding: 30px 0;
+  margin: 1rem 0;
+  background-color: #E5F0F8;
+}
+
+.lesson-heading {
   color: #2c3e50;
   text-align: center;
-  font-size: 2.5em; /* This will make the header bigger */
+  font-size: 2.5em;
 }
 
 .lesson-list {
-  display: grid;
+  /* display: grid; */
   justify-content: center;
   list-style: none;
-  padding-left: 0;
+  /* padding-left: 0; */
+  padding: 50px 100px;
 }
 
 .lesson-item {
-  margin-bottom: 1em;
+  width: 675px;
+  height: 170px;
+  margin: 0 auto 25px auto;
+  display: flex;
 }
 
-.lesson-link {
-  text-decoration: none;
-  color: #3498db;
-  padding: 0.8em 2em;
-  background-color: #f8f9fa;
-  border: 1px solid #3498db;
-  border-radius: 5px;
-  display: inline-block;
-  transition: background-color 0.3s;
+.lesson-itemImg{
+  width: 25%;
+  height: 100%;
+  background-color: #FFFFFF;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.lesson-itemImg img{
+  widows: 100%;
+  height: 100%;
+}
+
+.lesson-itemWrap{
+  width: 75%;
+  height: 100%;
+  padding: 20px 50px;
+  background-color: #1C4977;
   position: relative;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
-.lesson-link:after {
-  content: "";
-  width: 7px;
-  height: 7px;
-  display: inline-block;
-  border-top: 1px solid;
-  border-right: 1px solid;
-  right: 15px;
+.lesson-itemTitle{
+  color: #E6EFF7;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.lesson-itemText{
+  width: 80%;
+  color: #E6EFF7;
+}
+
+.lesson-btn{
+  width:60px;
+  height:60px;
+  line-height:90px;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%) rotate(45deg);
+  bottom: 25px;
+  right: 50px;
+}
+.lesson-btn a{
+  display:block;
+  width:100%;
+  height:100%;
+  text-decoration: none;
+  background:#1C4977;
+  text-align:center;
+  border:4px solid #E6EFF7;
+  color:#FFFFFF;
+  font-size:20px;
+  font-weight:bold;
+  border-radius:50px;
+  -webkit-border-radius:50px;
+  -moz-border-radius:50px;
+}
+.lesson-btn a:hover{
+  background:#2F69A9;
+  color:#FFFFFF;
+  margin-left:0px;
+  margin-top:5px;
+  border:4px solid #E6EFF7;
+  box-shadow:none;
 }
 
-.lesson-link:hover {
-  background-color: #3498db;
-  color: #fff;
+.lesson-btn a::before{
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-top: 4px solid #fff;
+  border-left: 4px solid #fff;
+  transform: rotate(135deg);
+  position: absolute;
+  right: calc(50% - 5px);
+  top: calc(50% - 10px);
+}
+
+.lesson-btn:hover a::before {
+  margin-left: 0;
+  margin-top: 5px;
 }
 </style>
