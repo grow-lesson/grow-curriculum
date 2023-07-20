@@ -19,7 +19,7 @@ export const htmlSourceData = {
     language: "language-html",
   },
   file2: {
-    filename: "ターミナル",
+    filename: "index.html",
     code: `
 <!DOCTYPE html>
 <html lang="ja">

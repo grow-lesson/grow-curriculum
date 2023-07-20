@@ -335,9 +335,9 @@
             要素<br><br>
             <HighlightWord word="<div>・・・</div>"></HighlightWord><br>
             ・文書に構造を付加する何も意味を持たない要素でこのタグはdivタグと呼ばれます。<br><br>
-            ここで新しい属性を覚えましょう。<br>
+            新しい属性を覚えましょう。<br>
             <span class="markup-word-blue">class属性</span>→要素に名前をつけることができる属性です。
-            ほとんどの要素に付与できます。<br><br>
+            ほとんどの要素に付与できます。cssで指定するときは名前の前に「.」をつけましょう。<br><br>
             プロパティ<br><br>
             <HighlightWord word="background-color: [色の名前(rgb値・色コード)];"></HighlightWord><br>
             ・背景色を変えるプロパティでbackground-colorプロパティと呼ばれます。<br><br>
@@ -346,17 +346,46 @@
             <HighlightWord word="height: [縦幅のサイズ(px,rem,%など)];"></HighlightWord><br>
             ・要素の縦幅を変えるプロパティでheightプロパティと呼ばれます。<br><br>
             それでは実践して試してみましょう!<br>
-            ①以下をコピーしてください。<br>
-            <Terminal :fileName="htmlSourceData.file1.filename" :copiedText="htmlSourceData.file1.code" :lang="htmlSourceData.file1.language" />
-            <br>
-            ②「html-css-lesson-2」フォルダを作り、「index.html」と「style.css」フォルダをlesson-1の時の様に作りましょう!<br>
-            <!-- img -->
-            <br>
-            ③以下の画像の様にhtmlファイルとcssファイルを編集しましょう。
-            <!-- img -->
-            <br>
-            ④以下の様な
-
+            ①<br>
+            以下をコピーしてください。<br>
+          </p>
+          <Terminal :fileName="htmlSourceData.file2.filename" :copiedText="htmlSourceData.file2.code" :lang="htmlSourceData.file2.language" />
+          <br>
+          <p>
+            ②<br>
+            「html-css-lesson-2」フォルダを作り、「index.html」と「style.css」フォルダをlesson-1の時の様に作りましょう!<br>
+          </p>
+          <div>
+            <img src="../../../assets/images/course/html-css-1/vscode-16.png" class="screen-image" alt="vscode-16" />
+          </div><br>
+          <p>
+            ③<br>
+            以下の画像の様にhtmlファイルとcssファイルを編集しましょう。
+          </p>
+          <div>
+            <img src="../../../assets/images/course/html-css-1/vscode-17.png" class="screen-image" alt="vscode-17" />
+          </div><br>
+          <p>
+            ④<br>
+            先ほどのセクション3-3と同じように左のサイドバーの「index.html」を右クリックしてください。<br>
+            タブが開かれるので「エクスプローラーで開く」を押しましょう。<br>
+            ブラウザを確認すると、divタグで作った要素が表示されれば完了です。<br><br>
+          </p>
+          <div>
+            <img src="../../../assets/images/course/html-css-1/web-4.png" class="screen-image" alt="web-4" />
+          </div><br>
+          <p>
+            では次に以下の画像を見てください。<br>
+          </p>
+          <div>
+            <img src="../../../assets/images/course/html-css-1/tag-3.png" class="powerpoint-image" alt="tag-3" />
+          </div><br><br>
+          <p>
+            このようにまずは大きい赤い枠で囲み、中で画像を同じ大きさで並べています。<br>
+            まずは赤い大きなdivで囲み、青い小さな要素を入れていきます。これが親子関係になります。
+            これをdivタグだけで再現してみましょう!<br><br>
+            ①<br>
+            以下の画像の様にhtmlファイルとcssファイルを編集しましょう。
           </p>
         </Document>
 
