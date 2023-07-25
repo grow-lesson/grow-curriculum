@@ -34,8 +34,14 @@ export default {
 <style scoped>
 .sidebar {
   position: fixed;
+  height: 70%;
   grid-column: 2 / span 1;
-  padding-right: 40px;
+  margin-right: 20px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  overflow: scroll;
+  background: rgba(194, 193, 255, 0.432);
+  overflow-x: hidden;
 }
 
 .menu {
@@ -44,8 +50,10 @@ export default {
 }
 
 .menu-item {
+  margin-left: 5px;
   margin-bottom: 0.5em;
   cursor: pointer;
   white-space: pre-wrap;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 </style>
