@@ -3,15 +3,15 @@
     <Header />
     <div class="container">
       <div class="main-content">
-        <Title title="HTML・CSS 1"></Title>
+        <Title title="HTML・CSS 1" id="Title"></Title>
         <Document>
           <p>スマートフォンやタブレット、PCなどで表示されるサービスやWebサイトのデザインができる技術を学んでいくセクションになります。</p>
           <p>Webデザインの目的は、情報を正しく、わかりやすく提供することです。</p>
           <p>ユーザーが操作をしやすくほしい情報にいち早く遷移できるデザインを目指していきましょう!</p>
-        </Document><br>
+        </Document>
 
         <!-- section 1 -->
-        <SubTitle subTitle="1. HTMLとCSSについて知る"></SubTitle>
+        <SubTitle subTitle="1. HTMLとCSSについて知る" id="subTitle1"></SubTitle>
         <Document>
           <p>
             まずHTMLとCSSがの名称や意味を理解しましょう!
@@ -43,7 +43,7 @@
         </Document>
 
         <!-- section 2 -->
-        <SubTitle subTitle="2. プログラミングとコーディング"></SubTitle>
+        <SubTitle subTitle="2. プログラミングとコーディング" id="subTitle2"></SubTitle>
         <Document>
           <p>
             ではこれから学ぶHTML・CSSを記述することはなんというのでしょうか。<br>
@@ -65,8 +65,8 @@
         </Document>
 
         <!-- section 3 -->
-        <SubTitle subTitle="3. HTMLとCSSの仕組み"></SubTitle>
-        <SectionTitle sectionTitle="3-1. HTMLの名称"></SectionTitle>
+        <SubTitle subTitle="3. HTMLとCSSの仕組み" id="subTitle3"></SubTitle>
+        <SectionTitle sectionTitle="3-1. HTMLの名称" id="sectionTitle3-1"></SectionTitle>
         <Document>
           <p>まずはHTMLについて学んでいきましょう!</p>
           <p>
@@ -82,7 +82,7 @@
             <img src="../../../assets/images/course/html-css-1/html-1.png" class="powerpoint-image" alt="html-1" />
           </div>
         </Document>
-        <SectionTitle sectionTitle="3-2. CSSの名称"></SectionTitle>
+        <SectionTitle sectionTitle="3-2. CSSの名称" id="sectionTitle3-2"></SectionTitle>
         <Document>
           <p>次にCSSについて学んでいきましょう!</p>
           <p>
@@ -93,7 +93,7 @@
             <img src="../../../assets/images/course/html-css-1/css-1.png" class="powerpoint-image" alt="css-1" />
           </div>
         </Document>
-        <SectionTitle sectionTitle="3-3. 要素とプロパティ①" id="section3"></SectionTitle>
+        <SectionTitle sectionTitle="3-3. 要素とプロパティ①" id="sectionTitle3-3"></SectionTitle>
         <Document>
           <p>
             まずはHTMLの要素から覚えていきましょう!<br>
@@ -221,7 +221,7 @@
             <img src="../../../assets/images/course/html-css-1/web-1.png" class="screen-image" alt="web-1" />
           </div><br>
         </Document>
-        <SectionTitle sectionTitle="3-4. 要素とプロパティ②" id="section3"></SectionTitle>
+        <SectionTitle sectionTitle="3-4. 要素とプロパティ②" id="sectionTitle3-4"></SectionTitle>
         <Document>
           <p>
             次にCSSのプロパティを覚えていきましょう!<br><br>
@@ -248,7 +248,7 @@
             <img src="../../../assets/images/course/html-css-1/web-2.png" class="screen-image" alt="web-2" />
           </div><br>
         </Document>
-        <SectionTitle sectionTitle="3-5. 要素とプロパティ③" id="section3"></SectionTitle>
+        <SectionTitle sectionTitle="3-5. 要素とプロパティ③" id="sectionTitle3-5"></SectionTitle>
         <Document>
           <p>
             ここまででHTMLとCSSの役割がわかったと思います。<br>
@@ -310,8 +310,8 @@
         </Document>
 
         <!-- section 4 -->
-        <SubTitle subTitle="4. HTMLとCSSの関係性"></SubTitle>
-        <SectionTitle sectionTitle="4-1. HTMLの親子関係"></SectionTitle>
+        <SubTitle subTitle="4. HTMLとCSSの関係性" id="subTitle4"></SubTitle>
+        <SectionTitle sectionTitle="4-1. HTMLの親子関係" id="sectionTitle4-1"></SectionTitle>
         <Document>
           <p>
             ここからHTMLの要素の関係に深堀りしていきましょう。<br>
@@ -328,17 +328,17 @@
             <img src="../../../assets/images/course/html-css-1/box.jpg" class="screen-image" alt="tag-2" />
           </div><br><br>
         </Document>
+        <SectionTitle sectionTitle="4-2. 要素とプロパティ④" id="sectionTitle4-2"></SectionTitle>
         <Document>
-          <SectionTitle sectionTitle="4-2. 要素とプロパティ④"></SectionTitle>
           <p>
             それではここからHTMLの要素の入れ子関係を理解できる様に新しい要素を覚えましょう。<br><br>
-            要素<br><br>
+            要素<br>
             <HighlightWord word="<div>・・・</div>"></HighlightWord><br>
             ・文書に構造を付加する何も意味を持たない要素でこのタグはdivタグと呼ばれます。<br><br>
             新しい属性を覚えましょう。<br>
             <span class="markup-word-blue">class属性</span>→要素に名前をつけることができる属性です。
-            ほとんどの要素に付与できます。cssで指定するときは名前の前に「.」をつけましょう。<br><br>
-            プロパティ<br><br>
+            cssで指定するときは名前の前に「.」をつけましょう。<br><br>
+            プロパティ<br>
             <HighlightWord word="background-color: [色の名前(rgb値・色コード)];"></HighlightWord><br>
             ・背景色を変えるプロパティでbackground-colorプロパティと呼ばれます。<br><br>
             <HighlightWord word="width: [横幅のサイズ(px,rem,%など)];"></HighlightWord><br>
@@ -376,20 +376,156 @@
           </div><br>
           <p>
             では次に以下の画像を見てください。<br>
-          </p>
+          </p><br>
           <div>
             <img src="../../../assets/images/course/html-css-1/tag-3.png" class="powerpoint-image" alt="tag-3" />
           </div><br><br>
           <p>
             このようにまずは大きい赤い枠で囲み、中で画像を同じ大きさで並べています。<br>
-            まずは赤い大きなdivで囲み、青い小さな要素を入れていきます。これが親子関係になります。
-            これをdivタグだけで再現してみましょう!<br><br>
+            まずは赤い大きなdivで囲み、青い小さな要素を入れていきます。これが親子関係になります。<br>
+            この様な親子関係をdivタグだけで再現してみましょう!<br><br>
             ①<br>
+            以下の画像の様に先ほどのhtmlファイルとcssファイルに追記しましょう。<br>
+          </p><br>
+          <div>
+            <img src="../../../assets/images/course/html-css-1/vscode-18.png" class="screen-image" alt="vscode-15" />
+          </div><br>
+          <p>
+            ②<br>
+            編集ができたらWeb上で確認しましょう。画像と同じようにできていたらOKです。
+          </p><br>
+          <div>
+            <img src="../../../assets/images/course/html-css-1/web-5.png" class="screen-image" alt="web-5" />
+          </div><br>
+        </Document>
+        <SectionTitle sectionTitle="4-3. 要素とプロパティ⑤" id="sectionTitle4-3"></SectionTitle>
+        <Document>
+          <p>
+            HTMLの要素の入れ子関係をさらに学んでいきましょう。<br>
+            以下の画像を見て下さい。<br>
+          </p><br>
+          <div>
+            <img src="../../../assets/images/course/html-css-1/tag-4.png" class="powerpoint-image" alt="tag-4" />
+          </div><br><br>
+          <p>
+            先ほどの画像が6枚並んでいる場面や他のページに遷移するメニューのように、共通要素はdivタグではなくリストと呼ばれる要素で親子関係を作ることがおすすめです。<br>
+            それでは新しい要素を学んでいきましょう!<br><br>
+            要素<br>
+            <HighlightWord word="<ul>・・・</ul>"></HighlightWord><br>
+            ・順序がない箇条書きのリストを表示する要素でこのタグはulタグと呼ばれます。<br><br>
+            <HighlightWord word="<li>・・・</li>"></HighlightWord><br>
+            ・リストの項目を表示するために使用する要素でこのタグはliタグと呼ばれます。<br>
+            ulとliタグはセットで使うという事を覚えておきましょう。<br><br>
+            それではリストを使ってメニュー部分を作ってみましょう!<br>
+            ①<br>
+            「html-css-lesson-3」フォルダを作り、「index.html」と「style.css」フォルダをlesson-1の時の様に作りましょう!<br>
+          </p>
+          <div>
+            <img src="../../../assets/images/course/html-css-1/vscode-19.png" class="screen-image" alt="vscode-19" />
+          </div><br>
+          <p>
+            ②<br>
             以下の画像の様にhtmlファイルとcssファイルを編集しましょう。
           </p>
+          <div>
+            <img src="../../../assets/images/course/html-css-1/vscode-20.png" class="screen-image" alt="vscode-20" />
+          </div><br>
+          <p>
+            ③<br>
+            編集ができたらWeb上で確認しましょう。画像と同じようにできていたらOKです。
+          </p>
+          <div>
+            <img src="../../../assets/images/course/html-css-1/web-6.png" class="screen-image" alt="web-6" />
+          </div><br>
+          <p>
+            ここで属性も一つ覚えておきましょう。<br>
+            <span class="markup-word-blue">id属性</span>→要素に名前をつけることができる属性です。
+            cssで指定するときは名前の前に「#」をつけましょう。<br>
+            class属性との違いはidでつけた名前はそのページでは<span class="markup-word-red">1回しか</span>使えないという事です。<br><br>
+            ではどのように使うか作りながら考えていきましょう。<br>
+            ①<br> 
+            以下を追記しましょう。
+            </p>
+            <div>
+              <img src="../../../assets/images/course/html-css-1/vscode-21.png" class="screen-image" alt="vscode-20" />
+            </div><br>
+            <p>
+            ①<br>
+            以下の画像の様にhtmlファイルとcssファイルを編集しましょう。<br>
+            </p><br>
+            
+            <p>
+            ②<br>
+            編集ができたらWeb上で確認しましょう。画像と同じようにできていたらOKです。<br>
+            この様に一つだけ特別な意味を持たせたりするスタイルを適用するときに使ったりしますが使用頻度はclassより使う機会が少ないという事を覚えておきましょう。<br>
+          </p><br>
+          <div>
+            <img src="../../../assets/images/course/html-css-1/web-7.png" class="screen-image" alt="web-7" />
+          </div><br>
         </Document>
 
-        <Terminal :fileName="htmlSourceData.file2.filename" :copiedText="htmlSourceData.file2.code" :lang="htmlSourceData.file2.language" />
+        <!-- section 5 -->
+        <SubTitle subTitle="5. HTMLとCSSを深堀りする" id="subTitle5"></SubTitle>
+        <SectionTitle sectionTitle="5-1. HTMLの全体構造" id="sectionTitle5-1"></SectionTitle>
+        <Document>
+          <p>
+            HTMLとCSSについて少しだけ理解が深まったと思います。<br>
+            それではHTMLの全体の構造についてみていきましょう。<br>
+            以下の画像を見て下さい。
+          </p><br>
+          <div>
+            <img src="../../../assets/images/course/html-css-1/tag-5.png" class="powerpoint-image" alt="tag-5" />
+          </div><br><br>
+          <p>
+            このようにHTMLで画面に表示する前に設定しないといけない事がたくさんあります。<br>
+            この各要素がどのような役割を示すのか学んでいきましょう。<br><br>
+            <HighlightWord word="<!DOCTYPE>"></HighlightWord><br>
+            ・HTML のバージョンを宣言をします。<br>
+            ドキュメントタイプ宣言と呼ばれ、HTML 文書ファイルの先頭に記述します。タグではないので注意しましょう。<br><br>
+            <HighlightWord word="<html>・・・</html>"></HighlightWord><br>
+            ・HTML文書であることを宣言します。<br>
+            ここからHTMLの記述を「開始する」または「終了する」という宣言に使います。<br><br>
+            <HighlightWord word="<head>・・・</head>"></HighlightWord><br>
+            ・文書のヘッダ部分を指定します。<br>
+            Webページの設定(文字コードの設定など)の情報を記述するため使います。<br><br>
+            <HighlightWord word="<body>・・・</body>"></HighlightWord><br>
+            ・文書のボディ部分を指定します。<br>
+            文章や画像など、実際にブラウザの画面上に表示される内容を指定するため使います。<br><br>
+            <HighlightWord word="<meta charset=“文字コード”>"></HighlightWord><br>
+            ・Webサイトの情報を記載します。<br>
+            検索エンジンやブラウザにWebページの情報を伝えるため使います。<br><br>
+            <span class="markup-word-blue">charset属性</span>→文字コードを指定できる属性です。
+            例 : UTF8,unicode,shiftJisなど<br><br>
+            <HighlightWord word="<title>・・・</title>"></HighlightWord><br>
+            ・Webページのタブに表示する文字を指定します。<br>
+            Webページのタイトルを表示するため使います。<br><br>
+            <HighlightWord word="<link rel=“stylesheet” href=“読み込みたいファイルのパス”>"></HighlightWord><br>
+            ・関連する文書ファイルを指定してその関係を定義します。<br>
+            検索エンジンやブラウザにWebページの情報を伝えるため使います。(CSSの読み込みなど)<br><br>
+            <span class="markup-word-blue">rel属性</span>→そのページ、ファイルとの関係性を指定できる属性です。<br><br>
+            このようにHTMLには決められた型があり、その構造を元に記述していく必要があります。<br>
+            その決められた構造をHTMLの<span class="markup-word-red">雛形(ひながた)</span>といいます。
+          </p><br>
+        </Document>
+        <SectionTitle sectionTitle="5-2. HTMLとCSSのコメント" id="sectionTitle5-2"></SectionTitle>
+        <Document>
+          <p>
+            HTMLとCSSのコメントの入れ方について学びましょう!<br>
+            HTMLやCSSでは画面上に出さずに文字を入れたいときにコメントを残しておく事ができます。<br>
+            他の人が自分のデザインを見たときにわかりやすいようにするために残すように意識しましょう。<br>
+            HTML<br>
+            <HighlightWord word="<!-- 入れたいコメント -->"></HighlightWord><br>
+            CSS<br>
+            <HighlightWord word="*/ 入れたいコメント */"></HighlightWord><br><br>
+          </p>
+          <div>
+            <img src="../../../assets/images/course/html-css-1/tag-6.png" class="powerpoint-image" alt="tag-6" />
+          </div><br><br>
+          <div>
+            <img src="../../../assets/images/course/html-css-1/tag-7.png" class="powerpoint-image" alt="tag-7" />
+          </div><br><br>
+        </Document>
+
       </div>
       <div class="side-content">
         <TableOfContents :sections="sections" />
@@ -431,7 +567,19 @@ export default {
         { id: "Title", title: "HTML・CSS 1" },
         { id: "subTitle1", title: "  1. HTMLとCSSについて知る" },
         { id: "subTitle2", title: "  2. プログラミングとコーディング" },
-        { id: "subTitle3", title: "  3. HTMLの仕組み" },
+        { id: "subTitle3", title: "  3. HTMLとCSSの仕組み" },
+        { id: "sectionTitle3-1", title: "    3-1. HTMLの名称" },
+        { id: "sectionTitle3-2", title: "    3-2. CSSの名称" },
+        { id: "sectionTitle3-3", title: "    3-3. 要素とプロパティ①" },
+        { id: "sectionTitle3-4", title: "    3-4. 要素とプロパティ②" },
+        { id: "sectionTitle3-5", title: "    3-5. 要素とプロパティ③" },
+        { id: "subTitle4", title: "  4. HTMLとCSSの関係性" },
+        { id: "sectionTitle4-1", title: "    4-1. HTMLの親子関係" },
+        { id: "sectionTitle4-2", title: "    4-2. 要素とプロパティ④" },
+        { id: "sectionTitle4-3", title: "    4-3. 要素とプロパティ⑤" },
+        { id: "subTitle5", title: "  5. HTMLとCSSを深堀りする" },
+        { id: "sectionTitle5-1", title: "    5-1. HTMLの全体構造" },
+        { id: "sectionTitle5-1", title: "    5-2. HTMLとCSSのコメント" },
       ],
     };
   },
@@ -448,7 +596,7 @@ export default {
 }
 .side-content{
   margin-left: 1%;
-  margin-top: 40px;
+  margin-top: 5vh;
   width: 24%;
 }
 .markup-word-blue {
