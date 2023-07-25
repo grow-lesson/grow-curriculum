@@ -632,4 +632,14 @@ export default {
   display: block;
   margin: 0 auto;
 }
+
+/* タブレット版 */
+@media (max-width: 834px) {
+  .main-content {
+    width: 100%;
+  }
+  .side-content {
+    display: none;
+  }
+}
 </style>
