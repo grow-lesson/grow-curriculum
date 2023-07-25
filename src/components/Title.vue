@@ -27,6 +27,9 @@ export default {
   width: 80%;
   margin: 30px auto 20px;
 }
+.main-title-word {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 
 @media (max-width: 648px) {
   .main-title{

@@ -25,6 +25,7 @@ export default {
   font-size: large;
   font-weight: bold;
   margin: 0 auto;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 @media (max-width: 648px) {

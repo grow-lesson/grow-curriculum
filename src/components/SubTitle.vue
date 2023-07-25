@@ -28,6 +28,7 @@ export default {
 }
 .sub-title-word {
   text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 @media (max-width: 648px) {

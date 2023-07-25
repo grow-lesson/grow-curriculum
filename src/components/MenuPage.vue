@@ -92,6 +92,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.main-content {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 /* Hero */
 .hero {
   background-color: #f9f9f9;
