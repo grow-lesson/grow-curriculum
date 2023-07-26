@@ -579,7 +579,7 @@ export default {
         { id: "sectionTitle4-3", title: "    4-3. 要素とプロパティ⑤" },
         { id: "subTitle5", title: "  5. HTMLとCSSを深堀りする" },
         { id: "sectionTitle5-1", title: "    5-1. HTMLの全体構造" },
-        { id: "sectionTitle5-1", title: "    5-2. HTMLとCSSのコメント" },
+        { id: "sectionTitle5-2", title: "    5-2. HTMLとCSSのコメント" },
       ],
     };
   },
