@@ -16,9 +16,8 @@
             <source src="../../assets/videos/typing-1.mp4" type="video/mp4" />
           </video>
         </div> -->
-        <div class="introduce-text">
-          <h2 class="introduce-subTitle">学習サイトで学べる事</h2>
-          <p class="introduce-description">ここでは、HTMLとCSS、JavaScript、Git、コマンドライン、Rubyの学習に特化しており、 これらの言語やツールを使ってウェブ開発のスキルを身につけることができます。</p>
+        <div class="introduce-image">
+          <img src="../../assets/images/info/info-1.jpg" alt="info-2" class="introduce-picture" />
         </div>
       </li>
       <li class="introduce-contents is-even">
@@ -40,9 +39,8 @@
             <source src="../../assets/videos/typing-2.mp4" type="video/mp4" />
           </video>
         </div> -->
-        <div class="introduce-text">
-          <h2 class="introduce-subTitle">アットホームで聞きやすい環境</h2>
-          <p class="introduce-description">先輩エンジニアと交流するコミュニティやフォーラムも提供しています。 また他の学習者との情報交換や質問、プロジェクトの共同開発などを通じて、より成長していきましょう。</p>
+        <div class="introduce-image">
+          <img src="../../assets/images/info/info-2.jpg" alt="info-2" class="introduce-picture" />
         </div>
       </li>
       <li class="introduce-contents is-even">
