@@ -11,10 +11,14 @@
             プログラミングのスキルを向上させ、新しい技術や知識を習得するための最適な環境を提供しています。
           </p>
         </div>
-        <div class="introduce-video" :class="{ 'slide-in': isLoaded }">
+        <!-- <div class="introduce-video" :class="{ 'slide-in': isLoaded }">
           <video autoplay muted loop @loadeddata="handleVideoLoad">
             <source src="../../assets/videos/typing-1.mp4" type="video/mp4" />
           </video>
+        </div> -->
+        <div class="introduce-text">
+          <h2 class="introduce-subTitle">学習サイトで学べる事</h2>
+          <p class="introduce-description">ここでは、HTMLとCSS、JavaScript、Git、コマンドライン、Rubyの学習に特化しており、 これらの言語やツールを使ってウェブ開発のスキルを身につけることができます。</p>
         </div>
       </li>
       <li class="introduce-contents is-even">
@@ -31,10 +35,14 @@
           <h2 class="introduce-subTitle">充実した学習コンテンツ</h2>
           <p class="introduce-description">初心者の方にも分かりやすい学習モジュールを提供し、実践的な演習やプロジェクトを通じて 習得した知識を実践で活用できるようサポートします。</p>
         </div>
-        <div class="introduce-video" :class="{ 'slide-in': isLoaded }">
+        <!-- <div class="introduce-video" :class="{ 'slide-in': isLoaded }">
           <video autoplay muted loop @loadeddata="handleVideoLoad">
             <source src="../../assets/videos/typing-2.mp4" type="video/mp4" />
           </video>
+        </div> -->
+        <div class="introduce-text">
+          <h2 class="introduce-subTitle">アットホームで聞きやすい環境</h2>
+          <p class="introduce-description">先輩エンジニアと交流するコミュニティやフォーラムも提供しています。 また他の学習者との情報交換や質問、プロジェクトの共同開発などを通じて、より成長していきましょう。</p>
         </div>
       </li>
       <li class="introduce-contents is-even">
