@@ -6,7 +6,7 @@
         <div class="logo" v-show="isMobile">
           <a @click="goToMenuPage"><img src="../../assets/images/header/logo.png" alt="GROWロゴ" class="logo-image" /></a>
         </div>
-        <p class="header-title" v-show="!isMobile"><a @click="goToMenuPage">GROW 学習サイト</a></p>
+        <p class="header-title" v-show="!isMobile"><a @click="goToMenuPage">GROW Learning Website</a></p>
         <!-- ナビゲーションメニュー -->
         <div class="navigation-wrap" v-show="!isMobile">
           <ul class="navigation-list">

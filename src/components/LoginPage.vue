@@ -1,7 +1,7 @@
 <template>
   <div class="loginPage">
     <div class="welcome-header">
-      <a href="/" class="logo">Grow 学習サイト</a>
+      <a href="/" class="logo">GROW Learning Website</a>
     </div>
     <div class="login-container">
       <div class="login-header">
