@@ -11,13 +11,10 @@
             プログラミングのスキルを向上させ、新しい技術や知識を習得するための最適な環境を提供しています。
           </p>
         </div>
-        <!-- <div class="introduce-video" :class="{ 'slide-in': isLoaded }">
+        <div class="introduce-video" :class="{ 'slide-in': isLoaded }">
           <video autoplay muted loop @loadeddata="handleVideoLoad">
             <source src="../../assets/videos/typing-1.mp4" type="video/mp4" />
           </video>
-        </div> -->
-        <div class="introduce-image">
-          <img src="../../assets/images/info/info-1.jpg" alt="info-2" class="introduce-picture" />
         </div>
       </li>
       <li class="introduce-contents is-even">
@@ -34,13 +31,10 @@
           <h2 class="introduce-subTitle">充実した学習コンテンツ</h2>
           <p class="introduce-description">初心者の方にも分かりやすい学習モジュールを提供し、実践的な演習やプロジェクトを通じて 習得した知識を実践で活用できるようサポートします。</p>
         </div>
-        <!-- <div class="introduce-video" :class="{ 'slide-in': isLoaded }">
+        <div class="introduce-video" :class="{ 'slide-in': isLoaded }">
           <video autoplay muted loop @loadeddata="handleVideoLoad">
             <source src="../../assets/videos/typing-2.mp4" type="video/mp4" />
           </video>
-        </div> -->
-        <div class="introduce-image">
-          <img src="../../assets/images/info/info-2.jpg" alt="info-2" class="introduce-picture" />
         </div>
       </li>
       <li class="introduce-contents is-even">
