@@ -1,5 +1,6 @@
 module.exports = {
-  publicPath: "/grow-curriculum/",
+  // publicPath: "/grow-curriculum/",
+  publicPath: "./",
   outputDir: "docs",
   assetsDir: "",
   devServer: {
