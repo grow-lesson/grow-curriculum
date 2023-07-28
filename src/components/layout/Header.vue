@@ -31,15 +31,15 @@
                 <li class="dropdown-item"><a href="#" class="dropdown-link">プロフィール</a></li>
                 <li class="dropdown-item"><a href="#" class="dropdown-link">進捗管理</a></li>
                 <li class="dropdown-item"><a href="#" class="dropdown-link">給与の確認</a></li>
-                <li class="dropdown-item"><a href="#" class="dropdown-link">勤怠表を提出する</a></li>
+                <li class="dropdown-item"><a href="#" target="_blank" class="dropdown-link">勤怠表を提出する</a></li>
               </ul>
             </li>
             <li class="navigation-item">
               <button class="navigation-btn">その他</button>
               <ul class="dropdown-list">
                 <li class="dropdown-item"><a @click="goToContactPage" class="dropdown-link">お問い合わせ</a></li>
-                <li class="dropdown-item"><a href="https://grow-infotech.com" class="dropdown-link">会社のホームページを見る</a></li>
-                <li class="dropdown-item"><a href="https://www.wantedly.com/companies/company_7305723" class="dropdown-link">Wantedllyを見る</a></li>
+                <li class="dropdown-item"><a href="https://grow-infotech.com" target="_blank" class="dropdown-link">会社のホームページを見る</a></li>
+                <li class="dropdown-item"><a href="https://www.wantedly.com/companies/company_7305723" target="_blank" class="dropdown-link">Wantedllyを見る</a></li>
               </ul>
             </li>
           </ul>
