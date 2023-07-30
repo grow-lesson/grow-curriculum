@@ -118,7 +118,7 @@ export default {
   padding: 5px;
   height: auto;
   font-size: 16px;
-  white-space: pre-wrap;
+  white-space: wrap;
   overflow-x: scroll;
   scrollbar-width: thin;
   user-select: text;
