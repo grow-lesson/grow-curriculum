@@ -11,8 +11,8 @@
         </div>
         <Title title="インストールや環境構築をしよう！(Windows版)" id="Title-w"></Title>
         <SubTitle subTitle="1. カリキュラムに必要なツールをインストールする" id="subTitle1-w"></SubTitle>
-        <SectionTitle sectionTitle="1-1. ブラウザをインストールしよう!" id="sectionTitle1-w"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="1-1. ブラウザをインストールしよう!" id="sectionTitle1-w"></SectionTitle>
           <p>カリキュラムはブラウザ上で確認しながらにWebデザインをしていきます。</p>
           <p>今回はブラウザはGoogle ChromeとFire Foxどちらかを使いましょう。</p>
           <br>
@@ -21,8 +21,8 @@
             <a class="download-link" href="https://www.mozilla.org/ja/firefox/new/">Fire Foxをダウンロードする</a>
           </div>
         </Document>
-        <SectionTitle sectionTitle="1-2. テキストエディタをインストールしよう!" id="sectionTitle2-w"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="1-2. テキストエディタをインストールしよう!" id="sectionTitle2-w"></SectionTitle>
           <p>カリキュラムで制作したWebデザインをコーディングするテキストエディタをインストールしましょう!</p>
           <p>テキストエディタとは文字を入力したり、編集や保存ができるツールのことです。</p>
           <p>PCにデフォルトで「メモ帳」などがインストールするされていますがプログラムを組んだり、デザインを作ったりすると何行もコードを書くので見にくくなります。</p>
@@ -31,8 +31,8 @@
             <a class="download-link" href="https://code.visualstudio.com/">Visual Studio Codeをダウンロードする</a>
           </div>
         </Document>
-        <SectionTitle sectionTitle="1-3. Visual Studio Codeの拡張機能をインストールしよう!" id="sectionTitle3-w"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="1-3. Visual Studio Codeの拡張機能をインストールしよう!" id="sectionTitle3-w"></SectionTitle>
           <p>
             ①<br>
             Visual Studio Codeをインストールしたら早速開いてみましょう!<br>
@@ -104,8 +104,8 @@
           <br>
           <Terminal :fileName="environmentData.file1.filename" :copiedText="environmentData.file1.code" :lang="environmentData.file1.language" />
         </Document>
-        <SectionTitle sectionTitle="1-4. Sourcetreeの拡張機能をインストールしよう!" id="sectionTitle4-w"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="1-4. Sourcetreeの拡張機能をインストールしよう!" id="sectionTitle4-w"></SectionTitle>
           <p>
             次にカリキュラムの課題をbacklog上にアップロードするためのツールをインストールしましょう!<br>
             今回使うSource treeと呼ばれるツールは本来はコンピュータ上でソフトウェアの開発をするためのツールです。<br>
@@ -177,8 +177,8 @@
         </div>
         <Title title="インストールや環境構築をしよう！(Mac版)" id="Title-m"></Title>
         <SubTitle subTitle="1. カリキュラムに必要なツールをインストールする" id="subTitle1-m"></SubTitle>
-        <SectionTitle sectionTitle="1-1. ブラウザをインストールしよう!" id="sectionTitle1-m"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="1-1. ブラウザをインストールしよう!" id="sectionTitle1-m"></SectionTitle>
           <p>カリキュラムはブラウザ上で確認しながらにWebデザインをしていきます。</p>
           <p>今回はブラウザはGoogle ChromeとFire Foxどちらかを使いましょう。</p>
           <br>
@@ -187,8 +187,8 @@
             <a class="download-link" href="https://www.mozilla.org/ja/firefox/new/">Fire Foxをダウンロードする</a>
           </div>
         </Document>
-        <SectionTitle sectionTitle="1-2. テキストエディタをインストールしよう!" id="sectionTitle2-m"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="1-2. テキストエディタをインストールしよう!" id="sectionTitle2-m"></SectionTitle>
           <p>カリキュラムで制作したWebデザインをコーディングするテキストエディタをインストールしましょう!</p>
           <p>テキストエディタとは文字を入力したり、編集や保存ができるツールのことです。</p>
           <p>PCにデフォルトで「メモ帳」などがインストールするされていますがプログラムを組んだり、デザインを作ったりすると何行もコードを書くので見にくくなります。</p>
@@ -197,8 +197,8 @@
             <a class="download-link" href="https://code.visualstudio.com/">Visual Studio Codeをダウンロードする</a>
           </div>
         </Document>
-        <SectionTitle sectionTitle="1-3. Visual Studio Codeの拡張機能をインストールしよう!" id="sectionTitle3-m"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="1-3. Visual Studio Codeの拡張機能をインストールしよう!" id="sectionTitle3-m"></SectionTitle>
           ①<br>
           <p>
             Visual Studio Codeをインストールしたら早速開いてみましょう!<br>
@@ -269,8 +269,8 @@
           </div>
           <br>
         </Document>
-        <SectionTitle sectionTitle="1-4. Sourcetreeの拡張機能をインストールしよう!" id="sectionTitle4-m"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="1-4. Sourcetreeの拡張機能をインストールしよう!" id="sectionTitle4-m"></SectionTitle>
           <p>
             次にカリキュラムの課題をbacklog上にアップロードするためのツールをインストールしましょう!<br>
             今回使うSource treeと呼ばれるツールは本来はコンピュータ上でソフトウェアの開発をするためのツールです。<br>

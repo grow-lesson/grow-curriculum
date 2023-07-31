@@ -17,14 +17,24 @@ export default {
 
 <style scoped>
 .section-title {
-  background-color: #34dc47;
-  color: #fff;
-  padding: 8px;
+  position: relative;
+  padding: 8px 0;
   font-size: 15px;
   font-weight: bold;
   border-radius: 4px;
-  margin: 10px auto;
-  width: 60%;
+  margin: 10px 0 30px;
+  margin-right: auto;
+  width: 100%;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -5px; /* Adjust the value to position the line */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #228bc8;
 }
 .section-title-word {
   text-align: center;

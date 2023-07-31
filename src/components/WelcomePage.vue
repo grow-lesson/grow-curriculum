@@ -75,8 +75,8 @@ export default {
       setTimeout(() => {
         // 1.5秒後にフローティング状態を解除
         this.isFloating = false;
-      }, 1500);
-    }, 4000);
+      }, 6500);
+    }, 7000);
   },
 };
 </script>
