@@ -1,6 +1,7 @@
 <template>
   <div>
     <Header />
+    <Spinner :isLoading="isLoading" />
     <button class="btn_04" @click="toggleOS" @focus="buttonFocus" @blur="buttonBlur">{{ isWindows ? "Macをお持ちの方はこちら" : "Windowsをお持ちの方はこちら" }}</button>
     <div class="container">
       <!-- Windows版の説明 -->
@@ -337,6 +338,7 @@ import Document from "@/components/Document.vue";
 import Terminal from "@/components/Terminal.vue";
 import TableOfContents from "@/components/TableOfContents.vue";
 import { environmentData } from "@/data/environmentData.js";
+import Spinner from "@/components/Spinner.vue";
 
 export default {
   name: "Environment",
@@ -350,11 +352,13 @@ export default {
     Document,
     Terminal,
     TableOfContents,
+    Spinner,
   },
   data() {
     return {
       isWindows: true,
       isSmallScreen: false,
+      isLoading: false,
       environmentData: environmentData,
       windowsSections: [
         { id: "Title-w", title: "インストールや環境構築をしよう！(Windows版)" },
@@ -394,7 +398,15 @@ export default {
       this.isFloating = false;
     },
     toggleOS() {
-      this.isWindows = !this.isWindows;
+      this.isLoading = true;
+      // 2秒の遅延処理を行う（setTimeoutを使う）
+      setTimeout(() => {
+        // ロジックの完了後、isLoadingをfalseに設定してスピナーを非表示に
+        this.isLoading = false;
+
+        // 画面のレイアウトを切り替えるロジックをここに追加する
+        this.isWindows = !this.isWindows;
+      }, 1000);
     },
   },
 };
@@ -505,6 +517,7 @@ export default {
 .screen-image {
   max-width: 100%;
   height: auto;
+  border: 1px solid rgb(175, 175, 175);
 }
 
 /* タブレット版 */

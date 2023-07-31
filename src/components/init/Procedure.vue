@@ -1,6 +1,7 @@
 <template>
   <div>
     <Header />
+    <Spinner :isLoading="isLoading" />
     <button class="btn_04" @click="toggleOS" @focus="buttonFocus" @blur="buttonBlur">{{ isWindows ? "Macをお持ちの方はこちら" : "Windowsをお持ちの方はこちら" }}</button>
     <div class="container">
       <!-- Windows版の説明 -->
@@ -679,6 +680,7 @@ import SubTitle from "@/components/SubTitle.vue";
 import HighlightWord from "@/components/HighlightWord.vue";
 import Document from "@/components/Document.vue";
 import TableOfContents from "@/components/TableOfContents.vue";
+import Spinner from "@/components/Spinner.vue";
 
 export default {
   name: "Procedure",
@@ -690,11 +692,13 @@ export default {
     HighlightWord,
     Document,
     TableOfContents,
+    Spinner,
   },
   data() {
     return {
       isWindows: true,
       isSmallScreen: false,
+      isLoading: false,
       windowsSections: [
         { id: "Title-w", title: "カリキュラムの進めるための準備をしよう!(Windows版)" },
         { id: "subTitle1-w", title: "  1. backlogにて課題を担当者に見てもらえるようにしよう!" },
@@ -729,7 +733,15 @@ export default {
       this.isFloating = false;
     },
     toggleOS() {
-      this.isWindows = !this.isWindows;
+      this.isLoading = true;
+      // 2秒の遅延処理を行う（setTimeoutを使う）
+      setTimeout(() => {
+        // ロジックの完了後、isLoadingをfalseに設定してスピナーを非表示に
+        this.isLoading = false;
+
+        // 画面のレイアウトを切り替えるロジックをここに追加する
+        this.isWindows = !this.isWindows;
+      }, 1000);
     },
   },
 };
@@ -799,7 +811,9 @@ export default {
 .screen-image {
   max-width: 100%;
   height: auto;
+  border: 1px solid rgb(175, 175, 175);
 }
+
 .markup-word-red {
   white-space: pre;
   color: rgb(255, 37, 37);

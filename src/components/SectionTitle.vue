@@ -37,7 +37,8 @@ export default {
   background-color: #228bc8;
 }
 .section-title-word {
-  /* text-align: center; */
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 @media (max-width: 648px) {

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="welcome-header">
-      <p class="welcome-title">GROW 学習サイト</p>
+      <p class="welcome-title">GROW Learning Website</p>
     </div>
     <div class="welcome-container">
       <div class="box">

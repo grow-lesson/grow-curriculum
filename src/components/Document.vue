@@ -12,12 +12,11 @@
   padding: 20px;
   margin: 0 50px 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .content {
   color: #333;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 @media (max-width: 648px) {

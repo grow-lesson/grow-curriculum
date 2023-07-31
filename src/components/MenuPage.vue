@@ -22,7 +22,7 @@
       </div>
       <section class="course">
         <div class="course-item">
-          <h2 class="course-title">ターミナル操作</h2>
+          <h2 class="course-title">コマンドライン</h2>
           <p class="course-explanation">ファイル・フォルダの作成や編集・移動・削除を学べるコース</p>
           <div class="course-image">
             <div class="course-logo">
@@ -50,6 +50,43 @@
           <div class="course-image">
             <div class="course-logo">
               <img src="../assets/images/menu/git.png" class="course-icon" alt="git" />
+            </div>
+          </div>
+          <a class="course-button" @click="goToGitMenuPage">受講する</a>
+        </div>
+      </section>
+      <div class="hero">
+        <div class="hero-content">
+          <h1 class="hero-title">中級コース</h1>
+        </div>
+      </div>
+      <section class="course">
+        <div class="course-item">
+          <h2 class="course-title">Javascript</h2>
+          <p class="course-explanation">Webサイトの動的な仕組みを作るのに必要な知識が学べるコース</p>
+          <div class="course-image">
+            <div class="course-logo">
+              <img src="../assets/images/menu/javascript.png" class="course-icon" alt="javascript" />
+            </div>
+          </div>
+          <a class="course-button" @click="goToCommandLineMenuPage">受講する</a>
+        </div>
+        <div class="course-item">
+          <h2 class="course-title">Ruby</h2>
+          <p class="course-explanation">オブジェクト指向を学べるコース</p>
+          <div class="course-image">
+            <div class="course-logo">
+              <img src="../assets/images/menu/ruby.png" class="course-icon" alt="ruby" />
+            </div>
+          </div>
+          <a class="course-button" @click="goToHtmlMenuPage">受講する</a>
+        </div>
+        <div class="course-item">
+          <h2 class="course-title">情報工学</h2>
+          <p class="course-explanation">情報技術者に必要な基本的な知識を学べるコース</p>
+          <div class="course-image">
+            <div class="course-logo">
+              <img src="../assets/images/menu/information-technology.png" class="course-icon" alt="information-technology" />
             </div>
           </div>
           <a class="course-button" @click="goToGitMenuPage">受講する</a>
@@ -92,6 +129,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.main-content {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 /* Hero */
 .hero {
   background-color: #f9f9f9;
