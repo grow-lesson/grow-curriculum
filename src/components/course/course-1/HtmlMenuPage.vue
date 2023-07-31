@@ -84,7 +84,7 @@ export default {
 }
 
 .breadcrumb{
-  margin-left: 100px;
+  margin-left: 10%;
 }
 
 .lesson-title{
@@ -105,7 +105,7 @@ export default {
   justify-content: center;
   list-style: none;
   /* padding-left: 0; */
-  padding: 50px 100px;
+  padding: 50px 0px;
 }
 
 .lesson-item {
@@ -198,6 +198,42 @@ export default {
 .lesson-btn:hover a::before {
   margin-left: 0;
   margin-top: 5px;
+}
+
+@media (max-width: 648px) {
+  .lesson-heading{
+    font-size: 1.5rem;
+  }
+
+  .lesson-list {
+    padding: 0; /* Remove padding to ensure the list takes full width */
+    display: flex; /* Use flexbox to center the lesson items */
+    flex-direction: column; /* Stack the items vertically */
+    align-items: center; /* Center items horizontally */
+  }
+
+  .lesson-item {
+    width: 100%; /* Make the items take full width */
+    height: auto;
+    max-width: 400px; /* Set a maximum width for the items */
+    margin: 0 auto 25px auto;
+  }
+
+  .lesson-itemWrap {
+    width: 100%; /* Make the wrapping div take full width */
+    border-radius: 5px;
+    padding: 20px 20px;
+  }
+
+  .lesson-itemImg {
+    display: none;
+  }
+
+  /* Adjust button positioning */
+  .lesson-btn {
+    right: 25px;
+    left: auto;
+  }
 }
 
 </style>
