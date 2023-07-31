@@ -609,28 +609,18 @@ export default {
   color: rgb(255, 37, 37);
   font-weight: bold;
 }
-.html-image {
-  display: block;
-  margin: 0 auto;
-  max-width: 20%;
-  height: auto;
-}
-.css-image {
-  display: block;
-  margin: 0 auto;
-  max-width: 20%;
-  height: auto;
-}
 
 .screen-image {
   max-width: 100%;
   height: auto;
+  border: 1px solid rgb(175, 175, 175);
 }
 .powerpoint-image {
   max-width: 80%;
   height: auto;
   display: block;
   margin: 0 auto;
+  border: 1px solid rgb(175, 175, 175);
 }
 
 /* タブレット版 */

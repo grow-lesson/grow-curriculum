@@ -517,6 +517,7 @@ export default {
 .screen-image {
   max-width: 100%;
   height: auto;
+  border: 1px solid rgb(175, 175, 175);
 }
 
 /* タブレット版 */
