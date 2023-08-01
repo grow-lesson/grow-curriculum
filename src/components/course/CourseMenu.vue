@@ -13,7 +13,7 @@
                 <img src="../../assets/images/menu/command-line.jpg" class="feature-icon" alt="commandline" />
               </div>
             </div>
-            <a class="feature-button">受講する</a>
+            <a class="feature-button" @click="goToCommandLineMenuPage">受講する</a>
           </div>
           <div class="feature">
             <h2 class="feature-title">HTMLとCSS</h2>
@@ -26,7 +26,7 @@
                 <img src="../../assets/images/menu/css.png" class="feature-icon" alt="css" />
               </div>
             </div>
-            <a class="feature-button">受講する</a>
+            <a class="feature-button" @click="goToHtmlMenuPage">受講する</a>
           </div>
           <div class="feature">
             <h2 class="feature-title">Git</h2>
@@ -36,17 +36,17 @@
                 <img src="../../assets/images/menu/git.png" class="feature-icon" alt="git" />
               </div>
             </div>
-            <a class="feature-button">受講する</a>
+            <a class="feature-button" @click="goToGitMenuPage">受講する</a>
           </div>
           <div class="feature">
             <h2 class="feature-title">JavaScript</h2>
             <p class="feature-description">ウェブ開発におけるインタラクティブな要素や動的な機能を学びましょう。</p>
             <div class="feature-image">
               <div class="feature-logo">
-                <img src="../../assets/images/menu/javascript.png" class="feature-icon" alt="javascript" />
+                <img src="../../assets/images/menu/javascript.png" class="feature-icon" alt="javascript" style="height: 90%;"/>
               </div>
             </div>
-            <a class="feature-button">受講する</a>
+            <a class="feature-button" @click="goToJavaScriptMenuPage">受講する</a>
           </div>
           <div class="feature">
             <h2 class="feature-title">Ruby</h2>
@@ -56,17 +56,17 @@
                 <img src="../../assets/images/menu/ruby.png" class="feature-icon" alt="ruby" />
               </div>
             </div>
-            <a class="feature-button">受講する</a>
+            <a class="feature-button" @click="goToRubyMenuPage">受講する</a>
           </div>
           <div class="feature">
             <h2 class="feature-title">情報工学</h2>
-            <p class="feature-description">情報技術者に必要な基本的な知識を学び実務でわからない言葉をなくしましょう。</p>
+            <p class="feature-description">情報技術者に必要な基本的な知識を学びましょう。</p>
             <div class="feature-image">
               <div class="feature-logo">
                 <img src="../../assets/images/menu/information-technology.png" class="feature-icon" alt="ruby" />
               </div>
             </div>
-            <a class="feature-button">受講する</a>
+            <a class="feature-button" @click="goToITMenuPage">受講する</a>
           </div>
         </div>
       </section>
@@ -80,9 +80,30 @@ import Header from "@/components/layout/Header.vue";
 import Footer from "@/components/layout/Footer.vue";
 
 export default {
+  name: "CourseMenu",
   components: {
     Header,
     Footer,
+  },
+  methods: {
+    goToHtmlMenuPage() {
+      this.$router.push({ name: "HtmlMenuPage" });
+    },
+    goToCommandLineMenuPage() {
+      this.$router.push({ name: "CommandLineMenuPage" });
+    },
+    goToGitMenuPage() {
+      this.$router.push({ name: "GitMenuPage" });
+    },
+    goToJavaScriptMenuPage() {
+      this.$router.push({ name: "UnderConstruction" });
+    },
+    goToRubyMenuPage() {
+      this.$router.push({ name: "UnderConstruction" });
+    },
+    goToITMenuPage() {
+      this.$router.push({ name: "UnderConstruction" });
+    },
   },
 };
 </script>

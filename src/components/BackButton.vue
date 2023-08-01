@@ -1,6 +1,6 @@
 <template>
   <button class="back-button" @click="goBack">
-    <i class="fa fa-arrow-left"></i> 戻る
+    <p>戻る</p> 
   </button>
 </template>
 
@@ -27,9 +27,5 @@ export default {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-}
-
-.back-button i {
-  margin-right: 8px;
 }
 </style>

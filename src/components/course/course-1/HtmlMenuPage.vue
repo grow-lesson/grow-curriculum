@@ -16,8 +16,8 @@
               <img src="../../../assets/images/menu/lesson-menu.png" alt="SAMPLE" />
             </div>
             <div class="lesson-itemWrap">
-              <div class="lesson-itemTitle">LESSON１</div>
-              <p class="lesson-itemText">全角６０字までサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテ</p>
+              <div class="lesson-itemTitle">LESSON 1</div>
+              <p class="lesson-itemText">HTML・CSSの書き方や確認の仕方、構成など基本的な知識を学びます。</p>
               <div class="lesson-btn btn">
                 <a class="lesson-link btn" @click="goToPageLesson1"></a>
               </div>
@@ -28,8 +28,8 @@
                 <img src="../../../assets/images/menu/lesson-menu.png" alt="SAMPLE" />
               </div>
               <div class="lesson-itemWrap">
-                <div class="lesson-itemTitle">LESSON２</div>
-                <p class="lesson-itemText">全角６０字までサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテ</p>
+                <div class="lesson-itemTitle">LESSON 2</div>
+                <p class="lesson-itemText">要素の違いや、様々なプロパティ概念を学びます。</p>
                 <div class="lesson-btn btn">
                   <a class="lesson-link btn" @click="goToPageLesson2"></a>
                 </div>
@@ -40,8 +40,8 @@
                 <img src="../../../assets/images/menu/lesson-menu.png" alt="SAMPLE" />
               </div>
               <div class="lesson-itemWrap">
-                <div class="lesson-itemTitle">LESSON３</div>
-                <p class="lesson-itemText">全角６０字までサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテ</p>
+                <div class="lesson-itemTitle">LESSON 3</div>
+                <p class="lesson-itemText">本格的なWebサイトの作り方やレスポンシブ対応、FlexBoxを学びます。</p>
                 <div class="lesson-btn btn">
                   <a class="lesson-link btn" @click="goToPageLesson3"></a>
                 </div>
@@ -213,8 +213,8 @@ export default {
   }
 
   .lesson-item {
-    width: 100%; /* Make the items take full width */
-    height: auto;
+    width: 90%; /* Make the items take full width */
+    height: 150px;
     max-width: 400px; /* Set a maximum width for the items */
     margin: 0 auto 25px auto;
   }
@@ -228,11 +228,23 @@ export default {
   .lesson-itemImg {
     display: none;
   }
-
+  .lesson-itemTitle{
+    font-size: 1.0rem;
+  }
+  .lesson-itemText{
+    font-size: small;
+  }
   /* Adjust button positioning */
   .lesson-btn {
-    right: 25px;
+    width: 40px;
+    height: 40px;
+    right: 10px;
     left: auto;
+  }
+  .lesson-btn a::before{
+    width: 15px;
+    height: 15px;
+    top: calc(50% - 7px);
   }
 }
 

@@ -2,21 +2,24 @@
   <div>
     <Header />
     <div class="under-construction">
-      <h1>準備中...</h1>
+      <h1>Under Construction...</h1>
+      <BackButton />
     </div>
     <Footer />
   </div>
 </template>
 
 <script>
-import Header from "./layout/Header.vue";
-import Footer from "./layout/Footer.vue";
+import Header from "@/components/layout/Header.vue";
+import Footer from "@/components/layout/Footer.vue";
+import BackButton from "@/components/BackButton.vue";
 
 export default {
   name: "UnderConstruction",
   components: {
     Header,
     Footer,
+    BackButton,
   },
 }
 </script>

@@ -96,6 +96,11 @@ const routes = [
     name: "Contact",
     component: () => import("../components/others/Contact.vue"),
   },
+  {
+    path: "/underConstruction",
+    name: "UnderConstruction",
+    component: () => import("../components/UnderConstruction.vue"),
+  },
 ];
 
 const router = createRouter({

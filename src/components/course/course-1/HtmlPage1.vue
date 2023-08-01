@@ -66,8 +66,8 @@
 
         <!-- section 3 -->
         <SubTitle subTitle="3. HTMLとCSSの仕組み" id="subTitle3"></SubTitle>
-        <SectionTitle sectionTitle="3-1. HTMLの名称" id="sectionTitle3-1"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="3-1. HTMLの名称" id="sectionTitle3-1"></SectionTitle>
           <p>まずはHTMLについて学んでいきましょう!</p>
           <p>
             HTMLではタグと呼ばれる中にテキストを入れていきます。最初に記述するタグを<span class="markup-word-blue">開始タグ</span>、
@@ -82,8 +82,8 @@
             <img src="../../../assets/images/course/html-css-1/html-1.png" class="powerpoint-image" alt="html-1" />
           </div>
         </Document>
-        <SectionTitle sectionTitle="3-2. CSSの名称" id="sectionTitle3-2"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="3-2. CSSの名称" id="sectionTitle3-2"></SectionTitle>
           <p>次にCSSについて学んでいきましょう!</p>
           <p>
             CSSではhtmlでは要素名と呼ばれていたところが<span class="markup-word-blue">セレクタ</span>と呼ばれます。<br>
@@ -93,8 +93,8 @@
             <img src="../../../assets/images/course/html-css-1/css-1.png" class="powerpoint-image" alt="css-1" />
           </div>
         </Document>
-        <SectionTitle sectionTitle="3-3. 要素とプロパティ①" id="sectionTitle3-3"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="3-3. 要素とプロパティ①" id="sectionTitle3-3"></SectionTitle>
           <p>
             まずはHTMLの要素から覚えていきましょう!<br>
             <HighlightWord word="<h1>・・・</h1>"></HighlightWord><br>
@@ -221,8 +221,8 @@
             <img src="../../../assets/images/course/html-css-1/web-1.png" class="screen-image" alt="web-1" />
           </div><br>
         </Document>
-        <SectionTitle sectionTitle="3-4. 要素とプロパティ②" id="sectionTitle3-4"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="3-4. 要素とプロパティ②" id="sectionTitle3-4"></SectionTitle>
           <p>
             次にCSSのプロパティを覚えていきましょう!<br><br>
             プロパティ<br><br>
@@ -248,8 +248,8 @@
             <img src="../../../assets/images/course/html-css-1/web-2.png" class="screen-image" alt="web-2" />
           </div><br>
         </Document>
-        <SectionTitle sectionTitle="3-5. 要素とプロパティ③" id="sectionTitle3-5"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="3-5. 要素とプロパティ③" id="sectionTitle3-5"></SectionTitle>
           <p>
             ここまででHTMLとCSSの役割がわかったと思います。<br>
             さらにここから要素やプロパティを覚えましょう。<br><br>
@@ -311,8 +311,8 @@
 
         <!-- section 4 -->
         <SubTitle subTitle="4. HTMLとCSSの関係性" id="subTitle4"></SubTitle>
-        <SectionTitle sectionTitle="4-1. HTMLの親子関係" id="sectionTitle4-1"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="4-1. HTMLの親子関係" id="sectionTitle4-1"></SectionTitle>
           <p>
             ここからHTMLの要素の関係に深堀りしていきましょう。<br>
             要素一つ一つにはそれぞれ<span class="markup-word-red">親子関係</span>や<span class="markup-word-red">兄弟関係</span>が必ず存在します。<br>
@@ -328,8 +328,8 @@
             <img src="../../../assets/images/course/html-css-1/box.jpg" class="screen-image" alt="tag-2" />
           </div><br><br>
         </Document>
-        <SectionTitle sectionTitle="4-2. 要素とプロパティ④" id="sectionTitle4-2"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="4-2. 要素とプロパティ④" id="sectionTitle4-2"></SectionTitle>
           <p>
             それではここからHTMLの要素の入れ子関係を理解できる様に新しい要素を覚えましょう。<br><br>
             要素<br>
@@ -398,8 +398,8 @@
             <img src="../../../assets/images/course/html-css-1/web-5.png" class="screen-image" alt="web-5" />
           </div><br>
         </Document>
-        <SectionTitle sectionTitle="4-3. 要素とプロパティ⑤" id="sectionTitle4-3"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="4-3. 要素とプロパティ⑤" id="sectionTitle4-3"></SectionTitle>
           <p>
             HTMLの要素の入れ子関係をさらに学んでいきましょう。<br>
             以下の画像を見て下さい。<br>
@@ -466,8 +466,8 @@
 
         <!-- section 5 -->
         <SubTitle subTitle="5. HTMLとCSSを深堀りする" id="subTitle5"></SubTitle>
-        <SectionTitle sectionTitle="5-1. HTMLの全体構造" id="sectionTitle5-1"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="5-1. HTMLの全体構造" id="sectionTitle5-1"></SectionTitle>
           <p>
             HTMLとCSSについて少しだけ理解が深まったと思います。<br>
             それではHTMLの全体の構造についてみていきましょう。<br>
@@ -507,8 +507,8 @@
             その決められた構造をHTMLの<span class="markup-word-red">雛形(ひながた)</span>といいます。
           </p><br>
         </Document>
-        <SectionTitle sectionTitle="5-2. HTMLとCSSのコメント" id="sectionTitle5-2"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="5-2. HTMLとCSSのコメント" id="sectionTitle5-2"></SectionTitle>
           <p>
             HTMLとCSSのコメントの入れ方について学びましょう!<br>
             HTMLやCSSでは画面上に出さずに文字を入れたいときにコメントを残しておく事ができます。<br>
@@ -549,6 +549,7 @@ import { htmlSourceData } from "@/data/htmlSourceData.js";
 
 
 export default {
+  name: "HtmlPage1",
   components: {
     Header,
     Footer,
@@ -637,7 +638,7 @@ export default {
 }
 
 /* タブレット版 */
-@media (max-width: 834px) {
+@media (max-width: 835px) {
   .main-content {
     width: 100%;
   }

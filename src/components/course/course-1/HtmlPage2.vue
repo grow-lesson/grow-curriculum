@@ -11,8 +11,8 @@
 
         <!-- section 1 -->
         <SubTitle subTitle="1. ブロック要素とインライン要素" id="subTitle1"></SubTitle>
-        <SectionTitle sectionTitle="1-1. ブロック要素とインライン要素とは？" id="sectionTitle1-1"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="1-1. ブロック要素とインライン要素とは？" id="sectionTitle1-1"></SectionTitle>
           <p>
             要素はそれぞれ種類があります。<br>
             どのようなものがあるか詳しく見ていきましょう!
@@ -30,8 +30,8 @@
             例 : imgタグ、aタグ
           </p>
         </Document>
-        <SectionTitle sectionTitle="1-2. ブロック要素とインライン要素の違い" id="sectionTitle1-2"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="1-2. ブロック要素とインライン要素の違い" id="sectionTitle1-2"></SectionTitle>
           <p>
             ブロック要素とインライン要素はそれぞれ違いがあります。<br>
             同じように記述しても違う特徴があるため、詳しく見ていきましょう。
@@ -61,8 +61,8 @@
 
         <!-- section 2 -->
         <SubTitle subTitle="2. ボックスモデルについて知る" id="subTitle2"></SubTitle>
-        <SectionTitle sectionTitle="2-1. 要素とプロパティ①" id="sectionTitle2-1"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="2-1. 要素とプロパティ①" id="sectionTitle2-1"></SectionTitle>
           <p>
             新しいCSSのプロパティを覚えましょう。<br>
             隣り合う要素に余白をつけたい時に使うプロパティを学びましょう。<br><br>
@@ -119,8 +119,8 @@
             <img src="../../../assets/images/course/html-css-2/web-1.png" class="screen-image" alt="web-1" />
           </div><br>
         </Document>
-        <SectionTitle sectionTitle="2-2. リセットCSSについて知る" id="sectionTitle2-2"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="2-2. リセットCSSについて知る" id="sectionTitle2-2"></SectionTitle>
           <p>
             <HighlightWord word="リセットCSS"></HighlightWord><br>
             デザインを確認するためのブラウザではデフォルトでそのブラウザ仕様のCSSが設定されてしまっています。<br>
@@ -166,8 +166,8 @@
 
         <!-- section 3 -->
         <SubTitle subTitle="3. ブロック要素とインライン要素をさらに深堀りする" id="subTitle3"></SubTitle>
-        <SectionTitle sectionTitle="3-1. ボックスモデル" id="sectionTitle3-1"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="3-1. ボックスモデル" id="sectionTitle3-1"></SectionTitle>
           <p>
             先ほど学習した余白の設定margin、paddingの違いを理解しましょう。<br><br>
             <HighlightWord word="ボックスモデル"></HighlightWord><br>
@@ -178,8 +178,8 @@
             <img src="../../../assets/images/course/html-css-2/boxmodel.png" class="powerpoint-image" alt="boxmodel" />
           </div>
         </Document>
-        <SectionTitle sectionTitle="3-2. ブロック要素とインライン要素の違いをまとめる" id="sectionTitle3-2"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="3-2. ブロック要素とインライン要素の違いをまとめる" id="sectionTitle3-2"></SectionTitle>
           <p>
             それではブロック要素、インライン要素の違いをまとめましょう。<br>
             以下の表を見てみましょう。<br>
@@ -193,8 +193,8 @@
             <img src="../../../assets/images/course/html-css-2/difference.png" style="max-width: 100%;" class="powerpoint-image" alt="difference" />
           </div>
         </Document>
-        <SectionTitle sectionTitle="3-3. 要素とプロパティ②" id="sectionTitle3-3"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="3-3. 要素とプロパティ②" id="sectionTitle3-3"></SectionTitle>
           <p>
             新しいプロパティを覚えましょう。<br><br>
             プロパティ<br>
@@ -246,8 +246,8 @@
             <img src="../../../assets/images/course/html-css-2/web-4.png" class="screen-image" alt="web-4" />
           </div><br>
         </Document>
-        <SectionTitle sectionTitle="3-4. 要素とプロパティ③" id="sectionTitle3-4"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="3-4. 要素とプロパティ③" id="sectionTitle3-4"></SectionTitle>
           <p>
             ここまでの学習で要素の種類を変えることができました。<br>
             ではここでブロック要素の特徴を思い出してください。<br>
@@ -329,8 +329,8 @@
             <img src="../../../assets/images/course/html-css-2/web-8.png" class="screen-image" alt="web-8" />
           </div><br>
         </Document>
-        <SectionTitle sectionTitle="3-5. floatの性質とclearfixの概念を知る" id="sectionTitle3-5"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="3-5. floatの性質とclearfixの概念を知る" id="sectionTitle3-5"></SectionTitle>
           <p>
             floatの性質を理解していきましょう。<br>
             floatを指定した要素は浮き上がる性質があります。
@@ -386,8 +386,8 @@
             ではなにを挿入していたか見ていきましょう。<br>
           </p>
         </Document>
-        <SectionTitle sectionTitle="3-6. 要素とプロパティ③" id="sectionTitle3-6"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="3-6. 要素とプロパティ③" id="sectionTitle3-6"></SectionTitle>
           <p>
             Clearfixで使われていたプロパティをおさらいしましょう。<br><br>
             プロパティ<br>
@@ -443,8 +443,8 @@
             <img src="../../../assets/images/course/html-css-2/web-10.png" class="screen-image" alt="web-10" />
           </div><br>
         </Document>
-        <SectionTitle sectionTitle="3-7. 要素とプロパティ④" id="sectionTitle3-7"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="3-7. 要素とプロパティ④" id="sectionTitle3-7"></SectionTitle>
           <p>
             ここまでブロック要素とインライン要素の違いやボックスモデルの違いについて説明していきました。<br>
             ここからさらに様々な要素やプロパティについて学んでいきましょう!<br><br>
@@ -563,6 +563,7 @@ import { htmlSourceData } from "@/data/htmlSourceData.js";
 
 
 export default {
+  name: "HtmlPage2",
   components: {
     Header,
     Footer,
@@ -677,7 +678,7 @@ export default {
 }
 
 /* タブレット版 */
-@media (max-width: 834px) {
+@media (max-width: 835px) {
   .main-content {
     width: 100%;
   }

@@ -69,7 +69,7 @@
               <img src="../assets/images/menu/javascript.png" class="course-icon" alt="javascript" />
             </div>
           </div>
-          <a class="course-button" @click="goToCommandLineMenuPage">受講する</a>
+          <a class="course-button" @click="goToJavaScriptMenuPage">受講する</a>
         </div>
         <div class="course-item">
           <h2 class="course-title">Ruby</h2>
@@ -79,7 +79,7 @@
               <img src="../assets/images/menu/ruby.png" class="course-icon" alt="ruby" />
             </div>
           </div>
-          <a class="course-button" @click="goToHtmlMenuPage">受講する</a>
+          <a class="course-button" @click="goToRubyMenuPage">受講する</a>
         </div>
         <div class="course-item">
           <h2 class="course-title">情報工学</h2>
@@ -89,7 +89,7 @@
               <img src="../assets/images/menu/information-technology.png" class="course-icon" alt="information-technology" />
             </div>
           </div>
-          <a class="course-button" @click="goToGitMenuPage">受講する</a>
+          <a class="course-button" @click="goToITMenuPage">受講する</a>
         </div>
       </section>
     </main>
@@ -98,8 +98,8 @@
 </template>
 
 <script>
-import Header from "./layout/Header.vue";
-import Footer from "./layout/Footer.vue";
+import Header from "@/components/layout/Header.vue";
+import Footer from "@/components/layout/Footer.vue";
 
 export default {
   name: "MenuPage",
@@ -112,6 +112,15 @@ export default {
     },
     goToGitMenuPage() {
       this.$router.push({ name: "GitMenuPage" });
+    },
+    goToJavaScriptMenuPage() {
+      this.$router.push({ name: "UnderConstruction" });
+    },
+    goToRubyMenuPage() {
+      this.$router.push({ name: "UnderConstruction" });
+    },
+    goToITMenuPage() {
+      this.$router.push({ name: "UnderConstruction" });
     },
     goToEnvironmentPage() {
       this.$router.push({ name: "Environment" });

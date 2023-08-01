@@ -440,7 +440,7 @@ export default {
 }
 
 /* タブレット版 */
-@media (max-width: 834px) {
+@media (max-width: 835px) {
   .logo{
     width: 30px;
     height: 30px;

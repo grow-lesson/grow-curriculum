@@ -521,7 +521,7 @@ export default {
 }
 
 /* タブレット版 */
-@media (max-width: 834px) {
+@media (max-width: 835px) {
   .main-content {
     width: 100%;
   }

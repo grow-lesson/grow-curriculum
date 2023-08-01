@@ -2,30 +2,30 @@
   <div>
     <Header />
     <div class="lesson-container">
-        <div class="lesson-title">
-          <div class="breadcrumb">
-            <a href="/menu">初級コース</a> > Command Lineを選ぼう
-          </div>
-          <h1 class="lesson-heading">Command Lineを選ぼう</h1>
+      <div class="lesson-title">
+        <div class="breadcrumb">
+          <a href="/menu">初級コース</a> > コマンドラインコースを選ぼう
         </div>
-        <div class="lesson-sidebar"></div>
-        <div class="lesson-main">
-          <ul class="lesson-list">
-            <li class="lesson-item">
-              <div class="lesson-itemImg">
-                <img src="../../../assets/images/menu/lesson-menu.png" alt="SAMPLE" />
-              </div>
-              <div class="lesson-itemWrap">
-                <div class="lesson-itemTitle">LESSON１</div>
-                <p class="lesson-itemText">全角６０字までサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテ</p>
-                <div class="lesson-btn btn">
-                  <a class="lesson-link btn" @click="goToPageLesson1"></a>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
+        <h1 class="lesson-heading">コマンドラインコースを選ぼう</h1>
       </div>
+      <div class="lesson-sidebar"></div>
+      <div class="lesson-main">
+        <ul class="lesson-list">
+          <li class="lesson-item">
+            <div class="lesson-itemImg">
+              <img src="../../../assets/images/menu/lesson-menu.png" alt="SAMPLE" />
+            </div>
+            <div class="lesson-itemWrap">
+              <div class="lesson-itemTitle">LESSON 1</div>
+              <p class="lesson-itemText">ターミナルやコマンドラインの操作を学びます。</p>
+              <div class="lesson-btn btn">
+                <a class="lesson-link btn" @click="goToPageLesson1"></a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
     <Footer />
   </div>
 </template>
@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     goToPageLesson1() {
-      this.$router.push({ name: "CommadLinePage1" });
+      this.$router.push({ name: "CommandLinePage1" });
     },
   },
 };
@@ -54,7 +54,7 @@ export default {
 }
 
 .breadcrumb{
-  margin-left: 100px;
+  margin-left: 10%;
 }
 
 .lesson-title{
@@ -75,7 +75,7 @@ export default {
   justify-content: center;
   list-style: none;
   /* padding-left: 0; */
-  padding: 50px 100px;
+  padding: 50px 0px;
 }
 
 .lesson-item {
@@ -169,4 +169,53 @@ export default {
   margin-left: 0;
   margin-top: 5px;
 }
+
+@media (max-width: 648px) {
+  .lesson-heading{
+    font-size: 1.5rem;
+  }
+
+  .lesson-list {
+    padding: 0; /* Remove padding to ensure the list takes full width */
+    display: flex; /* Use flexbox to center the lesson items */
+    flex-direction: column; /* Stack the items vertically */
+    align-items: center; /* Center items horizontally */
+  }
+
+  .lesson-item {
+    width: 90%; /* Make the items take full width */
+    height: 150px;
+    max-width: 400px; /* Set a maximum width for the items */
+    margin: 0 auto 25px auto;
+  }
+
+  .lesson-itemWrap {
+    width: 100%; /* Make the wrapping div take full width */
+    border-radius: 5px;
+    padding: 20px 20px;
+  }
+
+  .lesson-itemImg {
+    display: none;
+  }
+  .lesson-itemTitle{
+    font-size: 1.0rem;
+  }
+  .lesson-itemText{
+    font-size: small;
+  }
+  /* Adjust button positioning */
+  .lesson-btn {
+    width: 40px;
+    height: 40px;
+    right: 10px;
+    left: auto;
+  }
+  .lesson-btn a::before{
+    width: 15px;
+    height: 15px;
+    top: calc(50% - 7px);
+  }
+}
+
 </style>
