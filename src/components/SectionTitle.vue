@@ -31,8 +31,8 @@ export default {
   content: "";
   position: absolute;
   bottom: -5px; /* Adjust the value to position the line */
-  left: 0;
-  width: 100%;
+  left: 70px;
+  width: 80%;
   height: 2px;
   background-color: #228bc8;
 }

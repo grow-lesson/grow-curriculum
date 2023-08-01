@@ -170,7 +170,7 @@
         <Document>
           <p>
             先ほど学習した余白の設定margin、paddingの違いを理解しましょう。<br><br>
-            <HighlightWord word="リセットCSS"></HighlightWord><br>
+            <HighlightWord word="ボックスモデル"></HighlightWord><br>
             ・すべての要素には必ず共通してpadding,border,marginがあります。<br>
             リセットCSSはそのHTMLの要素の概念のことを指し、外側の余白、内側の余白というのは境界線より外側、内側をさします。
           </p><br>
@@ -447,16 +447,19 @@
         <Document>
           <p>
             ここまでブロック要素とインライン要素の違いやボックスモデルの違いについて説明していきました。<br>
-            ここからさらに別の要素やプロパティについて学んでいきましょう!<br><br>
+            ここからさらに様々な要素やプロパティについて学んでいきましょう!<br><br>
             <HighlightWord word="<input type=“フォームの種類” value=”最初から入る文字”>"></HighlightWord><br>
             ・入力フォームやボタンを作る要素でこのタグはinputタグと呼ばれます。<br><br>
-            新しい属性を覚えましょう。<br>
-            <span class="markup-word-blue">type属性</span>→フォームの種類を設定できる属性です。<br>
+            新しい属性を覚えましょう。<br><br>
+            <span class="markup-word-blue">type属性</span><br>
+            フォームの種類を設定できる属性です。<br><br>
             フォームの種類例<br>
-            submit→ボタンになる<br>
-            text→1行のみ入力できるテキストエリアになる<br><br>
-            <span class="markup-word-blue">value属性</span>→フォームの中の値を決められる属性です。<br>
-            <span class="markup-word-blue">placefolder属性</span>→フォームの中に入力例を表示する属性です。<br><br>
+            submit→指定するとボタンになります。<br>
+            text→指定すると1行のみ入力できるテキストエリアになります。<br><br>
+            <span class="markup-word-blue">value属性</span><br>
+            フォームの中の値を決められる属性です。<br><br>
+            <span class="markup-word-blue">placefolder属性</span><br>
+            フォームの中に入力例を表示する属性です。<br><br>
             <HighlightWord word="<textarea></textarea>"></HighlightWord><br>
             ・2行以上の入力フォームを作る要素でこのタグはtextareaタグと呼ばれます。<br><br>
             プロパティ<br>
@@ -464,7 +467,13 @@
             ・背景画像を指定できるプロパティでbackground-imageプロパティと呼ばれます。<br><br>
             <span class="markup-word-blue">【HTML要素のimgタグの何が違うの？】</span><br>
               ページ全体を覆う背景画像として使う場合はbackground-imageを使い、ページの中のロゴやアイコンの一つとして画像を作りたい時はimgタグを使いましょう。
-              また、 background-imageを指定するときの要素はdivを使います。
+              また、 background-imageを指定するときの要素はdivを使います。<br><br>
+            <HighlightWord word="background-size: [背景画像のサイズ];"></HighlightWord><br>
+            ・背景画像のサイズを指定できるプロパティでbackground-sizeプロパティと呼ばれます。<br><br>
+            背景画像の指定例<br>
+            <span class="markup-word-blue">auto</span>→特に指定をしません。元の画像サイズで表示されます<br>
+            <span class="markup-word-blue">contain</span>→縦横比を保持したまま背景画像の全体が表示される<br>
+            <span class="markup-word-blue">cover</span>→要素全体を覆うように自動的に背景画像が広がります。<br><br>
             <HighlightWord word="opacity: [0.0〜1.0];"></HighlightWord><br>
             ・要素の透明度を設定できるプロパティでopacityプロパティと呼ばれます。<br>
             0に近いほど透明度は上がります<br><br>
@@ -475,9 +484,10 @@
             <HighlightWord word="list-style: [スタイルの種類];"></HighlightWord><br>
             ・リストスタイルを設定できるプロパティでlist-styleプロパティと呼ばれます。<br><br>
             リストスタイル例<br>
-            none→何も入れない<br>
-            circle→白丸<br>
-            square→四角<br><br>
+            <span class="markup-word-blue">none</span>→何も入れない<br>
+            <span class="markup-word-blue">circle</span>→白丸<br>
+            <span class="markup-word-blue">square</span>→四角<br>
+            <span class="markup-word-blue">decimal</span>→数字<br><br>
             <HighlightWord word="text-align: [left,center,right] ;"></HighlightWord><br>
             ・インライン要素・インラインブロックの配置を設定できるプロパティでtext-alignプロパティと呼ばれます。<br>
             配置を変えたいインライン要素の親要素のスタイルに指定して、その親要素の横幅に対してleft、center、rightを決めることができます。<br><br>
@@ -485,28 +495,49 @@
             ・行間の設定ができるプロパティでline-heightプロパティと呼ばれます。<br><br>
             <HighlightWord word="box-sizing: [サイズの種類];"></HighlightWord><br>
             ・要素の幅のサイズに余白を含めることができるプロパティでbox-sizingプロパティと呼ばれます。<br>
-            本来は要素の余白はwidthとheightので決まったサイズのさらに外側に作られますが、このプロパティを与えた要素はpaddingとborderをwidthとheightのサイズに含むことができます<br>
-            例で考えるとwidthとheight両方500pxでpaddingを30pxで設定すると上下左右に30px分の余白が入ることになるので要素自体の大きさは少し小さくなるという事になります。<br>
+            本来は要素の余白はwidthとheightので決まったサイズのさらに外側に作られますが、このプロパティを与えた要素はpaddingとborderをwidthとheightのサイズに含むことができます。<br>
+            例で考えるとwidthとheight両方500pxでpaddingを30pxで設定すると上下左右に30px分の余白が入ることになるので要素自体の大きさは少し小さくなるという事になります。<br><br>
             サイズの種類例<br>
-            border-box→widthの幅にpaddingとborderを含めた幅にする。<br>
-            content-box→widthの幅にpaddingとborderを含めた幅にしない。<br><br>
+            <span class="markup-word-blue">border-box</span>→widthの幅にpaddingとborderを含めた幅にする。<br>
+            <span class="markup-word-blue">content-box</span>→widthの幅にpaddingとborderを含めた幅にしない。<br><br>
             ①<br>
             Visual Studio Codeで「html-css-lesson-8」を選択して「ctrl(command) + C」でコピーして「ctrl(command) + V」で作りましょう。<br>
             そのあとは名前を「html-css-lesson-9」に変更しましょう。<br>
             以下をコピーして貼り付けてください。<br>
+            画像のようになればOKです。<br>
           </p><br>
           <Terminal :fileName="htmlSourceData.file15.filename" :copiedText="htmlSourceData.file15.code" :lang="htmlSourceData.file15.language" />
           <Terminal :fileName="htmlSourceData.file16.filename" :copiedText="htmlSourceData.file16.code" :lang="htmlSourceData.file16.language" />
           <div>
-            <img src="../../../assets/images/course/html-css-2/vscode-15.png" class="powerpoint-image" alt="vscode-15" />
+            <img src="../../../assets/images/course/html-css-2/vscode-15.png" class="screen-image" alt="vscode-15" />
           </div><br>
           <p>
           ②<br>
-            先ほどダウンロードした猫の写真をassets/imagesの中に入れましょう。<br>
-            格納出来たら以下のように実装しましょう。<br>
+            以下を写真をダウンロードしてassets/imagesの中に入れましょう。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-2/vscode-15.png" class="powerpoint-image" alt="vscode-15" />
+            <img src="../../../assets/images/course/html-css-2/sea.jpg" class="powerpoint-image" alt="sea" style="max-width: 30%; margin: 0 auto; display: block;"/>
+          </div><br>
+          <p>
+          ②<br>
+            格納しソースコードをコピー出来たら以下のように実装しましょう。<br>
+            少し多いのでスペルミスに気をつけましょう。<br>
+          </p><br>
+          <div>
+            <img src="../../../assets/images/course/html-css-2/vscode-16.png" class="screen-image" alt="vscode-16" />
+          </div><br>
+          <div>
+            <img src="../../../assets/images/course/html-css-2/vscode-17.png" class="screen-image" alt="vscode-17" />
+          </div><br>
+          <p>
+          ③<br>
+            Web上で確認してみましょう。<br>
+            この様になればOKです。<br>
+            それぞれのスタイルの使い方を見て理解できるようにしましょう。<br>
+            また、値などを変えて見ると理解が深まると思います。<br>
+          </p><br>
+          <div>
+            <img src="../../../assets/images/course/html-css-2/web-11.png" class="screen-image" alt="web-11" />
           </div><br>
         </Document>
       </div>

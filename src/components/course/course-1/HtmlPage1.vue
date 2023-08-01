@@ -610,6 +610,19 @@ export default {
   font-weight: bold;
 }
 
+.html-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 20%;
+  height: auto;
+}
+.css-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 20%;
+  height: auto;
+}
+
 .screen-image {
   max-width: 100%;
   height: auto;
