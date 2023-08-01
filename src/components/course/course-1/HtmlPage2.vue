@@ -597,6 +597,10 @@ export default {
       ],
     };
   },
+  mounted() {
+    // 画面表示時に一番上にスクロールする
+    window.scrollTo(0, 0);
+  },
   methods: {
     // CSSファイルをダウンロードする処理
     downloadCSS() {

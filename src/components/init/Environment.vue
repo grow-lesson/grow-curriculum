@@ -381,6 +381,8 @@ export default {
   mounted() {
     window.addEventListener("resize", this.handleResize);
     this.handleResize();
+    // 画面表示時に一番上にスクロールする
+    window.scrollTo(0, 0);
   },
   beforeUnmount() {
     window.removeEventListener("resize", this.handleResize);
