@@ -8,7 +8,7 @@
         </div>
       </div>
       <section class="flow">
-        <h2 class="flow-title">フロントエンドの基礎を学ぼう！</h2>
+        <h2 class="flow-title">フロントエンドの基礎を学ぼう!</h2>
         <ul class="flow-list">
           <li class="flow-item"><a href="#" class="flow-link">Grow学習サイトの使い方</a></li>
           <li class="flow-item"><a class="flow-link" @click="goToEnvironmentPage">インストールや環境構築の手順を知る</a></li>
