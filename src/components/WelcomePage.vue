@@ -10,9 +10,8 @@
           <div class="background-image" :style="backgroundStyle"></div>
         </transition>
         <h1 class="title" :class="{ floating: isFloating }">カリキュラムを<span>受講しよう！</span></h1>
-        <button class="btn_04" @click="goToLogin" @focus="buttonFocus" @blur="buttonBlur">ログインはこちら</button>
-        <!-- TODO: ログイン機能ができたら削除 -->
-        <button class="btn_04 dummy" @click="goToMenuPage" @focus="buttonFocus" @blur="buttonBlur">β版ページへ</button>
+        <button class="btn_04" @click="goToSignUP" @focus="buttonFocus" @blur="buttonBlur">新規登録</button>
+        <button class="btn_04" @click="goToLogin" @focus="buttonFocus" @blur="buttonBlur">ログイン</button>
       </div>
     </div>
   </div>
@@ -45,12 +44,11 @@ export default {
     },
   },
   methods: {
+    goToSignUP() {
+      this.$router.push({ name: "Signup" });
+    },
     goToLogin() {
       this.$router.push({ name: "Login" });
-    },
-    // TODO: ログイン機能ができたら削除
-    goToMenuPage() {
-      this.$router.push({ name: "MenuPage" });
     },
     changeBackgroundImage() {
       // 背景画像を次のインデックスに変更
