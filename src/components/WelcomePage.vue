@@ -10,7 +10,7 @@
           <div class="background-image" :style="backgroundStyle"></div>
         </transition>
         <h1 class="title" :class="{ floating: isFloating }">カリキュラムを<span>受講しよう！</span></h1>
-        <button class="btn_04 production" @click="goToLogin" @focus="buttonFocus" @blur="buttonBlur" disabled="true">ログインはこちら</button>
+        <button class="btn_04" @click="goToLogin" @focus="buttonFocus" @blur="buttonBlur">ログインはこちら</button>
         <!-- TODO: ログイン機能ができたら削除 -->
         <button class="btn_04 dummy" @click="goToMenuPage" @focus="buttonFocus" @blur="buttonBlur">β版ページへ</button>
       </div>
@@ -195,10 +195,6 @@ export default {
 /* TODO: ログイン機能ができたら削除 */
 .dummy{
   margin-top: 40px;
-}
-
-.production {
-  background-color: gray;
 }
 
 .production:hover {
