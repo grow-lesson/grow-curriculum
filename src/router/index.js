@@ -87,9 +87,9 @@ const routes = [
     component: () => import("../components/course/course-3/GitPage3.vue"),
   },
   {
-    path: "/users",
-    name: "UserList",
-    component: () => import("../components/users/UserList.vue"),
+    path: "/mypage",
+    name: "MyPage",
+    component: () => import("../components/user/MyPage.vue"),
   },
   {
     path: "/contact",
