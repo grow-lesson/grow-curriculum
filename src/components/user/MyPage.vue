@@ -3,7 +3,8 @@
     <Header />
     <div class="profile">
       <div class="profile-header">
-        <img class="profile-picture" :src="userProfile.picture" alt="プロフィール画像" />
+        <img class="profile-picture" src="../../assets/images/user/dog.jpg" alt="ssss">
+        <!-- <img class="profile-picture" :src="userProfile.picture" alt="プロフィール画像" /> -->
         <h1>{{ userProfile.username }}</h1>
       </div>
       <div class="profile-details">
