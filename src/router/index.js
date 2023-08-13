@@ -141,7 +141,7 @@ const router = createRouter({
 router.beforeEach(async (to, from, next) => {
   if (to.meta.requiresAuth) { // ルートが認証を必要とする場合
     try {
-      const response = await axios.get('/api/users/show');
+      const response = await axios.get('/api/users/:id');
       const user = response.data;
       if (!user) {
         next({ name: "Login" });

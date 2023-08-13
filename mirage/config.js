@@ -31,19 +31,7 @@ export default function configureMirage() {
         }
       });
 
-      // ログイン情報の取得API
-      this.get("/users/show", () => {
-        return { 
-          id: 1,
-          username: "grow太郎",
-          email: "test@sample.com",
-          hobbies: ["html","css"],
-          languages: ["旅行","読書"],
-          bio: "よろしくお願いします"
-        }; 
-      });
-
-      // マイページの取得API
+      // マイページの取得API、ログイン後のページ制約
       this.get("/users/:id", () => {
         return { 
           id: 1,
