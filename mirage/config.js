@@ -47,7 +47,7 @@ export default function configureMirage() {
       this.get("/users/:id", () => {
         return { 
           id: 1,
-          picture: "src/assets/images/user/dog.jpg",
+          picture: "../../assets/images/user/dog.jpg",
           username: "grow太郎",
           email: "test@sample.com",
           hobbies: ["html","css"],
