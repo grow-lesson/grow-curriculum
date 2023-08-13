@@ -12,6 +12,7 @@
         <p><strong>趣味:</strong> {{ userProfile.hobbies }}</p>
         <p><strong>触れたことがある言語:</strong> {{ userProfile.languages }}</p>
         <p><strong>自己紹介:</strong> {{ userProfile.bio }}</p>
+        <button @click="goToEditPage">編集する</button>
         <!-- ここに別の項目を追加 -->
       </div>
     </div>
@@ -56,6 +57,11 @@ export default {
       userProfile,
     };
   },
+  methods: {
+    goToEditPage() {
+      this.$router.push({ name: "EditPage" });
+    },
+  }
 };
 </script>
 

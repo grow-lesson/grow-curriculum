@@ -114,6 +114,12 @@ const routes = [
     component: () => import("../components/user/MyPage.vue"),
   },
   {
+    path: "/edit",
+    name: "EditPage",
+    meta: { requiresAuth: true }, 
+    component: () => import("../components/user/EditPage.vue"),
+  },
+  {
     path: "/contact",
     name: "Contact",
     meta: { requiresAuth: true }, 
