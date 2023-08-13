@@ -43,11 +43,21 @@ export default {
 
 @media (max-width: 648px) {
   .section-title{
-    width: 70%;
+    width: 100%;
   }
 
   .section-title-word {
     font-size: 10px;
+  }
+
+  .section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -5px; /* Adjust the value to position the line */
+    left: 0.5%;
+    width: 100%;
+    height: 2px;
+    background-color: #228bc8;
   }
 }
 </style>
