@@ -28,25 +28,23 @@ export default {
     };
   },
   methods: {
-    login() {
+    async login() {
       const loginData = {
         name: this.username,
         password: this.password
       };
-      axios.post('/api/login', loginData)
-        .then(response => {
-          // ログイン成功時の処理
-          if (response.status === 201) {
-            this.$router.push({ name: 'MenuPage' }); // メニューページに遷移
-          } else {
-            alert('ログインエラー: ユーザー名またはパスワードが一致しません');
-          }
-        })
-        .catch(error => {
-          // エラーハンドリング
-          console.error(error);
-          alert('ログインエラーが発生しました');
-        });
+
+      try {
+        const response = await axios.post('/api/login', loginData);
+        if (response.data.status === 201) {
+          this.$router.push({ name: 'MenuPage' });
+        } else {
+          alert('ログインエラー: ユーザー名またはパスワードが一致しません');
+        }
+      } catch (error) {
+        console.error(error);
+        alert('ログインエラーが発生しました');
+      }
     }
   },
 };
