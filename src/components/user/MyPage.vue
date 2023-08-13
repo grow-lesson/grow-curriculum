@@ -4,7 +4,7 @@
     <div class="profile">
       <div class="profile-header">
         <img class="profile-picture" :src="userProfile.picture" alt="プロフィール画像" />
-        <h1>{{ userProfile.name }}</h1>
+        <h1>{{ userProfile.username }}</h1>
       </div>
       <div class="profile-details">
         <p><strong>Email:</strong> {{ userProfile.email }}</p>
@@ -31,7 +31,8 @@ export default {
   },
   setup() {
     const userProfile = ref({
-      name: "",
+      picture: "",
+      username: "",
       email: "",
       hobbies: [],
       languages: [],

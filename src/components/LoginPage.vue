@@ -33,11 +33,10 @@ export default {
         name: this.username,
         password: this.password
       };
-
       axios.post('/api/login', loginData)
         .then(response => {
           // ログイン成功時の処理
-          if (response.status === 200) {
+          if (response.status === 201) {
             this.$router.push({ name: 'MenuPage' }); // メニューページに遷移
           } else {
             alert('ログインエラー: ユーザー名またはパスワードが一致しません');

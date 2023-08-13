@@ -9,8 +9,18 @@
       </div>
       <br>
       <div class="signup">
-        <input v-model="username" type="text" placeholder="ユーザー名" name="user"><br>
+        <input v-model="username" type="text" placeholder="ユーザー名" name="username"><br>
+        <div class="signup-name">
+          <input v-model="lastName" type="text" placeholder="姓" name="lastName"><br>
+          <input v-model="firstName" type="text" placeholder="名" name="firstName"><br>
+        </div>
+        <div class="signup-name-kana">
+          <input v-model="lastNameKana" type="text" placeholder="姓(カナ)" name="lastNameKana"><br>
+          <input v-model="firstNameKana" type="text" placeholder="名(カナ)" name="firstNameKana"><br>
+        </div>
+        <input v-model="email" type="text" placeholder="メールアドレス" name="email"><br>
         <input v-model="password" type="password" placeholder="パスワード" name="password"><br>
+        <input v-model="confirmPassword" type="password" placeholder="確認用パスワード" name="confirmPassword"><br>
         <button @click="signup">新規登録</button>
       </div>
     </div>
@@ -24,20 +34,32 @@ export default {
   data() {
     return {
       username: "",
+      lastName: "",
+      firstName: "",
+      lastNameKana: "",
+      firstNameKana: "",
+      email: "",
       password: "",
+      confirmPassword: "",
     };
   },
   methods: {
     signup() {
       const signupData = {
-        name: this.username,
-        password: this.password
+        username: this.username,
+        lastName: this.lastName,
+        firstName: this.firstName,
+        lastNameKana: this.lastNameKana,
+        firstNameKana: this.firstNameKana,
+        email: this.email,
+        password: this.password,
+        confirmPassword: this.confirmPassword,
       };
 
       axios.post('/api/signup', signupData)
         .then(response => {
           // ログイン成功時の処理
-          if (response.status === 200) {
+          if (response.status === 201) {
             alert('登録が完了しました')
             this.$router.push({ name: 'MenuPage' }); // メニューページに遷移
           } else {
@@ -121,6 +143,14 @@ export default {
   font-family: 'Exo', sans-serif;
   font-size: 16px;
   font-weight: 400;
+}
+
+.signup-name {
+  display: flex;
+}
+
+.signup-name-kana {
+  display: flex;
 }
 
 .signup button {

@@ -2,6 +2,9 @@
   <div>
     <Header />
     <main class="main-content">
+      <div class="user">
+        <h1 class="user-message">ようこそ{{ User.username }}さん!</h1>
+      </div>
       <div class="hero">
         <div class="hero-content">
           <h1 class="hero-title">カリキュラムの流れ</h1>
@@ -100,9 +103,32 @@
 <script>
 import Header from "@/components/layout/Header.vue";
 import Footer from "@/components/layout/Footer.vue";
+import { ref, onMounted } from 'vue';
+import axios from 'axios';
 
 export default {
   name: "MenuPage",
+  setup() {
+    const User = ref({
+      username: "",
+    });
+
+    const fetchUserProfile = () => {
+      axios.get('/api/users/:id') // 実際のAPIエンドポイントに変更
+        .then(response => {
+          User.value = response.data;
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    };
+
+    onMounted(fetchUserProfile);
+
+    return {
+      User,
+    };
+  },
   methods: {
     goToHtmlMenuPage() {
       this.$router.push({ name: "HtmlMenuPage" });
@@ -141,6 +167,19 @@ export default {
 .main-content {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.user-message {
+  font-size: 18px;
+  color: #3498db;
+  text-align: left;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin: 20px auto;
+  width: 100%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
 /* Hero */
 .hero {
   background-color: #f9f9f9;
