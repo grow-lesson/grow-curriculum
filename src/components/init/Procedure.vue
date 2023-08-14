@@ -6,7 +6,7 @@
     <div class="container">
       <!-- Windows版の説明 -->
       <div class="main-content" v-show="isWindows">
-        <Title title="カリキュラムの進めるための準備をしよう!(Windows版)" id="Title-w"></Title>
+        <Title title="カリキュラムを進めるための準備をしよう!(Windows版)" id="Title-w"></Title>
         <SubTitle subTitle="1. backlogにて課題を担当者に見てもらえるようにしよう!" id="subTitle1-w"></SubTitle>
         <Document>
           <p>
@@ -338,7 +338,7 @@
       </div>
       <!-- Mac版の説明 -->
       <div class="main-content" v-show="!isWindows">
-        <Title title="カリキュラムの進めるための準備をしよう!(Mac版)" id="Title-m"></Title>
+        <Title title="カリキュラムを進めるための準備をしよう!(Mac版)" id="Title-m"></Title>
         <SubTitle subTitle="1. backlogにて課題を担当者に見てもらえるようにしよう!" id="subTitle1-m"></SubTitle>
         <Document>
           <p>
