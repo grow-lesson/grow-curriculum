@@ -12,6 +12,7 @@
         <input v-model="username" type="text" placeholder="ユーザー名" name="user"><br>
         <input v-model="password" type="password" placeholder="パスワード" name="password"><br>
         <button @click="login">ログイン</button>
+        <p class="btn-back"><a href="/">＞戻る</a></p>
       </div>
     </div>
   </div>
@@ -76,22 +77,20 @@ export default {
 
 .loginPage {
   width: 100%;
-  height: 100vh;
+  padding: 150px 0;
   background-color: #228bc8;
   font-family: 'Arial', sans-serif;
   font-size: 12px;
 }
 
 .login-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin: 0 auto;
   width: 400px;
-  padding: 40px 40px 100px 40px;
+  padding: 40px;
   background-color: #fff;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2), 0 10px 5px 0 rgba(0, 0, 0, 0.24);
   border-radius: 10px;
+  font-size: 16px;
 }
 
 .login-header {
@@ -113,7 +112,6 @@ export default {
   padding: 10px;
   margin-bottom: 20px;
   background-color: rgb(0 0 0 / 30%);
-  border: 1px solid black;
   border-radius: 4px;
   color: #fff;
   font-family: 'Exo', sans-serif;
@@ -124,6 +122,7 @@ export default {
 .login button {
   width: 100%;
   padding: 10px;
+  margin-top: 30px;
   background-color: #228bc8;
   border: none;
   border-radius: 4px;
@@ -154,6 +153,14 @@ export default {
 
 ::-moz-input-placeholder {
   color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-back {
+  margin-top: 20px;
+  text-align: right;
+  font-weight: bold;
+  color: #228bc8;
+  font-family: 'Exo', sans-serif;
 }
 
 @media (max-width: 648px) {
