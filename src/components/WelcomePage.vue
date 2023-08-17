@@ -30,7 +30,7 @@ export default {
         require("../assets/images/welcome/welcome-6.jpg"),
       ],
       currentImageIndex: 0,
-      isFloating: false,
+      isFloating: true,
     };
   },
   computed: {
@@ -66,15 +66,21 @@ export default {
   },
   mounted() {
     setInterval(() => {
-      // 4秒ごとに背景画像を切り替え
-      this.changeBackgroundImage();
-      // フローティング状態を設定
-      this.isFloating = true;
+      // フローティング状態を解除
+      this.isFloating = false;
+
+      // 1秒後に背景画像を切り替え
       setTimeout(() => {
-        // 1.5秒後にフローティング状態を解除
+        this.changeBackgroundImage();
+        // フローティング状態を設定
+        this.isFloating = true;
+      }, 500);
+
+      // 2.5秒後にフローティング状態を解除
+      setTimeout(() => {
         this.isFloating = false;
-      }, 6500);
-    }, 7000);
+      }, 4500);
+    }, 5000); // Changed the interval to 5000ms (5 seconds)
   },
 };
 </script>
@@ -156,6 +162,7 @@ export default {
   background: #228bc8;
   border: 1px solid #228bc8;
   box-sizing: border-box;
+  margin-bottom: auto;
   padding: 0 25px 0 40px;
   color: #fff;
   font-size: 16px;
