@@ -1,59 +1,295 @@
 <template>
   <div>
     <Header />
-    <Title title="HTML・CSS 1"></Title>
-    <Document>
-      <p>スマートフォンやタブレット、PCなどで表示されるサービスやWebサイトのデザインができる技術を学んでいくセクションになります。</p>
-      <p>Webデザインの目的は、情報を正しく、わかりやすく提供することです。</p>
-      <p>ユーザーが操作をしやすくほしい情報にいち早く遷移できるデザインを目指していきましょう!</p>
-    </Document><br>
-    <!-- section 1 -->
-    <SubTitle subTitle="1. HTMLとCSSについて知る"></SubTitle>
-    <Document>
-      <HighlightWord word="HTML(Hyper Text Markup Language)"></HighlightWord>
-      <p>・Webサイトを作成する際に、コンピューターへ構成指示を出し、表示したい文章や写真などの情報を形作るマークアップ言語のこと。</p>
-      <p><span class="markup-word">→マークアップ</span>…文章の構成や役割を示すこと。</p><br>
-      <HighlightWord word="CSS(Cascading Style Sheets)"></HighlightWord>
-      <p>・Webページの文字の色や大きさ、背景、配置といったスタイル（見た目）を設定する言語のこと。</p>
-    </Document>
+    <div class="container">
+      <div class="main-content">
+        <Title title="HTML・CSS 3" id="Title"></Title>
+        <Document>
+          <p>実際に作られているWebサイトのような見た目を作れるようになりましょう!</p>
+          <p>ここではWebサイトの構成やFlexbox、メディアクエリセクションです。</p>
+        </Document>
 
-    <!-- section 2 -->
-    <SubTitle subTitle="2. プログラミングとコーディング"></SubTitle>
-    <Document>
-      <p>プログラミングとコーディングにどのような違いあるのか理解しましょう!</p>
-    </Document>
-    <Document>
-      <HighlightWord word="プログラミング"></HighlightWord>
-      <p>・プログラムを作成する作業全般の事をさします。</p>
-      <HighlightWord word="コーディング"></HighlightWord>
-      <p>・プログラミング言語を使ってソースコードを作成する事です。</p>
-    </Document>
+        <!-- section 1 -->
+        <SubTitle subTitle="1. 全体のレイアウトを知る" id="subTitle1"></SubTitle>
+        <Document>
+          <SectionTitle sectionTitle="1-1. Webサイトの構成" id="sectionTitle1-1"></SectionTitle>
+          <p>
+            皆さんがいつも見ているWebサイトの構成は主に3つに分けることができます。<br>
+            どのようなものがあるか見ていきましょう!
+          </p><br>
+          <HighlightWord word="ヘッダー"></HighlightWord>
+          <p>
+            ページの上部にあります。
+            他のページに遷移するナビゲーションなどそのサイトのロゴなどがある領域になります。
+          </p><br>
+          <HighlightWord word="メイン"></HighlightWord>
+          <p>
+            ページの中央部全体をさします。
+            そのページの必要な情報やコンテンツがあります。
+          </p><br>
+          <HighlightWord word="フッター"></HighlightWord>
+          <p>
+            ページの下部にあります。
+            コピーライトやクレジット、捕捉情報などがある領域になります。
+          </p>
+          <br>
+          <div>
+            <img src="../../../assets/images/course/html-css-3/site.png" class="powerpoint-image" alt="site" />
+          </div>
+        </Document>
+        <Document>
+          <SectionTitle sectionTitle="1-2. 要素とプロパティ①" id="sectionTitle1-2"></SectionTitle>
+          <p>
+            それではHTMLの要素で記述するか学びましょう!<br><br>
+            要素<br>
+            <HighlightWord word="<header>・・・</header>"></HighlightWord><br>
+            ・ヘッダー部分を作る要素でこのタグはheaderタグと呼ばれます。<br>
+            <br>
+            <HighlightWord word="<main>・・・</main>"></HighlightWord><br>
+            ・メイン部分を作る要素でこのタグはheaderタグと呼ばれます。<br>
+            <br>
+            <HighlightWord word="<footer>・・・</footer>"></HighlightWord><br>
+            ・フッター部分を作る要素でこのタグはheaderタグと呼ばれます。<br>
+          </p>
+        </Document>
 
-    <!-- section 3 -->
-    <SubTitle subTitle="2. HTMLの仕組み"></SubTitle>
-    <SectionTitle sectionTitle="2-1. HTMLの名称"></SectionTitle>
-    <Document>
-      <p>まずはHTMLについて学んでいきましょう!</p>
-      <p>
-        HTMLではタグと呼ばれる中にテキストを入れていきます。最初に記述するタグを<span class="markup-word-red">開始タグ</span>、
-        最後に記述するタグを<span class="markup-word-red">終了タグ</span>といいます。
-      </p>
-      <p>
-        開始タグに入っている「h1」と書かれた部分を<span class="markup-word-red">要素名</span>、
-        開始タグと終了タグで囲まれた全体を<span class="markup-word-red">要素</span>といいます。
-      </p>
-      <p>また、開始タグと終了タグの中身を<span class="markup-word-red">要素内容</span>と呼ばれます。</p>
-    </Document>
-    <!-- <img src="" alt="要素の写真" > -->
-    <SectionTitle sectionTitle="2-2. HTMLの要素"></SectionTitle>
-    <Document>
-      ・hタグ…見出しをつける
-      <p>  ページの全体やセクションの大きなタイトルに使う。</p>
-      <p></p>
-    </Document>
+        <!-- section 2 -->
+        <SubTitle subTitle="2. 要素の配置を学ぶ" id="subTitle2"></SubTitle>
+        <Document>
+          <p>Webサイトのヘッダーやメイン、フッターにいろいろな要素を配置するにはどうすればよいか学んでいきましょう!</p>
+          <SectionTitle sectionTitle="2-1. 要素とプロパティ②" id="sectionTitle2-1"></SectionTitle>
+          <p>
+            新しいCSSのプロパティを覚えましょう。<br>
+            自由に配置場所の基準とその位置を決められるプロパティを学びましょう。<br><br>
+            プロパティ<br>
+            <HighlightWord word="position: [配置基準];"></HighlightWord><br>
+            ・要素の配置の基準を設定するプロパティでpositionプロパティと呼ばれます。<br><br>
+            例：<br>
+            position : fixed; →画面のきまった位置に固定<br>
+            position : relative;  →現在の位置を基準に相対的な位置を決める<br>
+            position : absolute;  →親要素を基準に絶対的な位置を決める<br>
+            <br><br>
+            <HighlightWord word="top: [位置(px,rem,%など)];"></HighlightWord><br>
+            <HighlightWord word="right: [位置(px,rem,%など)];"></HighlightWord><br>
+            <HighlightWord word="bottom: [位置(px,rem,%など)];"></HighlightWord><br>
+            <HighlightWord word="left: [位置(px,rem,%など)];"></HighlightWord><br>
+            ・要素の配置を設定するプロパティでtop,right,bottom,leftプロパティと呼ばれます。<br><br>
+            <br>
+            それではこの基準と位置を配置するプロパティの使い方を説明していきます。<br>
+            まずはposition: fixed;はスクロールしても表示される様に固定したい時に使います。<br>
+            ヘッダーのようなナビゲーションエリアなどの要素にこのプロパティを指定し、スクロールしても画面上に固定したい場合などに使用します。<br><br>
+            次にposition: relative;はデフォルトの位置から要素を動かしたい時に使います。<br>
+            画像の例を見てください。
+          </p><br>
+          <br>
+          <div>
+            <img src="../../../assets/images/course/html-css-3/relative.png" class="powerpoint-image" alt="relative" />
+          </div><br>
+          <p>
+            このように元々デフォルトでは左上にある要素がpositionで配置の基準をrelativeで決定した事でそこからtop,leftで位置をずらしたという事です。<br>
+            最後にposition: absolute;は親要素内で自由に動かしたい時に使います。<br>
+            画像の例を見てください。<br>
+          </p><br>
+          <div>
+            <img src="../../../assets/images/course/html-css-3/absolute.png" class="powerpoint-image" alt="absolute" />
+          </div><br>
+          <br>
+          <p>
+            position: absolute;はrelativeを指定した要素の子要素に設定します。<br>
+            親要素内で位置の基準をとるので必ずセットで使いましょう。<br>
+          </p>
+        </Document>
+        <Document>
+          <SectionTitle sectionTitle="2-2. Flexboxについて知る" id="sectionTitle2-2"></SectionTitle>
+          <p>
+            ではもう少し規則性のある柔軟に配置を行う方法を覚えていきましょう。<br><br>
+            <HighlightWord word="Flexbox"></HighlightWord><br>
+            webサイトなどの装飾を行うCSSにおいて、短く柔軟なコードで配置を行うためのレイアウトモードのことをさします。<br>
+            HTML・CSSのコースで学習したfloatプロパティで横並びにしましたが、少し不便だと感じたかもしれません。<br>
+            しかし、このFlexboxのレイアウトモードを使うことで簡単に横並びにすることができます。<br>
+            Flexboxを適用(横並び)する方法と例は以下のようになります。<br>
+          </p><br>
+          <div>
+            <img src="../../../assets/images/course/html-css-3/flex.png" class="powerpoint-image" alt="flex" />
+          </div><br>
+          <div>
+            <img src="../../../assets/images/course/html-css-3/flexbox.png" class="powerpoint-image" alt="flexbox" />
+          </div><br>
+          <br>
+        </Document>
+        <Document>
+          <SectionTitle sectionTitle="2-3. 要素とプロパティ③" id="sectionTitle2-3"></SectionTitle>
+          <p>
+            それではFlexboxを適用(横並び)した各要素の配置をさらに細かく設定していきましょう。<br><br>
+            プロパティ<br>
+            <HighlightWord word="justify-content: [位置];"></HighlightWord><br>
+            ・子要素の水平方向の位置を設定するプロパティでjustify-contentプロパティと呼ばれます。<br><br>
+            例：<br>
+            flex-start : 左寄せ（初期値）に指定します。<br>
+            flex-end : 右寄せに指定します。<br>
+            center : 中央寄せに指定します。<br>
+            space-between : flexアイテムの両端揃えに指定します。<br>
+            space-around : flexアイテムの両側の余白を均等に指定します。<br>
+            space-evenly : flexアイテム間のすべての余白を均等に指定します。<br><br>
+            設定する要素はdisplay: flex;を適用した所の下に続けて書くことで水平方向の位置を変えることができます。<br>
+            実際にどのように変わるか以下の画像を見て参考にしてみましょう。<br>
+          </p><br>
+          <div>
+            <img src="../../../assets/images/course/html-css-3/justify-1.png" class="powerpoint-image" alt="justify-1" />
+          </div><br>
+          <div>
+            <img src="../../../assets/images/course/html-css-3/justify-2.png" class="powerpoint-image" alt="justify-2" />
+          </div><br>
+          <p>
+            <HighlightWord word="align-items: [位置];"></HighlightWord><br>
+            ・子要素の水平方向の位置を設定するプロパティでalign-itemsプロパティと呼ばれます。<br><br>
+            例：<br>
+            flex-start : 上寄せ（初期値）に指定します。<br>
+            flex-end : 下寄せに指定します。<br>
+            center : 中央寄せに指定します。<br>
+            space-between : flexアイテムの両端揃えに指定します。<br>
+            space-around : flexアイテムの両側の余白を均等に指定します。<br>
+            space-evenly : flexアイテム間のすべての余白を均等に指定します。<br><br>
+            設定する要素はdisplay: flex;を適用した所の下に続けて書くことで垂直方向の位置を変えることができます。<br>
+            flex-start、flex-end、centerは以下の画像を見て参考にしてみましょう。<br>
+            space-between、space-around、space-evenlyはjustify-contentを垂直にしたものなのでそちらを参考にして下さい。<br>
+          </p><br>
+          <div>
+            <img src="../../../assets/images/course/html-css-3/align-1.png" class="powerpoint-image" alt="align-1" />
+          </div><br>
+          <p>
+            <HighlightWord word="flex-direction: [位置];"></HighlightWord><br>
+            ・子要素の主軸の位置を設定するプロパティでflex-directionプロパティと呼ばれます。<br><br>
+            例：<br>
+            column : flexboxアイテム(子要素)を<span class="markup-word-blue">上から下</span>に指定します。<br>
+            column-reverse : flexboxアイテム(子要素)を<span class="markup-word-blue">下から上</span>に指定します。<br><br>
+            設定する要素はdisplay: flex;を適用した所の下に続けて書くことで要素の順番を変えることができます。<br>
+            以下の画像を見て参考にしてみましょう。<br>
+          </p><br>
+          <div>
+            <img src="../../../assets/images/course/html-css-3/direction-1.png" class="powerpoint-image" alt="direction-1" />
+          </div><br>
+          <p>
+            <HighlightWord word="flex-wrap: [折り返しのオプション];"></HighlightWord><br>
+            ・子要素の折り返しを設定するプロパティでflex-directionプロパティと呼ばれます。<br><br>
+            例：<br>
+            no-wrap : flexboxアイテム(子要素)を折り返さないように指定します。<br>
+            wrap : flexboxアイテム(子要素)を折り返すように指定します。<br><br>
+            設定する要素はdisplay: flex;を適用した所の下に続けて書くことで子要素が親要素の幅を超えた時に折り返すようにする事ができます。<br>
+            以下の画像を見て参考にしてみましょう。<br>
+          </p><br>
+          <div>
+            <img src="../../../assets/images/course/html-css-3/wrap-1.png" class="powerpoint-image" alt="wrap-1" />
+          </div><br>
+        </Document>
 
-    <Terminal :fileName="htmlSourceData.file1.filename" :copiedText="htmlSourceData.file1.code" :lang="htmlSourceData.file1.language" />
-    <Terminal :fileName="htmlSourceData.file2.filename" :copiedText="htmlSourceData.file2.code" :lang="htmlSourceData.file2.language" />
+        <!-- section 3 -->
+        <SubTitle subTitle="3. デバイスごとのスタイルを作る" id="subTitle3"></SubTitle>
+        <Document>
+          <p>
+            Webサイトは見る人の環境によってはPC、タブレット、スマートフォンなど画面幅が違います。<br>
+            そのため、自分が制作している画面を基準にスタイルを適用すると別の人が別デバイスで閲覧する時にスタイル崩れが起きてしまいます。<br>
+            どの画面で見ても違和感がないようにスタイルを作れるようになりましょう!<br>
+          </p>
+          <SectionTitle sectionTitle="3-1. デバイスごとのスタイル設定" id="sectionTitle3-1"></SectionTitle>
+          <p>
+            ではデバイス間でスタイルを変える方法をなんというか学びましょう。<br><br>
+            <HighlightWord word="メディアクエリ"></HighlightWord><br>
+            ・ブラウザの画面サイズに応じてCSSのスタイルを設定できる手法。<br>
+            Webページのスタイル（見栄え）を記述するCSSの仕様の一つ。<br>
+            デバイス別にスタイルをわかることができます。<br>
+            以下のスタイルの適用方法を見て下さい。<br>
+          </p><br>
+          <div>
+            <img src="../../../assets/images/course/html-css-3/media.png" class="powerpoint-image" alt="media" />
+          </div><br>
+          <p>
+            <HighlightWord word="レスポンシブデザイン"></HighlightWord><br>
+            レスポンシブデザインはメディアクエリを利用をすることでユーザーが使うデバイスやWebブラウザに合わせ、レイアウトを「Responsive（機敏に反応）」に最適化できるWebデザインの事です。<br><br>
+          </p><br>
+        </Document>
+        <Document>
+          <SectionTitle sectionTitle="3-2. 要素とプロパティ④" id="sectionTitle3-2"></SectionTitle>
+          <p>
+            それでは先ほどのメディアクエリの設定に記述されていた「CSSを適用したい最大幅、最小幅」とある部分に新しいプロパティを設定しましょう。<br><br>
+            プロパティ<br>
+            <HighlightWord word="max-width: [最大幅(px,rem,%など)];"></HighlightWord><br>
+            ・最大幅を設定するプロパティでmax-widthプロパティと呼ばれます。<br>
+            メディアクエリとしてではなく要素に指定するとこれ以上は大きくならないように制限をかけることができます。<br><br>
+            <HighlightWord word="min-width: [最大幅(px,rem,%など)];"></HighlightWord><br>
+            ・最小幅を設定するプロパティでmin-widthプロパティと呼ばれます。<br>
+            メディアクエリとしてではなく要素に指定するとこれ以上は小さくならないように制限をかけることができます。<br>
+          </p><br>
+          <div>
+            <img src="../../../assets/images/course/html-css-3/breakpoint.png" class="powerpoint-image" alt="breakpoint" />
+          </div><br>
+          <p>
+            このようなメディアクエリの条件を<span class="markup-word-blue">ブレイクポイント</span>といいます。
+          </p>
+        </Document>
+        <Document>
+          <SectionTitle sectionTitle="3-3. Webサイトを実際に作って見る" id="sectionTitle3-3"></SectionTitle>
+          <p>
+            それではここまで学習した内容を使って実際のWebサイトに近いサンプルを作ってみましょう!<br>
+            以下のようなデザインを作っていきます。<br><br>
+            PC版<br>
+          </p><br>
+          <div>
+            <img src="../../../assets/images/course/html-css-3/sample-pc.png" class="screen-image" alt="sample-pc" />
+          </div><br>
+          <p>
+            スマートフォン版<br>
+          </p><br>
+          <div>
+            <img src="../../../assets/images/course/html-css-3/sample-sp.png" class="screen-image" alt="sample-sp" style="width: 35%; display: block; margin: 0 auto;" />
+          </div><br>
+          <p>
+            ①<br>
+            以下の画像をすべて右クリックでダウンロードしましょう。<br>
+          </p><br>
+          <ul class="siteImages">
+            <li class="siteImage">
+              <img src="../../../assets/images/course/sample-site/bag.png" class="screen-image" alt="bag" />
+            </li>
+            <li class="siteImage">
+              <img src="../../../assets/images/course/sample-site/book.png" class="screen-image" alt="book" />
+            </li>
+            <li class="siteImage">
+              <img src="../../../assets/images/course/sample-site/logo.png" class="screen-image" alt="logo" />
+            </li>
+            <li class="siteImage">
+              <img src="../../../assets/images/course/sample-site/movie.png" class="screen-image" alt="movie" />
+            </li>
+            <li class="siteImage">
+              <img src="../../../assets/images/course/sample-site/note.png" class="screen-image" alt="note" />
+            </li>
+            <li class="siteImage">
+              <img src="../../../assets/images/course/sample-site/pen.png" class="screen-image" alt="pen" />
+            </li>
+            <li class="siteImage">
+              <img src="../../../assets/images/course/sample-site/phone.png" class="screen-image" alt="phone" />
+            </li>
+          </ul>
+          <br>
+          <p>
+          ②<br>
+            Visual Studio Codeで「html-css-lesson-10」をプロジェクトを以下の画像のように作成しましょう。<br>
+            フォルダやリセットCSSも以前作ったフォルダをコピーするなどして作りましょう。<br>
+            それができたらhtml、cssファイルに以下をコピーして貼り付けてください。<br>
+            htmlの構造やCSSの当て方を見て復習しましょう!<br><br>
+          </p><br>
+          <div>
+            <img src="../../../assets/images/course/html-css-3/vscode-1.png" class="screen-image" alt="vscode-4" />
+          </div><br>
+          <Terminal :fileName="htmlSourceData.file17.filename" :copiedText="htmlSourceData.file17.code" :lang="htmlSourceData.file17.language" />
+          <Terminal :fileName="htmlSourceData.file18.filename" :copiedText="htmlSourceData.file18.code" :lang="htmlSourceData.file18.language" />
+          <br>
+        </Document>
+      </div>
+      <div class="side-content">
+        <TableOfContents :sections="sections" />
+      </div>
+    </div>
     <Footer />
   </div>
 </template>
@@ -67,9 +303,12 @@ import SectionTitle from "@/components/SectionTitle.vue";
 import HighlightWord from "@/components/HighlightWord.vue";
 import Document from "@/components/Document.vue";
 import Terminal from "@/components/Terminal.vue";
+import TableOfContents from "@/components/TableOfContents.vue";
 import { htmlSourceData } from "@/data/htmlSourceData.js";
 
+
 export default {
+  name: "HtmlPage2",
   components: {
     Header,
     Footer,
@@ -79,16 +318,47 @@ export default {
     HighlightWord,
     Document,
     Terminal,
+    TableOfContents,
   },
   data() {
     return {
       htmlSourceData: htmlSourceData,
+      sections: [
+        { id: "Title", title: "HTML・CSS 3" },
+        { id: "subTitle1", title: "  1. 全体のレイアウトを知る" },
+        { id: "sectionTitle1-1", title: "    1-1. Webサイトの構成" },
+        { id: "sectionTitle1-2", title: "    1-2. 要素とプロパティ①" },
+        { id: "subTitle2", title: "  2. 2. 要素の配置を学ぶ" },
+        { id: "sectionTitle2-1", title: "    2-1. 要素とプロパティ②" },
+        { id: "sectionTitle2-2", title: "    2-2. Flexboxについて知る" },
+        { id: "sectionTitle2-3", title: "    2-3. 要素とプロパティ③" },
+        { id: "subTitle3", title: "  3. デバイスごとのスタイルを作る" },
+        { id: "sectionTitle3-1", title: "    3-1. デバイスごとのスタイル設定" },
+        { id: "sectionTitle3-2", title: "    3-2. 要素とプロパティ④" },
+        { id: "sectionTitle3-3", title: "    3-3. Webサイトを実際に作って見る" },
+      ],
     };
+  },
+  mounted() {
+    // 画面表示時に一番上にスクロールする
+    window.scrollTo(0, 0);
   },
 };
 </script>
 
 <style scoped>
+.container {
+  display: flex;
+  width: 100%;
+}
+.main-content{
+  width: 75%;
+}
+.side-content{
+  margin-left: 1%;
+  margin-top: 5vh;
+  width: 24%;
+}
 .markup-word-blue {
   white-space: pre;
   color: rgb(37, 139, 255);
@@ -98,5 +368,60 @@ export default {
   white-space: pre;
   color: rgb(255, 37, 37);
   font-weight: bold;
+}
+
+.screen-image {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid rgb(175, 175, 175);
+}
+.powerpoint-image {
+  max-width: 80%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid rgb(175, 175, 175);
+}
+
+.download-button {
+  background-color: #4caf50; /* ボタンの背景色 */
+  color: white; /* ボタンのテキストカラー */
+  border: none; /* ボーダーなし */
+  padding: 10px 20px; /* 上下左右のパディング */
+  text-align: center; /* テキストを中央に配置 */
+  text-decoration: none; /* テキスト装飾なし */
+  display: inline-block; /* インラインブロック要素にする */
+  font-size: 16px; /* フォントサイズ */
+  border-radius: 5px; /* 角丸 */
+  cursor: pointer; /* カーソルをポインターに変更 */
+  transition: background-color 0.3s; /* ホバー時の背景色変化にトランジションを追加 */
+}
+
+.download-button:hover {
+  background-color: #45a049; /* ホバー時の背景色 */
+}
+
+.siteImages{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.siteImage {
+  width: 30%;
+  margin-left: 10px;
+}
+
+.siteImage:nth-child(n+4) {
+  margin-top: 10px;
+}
+
+/* タブレット版 */
+@media (max-width: 835px) {
+  .main-content {
+    width: 100%;
+  }
+  .side-content {
+    display: none;
+  }
 }
 </style>
