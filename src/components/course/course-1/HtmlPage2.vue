@@ -362,19 +362,24 @@
             <img src="../../../assets/images/course/html-css-2/web-9.png" class="screen-image" alt="web-9" />
           </div><br>
           <p>
-            それでは先ほど設定したClearfixを一つ一つ説明していきます。<br><br>
+            それではClearfixで使われていた::afterについて学びましょう。<br><br>
             <HighlightWord word="疑似要素"></HighlightWord><br>
-            セレクタに付加するキーワードで、選択された要素の特定の部分にスタイル付けできるようにするものです。<br>
-            疑似要素は様々な用途で使うのでおぼえましょう。以下によく使われる疑似要素を載せておきます。<br>
-            <HighlightWord word="::after"></HighlightWord><br>
+            ::afterは疑似要素と呼ばれ、セレクタに付加するキーワードで、選択された要素の特定の部分にスタイル付けできるようにするものです。<br><br>
+            以下によく使われる疑似要素のため覚えましょう。<br>
+            <span class="markup-word-blue">::after</span><br>
             要素の直後に内容を挿入したいスタイルがある時に使います。<br><br>
-            <HighlightWord word="::hober"></HighlightWord><br>
+            <span class="markup-word-blue">::before</span><br>
+            要素の直前に内容を挿入したいスタイルがある時に使います。<br><br>
+            <HighlightWord word="疑似クラス"></HighlightWord><br>
+            セレクタに付加するキーワードで、選択された要素の特定の部分にスタイル付けできるようにするものです。<br>
+            指定した要素の中の一部に対して影響を与える擬似要素と違い、擬似クラスは指定したもの全体の変更に影響を与える点やコロン(:)の数に違いがあります。<br><br>
+            <span class="markup-word-blue">:hover</span><br>
             カーソルがこの擬似クラスを与えた要素に乗った時にのみ適用されるスタイルになります。<br><br>
-            <HighlightWord word="::not"></HighlightWord><br>
+            <span class="markup-word-blue">:not</span><br>
             この擬似クラスを与えた要素以外にのみ適用されるスタイルになります。<br><br>
-            <HighlightWord word="::first-child"></HighlightWord><br>
+            <span class="markup-word-blue">:first-child</span><br>
             同じ要素の集まりのliタグで使い、この擬似クラスを与えた要素の最初の要素のみ適用されるスタイルになります。<br><br>
-            <HighlightWord word="::nth-child(n)"></HighlightWord><br>
+            <span class="markup-word-blue">:nth-child(n)</span><br>
             同じ要素の集まりのliタグで使い、この擬似クラスを与えた要素のn番目の要素のみ適用されるスタイルになります。<br><br>
             例 ::first-childと::not使った場合
           </p><br>
