@@ -78,8 +78,6 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Exo:wght@100;200;400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@700;400;300&display=swap');
 
 .welcome-header {
   position: fixed;
@@ -103,7 +101,6 @@ export default {
   width: 100%;
   padding: 150px 0;
   background-color: #228bc8;
-  font-family: 'Arial', sans-serif;
   font-size: 12px;
 }
 
@@ -123,7 +120,6 @@ export default {
   font-size: 24px;
   font-weight: bold;
   color: #228bc8;
-  font-family: 'Exo', sans-serif;
 }
 
 .signup {
@@ -138,7 +134,6 @@ export default {
   background-color: rgb(0 0 0 / 30%);
   border-radius: 4px;
   color: #fff;
-  font-family: 'Exo', sans-serif;
   font-size: 16px;
   font-weight: 400;
 }
@@ -163,7 +158,6 @@ export default {
   border: none;
   border-radius: 4px;
   color: #fff;
-  font-family: 'Exo', sans-serif;
   font-size: 16px;
   font-weight: 400;
   cursor: pointer;
@@ -196,7 +190,6 @@ export default {
   text-align: right;
   font-weight: bold;
   color: #228bc8;
-  font-family: 'Exo', sans-serif;
 }
 
 @media (max-width: 648px) {
