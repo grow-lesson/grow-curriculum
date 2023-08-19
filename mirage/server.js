@@ -3,14 +3,19 @@ import { Server } from "miragejs";
 import configureMirage from "./config.js";
 
 export function makeServer({ environment = "development" } = {}) {
-  let server = new Server({
-    environment,
-    routes() {
-      configureMirage();
-    },
-  });
+  if (environment === "development") {
+    let server = new Server({
+      environment,
+      routes() {
+        configureMirage();
+      },
+    });
 
-  return server;
+    return server;
+  } else {
+    // 本番環境ではモックサーバーを使用しないため、空のオブジェクトを返す
+    return {};
+  }
 }
 
-makeServer();
+export default makeServer;
