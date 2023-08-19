@@ -3,7 +3,7 @@
     <Header />
     <main class="main-content">
       <div class="user">
-        <h1 class="user-message">ようこそ{{ User.username }}さん!</h1>
+        <h1 class="user-message">ようこそ{{ User.name }}さん!</h1>
       </div>
       <div class="hero">
         <div class="hero-content">
@@ -110,7 +110,7 @@ export default {
   name: "MenuPage",
   setup() {
     const User = ref({
-      username: "",
+      name: "",
     });
 
     const fetchUserProfile = () => {
