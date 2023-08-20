@@ -1,3 +1,8 @@
 [build]
   command = "npm run build"
   publish = "docs"
+
+[[headers]]
+  for = "/*"  # すべてのリクエストに対して
+  [headers.values]
+    Access-Control-Allow-Origin = "https://grow-curriculum-backend-f10ce9239245.herokuapp.com/"  # HerokuアプリのURLを指定
