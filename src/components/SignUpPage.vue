@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import api from '@/axios';
 
 export default {
   data() {
@@ -57,7 +57,7 @@ export default {
         confirmPassword: this.confirmPassword,
       };
 
-      axios.post('/api/signup', signupData)
+      api.post('/api/signup', signupData)
         .then(response => {
           // ログイン成功時の処理
           if (response.status === 201) {

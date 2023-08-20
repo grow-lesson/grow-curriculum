@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import api from '@/axios';
 
 export default {
   data() {
@@ -36,7 +36,7 @@ export default {
       };
 
       try {
-        const response = await axios.post('/api/login', loginData);
+        const response = await api.post('/api/login', loginData);
         if (response.data.status === 201) {
           this.$router.push({ name: 'MenuPage' });
         } else {

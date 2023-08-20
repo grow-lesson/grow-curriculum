@@ -4,7 +4,7 @@ import store from "./store";
 import router from "./router";
 import { makeServer } from "../mirage/server"; // Mirageサーバーのインポート
 
-if (process.env.NODE_ENV === "development") {
+if (process.env.VUE_APP_STAGE_NAME === "development") {
   makeServer(); // 開発モード時にMirageサーバーを起動
 
   // Vue DevTools を起動
