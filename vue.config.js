@@ -12,14 +12,4 @@ module.exports = {
       }
     }
   },
-  // API ベースURLを設定
-  configureWebpack: {
-    plugins: [
-      new webpack.DefinePlugin({
-        'process.env': {
-          VUE_APP_API_URL: JSON.stringify(process.env.VUE_APP_API_URL)
-        }
-      })
-    ]
-  }
 };
