@@ -9,7 +9,7 @@
       </div>
       <br>
       <div class="login">
-        <input v-model="username" type="text" placeholder="ユーザー名" name="user"><br>
+        <input v-model="email" type="text" placeholder="メールアドレス" name="email"><br>
         <input v-model="password" type="password" placeholder="パスワード" name="password"><br>
         <button @click="login">ログイン</button>
         <p class="btn-back"><a href="/">＞戻る</a></p>
@@ -24,20 +24,30 @@ import api from '@/axios';
 export default {
   data() {
     return {
-      username: "",
+      email: "",
       password: "",
     };
   },
   methods: {
     async login() {
       const loginData = {
-        name: this.username,
+        email: this.email,
         password: this.password
       };
 
       try {
-        const response = await api.post('/api/login', loginData);
-        if (response.data.status === 201) {
+        const response = await api.post('/auth/sign_in', loginData); // ログインエンドポイントを修正
+        // レスポンス内から必要な情報を取得し処理
+        const accessToken = response.headers['access-token'];
+        const client = response.headers['client'];
+        const uid = response.headers['uid'];
+
+        if (accessToken && client && uid) {
+          // トークン情報をlocalStorageなどに保存
+          localStorage.setItem('accessToken', accessToken);
+          localStorage.setItem('client', client);
+          localStorage.setItem('uid', uid);
+
           this.$router.push({ name: 'MenuPage' });
         } else {
           alert('ログインエラー: ユーザー名またはパスワードが一致しません');
