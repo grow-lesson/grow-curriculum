@@ -13,8 +13,8 @@ export default function configureMirage() {
 
       // サインアップ情報送信API
       this.post("/signup", (schema, request) => {
-        const { username, password, confirmPassword } = JSON.parse(request.requestBody);
-        if (username && password && confirmPassword ) {
+        const { name, password, confirmPassword } = JSON.parse(request.requestBody);
+        if (name == '' && password  == '' && confirmPassword == '' ) {
           return { status: 201, message: "サインアップに成功しました" };
         } else {
           return { status: 401, message: "入力フォームの内容が不正です" };
@@ -36,7 +36,7 @@ export default function configureMirage() {
         return { 
           id: 1,
           picture: "../../assets/images/user/dog.jpg",
-          username: "grow太郎",
+          name: "grow",
           email: "test@sample.com",
           hobbies: ["html","css"],
           languages: ["旅行","読書"],
