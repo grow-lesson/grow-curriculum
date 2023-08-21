@@ -6,7 +6,7 @@ const instance = axios.create({
 
 // 認証トークンをヘッダーに含める
 instance.interceptors.request.use(config => {
-  const token = process.env.VUE_APP_AUTH_TOKEN; // ここに認証トークンを設定
+  const token = localStorage.getItem('authToken'); // ローカルストレージからトークンを取得
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }

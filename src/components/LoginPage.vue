@@ -38,7 +38,13 @@ export default {
       try {
         const response = await api.post('/api/login', loginData);
         if (response.data.status === 201) {
-          this.$router.push({ name: 'MenuPage' });
+          // ログイン成功時にトークンを保存
+          const authToken = response.headers.authorization;
+          if (authToken) {
+            // ローカルストレージに認証トークンを保存
+            localStorage.setItem('authToken', authToken);
+            this.$router.push({ name: 'MenuPage' });
+          }
         } else {
           alert('ログインエラー: ユーザー名またはパスワードが一致しません');
         }
