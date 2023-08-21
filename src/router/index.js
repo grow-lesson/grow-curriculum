@@ -139,14 +139,14 @@ const router = createRouter({
 
 // ナビゲーションガード
 router.beforeEach(async (to, from, next) => {
-  if (to.meta.requiresAuth) { // ルートが認証を必要とする場合
+  if (to.meta.requiresAuth) {
+    // 認証が必要な場合の処理
     try {
-      const response = await api.get('/api/users/:id');
-      const user = response.data;
-      if (!user) {
-        next({ name: "Login" });
-      } else {
+      const response = await api.get('/api/auth/validate_token'); // トークンのバリデーションエンドポイント
+      if (response.status === 200) {
         next();
+      } else {
+        next({ name: "Login" });
       }
     } catch (error) {
       console.error(error);

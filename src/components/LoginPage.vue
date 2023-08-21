@@ -37,17 +37,14 @@ export default {
 
       try {
         const response = await api.post('/auth/sign_in', loginData); // ログインエンドポイントを修正
-        // レスポンス内から必要な情報を取得し処理
         const accessToken = response.headers['access-token'];
         const client = response.headers['client'];
         const uid = response.headers['uid'];
 
         if (accessToken && client && uid) {
-          // トークン情報をlocalStorageなどに保存
           localStorage.setItem('accessToken', accessToken);
           localStorage.setItem('client', client);
           localStorage.setItem('uid', uid);
-
           this.$router.push({ name: 'MenuPage' });
         } else {
           alert('ログインエラー: ユーザー名またはパスワードが一致しません');
