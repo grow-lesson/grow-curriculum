@@ -104,7 +104,7 @@
 import Header from "@/components/layout/Header.vue";
 import Footer from "@/components/layout/Footer.vue";
 import { ref, onMounted } from 'vue';
-import axios from 'axios';
+import api from '@/axios';
 
 export default {
   name: "MenuPage",
@@ -114,9 +114,9 @@ export default {
     });
 
     const fetchUserProfile = () => {
-      axios.get('/api/users/:id') // 実際のAPIエンドポイントに変更
+      api.get('/api/users/:id') 
         .then(response => {
-          User.value = response.data;
+          User.value.name = response.data.name;
         })
         .catch(error => {
           console.error(error);
