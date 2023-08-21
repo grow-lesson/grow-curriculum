@@ -47,35 +47,36 @@ export default {
   methods: {
     signup() {
       const signupData = {
-        username: this.username,
-        lastName: this.lastName,
-        firstName: this.firstName,
-        lastNameKana: this.lastNameKana,
-        firstNameKana: this.firstNameKana,
+        name: this.name,
+        last_name: this.lastName,
+        first_name: this.firstName,
+        last_name_kana: this.lastNameKana,
+        first_name_kana: this.firstNameKana,
         email: this.email,
         password: this.password,
-        confirmPassword: this.confirmPassword,
+        password_confirmation: this.confirmPassword,
       };
 
-      api.post('/api/signup', signupData)
+      api.post('/auth', signupData)
         .then(response => {
-          // ログイン成功時の処理
-          if (response.status === 201) {
-            alert('登録が完了しました')
+          // 登録成功時の処理
+          if (response.status === 200) {
+            alert('登録が完了しました');
             this.$router.push({ name: 'MenuPage' }); // メニューページに遷移
           } else {
-            alert('ログインエラー: ユーザー名またはパスワードが一致しません');
+            alert('登録エラーが発生しました');
           }
         })
         .catch(error => {
           // エラーハンドリング
           console.error(error);
-          alert('ログインエラーが発生しました');
+          alert('登録エラーが発生しました');
         });
     }
   },
 };
 </script>
+
 
 <style>
 
