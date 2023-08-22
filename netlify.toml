@@ -1,4 +1,4 @@
 [build]
-  command = "npm run build-pro"
+  command = "npm run build --mode production"
   publish = "docs"
 
