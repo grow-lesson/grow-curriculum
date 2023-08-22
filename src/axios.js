@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'https://grow-official.netlify.app'
+  baseURL: process.env.VUE_APP_API_URL
 });
 
 export default instance;
