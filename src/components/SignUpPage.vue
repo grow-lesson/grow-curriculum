@@ -47,14 +47,12 @@ export default {
   methods: {
     signup() {
       const signupData = {
-        name: this.name,
-        last_name: this.lastName,
-        first_name: this.firstName,
+        username: this.username,
+        name: `${this.lastName} ${this.firstName}`,
         last_name_kana: this.lastNameKana,
         first_name_kana: this.firstNameKana,
         email: this.email,
         password: this.password,
-        password_confirmation: this.confirmPassword,
       };
 
       api.post('/auth', signupData)
