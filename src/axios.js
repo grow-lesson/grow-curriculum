@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'https://grow-curriculum-backend-f10ce9239245.herokuapp.com'
+  baseURL: process.env.VUE_APP_API_URL
 });
 
 export default instance;
