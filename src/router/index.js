@@ -142,7 +142,7 @@ router.beforeEach(async (to, from, next) => {
   if (to.meta.requiresAuth) {
     // 認証が必要な場合の処理
     try {
-      const response = await api.get('/api/auth/validate_token'); // トークンのバリデーションエンドポイント
+      const response = await api.get('/auth/validate_token'); // トークンのバリデーションエンドポイント
       if (response.status === 200) {
         next();
       } else {
