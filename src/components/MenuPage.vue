@@ -114,7 +114,7 @@ export default {
     });
 
     const fetchUserProfile = () => {
-      api.get('/api/users/:id') 
+      api.get('/auth/validate_token') 
         .then(response => {
           User.value.name = response.data.name;
         })
