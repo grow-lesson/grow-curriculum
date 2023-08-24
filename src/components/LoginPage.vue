@@ -36,7 +36,7 @@ export default {
       };
 
       try {
-        const response = await api.post('/auth/sessions', loginData); // ログインエンドポイントを修正
+        const response = await api.post('/auth/sign_in', loginData); // ログインエンドポイントを修正
         const accessToken = response.headers['access-token'];
         const client = response.headers['client'];
         const uid = response.headers['uid'];
