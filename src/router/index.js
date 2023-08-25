@@ -168,7 +168,7 @@ router.beforeEach(async (to, from, next) => {
         if (response.status === 200) {
           let user = response.data.data;
           // Vuexのミューテーションを呼び出してユーザー情報をストアに保存
-          store.commit('setUser', user);
+          store.commit('user/setUser', user);
           next();
         } else {
           next({ name: "Login" });
