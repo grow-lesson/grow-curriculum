@@ -42,9 +42,11 @@ export default {
         const uid = response.headers['uid'];
 
         if (accessToken && client && uid) {
-          localStorage.setItem('accessToken', accessToken);
-          localStorage.setItem('client', client);
-          localStorage.setItem('uid', uid);
+          // アクセストークンをクッキーに保存
+          this.setCookie('access_token', accessToken);
+          this.setCookie('client', client);
+          this.setCookie('uid', uid);
+
           this.$router.push({ name: 'MenuPage' });
         } else {
           alert('ログインエラー: ユーザー名またはパスワードが一致しません');
@@ -53,9 +55,17 @@ export default {
         console.error(error);
         alert('ログインエラーが発生しました');
       }
-    }
+    },
+    setCookie(name, value) {
+      const days = 7; // クッキーの有効期限（日数）
+      const date = new Date();
+      date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+      const expires = "expires=" + date.toUTCString();
+      document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    },
   },
 };
+
 </script>
 
 <style>
