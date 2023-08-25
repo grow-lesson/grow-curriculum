@@ -3,7 +3,7 @@
     <Header />
     <main class="main-content">
       <div class="user">
-        <h1 class="user-message">ようこそ{{ User.name }}さん!</h1>
+        <h1 class="user-message">ようこそ{{ userName }}さん!</h1>
       </div>
       <div class="hero">
         <div class="hero-content">
@@ -103,31 +103,14 @@
 <script>
 import Header from "@/components/layout/Header.vue";
 import Footer from "@/components/layout/Footer.vue";
-import { ref, onMounted } from 'vue';
-import api from '@/axios';
 
 export default {
   name: "MenuPage",
-  setup() {
-    const User = ref({
-      name: "",
-    });
-
-    const fetchUserProfile = () => {
-      api.get('/auth/validate_token') 
-        .then(response => {
-          User.value.name = response.data.name;
-        })
-        .catch(error => {
-          console.error(error);
-        });
-    };
-
-    onMounted(fetchUserProfile);
-
-    return {
-      User,
-    };
+  computed: {
+    ...mapState('user', ['user']), // 'user' モジュールの state をマッピング
+    userName() {
+      return this.user ? this.user.name : '';
+    },
   },
   methods: {
     goToHtmlMenuPage() {
