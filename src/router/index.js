@@ -153,10 +153,7 @@ router.beforeEach(async (to, from, next) => {
     try {
       const accessToken = getCookie('access-token');
       const client = getCookie('client');
-      const uid = getCookie('uid');
-
-      // UIDをデコード
-      uid = decodeURIComponent(uid);
+      const uid = decodeURIComponent(getCookie('uid')); // UIDをデコード
 
       if (accessToken && client && uid) {
         const response = await api.get('/auth/validate_token', {
