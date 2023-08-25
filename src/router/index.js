@@ -137,14 +137,23 @@ const router = createRouter({
   routes,
 });
 
+// クッキーを読み取る関数
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) {
+    return parts.pop().split(';').shift();
+  }
+}
+
 // ナビゲーションガード
 router.beforeEach(async (to, from, next) => {
   if (to.meta.requiresAuth) {
     // 認証が必要な場合の処理
     try {
-      const accessToken = this.getCookie('access-token');
-      const client = this.getCookie('client');
-      const uid = this.getCookie('uid');
+      const accessToken = getCookie('access-token');
+      const client = getCookie('client');
+      const uid = getCookie('uid');
 
       if (accessToken && client && uid) {
         const response = await api.get('/auth/validate_token', {
@@ -171,6 +180,5 @@ router.beforeEach(async (to, from, next) => {
     next(); // 認証が不要な場合はそのまま遷移
   }
 });
-
 
 export default router;
