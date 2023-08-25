@@ -39,7 +39,7 @@ export default {
         const response = await api.post('/auth/sign_in', loginData);
         
         // クッキーにアクセストークンなどを保存
-        this.setCookie('access_token', response.data.access_token);
+        this.setCookie('access_token', response.headers.access_token);
         this.setCookie('client', response.headers.client);
         this.setCookie('uid', response.headers.uid);
 
