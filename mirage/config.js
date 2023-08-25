@@ -2,6 +2,13 @@
 import { createServer, Model } from "miragejs";
 
 export default function configureMirage() {
+  const accessToken = 'testtesttest';
+  const client = 'testtesttest';
+  const uid = 'test%40sample.com';
+  // クッキーにアクセストークンなどを保存
+  this.setCookie('access-token', accessToken);
+  this.setCookie('client', client);
+  this.setCookie('uid', uid);
   createServer({
     models: {
       // モデルの定義
@@ -9,7 +16,6 @@ export default function configureMirage() {
     },
 
     routes() {
-
       // サインアップ情報送信API
       this.post("/auth", (schema, request) => {
         const { name, password, confirmPassword } = JSON.parse(request.requestBody);
@@ -30,12 +36,7 @@ export default function configureMirage() {
         }
       });
 
-      this.post("/auth/validate_token", (schema, request) => {
-        const { headers } = request;
-        const accessToken = headers['access-token'];
-        const client = headers['client'];
-        const uid = headers['uid'];
-
+      this.post("/auth/validate_token", (schema) => {
         if (accessToken && client && uid) {
           // ユーザーモデルが定義されていると仮定し、ユーザーを作成して返す
           const user = schema.create('user', {
