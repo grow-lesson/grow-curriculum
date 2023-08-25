@@ -36,9 +36,7 @@ export default {
       };
 
       try {
-        axios.post('/auth/sign_in', loginData, {
-          withCredentials: true
-        });
+        const response = await api.post('/auth/sign_in', loginData, { withCredentials: true });
         
         // クッキーにアクセストークンなどを保存
         this.setCookie('access-token', response.headers['access-token']);
