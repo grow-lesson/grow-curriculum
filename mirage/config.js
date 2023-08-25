@@ -9,10 +9,9 @@ export default function configureMirage() {
     },
 
     routes() {
-      this.namespace = "/auth";
 
       // サインアップ情報送信API
-      this.post("/", (schema, request) => {
+      this.post("/auth", (schema, request) => {
         const { name, password, confirmPassword } = JSON.parse(request.requestBody);
         if (name == '' && password  == '' && confirmPassword == '' ) {
           return { status: 201, message: "サインアップに成功しました" };
@@ -22,7 +21,7 @@ export default function configureMirage() {
       });
 
       // ログイン情報送信API
-      this.post("/sign_in", (schema, request) => {
+      this.post("/auth/sign_in", (schema, request) => {
         const { email, password } = JSON.parse(request.requestBody);
         if (email === "grow" && password === "admin") {
           return { status: 201, message: "ログインに成功しました" };
@@ -31,7 +30,7 @@ export default function configureMirage() {
         }
       });
 
-      this.post("/validate_token", (schema, request) => {
+      this.post("/auth/validate_token", (schema, request) => {
         const { headers } = request;
         const accessToken = headers['access-token'];
         const client = headers['client'];
