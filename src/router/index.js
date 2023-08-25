@@ -142,7 +142,7 @@ router.beforeEach(async (to, from, next) => {
   if (to.meta.requiresAuth) {
     // 認証が必要な場合の処理
     try {
-      const accessToken = this.getCookie('access_token');
+      const accessToken = this.getCookie('access-token');
       const client = this.getCookie('client');
       const uid = this.getCookie('uid');
 
