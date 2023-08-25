@@ -103,6 +103,7 @@
 <script>
 import Header from "@/components/layout/Header.vue";
 import Footer from "@/components/layout/Footer.vue";
+import { mapState } from 'vuex';
 
 export default {
   name: "MenuPage",

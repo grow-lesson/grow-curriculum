@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import api from '@/axios';
+import store from '@/store'; // Vuexストアのインポート
 
 const routes = [
   {
@@ -165,6 +166,9 @@ router.beforeEach(async (to, from, next) => {
         });
 
         if (response.status === 200) {
+          let user = response.data.data;
+          // Vuexのミューテーションを呼び出してユーザー情報をストアに保存
+          store.commit('setUser', user);
           next();
         } else {
           next({ name: "Login" });
