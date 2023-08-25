@@ -36,35 +36,30 @@ export default {
       };
 
       try {
-        const response = await api.post('/auth/sign_in', loginData); // ログインエンドポイントを修正
-        const accessToken = response.headers['access-token'];
-        const client = response.headers['client'];
-        const uid = response.headers['uid'];
+        const response = await api.post('/auth/sessions', loginData);
+        
+        // クッキーにアクセストークンなどを保存
+        this.setCookie('access_token', response.data.access_token);
+        this.setCookie('client', response.headers.client);
+        this.setCookie('uid', response.headers.uid);
 
-        if (accessToken && client && uid) {
-          // アクセストークンをクッキーに保存
-          this.setCookie('access_token', accessToken);
-          this.setCookie('client', client);
-          this.setCookie('uid', uid);
-
-          this.$router.push({ name: 'MenuPage' });
-        } else {
-          alert('ログインエラー: ユーザー名またはパスワードが一致しません');
-        }
+        this.$router.push({ name: 'MenuPage' });
       } catch (error) {
         console.error(error);
         alert('ログインエラーが発生しました');
       }
     },
     setCookie(name, value) {
-      const days = 7; // クッキーの有効期限（日数）
+      const days = 7;
       const date = new Date();
       date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
       const expires = "expires=" + date.toUTCString();
-      document.cookie = name + "=" + value + ";" + expires + ";path=/";
+      const cookieValue = encodeURIComponent(value);
+      document.cookie = `${name}=${cookieValue};${expires};path=/;secure;SameSite=strict`;
     },
   },
 };
+
 
 </script>
 
