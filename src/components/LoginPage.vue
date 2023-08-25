@@ -36,7 +36,7 @@ export default {
       };
 
       try {
-        const response = await api.post('/auth/sessions', loginData);
+        const response = await api.post('/auth/sign_in', loginData);
         
         // クッキーにアクセストークンなどを保存
         this.setCookie('access_token', response.data.access_token);
