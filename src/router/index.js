@@ -142,9 +142,24 @@ router.beforeEach(async (to, from, next) => {
   if (to.meta.requiresAuth) {
     // 認証が必要な場合の処理
     try {
-      const response = await api.get('/auth/validate_token'); // トークンのバリデーションエンドポイント
-      if (response.status === 200) {
-        next();
+      const accessToken = this.getCookie('access_token');
+      const client = this.getCookie('client');
+      const uid = this.getCookie('uid');
+
+      if (accessToken && client && uid) {
+        const response = await api.get('/auth/validate_token', {
+          headers: {
+            'access-token': accessToken,
+            'client': client,
+            'uid': uid
+          }
+        });
+
+        if (response.status === 200) {
+          next();
+        } else {
+          next({ name: "Login" });
+        }
       } else {
         next({ name: "Login" });
       }
@@ -156,5 +171,6 @@ router.beforeEach(async (to, from, next) => {
     next(); // 認証が不要な場合はそのまま遷移
   }
 });
+
 
 export default router;
