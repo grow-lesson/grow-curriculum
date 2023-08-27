@@ -154,7 +154,6 @@ router.beforeEach(async (to, from, next) => {
     if (to.meta.requiresAuth) {
       const response = await api.get('/auth/validate_token');
       if (response.status === 200) {
-        console.log(response.data)
         // Vuexのミューテーションを呼び出してユーザー情報をストアに保存
         store.commit('setUser', response.data.data);
         if(!store.state.user.loginData){
@@ -187,10 +186,9 @@ router.beforeEach(async (to, from, next) => {
         });
 
         if (response.status === 200) {
-          let user = response.data.data;
           // Vuexのミューテーションを呼び出してユーザー情報をストアに保存
-          store.commit('setUser', user);
-          if(!store.state.user){
+          store.commit('setUser', response.data.data);
+          if(!store.state.user.loginData){
             next({ name: "Login" });
           }
           next();
