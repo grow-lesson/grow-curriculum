@@ -9,8 +9,13 @@
       </div>
       <br>
       <div class="login">
-        <input v-model="email" type="text" placeholder="メールアドレス" name="email"><br>
-        <input v-model="password" type="password" placeholder="パスワード" name="password"><br>
+        <input v-model="email" type="text" v-model.trim="$v.email.$model" placeholder="メールアドレス" name="email"><br>
+        <span class="error-message" v-if="!$v.email.required">{{ errors.email.required }}</span>
+        <span class="error-message" v-else-if="!$v.email.email">{{ errors.email.email }}</span>
+
+        <input v-model="password" type="password" v-model.trim="$v.password.$model" placeholder="パスワード" name="password"><br>
+        <span class="error-message" v-if="!$v.password.required">{{ errors.password.required }}</span>
+
         <button @click="login">ログイン</button>
         <p class="btn-back"><a href="/">＞戻る</a></p>
       </div>
@@ -22,6 +27,8 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import api from '@/axios';
+import { useVuelidate } from '@vuelidate/core';
+import { required } from '@vuelidate/validators';
 
 export default {
   setup() {
@@ -29,24 +36,32 @@ export default {
     const password = ref("");
     const router = useRouter();
 
+    const v$ = useVuelidate({
+      email: { required, email },
+      password: { required }
+    }, { email, password });
+
     async function login() {
-      const loginData = {
-        email: email.value,
-        password: password.value
-      };
+      v$.$touch();
 
-      try {
-        const response = await api.post('/auth/sign_in', loginData, { withCredentials: true });
-        
-        // クッキーにアクセストークンなどを保存
-        setCookie('access-token', response.headers['access-token']);
-        setCookie('client', response.headers['client']);
-        setCookie('uid', response.headers['uid']);
+      if (!v$.$error) {
+        const loginData = {
+          email: email.value,
+          password: password.value
+        };
 
-        router.push({ name: 'MenuPage' });
-      } catch (error) {
-        console.error(error);
-        alert('ログインエラーが発生しました');
+        try {
+          const response = await api.post('/auth/sign_in', loginData, { withCredentials: true });
+
+          setCookie('access-token', response.headers['access-token']);
+          setCookie('client', response.headers['client']);
+          setCookie('uid', response.headers['uid']);
+
+          router.push({ name: 'MenuPage' });
+        } catch (error) {
+          console.error(error);
+          alert('ログインエラーが発生しました');
+        }
       }
     }
 
@@ -59,15 +74,25 @@ export default {
       document.cookie = `${name}=${cookieValue};${expires};path=/;secure;SameSite=strict`;
     }
 
+    const errors = {
+      email: {
+        required: 'メールアドレスを入力してください',
+        email: '有効なメールアドレスを入力してください'
+      },
+      password: {
+        required: 'パスワードを入力してください'
+      }
+    };
+
     return {
       email,
       password,
-      login
+      login,
+      errors
     };
   }
 };
 </script>
-
 
 <style>
 
