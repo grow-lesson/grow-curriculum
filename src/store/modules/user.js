@@ -1,18 +1,19 @@
 // src/store/modules/user.js
 const state = {
-  user: null,
+  loginData: null,
 };
 
 const mutations = {
   setUser(state, user) {
-    state.user = user;
+    console.log(user)
+    state.loginData = user;
   },
 };
 
 const actions = {};
 
 const getters = {
-  getUser: (state) => state.user,
+  getLoginData: state => state.loginData,
 };
 
 export default {

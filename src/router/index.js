@@ -149,6 +149,27 @@ function getCookie(name) {
 
 // ナビゲーションガード
 router.beforeEach(async (to, from, next) => {
+  // テスト用
+  if(process.env.NODE_ENV === "development"){
+    if (to.meta.requiresAuth) {
+      const response = await api.get('/auth/validate_token');
+      if (response.status === 200) {
+        console.log(response.data)
+        // Vuexのミューテーションを呼び出してユーザー情報をストアに保存
+        store.commit('setUser', response.data.data);
+        if(!store.state.user.loginData){
+          next({ name: "Login" });
+          return; // テスト用の処理を終了
+        }
+        next();
+        return; // テスト用の処理を終了
+      } else {
+        next({ name: "Login" });
+        return; // テスト用の処理を終了
+      }
+    }
+  }
+  // 実際のAPI呼び出し
   if (to.meta.requiresAuth) {
     // 認証が必要な場合の処理
     try {
@@ -168,7 +189,10 @@ router.beforeEach(async (to, from, next) => {
         if (response.status === 200) {
           let user = response.data.data;
           // Vuexのミューテーションを呼び出してユーザー情報をストアに保存
-          store.commit('user/setUser', user);
+          store.commit('setUser', user);
+          if(!store.state.user){
+            next({ name: "Login" });
+          }
           next();
         } else {
           next({ name: "Login" });
