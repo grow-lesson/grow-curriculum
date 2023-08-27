@@ -4,14 +4,14 @@
     <div class="profile">
       <div class="profile-header">
         <img class="profile-picture" src="../../assets/images/user/dog.jpg" alt="ssss">
-        <!-- <img class="profile-picture" :src="userProfile.picture" alt="プロフィール画像" /> -->
-        <h1>{{ userProfile.username }}</h1>
+        <h1>{{ user.name }}</h1>
       </div>
       <div class="profile-details">
-        <p><strong>Email:</strong> {{ userProfile.email }}</p>
-        <p><strong>趣味:</strong> {{ userProfile.hobbies }}</p>
-        <p><strong>触れたことがある言語:</strong> {{ userProfile.languages }}</p>
-        <p><strong>自己紹介:</strong> {{ userProfile.bio }}</p>
+        <p><strong>姓:</strong> {{ user.last_name_kana }}<strong>  名:</strong> {{ user.first_name_kana }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>趣味:</strong> {{ user.hobbies }}</p>
+        <p><strong>触れたことがある言語:</strong> {{ user.languages }}</p>
+        <p><strong>自己紹介:</strong> {{ user.bio }}</p>
         <button @click="goToEditPage">編集する</button>
         <!-- ここに別の項目を追加 -->
       </div>
@@ -23,8 +23,8 @@
 <script>
 import Header from "@/components/layout/Header.vue";
 import Footer from "@/components/layout/Footer.vue";
-import { ref, onMounted } from 'vue';
-import axios from 'axios';
+import { computed } from 'vue';
+import { useStore } from 'vuex';
 
 export default {
   components: {
@@ -32,35 +32,19 @@ export default {
     Footer,
   },
   setup() {
-    const userProfile = ref({
-      picture: "",
-      username: "",
-      email: "",
-      hobbies: [],
-      languages: [],
-      bio: "",
-    });
+    const store = useStore();
+    const login = computed(() => store.state.user.loginData);
 
-    const fetchUserProfile = () => {
-      axios.get('/api/users/:id') // 実際のAPIエンドポイントに変更
-        .then(response => {
-          userProfile.value = response.data;
-        })
-        .catch(error => {
-          console.error(error);
-        });
+    const goToEditPage = () => {
+      this.$router.push({ name: "EditPage" });
     };
-
-    onMounted(fetchUserProfile);
 
     return {
-      userProfile,
+      login,
+      user: computed(() => login.value ? login.value : ''),
+      goToEditPage,
     };
-  },
-  methods: {
-    goToEditPage() {
-      this.$router.push({ name: "EditPage" });
-    },
+
   }
 };
 </script>

@@ -3,7 +3,7 @@
     <Header />
     <main class="main-content">
       <div class="user">
-        <h1 class="user-message">ようこそ{{ userName }}さん!</h1>
+        <h1 class="user-message">ようこそ{{ user.name }}さん!</h1>
       </div>
       <div class="hero">
         <div class="hero-content">
@@ -103,45 +103,56 @@
 <script>
 import Header from "@/components/layout/Header.vue";
 import Footer from "@/components/layout/Footer.vue";
-import { mapState } from 'vuex';
+import { computed } from 'vue';
+import { useStore } from 'vuex';
 
 export default {
   name: "MenuPage",
-  computed: {
-    ...mapState('user', ['user']), // 'user' モジュールの state をマッピング
-    userName() {
-      return this.user ? this.user.name : '';
-    },
-  },
-  methods: {
-    goToHtmlMenuPage() {
-      this.$router.push({ name: "HtmlMenuPage" });
-    },
-    goToCommandLineMenuPage() {
-      this.$router.push({ name: "CommandLineMenuPage" });
-    },
-    goToGitMenuPage() {
-      this.$router.push({ name: "GitMenuPage" });
-    },
-    goToJavaScriptMenuPage() {
-      this.$router.push({ name: "UnderConstruction" });
-    },
-    goToRubyMenuPage() {
-      this.$router.push({ name: "UnderConstruction" });
-    },
-    goToITMenuPage() {
-      this.$router.push({ name: "UnderConstruction" });
-    },
-    goToEnvironmentPage() {
-      this.$router.push({ name: "Environment" });
-    },
-    goToProcedurePage() {
-      this.$router.push({ name: "Procedure" });
-    },
-  },
   components: {
     Header,
     Footer,
+  },
+  setup() {
+    const store = useStore();
+    const login = computed(() => store.state.user.loginData);
+
+    const goToHtmlMenuPage = () => {
+      this.$router.push({ name: "HtmlMenuPage" });
+    };
+    const goToCommandLineMenuPage = () => {
+      this.$router.push({ name: "CommandLineMenuPage" });
+    };
+    const goToGitMenuPage = () => {
+      this.$router.push({ name: "GitMenuPage" });
+    };
+    const goToJavaScriptMenuPage = () => {
+      this.$router.push({ name: "UnderConstruction" });
+    };
+    const goToRubyMenuPage = () => {
+      this.$router.push({ name: "UnderConstruction" });
+    };
+    const goToITMenuPage = () => {
+      this.$router.push({ name: "UnderConstruction" });
+    };
+    const goToEnvironmentPage = () => {
+      this.$router.push({ name: "Environment" });
+    };
+    const goToProcedurePage = () => {
+      this.$router.push({ name: "Procedure" });
+    };
+
+    return {
+      login,
+      user: computed(() => login.value ? login.value : ''),
+      goToHtmlMenuPage,
+      goToCommandLineMenuPage,
+      goToGitMenuPage,
+      goToJavaScriptMenuPage,
+      goToRubyMenuPage,
+      goToITMenuPage,
+      goToEnvironmentPage,
+      goToProcedurePage,
+    };
   },
 };
 </script>
