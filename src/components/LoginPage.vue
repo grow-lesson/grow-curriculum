@@ -19,49 +19,55 @@
 </template>
 
 <script>
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 import api from '@/axios';
 
 export default {
-  data() {
-    return {
-      email: "",
-      password: "",
-    };
-  },
-  methods: {
-    async login() {
+  setup() {
+    const email = ref("");
+    const password = ref("");
+    const router = useRouter();
+
+    async function login() {
       const loginData = {
-        email: this.email,
-        password: this.password
+        email: email.value,
+        password: password.value
       };
 
       try {
         const response = await api.post('/auth/sign_in', loginData, { withCredentials: true });
         
         // クッキーにアクセストークンなどを保存
-        this.setCookie('access-token', response.headers['access-token']);
-        this.setCookie('client', response.headers['client']);
-        this.setCookie('uid', response.headers['uid']);
+        setCookie('access-token', response.headers['access-token']);
+        setCookie('client', response.headers['client']);
+        setCookie('uid', response.headers['uid']);
 
-        this.$router.push({ name: 'MenuPage' });
+        router.push({ name: 'MenuPage' });
       } catch (error) {
         console.error(error);
         alert('ログインエラーが発生しました');
       }
-    },
-    setCookie(name, value) {
+    }
+
+    function setCookie(name, value) {
       const days = 7;
       const date = new Date();
       date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
       const expires = "expires=" + date.toUTCString();
       const cookieValue = encodeURIComponent(value);
       document.cookie = `${name}=${cookieValue};${expires};path=/;secure;SameSite=strict`;
-    },
-  },
+    }
+
+    return {
+      email,
+      password,
+      login
+    };
+  }
 };
-
-
 </script>
+
 
 <style>
 
