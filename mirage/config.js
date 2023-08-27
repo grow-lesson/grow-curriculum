@@ -2,13 +2,7 @@
 import { createServer, Model } from "miragejs";
 
 export default function configureMirage() {
-  const accessToken = 'testtesttest';
-  const client = 'testtesttest';
-  const uid = 'test%40sample.com';
-  // クッキーにアクセストークンなどを保存
-  this.setCookie('access-token', accessToken);
-  this.setCookie('client', client);
-  this.setCookie('uid', uid);
+  // サーバーの作成
   createServer({
     models: {
       // モデルの定義
@@ -36,44 +30,34 @@ export default function configureMirage() {
         }
       });
 
-      this.post("/auth/validate_token", (schema) => {
-        if (accessToken && client && uid) {
-          // ユーザーモデルが定義されていると仮定し、ユーザーを作成して返す
-          const user = schema.create('user', {
+      this.get("/auth/validate_token", () => {
+        let tokenData = {
+          accessToken: 'testtest',
+          client: 'testtest',
+          uid: 'test@com'
+        };
+        if (tokenData.accessToken && tokenData.client && tokenData.uid) {
+          return { status: 200, data: {
             id: 5,
             provider: "email",
             uid: "test2@sample.com",
             allow_password_change: false,
             name: "grow company",
-            nickname: null,
-            image: null,
+            last_name_kana: "グロウ",
+            first_name_kana: "カンパニー",
             email: "test2@sample.com",
+            hobbies: "旅行、音楽鑑賞",
+            languages: "HTML",
+            bio: "よろしくお願いします。",
+            image: null,
             created_at: "2023-08-25T06:17:04.576Z",
             updated_at: "2023-08-25T07:35:39.724Z",
-            username: "grow",
-            last_name_kana: "グロウ",
-            first_name_kana: "カンパニー"
             // 他のユーザー属性
-          });
-
-          return { status: 200, data: { user } };
+          }};
         } else {
           return { status: 401, message: "認証されていません" };
         }
       });
-
-      // マイページの取得API、ログイン後のページ制約
-      // this.get("/users/:id", () => {
-      //   return { 
-      //     id: 1,
-      //     picture: "../../assets/images/user/dog.jpg",
-      //     name: "grow",
-      //     email: "test@sample.com",
-      //     hobbies: ["html","css"],
-      //     languages: ["旅行","読書"],
-      //     bio: "よろしくお願いします"
-      //   };
-      // });
     },
   });
 }
