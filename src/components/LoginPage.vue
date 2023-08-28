@@ -10,11 +10,11 @@
       <br>
       <div class="login">
         <form @submit="onSubmit">
-          <input type="text" v-model="email" />
+          <input type="text" v-model="email" placeholder="メールアドレス" name="email" />
           <p class="login-errorMessage">{{ errors['form.email'] }}</p>
-          <input type="text" v-model="password" />
+          <input type="password" v-model="password" placeholder="パスワード" name="password" />
           <p class="login-errorMessage">{{ errors['form.password'] }}</p>
-          <button>送信</button>
+          <button>ログイン</button>
         </form>
         <p class="btn-back"><a href="/">＞戻る</a></p>
       </div>
@@ -104,8 +104,8 @@ export default {
     });
 
     return {
-      password,
       email,
+      password,
       errors,
       onSubmit,
     };
