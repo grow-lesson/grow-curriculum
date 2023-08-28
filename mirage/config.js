@@ -23,7 +23,7 @@ export default function configureMirage() {
       // ログイン情報送信API
       this.post("/auth/sign_in", (schema, request) => {
         const { email, password } = JSON.parse(request.requestBody);
-        if (email === "grow" && password === "admin") {
+        if (email === "example@gmail.com" && password === "grow-admin") {
           return { status: 201, message: "ログインに成功しました" };
         } else {
           return { status: 401, message: "ユーザー名またはパスワードが一致しません" };
