@@ -12,8 +12,8 @@ export default function configureMirage() {
     routes() {
       // サインアップ情報送信API
       this.post("/auth", (schema, request) => {
-        const { name, password, confirmPassword } = JSON.parse(request.requestBody);
-        if (name == '' && password  == '' && confirmPassword == '' ) {
+        const { username, password } = JSON.parse(request.requestBody);
+        if (username !== 'error' && password  !== 'grow-error') {
           return { status: 201, message: "サインアップに成功しました" };
         } else {
           return { status: 401, message: "入力フォームの内容が不正です" };
