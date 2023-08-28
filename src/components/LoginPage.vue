@@ -9,9 +9,13 @@
       </div>
       <br>
       <div class="login">
-        <input v-model="email" type="text" placeholder="メールアドレス" name="email"><br>
-        <input v-model="password" type="password" placeholder="パスワード" name="password"><br>
-        <button @click="login">ログイン</button>
+        <form @submit="onSubmit">
+          <input type="text" v-model="email" />
+          <p class="login-errorMessage">{{ errors['form.email'] }}</p>
+          <input type="text" v-model="password" />
+          <p class="login-errorMessage">{{ errors['form.password'] }}</p>
+          <button>送信</button>
+        </form>
         <p class="btn-back"><a href="/">＞戻る</a></p>
       </div>
     </div>
@@ -19,54 +23,96 @@
 </template>
 
 <script>
-import { ref } from 'vue';
-import { useRouter } from 'vue-router';
+import { defineRule, useField, useForm } from 'vee-validate';
+import AllRules from '@vee-validate/rules';
+import { object, string, setLocale } from 'yup';
 import api from '@/axios';
+import { useRouter } from 'vue-router';
 
 export default {
   setup() {
-    const email = ref("");
-    const password = ref("");
+    setLocale({
+      mixed: {
+        defalut: '不正な値です。',
+        required:  ({ label }) => `${label}は必須の項目です。`,
+      },
+      string: {
+        email: ({ label }) => `${label}の形式ではありません。`,
+      },
+    });
+
+    Object.keys(AllRules).forEach((rule) => {
+      defineRule(rule, AllRules[rule]);
+    });
+
+
+    const schema = object({
+      form: object({
+        email: string().required().email().label('メールアドレス'),
+        password: string().required().label('パスワード'),
+      }),
+    });
+
+    const { errors, handleSubmit } = useForm({
+      validationSchema: schema,
+      initialValues: {
+        form: {
+          email: '',
+          password: '',
+        },
+      },
+    });
+
+    const { value: email, } = useField('form.email');
+    const { value: password, } = useField('form.password');
+
     const router = useRouter();
 
-    async function login() {
+    const onSubmit = handleSubmit(async (values) => {
+      console.log(values.form.email)
       const loginData = {
-        email,
-        password
+        email: values.form.email,
+        password: values.form.password
       }
 
-      try {
-        const response = await api.post('/auth/sign_in', loginData, { withCredentials: true });
+      api.post('/auth/sign_in', loginData, { withCredentials: true })
+        .then(response => {
+          if (response.data.status === 201) {
+            setCookie('access-token', response.headers['access-token']);
+            setCookie('client', response.headers['client']);
+            setCookie('uid', response.headers['uid']);
 
-        setCookie('access-token', response.headers['access-token']);
-        setCookie('client', response.headers['client']);
-        setCookie('uid', response.headers['uid']);
+            router.push({ name: 'MenuPage' });
+          } else {
+            throw new Error('ログインエラーが発生しました');
+          }
+        })
+        .catch(error => {
+          console.error(error);
+          alert('ログインエラーが発生しました');
+        }
+      );
 
-        router.push({ name: 'MenuPage' });
-      } catch (error) {
-        console.error(error);
-        alert('ログインエラーが発生しました');
+
+      function setCookie(name, value) {
+        const days = 7;
+        const date = new Date();
+        date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+        const expires = "expires=" + date.toUTCString();
+        const cookieValue = encodeURIComponent(value);
+        document.cookie = `${name}=${cookieValue};${expires};path=/;secure;SameSite=strict`;
       }
-    }
-
-    function setCookie(name, value) {
-      const days = 7;
-      const date = new Date();
-      date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-      const expires = "expires=" + date.toUTCString();
-      const cookieValue = encodeURIComponent(value);
-      document.cookie = `${name}=${cookieValue};${expires};path=/;secure;SameSite=strict`;
-    }
+    });
 
     return {
-      email,
       password,
-      login,
+      email,
+      errors,
+      onSubmit,
     };
   }
-};
+}
 </script>
-
 <style>
 
 .welcome-header {
@@ -129,6 +175,12 @@ export default {
   font-weight: 400;
 }
 
+.login-errorMessage {
+  color: red;
+  font-size: 16px;
+  font-weight: bold;
+}
+
 .login button {
   width: 100%;
   padding: 10px;
@@ -169,6 +221,10 @@ export default {
   text-align: right;
   font-weight: bold;
   color: #228bc8;
+}
+
+.btn-back[disabled="false"] {
+  color: gray;
 }
 
 @media (max-width: 648px) {
