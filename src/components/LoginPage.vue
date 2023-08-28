@@ -69,7 +69,6 @@ export default {
     const router = useRouter();
 
     const onSubmit = handleSubmit(async (values) => {
-      console.log(values.form.email)
       const loginData = {
         email: values.form.email,
         password: values.form.password
