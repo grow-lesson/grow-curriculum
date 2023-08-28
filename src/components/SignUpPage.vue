@@ -9,19 +9,29 @@
       </div>
       <br>
       <div class="signup">
-        <input v-model="username" type="text" placeholder="ユーザー名" name="username"><br>
-        <div class="signup-name">
-          <input v-model="lastName" type="text" placeholder="姓" name="lastName"><br>
-          <input v-model="firstName" type="text" placeholder="名" name="firstName"><br>
-        </div>
-        <div class="signup-name-kana">
-          <input v-model="lastNameKana" type="text" placeholder="姓(カナ)" name="lastNameKana"><br>
-          <input v-model="firstNameKana" type="text" placeholder="名(カナ)" name="firstNameKana"><br>
-        </div>
-        <input v-model="email" type="text" placeholder="メールアドレス" name="email"><br>
-        <input v-model="password" type="password" placeholder="パスワード" name="password"><br>
-        <input v-model="confirmPassword" type="password" placeholder="確認用パスワード" name="confirmPassword"><br>
-        <button @click="signup">新規登録</button>
+        <form @submit="onSubmit">
+          <input v-model="username" type="text" placeholder="ユーザー名" name="username"><br>
+          <p class="signup-errorMessage">{{ errors['form.username'] }}</p>
+          <div class="signup-name">
+            <input v-model="lastName" type="text" placeholder="姓" name="lastName"><br>
+            <input v-model="firstName" type="text" placeholder="名" name="firstName"><br>
+          </div>
+          <p class="signup-errorMessage">{{ errors['form.lastName'] }}</p>
+          <p class="signup-errorMessage">{{ errors['form.firstName'] }}</p>
+          <div class="signup-name-kana">
+            <input v-model="lastNameKana" type="text" placeholder="姓(カナ)" name="lastNameKana"><br>
+            <input v-model="firstNameKana" type="text" placeholder="名(カナ)" name="firstNameKana"><br>
+          </div>
+          <p class="signup-errorMessage">{{ errors['form.lastNameKana'] }}</p>
+          <p class="signup-errorMessage">{{ errors['form.firstNameKana'] }}</p>
+          <input v-model="email" type="text" placeholder="メールアドレス" name="email"><br>
+          <p class="signup-errorMessage">{{ errors['form.email'] }}</p>
+          <input v-model="password" type="password" placeholder="パスワード" name="password"><br>
+          <p class="signup-errorMessage">{{ errors['form.password'] }}</p>
+          <input v-model="confirmPassword" type="password" placeholder="確認用パスワード" name="confirmPassword"><br>
+          <p class="signup-errorMessage">{{ errors['form.confirmPassword'] }}</p>
+          <button>新規登録</button>
+        </form>
         <p class="btn-back"><a href="/">＞戻る</a></p>
       </div>
     </div>
@@ -29,50 +39,110 @@
 </template>
 
 <script>
+import { defineRule, useField, useForm } from 'vee-validate';
+import AllRules from '@vee-validate/rules';
+import { object, string, setLocale } from 'yup';
 import api from '@/axios';
+import { useRouter } from 'vue-router';
 
 export default {
-  data() {
-    return {
-      username: "",
-      lastName: "",
-      firstName: "",
-      lastNameKana: "",
-      firstNameKana: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-    };
-  },
-  methods: {
-    signup() {
-      const signupData = {
-        username: this.username,
-        name: `${this.lastName} ${this.firstName}`,
-        last_name_kana: this.lastNameKana,
-        first_name_kana: this.firstNameKana,
-        email: this.email,
-        password: this.password,
-      };
+  setup() {
+    setLocale({
+      mixed: {
+        defalut: '不正な値です。',
+        required:  ({ label }) => `${label}は必須の項目です。`,
+      },
+      string: {
+        email: ({ label }) => `${label}の形式ではありません。`,
+      },
+    });
 
-      api.post('/auth', signupData)
+    Object.keys(AllRules).forEach((rule) => {
+      defineRule(rule, AllRules[rule]);
+    });
+
+
+    const schema = object({
+      form: object({
+        username: string().required().label('ユーザーネーム'),
+        lastName: string().required().label('苗字'),
+        firstName: string().required().label('名前'),
+        lastNameKana: string().required().label('苗字(カナ)'),
+        firstNameKana: string().required().label('名前(カナ)'),
+        email: string().required().email().label('メールアドレス'),
+        password: string().required().label('パスワード'),
+        confirmPassword: string().required().label('確認用パスワード'),
+      }),
+    });
+
+    const { errors, handleSubmit } = useForm({
+      validationSchema: schema,
+      initialValues: {
+        form: {
+          username: '',
+          lastName: '',
+          firstName: '',
+          lastNameKana: '',
+          firstNameKana: '',
+          email: '',
+          password: '',
+          confirmPassword: '',
+        },
+      },
+    });
+
+    const { value: username, } = useField('form.username');
+    const { value: lastName, } = useField('form.lastName');
+    const { value: firstName, } = useField('form.firstName');
+    const { value: lastNameKana, } = useField('form.lastNameKana');
+    const { value: firstNameKana, } = useField('form.firstNameKana');
+    const { value: email, } = useField('form.email');
+    const { value: password, } = useField('form.password');
+    const { value: confirmPassword, } = useField('form.confirmPassword');
+
+    const router = useRouter();
+
+    const onSubmit = handleSubmit(async (values) => {
+      const loginData = {
+        username: values.form.username,
+        name: values.form.lastNameKana + values.form.firstName,
+        lastNameKana: values.form.lastNameKana,
+        firstNameKana: values.form.firstNameKana,
+        email: values.form.email,
+        password: values.form.password,
+        confirmPassword: values.form.confirmPassword,
+      }
+
+      api.post('/auth', loginData, { withCredentials: true })
         .then(response => {
-          // 登録成功時の処理
-          if (response.status === 200) {
-            alert('登録が完了しました');
-            this.$router.push({ name: 'MenuPage' }); // メニューページに遷移
+          if (response.data.status === 201) {
+            alert('新規登録が完了しました');
+            router.push({ name: 'Login' });
           } else {
-            alert('登録エラーが発生しました');
+            throw new Error('登録エラーが発生しました');
           }
         })
         .catch(error => {
-          // エラーハンドリング
           console.error(error);
           alert('登録エラーが発生しました');
-        });
-    }
-  },
-};
+        }
+      );
+    });
+
+    return {
+      username,
+      lastName,
+      firstName,
+      lastNameKana,
+      firstNameKana,
+      email,
+      password,
+      confirmPassword,
+      errors,
+      onSubmit,
+    };
+  }
+}
 </script>
 
 
@@ -147,6 +217,12 @@ export default {
 
 .signup-name input:first-child, .signup-name-kana input:first-child {
   margin-right: 10px;
+}
+
+.signup-errorMessage {
+  color: red;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .signup button {
