@@ -38,21 +38,22 @@ export default function configureMirage() {
         };
         if (tokenData.accessToken && tokenData.client && tokenData.uid) {
           return { status: 200, data: {
-            id: 5,
-            provider: "email",
-            uid: "test2@sample.com",
             allow_password_change: false,
-            name: "grow company",
-            last_name_kana: "グロウ",
-            first_name_kana: "カンパニー",
-            email: "test2@sample.com",
-            hobbies: "旅行、音楽鑑賞",
-            languages: "HTML",
             bio: "よろしくお願いします。",
+            created_at: "2023-08-27T17:36:46.611Z",
+            email: "example@gmail.com",
+            first_name_kana: "カンパニー",
+            hobbies: "Soccer",
+            id: 6,
             image: null,
-            created_at: "2023-08-25T06:17:04.576Z",
-            updated_at: "2023-08-25T07:35:39.724Z",
-            // 他のユーザー属性
+            languages: "Ruby",
+            last_name_kana: "グロウ",
+            name: "grow company",
+            nickname: null,
+            provider: "email",
+            uid: "example@gmail.com",
+            updated_at: "2023-08-29T01:49:54.898Z",
+            username: 'ぐろうさん'
           }};
         } else {
           return { status: 401, message: "認証されていません" };
