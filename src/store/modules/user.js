@@ -5,7 +5,6 @@ const state = {
 
 const mutations = {
   setUser(state, user) {
-    console.log(user)
     state.loginData = user;
   },
 };
