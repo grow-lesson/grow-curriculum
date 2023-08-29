@@ -1,0 +1,65 @@
+vee validateの実装方法
+
+参考サイト
+https://reffect.co.jp/vue/veevaliate4/
+https://massu-engineer.com/yup-validation-list
+
+ポイント
+1
+import { object, string, setLocale } from 'yup';
+
+→ここで指定するstringは入力フォームが文字列型である場合に使うバリデーション
+ 数値や配列であればnumberやarrayを使う。
+
+2
+import AllRules from '@vee-validate/rules';
+
+Object.keys(AllRules).forEach((rule) => {
+  defineRule(rule, AllRules[rule]);
+});
+
+→すべてのルールを定義
+
+3
+import { object, string, setLocale } from 'yup';
+
+setLocale({
+  mixed: {
+    defalut: '不正な値です。',
+    required:  ({ label }) => `${label}は必須の項目です。`,
+  },
+  string: {
+    email: ({ label }) => `${label}の形式ではありません。`,
+  },
+});
+
+→setLocaleは定義したバリデーションを日本語や文言のカスタマイズができる
+
+4
+const schema = object({
+  form: object({
+    email: string().required().email().label('メールアドレス'),
+    password: string().required().label('パスワード'),
+  }),
+});
+
+const { errors, handleSubmit } = useForm({
+  validationSchema: schema,
+  initialValues: {
+    form: {
+      email: '',
+      password: '',
+    },
+  },
+});
+
+→どのようなバリデーションを適用するか設定し、変数化している。
+ その後、エラーチェック用のyusのvalidationSchemaメソッドを使いエラー処理。
+  initiaValuesはフォームの初期値。
+
+5
+const { value: email, } = useField('form.email');
+const { value: password, } = useField('form.password');
+
+→vee-validate では ref 関数ではなく useField 関数を利用します。
+
