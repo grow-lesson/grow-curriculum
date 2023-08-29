@@ -25,6 +25,7 @@ import Header from "@/components/layout/Header.vue";
 import Footer from "@/components/layout/Footer.vue";
 import { computed } from 'vue';
 import { useStore } from 'vuex';
+import { useRouter } from 'vue-router';
 
 export default {
   components: {
@@ -34,9 +35,10 @@ export default {
   setup() {
     const store = useStore();
     const login = computed(() => store.state.user.loginData);
-
+    
+    const router = useRouter();
     const goToEditPage = () => {
-      this.$router.push({ name: "EditPage" });
+      router.push({ name: "EditPage" });
     };
 
     return {
