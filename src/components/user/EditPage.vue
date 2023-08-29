@@ -92,7 +92,6 @@ export default {
     Footer,
   },
   setup() {
-    console.log(yup)
     const store = useStore();
     const login = computed(() => store.state.user.loginData);
     setLocale({
@@ -104,8 +103,8 @@ export default {
       string: {
         email: ({ label }) => `${label}の形式ではありません`,
         matches: ({ label }) => `${label}はカタカナのみで入力して下さい`,
-        max: ({ label }) => `${label}は30文字以下で入力してください`,
-        min: ({ label }) => `${label}は7文字以上で入力してください`,
+        max: ({ label }) => `${label}を更新する場合は30文字以下で入力してください`,
+        min: ({ label }) => `${label}を更新する場合は7文字以上で入力してください`,
       },
     });
     
@@ -123,8 +122,21 @@ export default {
         lastNameKana: string().required().matches(kanaPattern).label('苗字(カナ)'),
         firstNameKana: string().required().matches(kanaPattern).label('名前(カナ)'),
         email: string().required().email().label('メールアドレス'),
-        password: string().required().label('パスワード').max(30).min(7).matches(passwordPattern, { message: '記号を含む半角英数、数字のみ使用可能です' }),
-        confirmedPassword: string().required().oneOf([yup.ref("password"),undefined]).label('確認用パスワード'),
+        password: string()
+          .label('パスワード')
+          .test('is-valid-length', '7文字以上30文字以下で入力してください', (value) => {
+            if (value === null || value === undefined || value.length === 0) {
+              return true; // バリデーションをスキップ
+            }
+            return value.length >= 7 && value.length <= 30;
+          })
+          .test('matches-pattern', '記号を含む半角英数、数字のみ使用可能です', (value) => {
+            if (value === null || value === undefined || value.length === 0) {
+              return true; // バリデーションをスキップ
+            }
+            return passwordPattern.test(value);
+          }),
+        confirmedPassword: string().oneOf([yup.ref("password"),undefined]).label('確認用パスワード'),
       }),
     });
 
@@ -161,21 +173,24 @@ export default {
         hobbies: values.form.hobbies,
         language: values.form.language,
         bio: values.form.bio,
-        password: values.form.password,
-        password_confirmation: values.form.confirmedPassword,
       }
 
-      api.post('/auth', loginData, { withCredentials: true })
+      if(values.form.password != ''){
+        loginData.password = values.form.password
+        loginData.password_confirmation = values.form.confirmedPassword
+      }
+
+      api.post(`/users/${login.value.id}`, loginData, { withCredentials: true })
         .then(response => {
           if (response.data.status === 201) {
-            alert('新規登録が完了しました');
+            alert('マイページの更新が完了しました');
           } else {
-            throw new Error('登録エラーが発生しました');
+            throw new Error('マイページの更新エラーが発生しました');
           }
         })
         .catch(error => {
           console.error(error);
-          alert('登録エラーが発生しました');
+          alert('マイページの更新エラーが発生しました');
         }
       );
     });

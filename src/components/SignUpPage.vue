@@ -42,6 +42,7 @@
 import { defineRule, useField, useForm } from 'vee-validate';
 import AllRules from '@vee-validate/rules';
 import { object, string, setLocale } from 'yup';
+import * as yup from "yup";
 import api from '@/axios';
 import { useRouter } from 'vue-router';
 
@@ -50,10 +51,14 @@ export default {
     setLocale({
       mixed: {
         defalut: '不正な値です。',
-        required:  ({ label }) => `${label}は必須の項目です。`,
+        required:  ({ label }) => `${label}は必須の項目です`,
+        oneOf:  ({ label }) => `${label}はパスワードと一致しません`,
       },
       string: {
-        email: ({ label }) => `${label}の形式ではありません。`,
+        email: ({ label }) => `${label}の形式ではありません`,
+        matches: ({ label }) => `${label}はカタカナのみで入力して下さい`,
+        max: ({ label }) => `${label}は30文字以下で入力してください`,
+        min: ({ label }) => `${label}は7文字以上で入力してください`,
       },
     });
 
@@ -61,17 +66,24 @@ export default {
       defineRule(rule, AllRules[rule]);
     });
 
+    const kanaPattern = /^[\u30A1-\u30FA\u30FCｦ-ﾝ]+$/u
+    const passwordPattern = /^[a-zA-Z0-9!@#$%^&*()_+{}[\]:;<>,.?~\\/-]+$/;
 
     const schema = object({
       form: object({
         username: string().required().label('ユーザーネーム'),
-        lastName: string().required().label('苗字'),
-        firstName: string().required().label('名前'),
-        lastNameKana: string().required().label('苗字(カナ)'),
-        firstNameKana: string().required().label('名前(カナ)'),
+        name: string().required().label('名前'),
+        lastNameKana: string().required().matches(kanaPattern).label('苗字(カナ)'),
+        firstNameKana: string().required().matches(kanaPattern).label('名前(カナ)'),
         email: string().required().email().label('メールアドレス'),
-        password: string().required().label('パスワード'),
-        confirmPassword: string().required().label('確認用パスワード'),
+        password: string().required().label('パスワード').max(30).min(7)
+          .test('matches-pattern', '記号を含む半角英数、数字のみ使用可能です', (value) => {
+            if (value === null || value === undefined || value.length === 0) {
+              return true; // バリデーションをスキップ
+            }
+            return passwordPattern.test(value);
+          }),
+        confirmedPassword: string().required().oneOf([yup.ref("password"),undefined]).label('確認用パスワード'),
       }),
     });
 
@@ -110,7 +122,6 @@ export default {
         firstNameKana: values.form.firstNameKana,
         email: values.form.email,
         password: values.form.password,
-        confirmPassword: values.form.confirmPassword,
       }
 
       api.post('/auth', loginData, { withCredentials: true })
