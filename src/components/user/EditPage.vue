@@ -180,7 +180,7 @@ export default {
         loginData.password_confirmation = values.form.confirmedPassword
       }
 
-      api.post(`/users/${login.value.id}`, loginData, { withCredentials: true })
+      api.post(`/update_profile`, loginData, { withCredentials: true })
         .then(response => {
           if (response.data.status === 201) {
             alert('マイページの更新が完了しました');
