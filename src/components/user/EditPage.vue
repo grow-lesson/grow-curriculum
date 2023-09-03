@@ -195,7 +195,7 @@ export default {
         withCredentials: true
       })
       .then(response => {
-        if (response.data.status === 201) {
+        if (response.data.status === 200) {
           alert('マイページの更新が完了しました');
         } else {
           throw new Error('マイページの更新エラーが発生しました');
