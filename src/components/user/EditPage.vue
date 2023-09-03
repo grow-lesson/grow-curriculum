@@ -180,19 +180,31 @@ export default {
         loginData.password_confirmation = values.form.confirmedPassword
       }
 
-      api.put(`/auth`, loginData, { withCredentials: true })
-        .then(response => {
-          if (response.data.status === 201) {
-            alert('マイページの更新が完了しました');
-          } else {
-            throw new Error('マイページの更新エラーが発生しました');
-          }
-        })
-        .catch(error => {
-          console.error(error);
-          alert('マイページの更新エラーが発生しました');
+      // トークン情報を取得
+      const accessToken = getCookie('access-token');
+      const client = getCookie('client');
+      const uid = decodeURIComponent(getCookie('uid')); 
+
+      // リクエストのヘッダーにトークン情報を含めて送信
+      api.put(`/auth`, loginData, {
+        headers: {
+          'access-token': accessToken,
+          'client': client,
+          'uid': uid
+        },
+        withCredentials: true
+      })
+      .then(response => {
+        if (response.data.status === 201) {
+          alert('マイページの更新が完了しました');
+        } else {
+          throw new Error('マイページの更新エラーが発生しました');
         }
-      );
+      })
+      .catch(error => {
+        console.error(error);
+        alert('マイページの更新エラーが発生しました');
+      });
     });
 
     return {
