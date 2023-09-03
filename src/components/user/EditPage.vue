@@ -167,8 +167,8 @@ export default {
       const loginData = {
         username: values.form.username,
         name: values.form.name,
-        lastNameKana: values.form.lastNameKana,
-        firstNameKana: values.form.firstNameKana,
+        last_name_kana: values.form.lastNameKana,
+        first_name_kana: values.form.firstNameKana,
         email: values.form.email,
         hobbies: values.form.hobbies,
         language: values.form.language,
