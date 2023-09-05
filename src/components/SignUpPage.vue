@@ -1,10 +1,10 @@
 <template>
   <div class="signup-page">
-    <div class="welcome-header">
-      <a href="/" class="logo">GROW Learning Website</a>
+    <div class="signup-header">
+      <a @click="goToWelcomePage" class="logo">GROW Learning Website</a>
     </div>
     <div class="signup-container">
-      <div class="signup-header">
+      <div class="signup-text">
         <div>Sign up</div>
       </div>
       <br>
@@ -32,7 +32,7 @@
           <p class="signup-errorMessage">{{ errors['form.confirmedPassword'] }}</p>
           <button type="submit">新規登録</button>
         </form>
-        <p class="btn-back"><a href="/">＞戻る</a></p>
+        <p class="btn-back"><a @click="goToWelcomePage">＞戻る</a></p>
       </div>
     </div>
   </div>
@@ -115,6 +115,10 @@ export default {
 
     const router = useRouter();
 
+    const goToWelcomePage = () => {
+      router.push({ name: "Welcome" });
+    };
+
     const onSubmit = handleSubmit(async (values) => {
       const loginData = {
         username: values.form.username,
@@ -152,6 +156,7 @@ export default {
       confirmedPassword,
       errors,
       onSubmit,
+      goToWelcomePage,
     };
   }
 }
@@ -160,7 +165,7 @@ export default {
 
 <style>
 
-.welcome-header {
+.signup-header {
   position: fixed;
   top: 0;
   width: 100%;
@@ -170,12 +175,13 @@ export default {
   padding: 20px;
 }
 
-.welcome-header .logo {
+.logo {
   font-size: 24px;
   font-weight: bold;
   text-decoration: none;
   color: #333;
   padding-left: 20px;
+  cursor: pointer;
 }
 
 .signup-page {
@@ -195,7 +201,7 @@ export default {
   font-size: 16px;
 }
 
-.signup-header {
+.signup-text {
   text-align: center;
   margin-bottom: 20px;
   font-size: 24px;
@@ -277,6 +283,7 @@ export default {
   text-align: right;
   font-weight: bold;
   color: #228bc8;
+  cursor: pointer;
 }
 
 @media (max-width: 648px) {

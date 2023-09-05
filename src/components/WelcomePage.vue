@@ -93,14 +93,16 @@ export default {
   background-color: rgba(255, 255, 255, 0.9);
   display: flex;
   align-items: center;
-  padding: 25px 30px;
+  padding: 20px;
 }
 
 .welcome-title {
-  font-size: large;
+  font-size: 24px;
   font-weight: bold;
   text-decoration: none;
   color: #333;
+  padding-left: 20px;
+  text-decoration: none;
 }
 
 .welcome-container {
@@ -195,11 +197,6 @@ export default {
 .btn_04:hover:before {
   border-top: 2px solid #228bc8;
   border-right: 2px solid #228bc8;
-}
-
-/* TODO: ログイン機能ができたら削除 */
-.dummy{
-  margin-top: 40px;
 }
 
 .production:hover {

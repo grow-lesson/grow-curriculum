@@ -1,10 +1,10 @@
 <template>
   <div class="loginPage">
-    <div class="welcome-header">
-      <a href="/" class="logo">GROW Learning Website</a>
+    <div class="login-header">
+      <a @click="goToWelcomePage" class="logo">GROW Learning Website</a>
     </div>
     <div class="login-container">
-      <div class="login-header">
+      <div class="login-title">
         <div>Login</div>
       </div>
       <br>
@@ -16,7 +16,7 @@
           <p class="login-errorMessage">{{ errors['form.password'] }}</p>
           <button>ログイン</button>
         </form>
-        <p class="btn-back"><a href="/">＞戻る</a></p>
+        <p class="btn-back"><a @click="goToWelcomePage">＞戻る</a></p>
       </div>
     </div>
   </div>
@@ -68,6 +68,10 @@ export default {
 
     const router = useRouter();
 
+    const goToWelcomePage = () => {
+      router.push({ name: "Welcome" });
+    };
+
     const onSubmit = handleSubmit(async (values) => {
       const loginData = {
         email: values.form.email,
@@ -108,13 +112,14 @@ export default {
       password,
       errors,
       onSubmit,
+      goToWelcomePage,
     };
   }
 }
 </script>
 <style>
 
-.welcome-header {
+.login-header {
   position: fixed;
   top: 0;
   width: 100%;
@@ -124,19 +129,20 @@ export default {
   padding: 20px;
 }
 
-.welcome-header .logo {
+.logo {
   font-size: 24px;
   font-weight: bold;
   text-decoration: none;
   color: #333;
   padding-left: 20px;
+  cursor: pointer;
 }
 
 .loginPage {
   width: 100%;
+  height: 100vh;
   padding: 150px 0;
   background-color: #228bc8;
-  font-family: 'Arial', sans-serif;
   font-size: 12px;
 }
 
@@ -150,7 +156,7 @@ export default {
   font-size: 16px;
 }
 
-.login-header {
+.login-title {
   text-align: center;
   margin-bottom: 20px;
   font-size: 24px;
@@ -220,6 +226,7 @@ export default {
   text-align: right;
   font-weight: bold;
   color: #228bc8;
+  cursor: pointer;
 }
 
 .btn-back[disabled="false"] {
