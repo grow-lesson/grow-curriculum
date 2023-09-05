@@ -28,9 +28,9 @@
           <p class="signup-errorMessage">{{ errors['form.email'] }}</p>
           <input v-model="password" type="password" placeholder="パスワード" name="password"><br>
           <p class="signup-errorMessage">{{ errors['form.password'] }}</p>
-          <input v-model="confirmPassword" type="password" placeholder="確認用パスワード" name="confirmPassword"><br>
-          <p class="signup-errorMessage">{{ errors['form.confirmPassword'] }}</p>
-          <button>新規登録</button>
+          <input v-model="confirmedPassword" type="password" placeholder="確認用パスワード" name="confirmedPassword"><br>
+          <p class="signup-errorMessage">{{ errors['form.confirmedPassword'] }}</p>
+          <button type="submit">新規登録</button>
         </form>
         <p class="btn-back"><a href="/">＞戻る</a></p>
       </div>
@@ -72,7 +72,8 @@ export default {
     const schema = object({
       form: object({
         username: string().required().label('ユーザーネーム'),
-        name: string().required().label('名前'),
+        lastName: string().required().label('苗字'),
+        firstName: string().required().label('名前'),
         lastNameKana: string().required().matches(kanaPattern).label('苗字(カナ)'),
         firstNameKana: string().required().matches(kanaPattern).label('名前(カナ)'),
         email: string().required().email().label('メールアドレス'),
@@ -98,7 +99,7 @@ export default {
           firstNameKana: '',
           email: '',
           password: '',
-          confirmPassword: '',
+          confirmedPassword: '',
         },
       },
     });
@@ -110,7 +111,7 @@ export default {
     const { value: firstNameKana, } = useField('form.firstNameKana');
     const { value: email, } = useField('form.email');
     const { value: password, } = useField('form.password');
-    const { value: confirmPassword, } = useField('form.confirmPassword');
+    const { value: confirmedPassword, } = useField('form.confirmedPassword');
 
     const router = useRouter();
 
@@ -118,8 +119,8 @@ export default {
       const loginData = {
         username: values.form.username,
         name: values.form.lastNameKana + values.form.firstName,
-        lastNameKana: values.form.lastNameKana,
-        firstNameKana: values.form.firstNameKana,
+        last_name_kana: values.form.lastNameKana,
+        first_name_kana: values.form.firstNameKana,
         email: values.form.email,
         password: values.form.password,
       }
@@ -148,7 +149,7 @@ export default {
       firstNameKana,
       email,
       password,
-      confirmPassword,
+      confirmedPassword,
       errors,
       onSubmit,
     };

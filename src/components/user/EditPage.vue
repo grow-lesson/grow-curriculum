@@ -67,7 +67,7 @@
             </div>
             <button class="btn edit-btn" type="submit">更新</button>
           </form>
-          <p class="btn-back"><a href="/mypage">＞戻る</a></p>
+          <p class="btn-back"><a @click="goToMyPage">＞戻る</a></p>
         </div>
       </div>
     </div>
@@ -85,6 +85,7 @@ import AllRules from '@vee-validate/rules';
 import { object, string, setLocale } from 'yup';
 import * as yup from "yup";
 import api from '@/axios';
+import { useRouter } from 'vue-router';
 
 export default {
   components: {
@@ -94,6 +95,10 @@ export default {
   setup() {
     const store = useStore();
     const login = computed(() => store.state.user.loginData);
+    const router = useRouter();
+    const goToMyPage = () => {
+      router.push({ name: "MyPage" });
+    };
     setLocale({
       mixed: {
         defalut: '不正な値です。',
@@ -197,6 +202,7 @@ export default {
       .then(response => {
         if (response.data.status === 200) {
           alert('マイページの更新が完了しました');
+          return goToMyPage;
         } else {
           throw new Error('マイページの更新エラーが発生しました');
         }
@@ -227,6 +233,7 @@ export default {
       confirmedPassword,
       errors,
       onSubmit,
+      goToMyPage,
     };
   }
 };
@@ -239,6 +246,7 @@ export default {
   font-weight: bold;
   color: #228bc8;
   font-family: 'Exo', sans-serif;
+  cursor: pointer;
 }
 
 .edit {
