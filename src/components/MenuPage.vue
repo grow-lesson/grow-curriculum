@@ -105,6 +105,7 @@ import Header from "@/components/layout/Header.vue";
 import Footer from "@/components/layout/Footer.vue";
 import { computed } from 'vue';
 import { useStore } from 'vuex';
+import { useRouter } from 'vue-router';
 
 export default {
   name: "MenuPage",
@@ -115,30 +116,31 @@ export default {
   setup() {
     const store = useStore();
     const login = computed(() => store.state.user.loginData);
+    const router = useRouter();
 
     const goToHtmlMenuPage = () => {
-      this.$router.push({ name: "HtmlMenuPage" });
+      router.push({ name: "HtmlMenuPage" });
     };
     const goToCommandLineMenuPage = () => {
-      this.$router.push({ name: "CommandLineMenuPage" });
+      router.push({ name: "CommandLineMenuPage" });
     };
     const goToGitMenuPage = () => {
-      this.$router.push({ name: "GitMenuPage" });
+      router.push({ name: "GitMenuPage" });
     };
     const goToJavaScriptMenuPage = () => {
-      this.$router.push({ name: "UnderConstruction" });
+      router.push({ name: "UnderConstruction" });
     };
     const goToRubyMenuPage = () => {
-      this.$router.push({ name: "UnderConstruction" });
+      router.push({ name: "UnderConstruction" });
     };
     const goToITMenuPage = () => {
-      this.$router.push({ name: "UnderConstruction" });
+      router.push({ name: "UnderConstruction" });
     };
     const goToEnvironmentPage = () => {
-      this.$router.push({ name: "Environment" });
+      router.push({ name: "Environment" });
     };
     const goToProcedurePage = () => {
-      this.$router.push({ name: "Procedure" });
+      router.push({ name: "Procedure" });
     };
 
     return {
