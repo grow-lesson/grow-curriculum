@@ -202,7 +202,7 @@ export default {
       .then(response => {
         if (response.data.status === 200) {
           alert('マイページの更新が完了しました');
-          return goToMyPage;
+          return goToMyPage();
         } else {
           throw new Error('マイページの更新エラーが発生しました');
         }
