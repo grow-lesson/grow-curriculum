@@ -2,7 +2,7 @@
   <div>
     <Header />
     <div class="under-construction">
-      <h1>Under Construction...</h1>
+      <h1>準備中...</h1>
       <BackButton />
     </div>
     <Footer />
