@@ -18,17 +18,17 @@ export default {
 <style scoped>
 .main-title {
   background-color: #5ebff0;
-  color: #fff;
   padding: 10px;
-  font-size: 24px;
-  font-weight: bold;
   border-radius: 4px;
-  text-align: center;
   width: 80%;
   margin: 30px auto 20px;
 }
 .main-title-word {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
 }
 
 @media (max-width: 648px) {
