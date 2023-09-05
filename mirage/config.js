@@ -30,6 +30,7 @@ export default function configureMirage() {
         }
       });
 
+      // ログインユーザー情報取得API
       this.get("/auth/validate_token", () => {
         let tokenData = {
           accessToken: 'testtest',
@@ -57,6 +58,16 @@ export default function configureMirage() {
           }};
         } else {
           return { status: 401, message: "認証されていません" };
+        }
+      });
+
+      // マイページの情報更新API
+      this.put("/auth", (schema, request) => {
+        const { username } = JSON.parse(request.requestBody);
+        if (username !== 'error') {
+          return { status: 200, message: "プロフィール更新に成功しました" };
+        } else {
+          return { status: 422, message: "入力フォームの内容が不正です" };
         }
       });
     },
