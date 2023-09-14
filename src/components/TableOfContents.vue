@@ -34,6 +34,7 @@ export default {
 <style scoped>
 .sidebar {
   position: fixed;
+  width: 23%;
   height: 40%;
   grid-column: 2 / span 1;
   margin-right: 20px;
