@@ -11,11 +11,11 @@
         </div>
       </div>
       <section class="flow">
-        <h2 class="flow-title">フロントエンドの基礎を学ぼう！</h2>
         <ul class="flow-list">
-          <li class="flow-item"><a href="#" class="flow-link">Grow学習サイトの使い方</a></li>
+          <li class="flow-item"><a class="flow-link" @click="goToHowToPage">学習サイトの使い方</a></li>
+          <li class="flow-item"><a class="flow-link" @click="goToSetUPPage">PCの初期設定や使い方を学ぶ</a></li>
           <li class="flow-item"><a class="flow-link" @click="goToEnvironmentPage">インストールや環境構築の手順を知る</a></li>
-          <li class="flow-item"><a class="flow-link" @click="goToProcedurePage">Growカリキュラムの始め方</a></li>
+          <li class="flow-item"><a class="flow-link" @click="goToProcedurePage">カリキュラムの始め方</a></li>
         </ul>
       </section>
       <div class="hero">
@@ -118,42 +118,59 @@ export default {
     const login = computed(() => store.state.user.loginData);
     const router = useRouter();
 
-    const goToHtmlMenuPage = () => {
-      router.push({ name: "HtmlMenuPage" });
+    const goToSetUPPage = () => {
+      router.push({ name: "Setup" });
     };
-    const goToCommandLineMenuPage = () => {
-      router.push({ name: "CommandLineMenuPage" });
+
+    const goToHowToPage = () => {
+      router.push({ name: "HowTo" });
     };
-    const goToGitMenuPage = () => {
-      router.push({ name: "GitMenuPage" });
-    };
-    const goToJavaScriptMenuPage = () => {
-      router.push({ name: "UnderConstruction" });
-    };
-    const goToRubyMenuPage = () => {
-      router.push({ name: "UnderConstruction" });
-    };
-    const goToITMenuPage = () => {
-      router.push({ name: "UnderConstruction" });
-    };
+
     const goToEnvironmentPage = () => {
       router.push({ name: "Environment" });
     };
+
     const goToProcedurePage = () => {
       router.push({ name: "Procedure" });
+    };
+
+    const goToHtmlMenuPage = () => {
+      router.push({ name: "HtmlMenuPage" });
+    };
+
+    const goToCommandLineMenuPage = () => {
+      router.push({ name: "CommandLineMenuPage" });
+    };
+
+    const goToGitMenuPage = () => {
+      router.push({ name: "GitMenuPage" });
+    };
+
+    const goToJavaScriptMenuPage = () => {
+      router.push({ name: "UnderConstruction" });
+    };
+
+    const goToRubyMenuPage = () => {
+      router.push({ name: "UnderConstruction" });
+    };
+
+    const goToITMenuPage = () => {
+      router.push({ name: "UnderConstruction" });
     };
 
     return {
       login,
       user: computed(() => login.value ? login.value : ''),
+      goToSetUPPage,
+      goToHowToPage,
+      goToEnvironmentPage,
+      goToProcedurePage,
       goToHtmlMenuPage,
       goToCommandLineMenuPage,
       goToGitMenuPage,
       goToJavaScriptMenuPage,
       goToRubyMenuPage,
       goToITMenuPage,
-      goToEnvironmentPage,
-      goToProcedurePage,
     };
   },
 };
@@ -192,12 +209,7 @@ export default {
 /* flow */
 .flow {
   margin: 0 auto;
-  height: 300px;
   background-color: #fff;
-}
-.flow-title {
-  font-size: 26px;
-  text-align: center;
 }
 
 .flow-list {
@@ -211,8 +223,13 @@ export default {
 .flow-item {
   list-style-type: decimal;
   height: 50px;
-  margin-top: 30px;
   cursor: pointer;
+}
+.flow-item:first-child {
+  margin-top: 20px;
+}
+.flow-item:not(:first-child) {
+  margin-top: 30px;
 }
 .flow-link {
   color: #666;
@@ -289,12 +306,6 @@ export default {
     padding: 20px;
   }
 
-  .flow-title {
-    font-size: 20px;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-
   .flow-list {
     margin: 0 auto;
     display: flex;
@@ -308,9 +319,15 @@ export default {
   .flow-item {
     list-style-type: decimal;
     height: auto;
-    margin-top: 10px;
     padding: 5px;
     font-size: small;
+  }
+
+  .flow-item:first-child {
+    margin-top: 10px;
+  }
+  .flow-item:not(:first-child) {
+    margin-top: 20px;
   }
 
   .flow-link {
