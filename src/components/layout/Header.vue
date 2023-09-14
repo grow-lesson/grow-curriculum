@@ -17,7 +17,8 @@
             <li class="navigation-item">
               <button class="navigation-btn">準備と提出</button>
               <ul class="dropdown-list">
-                <li class="dropdown-item"><a href="#" class="dropdown-link">PCの初期設定</a></li>
+                <li class="dropdown-item"><a @click="goToHowToPage" class="dropdown-link">サイトの使い方</a></li>
+                <li class="dropdown-item"><a @click="goToSetUPPage" class="dropdown-link">PCの設定・使い方</a></li>
                 <li class="dropdown-item"><a @click="goToEnvironmentPage" class="dropdown-link">環境構築やインストール</a></li>
                 <li class="dropdown-item"><a @click="goToProcedurePage" class="dropdown-link">カリキュラムの始め方</a></li>
               </ul>
@@ -67,7 +68,8 @@
         <li class="menu-item">
           <button>準備と提出</button>
           <ul class="dropdown-list">
-            <li class="dropdown-item"><a href="#" class="dropdown-link">PCの初期設定</a></li>
+            <li class="dropdown-item"><a @click="goToHowToPage" class="dropdown-link">サイトの使い方</a></li>
+            <li class="dropdown-item"><a @click="goToSetUPPage" class="dropdown-link">PCの設定・使い方</a></li>
             <li class="dropdown-item"><a @click="goToEnvironmentPage" class="dropdown-link">環境構築やインストール</a></li>
             <li class="dropdown-item"><a @click="goToProcedurePage" class="dropdown-link">カリキュラムの始め方</a></li>
           </ul>
@@ -98,52 +100,91 @@
 </template>
 
 <script>
+import { ref, onMounted, onUnmounted } from 'vue';
+import { useRouter } from 'vue-router';
+
 export default {
-  data() {
-    return {
-      isMobile: false,
-      showMenu: false,
-    };
-  },
-  mounted() {
-    // ページロード時とウィンドウリサイズ時にモバイル画面の判定を行う
-    this.checkMobileScreen();
-    window.addEventListener("resize", this.checkMobileScreen);
-  },
-  beforeUnmount() {
-    // イベントリスナーの削除
-    window.removeEventListener("resize", this.checkMobileScreen);
-  },
-  methods: {
+  setup() {
+    const isMobile = ref(false);
+    const showMenu = ref(false);
+    const router = useRouter();
+
     // モバイル画面の判定を行うメソッド
-    checkMobileScreen() {
-      this.isMobile = window.innerWidth <= 834; // 834px以下だとモバイルサイズなのでtrueとなる
-    },
+    const checkMobileScreen = () => {
+      isMobile.value = window.innerWidth <= 834;
+    };
+
     // メニューの表示切替を行うメソッド
-    toggleMenu() {
-      this.showMenu = !this.showMenu; // クリックした時のbooleanの判定を逆にする
-    },
-    goToMenuPage() {
-      this.$router.push({ name: "MenuPage" });
-    },
-    goToIntroducePage() {
-      this.$router.push({ name: "Introduce" });
-    },
-    goToEnvironmentPage() {
-      this.$router.push({ name: "Environment" });
-    },
-    goToProcedurePage() {
-      this.$router.push({ name: "Procedure" });
-    },
-    goToCourseMenuPage() {
-      this.$router.push({ name: "CourseMenu" });
-    },
-    goToMyPage() {
-      this.$router.push({ name: "MyPage" });
-    },
-    goToContactPage() {
-      this.$router.push({ name: "Contact" });
-    },
+    const toggleMenu = () => {
+      showMenu.value = !showMenu.value;
+    };
+
+    // Vue Routerを使用してページ間の遷移を行うメソッド
+    const goToMenuPage = () => {
+      router.push({ name: "MenuPage" });
+    };
+
+    const goToSetUPPage = () => {
+      router.push({ name: "Setup" });
+    };
+
+    const goToHowToPage = () => {
+      router.push({ name: "HowTo" });
+    };
+
+    const goToIntroducePage = () => {
+      router.push({ name: "Introduce" });
+    };
+
+    const goToEnvironmentPage = () => {
+      router.push({ name: "Environment" });
+    };
+
+    const goToProcedurePage = () => {
+      router.push({ name: "Procedure" });
+    };
+
+    const goToCourseMenuPage = () => {
+      router.push({ name: "CourseMenu" });
+    };
+
+    const goToMyPage = () => {
+      router.push({ name: "MyPage" });
+    };
+
+    const goToContactPage = () => {
+      router.push({ name: "Contact" });
+    };
+
+    // ウィンドウリサイズ時にモバイル画面の判定を行う
+    const handleResize = () => {
+      checkMobileScreen();
+    };
+
+    // イベントリスナーの追加と削除
+    onMounted(() => {
+      checkMobileScreen();
+      window.addEventListener("resize", handleResize);
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener("resize", handleResize);
+    });
+
+    return {
+      isMobile,
+      showMenu,
+      toggleMenu,
+      goToMenuPage,
+      goToIntroducePage,
+      goToSetUPPage,
+      goToHowToPage,
+      goToEnvironmentPage,
+      goToProcedurePage,
+      goToCourseMenuPage,
+      goToMyPage,
+      goToContactPage,
+    };
   },
 };
 </script>
