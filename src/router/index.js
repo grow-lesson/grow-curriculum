@@ -25,6 +25,18 @@ const routes = [
     component: () => import("../components/about/Introduce.vue"),
   },
   {
+    path: "/setup",
+    name: "Setup",
+    meta: { requiresAuth: true }, 
+    component: () => import("../components/init/SetUp.vue"),
+  },
+  {
+    path: "/howto",
+    name: "HowTo",
+    meta: { requiresAuth: true }, 
+    component: () => import("../components/init/HowTo.vue"),
+  },
+  {
     path: "/environment",
     name: "Environment",
     meta: { requiresAuth: true }, 
