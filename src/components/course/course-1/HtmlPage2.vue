@@ -55,7 +55,7 @@
             さらにブロック要素だと横いっぱいに広がっているため次の要素を入れると改行されますが、インライン要素は横並びになってしまう特徴があります。<br>
           </p>
           <div>
-            <img src="../../../assets/images/course/html-css-2/block-inline.png" class="powerpoint-image" alt="block-inline" />
+            <img @click="openModal(imagePaths.step1)" :src="imagePaths.step1" class="powerpoint-image" alt="block-inline" />
           </div>
         </Document>
 
@@ -107,7 +107,7 @@
             このようにファイルを作り、貼り付けたらWeb上でみればこのようになります。
           </p>
           <div>
-            <img src="../../../assets/images/course/html-css-2/vscode-1.png" class="screen-image" alt="vscode-1" />
+            <img @click="openModal(imagePaths.step2)" :src="imagePaths.step2" class="screen-image" alt="vscode-1" />
           </div><br>
           <p>
             ②<br>
@@ -116,7 +116,7 @@
             この理由は次のセクションで学習しましょう。
           </p>
           <div>
-            <img src="../../../assets/images/course/html-css-2/web-1.png" class="screen-image" alt="web-1" />
+            <img @click="openModal(imagePaths.step3)" :src="imagePaths.step3" class="screen-image" alt="web-1" />
           </div><br>
         </Document>
         <Document>
@@ -135,7 +135,7 @@
             「index.html」の8行目に以下の画像のようにリセットCSSを適用させるようにlink要素を入れましょう。
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-2/vscode-2.png" class="screen-image" alt="vscode-2" />
+            <img @click="openModal(imagePaths.step4)" :src="imagePaths.step4" class="screen-image" alt="vscode-2" />
           </div><br>
           <p>
             ②<br>
@@ -143,7 +143,7 @@
             すると余白がなくなりリセットされたスタイルだけになります。
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-2/web-2.png" class="screen-image" alt="web-2" />
+            <img @click="openModal(imagePaths.step5)" :src="imagePaths.step5" class="screen-image" alt="web-2" />
           </div><br>
           <p>
             ③<br>
@@ -151,7 +151,7 @@
             style.cssの5行目と10行目に以下を追加しましょう。
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-2/vscode-3.png" class="screen-image" alt="vscode-3" />
+            <img @click="openModal(imagePaths.step6)" :src="imagePaths.step6" class="screen-image" alt="vscode-3" />
           </div><br>
           <p>
             ④<br>
@@ -160,7 +160,7 @@
             画像のように余白が設定できればOKです。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-2/web-3.png" class="screen-image" alt="web-3" />
+            <img @click="openModal(imagePaths.step7)" :src="imagePaths.step7" class="screen-image" alt="web-3" />
           </div><br>
         </Document>
 
@@ -175,7 +175,7 @@
             リセットCSSはそのHTMLの要素の概念のことを指し、外側の余白、内側の余白というのは境界線より外側、内側をさします。
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-2/boxmodel.png" class="powerpoint-image" alt="boxmodel" />
+            <img @click="openModal(imagePaths.step8)" :src="imagePaths.step8" class="powerpoint-image" alt="boxmodel" />
           </div>
         </Document>
         <Document>
@@ -190,7 +190,7 @@
             次のセクションではこの要素に変換したり、ブロック要素をインライン要素にしたりその逆にするにはどうすればよいのか学んでいきます。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-2/difference.png" style="max-width: 100%;" class="powerpoint-image" alt="difference" />
+            <img @click="openModal(imagePaths.step9)" :src="imagePaths.step9" class="powerpoint-image" alt="difference" />
           </div>
         </Document>
         <Document>
@@ -210,10 +210,10 @@
             そのあとは名前を「html-css-lesson-5」に変更しましょう。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-2/vscode-4.png" class="screen-image" alt="vscode-4" />
+            <img @click="openModal(imagePaths.step10)" :src="imagePaths.step10" class="screen-image" alt="vscode-4" />
           </div><br>
           <div>
-            <img src="../../../assets/images/course/html-css-2/vscode-5.png" class="screen-image" alt="vscode-5" />
+            <img @click="openModal(imagePaths.step11)" :src="imagePaths.step11" class="screen-image" alt="vscode-5" />
           </div><br>
           <p>
           ②<br>
@@ -226,7 +226,7 @@
             この様になればOKです。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-2/vscode-6.png" class="screen-image" alt="vscode-6" />
+            <img @click="openModal(imagePaths.step12)" :src="imagePaths.step12" class="screen-image" alt="vscode-6" />
           </div><br>
           <p>
             ③<br>
@@ -235,7 +235,7 @@
             画像のように設定できればOKです。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-2/vscode-7.png" class="screen-image" alt="vscode-7" />
+            <img @click="openModal(imagePaths.step13)" :src="imagePaths.step13" class="screen-image" alt="vscode-7" />
           </div><br>
           <p>
             ④<br>
@@ -243,7 +243,7 @@
             インライン要素とブロック要素の特徴が変わっていればOKです。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-2/web-4.png" class="screen-image" alt="web-4" />
+            <img @click="openModal(imagePaths.step14)" :src="imagePaths.step14" class="screen-image" alt="web-4" />
           </div><br>
         </Document>
         <Document>
@@ -273,10 +273,10 @@
           <Terminal :fileName="htmlSourceData.file10.filename" :copiedText="htmlSourceData.file10.code" :lang="htmlSourceData.file10.language" />
           <br>
           <div>
-            <img src="../../../assets/images/course/html-css-2/vscode-8.png" class="screen-image" alt="vscode-8" />
+            <img @click="openModal(imagePaths.step15)" :src="imagePaths.step15" class="screen-image" alt="vscode-8" />
           </div><br>
           <div>
-            <img src="../../../assets/images/course/html-css-2/web-5.png" class="screen-image" alt="web-5" />
+            <img @click="openModal(imagePaths.step16)" :src="imagePaths.step16" class="screen-image" alt="web-5" />
           </div><br>
           <p>
             ②<br>
@@ -285,7 +285,7 @@
             画像のように設定できればOKです。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-1/vscode-9.png" class="screen-image" alt="vscode-9" />
+            <img @click="openModal(imagePaths.step17)" :src="imagePaths.step17" class="screen-image" alt="vscode-9" />
           </div><br>
           <p>
             ③<br>
@@ -293,7 +293,7 @@
             画像のように横並びになっていればOKです。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-2/web-6.png" class="screen-image" alt="web-6" />
+            <img @click="openModal(imagePaths.step18)" :src="imagePaths.step18" class="screen-image" alt="web-6" />
           </div><br>
           <p>
             ①<br>
@@ -304,10 +304,10 @@
           <Terminal :fileName="htmlSourceData.file11.filename" :copiedText="htmlSourceData.file11.code" :lang="htmlSourceData.file11.language" />
           <Terminal :fileName="htmlSourceData.file12.filename" :copiedText="htmlSourceData.file12.code" :lang="htmlSourceData.file12.language" />
           <div>
-            <img src="../../../assets/images/course/html-css-2/vscode-10.png" class="screen-image" alt="vscode-10" />
+            <img @click="openModal(imagePaths.step19)" :src="imagePaths.step19" class="screen-image" alt="vscode-10" />
           </div><br>
           <div>
-            <img src="../../../assets/images/course/html-css-2/web-7.png" class="screen-image" alt="web-7" />
+            <img @click="openModal(imagePaths.step20)" :src="imagePaths.step20" class="screen-image" alt="web-7" />
           </div><br>
           <p>
             ②<br>
@@ -316,7 +316,7 @@
             画像のようになればOKです。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-2/vscode-11.png" class="screen-image" alt="vscode-10" />
+            <img @click="openModal(imagePaths.step21)" :src="imagePaths.step21" class="screen-image" alt="vscode-10" />
           </div><br>
           <p>
             ③<br>
@@ -326,7 +326,7 @@
             なぜこのようなことになるのでしょうか？<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-2/web-8.png" class="screen-image" alt="web-8" />
+            <img @click="openModal(imagePaths.step22)" :src="imagePaths.step22" class="screen-image" alt="web-8" />
           </div><br>
         </Document>
         <Document>
@@ -345,21 +345,21 @@
             この記述の意味は後ほど説明しますので一旦入れてみましょう。
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-2/clearfix.png" style="max-width: 100%;" class="powerpoint-image" alt="clearfix" />
+            <img @click="openModal(imagePaths.step23)" :src="imagePaths.step23" class="powerpoint-image" alt="clearfix" />
           </div><br>
           <p>
             ①<br>
             ・以下の画像のようにmiddleにclearfixを適用させてください。
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-2/vscode-12.png" class="screen-image" alt="vscode-12" />
+            <img @click="openModal(imagePaths.step24)" :src="imagePaths.step24" class="screen-image" alt="vscode-12" />
           </div><br>
           <p>
             ②<br>
             Web上で確認するとbottomの要素が回り込んでいないことがわかります。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-2/web-9.png" class="screen-image" alt="web-9" />
+            <img @click="openModal(imagePaths.step25)" :src="imagePaths.step25" class="screen-image" alt="web-9" />
           </div><br>
           <p>
             それではClearfixで使われていた::afterについて学びましょう。<br><br>
@@ -384,7 +384,7 @@
             例 ::first-childと::not使った場合
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-2/firstchild.png" style="max-width: 100%;" class="powerpoint-image" alt="firstchild" />
+            <img @click="openModal(imagePaths.step26)" :src="imagePaths.step26" class="powerpoint-image" alt="firstchild" />
           </div><br>
           <p>
             つまりClearfixでは疑似要素「::after」でmiddleの後にスタイルを挿入していたという事になります。<br>
@@ -406,7 +406,7 @@
             それでは先ほどのClearfixの画像を見てみましょう。
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-2/clearfix.png" style="max-width: 100%;" class="powerpoint-image" alt="clearfix" />
+            <img @click="openModal(imagePaths.step23)" :src="imagePaths.step23" class="powerpoint-image" alt="clearfix" />
           </div><br>
           <p>
             つまり、今回だと回り込みを防ぐためにmiddleの後に「content: "";」で空欄の要素を作っています。<br>
@@ -427,7 +427,7 @@
           <Terminal :fileName="htmlSourceData.file13.filename" :copiedText="htmlSourceData.file11.code" :lang="htmlSourceData.file11.language" />
           <Terminal :fileName="htmlSourceData.file14.filename" :copiedText="htmlSourceData.file12.code" :lang="htmlSourceData.file12.language" />
           <div>
-            <img src="../../../assets/images/course/html-css-2/vscode-13.png" class="screen-image" alt="vscode-13" />
+            <img @click="openModal(imagePaths.step27)" :src="imagePaths.step27" class="screen-image" alt="vscode-13" />
           </div><br>
           <p>
             ②<br>
@@ -436,7 +436,7 @@
             画像のようになればOKです。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-2/vscode-14.png" class="screen-image" alt="vscode-14" />
+            <img @click="openModal(imagePaths.step28)" :src="imagePaths.step28" class="screen-image" alt="vscode-14" />
           </div><br>
           <p>
             ③<br>
@@ -445,7 +445,7 @@
             Clearfixよりも簡単に横並びにすることができます。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-2/web-10.png" class="screen-image" alt="web-10" />
+            <img @click="openModal(imagePaths.step29)" :src="imagePaths.step29" class="screen-image" alt="web-10" />
           </div><br>
         </Document>
         <Document>
@@ -514,14 +514,14 @@
           <Terminal :fileName="htmlSourceData.file15.filename" :copiedText="htmlSourceData.file15.code" :lang="htmlSourceData.file15.language" />
           <Terminal :fileName="htmlSourceData.file16.filename" :copiedText="htmlSourceData.file16.code" :lang="htmlSourceData.file16.language" />
           <div>
-            <img src="../../../assets/images/course/html-css-2/vscode-15.png" class="screen-image" alt="vscode-15" />
+            <img @click="openModal(imagePaths.step30)" :src="imagePaths.step30" class="screen-image" alt="vscode-15" />
           </div><br>
           <p>
           ②<br>
             以下を写真をダウンロードしてassets/imagesの中に入れましょう。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-2/sea.jpg" class="powerpoint-image" alt="sea" style="max-width: 30%; margin: 0 auto; display: block;"/>
+            <img @click="openModal(imagePaths.step31)" :src="imagePaths.step31" class="powerpoint-image" alt="sea" style="max-width: 30%; margin: 0 auto; display: block;"/>
           </div><br>
           <p>
           ②<br>
@@ -529,10 +529,10 @@
             少し多いのでスペルミスに気をつけましょう。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-2/vscode-16.png" class="screen-image" alt="vscode-16" />
+            <img @click="openModal(imagePaths.step32)" :src="imagePaths.step32" class="screen-image" alt="vscode-16" />
           </div><br>
           <div>
-            <img src="../../../assets/images/course/html-css-2/vscode-17.png" class="screen-image" alt="vscode-17" />
+            <img @click="openModal(imagePaths.step33)" :src="imagePaths.step33" class="screen-image" alt="vscode-17" />
           </div><br>
           <p>
           ③<br>
@@ -542,9 +542,10 @@
             また、値などを変えて見ると理解が深まると思います。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-2/web-11.png" class="screen-image" alt="web-11" />
+            <img @click="openModal(imagePaths.step34)" :src="imagePaths.step34" class="screen-image" alt="web-11" />
           </div><br>
         </Document>
+        <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
       </div>
       <div class="side-content">
         <TableOfContents :sections="sections" />
@@ -555,6 +556,7 @@
 </template>
 
 <script>
+import { ref, onMounted } from 'vue';
 import Header from "@/components/layout/Header.vue";
 import Footer from "@/components/layout/Footer.vue";
 import Title from "@/components/Title.vue";
@@ -565,7 +567,7 @@ import Document from "@/components/Document.vue";
 import Terminal from "@/components/Terminal.vue";
 import TableOfContents from "@/components/TableOfContents.vue";
 import { htmlSourceData } from "@/data/htmlSourceData.js";
-
+import Modal from "@/components/common/Modal.vue";
 
 export default {
   name: "HtmlPage2",
@@ -579,54 +581,85 @@ export default {
     Document,
     Terminal,
     TableOfContents,
+    Modal,
   },
-  data() {
-    return {
-      htmlSourceData: htmlSourceData,
-      sections: [
-        { id: "Title", title: "HTML・CSS 2" },
-        { id: "subTitle1", title: "  1. ブロック要素とインライン要素" },
-        { id: "sectionTitle1-1", title: "    1-1. ブロック要素とインライン要素とは？" },
-        { id: "sectionTitle1-2", title: "    1-2. ブロック要素とインライン要素の違い" },
-        { id: "subTitle2", title: "  2. ボックスモデルについて知る" },
-        { id: "sectionTitle2-1", title: "    2-1. 要素とプロパティ①" },
-        { id: "sectionTitle2-2", title: "    2-2. リセットCSSについて知る" },
-        { id: "subTitle3", title: "  3. ブロック要素とインライン要素をさらに深堀りする" },
-        { id: "sectionTitle3-1", title: "    3-1. ボックスモデル" },
-        { id: "sectionTitle3-2", title: "    3-2. ブロック要素とインライン要素の違いをまとめる" },
-        { id: "sectionTitle3-3", title: "    3-3. 要素とプロパティ②" },
-        { id: "sectionTitle3-4", title: "    3-4. 要素とプロパティ③" },
-        { id: "sectionTitle3-5", title: "    3-5. floatの性質とclearfixの概念を知る" },
-        { id: "sectionTitle3-6", title: "    3-5. 要素とプロパティ③" },
-        { id: "sectionTitle3-7", title: "    3-5. 要素とプロパティ④" },
-      ],
+  setup() {
+    const sections =  [
+      { id: "Title", title: "HTML・CSS 2" },
+      { id: "subTitle1", title: "  1. ブロック要素とインライン要素" },
+      { id: "sectionTitle1-1", title: "    1-1. ブロック要素とインライン要素とは？" },
+      { id: "sectionTitle1-2", title: "    1-2. ブロック要素とインライン要素の違い" },
+      { id: "subTitle2", title: "  2. ボックスモデルについて知る" },
+      { id: "sectionTitle2-1", title: "    2-1. 要素とプロパティ①" },
+      { id: "sectionTitle2-2", title: "    2-2. リセットCSSについて知る" },
+      { id: "subTitle3", title: "  3. ブロック要素とインライン要素をさらに深堀りする" },
+      { id: "sectionTitle3-1", title: "    3-1. ボックスモデル" },
+      { id: "sectionTitle3-2", title: "    3-2. ブロック要素とインライン要素の違いをまとめる" },
+      { id: "sectionTitle3-3", title: "    3-3. 要素とプロパティ②" },
+      { id: "sectionTitle3-4", title: "    3-4. 要素とプロパティ③" },
+      { id: "sectionTitle3-5", title: "    3-5. floatの性質とclearfixの概念を知る" },
+      { id: "sectionTitle3-6", title: "    3-5. 要素とプロパティ③" },
+      { id: "sectionTitle3-7", title: "    3-5. 要素とプロパティ④" },
+    ];
+
+    onMounted(() => {
+      window.scrollTo(0, 0);
+    });
+
+    const imagePaths = {
+      step1: require("../../../assets/images/course/html-css-2/block-inline.png"),
+      step2: require("../../../assets/images/course/html-css-2/vscode-1.png"),
+      step3: require("../../../assets/images/course/html-css-2/web-1.png"),
+      step4: require("../../../assets/images/course/html-css-2/vscode-2.png"),
+      step5: require("../../../assets/images/course/html-css-2/web-2.png"),
+      step6: require("../../../assets/images/course/html-css-2/vscode-3.png"),
+      step7: require("../../../assets/images/course/html-css-2/web-3.png"),
+      step8: require("../../../assets/images/course/html-css-2/boxmodel.png"),
+      step9: require("../../../assets/images/course/html-css-2/difference.png"),
+      step10: require("../../../assets/images/course/html-css-2/vscode-4.png"),
+      step11: require("../../../assets/images/course/html-css-2/vscode-5.png"),
+      step12: require("../../../assets/images/course/html-css-2/vscode-6.png"),
+      step13: require("../../../assets/images/course/html-css-2/vscode-7.png"),
+      step14: require("../../../assets/images/course/html-css-2/web-4.png"),
+      step15: require("../../../assets/images/course/html-css-2/vscode-8.png"),
+      step16: require("../../../assets/images/course/html-css-2/web-5.png"),
+      step17: require("../../../assets/images/course/html-css-2/vscode-9.png"),
+      step18: require("../../../assets/images/course/html-css-2/web-6.png"),
+      step19: require("../../../assets/images/course/html-css-2/vscode-10.png"),
+      step20: require("../../../assets/images/course/html-css-2/web-7.png"),
+      step21: require("../../../assets/images/course/html-css-2/vscode-11.png"),
+      step22: require("../../../assets/images/course/html-css-2/web-8.png"),
+      step23: require("../../../assets/images/course/html-css-2/clearfix.png"),
+      step24: require("../../../assets/images/course/html-css-2/vscode-12.png"),
+      step25: require("../../../assets/images/course/html-css-2/web-9.png"),
+      step26: require("../../../assets/images/course/html-css-2/firstchild.png"),
+      step27: require("../../../assets/images/course/html-css-2/vscode-13.png"),
+      step28: require("../../../assets/images/course/html-css-2/vscode-14.png"),
+      step29: require("../../../assets/images/course/html-css-2/web-10.png"),
+      step30: require("../../../assets/images/course/html-css-2/vscode-15.png"),
+      step31: require("../../../assets/images/course/html-css-2/sea.jpg"),
+      step32: require("../../../assets/images/course/html-css-2/vscode-16.png"),
+      step33: require("../../../assets/images/course/html-css-2/vscode-17.png"),
+      step34: require("../../../assets/images/course/html-css-2/web-11.png"),
     };
-  },
-  mounted() {
-    // 画面表示時に一番上にスクロールする
-    window.scrollTo(0, 0);
-  },
-  methods: {
-    // CSSファイルをダウンロードする処理
-    downloadCSS() {
-      // CSSファイルの内容を定義
-      const cssContent = htmlSourceData.file6.code;
 
-      // Blobオブジェクトを作成してダウンロードリンクを生成
-      const blob = new Blob([cssContent], { type: "text/css" });
-      const url = URL.createObjectURL(blob);
+    // モーダル関連のデータ
+    const isModalOpen = ref(false);
+    const selectedImage = ref();
 
-      // ダウンロードリンクを生成
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = "reset.css"; // ダウンロード時のファイル名を指定
+    const openModal = (imagePath) => {
+      isModalOpen.value = true;
+      selectedImage.value = imagePath;
+    };
 
-      // ダウンロードリンクをクリックしてダウンロードをトリガー
-      link.click();
-
-      // 不要になったURLオブジェクトを解放
-      URL.revokeObjectURL(url);
-    },
+    return {
+      htmlSourceData,
+      sections,
+      imagePaths,
+      selectedImage,
+      isModalOpen,
+      openModal,
+    };
   },
 };
 </script>
