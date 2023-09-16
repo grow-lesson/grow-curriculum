@@ -343,7 +343,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/procedure/backlog-1.png" alt="手順①" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step1)" :src="imagePaths.mac.step1" alt="手順①" class="screen-image" />
           </div>
           <br>
           <p>
@@ -352,7 +352,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/procedure/backlog-2.png" alt="手順②" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step2)" :src="imagePaths.mac.step2" alt="手順②" class="screen-image" />
           </div>
           <br>
           <p>
@@ -363,7 +363,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/procedure/backlog-3.png" alt="手順③" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step3)" :src="imagePaths.mac.step3" alt="手順③" class="screen-image" />
           </div>
           <br>
         </Document>
@@ -377,7 +377,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/procedure/backlog-4.png" alt="手順④" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step4)" :src="imagePaths.mac.step4" alt="手順④" class="screen-image" />
           </div>
           <br>
           <p>
@@ -386,7 +386,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/procedure/backlog-5.png" alt="手順⑤" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step5)" :src="imagePaths.mac.step5" alt="手順⑤" class="screen-image" />
           </div>
           <br>
           <p>
@@ -395,7 +395,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/procedure/SourceTree-mac-6.png" alt="手順⑥" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step6)" :src="imagePaths.mac.step6" alt="手順⑥" class="screen-image" />
           </div>
           <br>
           <p>
@@ -404,7 +404,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/procedure/SourceTree-mac-7.png" alt="手順⑦" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step7)" :src="imagePaths.mac.step7" alt="手順⑦" class="screen-image" />
           </div>
           <br>
           <p>
@@ -413,7 +413,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/procedure/SourceTree-mac-8.png" alt="手順⑧" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step8)" :src="imagePaths.mac.step8" alt="手順⑧" class="screen-image" />
           </div>
           <br>
           <p>
@@ -422,7 +422,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/procedure/SourceTree-mac-9.png" alt="手順⑨" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step9)" :src="imagePaths.mac.step9" alt="手順⑨" class="screen-image" />
           </div>
           <br>
           <p>
@@ -431,7 +431,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/procedure/SourceTree-mac-10.png" alt="手順⑩" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step10)" :src="imagePaths.mac.step10" alt="手順⑩" class="screen-image" />
           </div>
           <br>
           <p>
@@ -442,7 +442,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/procedure/SourceTree-mac-11.png" alt="手順⑪" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step11)" :src="imagePaths.mac.step11" alt="手順⑪" class="screen-image" />
           </div>
           <br>
           <p>
@@ -452,7 +452,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/procedure/SourceTree-mac-12.png" alt="手順⑫" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step12)" :src="imagePaths.mac.step12" alt="手順⑫" class="screen-image" />
           </div>
           <br>
         </Document>
@@ -465,7 +465,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/procedure/vscode-mac-1.png" alt="手順⑮" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step13)" :src="imagePaths.mac.step13" alt="手順⑮" class="screen-image" />
           </div>
           <br>
           <p>
@@ -475,7 +475,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/procedure/vscode-mac-2.png" alt="手順⑮" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step14)" :src="imagePaths.mac.step14" alt="手順⑮" class="screen-image" />
           </div>
           <br>
           <p>
@@ -486,12 +486,12 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/procedure/home-1.png" alt="手順⑯" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step15)" :src="imagePaths.mac.step15" alt="手順⑯" class="screen-image" />
           </div>
           <br>
           <p>クローンした時の「grow-frontend-beginner」ファルダができているのでのフォルダをワンクリックし選択状態にしたら右下の「フォルダーの選択」を押してください。<br></p>
           <div>
-            <img src="../../assets/images/procedure/vscode-mac-3.png" alt="手順⑯" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step16)" :src="imagePaths.mac.step16" alt="手順⑯" class="screen-image" />
           </div>
           <br>
           <p>
@@ -500,7 +500,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/procedure/vscode-mac-4.png" alt="手順⑰" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step17)" :src="imagePaths.mac.step17" alt="手順⑰" class="screen-image" />
           </div>
           <br>
           <p>
@@ -512,7 +512,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/procedure/vscode-mac-5.png" alt="手順⑱" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step18)" :src="imagePaths.mac.step18" alt="手順⑱" class="screen-image" />
           </div>
           <br>
           <p>
@@ -522,7 +522,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/procedure/vscode-mac-5.png" alt="手順⑲" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step18)" :src="imagePaths.mac.step18" alt="手順⑲" class="screen-image" />
           </div>
           <br>
           <p>
@@ -533,7 +533,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/procedure/vscode-mac-6.png" alt="手順⑳" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step19)" :src="imagePaths.mac.step19" alt="手順⑳" class="screen-image" />
           </div>
           <br>
           <p>
@@ -542,7 +542,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/procedure/backlog-6.png" alt="手順㉑" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step20)" :src="imagePaths.mac.step20" alt="手順㉑" class="screen-image" />
           </div>
           <br>
           <p>
@@ -552,7 +552,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/procedure/vscode-mac-7.png" alt="手順㉒" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step21)" :src="imagePaths.mac.step21" alt="手順㉒" class="screen-image" />
           </div>
           <br>
           <p>
@@ -562,7 +562,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/procedure/SourceTree-mac-13.png" alt="手順㉓" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step22)" :src="imagePaths.mac.step22" alt="手順㉓" class="screen-image" />
           </div>
           <br>
           <p>
@@ -572,7 +572,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/procedure/SourceTree-mac-14.png" alt="手順㉔" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step23)" :src="imagePaths.mac.step23" alt="手順㉔" class="screen-image" />
           </div>
           <br>
           <p>
@@ -583,7 +583,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/procedure/SourceTree-mac-15.png" alt="手順㉕" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step24)" :src="imagePaths.mac.step24" alt="手順㉕" class="screen-image" />
           </div>
           <br>
           <p>
@@ -593,7 +593,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/procedure/SourceTree-mac-16.png" alt="手順㉖" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step25)" :src="imagePaths.mac.step25" alt="手順㉖" class="screen-image" />
           </div>
           <br>
           <p>
@@ -604,7 +604,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/procedure/SourceTree-mac-17.png" alt="手順㉗" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step26)" :src="imagePaths.mac.step26" alt="手順㉗" class="screen-image" />
           </div>
           <br>
           <p>
@@ -614,7 +614,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/procedure/backlog-7.png" alt="手順㉘" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step27)" :src="imagePaths.mac.step27" alt="手順㉘" class="screen-image" />
           </div>
           <br>
           <p>
@@ -623,7 +623,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/procedure/backlog-8.png" alt="手順㉙" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step28)" :src="imagePaths.mac.step28" alt="手順㉙" class="screen-image" />
           </div>
           <br>
           <p>
@@ -632,7 +632,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/procedure/backlog-9.png" alt="手順㉚" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step29)" :src="imagePaths.mac.step29" alt="手順㉚" class="screen-image" />
           </div>
           <br>
           <p>
@@ -643,7 +643,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/procedure/backlog-10.png" alt="手順㉛" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step30)" :src="imagePaths.mac.step30" alt="手順㉛" class="screen-image" />
           </div>
           <br>
         </Document>
@@ -765,8 +765,8 @@ export default {
         step16: require("../../assets/images/procedure/vscode-mac-3.png"),
         step17: require("../../assets/images/procedure/vscode-mac-4.png"),
         step18: require("../../assets/images/procedure/vscode-mac-5.png"),
-        step19: require("../../assets/images/procedure/vscode-mac-5.png"),
-        step20: require("../../assets/images/procedure/vscode-mac-5.png"),
+        step19: require("../../assets/images/procedure/vscode-mac-6.png"),
+        step20: require("../../assets/images/procedure/vscode-mac-7.png"),
         step21: require("../../assets/images/procedure/backlog-6.png"),
         step22: require("../../assets/images/procedure/SourceTree-mac-13.png"),
         step23: require("../../assets/images/procedure/SourceTree-mac-14.png"),
