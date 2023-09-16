@@ -685,18 +685,21 @@ export default {
   margin: 0 auto;
   max-width: 20%;
   height: auto;
+  cursor: pointer;
 }
 .css-image {
   display: block;
   margin: 0 auto;
   max-width: 20%;
   height: auto;
+  cursor: pointer;
 }
 
 .screen-image {
   max-width: 100%;
   height: auto;
   border: 1px solid rgb(175, 175, 175);
+  cursor: pointer;
 }
 .powerpoint-image {
   max-width: 80%;
@@ -704,6 +707,7 @@ export default {
   display: block;
   margin: 0 auto;
   border: 1px solid rgb(175, 175, 175);
+  cursor: pointer;
 }
 
 /* タブレット版 */

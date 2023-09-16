@@ -419,6 +419,7 @@ export default {
   max-width: 100%;
   height: auto;
   border: 1px solid rgb(175, 175, 175);
+  cursor: pointer;
 }
 .powerpoint-image {
   max-width: 80%;
@@ -426,6 +427,7 @@ export default {
   display: block;
   margin: 0 auto;
   border: 1px solid rgb(175, 175, 175);
+  cursor: pointer;
 }
 
 .download-button {
