@@ -195,7 +195,7 @@
           <p>
             ⑲<br>
             「div-puzzle-pc」の「lesson-1」にある「index.html」と「style.css」を開きましょう。<br>
-            画面のようにに画面にするときは左の2つのファイルをドラッグアンドドロップで引っ張ると分けることができます。<br>
+            画面にするときは左の2つのファイルをドラッグアンドドロップで引っ張ると分けることができます。<br>
           </p>
           <br>
           <div>
@@ -518,7 +518,7 @@
           <p>
             ⑲<br>
             「div-puzzle-pc」の「lesson-1」にある「index.html」と「style.css」を開きましょう。<br>
-            画面のようにに画面にするときは左の2つのファイルをドラッグアンドドロップで引っ張ると分けることができます。<br>
+            に画面にするときは左の2つのファイルをドラッグアンドドロップで引っ張ると分けることができます。<br>
           </p>
           <br>
           <div>
@@ -528,12 +528,12 @@
           <p>
             ⑳<br>
             「index.html」はbodyと呼ばれる部分の中に書きましょう。「style.css」は「ここから書く」と書かれた下から書いてください。4行目にある「.clearfix::after」の部分は消さないようにしましょう。<br>
-            画面のようにに画面にするときは左の2つのファイルをドラッグアンドドロップで引っ張ると分けることができます。<br>
+            画面にするときは左の2つのファイルをドラッグアンドドロップで引っ張ると分けることができます。<br>
             今記述している事はあくまでも例になるのでbacklogの完成図を見て作りましょう。<br>
           </p>
           <br>
           <div>
-            <img src="../../assets/images/procedure/vscode-mac-5.png" alt="手順⑳" class="screen-image" />
+            <img src="../../assets/images/procedure/vscode-mac-6.png" alt="手順⑳" class="screen-image" />
           </div>
           <br>
           <p>
@@ -552,7 +552,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/procedure/vscode-mac-5.png" alt="手順㉒" class="screen-image" />
+            <img src="../../assets/images/procedure/vscode-mac-7.png" alt="手順㉒" class="screen-image" />
           </div>
           <br>
           <p>
