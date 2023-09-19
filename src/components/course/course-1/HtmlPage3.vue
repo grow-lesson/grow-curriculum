@@ -329,7 +329,7 @@ export default {
       { id: "subTitle1", title: "  1. 全体のレイアウトを知る" },
       { id: "sectionTitle1-1", title: "    1-1. Webサイトの構成" },
       { id: "sectionTitle1-2", title: "    1-2. 要素とプロパティ①" },
-      { id: "subTitle2", title: "  2. 2. 要素の配置を学ぶ" },
+      { id: "subTitle2", title: "  2. 要素の配置を学ぶ" },
       { id: "sectionTitle2-1", title: "    2-1. 要素とプロパティ②" },
       { id: "sectionTitle2-2", title: "    2-2. Flexboxについて知る" },
       { id: "sectionTitle2-3", title: "    2-3. 要素とプロパティ③" },
