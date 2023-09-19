@@ -6,16 +6,16 @@
     <div class="container">
       <!-- Windows版の説明 -->
       <div class="main-content" v-show="isWindows">
-        <Title title="コマンドライン 1 (Windowsの方)" id="Title"></Title>
+        <Title title="コマンドライン 1 (Windowsの方)" id="Title-w"></Title>
         <Document>
           <p>ターミナルやコマンドラインインターフェースの基本的な操作を学びましょう。</p>
           <p>コマンドとファイル構造やパスを知るセクションです。</p>
         </Document>
 
         <!-- section 1 -->
-        <SubTitle subTitle="1. コマンドラインとプログラミングについて" id="subTitle1"></SubTitle>
+        <SubTitle subTitle="1. コマンドラインとプログラミングについて" id="subTitle1-w"></SubTitle>
         <Document>
-          <SectionTitle sectionTitle="1-1. コマンドラインとは?" id="sectionTitle1-1"></SectionTitle>
+          <SectionTitle sectionTitle="1-1. コマンドラインとは?" id="sectionTitle1-1-w"></SectionTitle>
           <p>
             皆さんがこれから学ぶ「コマンドライン」について概要を理解しましょう!<br>
           </p><br>
@@ -28,7 +28,7 @@
           </p><br>
         </Document>
         <Document>
-          <SectionTitle sectionTitle="1-2. コンピュータの基本的な仕組み" id="sectionTitle1-2"></SectionTitle>
+          <SectionTitle sectionTitle="1-2. コンピュータの基本的な仕組み" id="sectionTitle1-2-w"></SectionTitle>
           <HighlightWord word="ソフトウェア"></HighlightWord>
           <p>
             コンピュータに対して命令を出すプログラム(アプリケーション)の事です。<br>
@@ -64,7 +64,7 @@
           </p>
         </Document>
         <Document>
-          <SectionTitle sectionTitle="1-3. プログラムの命令操作方法について" id="sectionTitle1-3"></SectionTitle>
+          <SectionTitle sectionTitle="1-3. プログラムの命令操作方法について" id="sectionTitle1-3-w"></SectionTitle>
           <p>
             ではプログラムの命令はどのように行うのか学んでいきましょう!
           </p><br>
@@ -98,12 +98,12 @@
         </Document>
 
         <!-- section 2 -->
-        <SubTitle subTitle="2. コマンドとファイル構造やパスを知る" id="subTitle2"></SubTitle>
+        <SubTitle subTitle="2. コマンドとファイル構造やパスを知る" id="subTitle2-w"></SubTitle>
         <Document>
           <p>
             それではCUI操作で必要なコマンドの種類やファイル構造、パスについて知りましょう。<br>
           </p>
-          <SectionTitle sectionTitle="2-1. プログラムの命令(作成・表示・移動)" id="sectionTitle2-1"></SectionTitle>
+          <SectionTitle sectionTitle="2-1. プログラムの命令(作成・表示・移動)" id="sectionTitle2-1-w"></SectionTitle>
           <p>
             コマンドはファイルやディレクトリの作成、表示、編集、削除、移動があります。<br>
             今回そのコマンドを実行するツールは「git bash」を使いましょう。<br><br>
@@ -211,7 +211,7 @@
             <img @click="openModal(imagePaths.win.step5)" :src="imagePaths.win.step5" class="screen-image" alt="git-bash-5" />
           </div><br>
         </Document>
-        <SectionTitle sectionTitle="2-2. プログラムの命令(位置把握・確認・移動)" id="sectionTitle2-2"></SectionTitle>
+        <SectionTitle sectionTitle="2-2. プログラムの命令(位置把握・確認・移動)" id="sectionTitle2-2-w"></SectionTitle>
         <Document>
           <p>
             次に自分の作業しているディレクトリ(カレントディレクトリ)までの経路(位置)を知りたい時に使うコマンドを学びましょう。
@@ -288,7 +288,7 @@
             <img @click="openModal(imagePaths.win.folder6)" :src="imagePaths.win.folder6" class="screen-image" alt="folder-6" />
           </div><br>
         </Document>
-        <SectionTitle sectionTitle="2-3. プログラムの命令(複製・削除)" id="sectionTitle2-3"></SectionTitle>
+        <SectionTitle sectionTitle="2-3. プログラムの命令(複製・削除)" id="sectionTitle2-3-w"></SectionTitle>
         <Document>
           <p>
             ディレクトリやファイルの複製や削除ができるコマンドを学びましょう。<br><br>
@@ -329,9 +329,9 @@
         </Document>
 
         <!-- section 2 -->
-        <SubTitle subTitle="3. パスとホームディレクトリについて" id="subTitle1"></SubTitle>
+        <SubTitle subTitle="3. パスとホームディレクトリについて" id="subTitle3-w"></SubTitle>
         <Document>
-          <SectionTitle sectionTitle="3-1. パスについて?" id="sectionTitle3-1"></SectionTitle>
+          <SectionTitle sectionTitle="3-1. パスについて" id="sectionTitle3-1-w"></SectionTitle>
           <p>
             パスについて学びましょう。<br>
           </p><br>
@@ -370,7 +370,9 @@
             ・リンク切れになるミスが起こりやすいです。<br><br>
             相対パスや絶対パスはここまで学習したコマンドで使うことができるので一気に作業したいディレクトリに移動したり、指定したディレクトリに削除や複製をすることができます。<br>
           </p><br>
-          <Document>
+        </Document>
+        <SectionTitle sectionTitle="3-2 ホームディレクトリについて" id="sectionTitle3-2-w"></SectionTitle>
+        <Document>
             <p>
               <HighlightWord word="ホームディレクトリ"></HighlightWord><br>
               ・ユーザーが作業をするときに基準にするディレクトリの事です。<br>
@@ -379,22 +381,20 @@
               <span class="markup-word-blue">「cd ~」</span>でホームディレクトリに移動できます。
             </p>
           </Document>
-          <SectionTitle sectionTitle="3-2 ホームディレクトリについて?" id="sectionTitle3-2"></SectionTitle>
-        </Document>
         <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
       </div>
       <!-- Mac版の説明 -->
       <div class="main-content" v-show="!isWindows">
-        <Title title="コマンドライン 1 (Macの方)" id="Title"></Title>
+        <Title title="コマンドライン 1 (Macの方)" id="Title-m"></Title>
         <Document>
           <p>ターミナルやコマンドラインインターフェースの基本的な操作を学びましょう。</p>
           <p>コマンドとファイル構造やパスを知るセクションです。</p>
         </Document>
 
         <!-- section 1 -->
-        <SubTitle subTitle="1. コマンドラインとプログラミングについて" id="subTitle1"></SubTitle>
+        <SubTitle subTitle="1. コマンドラインとプログラミングについて" id="subTitle1-m"></SubTitle>
         <Document>
-          <SectionTitle sectionTitle="1-1. コマンドラインとは?" id="sectionTitle1-1"></SectionTitle>
+          <SectionTitle sectionTitle="1-1. コマンドラインとは?" id="sectionTitle1-1-m"></SectionTitle>
           <p>
             皆さんがこれから学ぶ「コマンドライン」について概要を理解しましょう!<br>
           </p><br>
@@ -407,7 +407,7 @@
           </p><br>
         </Document>
         <Document>
-          <SectionTitle sectionTitle="1-2. コンピュータの基本的な仕組み" id="sectionTitle1-2"></SectionTitle>
+          <SectionTitle sectionTitle="1-2. コンピュータの基本的な仕組み" id="sectionTitle1-2-m"></SectionTitle>
           <HighlightWord word="ソフトウェア"></HighlightWord>
           <p>
             コンピュータに対して命令を出すプログラム(アプリケーション)の事です。<br>
@@ -443,7 +443,7 @@
           </p>
         </Document>
         <Document>
-          <SectionTitle sectionTitle="1-3. プログラムの命令操作方法について" id="sectionTitle1-3"></SectionTitle>
+          <SectionTitle sectionTitle="1-3. プログラムの命令操作方法について" id="sectionTitle1-3-m"></SectionTitle>
           <p>
             ではプログラムの命令はどのように行うのか学んでいきましょう!
           </p><br>
@@ -477,12 +477,12 @@
         </Document>
 
         <!-- section 2 -->
-        <SubTitle subTitle="2. コマンドとファイル構造やパスを知る" id="subTitle2"></SubTitle>
+        <SubTitle subTitle="2. コマンドとファイル構造やパスを知る" id="subTitle2-m"></SubTitle>
         <Document>
           <p>
             それではCUI操作で必要なコマンドの種類やファイル構造、パスについて知りましょう。<br>
           </p>
-          <SectionTitle sectionTitle="2-1. プログラムの命令(作成・表示・移動)" id="sectionTitle2-1"></SectionTitle>
+          <SectionTitle sectionTitle="2-1. プログラムの命令(作成・表示・移動)" id="sectionTitle2-1-m"></SectionTitle>
           <p>
             コマンドはファイルやディレクトリの作成、表示、編集、削除、移動があります。<br>
             今回そのコマンドを実行するツールは「git bash」を使いましょう。<br><br>
@@ -590,7 +590,7 @@
             <img @click="openModal(imagePaths.mac.step5)" :src="imagePaths.mac.step5" class="screen-image" alt="git-bash-5" />
           </div><br>
         </Document>
-        <SectionTitle sectionTitle="2-2. プログラムの命令(位置把握・確認・移動)" id="sectionTitle2-2"></SectionTitle>
+        <SectionTitle sectionTitle="2-2. プログラムの命令(位置把握・確認・移動)" id="sectionTitle2-2-m"></SectionTitle>
         <Document>
           <p>
             次に自分の作業しているディレクトリ(カレントディレクトリ)までの経路(位置)を知りたい時に使うコマンドを学びましょう。
@@ -667,7 +667,7 @@
             <img @click="openModal(imagePaths.mac.folder6)" :src="imagePaths.mac.folder6" class="screen-image" alt="folder-6" />
           </div><br>
         </Document>
-        <SectionTitle sectionTitle="2-3. プログラムの命令(複製・削除)" id="sectionTitle2-3"></SectionTitle>
+        <SectionTitle sectionTitle="2-3. プログラムの命令(複製・削除)" id="sectionTitle2-3-m"></SectionTitle>
         <Document>
           <p>
             ディレクトリやファイルの複製や削除ができるコマンドを学びましょう。<br><br>
@@ -708,9 +708,9 @@
         </Document>
 
         <!-- section 2 -->
-        <SubTitle subTitle="3. パスとホームディレクトリについて" id="subTitle1"></SubTitle>
+        <SubTitle subTitle="3. パスとホームディレクトリについて" id="subTitle3-m"></SubTitle>
         <Document>
-          <SectionTitle sectionTitle="3-1. パスについて?" id="sectionTitle3-1"></SectionTitle>
+          <SectionTitle sectionTitle="3-1. パスについて" id="sectionTitle3-1-m"></SectionTitle>
           <p>
             パスについて学びましょう。<br>
           </p><br>
@@ -749,7 +749,9 @@
             ・リンク切れになるミスが起こりやすいです。<br><br>
             相対パスや絶対パスはここまで学習したコマンドで使うことができるので一気に作業したいディレクトリに移動したり、指定したディレクトリに削除や複製をすることができます。<br>
           </p><br>
-          <Document>
+        </Document>
+        <SectionTitle sectionTitle="3-2 ホームディレクトリについて" id="sectionTitle3-2-m"></SectionTitle>
+        <Document>
             <p>
               <HighlightWord word="ホームディレクトリ"></HighlightWord><br>
               ・ユーザーが作業をするときに基準にするディレクトリの事です。<br>
@@ -758,7 +760,6 @@
               <span class="markup-word-blue">「cd ~」</span>でホームディレクトリに移動できます。
             </p>
           </Document>
-        </Document>
         <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
       </div>
       <div class="side-content" v-show="isWindows && !isSmallScreen">
@@ -805,27 +806,33 @@ export default {
     const isLoading = ref(false);
 
     const windowsSections = [
-      { id: "Title", title: "コマンドライン 1 (Windowsの方)" },
-      { id: "subTitle1", title: "  1. コマンドラインとプログラミングについて" },
-      { id: "sectionTitle1-1", title: "    1-1. コマンドラインとは?" },
-      { id: "sectionTitle1-2", title: "    1-2. コンピュータの基本的な仕組み" },
-      { id: "sectionTitle1-3", title: "    1-3. プログラムの命令操作方法について" },
-      { id: "subTitle2", title: "  2. コマンドとファイル構造やパスを知るぶ" },
-      { id: "sectionTitle2-1", title: "    2-1. プログラムの命令(作成・表示・移動)②" },
-      { id: "sectionTitle2-2", title: "    2-2. プログラムの命令(位置把握・確認・移動)る" },
-      { id: "sectionTitle2-3", title: "    2-3. プログラムの命令(複製・削除)" },
+      { id: "Title-w", title: "コマンドライン 1 (Windowsの方)" },
+      { id: "subTitle1-w", title: "  1. コマンドラインとプログラミングについて" },
+      { id: "sectionTitle1-1-w", title: "    1-1. コマンドラインとは?" },
+      { id: "sectionTitle1-2-w", title: "    1-2. コンピュータの基本的な仕組み" },
+      { id: "sectionTitle1-3-w", title: "    1-3. プログラムの命令操作方法について" },
+      { id: "subTitle2-w", title: "  2. コマンドとファイル構造やパスを知る" },
+      { id: "sectionTitle2-1-w", title: "    2-1. プログラムの命令(作成・表示・移動)②" },
+      { id: "sectionTitle2-2-w", title: "    2-2. プログラムの命令(位置把握・確認・移動)" },
+      { id: "sectionTitle2-3-w", title: "    2-3. プログラムの命令(複製・削除)" },
+      { id: "subTitle3-w", title: "  3. パスとホームディレクトリについて" },
+      { id: "sectionTitle3-1-w", title: "    3-1. パスについて" },
+      { id: "sectionTitle3-2-w", title: "    3-2 ホームディレクトリについて" },
     ];
 
     const macSections = [
-      { id: "Title", title: "コマンドライン 1 (Macの方)" },
-      { id: "subTitle1", title: "  1. コマンドラインとプログラミングについて" },
-      { id: "sectionTitle1-1", title: "    1-1. コマンドラインとは?" },
-      { id: "sectionTitle1-2", title: "    1-2. コンピュータの基本的な仕組み" },
-      { id: "sectionTitle1-3", title: "    1-3. プログラムの命令操作方法について" },
-      { id: "subTitle2", title: "  2. コマンドとファイル構造やパスを知るぶ" },
-      { id: "sectionTitle2-1", title: "    2-1. プログラムの命令(作成・表示・移動)②" },
-      { id: "sectionTitle2-2", title: "    2-2. プログラムの命令(位置把握・確認・移動)る" },
-      { id: "sectionTitle2-3", title: "    2-3. プログラムの命令(複製・削除)" },
+      { id: "Title-m", title: "コマンドライン 1 (Macの方)" },
+      { id: "subTitle1-m", title: "  1. コマンドラインとプログラミングについて" },
+      { id: "sectionTitle1-1-m", title: "    1-1. コマンドラインとは" },
+      { id: "sectionTitle1-2-m", title: "    1-2. コンピュータの基本的な仕組み" },
+      { id: "sectionTitle1-3-m", title: "    1-3. プログラムの命令操作方法について" },
+      { id: "subTitle2-m", title: "  2. コマンドとファイル構造やパスを知る" },
+      { id: "sectionTitle2-1-m", title: "    2-1. プログラムの命令(作成・表示・移動)②" },
+      { id: "sectionTitle2-2-m", title: "    2-2. プログラムの命令(位置把握・確認・移動)" },
+      { id: "sectionTitle2-3-m", title: "    2-3. プログラムの命令(複製・削除)" },
+      { id: "subTitle3-m", title: "  3. パスとホームディレクトリについて" },
+      { id: "sectionTitle3-1-m", title: "    3-1. パスについて" },
+      { id: "sectionTitle3-2-m", title: "    3-2 ホームディレクトリについて" },
     ];
 
     const toggleOS = () => {
