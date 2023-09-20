@@ -6,15 +6,37 @@
         <img class="profile-picture" src="../../assets/images/user/dog.jpg" alt="ssss">
         <h1>{{ user.name }}</h1>
       </div>
-      <div class="profile-details">
-        <p><strong>姓:</strong> {{ user.last_name_kana }}<strong>  名:</strong> {{ user.first_name_kana }}</p>
-        <p><strong>Email:</strong> {{ user.email }}</p>
-        <p><strong>趣味:</strong> {{ user.hobbies }}</p>
-        <p><strong>触れたことがある言語:</strong> {{ user.languages }}</p>
-        <p><strong>自己紹介:</strong> {{ user.bio }}</p>
-        <button @click="goToEditPage">編集する</button>
-        <!-- ここに別の項目を追加 -->
-      </div>
+      <ul class="profile-details">
+        <li class="profile-item">
+          <p class="profile-label">名前</p>
+          <p class="profile-text">{{ user.last_name_kana }} {{ user.first_name_kana }}</p>
+        </li>
+        <li class="profile-item">
+          <p class="profile-label">カナ</p>
+          <p class="profile-text">{{ user.last_name_kana }} {{ user.first_name_kana }}</p>
+          </li>
+        <li class="profile-item">
+          <p class="profile-label">メールアドレス</p>
+          <p class="profile-text">{{ user.email }}</p>
+        </li>
+        <li class="profile-item">
+          <p class="profile-label">趣味</p>
+          <p class="profile-text">{{ user.hobbies }}</p>
+        </li>
+        <li class="profile-item">
+          <p class="profile-label">触れたことがある言語</p>
+          <p class="profile-text">{{ user.languages }}</p>
+        </li>
+        <li class="profile-item">
+          <p class="profile-label">自己紹介</p>
+          <p class="profile-text">{{ user.bio }}</p>
+        </li>
+        <li class="profile-item">
+          <p class="profile-label">パスワード</p>
+          <p class="profile-text">{{ user.bio }}</p>
+        </li>
+        <button class="profile-btn" @click="goToEditPage">編集する</button>
+      </ul>
     </div>
     <Footer />
   </div>
@@ -35,7 +57,7 @@ export default {
   setup() {
     const store = useStore();
     const login = computed(() => store.state.user.loginData);
-    
+
     const router = useRouter();
     const goToEditPage = () => {
       router.push({ name: "EditPage" });
@@ -83,11 +105,31 @@ h1 {
   font-size: 16px;
 }
 
-strong {
-  font-weight: bold;
+.profile-item{
+  display: flex;
+  margin-top: 20px;
 }
 
-p {
-  margin-bottom: 10px;
+.profile-label{
+  width: 200px;
+  margin: auto 0;
+  font-weight: normal;
+}
+
+.profile-text{
+  border-bottom: solid 1px #1C4977;
+  padding: 10px;
+}
+
+.profile-btn {
+  padding: 5px 10px;
+  margin: 50px 0;
+  background-color: #1C4977;
+  color: #fff;
+  border-radius: 5px;
+}
+
+@media (max-width: 425px) {
+
 }
 </style>

@@ -112,7 +112,7 @@ export default {
         min: ({ label }) => `${label}を更新する場合は7文字以上で入力してください`,
       },
     });
-    
+
     Object.keys(AllRules).forEach((rule) => {
       defineRule(rule, AllRules[rule]);
     });
@@ -188,7 +188,7 @@ export default {
       // トークン情報を取得
       const accessToken = getCookie('access-token');
       const client = getCookie('client');
-      const uid = decodeURIComponent(getCookie('uid')); 
+      const uid = decodeURIComponent(getCookie('uid'));
 
       // リクエストのヘッダーにトークン情報を含めて送信
       api.put(`/auth`, loginData, {
@@ -274,8 +274,6 @@ export default {
   ;
 }
 
-.edit-content {}
-
 .edit-content label {
   width: 200px;
   margin: auto 0;
@@ -289,12 +287,12 @@ export default {
 
 .edit-form input {
   display: flex;
-  border-bottom: solid 1px #333;
+  border-bottom: solid 1px #1C4977;
 }
 
 .edit-form input,
 .edit-form textarea {
-  background-color: #dcdcdc;
+  background-color: #e5f0f8;
   padding: 10px;
   border-radius: 4px 4px 0 0;
 }
@@ -305,13 +303,10 @@ export default {
   height: 150px;
 }
 
-.edit-form p {
-  color: #ff4500;
-}
-
 .edit-btn {
+  padding: 5px 10px;
   margin: 10px auto;
-  background-color: #7b8d42;
+  background-color: #1C4977;
   color: #fff;
   border-radius: 5px;
 }
@@ -321,8 +316,15 @@ export default {
   font-size: 16px;
   font-weight: bold;
 }
-/* .edit-username, .edit-mail, .edit-password, .edit-newPassword, .edit-bio, .edit-image{
-  display: flex;
-  margin-top: 20px;
-} */
+
+@media (max-width: 425px) {
+  .edit-content{
+    width: 330px;
+    margin: auto;
+  }
+
+  .edit-form{
+    display: block;
+  }
+}
 </style>
