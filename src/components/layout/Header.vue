@@ -30,7 +30,7 @@
               <button class="navigation-btn">マイページ</button>
               <ul class="dropdown-list">
                 <li class="dropdown-item"><a @click="goToMyPage" class="dropdown-link">プロフィール</a></li>
-                <li class="dropdown-item"><a href="#" class="dropdown-link">進捗管理</a></li>
+                <li class="dropdown-item"><a @click="goToProgressPage" class="dropdown-link">進捗管理</a></li >
                 <li class="dropdown-item"><a href="#" class="dropdown-link">給与の確認</a></li>
                 <li class="dropdown-item"><a href="#" target="_blank" class="dropdown-link">勤怠表を提出する</a></li>
               </ul>
@@ -81,7 +81,7 @@
           <button>マイページ</button>
           <ul class="dropdown-list">
             <li class="dropdown-item"><a @click="goToMyPage" class="dropdown-link">プロフィール</a></li>
-            <li class="dropdown-item"><a href="#" class="dropdown-link">進捗管理</a></li>
+            <li class="dropdown-item"><a @click="goToProgressPage" class="dropdown-link">進捗管理</a></li >
             <li class="dropdown-item"><a href="#" class="dropdown-link">給与の確認</a></li>
             <li class="dropdown-item"><a href="#" class="dropdown-link">勤怠表を提出する</a></li>
           </ul>
@@ -152,6 +152,10 @@ export default {
       router.push({ name: "MyPage" });
     };
 
+    const goToProgressPage = () => {
+      router.push({ name: "Progress" });
+    };
+
     const goToContactPage = () => {
       router.push({ name: "Contact" });
     };
@@ -183,6 +187,7 @@ export default {
       goToProcedurePage,
       goToCourseMenuPage,
       goToMyPage,
+      goToProgressPage,
       goToContactPage,
     };
   },
@@ -469,7 +474,7 @@ export default {
 }
 
 /* PC版 */
-@media (min-width: 834px) {
+@media (min-width: 835px) {
   .menu {
     display: none; /* メニューは非表示 */
   }

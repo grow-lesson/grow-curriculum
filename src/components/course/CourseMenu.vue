@@ -116,7 +116,6 @@ export default {
 .hero-section {
   padding: 60px 30px;
   color: black;
-  background-image: linear-gradient(to right, #d6ffff, #aff7f7);
 }
 
 .hero-description {
