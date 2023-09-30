@@ -485,9 +485,9 @@
           <SectionTitle sectionTitle="2-1. プログラムの命令(作成・表示・移動)" id="sectionTitle2-1-m"></SectionTitle>
           <p>
             コマンドはファイルやディレクトリの作成、表示、編集、削除、移動があります。<br>
-            今回そのコマンドを実行するツールは「git bash」を使いましょう。<br><br>
+            今回そのコマンドを実行するツールは「ターミナル」を使いましょう。<br><br>
             ①<br>
-            「環境構築やインストール」でインストールした「git bash」を開きましょう。
+            「launchpad」で「ターミナル」を開きましょう。
             開くとこのような画面になります。
           </p><br>
           <div>
@@ -512,44 +512,45 @@
             その自分がいるディレクトリを<span class="markup-word-blue">カレントディレクトリ</span>といいます。<br>
             また、上の画像でカレントディレクトリがBディレクトリだとし、その一番上をたどるとAディレクトリが一番上になります。<br>
             今いるディレクトリ構造の一番親のディレクトリのことを<span class="markup-word-blue">ルートディレクトリ</span>といいます。<br>
-            今回コースで作業するのはCドライブディレクトリで行います。<br>
-            それでは今作業しているディレクトリからCドライブディレクトリに移動しましょう。<br><br>
+            今回コースで作業するのはホームディレクトリで行います。<br>
+            ターミナルを開くとデフォルトで最初にホームディレクトリの位置にいます。<br><br>
           </p>
-          <HighlightWord word="cd ディレクトリ名"></HighlightWord>
           <p>
-            ・自分が今作業しているディレクトリからさらに下のディレクトリに移動ができます。<br>
-            逆に今作業しているディレクトリの上のディレクトリに戻るときは<span class="markup-word-blue">「cd ../」</span>を実行すれば戻ることができます。<br><br>
-            ②<br>
-            git bashに画像のように入力し、実行しましょう。<br>
-            画像のように次を入力する部分に「/C」と黄色い文字で書いてあればOKです。<br>
-          </p><br>
-          <div>
-            <img @click="openModal(imagePaths.mac.step2)" :src="imagePaths.mac.step2" class="screen-image" alt="git-bash-2" />
-          </div><br>
-          <p>
-            CUI操作ではこのようになりますが、GUI操作だとエクスプローラを開いてCドライブをクリックした時の画面という事になります。<br>
-          </p><br>
-          <div>
-            <img @click="openModal(imagePaths.mac.folder1)" :src="imagePaths.mac.folder1" class="screen-image" alt="folder-1" />
-          </div><br>
-          <br>
-          <p>
-            では次にディレクトリの作成を覚えましょう。<br>
+            では早速コマンドを覚えていきましょう!<br>
+            まずはディレクトリの作成です。<br>
           </p>
           <HighlightWord word="mkdir ディレクトリ名"></HighlightWord><br>
           <p>
             ・自分が今作業しているディレクトリの中に新たなディレクトリを作成します。<br>
             「Make Directory」の略称です。<br><br>
-            ③<br>
-            git bashに画像のように入力し、実行しましょう。<br>
-            git bashでは何も出てきませんが、エクスプローラで確認すると「sample-1」というディレクトリが作成されていることがわかります。<br>
+            ②<br>
+            ターミナルに画像のように入力し、実行しましょう。<br>
+            ターミナルでは何も出てきませんが、finderで確認すると「sample-1」というディレクトリが作成されていることがわかります。<br>
           </p><br>
           <div>
-            <img @click="openModal(imagePaths.mac.step3)" :src="imagePaths.mac.step3" class="screen-image" alt="git-bash-3" />
+            <img @click="openModal(imagePaths.mac.step2)" :src="imagePaths.mac.step2" class="screen-image" alt="git-bash-3" />
           </div><br>
           <div>
-            <img @click="openModal(imagePaths.mac.folder2)" :src="imagePaths.mac.folder2" class="screen-image" alt="folder-2" />
+            <img @click="openModal(imagePaths.mac.folder1)" :src="imagePaths.mac.folder1" class="screen-image" alt="folder-2" />
           </div><br>
+          <HighlightWord word="cd ディレクトリ名"></HighlightWord>
+          <p>
+            ・自分が今作業しているディレクトリからさらに下のディレクトリに移動ができます。<br>
+            逆に今作業しているディレクトリの上のディレクトリに戻るときは<span class="markup-word-blue">「cd ../」</span>を実行すれば戻ることができます。<br><br>
+            ③<br>
+            ターミナルに画像のように入力し、実行しましょう。<br>
+            画像のように次を入力する部分に「/sample-1」と文字で書いてあればOKです。<br>
+          </p><br>
+          <div>
+            <img @click="openModal(imagePaths.mac.step3)" :src="imagePaths.mac.step3" class="screen-image" alt="git-bash-2" />
+          </div><br>
+          <p>
+            CUI操作ではこのようになりますが、GUI操作だとエクスプローラを開いてCドライブをクリックした時の画面という事になります。<br>
+          </p><br>
+          <div>
+            <img @click="openModal(imagePaths.mac.folder2)" :src="imagePaths.mac.folder2" class="screen-image" alt="folder-1" />
+          </div><br>
+          <br>
           <p>
             では次に今作ったフォルダにファイルの作成してみましょう。<br>
           </p>
@@ -557,9 +558,9 @@
           <p>
             ・自分が今作業しているディレクトリ(カレントディレクトリ)の中に新たなファイルを作成します。<br><br>
             ④<br>
-            まずはgit bashに「sample-1」ディレクトリに移動するためcdコマンドを入力しましょう。
+            まずはターミナルに「sample-1」ディレクトリに移動するためcdコマンドを入力しましょう。
             その後、touchコマンドを入力し、実行しましょう。<br>
-            git bashでは何も出てきませんが、エクスプローラで「sample-1」ディレクトリを確認すると「memo.txt」というファイルが作成されていることがわかります。<br>
+            ターミナルでは何も出てきませんが、エクスプローラで「sample-1」ディレクトリを確認すると「memo.txt」というファイルが作成されていることがわかります。<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.mac.step4)" :src="imagePaths.mac.step4" class="screen-image" alt="git-bash-4" />
@@ -576,14 +577,14 @@
             ⑤<br>
             まずは先ほど作った「memo.txt」を開きましょう。<br>
             その中に画像のように入力しましょう。
-            入力したら「ctrl + s」で保存しましょう。<br>
+            入力したら「command + s」で保存しましょう。<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.mac.memo)" :src="imagePaths.mac.memo" class="screen-image" alt="memo" />
           </div><br>
           <p>
             ⑥<br>
-            git bashに画像のように入力し、実行しましょう。<br>
+            ターミナルに画像のように入力し、実行しましょう。<br>
             テキストファイルを開かなくても中身を確認する事ができます。<br>
           </p><br>
           <div>
@@ -599,7 +600,7 @@
           <p>
             ・カレントディレクトリを表示をします。
             ⑦<br>
-            git bashに画像のように入力し、実行しましょう。<br>
+            ターミナルに画像のように入力し、実行しましょう。<br>
             今いる位置が表示されればOKです。<br>
           </p><br>
           <div>
@@ -614,8 +615,8 @@
             「List」の略称です。<br><br>
             ⑧<br>
             まずはディレクトリを作りましょう。
-            git bashに画像のように入力し、実行しましょう。<br>
-            git bash、エクスプローラで確認するとこのようになっていればOKです。<br>
+            ターミナルに画像のように入力し、実行しましょう。<br>
+            ターミナル、エクスプローラで確認するとこのようになっていればOKです。<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.mac.step7)" :src="imagePaths.mac.step7" class="screen-image" alt="git-bash-7" />
@@ -625,8 +626,8 @@
           </div><br>
           <p>
             ⑧<br>
-            git bashに画像のように入力し、実行しましょう。<br>
-            git bashで確認するとこのようになっていればOKです。<br>
+            ターミナルに画像のように入力し、実行しましょう。<br>
+            ターミナルで確認するとこのようになっていればOKです。<br>
           </p><br>
           <p>
             ⑨それでは今作ったディレクトリにテキストファイルを移動しましょう。<br><br>
@@ -641,8 +642,8 @@
             フォルダを移動する時は<br>
             <HighlightWord word="mv 移動させたいディレクトリ名 移動先のディレクトリ名"></HighlightWord>となります。<br><br>
             ⑩<br>
-            git bashに画像のように入力し、実行しましょう。<br>
-            git bashでは何も表示されませんが、エクスプローラで「test」ディレクトリを確認するとこのようになっています。<br><br>
+            ターミナルに画像のように入力し、実行しましょう。<br>
+            ターミナルでは何も表示されませんが、エクスプローラで「test」ディレクトリを確認するとこのようになっています。<br><br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.mac.step9)" :src="imagePaths.mac.step9" class="screen-image" alt="git-bash-9" />
@@ -657,8 +658,8 @@
           <p>
             ・ファイルの名前を変更することができます。<br><br>
             ⑪<br>
-            まずは「test」ディレクトリに移動してgit bashに画像のように入力し、実行しましょう。<br>
-            git bashでは何も表示されませんが、エクスプローラで「test」ディレクトリの中のテキストファイルの名前が変わっているのが分かります。<br><br>
+            まずは「test」ディレクトリに移動してターミナルに画像のように入力し、実行しましょう。<br>
+            ターミナルでは何も表示されませんが、エクスプローラで「test」ディレクトリの中のテキストファイルの名前が変わっているのが分かります。<br><br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.mac.step10)" :src="imagePaths.mac.step10" class="screen-image" alt="git-bash-10" />
@@ -678,7 +679,7 @@
             ディレクトリをコピーしたい場合は<br>
             <HighlightWord word="cp –r コピーするディレクトリ名 新しいディレクトリ名"></HighlightWord>となります。<br><br>
             ⑫<br>
-            git bashに画像のように入力し、実行しましょう。<br>
+            ターミナルに画像のように入力し、実行しましょう。<br>
             コピーできていればコピーしたファイルを開くと同じ文章が書いてあるはずです。<br>
           </p><br>
           <div>
@@ -696,8 +697,8 @@
             ディレクトリごと削除したい場合は<br>
             <HighlightWord word="rm –r 削除するディレクトリ名 "></HighlightWord>となります。<br><br>
             ⑫<br>
-            git bashに画像のように入力し、実行しましょう。<br>
-            git bashでは何も出てきませんが、エクスプローラで「test」ディレクトリを確認すると「memo.txt」というファイルが削除されていることがわかります。<br>
+            ターミナルに画像のように入力し、実行しましょう。<br>
+            ターミナルでは何も出てきませんが、エクスプローラで「test」ディレクトリを確認すると「memo.txt」というファイルが削除されていることがわかります。<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.mac.step12)" :src="imagePaths.mac.step12" class="screen-image" alt="git-bash-12" />
@@ -881,29 +882,29 @@ export default {
       mac: {
         software: require("../../../assets/images/course/command-line-1/software.png"),
         hardware: require("../../../assets/images/course/command-line-1/hardware.png"),
-        step1: require("../../../assets/images/course/command-line-1/git-bash-1.png"),
+        step1: require("../../../assets/images/course/command-line-1/terminal-1.png"),
         tree: require("../../../assets/images/course/command-line-1/tree.png"),
-        step2: require("../../../assets/images/course/command-line-1/git-bash-2.png"),
-        folder1: require("../../../assets/images/course/command-line-1/folder-1.png"),
-        step3: require("../../../assets/images/course/command-line-1/git-bash-3.png"),
-        folder2: require("../../../assets/images/course/command-line-1/folder-2.png"),
-        step4: require("../../../assets/images/course/command-line-1/git-bash-4.png"),
-        folder3: require("../../../assets/images/course/command-line-1/folder-3.png"),
-        memo: require("../../../assets/images/course/command-line-1/memo.png"),
-        step5: require("../../../assets/images/course/command-line-1/git-bash-5.png"),
-        step6: require("../../../assets/images/course/command-line-1/git-bash-6.png"),
-        step7: require("../../../assets/images/course/command-line-1/git-bash-7.png"),
-        folder4: require("../../../assets/images/course/command-line-1/folder-4.png"),
-        step8: require("../../../assets/images/course/command-line-1/git-bash-8.png"),
-        step9: require("../../../assets/images/course/command-line-1/git-bash-9.png"),
-        folder5: require("../../../assets/images/course/command-line-1/folder-5.png"),
-        step10: require("../../../assets/images/course/command-line-1/git-bash-10.png"),
-        folder6: require("../../../assets/images/course/command-line-1/folder-6.png"),
-        step11: require("../../../assets/images/course/command-line-1/git-bash-11.png"),
-        folder7: require("../../../assets/images/course/command-line-1/folder-7.png"),
-        copy: require("../../../assets/images/course/command-line-1/copy.png"),
-        step12: require("../../../assets/images/course/command-line-1/git-bash-12.png"),
-        folder8: require("../../../assets/images/course/command-line-1/folder-8.png"),
+        step2: require("../../../assets/images/course/command-line-1/terminal-2.png"),
+        folder1: require("../../../assets/images/course/command-line-1/finder-1.png"),
+        step3: require("../../../assets/images/course/command-line-1/terminal-3.png"),
+        folder2: require("../../../assets/images/course/command-line-1/finder-2.png"),
+        step4: require("../../../assets/images/course/command-line-1/terminal-4.png"),
+        folder3: require("../../../assets/images/course/command-line-1/finder-3.png"),
+        memo: require("../../../assets/images/course/command-line-1/memo-m.png"),
+        step5: require("../../../assets/images/course/command-line-1/terminal-5.png"),
+        step6: require("../../../assets/images/course/command-line-1/terminal-6.png"),
+        step7: require("../../../assets/images/course/command-line-1/terminal-7.png"),
+        folder4: require("../../../assets/images/course/command-line-1/finder-4.png"),
+        step8: require("../../../assets/images/course/command-line-1/terminal-8.png"),
+        step9: require("../../../assets/images/course/command-line-1/terminal-9.png"),
+        folder5: require("../../../assets/images/course/command-line-1/finder-5.png"),
+        step10: require("../../../assets/images/course/command-line-1/terminal-10.png"),
+        folder6: require("../../../assets/images/course/command-line-1/finder-6.png"),
+        step11: require("../../../assets/images/course/command-line-1/terminal-11.png"),
+        folder7: require("../../../assets/images/course/command-line-1/finder-7.png"),
+        copy: require("../../../assets/images/course/command-line-1/copy-m.png"),
+        step12: require("../../../assets/images/course/command-line-1/terminal-12.png"),
+        folder8: require("../../../assets/images/course/command-line-1/finder-8.png"),
         root: require("../../../assets/images/course/command-line-1/root.png"),
       },
     };
