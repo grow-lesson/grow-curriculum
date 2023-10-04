@@ -4,7 +4,7 @@
     <div class="lesson-container">
       <div class="lesson-title">
         <div class="breadcrumb">
-          <a href="/menu">初級コース</a> > コマンドラインコースを選ぼう
+          <a href="/course-menu">初級コース</a> > コマンドラインコースを選ぼう
         </div>
         <h1 class="lesson-heading">コマンドラインコースを選ぼう</h1>
       </div>
@@ -50,7 +50,7 @@ export default {
 <style scoped>
 .lesson-container {
   margin: 0 auto;
-  /* max-width: 600px; */
+  min-height: calc(100vh - 166px);
 }
 
 .breadcrumb{
@@ -60,7 +60,7 @@ export default {
 .lesson-title{
   width: 100%;
   padding: 30px 0;
-  margin: 1rem 0;
+  margin: 20px 0;
   background-color: #E5F0F8;
 }
 
@@ -171,6 +171,9 @@ export default {
 }
 
 @media (max-width: 648px) {
+  .lesson-container {
+    min-height: calc(100vh - 130px);
+  }
   .lesson-heading{
     font-size: 1.5rem;
   }
