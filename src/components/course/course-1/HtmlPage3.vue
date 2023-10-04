@@ -249,25 +249,25 @@
           </p><br>
           <ul class="siteImages">
             <li class="siteImage">
-              <img src="../../../assets/images/course/sample-site/img1.png" class="screen-image" alt="bag" />
+              <img src="../../../assets/images/course/sample-site/bag.png" class="screen-image" alt="bag" />
             </li>
             <li class="siteImage">
-              <img src="../../../assets/images/course/sample-site/img2.png" class="screen-image" alt="book" />
+              <img src="../../../assets/images/course/sample-site/book.png" class="screen-image" alt="book" />
             </li>
             <li class="siteImage">
-              <img src="../../../assets/images/course/sample-site/img3.png" class="screen-image" alt="logo" />
+              <img src="../../../assets/images/course/sample-site/logo.png" class="screen-image" alt="logo" />
             </li>
             <li class="siteImage">
-              <img src="../../../assets/images/course/sample-site/img4.png" class="screen-image" alt="movie" />
+              <img src="../../../assets/images/course/sample-site/movie.png" class="screen-image" alt="movie" />
             </li>
             <li class="siteImage">
-              <img src="../../../assets/images/course/sample-site/img5.png" class="screen-image" alt="note" />
+              <img src="../../../assets/images/course/sample-site/note.png" class="screen-image" alt="note" />
             </li>
             <li class="siteImage">
-              <img src="../../../assets/images/course/sample-site/img6.png" class="screen-image" alt="pen" />
+              <img src="../../../assets/images/course/sample-site/pen.png" class="screen-image" alt="pen" />
             </li>
             <li class="siteImage">
-              <img src="../../../assets/images/course/sample-site/logo.png" class="screen-image" alt="phone" />
+              <img src="../../../assets/images/course/sample-site/phone.png" class="screen-image" alt="phone" />
             </li>
           </ul>
           <br>
