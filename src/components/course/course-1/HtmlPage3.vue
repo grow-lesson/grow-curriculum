@@ -34,7 +34,7 @@
           </p>
           <br>
           <div>
-            <img src="../../../assets/images/course/html-css-3/site.png" class="powerpoint-image" alt="site" />
+            <img @click="openModal(imagePaths.step1)" :src="imagePaths.step1" class="powerpoint-image" alt="site" />
           </div>
         </Document>
         <Document>
@@ -83,7 +83,7 @@
           </p><br>
           <br>
           <div>
-            <img src="../../../assets/images/course/html-css-3/relative.png" class="powerpoint-image" alt="relative" />
+            <img @click="openModal(imagePaths.step2)" :src="imagePaths.step2" class="powerpoint-image" alt="relative" />
           </div><br>
           <p>
             このように元々デフォルトでは左上にある要素がpositionで配置の基準をrelativeで決定した事でそこからtop,leftで位置をずらしたという事です。<br>
@@ -91,7 +91,7 @@
             画像の例を見てください。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-3/absolute.png" class="powerpoint-image" alt="absolute" />
+            <img @click="openModal(imagePaths.step3)" :src="imagePaths.step3" class="powerpoint-image" alt="absolute" />
           </div><br>
           <br>
           <p>
@@ -110,10 +110,10 @@
             Flexboxを適用(横並び)する方法と例は以下のようになります。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-3/flex.png" class="powerpoint-image" alt="flex" />
+            <img @click="openModal(imagePaths.step4)" :src="imagePaths.step4" class="powerpoint-image" alt="flex" />
           </div><br>
           <div>
-            <img src="../../../assets/images/course/html-css-3/flexbox.png" class="powerpoint-image" alt="flexbox" />
+            <img @click="openModal(imagePaths.step5)" :src="imagePaths.step5" class="powerpoint-image" alt="flexbox" />
           </div><br>
           <br>
         </Document>
@@ -135,10 +135,10 @@
             実際にどのように変わるか以下の画像を見て参考にしてみましょう。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-3/justify-1.png" class="powerpoint-image" alt="justify-1" />
+            <img @click="openModal(imagePaths.step6)" :src="imagePaths.step6" class="powerpoint-image" alt="justify-1" />
           </div><br>
           <div>
-            <img src="../../../assets/images/course/html-css-3/justify-2.png" class="powerpoint-image" alt="justify-2" />
+            <img @click="openModal(imagePaths.step7)" :src="imagePaths.step7" class="powerpoint-image" alt="justify-2" />
           </div><br>
           <p>
             <HighlightWord word="align-items: [位置];"></HighlightWord><br>
@@ -155,7 +155,7 @@
             space-between、space-around、space-evenlyはjustify-contentを垂直にしたものなのでそちらを参考にして下さい。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-3/align-1.png" class="powerpoint-image" alt="align-1" />
+            <img @click="openModal(imagePaths.step8)" :src="imagePaths.step8" class="powerpoint-image" alt="align-1" />
           </div><br>
           <p>
             <HighlightWord word="flex-direction: [位置];"></HighlightWord><br>
@@ -167,7 +167,7 @@
             以下の画像を見て参考にしてみましょう。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-3/direction-1.png" class="powerpoint-image" alt="direction-1" />
+            <img @click="openModal(imagePaths.step9)" :src="imagePaths.step9" class="powerpoint-image" alt="direction-1" />
           </div><br>
           <p>
             <HighlightWord word="flex-wrap: [折り返しのオプション];"></HighlightWord><br>
@@ -179,7 +179,7 @@
             以下の画像を見て参考にしてみましょう。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-3/wrap-1.png" class="powerpoint-image" alt="wrap-1" />
+            <img @click="openModal(imagePaths.step10)" :src="imagePaths.step10" class="powerpoint-image" alt="wrap-1" />
           </div><br>
         </Document>
 
@@ -201,7 +201,7 @@
             以下のスタイルの適用方法を見て下さい。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-3/media.png" class="powerpoint-image" alt="media" />
+            <img @click="openModal(imagePaths.step11)" :src="imagePaths.step11" class="powerpoint-image" alt="media" />
           </div><br>
           <p>
             <HighlightWord word="レスポンシブデザイン"></HighlightWord><br>
@@ -221,7 +221,7 @@
             メディアクエリとしてではなく要素に指定するとこれ以上は小さくならないように制限をかけることができます。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-3/breakpoint.png" class="powerpoint-image" alt="breakpoint" />
+            <img @click="openModal(imagePaths.step12)" :src="imagePaths.step12" class="powerpoint-image" alt="breakpoint" />
           </div><br>
           <p>
             このようなメディアクエリの条件を<span class="markup-word-blue">ブレイクポイント</span>といいます。
@@ -235,13 +235,13 @@
             PC版<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-3/sample-pc.png" class="screen-image" alt="sample-pc" />
+            <img @click="openModal(imagePaths.step13)" :src="imagePaths.step13" class="screen-image" alt="sample-pc" />
           </div><br>
           <p>
             スマートフォン版<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-3/sample-sp.png" class="screen-image" alt="sample-sp" style="width: 35%; display: block; margin: 0 auto;" />
+            <img @click="openModal(imagePaths.step14)" :src="imagePaths.step14" class="screen-image" alt="sample-sp" style="width: 35%; display: block; margin: 0 auto;" />
           </div><br>
           <p>
             ①<br>
@@ -279,12 +279,13 @@
             htmlの構造やCSSの当て方を見て復習しましょう!<br><br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-3/vscode-1.png" class="screen-image" alt="vscode-4" />
+            <img @click="openModal(imagePaths.step22)" :src="imagePaths.step22" class="screen-image" alt="vscode-4" />
           </div><br>
           <Terminal :fileName="htmlSourceData.file17.filename" :copiedText="htmlSourceData.file17.code" :lang="htmlSourceData.file17.language" />
           <Terminal :fileName="htmlSourceData.file18.filename" :copiedText="htmlSourceData.file18.code" :lang="htmlSourceData.file18.language" />
           <br>
         </Document>
+        <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
       </div>
       <div class="side-content">
         <TableOfContents :sections="sections" />
@@ -295,6 +296,7 @@
 </template>
 
 <script>
+import { ref, onMounted } from 'vue';
 import Header from "@/components/layout/Header.vue";
 import Footer from "@/components/layout/Footer.vue";
 import Title from "@/components/Title.vue";
@@ -305,10 +307,10 @@ import Document from "@/components/Document.vue";
 import Terminal from "@/components/Terminal.vue";
 import TableOfContents from "@/components/TableOfContents.vue";
 import { htmlSourceData } from "@/data/htmlSourceData.js";
-
+import Modal from "@/components/common/Modal.vue";
 
 export default {
-  name: "HtmlPage2",
+  name: "HtmlPage3",
   components: {
     Header,
     Footer,
@@ -319,32 +321,75 @@ export default {
     Document,
     Terminal,
     TableOfContents,
+    Modal,
   },
-  data() {
-    return {
-      htmlSourceData: htmlSourceData,
-      sections: [
-        { id: "Title", title: "HTML・CSS 3" },
-        { id: "subTitle1", title: "  1. 全体のレイアウトを知る" },
-        { id: "sectionTitle1-1", title: "    1-1. Webサイトの構成" },
-        { id: "sectionTitle1-2", title: "    1-2. 要素とプロパティ①" },
-        { id: "subTitle2", title: "  2. 2. 要素の配置を学ぶ" },
-        { id: "sectionTitle2-1", title: "    2-1. 要素とプロパティ②" },
-        { id: "sectionTitle2-2", title: "    2-2. Flexboxについて知る" },
-        { id: "sectionTitle2-3", title: "    2-3. 要素とプロパティ③" },
-        { id: "subTitle3", title: "  3. デバイスごとのスタイルを作る" },
-        { id: "sectionTitle3-1", title: "    3-1. デバイスごとのスタイル設定" },
-        { id: "sectionTitle3-2", title: "    3-2. 要素とプロパティ④" },
-        { id: "sectionTitle3-3", title: "    3-3. Webサイトを実際に作って見る" },
-      ],
+  setup() {
+    const sections = [
+      { id: "Title", title: "HTML・CSS 3" },
+      { id: "subTitle1", title: "  1. 全体のレイアウトを知る" },
+      { id: "sectionTitle1-1", title: "    1-1. Webサイトの構成" },
+      { id: "sectionTitle1-2", title: "    1-2. 要素とプロパティ①" },
+      { id: "subTitle2", title: "  2. 要素の配置を学ぶ" },
+      { id: "sectionTitle2-1", title: "    2-1. 要素とプロパティ②" },
+      { id: "sectionTitle2-2", title: "    2-2. Flexboxについて知る" },
+      { id: "sectionTitle2-3", title: "    2-3. 要素とプロパティ③" },
+      { id: "subTitle3", title: "  3. デバイスごとのスタイルを作る" },
+      { id: "sectionTitle3-1", title: "    3-1. デバイスごとのスタイル設定" },
+      { id: "sectionTitle3-2", title: "    3-2. 要素とプロパティ④" },
+      { id: "sectionTitle3-3", title: "    3-3. Webサイトを実際に作って見る" },
+    ];
+
+    onMounted(() => {
+      // 画面表示時に一番上にスクロールする
+      window.scrollTo(0, 0);
+    });
+
+    const imagePaths = {
+      step1: require("../../../assets/images/course/html-css-3/site.png"),
+      step2: require("../../../assets/images/course/html-css-3/relative.png"),
+      step3: require("../../../assets/images/course/html-css-3/absolute.png"),
+      step4: require("../../../assets/images/course/html-css-3/flex.png"),
+      step5: require("../../../assets/images/course/html-css-3/flexbox.png"),
+      step6: require("../../../assets/images/course/html-css-3/justify-1.png"),
+      step7: require("../../../assets/images/course/html-css-3/justify-2.png"),
+      step8: require("../../../assets/images/course/html-css-3/align-1.png"),
+      step9: require("../../../assets/images/course/html-css-3/direction-1.png"),
+      step10: require("../../../assets/images/course/html-css-3/wrap-1.png"),
+      step11: require("../../../assets/images/course/html-css-3/media.png"),
+      step12: require("../../../assets/images/course/html-css-3/breakpoint.png"),
+      step13: require("../../../assets/images/course/html-css-3/sample-pc.png"),
+      step14: require("../../../assets/images/course/html-css-3/sample-sp.png"),
+      step15: require("../../../assets/images/course/sample-site/bag.png"),
+      step16: require("../../../assets/images/course/sample-site/book.png"),
+      step17: require("../../../assets/images/course/sample-site/logo.png"),
+      step18: require("../../../assets/images/course/sample-site/movie.png"),
+      step19: require("../../../assets/images/course/sample-site/note.png"),
+      step20: require("../../../assets/images/course/sample-site/pen.png"),
+      step21: require("../../../assets/images/course/sample-site/phone.png"),
+      step22: require("../../../assets/images/course/html-css-3/vscode-1.png"),
     };
-  },
-  mounted() {
-    // 画面表示時に一番上にスクロールする
-    window.scrollTo(0, 0);
+
+    // モーダル関連のデータ
+    const isModalOpen = ref(false);
+    const selectedImage = ref();
+
+    const openModal = (imagePath) => {
+      isModalOpen.value = true;
+      selectedImage.value = imagePath;
+    };
+
+    return {
+      htmlSourceData,
+      sections,
+      imagePaths,
+      selectedImage,
+      isModalOpen,
+      openModal,
+    };
   },
 };
 </script>
+
 
 <style scoped>
 .container {
@@ -374,6 +419,7 @@ export default {
   max-width: 100%;
   height: auto;
   border: 1px solid rgb(175, 175, 175);
+  cursor: pointer;
 }
 .powerpoint-image {
   max-width: 80%;
@@ -381,6 +427,7 @@ export default {
   display: block;
   margin: 0 auto;
   border: 1px solid rgb(175, 175, 175);
+  cursor: pointer;
 }
 
 .download-button {

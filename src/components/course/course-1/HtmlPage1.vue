@@ -29,7 +29,7 @@
             そして2014年10月28日から現在までHTML5が使われ最新のHTMLのバージョンになります。
           </p><br>
           <div>
-            <img src="../../../assets/images/menu/html.png" class="html-image" alt="html-logo" />
+            <img @click="openModal(imagePaths.step1)" :src="imagePaths.step1" alt="html-logo" class="html-image" />
           </div>
           <HighlightWord word="CSS(Cascading Style Sheets)"></HighlightWord>
           <p>
@@ -38,7 +38,7 @@
             そこから2011年から現在まで使われているCSS3が最新のCSS3のバージョンです。
           </p>
           <div>
-            <img src="../../../assets/images/menu/css.png" class="css-image" alt="css-logo" />
+            <img @click="openModal(imagePaths.step2)" :src="imagePaths.step2" alt="css-logo" class="css-image" />
           </div>
         </Document>
 
@@ -60,7 +60,7 @@
             その工程が終わればお客様にお渡し(<span class="markup-word-blue">リリース</span>)をするのが基本的な流れになります。
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-1/prog-1.png" class="powerpoint-image" alt="prog-1" />
+            <img @click="openModal(imagePaths.step3)" :src="imagePaths.step3" alt="prog-1" class="powerpoint-image"/>
           </div>
         </Document>
 
@@ -79,7 +79,7 @@
           </p>
           <p>また、開始タグと終了タグの中身を<span class="markup-word-blue">要素内容</span>と呼ばれます。</p>
           <div>
-            <img src="../../../assets/images/course/html-css-1/html-1.png" class="powerpoint-image" alt="html-1" />
+            <img @click="openModal(imagePaths.step4)" :src="imagePaths.step4" alt="html-1" class="powerpoint-image" />
           </div>
         </Document>
         <Document>
@@ -90,7 +90,7 @@
             その次にそのカッコの中で記述してある左側部分を<span class="markup-word-blue">プロパティ</span>、右側を<span class="markup-word-blue">値</span>と呼びます。
           </p>
           <div>
-            <img src="../../../assets/images/course/html-css-1/css-1.png" class="powerpoint-image" alt="css-1" />
+            <img @click="openModal(imagePaths.step5)" :src="imagePaths.step5" alt="css-1" class="powerpoint-image" />
           </div>
         </Document>
         <Document>
@@ -108,7 +108,7 @@
             文章や細かい補足などにはpを使うようにしましょう。
           </p>
           <div>
-            <img src="../../../assets/images/course/html-css-1/tag-1.png" class="powerpoint-image" alt="tag-1" />
+            <img @click="openModal(imagePaths.step6)" :src="imagePaths.step6" alt="tag-1" class="powerpoint-image" />
           </div><br><br>
           <p>
             さっそくテキストエディタに書いて練習してみましょう!<br><br>
@@ -117,7 +117,7 @@
             開いたら以下のような画面になります。(Windows版ですが環境構築までは表示をMac版と対応させているのでボタンの位置や表記が若干違いますがここからはほとんど一緒なので読み替えて考えてください。)
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-1/vscode-1.png" class="screen-image" alt="vscode-1" />
+            <img @click="openModal(imagePaths.step7)" :src="imagePaths.step7" alt="vscode-1" class="screen-image" />
           </div><br>
           <p>
             ②<br>
@@ -127,7 +127,7 @@
             名前は「カリキュラム練習用」などでOKです。フォルダが作成出来たらそれを選択した状態で「フォルダの選択」を押してください。
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-1/vscode-2.png" class="screen-image" alt="vscode-2" />
+            <img @click="openModal(imagePaths.step8)" :src="imagePaths.step8" alt="vscode-2" class="screen-image" />
           </div><br>
           <p>
             ③<br>
@@ -135,7 +135,7 @@
             このファイルの中で作業できるようになりました。
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-1/vscode-3.png" class="screen-image" alt="vscode-3" />
+            <img @click="openModal(imagePaths.step9)" :src="imagePaths.step9" alt="vscode-3" class="screen-image" />
           </div><br>
           <p>
             ④<br>
@@ -144,7 +144,7 @@
             名前は画像のようにして新しいフォルダを作成してください。
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-1/vscode-4.png" class="screen-image" alt="vscode-4" />
+            <img @click="openModal(imagePaths.step10)" :src="imagePaths.step10" alt="vscode-4" class="screen-image" />
           </div><br>
           <p>
             ⑤<br>
@@ -152,7 +152,7 @@
             フォルダの左の矢印「>」が下向きになっているか確認してください。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-1/vscode-5.png" class="screen-image" alt="vscode-5" />
+            <img @click="openModal(imagePaths.step11)" :src="imagePaths.step11" alt="vscode-5" class="screen-image" />
           </div><br>
           <p>
             ⑥<br>
@@ -160,7 +160,7 @@
             名前は画像のようにして新しいファイルを2つ作成してください。
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-1/vscode-6.png" class="screen-image" alt="vscode-6" />
+            <img @click="openModal(imagePaths.step12)" :src="imagePaths.step12" alt="vscode-6" class="screen-image" />
           </div><br>
           <p>
             ⑦<br>
@@ -168,7 +168,7 @@
             左のファイルをドラッグし、右の大きい画面のタイトル部分に引っ張ると画面を分けることができます。
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-1/vscode-7.png" class="screen-image" alt="vscode-7" />
+            <img @click="openModal(imagePaths.step13)" :src="imagePaths.step13" alt="vscode-7" class="screen-image" />
           </div><br>
           <p>
             ⑧<br>
@@ -180,14 +180,14 @@
             以下のようになればOKです。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-1/vscode-8.png" class="screen-image" alt="vscode-8" />
+            <img @click="openModal(imagePaths.step14)" :src="imagePaths.step14" alt="vscode-8" class="screen-image" />
           </div><br>
           <p>
             ⑨<br>
             そしたら11行目に画像の記述を追加しましょう。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-1/vscode-9.png" class="screen-image" alt="vscode-9" />
+            <img @click="openModal(imagePaths.step15)" :src="imagePaths.step15" alt="vscode-9" class="screen-image"/>
           </div><br>
           <p>
             ⑩<br>
@@ -195,7 +195,7 @@
             すると白丸が消えるので保存が完了しました。
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-1/vscode-10.png" class="screen-image" alt="vscode-10" />
+            <img @click="openModal(imagePaths.step16)" :src="imagePaths.step16" alt="vscode-10" class="screen-image" />
           </div><br>
           <p>
             ⑪<br>
@@ -204,21 +204,21 @@
             このようなタブが開かれるので「エクスプローラーで開く」を押しましょう。
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-1/vscode-11.png" class="screen-image" alt="vscode-11" />
+            <img @click="openModal(imagePaths.step17)" :src="imagePaths.step17" alt="vscode-11" class="screen-image" />
           </div><br>
           <p>
             ⑫<br>
             Windowsならエクスプローラー、MacならFinderが開かれるのでそこにある「index.html」をダブルクリックしましょう。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-1/folder-1.png" class="screen-image" alt="folder-1" />
+            <img @click="openModal(imagePaths.step18)" :src="imagePaths.step18" alt="folder-1" class="screen-image" />
           </div><br>
           <p>
             ⑫<br>
             ブラウザ上の表示がこのようになればOKです。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-1/web-1.png" class="screen-image" alt="web-1" />
+            <img @click="openModal(imagePaths.step19)" :src="imagePaths.step19" alt="web-1" class="screen-image" />
           </div><br>
         </Document>
         <Document>
@@ -238,14 +238,14 @@
             テキストエディタの「style.css」に以下を入力しましょう<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-1/vscode-12.png" class="screen-image" alt="vscode-12" />
+            <img @click="openModal(imagePaths.step20)" :src="imagePaths.step20" alt="vscode-12" class="screen-image" />
           </div>
           <p>
             ②<br>
             ブラウザを更新してこのようなスタイルになればOKです。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-1/web-2.png" class="screen-image" alt="web-2" />
+            <img @click="openModal(imagePaths.step21)" :src="imagePaths.step21" alt="web-2" class="screen-image" />
           </div><br>
         </Document>
         <Document>
@@ -268,7 +268,7 @@
             以下の画像はイメージです。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-1/tag-2.png" class="powerpoint-image" alt="tag-2" />
+            <img @click="openModal(imagePaths.step22)" :src="imagePaths.step22" alt="tag-2" class="powerpoint-image" />
           </div><br><br>
           <p>
             それではaタグで画面遷移と画像を使って表示させてみましょう。<br>
@@ -276,7 +276,7 @@
             ・以下の画像を右クリックでダウンロードして下さい。
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-1/cat.jpg" class="screen-image" alt="cat" />
+            <img @click="openModal(imagePaths.step23)" :src="imagePaths.step23" alt="cat" class="screen-image" />
           </div><br>
           <p>
             ②<br>
@@ -284,28 +284,28 @@
             正しく作られたらこのような表示になります。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-1/vscode-13.png" class="screen-image" alt="vscode-13" />
+            <img @click="openModal(imagePaths.step24)" :src="imagePaths.step24" alt="vscode-13" class="screen-image" />
           </div><br>
           <p>
             ③<br>
             フォルダを作ったら先ほど保存した画像をimagesフォルダにドラッグアンドドロップで保存しましょう。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-1/vscode-14.png" class="screen-image" alt="vscode-14" />
+            <img @click="openModal(imagePaths.step25)" :src="imagePaths.step25" alt="vscode-14" class="screen-image" />
           </div><br>
           <p>
             ④<br>
             次に「index.html」に以下の画像のように要素を追記しましょう。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-1/vscode-15.png" class="screen-image" alt="vscode-15" />
+            <img @click="openModal(imagePaths.step26)" :src="imagePaths.step26" alt="vscode-15" class="screen-image" />
           </div><br>
           <p>
             ⑤<br>
             ブラウザを確認すると、リンクと画像が表示されます。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-1/web-3.png" class="screen-image" alt="web-3" />
+            <img @click="openModal(imagePaths.step27)" :src="imagePaths.step27" alt="web-3" class="screen-image" />
           </div><br>
         </Document>
 
@@ -325,7 +325,7 @@
             箱の中に箱が入る様なイメージです<br><br>
           </p>
           <div>
-            <img src="../../../assets/images/course/html-css-1/box.jpg" class="screen-image" alt="tag-2" />
+            <img @click="openModal(imagePaths.step28)" :src="imagePaths.step28" alt="tag-2" class="screen-image" />
           </div><br><br>
         </Document>
         <Document>
@@ -356,14 +356,14 @@
             「html-css-lesson-2」フォルダを作り、「index.html」と「style.css」フォルダをlesson-1の時の様に作りましょう!<br>
           </p>
           <div>
-            <img src="../../../assets/images/course/html-css-1/vscode-16.png" class="screen-image" alt="vscode-16" />
+            <img @click="openModal(imagePaths.step29)" :src="imagePaths.step29" alt="vscode-16" class="screen-image" />
           </div><br>
           <p>
             ③<br>
             以下の画像の様にhtmlファイルとcssファイルを編集しましょう。
           </p>
           <div>
-            <img src="../../../assets/images/course/html-css-1/vscode-17.png" class="screen-image" alt="vscode-17" />
+            <img @click="openModal(imagePaths.step30)" :src="imagePaths.step30" alt="vscode-17" class="screen-image" />
           </div><br>
           <p>
             ④<br>
@@ -372,13 +372,13 @@
             ブラウザを確認すると、divタグで作った要素が表示されれば完了です。<br><br>
           </p>
           <div>
-            <img src="../../../assets/images/course/html-css-1/web-4.png" class="screen-image" alt="web-4" />
+            <img @click="openModal(imagePaths.step31)" :src="imagePaths.step31" alt="web-4" class="screen-image" />
           </div><br>
           <p>
             では次に以下の画像を見てください。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-1/tag-3.png" class="powerpoint-image" alt="tag-3" />
+            <img @click="openModal(imagePaths.step32)" :src="imagePaths.step32" alt="tag-3" class="powerpoint-image" />
           </div><br><br>
           <p>
             このようにまずは大きい赤い枠で囲み、中で画像を同じ大きさで並べています。<br>
@@ -388,14 +388,14 @@
             以下の画像の様に先ほどのhtmlファイルとcssファイルに追記しましょう。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-1/vscode-18.png" class="screen-image" alt="vscode-15" />
+            <img @click="openModal(imagePaths.step33)" :src="imagePaths.step33" alt="vscode-15" class="screen-image" />
           </div><br>
           <p>
             ②<br>
             編集ができたらWeb上で確認しましょう。画像と同じようにできていたらOKです。
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-1/web-5.png" class="screen-image" alt="web-5" />
+            <img @click="openModal(imagePaths.step34)" :src="imagePaths.step34" alt="web-5" class="screen-image" />
           </div><br>
         </Document>
         <Document>
@@ -405,7 +405,7 @@
             以下の画像を見て下さい。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-1/tag-4.png" class="powerpoint-image" alt="tag-4" />
+            <img @click="openModal(imagePaths.step35)" :src="imagePaths.step35" alt="tag-4" class="powerpoint-image"/>
           </div><br><br>
           <p>
             先ほどの画像が6枚並んでいる場面や他のページに遷移するメニューのように、共通要素はdivタグではなくリストと呼ばれる要素で親子関係を作ることがおすすめです。<br>
@@ -421,21 +421,21 @@
             「html-css-lesson-3」フォルダを作り、「index.html」と「style.css」フォルダをlesson-1の時の様に作りましょう!<br>
           </p>
           <div>
-            <img src="../../../assets/images/course/html-css-1/vscode-19.png" class="screen-image" alt="vscode-19" />
+            <img @click="openModal(imagePaths.step36)" :src="imagePaths.step36" alt="vscode-19" class="screen-image" />
           </div><br>
           <p>
             ②<br>
             以下の画像の様にhtmlファイルとcssファイルを編集しましょう。
           </p>
           <div>
-            <img src="../../../assets/images/course/html-css-1/vscode-20.png" class="screen-image" alt="vscode-20" />
+            <img @click="openModal(imagePaths.step37)" :src="imagePaths.step37" alt="vscode-20" class="screen-image" />
           </div><br>
           <p>
             ③<br>
             編集ができたらWeb上で確認しましょう。画像と同じようにできていたらOKです。
           </p>
           <div>
-            <img src="../../../assets/images/course/html-css-1/web-6.png" class="screen-image" alt="web-6" />
+            <img @click="openModal(imagePaths.step38)" :src="imagePaths.step38" alt="web-6" class="screen-image" />
           </div><br>
           <p>
             ここで属性も一つ覚えておきましょう。<br>
@@ -447,7 +447,7 @@
             以下を追記しましょう。
             </p>
             <div>
-              <img src="../../../assets/images/course/html-css-1/vscode-21.png" class="screen-image" alt="vscode-20" />
+              <img @click="openModal(imagePaths.step39)" :src="imagePaths.step39" alt="vscode-20" class="screen-image" />
             </div><br>
             <p>
             ①<br>
@@ -460,7 +460,7 @@
             この様に一つだけ特別な意味を持たせたりするスタイルを適用するときに使ったりしますが使用頻度はclassより使う機会が少ないという事を覚えておきましょう。<br>
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-1/web-7.png" class="screen-image" alt="web-7" />
+            <img @click="openModal(imagePaths.step40)" :src="imagePaths.step40" alt="web-7" class="screen-image" />
           </div><br>
         </Document>
 
@@ -474,7 +474,7 @@
             以下の画像を見て下さい。
           </p><br>
           <div>
-            <img src="../../../assets/images/course/html-css-1/tag-5.png" class="powerpoint-image" alt="tag-5" />
+            <img @click="openModal(imagePaths.step41)" :src="imagePaths.step41" alt="tag-5" class="powerpoint-image"/>
           </div><br><br>
           <p>
             このようにHTMLで画面に表示する前に設定しないといけない事がたくさんあります。<br>
@@ -519,13 +519,13 @@
             <HighlightWord word="*/ 入れたいコメント */"></HighlightWord><br><br>
           </p>
           <div>
-            <img src="../../../assets/images/course/html-css-1/tag-6.png" class="powerpoint-image" alt="tag-6" />
+            <img @click="openModal(imagePaths.step42)" :src="imagePaths.step42" alt="tag-6" class="powerpoint-image" />
           </div><br><br>
           <div>
-            <img src="../../../assets/images/course/html-css-1/tag-7.png" class="powerpoint-image" alt="tag-7" />
+            <img @click="openModal(imagePaths.step43)" :src="imagePaths.step43" alt="tag-7" class="powerpoint-image" />
           </div><br><br>
         </Document>
-
+        <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
       </div>
       <div class="side-content">
         <TableOfContents :sections="sections" />
@@ -536,6 +536,7 @@
 </template>
 
 <script>
+import { ref, onMounted } from 'vue';
 import Header from "@/components/layout/Header.vue";
 import Footer from "@/components/layout/Footer.vue";
 import Title from "@/components/Title.vue";
@@ -546,7 +547,7 @@ import Document from "@/components/Document.vue";
 import Terminal from "@/components/Terminal.vue";
 import TableOfContents from "@/components/TableOfContents.vue";
 import { htmlSourceData } from "@/data/htmlSourceData.js";
-
+import Modal from "@/components/common/Modal.vue";
 
 export default {
   name: "HtmlPage1",
@@ -560,36 +561,100 @@ export default {
     Document,
     Terminal,
     TableOfContents,
+    Modal,
   },
-  data() {
-    return {
-      htmlSourceData: htmlSourceData,
-      sections: [
-        { id: "Title", title: "HTML・CSS 1" },
-        { id: "subTitle1", title: "  1. HTMLとCSSについて知る" },
-        { id: "subTitle2", title: "  2. プログラミングとコーディング" },
-        { id: "subTitle3", title: "  3. HTMLとCSSの仕組み" },
-        { id: "sectionTitle3-1", title: "    3-1. HTMLの名称" },
-        { id: "sectionTitle3-2", title: "    3-2. CSSの名称" },
-        { id: "sectionTitle3-3", title: "    3-3. 要素とプロパティ①" },
-        { id: "sectionTitle3-4", title: "    3-4. 要素とプロパティ②" },
-        { id: "sectionTitle3-5", title: "    3-5. 要素とプロパティ③" },
-        { id: "subTitle4", title: "  4. HTMLとCSSの関係性" },
-        { id: "sectionTitle4-1", title: "    4-1. HTMLの親子関係" },
-        { id: "sectionTitle4-2", title: "    4-2. 要素とプロパティ④" },
-        { id: "sectionTitle4-3", title: "    4-3. 要素とプロパティ⑤" },
-        { id: "subTitle5", title: "  5. HTMLとCSSを深堀りする" },
-        { id: "sectionTitle5-1", title: "    5-1. HTMLの全体構造" },
-        { id: "sectionTitle5-2", title: "    5-2. HTMLとCSSのコメント" },
-      ],
+  setup() {
+    const sections = [
+      { id: "Title", title: "HTML・CSS 1" },
+      { id: "subTitle1", title: "  1. HTMLとCSSについて知る" },
+      { id: "subTitle2", title: "  2. プログラミングとコーディング" },
+      { id: "subTitle3", title: "  3. HTMLとCSSの仕組み" },
+      { id: "sectionTitle3-1", title: "    3-1. HTMLの名称" },
+      { id: "sectionTitle3-2", title: "    3-2. CSSの名称" },
+      { id: "sectionTitle3-3", title: "    3-3. 要素とプロパティ①" },
+      { id: "sectionTitle3-4", title: "    3-4. 要素とプロパティ②" },
+      { id: "sectionTitle3-5", title: "    3-5. 要素とプロパティ③" },
+      { id: "subTitle4", title: "  4. HTMLとCSSの関係性" },
+      { id: "sectionTitle4-1", title: "    4-1. HTMLの親子関係" },
+      { id: "sectionTitle4-2", title: "    4-2. 要素とプロパティ④" },
+      { id: "sectionTitle4-3", title: "    4-3. 要素とプロパティ⑤" },
+      { id: "subTitle5", title: "  5. HTMLとCSSを深堀りする" },
+      { id: "sectionTitle5-1", title: "    5-1. HTMLの全体構造" },
+      { id: "sectionTitle5-2", title: "    5-2. HTMLとCSSのコメント" },
+    ];
+
+    onMounted(() => {
+      window.scrollTo(0, 0);
+    });
+
+    const imagePaths = {
+      step1: require("../../../assets/images/menu/html.png"),
+      step2: require("../../../assets/images/menu/css.png"),
+      step3: require("../../../assets/images/course/html-css-1/prog-1.png"),
+      step4: require("../../../assets/images/course/html-css-1/html-1.png"),
+      step5: require("../../../assets/images/course/html-css-1/css-1.png"),
+      step6: require("../../../assets/images/course/html-css-1/tag-1.png"),
+      step7: require("../../../assets/images/course/html-css-1/vscode-1.png"),
+      step8: require("../../../assets/images/course/html-css-1/vscode-2.png"),
+      step9: require("../../../assets/images/course/html-css-1/vscode-3.png"),
+      step10: require("../../../assets/images/course/html-css-1/vscode-4.png"),
+      step11: require("../../../assets/images/course/html-css-1/vscode-5.png"),
+      step12: require("../../../assets/images/course/html-css-1/vscode-6.png"),
+      step13: require("../../../assets/images/course/html-css-1/vscode-7.png"),
+      step14: require("../../../assets/images/course/html-css-1/vscode-8.png"),
+      step15: require("../../../assets/images/course/html-css-1/vscode-9.png"),
+      step16: require("../../../assets/images/course/html-css-1/vscode-10.png"),
+      step17: require("../../../assets/images/course/html-css-1/vscode-11.png"),
+      step18: require("../../../assets/images/course/html-css-1/folder-1.png"),
+      step19: require("../../../assets/images/course/html-css-1/web-1.png"),
+      step20: require("../../../assets/images/course/html-css-1/vscode-12.png"),
+      step21: require("../../../assets/images/course/html-css-1/web-2.png"),
+      step22: require("../../../assets/images/course/html-css-1/tag-2.png"),
+      step23: require("../../../assets/images/course/html-css-1/cat.jpg"),
+      step24: require("../../../assets/images/course/html-css-1/vscode-13.png"),
+      step25: require("../../../assets/images/course/html-css-1/vscode-14.png"),
+      step26: require("../../../assets/images/course/html-css-1/vscode-15.png"),
+      step27: require("../../../assets/images/course/html-css-1/web-3.png"),
+      step28: require("../../../assets/images/course/html-css-1/box.jpg"),
+      step29: require("../../../assets/images/course/html-css-1/vscode-16.png"),
+      step30: require("../../../assets/images/course/html-css-1/vscode-17.png"),
+      step31: require("../../../assets/images/course/html-css-1/web-4.png"),
+      step32: require("../../../assets/images/course/html-css-1/tag-3.png"),
+      step33: require("../../../assets/images/course/html-css-1/vscode-18.png"),
+      step34: require("../../../assets/images/course/html-css-1/web-5.png"),
+      step35: require("../../../assets/images/course/html-css-1/tag-4.png"),
+      step36: require("../../../assets/images/course/html-css-1/vscode-19.png"),
+      step37: require("../../../assets/images/course/html-css-1/vscode-20.png"),
+      step38: require("../../../assets/images/course/html-css-1/web-6.png"),
+      step39: require("../../../assets/images/course/html-css-1/vscode-21.png"),
+      step40: require("../../../assets/images/course/html-css-1/web-7.png"),
+      step41: require("../../../assets/images/course/html-css-1/tag-5.png"),
+      step42: require("../../../assets/images/course/html-css-1/tag-6.png"),
+      step43: require("../../../assets/images/course/html-css-1/tag-7.png"),
     };
-  },
-  mounted() {
-    // 画面表示時に一番上にスクロールする
-    window.scrollTo(0, 0);
+
+
+    // モーダル関連のデータ
+    const isModalOpen = ref(false);
+    const selectedImage = ref();
+
+    const openModal = (imagePath) => {
+      isModalOpen.value = true;
+      selectedImage.value = imagePath;
+    };
+
+    return {
+      htmlSourceData,
+      sections,
+      imagePaths,
+      selectedImage,
+      isModalOpen,
+      openModal,
+    };
   },
 };
 </script>
+
 
 <style scoped>
 .container {
@@ -620,18 +685,21 @@ export default {
   margin: 0 auto;
   max-width: 20%;
   height: auto;
+  cursor: pointer;
 }
 .css-image {
   display: block;
   margin: 0 auto;
   max-width: 20%;
   height: auto;
+  cursor: pointer;
 }
 
 .screen-image {
   max-width: 100%;
   height: auto;
   border: 1px solid rgb(175, 175, 175);
+  cursor: pointer;
 }
 .powerpoint-image {
   max-width: 80%;
@@ -639,6 +707,7 @@ export default {
   display: block;
   margin: 0 auto;
   border: 1px solid rgb(175, 175, 175);
+  cursor: pointer;
 }
 
 /* タブレット版 */

@@ -41,7 +41,7 @@
             クリックしたら以下の表にある名前を検索窓で検索しインストールしましょう!
           </p>
           <div>
-            <img src="../../assets/images/environment/vscode-win-1.png" alt="手順①" class="screen-image" />
+            <img @click="openModal(imagePaths.win.step1)" :src="imagePaths.win.step1" alt="手順①" class="screen-image" />
           </div>
           <br>
           <table class="table">
@@ -83,13 +83,13 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/environment/vscode-win-2.png" alt="手順②" class="screen-image" />
+            <img @click="openModal(imagePaths.win.step2)" :src="imagePaths.win.step2" alt="手順②" class="screen-image" />
           </div>
           <br>
           ③<br>
           <p>ショートカットキーを押した後は画像部分をクリックしましょう。</p>
           <div>
-            <img src="../../assets/images/environment/vscode-win-mac-1.png" alt="手順③" class="screen-image" />
+            <img @click="openModal(imagePaths.win.step3)" :src="imagePaths.win.step3" alt="手順③" class="screen-image" />
           </div>
           <br>
           ④<br>
@@ -99,7 +99,7 @@
           <p>このようになればOKです。</p>
           <br>
           <div>
-            <img src="../../assets/images/environment/vscode-win-mac-2.png" alt="手順④" class="screen-image" />
+            <img @click="openModal(imagePaths.win.step4)" :src="imagePaths.win.step4" alt="手順④" class="screen-image" />
           </div>
           <br>
           <Terminal :fileName="environmentData.file1.filename" :copiedText="environmentData.file1.code" :lang="environmentData.file1.language" />
@@ -128,7 +128,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/environment/SourceTree-win-1.png" alt="手順①" class="screen-image" />
+            <img @click="openModal(imagePaths.win.step5)" :src="imagePaths.win.step5" alt="手順①" class="screen-image" />
           </div>
           <br>
           <p>
@@ -137,7 +137,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/environment/SourceTree-win-2.png" alt="手順②" class="screen-image" />
+            <img @click="openModal(imagePaths.win.step6)" :src="imagePaths.win.step6" alt="手順②" class="screen-image" />
           </div>
           <br>
           <p>
@@ -146,7 +146,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/environment/SourceTree-win-3.png" alt="手順③" class="screen-image" />
+            <img @click="openModal(imagePaths.win.step7)" :src="imagePaths.win.step7" alt="手順③" class="screen-image" />
           </div>
           <br>
           <p>
@@ -155,7 +155,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/environment/SourceTree-win-4.png" alt="手順④" class="screen-image" />
+            <img @click="openModal(imagePaths.win.step8)" :src="imagePaths.win.step8" alt="手順④" class="screen-image" />
           </div>
           <br>
           <p>
@@ -165,7 +165,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/environment/SourceTree-win-5.png" alt="手順⑤" class="screen-image" />
+            <img @click="openModal(imagePaths.win.step9)" :src="imagePaths.win.step9" alt="手順⑤" class="screen-image" />
           </div>
           <br>
         </Document>
@@ -207,7 +207,7 @@
             クリックしたら以下の表にある名前を検索窓で検索しインストールしましょう!
           </p>
           <div>
-            <img src="../../assets/images/environment/vscode-mac-1.png" alt="手順①" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step1)" :src="imagePaths.mac.step1" alt="手順①" class="screen-image" />
           </div>
           <br>
           <table class="table">
@@ -249,13 +249,13 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/environment/vscode-mac-2.png" alt="手順②" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step2)" :src="imagePaths.mac.step2" alt="手順②" class="screen-image" />
           </div>
           <br>
           ③<br>
           <p>ショートカットキーを押した後は画像部分をクリックしましょう。</p>
           <div>
-            <img src="../../assets/images/environment/vscode-win-mac-1.png" alt="手順③" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step3)" :src="imagePaths.mac.step3" alt="手順③" class="screen-image" />
           </div>
           <br>
           ④<br>
@@ -265,7 +265,7 @@
           <p>このようになればOKです。</p>
           <br>
           <div>
-            <img src="../../assets/images/environment/vscode-win-mac-2.png" alt="手順④" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step4)" :src="imagePaths.mac.step4" alt="手順④" class="screen-image" />
           </div>
           <br>
         </Document>
@@ -293,7 +293,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/environment/SourceTree-mac-1.png" alt="手順①" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step5)" :src="imagePaths.mac.step5" alt="手順①" class="screen-image" />
           </div>
           <br>
           <p>
@@ -302,7 +302,7 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/environment/SourceTree-mac-2.png" alt="手順②" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step6)" :src="imagePaths.mac.step6" alt="手順②" class="screen-image" />
           </div>
           <br>
           <p>
@@ -311,11 +311,12 @@
           </p>
           <br>
           <div>
-            <img src="../../assets/images/environment/SourceTree-mac-3.png" alt="手順③" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step7)" :src="imagePaths.mac.step7" alt="手順③" class="screen-image" />
           </div>
           <br>
         </Document>
       </div>
+      <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
       <div class="side-content" v-show="isWindows && !isSmallScreen">
         <TableOfContents :sections="windowsSections" />
       </div>
@@ -328,6 +329,7 @@
 </template>
 
 <script>
+import { ref, computed, onMounted } from 'vue';
 import Header from "@/components/layout/Header.vue";
 import Footer from "@/components/layout/Footer.vue";
 import Title from "@/components/Title.vue";
@@ -339,6 +341,7 @@ import Terminal from "@/components/Terminal.vue";
 import TableOfContents from "@/components/TableOfContents.vue";
 import { environmentData } from "@/data/environmentData.js";
 import Spinner from "@/components/Spinner.vue";
+import Modal from "@/components/common/Modal.vue";
 
 export default {
   name: "Environment",
@@ -353,66 +356,92 @@ export default {
     Terminal,
     TableOfContents,
     Spinner,
+    Modal,
   },
-  data() {
-    return {
-      isWindows: true,
-      isSmallScreen: false,
-      isLoading: false,
-      environmentData: environmentData,
-      windowsSections: [
-        { id: "Title-w", title: "インストールや環境構築をしよう！(Windows版)" },
-        { id: "subTitle1-w", title: "  1. カリキュラムに必要なツールをインストールする" },
-        { id: "sectionTitle1-w", title: "    1-1. ブラウザをインストールしよう!" },
-        { id: "sectionTitle2-w", title: "    1-2. テキストエディタをインストールしよう!" },
-        { id: "sectionTitle3-w", title: "    1-3. Visual Studio Codeの拡張機能をインストールしよう!" },
-        { id: "sectionTitle4-w", title: "    1-4. Sourcetreeの拡張機能をインストールしよう!" },
-      ],
-      macSections: [
-        { id: "Title-m", title: "インストールや環境構築をしよう！(Mac版)" },
-        { id: "subTitle1-m", title: "  1. カリキュラムに必要なツールをインストールする" },
-        { id: "sectionTitle1-m", title: "    1-1. ブラウザをインストールしよう!" },
-        { id: "sectionTitle2-m", title: "    1-2. テキストエディタをインストールしよう!" },
-        { id: "sectionTitle3-m", title: "    1-3. Visual Studio Codeの拡張機能をインストールしよう!" },
-        { id: "sectionTitle4-m", title: "    1-4. Sourcetreeの拡張機能をインストールしよう!" },
-      ],
-    };
-  },
-  mounted() {
-    window.addEventListener("resize", this.handleResize);
-    this.handleResize();
-    // 画面表示時に一番上にスクロールする
-    window.scrollTo(0, 0);
-  },
-  beforeUnmount() {
-    window.removeEventListener("resize", this.handleResize);
-  },
-  methods: {
-    handleResize() {
-      this.isSmallScreen = window.innerWidth <= 648;
-    },
-    buttonFocus() {
-      // ボタンにフォーカスが当たったときにフローティング状態に設定
-      this.isFloating = true;
-    },
-    buttonBlur() {
-      // ボタンからフォーカスが外れたときにフローティング状態を解除
-      this.isFloating = false;
-    },
-    toggleOS() {
-      this.isLoading = true;
-      // 2秒の遅延処理を行う（setTimeoutを使う）
-      setTimeout(() => {
-        // ロジックの完了後、isLoadingをfalseに設定してスピナーを非表示に
-        this.isLoading = false;
+  setup() {
+    const isWindows = ref(true);
+    const isSmallScreen = ref(false);
+    const isLoading = ref(false);
 
-        // 画面のレイアウトを切り替えるロジックをここに追加する
-        this.isWindows = !this.isWindows;
+    const toggleOS = () => {
+      isLoading.value = true;
+      setTimeout(() => {
+        isLoading.value = false;
+        isWindows.value = !isWindows.value;
       }, 1000);
-    },
+    };
+
+    const windowsSections = computed(() => [
+      { id: "Title-w", title: "インストールや環境構築をしよう！(Windows版)" },
+      { id: "subTitle1-w", title: "  1. カリキュラムに必要なツールをインストールする" },
+      { id: "sectionTitle1-w", title: "    1-1. ブラウザをインストールしよう!" },
+      { id: "sectionTitle2-w", title: "    1-2. テキストエディタをインストールしよう!" },
+      { id: "sectionTitle3-w", title: "    1-3. Visual Studio Codeの拡張機能をインストールしよう!" },
+      { id: "sectionTitle4-w", title: "    1-4. Sourcetreeの拡張機能をインストールしよう!" },
+    ]);
+
+    const macSections = computed(() => [
+      { id: "Title-m", title: "インストールや環境構築をしよう！(Mac版)" },
+      { id: "subTitle1-m", title: "  1. カリキュラムに必要なツールをインストールする" },
+      { id: "sectionTitle1-m", title: "    1-1. ブラウザをインストールしよう!" },
+      { id: "sectionTitle2-m", title: "    1-2. テキストエディタをインストールしよう!" },
+      { id: "sectionTitle3-m", title: "    1-3. Visual Studio Codeの拡張機能をインストールしよう!" },
+      { id: "sectionTitle4-m", title: "    1-4. Sourcetreeの拡張機能をインストールしよう!" },
+    ]);
+
+    const imagePaths = {
+      win: {
+        step1: require("../../assets/images/environment/vscode-win-1.png"),
+        step2: require("../../assets/images/environment/vscode-win-2.png"),
+        step3: require("../../assets/images/environment/vscode-win-mac-1.png"),
+        step4: require("../../assets/images/environment/vscode-win-mac-2.png"),
+        step5: require("../../assets/images/environment/SourceTree-win-1.png"),
+        step6: require("../../assets/images/environment/SourceTree-win-2.png"),
+        step7: require("../../assets/images/environment/SourceTree-win-3.png"),
+        step8: require("../../assets/images/environment/SourceTree-win-4.png"),
+        step9: require("../../assets/images/environment/SourceTree-win-5.png"),
+      },
+      mac: {
+        step1: require("../../assets/images/environment/vscode-mac-1.png"),
+        step2: require("../../assets/images/environment/vscode-mac-2.png"),
+        step3: require("../../assets/images/environment/vscode-win-mac-1.png"),
+        step4: require("../../assets/images/environment/vscode-win-mac-2.png"),
+        step5: require("../../assets/images/environment/SourceTree-mac-1.png"),
+        step6: require("../../assets/images/environment/SourceTree-mac-2.png"),
+        step7: require("../../assets/images/environment/SourceTree-mac-3.png"),
+      },
+    };
+
+    // モーダル関連のデータ
+    const isModalOpen = ref(false);
+    const selectedImage = ref();
+
+    const openModal = (imagePath) => {
+      isModalOpen.value = true;
+      selectedImage.value = imagePath;
+    };    
+
+    onMounted(() => {
+      window.scrollTo(0, 0);
+    });
+
+    return {
+      isWindows,
+      isSmallScreen,
+      isLoading,
+      environmentData,
+      windowsSections,
+      macSections,
+      imagePaths,
+      selectedImage,
+      isModalOpen,
+      toggleOS,
+      openModal,
+    };
   },
 };
 </script>
+
 
 <style scoped>
 .container {
@@ -520,6 +549,7 @@ export default {
   max-width: 100%;
   height: auto;
   border: 1px solid rgb(175, 175, 175);
+  cursor: pointer;
 }
 
 /* タブレット版 */
