@@ -249,25 +249,25 @@
           </p><br>
           <ul class="siteImages">
             <li class="siteImage">
-              <img @click="openModal(imagePaths.step15)" :src="imagePaths.step15" class="screen-image" alt="bag" />
+              <img src="../../../assets/images/course/sample-site/img1.png" class="screen-image" alt="bag" />
             </li>
             <li class="siteImage">
-              <img @click="openModal(imagePaths.step16)" :src="imagePaths.step16" class="screen-image" alt="book" />
+              <img src="../../../assets/images/course/sample-site/img2.png" class="screen-image" alt="book" />
             </li>
             <li class="siteImage">
-              <img @click="openModal(imagePaths.step17)" :src="imagePaths.step17" class="screen-image" alt="logo" />
+              <img src="../../../assets/images/course/sample-site/img3.png" class="screen-image" alt="logo" />
             </li>
             <li class="siteImage">
-              <img @click="openModal(imagePaths.step18)" :src="imagePaths.step18" class="screen-image" alt="movie" />
+              <img src="../../../assets/images/course/sample-site/img4.png" class="screen-image" alt="movie" />
             </li>
             <li class="siteImage">
-              <img @click="openModal(imagePaths.step19)" :src="imagePaths.step19" class="screen-image" alt="note" />
+              <img src="../../../assets/images/course/sample-site/img5.png" class="screen-image" alt="note" />
             </li>
             <li class="siteImage">
-              <img @click="openModal(imagePaths.step20)" :src="imagePaths.step20" class="screen-image" alt="pen" />
+              <img src="../../../assets/images/course/sample-site/img6.png" class="screen-image" alt="pen" />
             </li>
             <li class="siteImage">
-              <img @click="openModal(imagePaths.step21)" :src="imagePaths.step21" class="screen-image" alt="phone" />
+              <img src="../../../assets/images/course/sample-site/logo.png" class="screen-image" alt="phone" />
             </li>
           </ul>
           <br>
