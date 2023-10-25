@@ -5,7 +5,7 @@
       <h1>お問い合わせ</h1>
       <form @submit.prevent="submitForm">
         <div class="form-group">
-          <label for="name">お名前:</label>
+          <label for="name">名前:</label>
           <input type="text" id="name" v-model="name" required />
         </div>
         <div class="form-group">
