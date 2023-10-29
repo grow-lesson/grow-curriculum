@@ -169,6 +169,134 @@
           </div>
           <br>
         </Document>
+        <Document>
+          <SectionTitle sectionTitle="1-5. GitBashをインストールしよう!" id="sectionTitle5-w"></SectionTitle>
+          <p>
+            次にコマンドラインと、Gitと呼ばれるコースを受講するときに使用するためのツールをインストールしましょう!<br>
+            今回使うGitBashと呼ばれるツールはバージョン管理ソフトと呼ばれ、ファイルの状態を記録したり過去の状態に差し替えたりするソフトです。<br>
+            Source treeではボタン操作などシンプル管理できますが、それらを文字入力で管理したり、他の機能としてはファイルやフォルダを作成することができます。
+          </p>
+          <p>
+            ①<br>
+            以下からGitBashをダウンロードしましょう!<br>
+            ダウンロードというボタンを押してください。<br>
+          </p>
+          <br>
+          <div class="download">
+            <a class="download-link" href="https://gitforwindows.org/">GitBashをダウンロードする</a>
+          </div>
+          <br>
+          <div>
+            <img @click="openModal(imagePaths.win.step10)" :src="imagePaths.win.step10" alt="手順⑥" class="screen-image" />
+          </div>
+          <br>
+          <p>
+            ②<br>
+            ダウンロードしたらエクスプローラーから次のようなファイルがあるのでダブルクリックしてインストールを開始します<br>
+          </p>
+          <br>
+          <div>
+            <img @click="openModal(imagePaths.win.step11)" :src="imagePaths.win.step11" alt="手順⑦" class="screen-image" />
+          </div>
+          <br>
+          <p>
+            ③<br>
+            起動すると次のようなウインドウが表示されます。<br>
+          </p>
+          <br>
+          <div>
+            <img @click="openModal(imagePaths.win.step12)" :src="imagePaths.win.step12" alt="手順⑧" class="screen-image" />
+          </div>
+          <br>
+          <p>
+            ④<br>
+            Nextを押します。<br>
+          </p>
+          <br>
+          <div>
+            <img @click="openModal(imagePaths.win.step13)" :src="imagePaths.win.step13" alt="手順⑨" class="screen-image" />
+          </div>
+          <br>
+          <p>
+            ⑤<br>
+            この画面ではGitBashHereにチェックが付いていることを確認してNextを押します。<br>
+          </p>
+          <br>
+          <div>
+            <img @click="openModal(imagePaths.win.step14)" :src="imagePaths.win.step14" alt="手順⑩" class="screen-image" />
+          </div>
+          <br>
+          <p>
+            ⑥<br>
+            Nextを押します。<br>
+          </p>
+          <br>
+          <div>
+            <img @click="openModal(imagePaths.win.step15)" :src="imagePaths.win.step15" alt="手順⑪" class="screen-image" />
+          </div>
+          <br>
+          <p>
+            ⑧<br>
+            2番めを選択した状態でNextを選択。<br>
+          </p>
+          <br>
+          <div>
+            <img @click="openModal(imagePaths.win.step16)" :src="imagePaths.win.step16" alt="手順⑫" class="screen-image" />
+          </div>
+          <br>
+          <p>
+            ⑨<br>
+            ここもNextを選択します。<br>
+          </p>
+          <br>
+          <div>
+            <img @click="openModal(imagePaths.win.step17)" :src="imagePaths.win.step17" alt="手順⑬" class="screen-image" />
+          </div>
+          <br>
+          <p>
+            ⑩<br>
+            この画面もNextを選択します。<br>
+          </p>
+          <br>
+          <div>
+            <img @click="openModal(imagePaths.win.step18)" :src="imagePaths.win.step18" alt="手順⑭" class="screen-image" />
+          </div>
+          <br>
+          <p>
+            ⑪<br>
+            同じくNextを選択します。<br>
+          </p>
+          <br>
+          <div>
+            <img @click="openModal(imagePaths.win.step19)" :src="imagePaths.win.step19" alt="手順⑮" class="screen-image" />
+          </div>
+          <br>
+          <p>
+            ⑩<br>
+            Nextを押します。<br>
+          </p>
+          <br>
+          <div>
+            <img @click="openModal(imagePaths.win.step20)" :src="imagePaths.win.step20" alt="手順⑯" class="screen-image" />
+          </div>
+          <br>
+          <p>
+            ⑪<br>
+            installを押せば完了です。<br>
+          </p>
+          <div>
+            <img @click="openModal(imagePaths.win.step21)" :src="imagePaths.win.step21" alt="手順⑰" class="screen-image" style="max-width: 60%;"/>
+          </div>
+          <br>
+          <p>
+            ⑫<br>
+            チェックを全て外してNextを押せば完了です。<br>
+          </p>
+          <div>
+            <img @click="openModal(imagePaths.win.step22)" :src="imagePaths.win.step22" alt="手順⑱" class="screen-image" style="max-width: 60%;"/>
+          </div>
+          <br>
+        </Document>
       </div>
       <!-- Mac版の説明 -->
       <div class="main-content" v-show="!isWindows">
@@ -378,6 +506,7 @@ export default {
       { id: "sectionTitle2-w", title: "    1-2. テキストエディタをインストールしよう!" },
       { id: "sectionTitle3-w", title: "    1-3. Visual Studio Codeの拡張機能をインストールしよう!" },
       { id: "sectionTitle4-w", title: "    1-4. Sourcetreeの拡張機能をインストールしよう!" },
+      { id: "sectionTitle5-w", title: "    1-5. GitBashをインストールしよう!" },
     ]);
 
     const macSections = computed(() => [
@@ -400,6 +529,19 @@ export default {
         step7: require("../../assets/images/environment/SourceTree-win-3.png"),
         step8: require("../../assets/images/environment/SourceTree-win-4.png"),
         step9: require("../../assets/images/environment/SourceTree-win-5.png"),
+        step10: require("../../assets/images/environment/gitbash-1.png"),
+        step11: require("../../assets/images/environment/gitbash-2.png"),
+        step12: require("../../assets/images/environment/gitbash-3.png"),
+        step13: require("../../assets/images/environment/gitbash-4.png"),
+        step14: require("../../assets/images/environment/gitbash-5.png"),
+        step15: require("../../assets/images/environment/gitbash-6.png"),
+        step16: require("../../assets/images/environment/gitbash-7.png"),
+        step17: require("../../assets/images/environment/gitbash-8.png"),
+        step18: require("../../assets/images/environment/gitbash-9.png"),
+        step19: require("../../assets/images/environment/gitbash-10.png"),
+        step20: require("../../assets/images/environment/gitbash-11.png"),
+        step21: require("../../assets/images/environment/gitbash-12.png"),
+        step22: require("../../assets/images/environment/gitbash-13.png"),
       },
       mac: {
         step1: require("../../assets/images/environment/vscode-mac-1.png"),
