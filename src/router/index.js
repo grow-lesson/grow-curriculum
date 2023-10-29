@@ -201,7 +201,8 @@ router.beforeEach(async (to, from, next) => {
             'access-token': accessToken,
             'client': client,
             'uid': uid
-          }
+          },
+          withCredentials: true // クレデンシャル情報を含める設定
         });
 
         if (response.status === 200) {
