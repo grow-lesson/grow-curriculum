@@ -220,6 +220,7 @@ router.beforeEach(async (to, from, next) => {
       }
     } catch (error) {
       console.error(error);
+      console.dir(error);
       next({ name: "Login" }); // エラーの場合もログインページにリダイレクト
     }
   } else {
