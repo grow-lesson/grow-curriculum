@@ -13,7 +13,7 @@
         </Document>
 
         <!-- section 1 -->
-        <SubTitle subTitle="1. Gitについて" id="subTitle1-w"></SubTitle>
+        <SubTitle subTitle="1. Gitについて学ぶ" id="subTitle1-w"></SubTitle>
         <Document>
           <SectionTitle sectionTitle="1-1. Gitとは?" id="sectionTitle1-1-w"></SectionTitle>
           <p>
@@ -31,80 +31,33 @@
           <SectionTitle sectionTitle="1-2. Gitの使い方" id="sectionTitle1-2-w"></SectionTitle>
           <p>
             例えば、この様にフォルダの中に3つのファイルがあるとしましょう。<br>
-            ファイルを(1),(2),(3)とし、これらのファイルにプログラムを書く時Aさんだけで行うととても時間がかかってしまいますね。<br>
+            これらのファイルの作業を行うときすべてAさんという人だけで行うとするととても時間がかかってしまいます。<br>
+            そのため、BさんやCさんなどを入れて分担作業して作業する方が効率的になります。<br>
+            Gitはその管理をしやすくするツールだと覚えておきましょう。<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.win.solo)" :src="imagePaths.win.solo" class="powerpoint-image" alt="solo" />
           </div><br>
-          <HighlightWord word="ハードウェア"></HighlightWord>
           <p>
-            パソコンの本体や周辺機器の事です。<br>
-            ソフトウェアと並べて覚えておきましょう。<br>
-            例 : キーボード、マウス、ディスプレイ、プリンター、スピーカーなどがあります。<br>
-          </p><br>
-          <div>
-            <img @click="openModal(imagePaths.win.hardware)" :src="imagePaths.win.hardware" class="powerpoint-image" alt="hardware" />
-          </div><br>
-          <HighlightWord word="OS(Operating System)"></HighlightWord>
-          <p>
-            基本ソフトウェアとも呼ばれ、ハードウェアの制御やすべてのソフトウェアの管理を行います。<br>
-            例 : WindowsOS、macOS、Linux、UNIXなどがあります。<br>
-            次にOSはどんな役割があるか覚えましょう。<br><br>
-            OSの役割<br>
-            (1)ファイル・ディレクトリ(フォルダ)の作成・管理・保持ができます。<br>
-            →<span class="markup-word-blue">ファイル</span>…文書や音楽、動画などの形式でコンピュータにおけるデータの管理単位の一つを指します。<br>
-            →<span class="markup-word-blue">ディレクトリ(フォルダ)</span>…ファイルをまとめる入れ物や置き場の事です。<br><br>
-            (2)タスク管理ができます。<br>
-            タスクとは、アプリケーションの処理を細分化したものです。<br>
-            OSは優先度などに応じて効率的にタスクを割り当て、アプリケーションの処理をしています。<br><br>
-            (3)記憶管理<br>
-            プログラムにある命令やデータを記憶できます。<br><br>
-          </p>
-        </Document>
-        <Document>
-          <SectionTitle sectionTitle="1-3. プログラムの命令操作方法について" id="sectionTitle1-3-w"></SectionTitle>
-          <p>
-            ではプログラムの命令はどのように行うのか学んでいきましょう!
-          </p><br>
-          <HighlightWord word="GUI(Graphical User Interface)"></HighlightWord>
-          <p>
-            グラフィカル(絵画的)にパソコンに操作するインターフェースです。<br>
-            デスクトップで見るアイコンやボタン、マウスポインターなどの事を指します。<br>
-            プログラムの命令にはこのGUIを使った操作で行うことができます。<br>
-            感覚的に操作が行える事がメリットです。<br>
-            →<span class="markup-word-blue">インターフェース</span>…機器同士や機器と人との間でやり取りをしやすくするソフトウェアの事を指します。<br><br>
-          </p><br>
-          <HighlightWord word="CUI(Character User Interface)"></HighlightWord>
-          <p>
-            単語の通り文字でパソコンに操作するインターフェースです。<br>
-            コマンドラインはこのCUIを使った操作でプログラムに命令を行うことができます。<br>
-            Windowsならコマンドプロンプト、MacならターミナルがデフォルトでPCに入っています。<br><br>
-            このCUIを使った命令を<span class="markup-word-blue">コマンド</span>といいます。<br><br>
-            今回コマンドラインのコースではUNIXコマンドをベースに学んでいきます。<br>
-            UNIXはOSの説明をしたときに例で出てきました。<br>
-            OSの歴史と違いを少しだけ覚えて置きましょう。<br><br>
-            <span class="markup-word-red">UNIX</span><br>
-            →アメリカのベル研究所で開発された現存する中で最も古いOS(1969~)です。安全性が高く、余分な機能がないため軽くサーバ用途で用いられます。<br><br>
-            <span class="markup-word-red">Linux</span><br>
-            →UNIXを元にして作られたOS(1991~)。UNIXの機能が不足していると感じたリーナス・トーバルズ氏らが開発しました。無料で改変も配布も自由にできるのが特徴です。<br><br>
-            <span class="markup-word-red">WindowsOS</span><br>
-            →Microsoft社のビル・ゲイツ氏らによって開発されたOS(1985~)です。<br><br>
-            <span class="markup-word-red">MacOS</span><br>
-            →Apple社のスティーブ・ジョブズ氏らが開発したOS(1984~)です。<br><br>
-            UNIX、LinuxはCUI、Windows、MacOSはGUI操作で命令を行います。<br><br>
+            
           </p>
         </Document>
 
         <!-- section 2 -->
-        <SubTitle subTitle="2. コマンドとファイル構造やパスを知る" id="subTitle2-w"></SubTitle>
+        <SubTitle subTitle="2. Gitコマンドを覚える" id="subTitle2-w"></SubTitle>
         <Document>
+          <SectionTitle sectionTitle="2-1. GitHubに登録する" id="sectionTitle2-1-w"></SectionTitle>
           <p>
-            それではCUI操作で必要なコマンドの種類やファイル構造、パスについて知りましょう。<br>
+            Gitを使えるように準備をしましょう。<br>
+            まずはGitHubというサイトで新規登録を行いましょう。<br><br>
           </p>
-          <SectionTitle sectionTitle="2-1. プログラムの命令(作成・表示・移動)" id="sectionTitle2-1-w"></SectionTitle>
+          <div class="download">
+            <a class="download-link" href="https://github.com/">GitHubで新規登録を行う</a>
+          </div>
+          <SectionTitle sectionTitle="2-2. Gitの初期設定をする" id="sectionTitle2-2-w"></SectionTitle>
           <p>
-            コマンドはファイルやディレクトリの作成、表示、編集、削除、移動があります。<br>
-            今回そのコマンドを実行するツールは「git bash」を使いましょう。<br><br>
+            まずは初期設定をしましょう。<br>
+            このコマンドはGitHubアカウントを変えない限り変えることはなくほとんど変えることはないのでので覚えなくても大丈夫です。<br><br>
             ①<br>
             「環境構築やインストール」でインストールした「git bash」を開きましょう。
             開くとこのような画面になります。
@@ -113,654 +66,296 @@
             <img @click="openModal(imagePaths.win.step1)" :src="imagePaths.win.step1" class="screen-image" alt="git-bash-1" />
           </div><br>
           <p>
-            GUIでは主にマウスを使ってエクスプローラーを開いてファイルやディレクトリの作成、表示、編集、削除、移動を行います。<br>
-            それらをCUIではコマンドを入れることで行うことができます。<br>
-            まずはエクスプローラの構造について知りましょう。<br><br>
-          </p>
-          <HighlightWord word="ファイル構造"></HighlightWord>
-          <p>
-            ディレクトリの中にディレクトリやファイルがあるような枝分かれした構造の事です。
-            作業中のフォルダやプロジェクトのことを<span class="markup-word-blue">ワーキングツリー</span>といいます。<br><br>
-          </p>
-          <div>
-            <img @click="openModal(imagePaths.win.tree)" :src="imagePaths.win.tree" class="powerpoint-image" alt="tree" />
-          </div><br>
-          <p>
-            コマンドラインのコースで重要なことは<span class="markup-word-red">作業しているディレクトリの位置を把握</span>する事です。<br>
-            イメージで言うとディレクトリの中に自分がいると思ってください。<br>
-            その自分がいるディレクトリを<span class="markup-word-blue">カレントディレクトリ</span>といいます。<br>
-            また、上の画像でカレントディレクトリがBディレクトリだとし、その一番上をたどるとAディレクトリが一番上になります。<br>
-            今いるディレクトリ構造の一番親のディレクトリのことを<span class="markup-word-blue">ルートディレクトリ</span>といいます。<br>
-            今回コースで作業するのはCドライブディレクトリで行います。<br>
-            それでは今作業しているディレクトリからCドライブディレクトリに移動しましょう。<br><br>
-          </p>
-          <HighlightWord word="cd ディレクトリ名"></HighlightWord>
-          <p>
-            ・自分が今作業しているディレクトリからさらに下のディレクトリに移動ができます。<br>
-            逆に今作業しているディレクトリの上のディレクトリに戻るときは<span class="markup-word-blue">「cd ../」</span>を実行すれば戻ることができます。<br><br>
             ②<br>
-            git bashに画像のように入力し、実行しましょう。<br>
-            画像のように次を入力する部分に「/C」と黄色い文字で書いてあればOKです。<br>
-          </p><br>
+            開いたらCドライブに移動しましょう。<br>
+            移動したらユーザー名とメールアドレスを設定しましょう。<br>
+            以下の画像のようにすべて入力して実行しましょう。<br><br>
+          </p>
           <div>
             <img @click="openModal(imagePaths.win.step2)" :src="imagePaths.win.step2" class="screen-image" alt="git-bash-2" />
           </div><br>
           <p>
-            CUI操作ではこのようになりますが、GUI操作だとエクスプローラを開いてCドライブをクリックした時の画面という事になります。<br>
-          </p><br>
-          <div>
-            <img @click="openModal(imagePaths.win.folder1)" :src="imagePaths.win.folder1" class="screen-image" alt="folder-1" />
-          </div><br>
-          <br>
-          <p>
-            では次にディレクトリの作成を覚えましょう。<br>
+            初期設定は以上で完了です。<br><br>
           </p>
-          <HighlightWord word="mkdir ディレクトリ名"></HighlightWord><br>
+          <SectionTitle sectionTitle="2-3. Gitを準備する" id="sectionTitle2-3-w"></SectionTitle>
           <p>
-            ・自分が今作業しているディレクトリの中に新たなディレクトリを作成します。<br>
-            「Make Directory」の略称です。<br><br>
+            <br>
+            では今回Gitを学習するための練習フォルダとファイルを作成しましょう。<br><br>
             ③<br>
-            git bashに画像のように入力し、実行しましょう。<br>
-            git bashでは何も出てきませんが、エクスプローラで確認すると「sample-1」というディレクトリが作成されていることがわかります。<br>
+            Cドライブに以下のフォルダを作成してください。<br>
+            作成したらそのフォルダに移動してテキストファイルを作成しましょう。<br>
+            エクスプローラで作成したフォルダの「git-practice」を確認すると以下のようにテキストファイルが作成されています。<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.win.step3)" :src="imagePaths.win.step3" class="screen-image" alt="git-bash-3" />
           </div><br>
           <div>
-            <img @click="openModal(imagePaths.win.folder2)" :src="imagePaths.win.folder2" class="screen-image" alt="folder-2" />
+            <img @click="openModal(imagePaths.win.folder1)" :src="imagePaths.win.folder1" class="screen-image" alt="folder1" />
           </div><br>
           <p>
-            では次に今作ったフォルダにファイルの作成してみましょう。<br>
+            作成した練習ファイルの中でGitを使えるようにしましょう。<br><br>
+            <HighlightWord word="git init"></HighlightWord><br>
+            ・gitを使えるようにするコマンドです。<br>
+              また、ローカルリポジトリを新規に作成するという意味もあります。<br><br>
+            <HighlightWord word="ローカルリポジトリ"></HighlightWord><br>
+            ・そのコマンドを入力したフォルダ内のファイルやフォルダを管理できる専用の倉庫。<br>
+              この倉庫は自分のパソコン上で作られます。<br><br>
+            図で表すと以下のようになります。<br>
           </p>
-          <HighlightWord word="touch ファイル名"></HighlightWord><br>
+          <div>
+            <img @click="openModal(imagePaths.win.init)" :src="imagePaths.win.init" class="screen-image" alt="init" />
+          </div><br>
           <p>
-            ・自分が今作業しているディレクトリ(カレントディレクトリ)の中に新たなファイルを作成します。<br><br>
             ④<br>
-            まずはgit bashに「sample-1」ディレクトリに移動するためcdコマンドを入力しましょう。
-            その後、touchコマンドを入力し、実行しましょう。<br>
-            git bashでは何も出てきませんが、エクスプローラで「sample-1」ディレクトリを確認すると「memo.txt」というファイルが作成されていることがわかります。<br>
-          </p><br>
+            それではコマンドを入力しましょう。<br>
+            以下のようになればOKです。
+          </p>
           <div>
             <img @click="openModal(imagePaths.win.step4)" :src="imagePaths.win.step4" class="screen-image" alt="git-bash-4" />
           </div><br>
-          <div>
-            <img @click="openModal(imagePaths.win.folder3)" :src="imagePaths.win.folder3" class="screen-image" alt="folder-3" />
-          </div><br>
+          <SectionTitle sectionTitle="2-4. 共有場所の準備と登録" id="sectionTitle2-4-w"></SectionTitle>
           <p>
-            次に作ったファイルの中身を表示してみましょう。<br>
-          </p>
-          <HighlightWord word="cat ファイル名"></HighlightWord><br>
-          <p>
-            ・自分が今作業しているディレクトリ(カレントディレクトリ)の中にあるファイルの中身を表示します。<br><br>
+            ではこの自分のPC上で作成したファイルを他の人に共有できるようにウェブ上に共有場所を作成しましょう。<br>
             ⑤<br>
-            まずは先ほど作った「memo.txt」を開きましょう。<br>
-            その中に画像のように入力しましょう。
-            入力したら「ctrl + s」で保存しましょう。<br>
-          </p><br>
+            先ほど登録したGitHubを開きましょう。<br>
+            その次に左にある「New」ボタンを押しましょう。<br>
+          </p>
           <div>
-            <img @click="openModal(imagePaths.win.memo)" :src="imagePaths.win.memo" class="screen-image" alt="memo" />
+            <img @click="openModal(imagePaths.win.github1)" :src="imagePaths.win.github1" class="screen-image" alt="github-1" />
           </div><br>
           <p>
             ⑥<br>
-            git bashに画像のように入力し、実行しましょう。<br>
-            テキストファイルを開かなくても中身を確認する事ができます。<br>
-          </p><br>
+            次に「Repository name」に「git-practice」と入力しましょう。<br>
+            「Description」は入力しなくても大丈夫です。<br>
+            リポジトリのタイプは「public」を選択しましょう。<br>
+            下の残りの設定はそのままで「Create repository」を押しましょう。<br>
+          </p>
+          <div>
+            <img @click="openModal(imagePaths.win.github2)" :src="imagePaths.win.github2" class="screen-image" alt="github-2" />
+          </div><br>
+          <p>
+            このような画面になれば共有場所の作成は完了です。<br>
+            ではこの共有場所は何か覚えましょう。<br><br>
+            <HighlightWord word="リモートリポジトリ"></HighlightWord><br>
+            ・ローカルリポジトリで管理したフォルダ内のファイルやフォルダを第三者に共有したり、管理ができるWeb上の倉庫です。<br><br>
+          </p>
+          <div>
+            <img @click="openModal(imagePaths.win.github3)" :src="imagePaths.win.github3" class="screen-image" alt="github-3" />
+          </div><br>
+          <p>
+            まずは今の状態を確認しましょう。<br><br>
+          </p>
+          <div>
+            <img @click="openModal(imagePaths.win.state1)" :src="imagePaths.win.state1" class="screen-image" alt="state-1" />
+          </div><br>
+          <p>
+            画像にある問題を整理しましょう。<br>
+            「git init」で作成したローカルリポジトリに管理されているフォルダはまだ自分のPC上でしか見ることができません。<br><br>
+            そのため、リモートリポジトリにアップロードするためには登録が必要になります。<br>
+            それでは登録のコマンドを覚えましょう。<br>
+            <HighlightWord word="git remote add リモートリポジトリ名 URL"></HighlightWord><br>
+            ・リモートリポジトリを登録するコマンドです。<br>
+            ここで表記されている「リモートリポジトリ名」は、GitHubで作ったリモートリポジトリと通信するために必要なURLを簡単なキーワードにして指定することができます。<br>
+            よくデフォルトではoriginという名前で設定することが多いです。<br>
+            そのため以下のような手順を踏みましょう。<br>
+            ⑦<br>
+            以下をコピーして実行しましょう。<br><br>
+          </p>
+          <div>
+            <img @click="openModal(imagePaths.win.github4)" :src="imagePaths.win.github4" class="screen-image" alt="github-4" />
+          </div><br>
           <div>
             <img @click="openModal(imagePaths.win.step5)" :src="imagePaths.win.step5" class="screen-image" alt="git-bash-5" />
           </div><br>
-        </Document>
-        <SectionTitle sectionTitle="2-2. プログラムの命令(位置把握・確認・移動)" id="sectionTitle2-2-w"></SectionTitle>
-        <Document>
           <p>
-            次に自分の作業しているディレクトリ(カレントディレクトリ)までの経路(位置)を知りたい時に使うコマンドを学びましょう。
+            登録が完了しました。<br>
+            ではGithub(リモートリポジトリ)上にアップロードしましょう。<br>
+            アップロードするためには手順が必要です。<br>
+            (1) まだアップロード(共有)してない、またはアップロードしてない編集情報をフォルダやファイルを選択する。<br>
+            (2) フォルダやファイルにどのような編集や追加をしたか記録をする<br>
+            (3) アップロード(共有)する<br><br>
+            ⑧<br>
+            ではアップロードするファイルを選択しましょう。<br><br>
+            <HighlightWord word="git add (フォルダ名)ファイル名"></HighlightWord><br>
+            ・登録したリモートリポジトリにアップロードするファイルを選択するコマンドです。<br>
+            ファイルやフォルダ名を指定できますが、複数個ファイルなどがあると何回もこのコマンドを打つため一括で選択する方法があるので覚えておきましょう。<br>
+            →<HighlightWord word="git add ."></HighlightWord><br><br>
           </p>
-          <HighlightWord word="pwd"></HighlightWord>
-          <p>
-            ・カレントディレクトリを表示をします。
-            ⑦<br>
-            git bashに画像のように入力し、実行しましょう。<br>
-            今いる位置が表示されればOKです。<br>
-          </p><br>
           <div>
             <img @click="openModal(imagePaths.win.step6)" :src="imagePaths.win.step6" class="screen-image" alt="git-bash-6" />
           </div><br>
           <p>
-            次に自分の作業しているディレクトリ(カレントディレクトリ)の中にあるディレクトリやファイルを確認しましょう。<br><br>
+            ⑨<br>
+            次にフォルダやファイルにどのような編集や追加をしたか記録をしましょう。<br><br>
+            <HighlightWord word="git commit -m 'メッセージ'"></HighlightWord><br>
+            ・ファイルをaddコマンドで選択した理由は何か記録するコマンドです。
+            メッセージには「□□ファイルの○○を修正」、「△△ファイルの名前を変更」、「××ファイルの作成」などを記載しますが、今回は初めてなので「first commit」や「initialize commit」と入力しましょう。<br><br>
+            GitHubにあるコミットコマンドをコピーしコマンドを入力しましょう。<br><br>
           </p>
-          <HighlightWord word="ls"></HighlightWord>
-          <p>
-            ・カレントディレクトリの中身を表示します。<br>
-            「List」の略称です。<br><br>
-            ⑧<br>
-            まずはディレクトリを作りましょう。
-            git bashに画像のように入力し、実行しましょう。<br>
-            git bash、エクスプローラで確認するとこのようになっていればOKです。<br>
-          </p><br>
+          <div>
+            <img @click="openModal(imagePaths.win.github5)" :src="imagePaths.win.github5" class="screen-image" alt="github-5" />
+          </div><br>
           <div>
             <img @click="openModal(imagePaths.win.step7)" :src="imagePaths.win.step7" class="screen-image" alt="git-bash-7" />
           </div><br>
-          <div>
-            <img @click="openModal(imagePaths.win.folder4)" :src="imagePaths.win.folder4" class="screen-image" alt="folder-4" />
-          </div><br>
           <p>
-            ⑧<br>
-            git bashに画像のように入力し、実行しましょう。<br>
-            git bashで確認するとこのようになっていればOKです。<br>
-          </p><br>
-          <p>
-            ⑨それでは今作ったディレクトリにテキストファイルを移動しましょう。<br><br>
-          </p><br>
+            ⑩<br>
+            最後にアップロードをしましょう。<br>
+            <HighlightWord word="git push リモートリポジトリ名 ローカルリポジトリ名"></HighlightWord><br>
+            ・ローカルリポジトリからリモートリポジトリにファイルをアップロード(共有)するコマンドです。
+            先ほどリモートリポジトリ名は「origin」と設定しました。ではローカルリポジトリの名前は何かというと、「git bash」の黄色文字の右に「master」と書かれていましたが今回はローカルリポジトリの名前だと覚えましょう。<br>
+            本来は別の意味があり、正確に言えば少し違いますが今はこの覚え方で大丈夫です。<br>
+            しかし、この「master」という単語は2021年6月7日以降GitHubでは使われなくなったデフォルト名になりました。<br>
+            現在は「main」という名前になっているため、これからgitでリモートリポジトリを作るときに「main」作られるように初期設定をしましょう。<br>
+            以下を入力して下さい。この設定は一回のみで大丈夫です。<br><br>
+          </p>
           <div>
             <img @click="openModal(imagePaths.win.step8)" :src="imagePaths.win.step8" class="screen-image" alt="git-bash-8" />
           </div><br>
-          <HighlightWord word="mv 移動させたいファイル名 移動先のディレクトリ(フォルダ)名"></HighlightWord>
           <p>
-            ・指定したファイルを指定したディレクトリに移動することができます。<br>
-            「Move」の略称です。<br>
-            フォルダを移動する時は<br>
-            <HighlightWord word="mv 移動させたいディレクトリ名 移動先のディレクトリ名"></HighlightWord>となります。<br><br>
-            ⑩<br>
-            git bashに画像のように入力し、実行しましょう。<br>
-            git bashでは何も表示されませんが、エクスプローラで「test」ディレクトリを確認するとこのようになっています。<br><br>
-          </p><br>
+            ⑪<br>
+            それではアップロードコマンドを入力してください。<br>
+            アップロードが1回目の場合、少しオプションをつける必要があるため以下を入力しましょう。
+            →<HighlightWord word="git push -u origin main"></HighlightWord><br>
+            2回目以降のアップロードは「-u」のオプションは必要ありません。<br>
+            また以下のように省略してアップロードすることも出来ます。<br>
+            →<HighlightWord word="git push"></HighlightWord><br><br>
+          </p>
           <div>
             <img @click="openModal(imagePaths.win.step9)" :src="imagePaths.win.step9" class="screen-image" alt="git-bash-9" />
           </div><br>
+          <p>
+            ⑫<br>
+            ではGithubでアップロードできた確認してみましょう。<br>
+            Githubのページを更新すると以下のようにテキストファイルがアップロードされています。<br>
+          </p>
           <div>
-            <img @click="openModal(imagePaths.win.folder5)" :src="imagePaths.win.folder5" class="screen-image" alt="folder-5" />
+            <img @click="openModal(imagePaths.win.github6)" :src="imagePaths.win.github6" class="screen-image" alt="github-6" />
           </div><br>
           <p>
-            mvコマンドは他にも使い方があるので覚えておきましょう。<br><br>
-          </p><br>
-          <HighlightWord word="mv 名前を変えたいファイル名 新しいファイル名"></HighlightWord>
+            ではここまでの流れを図で覚えましょう。<br>
+          </p>
+          <div>
+            <img @click="openModal(imagePaths.win.state2)" :src="imagePaths.win.state2" class="screen-image" alt="state-2" />
+          </div><br>
           <p>
-            ・ファイルの名前を変更することができます。<br><br>
-            ⑪<br>
-            まずは「test」ディレクトリに移動してgit bashに画像のように入力し、実行しましょう。<br>
-            git bashでは何も表示されませんが、エクスプローラで「test」ディレクトリの中のテキストファイルの名前が変わっているのが分かります。<br><br>
-          </p><br>
+            Gitの管理下に置かれた、実際に作業をしているディレクトリのことをワークツリーと呼びます。<br>
+            このワークツリーで編集、追加したファイルやフォルダを「git add」コマンドを使い選択します。<br>
+            この操作をステージングと呼び、選択したファイルはインデックスという箱で管理されます。<br>
+            そして、このファイルがどのような理由で選択したのか記録(git commit)し、リモートリポジトリに共有します。(git push)。<br>
+            この一連の流れは必ず覚えましょう。<br>
+            また、この操作はファイルを編集したり追加するたびにリモートリポジトリに更新する必要があるので「git add」、「git commit」、「git push」を行いましょう。<br>
+          </p>
+        </Document>
+
+        <!-- section 3 -->
+        <SubTitle subTitle="3. ファイルの状態を確認する" id="subTitle3-w"></SubTitle>
+        <Document>
+          <SectionTitle sectionTitle="3-1. 変更したファイルの確認方法" id="sectionTitle3-1-w"></SectionTitle>
+          <p>
+            先ほどの一連の流れを行うと自分がadd,commitなどをしたのかわからなくなってしまうことがあります。<br>
+            そのために必要なファイルの状態を確認するコマンドを学びましょう。<br>
+            <HighlightWord word="git status"></HighlightWord><br>
+            ・自分が変更したファイルの状況を確認できるコマンドです。<br><br>
+            ⑬<br>
+            では新しいファイルをtouchコマンドで作成しましょう。
+          </p>
           <div>
             <img @click="openModal(imagePaths.win.step10)" :src="imagePaths.win.step10" class="screen-image" alt="git-bash-10" />
           </div><br>
-          <div>
-            <img @click="openModal(imagePaths.win.folder6)" :src="imagePaths.win.folder6" class="screen-image" alt="folder-6" />
-          </div><br>
-        </Document>
-        <SectionTitle sectionTitle="2-3. プログラムの命令(複製・削除)" id="sectionTitle2-3-w"></SectionTitle>
-        <Document>
           <p>
-            ディレクトリやファイルの複製や削除ができるコマンドを学びましょう。<br><br>
-          </p>
-          <HighlightWord word="cp コピーするファイル名 新しいファイル名"></HighlightWord>
-          <p>
-            ・自分の作業しているディレクトリ(カレントディレクトリ)の中にあるファイルを新しい名前で中身のデータの状態をコピーできます。<br><br>
-            ディレクトリをコピーしたい場合は<br>
-            <HighlightWord word="cp –r コピーするディレクトリ名 新しいディレクトリ名"></HighlightWord>となります。<br><br>
-            ⑫<br>
-            git bashに画像のように入力し、実行しましょう。<br>
-            コピーできていればコピーしたファイルを開くと同じ文章が書いてあるはずです。<br>
+            ⑭<br>
+            gitのステータスを確認してみましょう。<br>
+            これは追跡できていない新しいファイルがあることを意味しています。<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.win.step11)" :src="imagePaths.win.step11" class="screen-image" alt="git-bash-11" />
           </div><br>
-          <div>
-            <img @click="openModal(imagePaths.win.folder7)" :src="imagePaths.win.folder6" class="screen-image" alt="folder-7" />
-          </div><br>
-          <div>
-            <img @click="openModal(imagePaths.win.copy)" :src="imagePaths.win.copy" class="screen-image" alt="copy" />
-          </div><br>
-          <HighlightWord word="rm 削除するファイル名"></HighlightWord>
           <p>
-            ・自分の作業しているディレクトリ(カレントディレクトリ)の中にあるファイルを削除できます。<br><br>
-            ディレクトリごと削除したい場合は<br>
-            <HighlightWord word="rm –r 削除するディレクトリ名 "></HighlightWord>となります。<br><br>
-            ⑫<br>
-            git bashに画像のように入力し、実行しましょう。<br>
-            git bashでは何も出てきませんが、エクスプローラで「test」ディレクトリを確認すると「memo.txt」というファイルが削除されていることがわかります。<br>
+            ⑮<br>
+            では次にエクスプローラから「sample.txt」を開きましょう。<br>
+            開いたら以下のように編集し、保存(ctrl + S)ください。<br>
           </p><br>
           <div>
-            <img @click="openModal(imagePaths.win.step12)" :src="imagePaths.win.step12" class="screen-image" alt="git-bash-12" />
+            <img @click="openModal(imagePaths.win.folder2)" :src="imagePaths.win.folder2" class="screen-image" alt="folder-2" />
           </div><br>
           <div>
-            <img @click="openModal(imagePaths.win.folder8)" :src="imagePaths.win.folder8" class="screen-image" alt="folder-8" />
+            <img @click="openModal(imagePaths.win.memo1)" :src="imagePaths.win.memo1" class="screen-image" alt="memo-1" />
+          </div><br>
+          <p>
+            ⑭<br>
+            gitのステータスを確認してみましょう。<br>
+            赤色で「modified」という部分が増えましたがこれは編集(修正)はされたが「git add」ができていない事を意味しています。<br>
+          </p><br>
+          <div>
+            <img @click="openModal(imagePaths.win.step11)" :src="imagePaths.win.step11" class="screen-image" alt="git-bash-12" />
+          </div><br>
+          <p>
+            ⑮<br>
+            では「git add .」を行った後にgitのステータスを確認してみましょう。<br>
+            すると今度は緑色で「modified」という部分が増えましたがこれは編集(修正)はされたが「git commit」ができていない事を意味しています。<br>
+          </p><br>
+          <div>
+            <img @click="openModal(imagePaths.win.step11)" :src="imagePaths.win.step11" class="screen-image" alt="git-bash-13" />
+          </div><br>
+          <p>
+            ⑯<br>
+            では次に「git commit」を行った後にgitのステータスを確認してみましょう。<br>
+            すると今度は白色で分が表示されましたが、「git commit」まで終わり、コミット対象が無い事を意味しています。<br>
+          </p><br>
+          <div>
+            <img @click="openModal(imagePaths.win.step14)" :src="imagePaths.win.step14" class="screen-image" alt="git-bash-14" />
+          </div><br>
+          <p>
+            次にファイルの中身を変えた履歴を確認したいは以下のコマンド使います。<br>
+            <HighlightWord word="git diff"></HighlightWord><br>
+            ・自分が変更したファイルの差分が見れるコマンドです。<br><br>
+            ⑰<br>
+            先ほど記載した「sample.txt」を開き、以下のように内容を変更し保存しましょう。
+          </p><br>
+          <div>
+            <img @click="openModal(imagePaths.win.memo2)" :src="imagePaths.win.memo2" class="screen-image" alt="memo-2" />
+          </div><br>
+          <p>
+            ⑱<br>
+            「git diff」コマンドを入力しましょう。<br>
+            緑色で書かれている部分は今回の修正内容です。赤色は修正前の内容です。<br>
+          </p><br>
+          <div>
+            <img @click="openModal(imagePaths.win.step15)" :src="imagePaths.win.step15" class="screen-image" alt="git-bash-15" />
+          </div><br>
+          <p>
+            ⑲<br>
+            差分が見れたところで「git add」と「git commit」を行いましょう。<br>
+            以下の画像のようになればOKです。<br>
+          </p><br>
+          <div>
+            <img @click="openModal(imagePaths.win.step16)" :src="imagePaths.win.step16" class="screen-image" alt="git-bash-16" />
+          </div><br>
+          <p>
+            最後にコミット履歴を確認したいは以下のコマンド使います。<br>
+            <HighlightWord word="git log"></HighlightWord><br>
+            ・コミット履歴を確認できるコマンドです。<br>
+            →<HighlightWord word="git log -p"></HighlightWord><br>
+            「git diff」と同じようなコマンドになるのでこの書き方も覚えておきましょう。<br><br>
+            ⑳<br>
+            それではコマンドを入力しましょう。以下の画像のようにコミット履歴が見られればOKです。<br>
+          </p><br>
+          <div>
+            <img @click="openModal(imagePaths.win.step17)" :src="imagePaths.win.step17" class="screen-image" alt="git-bash-17" />
+          </div><br>
+          <p>
+            ㉑<br>
+            最後にファイルを追加し、ファイルの中身を編集した情報を「git push」でアップロードしてましょう。<br>
+            これでlesson-1は終了です。<br>
+          </p>
+          <div>
+            <img @click="openModal(imagePaths.win.step18)" :src="imagePaths.win.step18" class="screen-image" alt="git-bash-18" />
           </div><br>
         </Document>
-
-        <!-- section 2 -->
-        <SubTitle subTitle="3. パスとホームディレクトリについて" id="subTitle3-w"></SubTitle>
-        <Document>
-          <SectionTitle sectionTitle="3-1. パスについて" id="sectionTitle3-1-w"></SectionTitle>
-          <p>
-            パスについて学びましょう。<br>
-          </p><br>
-          <HighlightWord word="パス"></HighlightWord>
-          <p>
-            ・経路や道順を意味しています。<br>
-            コマンドラインやWebサイト上にある特定ファイルまでの道筋を表すものです。<br>
-          </p><br>
-          <HighlightWord word="絶対パス(absolute path)"></HighlightWord>
-          <p>
-            ・ディレクトリなどの階層の一番上から特定のファイルまでの経路を階層ごとに全て記載するパスの事です。<br>
-            「フルパス」と呼ばれることもあり、コマンドラインやWebサイト上にある特定ファイルまでの道筋を表すものです。<br>
-            webサイトでは、「ドメイン名 / フォルダ名 / … / ファイル名」、エクスプローラーだと「ルートディレクトリ / フォルダ名 / … / ファイル名」という表記になります。<br><br>
-            例：<br>
-            http:www.hoge.com/test/index.html<br><br>
-            /about/test/home/about.html<br><br>
-            ↑最初のスラッシュはルートディレクトリを表します。
-            <span class="markup-word-blue">「cd /」</span>でルートディレクトリに移動できます。
-            絶対パスのメリットとデメリット<br>
-            メリット<br>
-            ・URLをすべて書いてファイルの場所を指定するため、リンク切れになるミスを防げます。<br>
-            デメリット<br>
-            ・URLが長くなってしまう。<br>
-          </p><br>
-          <HighlightWord word="相対パス(relative path)"></HighlightWord>
-          <p>
-            現在いるファイルを起点とした、目的ファイルまでの経路を記述する形式のこと。<br>
-            現在の階層よりも1つ上位の階層への移動を「cd ../」で戻ることができると説明しましたが、
-            相対パスは現在地から目的地までの「道順」を記述する方法です<br><br>
-            例：<br><br><br>
-            ../../contents/file01.png<br><br>
-            絶対パスのメリットとデメリット<br>
-            メリット<br>
-            ・URLが短くできます。<br>
-            デメリット<br>
-            ・リンク切れになるミスが起こりやすいです。<br><br>
-            相対パスや絶対パスはここまで学習したコマンドで使うことができるので一気に作業したいディレクトリに移動したり、指定したディレクトリに削除や複製をすることができます。<br>
-          </p><br>
-        </Document>
-        <SectionTitle sectionTitle="3-2 ホームディレクトリについて" id="sectionTitle3-2-w"></SectionTitle>
-        <Document>
-            <p>
-              <HighlightWord word="ホームディレクトリ"></HighlightWord><br>
-              ・ユーザーが作業をするときに基準にするディレクトリの事です。<br>
-              ホームディレクトリとは、コンピューター上でログインしたユーザーが作業するための個人用フォルダーと覚えるとよいでしょう。<br><br>
-              Windowsだと「C:/User/(自分で設定したパソコンのログイン名)」もしくは「C:/ユーザー/(自分で設定したパソコンのログイン名)」の経路にあるディレクトリになります。<br><br>
-              <span class="markup-word-blue">「cd ~」</span>でホームディレクトリに移動できます。
-            </p>
-          </Document>
         <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
       </div>
       <!-- Mac版の説明 -->
-      <div class="main-content" v-show="!isWindows">
-        <Title title="コマンドライン 1 (Macの方)" id="Title-m"></Title>
-        <Document>
-          <p>ターミナルやコマンドラインインターフェースの基本的な操作を学びましょう。</p>
-          <p>コマンドとファイル構造やパスを知るセクションです。</p>
-        </Document>
-
-        <!-- section 1 -->
-        <SubTitle subTitle="1. コマンドラインとプログラミングについて" id="subTitle1-m"></SubTitle>
-        <Document>
-          <SectionTitle sectionTitle="1-1. コマンドラインとは?" id="sectionTitle1-1-m"></SectionTitle>
-          <p>
-            皆さんがこれから学ぶ「コマンドライン」について概要を理解しましょう!<br>
-          </p><br>
-          <HighlightWord word="コマンドライン"></HighlightWord>
-          <p>
-            コンピュータのシステム制御をしているソフトウェアであるOSに命令を送る機能の事です。
-            マウスなどでクリックしてコンピュータを操作するのに対して文字で命令して操作します。
-            <br><br>
-            ではソフトウェアやOSというのは何か覚えましょう!
-          </p><br>
-        </Document>
-        <Document>
-          <SectionTitle sectionTitle="1-2. コンピュータの基本的な仕組み" id="sectionTitle1-2-m"></SectionTitle>
-          <HighlightWord word="ソフトウェア"></HighlightWord>
-          <p>
-            コンピュータに対して命令を出すプログラム(アプリケーション)の事です。<br>
-            →<span class="markup-word-blue">プログラム</span>…コンピュータを動かすのに必要な命令の流れの事を指します。<br>
-            例 : Word、Edge、Google、Excelなどがあります。<br>
-          </p><br>
-          <div>
-            <img @click="openModal(imagePaths.mac.software)" :src="imagePaths.mac.software" class="powerpoint-image" alt="software" />
-          </div><br>
-          <HighlightWord word="ハードウェア"></HighlightWord>
-          <p>
-            パソコンの本体や周辺機器の事です。<br>
-            ソフトウェアと並べて覚えておきましょう。<br>
-            例 : キーボード、マウス、ディスプレイ、プリンター、スピーカーなどがあります。<br>
-          </p><br>
-          <div>
-            <img @click="openModal(imagePaths.mac.hardware)" :src="imagePaths.mac.hardware" class="powerpoint-image" alt="hardware" />
-          </div><br>
-          <HighlightWord word="OS(Operating System)"></HighlightWord>
-          <p>
-            基本ソフトウェアとも呼ばれ、ハードウェアの制御やすべてのソフトウェアの管理を行います。<br>
-            例 : WindowsOS、macOS、Linux、UNIXなどがあります。<br>
-            次にOSはどんな役割があるか覚えましょう。<br><br>
-            OSの役割<br>
-            (1)ファイル・ディレクトリ(フォルダ)の作成・管理・保持ができます。<br>
-            →<span class="markup-word-blue">ファイル</span>…文書や音楽、動画などの形式でコンピュータにおけるデータの管理単位の一つを指します。<br>
-            →<span class="markup-word-blue">ディレクトリ(フォルダ)</span>…ファイルをまとめる入れ物や置き場の事です。<br><br>
-            (2)タスク管理ができます。<br>
-            タスクとは、アプリケーションの処理を細分化したものです。<br>
-            OSは優先度などに応じて効率的にタスクを割り当て、アプリケーションの処理をしています。<br><br>
-            (3)記憶管理<br>
-            プログラムにある命令やデータを記憶できます。<br><br>
-          </p>
-        </Document>
-        <Document>
-          <SectionTitle sectionTitle="1-3. プログラムの命令操作方法について" id="sectionTitle1-3-m"></SectionTitle>
-          <p>
-            ではプログラムの命令はどのように行うのか学んでいきましょう!
-          </p><br>
-          <HighlightWord word="GUI(Graphical User Interface)"></HighlightWord>
-          <p>
-            グラフィカル(絵画的)にパソコンに操作するインターフェースです。<br>
-            デスクトップで見るアイコンやボタン、マウスポインターなどの事を指します。<br>
-            プログラムの命令にはこのGUIを使った操作で行うことができます。<br>
-            感覚的に操作が行える事がメリットです。<br>
-            →<span class="markup-word-blue">インターフェース</span>…機器同士や機器と人との間でやり取りをしやすくするソフトウェアの事を指します。<br><br>
-          </p><br>
-          <HighlightWord word="CUI(Character User Interface)"></HighlightWord>
-          <p>
-            単語の通り文字でパソコンに操作するインターフェースです。<br>
-            コマンドラインはこのCUIを使った操作でプログラムに命令を行うことができます。<br>
-            Windowsならコマンドプロンプト、MacならターミナルがデフォルトでPCに入っています。<br><br>
-            このCUIを使った命令を<span class="markup-word-blue">コマンド</span>といいます。<br><br>
-            今回コマンドラインのコースではUNIXコマンドをベースに学んでいきます。<br>
-            UNIXはOSの説明をしたときに例で出てきました。<br>
-            OSの歴史と違いを少しだけ覚えて置きましょう。<br><br>
-            <span class="markup-word-red">UNIX</span><br>
-            →アメリカのベル研究所で開発された現存する中で最も古いOS(1969~)です。安全性が高く、余分な機能がないため軽くサーバ用途で用いられます。<br><br>
-            <span class="markup-word-red">Linux</span><br>
-            →UNIXを元にして作られたOS(1991~)。UNIXの機能が不足していると感じたリーナス・トーバルズ氏らが開発しました。無料で改変も配布も自由にできるのが特徴です。<br><br>
-            <span class="markup-word-red">WindowsOS</span><br>
-            →Microsoft社のビル・ゲイツ氏らによって開発されたOS(1985~)です。<br><br>
-            <span class="markup-word-red">MacOS</span><br>
-            →Apple社のスティーブ・ジョブズ氏らが開発したOS(1984~)です。<br><br>
-            UNIX、LinuxはCUI、Windows、MacOSはGUI操作で命令を行います。<br><br>
-          </p>
-        </Document>
-
-        <!-- section 2 -->
-        <SubTitle subTitle="2. コマンドとファイル構造やパスを知る" id="subTitle2-m"></SubTitle>
-        <Document>
-          <p>
-            それではCUI操作で必要なコマンドの種類やファイル構造、パスについて知りましょう。<br>
-          </p>
-          <SectionTitle sectionTitle="2-1. プログラムの命令(作成・表示・移動)" id="sectionTitle2-1-m"></SectionTitle>
-          <p>
-            コマンドはファイルやディレクトリの作成、表示、編集、削除、移動があります。<br>
-            今回そのコマンドを実行するツールは「ターミナル」を使いましょう。<br><br>
-            ①<br>
-            「launchpad」で「ターミナル」を開きましょう。
-            開くとこのような画面になります。
-          </p><br>
-          <div>
-            <img @click="openModal(imagePaths.mac.step1)" :src="imagePaths.mac.step1" class="screen-image" alt="git-bash-1" />
-          </div><br>
-          <p>
-            GUIでは主にマウスを使ってエクスプローラーを開いてファイルやディレクトリの作成、表示、編集、削除、移動を行います。<br>
-            それらをCUIではコマンドを入れることで行うことができます。<br>
-            まずはエクスプローラの構造について知りましょう。<br><br>
-          </p>
-          <HighlightWord word="ファイル構造"></HighlightWord>
-          <p>
-            ディレクトリの中にディレクトリやファイルがあるような枝分かれした構造の事です。
-            作業中のフォルダやプロジェクトのことを<span class="markup-word-blue">ワーキングツリー</span>といいます。<br><br>
-          </p>
-          <div>
-            <img @click="openModal(imagePaths.mac.tree)" :src="imagePaths.mac.tree" class="powerpoint-image" alt="tree" />
-          </div><br>
-          <p>
-            コマンドラインのコースで重要なことは<span class="markup-word-red">作業しているディレクトリの位置を把握</span>する事です。<br>
-            イメージで言うとディレクトリの中に自分がいると思ってください。<br>
-            その自分がいるディレクトリを<span class="markup-word-blue">カレントディレクトリ</span>といいます。<br>
-            また、上の画像でカレントディレクトリがBディレクトリだとし、その一番上をたどるとAディレクトリが一番上になります。<br>
-            今いるディレクトリ構造の一番親のディレクトリのことを<span class="markup-word-blue">ルートディレクトリ</span>といいます。<br>
-            今回コースで作業するのはホームディレクトリで行います。<br>
-            ターミナルを開くとデフォルトで最初にホームディレクトリの位置にいます。<br><br>
-          </p>
-          <p>
-            では早速コマンドを覚えていきましょう!<br>
-            まずはディレクトリの作成です。<br>
-          </p>
-          <HighlightWord word="mkdir ディレクトリ名"></HighlightWord><br>
-          <p>
-            ・自分が今作業しているディレクトリの中に新たなディレクトリを作成します。<br>
-            「Make Directory」の略称です。<br><br>
-            ②<br>
-            ターミナルに画像のように入力し、実行しましょう。<br>
-            ターミナルでは何も出てきませんが、finderで確認すると「sample-1」というディレクトリが作成されていることがわかります。<br>
-          </p><br>
-          <div>
-            <img @click="openModal(imagePaths.mac.step2)" :src="imagePaths.mac.step2" class="screen-image" alt="git-bash-3" />
-          </div><br>
-          <div>
-            <img @click="openModal(imagePaths.mac.folder1)" :src="imagePaths.mac.folder1" class="screen-image" alt="folder-2" />
-          </div><br>
-          <HighlightWord word="cd ディレクトリ名"></HighlightWord>
-          <p>
-            ・自分が今作業しているディレクトリからさらに下のディレクトリに移動ができます。<br>
-            逆に今作業しているディレクトリの上のディレクトリに戻るときは<span class="markup-word-blue">「cd ../」</span>を実行すれば戻ることができます。<br><br>
-            ③<br>
-            ターミナルに画像のように入力し、実行しましょう。<br>
-            画像のように次を入力する部分に「/sample-1」と文字で書いてあればOKです。<br>
-          </p><br>
-          <div>
-            <img @click="openModal(imagePaths.mac.step3)" :src="imagePaths.mac.step3" class="screen-image" alt="git-bash-2" />
-          </div><br>
-          <p>
-            CUI操作ではこのようになりますが、GUI操作だとエクスプローラを開いてCドライブをクリックした時の画面という事になります。<br>
-          </p><br>
-          <div>
-            <img @click="openModal(imagePaths.mac.folder2)" :src="imagePaths.mac.folder2" class="screen-image" alt="folder-1" />
-          </div><br>
-          <br>
-          <p>
-            では次に今作ったフォルダにファイルの作成してみましょう。<br>
-          </p>
-          <HighlightWord word="touch ファイル名"></HighlightWord><br>
-          <p>
-            ・自分が今作業しているディレクトリ(カレントディレクトリ)の中に新たなファイルを作成します。<br><br>
-            ④<br>
-            まずはターミナルに「sample-1」ディレクトリに移動するためcdコマンドを入力しましょう。
-            その後、touchコマンドを入力し、実行しましょう。<br>
-            ターミナルでは何も出てきませんが、エクスプローラで「sample-1」ディレクトリを確認すると「memo.txt」というファイルが作成されていることがわかります。<br>
-          </p><br>
-          <div>
-            <img @click="openModal(imagePaths.mac.step4)" :src="imagePaths.mac.step4" class="screen-image" alt="git-bash-4" />
-          </div><br>
-          <div>
-            <img @click="openModal(imagePaths.mac.folder3)" :src="imagePaths.mac.folder3" class="screen-image" alt="folder-3" />
-          </div><br>
-          <p>
-            次に作ったファイルの中身を表示してみましょう。<br>
-          </p>
-          <HighlightWord word="cat ファイル名"></HighlightWord><br>
-          <p>
-            ・自分が今作業しているディレクトリ(カレントディレクトリ)の中にあるファイルの中身を表示します。<br><br>
-            ⑤<br>
-            まずは先ほど作った「memo.txt」を開きましょう。<br>
-            その中に画像のように入力しましょう。
-            入力したら「command + s」で保存しましょう。<br>
-          </p><br>
-          <div>
-            <img @click="openModal(imagePaths.mac.memo)" :src="imagePaths.mac.memo" class="screen-image" alt="memo" />
-          </div><br>
-          <p>
-            ⑥<br>
-            ターミナルに画像のように入力し、実行しましょう。<br>
-            テキストファイルを開かなくても中身を確認する事ができます。<br>
-          </p><br>
-          <div>
-            <img @click="openModal(imagePaths.mac.step5)" :src="imagePaths.mac.step5" class="screen-image" alt="git-bash-5" />
-          </div><br>
-        </Document>
-        <SectionTitle sectionTitle="2-2. プログラムの命令(位置把握・確認・移動)" id="sectionTitle2-2-m"></SectionTitle>
-        <Document>
-          <p>
-            次に自分の作業しているディレクトリ(カレントディレクトリ)までの経路(位置)を知りたい時に使うコマンドを学びましょう。
-          </p>
-          <HighlightWord word="pwd"></HighlightWord>
-          <p>
-            ・カレントディレクトリを表示をします。
-            ⑦<br>
-            ターミナルに画像のように入力し、実行しましょう。<br>
-            今いる位置が表示されればOKです。<br>
-          </p><br>
-          <div>
-            <img @click="openModal(imagePaths.mac.step6)" :src="imagePaths.mac.step6" class="screen-image" alt="git-bash-6" />
-          </div><br>
-          <p>
-            次に自分の作業しているディレクトリ(カレントディレクトリ)の中にあるディレクトリやファイルを確認しましょう。<br><br>
-          </p>
-          <HighlightWord word="ls"></HighlightWord>
-          <p>
-            ・カレントディレクトリの中身を表示します。<br>
-            「List」の略称です。<br><br>
-            ⑧<br>
-            まずはディレクトリを作りましょう。
-            ターミナルに画像のように入力し、実行しましょう。<br>
-            ターミナル、エクスプローラで確認するとこのようになっていればOKです。<br>
-          </p><br>
-          <div>
-            <img @click="openModal(imagePaths.mac.step7)" :src="imagePaths.mac.step7" class="screen-image" alt="git-bash-7" />
-          </div><br>
-          <div>
-            <img @click="openModal(imagePaths.mac.folder4)" :src="imagePaths.mac.folder4" class="screen-image" alt="folder-4" />
-          </div><br>
-          <p>
-            ⑧<br>
-            ターミナルに画像のように入力し、実行しましょう。<br>
-            ターミナルで確認するとこのようになっていればOKです。<br>
-          </p><br>
-          <p>
-            ⑨それでは今作ったディレクトリにテキストファイルを移動しましょう。<br><br>
-          </p><br>
-          <div>
-            <img @click="openModal(imagePaths.mac.step8)" :src="imagePaths.mac.step8" class="screen-image" alt="git-bash-8" />
-          </div><br>
-          <HighlightWord word="mv 移動させたいファイル名 移動先のディレクトリ(フォルダ)名"></HighlightWord>
-          <p>
-            ・指定したファイルを指定したディレクトリに移動することができます。<br>
-            「Move」の略称です。<br>
-            フォルダを移動する時は<br>
-            <HighlightWord word="mv 移動させたいディレクトリ名 移動先のディレクトリ名"></HighlightWord>となります。<br><br>
-            ⑩<br>
-            ターミナルに画像のように入力し、実行しましょう。<br>
-            ターミナルでは何も表示されませんが、エクスプローラで「test」ディレクトリを確認するとこのようになっています。<br><br>
-          </p><br>
-          <div>
-            <img @click="openModal(imagePaths.mac.step9)" :src="imagePaths.mac.step9" class="screen-image" alt="git-bash-9" />
-          </div><br>
-          <div>
-            <img @click="openModal(imagePaths.mac.folder5)" :src="imagePaths.mac.folder5" class="screen-image" alt="folder-5" />
-          </div><br>
-          <p>
-            mvコマンドは他にも使い方があるので覚えておきましょう。<br><br>
-          </p><br>
-          <HighlightWord word="mv 名前を変えたいファイル名 新しいファイル名"></HighlightWord>
-          <p>
-            ・ファイルの名前を変更することができます。<br><br>
-            ⑪<br>
-            まずは「test」ディレクトリに移動してターミナルに画像のように入力し、実行しましょう。<br>
-            ターミナルでは何も表示されませんが、エクスプローラで「test」ディレクトリの中のテキストファイルの名前が変わっているのが分かります。<br><br>
-          </p><br>
-          <div>
-            <img @click="openModal(imagePaths.mac.step10)" :src="imagePaths.mac.step10" class="screen-image" alt="git-bash-10" />
-          </div><br>
-          <div>
-            <img @click="openModal(imagePaths.mac.folder6)" :src="imagePaths.mac.folder6" class="screen-image" alt="folder-6" />
-          </div><br>
-        </Document>
-        <SectionTitle sectionTitle="2-3. プログラムの命令(複製・削除)" id="sectionTitle2-3-m"></SectionTitle>
-        <Document>
-          <p>
-            ディレクトリやファイルの複製や削除ができるコマンドを学びましょう。<br><br>
-          </p>
-          <HighlightWord word="cp コピーするファイル名 新しいファイル名"></HighlightWord>
-          <p>
-            ・自分の作業しているディレクトリ(カレントディレクトリ)の中にあるファイルを新しい名前で中身のデータの状態をコピーできます。<br><br>
-            ディレクトリをコピーしたい場合は<br>
-            <HighlightWord word="cp –r コピーするディレクトリ名 新しいディレクトリ名"></HighlightWord>となります。<br><br>
-            ⑫<br>
-            ターミナルに画像のように入力し、実行しましょう。<br>
-            コピーできていればコピーしたファイルを開くと同じ文章が書いてあるはずです。<br>
-          </p><br>
-          <div>
-            <img @click="openModal(imagePaths.mac.step11)" :src="imagePaths.mac.step11" class="screen-image" alt="git-bash-11" />
-          </div><br>
-          <div>
-            <img @click="openModal(imagePaths.mac.folder7)" :src="imagePaths.mac.folder6" class="screen-image" alt="folder-7" />
-          </div><br>
-          <div>
-            <img @click="openModal(imagePaths.mac.copy)" :src="imagePaths.mac.copy" class="screen-image" alt="copy" />
-          </div><br>
-          <HighlightWord word="rm 削除するファイル名"></HighlightWord>
-          <p>
-            ・自分の作業しているディレクトリ(カレントディレクトリ)の中にあるファイルを削除できます。<br><br>
-            ディレクトリごと削除したい場合は<br>
-            <HighlightWord word="rm –r 削除するディレクトリ名 "></HighlightWord>となります。<br><br>
-            ⑫<br>
-            ターミナルに画像のように入力し、実行しましょう。<br>
-            ターミナルでは何も出てきませんが、エクスプローラで「test」ディレクトリを確認すると「memo.txt」というファイルが削除されていることがわかります。<br>
-          </p><br>
-          <div>
-            <img @click="openModal(imagePaths.mac.step12)" :src="imagePaths.mac.step12" class="screen-image" alt="git-bash-12" />
-          </div><br>
-          <div>
-            <img @click="openModal(imagePaths.mac.folder8)" :src="imagePaths.mac.folder8" class="screen-image" alt="folder-8" />
-          </div><br>
-        </Document>
-
-        <!-- section 2 -->
-        <SubTitle subTitle="3. パスとホームディレクトリについて" id="subTitle3-m"></SubTitle>
-        <Document>
-          <SectionTitle sectionTitle="3-1. パスについて" id="sectionTitle3-1-m"></SectionTitle>
-          <p>
-            パスについて学びましょう。<br>
-          </p><br>
-          <HighlightWord word="パス"></HighlightWord>
-          <p>
-            ・経路や道順を意味しています。<br>
-            コマンドラインやWebサイト上にある特定ファイルまでの道筋を表すものです。<br>
-          </p><br>
-          <HighlightWord word="絶対パス(absolute path)"></HighlightWord>
-          <p>
-            ・ディレクトリなどの階層の一番上から特定のファイルまでの経路を階層ごとに全て記載するパスの事です。<br>
-            「フルパス」と呼ばれることもあり、コマンドラインやWebサイト上にある特定ファイルまでの道筋を表すものです。<br>
-            webサイトでは、「ドメイン名 / フォルダ名 / … / ファイル名」、エクスプローラーだと「ルートディレクトリ / フォルダ名 / … / ファイル名」という表記になります。<br><br>
-            例：<br>
-            http:www.hoge.com/test/index.html<br><br>
-            /about/test/home/about.html<br><br>
-            ↑最初のスラッシュはルートディレクトリを表します。
-            <span class="markup-word-blue">「cd /」</span>でルートディレクトリに移動できます。
-            絶対パスのメリットとデメリット<br>
-            メリット<br>
-            ・URLをすべて書いてファイルの場所を指定するため、リンク切れになるミスを防げます。<br>
-            デメリット<br>
-            ・URLが長くなってしまう。<br>
-          </p><br>
-          <HighlightWord word="相対パス(relative path)"></HighlightWord>
-          <p>
-            現在いるファイルを起点とした、目的ファイルまでの経路を記述する形式のこと。<br>
-            現在の階層よりも1つ上位の階層への移動を「cd ../」で戻ることができると説明しましたが、
-            相対パスは現在地から目的地までの「道順」を記述する方法です<br><br>
-            例：<br><br><br>
-            ../../contents/file01.png<br><br>
-            絶対パスのメリットとデメリット<br>
-            メリット<br>
-            ・URLが短くできます。<br>
-            デメリット<br>
-            ・リンク切れになるミスが起こりやすいです。<br><br>
-            相対パスや絶対パスはここまで学習したコマンドで使うことができるので一気に作業したいディレクトリに移動したり、指定したディレクトリに削除や複製をすることができます。<br>
-          </p><br>
-        </Document>
-        <SectionTitle sectionTitle="3-2 ホームディレクトリについて" id="sectionTitle3-2-m"></SectionTitle>
-        <Document>
-            <p>
-              <HighlightWord word="ホームディレクトリ"></HighlightWord><br>
-              ・ユーザーが作業をするときに基準にするディレクトリの事です。<br>
-              ホームディレクトリとは、コンピューター上でログインしたユーザーが作業するための個人用フォルダーと覚えるとよいでしょう。<br><br>
-              Windowsだと「C:/User/(自分で設定したパソコンのログイン名)」もしくは「C:/ユーザー/(自分で設定したパソコンのログイン名)」の経路にあるディレクトリになります。<br><br>
-              <span class="markup-word-blue">「cd ~」</span>でホームディレクトリに移動できます。
-            </p>
-          </Document>
-        <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
-      </div>
       <div class="side-content" v-show="isWindows && !isSmallScreen">
         <TableOfContents :sections="windowsSections" />
       </div>
@@ -805,18 +400,17 @@ export default {
     const isLoading = ref(false);
 
     const windowsSections = [
-      { id: "Title-w", title: "コマンドライン 1 (Windowsの方)" },
-      { id: "subTitle1-w", title: "  1. コマンドラインとプログラミングについて" },
-      { id: "sectionTitle1-1-w", title: "    1-1. コマンドラインとは?" },
-      { id: "sectionTitle1-2-w", title: "    1-2. コンピュータの基本的な仕組み" },
-      { id: "sectionTitle1-3-w", title: "    1-3. プログラムの命令操作方法について" },
-      { id: "subTitle2-w", title: "  2. コマンドとファイル構造やパスを知る" },
-      { id: "sectionTitle2-1-w", title: "    2-1. プログラムの命令(作成・表示・移動)②" },
-      { id: "sectionTitle2-2-w", title: "    2-2. プログラムの命令(位置把握・確認・移動)" },
-      { id: "sectionTitle2-3-w", title: "    2-3. プログラムの命令(複製・削除)" },
-      { id: "subTitle3-w", title: "  3. パスとホームディレクトリについて" },
-      { id: "sectionTitle3-1-w", title: "    3-1. パスについて" },
-      { id: "sectionTitle3-2-w", title: "    3-2 ホームディレクトリについて" },
+      { id: "Title-w", title: "Git 1 (Windowsの方)" },
+      { id: "subTitle1-w", title: "  1. Gitについて学ぶ" },
+      { id: "sectionTitle1-1-w", title: "    1-1. Gitとは?" },
+      { id: "sectionTitle1-2-w", title: "    1-2. Gitの使い方" },
+      { id: "subTitle2-w", title: "  2. Gitコマンドを覚える" },
+      { id: "sectionTitle2-1-w", title: "    2-1. GitHubに登録する" },
+      { id: "sectionTitle2-2-w", title: "    2-2. Gitの初期設定をする" },
+      { id: "sectionTitle2-3-w", title: "    2-3. Gitを準備する" },
+      { id: "sectionTitle2-4-w", title: "    2-4. 共有場所の準備と登録" },
+      { id: "subTitle3-w", title: "  3. ファイルの状態を確認する" },
+      { id: "sectionTitle3-1-w", title: "    3-1. 変更したファイルの確認方法" },
     ];
 
     const macSections = [
@@ -851,59 +445,40 @@ export default {
     const imagePaths = {
       win: {
         solo: require("../../../assets/images/course/git-1/solo.png"),
-        hardware: require("../../../assets/images/course/command-line-1/hardware.png"),
-        step1: require("../../../assets/images/course/command-line-1/git-bash-1.png"),
-        tree: require("../../../assets/images/course/command-line-1/tree.png"),
-        step2: require("../../../assets/images/course/command-line-1/git-bash-2.png"),
-        folder1: require("../../../assets/images/course/command-line-1/folder-1.png"),
-        step3: require("../../../assets/images/course/command-line-1/git-bash-3.png"),
-        folder2: require("../../../assets/images/course/command-line-1/folder-2.png"),
-        step4: require("../../../assets/images/course/command-line-1/git-bash-4.png"),
-        folder3: require("../../../assets/images/course/command-line-1/folder-3.png"),
-        memo: require("../../../assets/images/course/command-line-1/memo.png"),
-        step5: require("../../../assets/images/course/command-line-1/git-bash-5.png"),
-        step6: require("../../../assets/images/course/command-line-1/git-bash-6.png"),
-        step7: require("../../../assets/images/course/command-line-1/git-bash-7.png"),
-        folder4: require("../../../assets/images/course/command-line-1/folder-4.png"),
-        step8: require("../../../assets/images/course/command-line-1/git-bash-8.png"),
-        step9: require("../../../assets/images/course/command-line-1/git-bash-9.png"),
-        folder5: require("../../../assets/images/course/command-line-1/folder-5.png"),
-        step10: require("../../../assets/images/course/command-line-1/git-bash-10.png"),
-        folder6: require("../../../assets/images/course/command-line-1/folder-6.png"),
-        step11: require("../../../assets/images/course/command-line-1/git-bash-11.png"),
-        folder7: require("../../../assets/images/course/command-line-1/folder-7.png"),
-        copy: require("../../../assets/images/course/command-line-1/copy.png"),
-        step12: require("../../../assets/images/course/command-line-1/git-bash-12.png"),
-        folder8: require("../../../assets/images/course/command-line-1/folder-8.png"),
-        root: require("../../../assets/images/course/command-line-1/root.png"),
+        step1: require("../../../assets/images/course/git-1/git-bash-1.png"),
+        step2: require("../../../assets/images/course/git-1/git-bash-2.png"),
+        step3: require("../../../assets/images/course/git-1/git-bash-3.png"),
+        folder1: require("../../../assets/images/course/git-1/folder-1.png"),
+        init: require("../../../assets/images/course/git-1/git-init.png"),
+        step4: require("../../../assets/images/course/git-1/git-bash-4.png"),
+        github1: require("../../../assets/images/course/git-1/github-1.png"),
+        github2: require("../../../assets/images/course/git-1/github-2.png"),
+        github3: require("../../../assets/images/course/git-1/github-3.png"),
+        state1: require("../../../assets/images/course/git-1/state-1.png"),
+        github4: require("../../../assets/images/course/git-1/github-4.png"),
+        step5: require("../../../assets/images/course/git-1/git-bash-5.png"),
+        step6: require("../../../assets/images/course/git-1/git-bash-6.png"),
+        github5: require("../../../assets/images/course/git-1/github-5.png"),
+        step7: require("../../../assets/images/course/git-1/git-bash-7.png"),
+        step8: require("../../../assets/images/course/git-1/git-bash-8.png"),
+        step9: require("../../../assets/images/course/git-1/git-bash-9.png"),
+        github6: require("../../../assets/images/course/git-1/github-6.png"),
+        state2: require("../../../assets/images/course/git-1/state-2.png"),
+        step10: require("../../../assets/images/course/git-1/git-bash-10.png"),
+        step11: require("../../../assets/images/course/git-1/git-bash-11.png"),
+        folder2: require("../../../assets/images/course/git-1/folder-2.png"),
+        memo1: require("../../../assets/images/course/git-1/memo-1-w.png"),
+        step12: require("../../../assets/images/course/git-1/git-bash-12.png"),
+        step13: require("../../../assets/images/course/git-1/git-bash-13.png"),
+        step14: require("../../../assets/images/course/git-1/git-bash-14.png"),
+        memo2: require("../../../assets/images/course/git-1/memo-1-w.png"),
+        step15: require("../../../assets/images/course/git-1/git-bash-15.png"),
+        step16: require("../../../assets/images/course/git-1/git-bash-16.png"),
+        step17: require("../../../assets/images/course/git-1/git-bash-17.png"),
+        step18: require("../../../assets/images/course/git-1/git-bash-18.png"),
       },
       mac: {
-        software: require("../../../assets/images/course/command-line-1/software.png"),
-        hardware: require("../../../assets/images/course/command-line-1/hardware.png"),
-        step1: require("../../../assets/images/course/command-line-1/terminal-1.png"),
-        tree: require("../../../assets/images/course/command-line-1/tree.png"),
-        step2: require("../../../assets/images/course/command-line-1/terminal-2.png"),
-        folder1: require("../../../assets/images/course/command-line-1/finder-1.png"),
-        step3: require("../../../assets/images/course/command-line-1/terminal-3.png"),
-        folder2: require("../../../assets/images/course/command-line-1/finder-2.png"),
-        step4: require("../../../assets/images/course/command-line-1/terminal-4.png"),
-        folder3: require("../../../assets/images/course/command-line-1/finder-3.png"),
-        memo: require("../../../assets/images/course/command-line-1/memo-m.png"),
-        step5: require("../../../assets/images/course/command-line-1/terminal-5.png"),
-        step6: require("../../../assets/images/course/command-line-1/terminal-6.png"),
-        step7: require("../../../assets/images/course/command-line-1/terminal-7.png"),
-        folder4: require("../../../assets/images/course/command-line-1/finder-4.png"),
-        step8: require("../../../assets/images/course/command-line-1/terminal-8.png"),
-        step9: require("../../../assets/images/course/command-line-1/terminal-9.png"),
-        folder5: require("../../../assets/images/course/command-line-1/finder-5.png"),
-        step10: require("../../../assets/images/course/command-line-1/terminal-10.png"),
-        folder6: require("../../../assets/images/course/command-line-1/finder-6.png"),
-        step11: require("../../../assets/images/course/command-line-1/terminal-11.png"),
-        folder7: require("../../../assets/images/course/command-line-1/finder-7.png"),
-        copy: require("../../../assets/images/course/command-line-1/copy-m.png"),
-        step12: require("../../../assets/images/course/command-line-1/terminal-12.png"),
-        folder8: require("../../../assets/images/course/command-line-1/finder-8.png"),
-        root: require("../../../assets/images/course/command-line-1/root.png"),
+        
       },
     };
 
@@ -1001,6 +576,16 @@ export default {
   white-space: pre;
   color: rgb(255, 37, 37);
   font-weight: bold;
+}
+
+.download {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.download-link {
+  color: rgb(72, 0, 255);
 }
 
 .screen-image {
