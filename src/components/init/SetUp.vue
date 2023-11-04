@@ -2,7 +2,7 @@
   <div>
     <Header />
     <Spinner :isLoading="isLoading" />
-    <button class="btn_04" @click="toggleOS">{{ isWindows ? "Macをお持ちの方はこちら" : "Windowsをお持ちの方はこちら" }}</button>
+    <button class="change_component_button" @click="toggleOS">{{ isWindows ? "Macをお持ちの方はこちら" : "Windowsをお持ちの方はこちら" }}</button>
     <div class="container">
       <!-- Windows版の説明 -->
       <div class="main-content" v-show="isWindows">
@@ -382,7 +382,7 @@ export default {
   display: flex;
   width: 100%;
 }
-.btn_04 {
+.change_component_button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -403,7 +403,7 @@ export default {
   margin: 20px 0 0 50px;
 }
 
-.btn_04:before {
+.change_component_button:before {
   content: "";
   width: 8px;
   height: 8px;
@@ -417,12 +417,12 @@ export default {
   margin-top: -6px;
 }
 
-.btn_04:hover {
+.change_component_button:hover {
   background: #fff;
   color: #228bc8;
 }
 
-.btn_04:hover:before {
+.change_component_button:hover:before {
   border-top: 2px solid #228bc8;
   border-right: 2px solid #228bc8;
 }
@@ -498,9 +498,14 @@ export default {
 
 /* スマホ版 */
 @media (max-width: 648px) {
-  .btn_04 {
-    width: 70%;
-    font-size: small;
+  .change_component_button {
+    width: auto; /* 幅を自動調整 */
+    text-align: center; /* テキストを中央揃え */
+    margin: 20px auto; /* 上下のマージンを調整 */
+  }
+
+  .change_component_button:before {
+    display: none; /* トライアングルアイコンを非表示 */
   }
 }
 </style>

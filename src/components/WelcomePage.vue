@@ -10,8 +10,8 @@
           <div class="background-image" :style="backgroundStyle"></div>
         </transition>
         <h1 class="title" :class="{ floating: isFloating }">カリキュラムを<span>受講しよう！</span></h1>
-        <button class="btn_04" @click="goToSignUP" @focus="buttonFocus" @blur="buttonBlur">新規登録</button>
-        <button class="btn_04" @click="goToLogin" @focus="buttonFocus" @blur="buttonBlur">ログイン</button>
+        <button class="change_component_button" @click="goToSignUP" @focus="buttonFocus" @blur="buttonBlur">新規登録</button>
+        <button class="change_component_button" @click="goToLogin" @focus="buttonFocus" @blur="buttonBlur">ログイン</button>
       </div>
     </div>
   </div>
@@ -154,7 +154,7 @@ export default {
   transform: translateY(-5px);
 }
 
-.btn_04 {
+.change_component_button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -175,7 +175,7 @@ export default {
   transition-duration: 0.3s;
 }
 
-.btn_04:before {
+.change_component_button:before {
   content: '';
   width: 8px;
   height: 8px;
@@ -189,12 +189,12 @@ export default {
   margin-top: -6px;
 }
 
-.btn_04:hover {
+.change_component_button:hover {
   background: #fff;
   color: #228bc8;
 }
 
-.btn_04:hover:before {
+.change_component_button:hover:before {
   border-top: 2px solid #228bc8;
   border-right: 2px solid #228bc8;
 }
@@ -247,7 +247,7 @@ export default {
     color: #8f84f7;
   }
 
-  .btn_04 {
+  .change_component_button {
     width: 250px;
     color: #fff;
   }

@@ -206,12 +206,4 @@ export default {
     display: none;
   }
 }
-
-/* スマホ版 */
-@media (max-width: 648px) {
-  .btn_04 {
-    width: 70%;
-    font-size: small;
-  }
-}
 </style>
