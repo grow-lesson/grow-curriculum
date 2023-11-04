@@ -103,7 +103,7 @@
 <script>
 import Header from "@/components/layout/Header.vue";
 import Footer from "@/components/layout/Footer.vue";
-import { computed } from 'vue';
+import { computed, onMounted } from 'vue';
 import { useStore } from 'vuex';
 import { useRouter } from 'vue-router';
 
@@ -157,6 +157,10 @@ export default {
     const goToITMenuPage = () => {
       router.push({ name: "UnderConstruction" });
     };
+
+    onMounted(() => {
+      window.scrollTo(0, 0);
+    });
 
     return {
       login,

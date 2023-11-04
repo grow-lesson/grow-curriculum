@@ -76,8 +76,10 @@
 </template>
 
 <script>
+import { onMounted } from 'vue';
 import Header from "@/components/layout/Header.vue";
 import Footer from "@/components/layout/Footer.vue";
+import { useRouter } from 'vue-router';
 
 export default {
   name: "CourseMenu",
@@ -85,25 +87,45 @@ export default {
     Header,
     Footer,
   },
-  methods: {
-    goToHtmlMenuPage() {
-      this.$router.push({ name: "HtmlMenuPage" });
-    },
-    goToCommandLineMenuPage() {
-      this.$router.push({ name: "CommandLineMenuPage" });
-    },
-    goToGitMenuPage() {
-      this.$router.push({ name: "GitMenuPage" });
-    },
-    goToJavaScriptMenuPage() {
-      this.$router.push({ name: "UnderConstruction" });
-    },
-    goToRubyMenuPage() {
-      this.$router.push({ name: "UnderConstruction" });
-    },
-    goToITMenuPage() {
-      this.$router.push({ name: "UnderConstruction" });
-    },
+  setup() {
+    const router = useRouter();
+
+    const goToHtmlMenuPage = () => {
+      router.push({ name: "HtmlMenuPage" });
+    };
+
+    const goToCommandLineMenuPage = () => {
+      router.push({ name: "CommandLineMenuPage" });
+    };
+
+    const goToGitMenuPage = () => {
+      router.push({ name: "GitMenuPage" });
+    };
+
+    const goToJavaScriptMenuPage = () => {
+      router.push({ name: "UnderConstruction" });
+    };
+
+    const goToRubyMenuPage = () => {
+      router.push({ name: "UnderConstruction" });
+    };
+
+    const goToITMenuPage = () => {
+      router.push({ name: "UnderConstruction" });
+    };
+
+    onMounted(() => {
+      window.scrollTo(0, 0);
+    });
+
+    return {
+      goToHtmlMenuPage,
+      goToCommandLineMenuPage,
+      goToGitMenuPage,
+      goToJavaScriptMenuPage,
+      goToRubyMenuPage,
+      goToITMenuPage,
+    };
   },
 };
 </script>
