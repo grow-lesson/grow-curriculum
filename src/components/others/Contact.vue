@@ -48,7 +48,7 @@ export default {
 
 <style scoped>
 .contact-form {
-  max-width: 400px;
+  max-width: 80%;
   height: 100vh;
   margin: 0 auto;
   padding: 20px;
