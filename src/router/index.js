@@ -194,7 +194,6 @@ router.beforeEach(async (to, from, next) => {
       const client = getCookie('client');
       const uid = decodeURIComponent(getCookie('uid')); // UIDをデコード
 
-      console.log(accessToken,client,uid)
       if (accessToken && client && uid) {
         const response = await api.get('/auth/validate_token', {
           headers: {
@@ -220,7 +219,6 @@ router.beforeEach(async (to, from, next) => {
       }
     } catch (error) {
       console.error(error);
-      console.dir(error);
       next({ name: "Login" }); // エラーの場合もログインページにリダイレクト
     }
   } else {
