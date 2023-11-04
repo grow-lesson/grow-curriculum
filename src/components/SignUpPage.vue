@@ -122,7 +122,7 @@ export default {
     const onSubmit = handleSubmit(async (values) => {
       const loginData = {
         username: values.form.username,
-        name: values.form.lastNameKana + values.form.firstName,
+        name: values.form.lastName + values.form.firstName,
         last_name_kana: values.form.lastNameKana,
         first_name_kana: values.form.firstNameKana,
         email: values.form.email,
