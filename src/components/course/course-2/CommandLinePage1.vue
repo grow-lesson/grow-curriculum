@@ -211,8 +211,8 @@
             <img @click="openModal(imagePaths.win.step5)" :src="imagePaths.win.step5" class="screen-image" alt="git-bash-5" />
           </div><br>
         </Document>
-        <SectionTitle sectionTitle="2-2. プログラムの命令(位置把握・確認・移動)" id="sectionTitle2-2-w"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="2-2. プログラムの命令(位置把握・確認・移動)" id="sectionTitle2-2-w"></SectionTitle>
           <p>
             次に自分の作業しているディレクトリ(カレントディレクトリ)までの経路(位置)を知りたい時に使うコマンドを学びましょう。
           </p>
@@ -288,8 +288,8 @@
             <img @click="openModal(imagePaths.win.folder6)" :src="imagePaths.win.folder6" class="screen-image" alt="folder-6" />
           </div><br>
         </Document>
-        <SectionTitle sectionTitle="2-3. プログラムの命令(複製・削除)" id="sectionTitle2-3-w"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="2-3. プログラムの命令(複製・削除)" id="sectionTitle2-3-w"></SectionTitle>
           <p>
             ディレクトリやファイルの複製や削除ができるコマンドを学びましょう。<br><br>
           </p>
@@ -371,8 +371,8 @@
             相対パスや絶対パスはここまで学習したコマンドで使うことができるので一気に作業したいディレクトリに移動したり、指定したディレクトリに削除や複製をすることができます。<br>
           </p><br>
         </Document>
-        <SectionTitle sectionTitle="3-2 ホームディレクトリについて" id="sectionTitle3-2-w"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="3-2 ホームディレクトリについて" id="sectionTitle3-2-w"></SectionTitle>
             <p>
               <HighlightWord word="ホームディレクトリ"></HighlightWord><br>
               ・ユーザーが作業をするときに基準にするディレクトリの事です。<br>
@@ -591,8 +591,8 @@
             <img @click="openModal(imagePaths.mac.step5)" :src="imagePaths.mac.step5" class="screen-image" alt="git-bash-5" />
           </div><br>
         </Document>
-        <SectionTitle sectionTitle="2-2. プログラムの命令(位置把握・確認・移動)" id="sectionTitle2-2-m"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="2-2. プログラムの命令(位置把握・確認・移動)" id="sectionTitle2-2-m"></SectionTitle>
           <p>
             次に自分の作業しているディレクトリ(カレントディレクトリ)までの経路(位置)を知りたい時に使うコマンドを学びましょう。
           </p>
@@ -668,8 +668,8 @@
             <img @click="openModal(imagePaths.mac.folder6)" :src="imagePaths.mac.folder6" class="screen-image" alt="folder-6" />
           </div><br>
         </Document>
-        <SectionTitle sectionTitle="2-3. プログラムの命令(複製・削除)" id="sectionTitle2-3-m"></SectionTitle>
         <Document>
+          <SectionTitle sectionTitle="2-3. プログラムの命令(複製・削除)" id="sectionTitle2-3-m"></SectionTitle>
           <p>
             ディレクトリやファイルの複製や削除ができるコマンドを学びましょう。<br><br>
           </p>
@@ -751,16 +751,16 @@
             相対パスや絶対パスはここまで学習したコマンドで使うことができるので一気に作業したいディレクトリに移動したり、指定したディレクトリに削除や複製をすることができます。<br>
           </p><br>
         </Document>
-        <SectionTitle sectionTitle="3-2 ホームディレクトリについて" id="sectionTitle3-2-m"></SectionTitle>
         <Document>
-            <p>
-              <HighlightWord word="ホームディレクトリ"></HighlightWord><br>
-              ・ユーザーが作業をするときに基準にするディレクトリの事です。<br>
-              ホームディレクトリとは、コンピューター上でログインしたユーザーが作業するための個人用フォルダーと覚えるとよいでしょう。<br><br>
-              Windowsだと「C:/User/(自分で設定したパソコンのログイン名)」もしくは「C:/ユーザー/(自分で設定したパソコンのログイン名)」の経路にあるディレクトリになります。<br><br>
-              <span class="markup-word-blue">「cd ~」</span>でホームディレクトリに移動できます。
-            </p>
-          </Document>
+          <SectionTitle sectionTitle="3-2 ホームディレクトリについて" id="sectionTitle3-2-m"></SectionTitle>
+          <p>
+            <HighlightWord word="ホームディレクトリ"></HighlightWord><br>
+            ・ユーザーが作業をするときに基準にするディレクトリの事です。<br>
+            ホームディレクトリとは、コンピューター上でログインしたユーザーが作業するための個人用フォルダーと覚えるとよいでしょう。<br><br>
+            Windowsだと「C:/User/(自分で設定したパソコンのログイン名)」もしくは「C:/ユーザー/(自分で設定したパソコンのログイン名)」の経路にあるディレクトリになります。<br><br>
+            <span class="markup-word-blue">「cd ~」</span>でホームディレクトリに移動できます。
+          </p>
+        </Document>
         <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
       </div>
       <div class="side-content" v-show="isWindows && !isSmallScreen">
