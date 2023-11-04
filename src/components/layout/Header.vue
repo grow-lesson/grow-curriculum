@@ -214,8 +214,8 @@ export default {
 }
 
 .logo-image {
-  display: block;
-  width: 100%;
+  width: auto;
+  height: 100%;
 }
 
 .header-title {
