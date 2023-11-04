@@ -102,7 +102,6 @@
             <img @click="openModal(imagePaths.win.step4)" :src="imagePaths.win.step4" alt="手順④" class="screen-image" />
           </div>
           <br>
-          <Terminal :fileName="environmentData.file1.filename" :copiedText="environmentData.file1.code" :lang="environmentData.file1.language" />
         </Document>
         <Document>
           <SectionTitle sectionTitle="1-4. Sourcetreeの拡張機能をインストールしよう!" id="sectionTitle4-w"></SectionTitle>
