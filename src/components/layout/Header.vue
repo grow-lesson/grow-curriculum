@@ -488,6 +488,7 @@ export default {
 /* タブレット版 */
 @media (max-width: 835px) {
   .logo{
+    margin-left: 20px;
     width: 30px;
     height: 30px;
   }
