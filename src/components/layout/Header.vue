@@ -39,6 +39,7 @@
               <button class="navigation-btn">その他</button>
               <ul class="dropdown-list">
                 <li class="dropdown-item"><a @click="goToContactPage" class="dropdown-link">お問い合わせ</a></li>
+                <li class="dropdown-item"><a @click="goToChatBotPage" class="dropdown-link">チャットボット</a></li>
                 <li class="dropdown-item"><a href="https://grow-infotech.com" target="_blank" class="dropdown-link">会社のホームページを見る</a></li>
                 <li class="dropdown-item"><a href="https://www.wantedly.com/companies/company_7305723" target="_blank" class="dropdown-link">Wantedllyを見る</a></li>
               </ul>
@@ -90,6 +91,7 @@
           <button>その他</button>
           <ul class="dropdown-list">
             <li class="dropdown-item"><a @click="goToContactPage" class="dropdown-link">お問い合わせ</a></li>
+            <li class="dropdown-item"><a @click="goToChatBotPage" class="dropdown-link">チャットボット</a></li>
             <li class="dropdown-item"><a href="https://grow-infotech.com" class="dropdown-link">会社のホームページを見る</a></li>
             <li class="dropdown-item"><a href="https://www.wantedly.com/companies/company_7305723" class="dropdown-link">Wantedllyを見る</a></li>
           </ul>
@@ -160,6 +162,10 @@ export default {
       router.push({ name: "Contact" });
     };
 
+    const goToChatBotPage = () => {
+      router.push({ name: "ChatBot" });
+    };
+
     // ウィンドウリサイズ時にモバイル画面の判定を行う
     const handleResize = () => {
       checkMobileScreen();
@@ -189,6 +195,7 @@ export default {
       goToMyPage,
       goToProgressPage,
       goToContactPage,
+      goToChatBotPage,
     };
   },
 };

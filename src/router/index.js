@@ -145,6 +145,12 @@ const routes = [
     component: () => import("../components/others/Contact.vue"),
   },
   {
+    path: "/chat",
+    name: "ChatBot",
+    meta: { requiresAuth: true },
+    component: () => import("../components/others/ChatBot.vue"),
+  },
+  {
     path: "/underConstruction",
     name: "UnderConstruction",
     component: () => import("../components/UnderConstruction.vue"),
