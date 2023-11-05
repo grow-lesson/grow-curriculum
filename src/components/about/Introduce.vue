@@ -13,7 +13,7 @@
         </div>
         <div class="introduce-video" :class="{ 'slide-in': isLoaded }">
           <video autoplay muted loop @loadeddata="handleVideoLoad">
-            <source src="../../assets/videos/typing-1.gif" type="video/mp4" />
+            <source src="../../assets/videos/typing-1.mp4" type="video/mp4" controls="false"/>
           </video>
         </div>
       </li>
@@ -33,7 +33,7 @@
         </div>
         <div class="introduce-video" :class="{ 'slide-in': isLoaded }">
           <video autoplay muted loop @loadeddata="handleVideoLoad">
-            <source src="../../assets/videos/typing-2.gif" type="video/mp4" />
+            <source src="../../assets/videos/typing-2.mp4" type="video/mp4" controls="false"/>
           </video>
         </div>
       </li>
