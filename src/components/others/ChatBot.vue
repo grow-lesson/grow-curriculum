@@ -85,12 +85,7 @@ export default {
         },
       });
 
-      let botResponse = response.data.choices[0].message.content;
-
-      // ボットの応答に改行を追加
-      botResponse = botResponse.replace(/(\n|$)/g, '\n\n');
-
-      return botResponse;
+      return response.data.choices[0].message.content;
     } catch (error) {
       console.error('ChatGPT API Error:', error);
       return 'エラーが起こりました。更新してください。';
