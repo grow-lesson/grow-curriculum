@@ -48,20 +48,26 @@ export default {
           const botResponsePlaceholder = { text: '...', type: "bot" };
           messages.value.push(botResponsePlaceholder);
 
-          // ボットの応答を取得
+          // ボットの応答を1文字ずつ表示
           const botResponse = await callChatGPT(userMessage);
-
-          // プレースホルダーメッセージを実際のボットの応答で置き換える
-          const index = messages.value.indexOf(botResponsePlaceholder);
-          if (index !== -1) {
-            messages.value.splice(index, 1, { text: botResponse, type: "bot" });
-          }
+          await displayBotResponseOneCharAtATime(botResponse, botResponsePlaceholder);
         } catch (error) {
           console.error('ChatGPT API エラー:', error);
           messages.value.push({ text: 'エラーが起こりました。更新してください。', type: "bot" });
         }
       }
     };
+
+// ボットの応答を1文字ずつ表示する関数
+const displayBotResponseOneCharAtATime = async (response, placeholder) => {
+  const delay = 50; // 1文字表示する間隔（ミリ秒）
+
+  for (const char of response) {
+    await new Promise(resolve => setTimeout(resolve, delay));
+    placeholder.text += char;
+  }
+};
+
 
     async function callChatGPT(input) {
       const apiKey = process.env.VUE_APP_OPENAI_API_KEY;
