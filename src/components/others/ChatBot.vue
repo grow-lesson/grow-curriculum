@@ -47,21 +47,28 @@ export default {
         const botResponsePlaceholder = { text: '...', type: "bot" };
         messages.value.push(botResponsePlaceholder);
 
+        // ボットの応答を非同期で取得
         try {
-          // ボットの応答を取得
           const botResponse = await callChatGPT(userMessage);
-
-          // プレースホルダーメッセージを実際のボットの応答で置き換える
+          
+          // プレースホルダーメッセージを削除
           const index = messages.value.indexOf(botResponsePlaceholder);
           if (index !== -1) {
-            messages.value.splice(index, 1, { text: botResponse, type: "bot" });
+            messages.value.splice(index, 1);
           }
+
+          // ボットの応答を改行ごとに分割して表示
+          const botResponseLines = botResponse.split('\n');
+          botResponseLines.forEach(line => {
+            messages.value.push({ text: line, type: "bot" });
+          });
         } catch (error) {
           console.error('ChatGPT API エラー:', error);
           messages.value.push({ text: 'エラーが起こりました。更新してください。', type: "bot" });
         }
       }
     };
+
 
     async function callChatGPT(input) {
       const apiKey = process.env.VUE_APP_OPENAI_API_KEY;
