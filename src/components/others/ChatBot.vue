@@ -71,26 +71,32 @@ export default {
 
 
     async function callChatGPT(input) {
-      const apiKey = process.env.VUE_APP_OPENAI_API_KEY;
-      const endpoint = 'https://api.openai.com/v1/chat/completions';
+    const apiKey = process.env.VUE_APP_OPENAI_API_KEY;
+    const endpoint = 'https://api.openai.com/v1/chat/completions';
 
-      try {
-        const response = await api.post(endpoint, {
-          model: 'gpt-3.5-turbo-0613',
-          messages: [{ role: 'system', content: 'You are a chatbot.' }, { role: 'user', content: input }],
-        }, {
-          headers: {
-            'Authorization': `Bearer ${apiKey}`,
-            'Content-Type': 'application/json',
-          },
-        });
+    try {
+      const response = await api.post(endpoint, {
+        model: 'gpt-3.5-turbo-0613',
+        messages: [{ role: 'system', content: 'You are a chatbot.' }, { role: 'user', content: input }],
+      }, {
+        headers: {
+          'Authorization': `Bearer ${apiKey}`,
+          'Content-Type': 'application/json',
+        },
+      });
 
-        return response.data.choices[0].message.content;
-      } catch (error) {
-        console.error('ChatGPT API Error:', error);
-        return 'エラーが起こりました。更新してください。';
-      }
+      let botResponse = response.data.choices[0].message.content;
+
+      // ボットの応答に改行を追加
+      botResponse = botResponse.replace(/(\n|$)/g, '\n\n');
+
+      return botResponse;
+    } catch (error) {
+      console.error('ChatGPT API Error:', error);
+      return 'エラーが起こりました。更新してください。';
     }
+  }
+
 
     onMounted(() => {
       window.scrollTo(0, 0);
