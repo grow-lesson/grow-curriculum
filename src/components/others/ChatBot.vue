@@ -57,11 +57,8 @@ export default {
             messages.value.splice(index, 1);
           }
 
-          // ボットの応答を改行ごとに分割して表示
-          const botResponseLines = botResponse.split('\n');
-          botResponseLines.forEach(line => {
-            messages.value.push({ text: line, type: "bot" });
-          });
+          return botResponse;
+          
         } catch (error) {
           console.error('ChatGPT API エラー:', error);
           messages.value.push({ text: 'エラーが起こりました。更新してください。', type: "bot" });
