@@ -4,12 +4,12 @@
     <div class="chat">
       <div class="chat-room">
         <div class="chat-messages">
-          <div class="message" v-for="(message, index) in messages" :key="index">
-            <p class="message-text" :class="{ 'user-message': message.type === 'user', 'bot-message': message.type === 'bot' }">{{ message.text }}</p>
+          <div v-for="(message, index) in messages" :key="index" class="message" :class="{ 'user-message': message.type === 'user', 'bot-message': message.type === 'bot' }">
+            <p class="message-text">{{ message.text }}</p>
           </div>
         </div>
         <div class="user-input">
-          <textarea class="user-text" v-model="userInput" @keyup.enter="sendMessage" placeholder="メッセージを送信" />
+          <textarea class="user-text" v-model="userInput" placeholder="メッセージを送信" />
           <button @click="sendMessage">Send</button>
         </div>
       </div>
@@ -89,54 +89,63 @@ export default {
 
 <style scoped>
 .chat {
-  font-family: Arial, sans-serif;
+  height: 85vh;
+  background-color: #a2a2a2;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
 }
 
 .chat-room {
-  width: 80%;
-  height: 100%;
+  width: 70%;
+  height: 85%;
+  max-height: 80vh;
+  overflow: hidden;
+  margin: 20px auto;
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  background-color: rgb(83, 87, 88);
-  border-radius: 10px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
 }
 
 .chat-messages {
-  padding: 20px;
   flex-grow: 1;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
+/* メッセージスタイル */
 .message {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   display: flex;
+  justify-content: space-between;
 }
 
 .message-text {
   padding: 10px;
   border-radius: 10px;
-  max-width: 70%;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-  background-color: rgb(144, 226, 246);
+  max-width: 70%;
 }
 
 .user-message .message-text {
-  align-self: flex-end;
   background-color: #e1ffc7;
 }
 
 .bot-message .message-text {
-  align-self: flex-start;
   background-color: #fff;
 }
 
+.user-message {
+  justify-content: flex-start;
+}
+
+.bot-message {
+  justify-content: flex-end;
+}
+
+/* ユーザー入力スタイル */
 .user-input {
   width: 100%;
   display: flex;
@@ -147,31 +156,57 @@ export default {
   background-color: #fff;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  margin-top: 10px;
 }
 
-input[type="text"] {
-  flex: 1;
-  padding: 10px;
-  border: none;
-  font-size: 16px;
-  outline: none;
-  width: 100%; /* テキストフィールドの幅を100%に設定 */
-}
-
-.user-text{
+.user-text {
   width: 60%;
   height: 1.7rem;
   padding: 0;
   border: 1px solid #afafafca;
-
+  resize: none;
+  overflow: hidden;
 }
+
 
 button {
   background-color: #007bff;
   color: #fff;
   border: none;
   padding: 10px 20px;
+  margin-left: 10px;
   font-size: 16px;
   cursor: pointer;
+  border-radius: 10%;
+}
+
+/* スマートフォン向けのスタイル */
+@media only screen and (max-width: 600px) {
+  .chat-room {
+    width: 90%;
+    height: 90%;
+    max-height: none;
+  }
+
+  .message-text {
+    max-width: 85%;
+    font-size: 12px;
+  }
+
+  .user-input {
+    display: flex;
+    font-size: small;
+  }
+
+  .user-text {
+    width: 70%;
+    margin-top: 10px;
+  }
+
+  button {
+    margin-left: 0;
+    margin-top: 10px;
+  }
 }
 </style>
+
