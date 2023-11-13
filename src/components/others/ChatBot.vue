@@ -43,11 +43,11 @@ export default {
         messages.value.push({ text: userMessage, type: "user" });
         modelValue.value = "";
 
-        try {
-          // ボットの応答用のプレースホルダーメッセージを表示
-          const botResponsePlaceholder = { text: '...', type: "bot" };
-          messages.value.push(botResponsePlaceholder);
+        // ボットの応答用のプレースホルダーメッセージを表示
+        const botResponsePlaceholder = { text: '...', type: "bot" };
+        messages.value.push(botResponsePlaceholder);
 
+        try {
           // ボットの応答を取得
           const botResponse = await callChatGPT(userMessage);
 
