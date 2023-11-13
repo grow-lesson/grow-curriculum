@@ -49,15 +49,14 @@ export default {
 
         // ボットの応答を非同期で取得
         try {
+          // ボットの応答を取得
           const botResponse = await callChatGPT(userMessage);
-          
-          // プレースホルダーメッセージを削除
+
+          // プレースホルダーメッセージを実際のボットの応答で置き換える
           const index = messages.value.indexOf(botResponsePlaceholder);
           if (index !== -1) {
-            messages.value.splice(index, 1);
+            messages.value.splice(index, 1, { text: botResponse, type: "bot" });
           }
-
-            messages.value.push({ text: line, type: "bot" });
         } catch (error) {
           console.error('ChatGPT API エラー:', error);
           messages.value.push({ text: 'エラーが起こりました。更新してください。', type: "bot" });
