@@ -36,23 +36,31 @@ export default {
     const messages = ref([]);
     const modelValue = ref("");
     
-    // Function to send a message
     const sendMessage = async () => {
       const userMessage = modelValue.value.trim();
       if (userMessage) {
+        // ユーザーのメッセージを即座に表示
         messages.value.push({ text: userMessage, type: "user" });
-        
         modelValue.value = "";
 
         try {
+          // ボットの応答用のプレースホルダーメッセージを表示
+          const botResponsePlaceholder = { text: '...', type: "bot" };
+          messages.value.push(botResponsePlaceholder);
+
+          // ボットの応答を取得
           const botResponse = await callChatGPT(userMessage);
-          messages.value.push({ text: botResponse, type: "bot" });
+
+          // プレースホルダーメッセージを実際のボットの応答で置き換える
+          const index = messages.value.indexOf(botResponsePlaceholder);
+          if (index !== -1) {
+            messages.value.splice(index, 1, { text: botResponse, type: "bot" });
+          }
         } catch (error) {
-          console.error('ChatGPT API Error:', error);
+          console.error('ChatGPT API エラー:', error);
           messages.value.push({ text: 'エラーが起こりました。更新してください。', type: "bot" });
         }
       }
-      modelValue.value = "";
     };
 
     async function callChatGPT(input) {
