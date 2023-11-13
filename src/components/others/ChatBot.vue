@@ -76,7 +76,7 @@ export default {
 
       try {
         const response = await api.post(endpoint, {
-          model: 'gpt-3.5-turbo',
+          model: 'gpt-3.5-turbo-0613',
           messages: [{ role: 'system', content: 'You are a chatbot.' }, { role: 'user', content: input }],
         }, {
           headers: {
