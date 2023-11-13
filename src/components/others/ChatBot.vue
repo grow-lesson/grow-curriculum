@@ -9,8 +9,8 @@
           </div>
         </div>
         <div class="user-input">
-          <textarea class="user-text" v-model="userInput" placeholder="メッセージを送信" />
-          <button @click="sendMessage">Send</button>
+          <AutoAdjustTextarea v-model="modelValue" placeholder="メッセージを送信" />
+          <button @click="sendMessage">送信</button>
         </div>
       </div>
     </div>
@@ -22,24 +22,27 @@
 import { ref, onMounted } from 'vue';
 import Header from "@/components/layout/Header.vue";
 import Footer from "@/components/layout/Footer.vue";
+import AutoAdjustTextarea from "@/components/AutoAdjustTextarea.vue";
 import api from '@/axios';
 
 export default {
   components: {
     Header,
     Footer,
+    AutoAdjustTextarea,
   },
   setup() {
     // Data using refs
     const messages = ref([]);
-    const userInput = ref("");
-
+    const modelValue = ref("");
+    
     // Function to send a message
     const sendMessage = async () => {
-      const userMessage = userInput.value.trim();
+      const userMessage = modelValue.value.trim();
       if (userMessage) {
         messages.value.push({ text: userMessage, type: "user" });
-        userInput.value = "";
+        
+        modelValue.value = "";
 
         try {
           const botResponse = await callChatGPT(userMessage);
@@ -49,6 +52,7 @@ export default {
           messages.value.push({ text: 'エラーが起こりました。更新してください。', type: "bot" });
         }
       }
+      modelValue.value = "";
     };
 
     async function callChatGPT(input) {
@@ -79,7 +83,7 @@ export default {
 
     return {
       messages,
-      userInput,
+      modelValue,
       sendMessage,
     };
   }
@@ -157,15 +161,6 @@ export default {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   margin-top: 10px;
-}
-
-.user-text {
-  width: 60%;
-  height: 1.7rem;
-  padding: 0;
-  border: 1px solid #afafafca;
-  resize: none;
-  overflow: hidden;
 }
 
 
