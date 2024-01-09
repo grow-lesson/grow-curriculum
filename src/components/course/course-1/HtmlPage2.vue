@@ -5,8 +5,8 @@
       <div class="main-content">
         <Title title="HTML・CSS 2" id="Title"></Title>
         <Document>
-          <p>要素の特徴を知ることでスタイルの当て方や構造を作成を効率よくしていきましょう！</p>
-          <p>ここでは概念や、要素の違いを詳しく見ていくセクションです。</p>
+          <p>要素の特徴を知ることでスタイルの当て方や構造を効率よくしていきましょう！</p>
+          <p>ここでは概念や要素の違いを詳しく見ていきます。</p>
         </Document>
 
         <!-- section 1 -->
@@ -19,14 +19,14 @@
           </p><br>
           <HighlightWord word="ブロック要素"></HighlightWord>
           <p>
-            ページの構造やレイアウトを定義するために使用されるHTMLの要素です。<br>
+            ・ページの構造やレイアウトを定義するために使用されるHTMLの要素。
             行全体のまとまりを作ります。<br>
             例 : hタグ、pタグ、divタグ、ulタグ、liタグ
           </p><br>
           <HighlightWord word="インライン要素"></HighlightWord>
           <p>
-            ・文章の一部を装飾したり、特定の部分に対してスタイルを適用するために使用されるHTMLの要素です。<br>
-            行の中の一部のまとまりを作ります。<br>
+            ・文章の一部を装飾したり、特定の部分に対してスタイルを適用するために使用されるHTMLの要素。
+            行の一部のまとまりを作ります。<br>
             例 : imgタグ、aタグ
           </p>
         </Document>
@@ -45,14 +45,14 @@
           <HighlightWord word="インライン要素の特徴"></HighlightWord>
           <p>
             ・横幅は要素内容によって変わる。<br>
-            ・次の行に別の要素を入れると勝手に改行されず横に表示される。<br>
+            ・次の行に別の要素を入れると改行されず横に表示される。<br>
             ・width,heightは設定できない。<br>
-          </p><br>
+          </p><br><br>
           <p>
-            下の画像を見てみましょう。<br>
+            下の画像を見てみましょう。<br><br>
             ブロック要素だと幅や高さの指定を指定していないとブラウザ上で横いっぱいまで広がってしまいます。<br>
             それに対して、インライン要素は文字数分しか幅がないことがわかります。<br>
-            さらにブロック要素だと横いっぱいに広がっているため次の要素を入れると改行されますが、インライン要素は横並びになってしまう特徴があります。<br>
+            さらにブロック要素だと横いっぱいに広がっているため次の要素を入れると改行されますが、インライン要素は横並びになってしまうという特徴があります。<br>
           </p>
           <div>
             <img @click="openModal(imagePaths.step1)" :src="imagePaths.step1" class="powerpoint-image" alt="block-inline" />
@@ -68,7 +68,7 @@
             隣り合う要素に余白をつけたい時に使うプロパティを学びましょう。<br><br>
           プロパティ<br>
             <HighlightWord word="padding: [余白のサイズ(px,rem,%など)];"></HighlightWord><br>
-            ・内側の余白をつけるプロパティでpaddingプロパティと呼ばれます。<br><br>
+            ・内側の余白をつけるプロパティ。paddingプロパティと呼ばれます。<br><br>
             例：<br>
             padding: 10px; 上下左右<br>
             padding: 10px 30px; →上下10px・左右30px<br>
@@ -79,7 +79,7 @@
             <span class="markup-word-blue">padding-top: [余白のサイズ(px,rem,%など)];</span> →上だけ<br>
             <span class="markup-word-blue">padding-bottom: [余白のサイズ(px,rem,%など)];</span> →下だけ<br><br>
             <HighlightWord word="margin: [余白のサイズ(px,rem,%など)];"></HighlightWord><br>
-            ・外側の余白をつけるプロパティでmarginプロパティと呼ばれます。<br><br>
+            ・外側の余白をつけるプロパティ。marginプロパティと呼ばれます。<br><br>
             例：<br>
             margin: 10px; 上下左右<br>
             margin: 10px 30px; →上下10px・左右30px<br>
@@ -90,15 +90,15 @@
             <span class="markup-word-blue">margin-top: [余白のサイズ(px,rem,%など)];</span> →上だけ<br>
             <span class="markup-word-blue">margin-bottom: [余白のサイズ(px,rem,%など)];</span> →下だけ<br><br>
             <HighlightWord word="border: [境界線の太さ(px,rem,%など)] [線の種類] [線の色];"></HighlightWord><br>
-            ・境界線をつけるプロパティでborderプロパティと呼ばれます。<br><br>
+            ・境界線をつけるプロパティ。borderプロパティと呼ばれます。<br><br>
             例：<br>
             border: 1px solid white;<br>
             →「1pxの一本線の白い枠線」<br><br>
 
-            それでは一度ファイルを作って行きましょう!<br>
+            それでは一度ファイルを作っていきましょう!<br><br>
             ①<br>
             新しい「html-css-lesson-4」ファイルをVisual Studio Codeで作り、以下をコピーしましょう。<br>
-            本来はstyle.cssはassetsのフォルダに入れる必要があるので作成してフォルダの中に入れましょう。<br>
+            本来はstyle.cssはassetsのフォルダに入れる必要があるので作成してフォルダの中に入れましょう。
           </p><br>
           <Terminal :fileName="htmlSourceData.file4.filename" :copiedText="htmlSourceData.file4.code" :lang="htmlSourceData.file4.language" />
           <Terminal :fileName="htmlSourceData.file5.filename" :copiedText="htmlSourceData.file5.code" :lang="htmlSourceData.file5.language" />
@@ -106,16 +106,16 @@
           <p>
             このようにファイルを作り、貼り付けたらWeb上でみればこのようになります。
           </p>
-          <div>
+          <div><br>
             <img @click="openModal(imagePaths.step2)" :src="imagePaths.step2" class="screen-image" alt="vscode-1" />
           </div><br>
           <p>
             ②<br>
-            Web上で確認しましょう。確認すると以下のようになるかと思います。<br>
+            Web上で確認しましょう。<br>確認すると以下のようになるかと思います。<br><br>
             しかし、先ほど学習した余白をpaddingやmarginを使っているわけではないのに要素の左や上の方に余白ができている事がわかります。<br>
             この理由は次のセクションで学習しましょう。
           </p>
-          <div>
+          <div><br>
             <img @click="openModal(imagePaths.step3)" :src="imagePaths.step3" class="screen-image" alt="web-1" />
           </div><br>
         </Document>
@@ -123,10 +123,10 @@
           <SectionTitle sectionTitle="2-2. リセットCSSについて知る" id="sectionTitle2-2"></SectionTitle>
           <p>
             <HighlightWord word="リセットCSS"></HighlightWord><br>
-            デザインを確認するためのブラウザではデフォルトでそのブラウザ仕様のCSSが設定されてしまっています。<br>
-            そのため、自分たちが設定していないにもかかわらずスタイルが適用されてしまうのでそれを一度初期化する必要があります。<br>
-            その時に初期化されたスタイルを設定するCSSファイルの事です。<br>
-            ではこれを設定してスタイルを初期化しましょう。<br><br>
+            デザインを確認するためのブラウザでは、すでにブラウザ仕様のCSSが設定されてしまっています。<br>
+            そのため、自分たちが設定していないにもかかわらずスタイルが適用されてしまうので、一度初期化する必要があります。<br>
+            リセットCSSとは設定されたCSSを初期化するCSSファイルの事です。<br><br>
+            ではリセットCSSを実行してみましょう!<br><br>
             ①<br>
             以下のボタンを押してリセットCSSをダウンロードしましょう。<br>
             ダウンロードをしたらそのファイルをWindowsであればエクスプローラー、MacであればFinderを開いてドラックアンドドロップでVisual Studio Codeの先ほど作ったファイルに入れましょう。<br><br>
@@ -155,8 +155,6 @@
           </div><br>
           <p>
             ④<br>
-            それでは今の状態から自分が設定する余白(今回はmargin)を設定しましょう。<br>
-            style.cssの5行目と10行目に以下を追加しましょう。<br>
             画像のように余白が設定できればOKです。<br>
           </p><br>
           <div>
@@ -171,8 +169,8 @@
           <p>
             先ほど学習した余白の設定margin、paddingの違いを理解しましょう。<br><br>
             <HighlightWord word="ボックスモデル"></HighlightWord><br>
-            ・すべての要素には必ず共通してpadding,border,marginがあります。<br>
-            リセットCSSはそのHTMLの要素の概念のことを指し、外側の余白、内側の余白というのは境界線より外側、内側をさします。
+            すべての要素には必ず共通してpadding,border,marginがあります。<br>
+            ボックスモデルはそのHTMLの要素の概念のことを指し、外側の余白、内側の余白というのは境界線より外側、内側をさします。
           </p><br>
           <div>
             <img @click="openModal(imagePaths.step8)" :src="imagePaths.step8" class="powerpoint-image" alt="boxmodel" />
@@ -181,12 +179,12 @@
         <Document>
           <SectionTitle sectionTitle="3-2. ブロック要素とインライン要素の違いをまとめる" id="sectionTitle3-2"></SectionTitle>
           <p>
-            それではブロック要素、インライン要素の違いをまとめましょう。<br>
+            それではブロック要素、インライン要素の違いをまとめましょう。<br><br>
             以下の表を見てみましょう。<br>
-            ブロック要素やインライン要素にはこのような違いがあります。<br>
-            一番右にあるのは今回初登場する<span class="markup-word-blue">インラインブロック要素</span>になります。<br>
+            ブロック要素やインライン要素にはこのような違いがあります。<br><br>
+            一番右にあるのは初登場の<span class="markup-word-blue">インラインブロック要素</span>になります。<br>
             これはブロック要素やインライン要素の特徴を半分ずつ持っている要素になります。<br>
-            しかし最初からこの性質を持つ要素名は存在しません。<br>
+            しかし最初からこの性質を持つ要素名は存在しません。<br><br>
             次のセクションではこの要素に変換したり、ブロック要素をインライン要素にしたりその逆にするにはどうすればよいのか学んでいきます。<br>
           </p><br>
           <div>
@@ -199,12 +197,12 @@
             新しいプロパティを覚えましょう。<br><br>
             プロパティ<br>
             <HighlightWord word="display: [block,inline,inline-block,none];"></HighlightWord><br>
-            ・要素の種類を変えるプロパティでdisplayプロパティと呼ばれます。<br><br>
+            ・要素の種類を変えるプロパティ。displayプロパティと呼ばれます。<br><br>
             block…ブロック要素にする<br>
             inline…インライン要素にする<br>
             inline-block…インラインブロック要素にする<br>
             none…要素を非表示にする<br><br>
-            では実際に使ってみましょう!
+            では実際に使ってみましょう!<br><br>
             ①<br>
             Visual Studio Codeで「html-css-lesson-4」を選択して「ctrl(command) + C」でコピーして「ctrl(command) + V」で作りましょう。<br>
             そのあとは名前を「html-css-lesson-5」に変更しましょう。<br>
@@ -231,7 +229,7 @@
           <p>
             ③<br>
             それでは今の状態から要素の種類を設定しましょう。<br>
-            style.cssの2行目と10行目に以下を追加しましょう。<br>
+            style.cssの2行目と10行目に以下を追加しましょう。<br><br>
             画像のように設定できればOKです。<br>
           </p><br>
           <div>
@@ -249,25 +247,25 @@
         <Document>
           <SectionTitle sectionTitle="3-4. 要素とプロパティ③" id="sectionTitle3-4"></SectionTitle>
           <p>
-            ここまでの学習で要素の種類を変えることができました。<br>
+            ここまでの学習で要素の種類を変えることができました。<br><br>
             ではここでブロック要素の特徴を思い出してください。<br>
             ブロック要素では横並びになることなく、必ずインライン要素のように横並びにならず要素同士が縦に並びます。<br>
-            横並びにしたいときに先ほどのdisplayで要素の種類を変えることで横並びにできますが、ブロック要素の特性を持ったまま横並びにしたい場合もあります。<br>
-            その方法は要素を変える以外に2つのパターンがあります。<br>
+            横並びにしたいときに先ほどのdisplayで要素の種類を変えることで横並びにできますが、ブロック要素の特性を持ったまま横並びにしたい場合もあります。<br><br>
+            その方法は要素を変える以外に2つパターンがあります。<br>
             ではどのように横並びにするか見ていきましょう。<br><br>
             プロパティ<br>
             <HighlightWord word="float: [left,right,none];"></HighlightWord><br>
-            ・ブロック要素を横並びにするプロパティでfloatプロパティと呼ばれます。<br><br>
+            ・ブロック要素を横並びにするプロパティ。floatプロパティと呼ばれます。<br><br>
             left…左寄せに横に並べる<br>
             right…右寄せに横に並べる<br>
             none…特に配置を指定しない(デフォルト値)<br><br>
             <HighlightWord word="display: flex;"></HighlightWord><br>
-            ・プロパティをflexにするとよこならびにできます。<br><br>
-            それではfloatから確認していきましょう。<br>
+            ・プロパティをflexにすると横並びにできる。<br><br>
+            それではfloatから確認していきましょう。<br><br>
             ①<br>
-            では先ほどのようにVisual Studio Codeで「html-css-lesson-5」を選択して「ctrl(command) + C」でコピーして「ctrl(command) + V」で作りましょう。<br>
-            そのあとは名前を「html-css-lesson-6」に変更し、以下のソースを貼り付けましょう。<br>
-            画像のようになればOKです。<br> 
+            先ほどのようにVisual Studio Codeで「html-css-lesson-5」を選択して「ctrl(command) + C」でコピーして「ctrl(command) + V」で作りましょう。<br>
+            名前を「html-css-lesson-6」に変更し、以下のソースを貼り付けましょう。<br><br>
+            画像のようになればOKです。<br>
           </p><br>
           <Terminal :fileName="htmlSourceData.file9.filename" :copiedText="htmlSourceData.file9.code" :lang="htmlSourceData.file9.language" />
           <Terminal :fileName="htmlSourceData.file10.filename" :copiedText="htmlSourceData.file10.code" :lang="htmlSourceData.file10.language" />
@@ -281,7 +279,7 @@
           <p>
             ②<br>
             では横並びにしていきましょう。<br>
-            style.cssのparentの子要素に以下を追加しましょう。<br>
+            style.cssのparentの子要素に以下を追加しましょう。<br><br>
             画像のように設定できればOKです。<br>
           </p><br>
           <div>
@@ -298,7 +296,7 @@
           <p>
             ①<br>
             次に先ほどのようにVisual Studio Codeで「html-css-lesson-6」を選択して「ctrl(command) + C」でコピーして「ctrl(command) + V」で作りましょう。<br>
-            そのあとは名前を「html-css-lesson-7」に変更し、以下のソースを貼り付けましょう。<br>
+            そのあとは名前を「html-css-lesson-7」に変更し、以下のソースを貼り付けましょう。<br><br>
             画像のようになればOKです。<br>
           </p><br>
           <Terminal :fileName="htmlSourceData.file11.filename" :copiedText="htmlSourceData.file11.code" :lang="htmlSourceData.file11.language" />
@@ -312,7 +310,7 @@
           <p>
             ②<br>
             ではmiddleの子要素left、rightを横並びにしていきましょう。<br>
-            style.cssのmiddleの子要素に以下を追加しましょう。<br>
+            style.cssのmiddleの子要素に以下を追加しましょう。<br><br>
             画像のようになればOKです。<br>
           </p><br>
           <div>
@@ -321,8 +319,8 @@
           <p>
             ③<br>
             Web上で確認しましょう。<br>
-            leftとrightは横並びにすることができました。<br>
-            しかし、緑が半分下に入り込んでいることがわかります。<br>
+            leftとrightは横並びにすることができました。<br><br>
+            しかし、緑が半分下に入り込んでいます。<br>
             なぜこのようなことになるのでしょうか？<br>
           </p><br>
           <div>
@@ -333,15 +331,13 @@
           <SectionTitle sectionTitle="3-5. floatの性質とclearfixの概念を知る" id="sectionTitle3-5"></SectionTitle>
           <p>
             floatの性質を理解していきましょう。<br>
-            floatを指定した要素は浮き上がる性質があります。
-            つまり、指定していないbottomが浮き上がったleftとrightの下に入り込んでかぶってしまうことがあります。<br>
-            では浮き上がった下のスペースに入り込まないようにする為にはどうしたらいいでしょうか？<br>
-            それを解決する方法がClearfixという考え方になります。<br><br>
+            floatを指定した要素は浮き上がる性質があるため、浮き上がったleftとrightの下にbottomが入り込んでかぶってしまうことがあります。<br>
+            この入り込みを解決する方法がClearfixという考え方です。<br><br>
             <HighlightWord word="Clearfix"></HighlightWord><br>
             floatプロパティを使って横並びになっている要素を回り込みの影響が出ないようにするテクニックのこと。<br>
             <br>
             ではこのテクニックを使って回り込みをしないようにしましょう。<br>
-            clearfixの記述の仕方は以下のように記述が決まっています。<br>
+            clearfixの記述の仕方は以下のように記述が決まっています。<br><br>
             この記述の意味は後ほど説明しますので一旦入れてみましょう。
           </p><br>
           <div>
@@ -349,7 +345,7 @@
           </div><br>
           <p>
             ①<br>
-            ・以下の画像のようにmiddleにclearfixを適用させてください。
+            以下の画像のようにmiddleにclearfixを適用させます。
           </p><br>
           <div>
             <img @click="openModal(imagePaths.step24)" :src="imagePaths.step24" class="screen-image" alt="vscode-12" />
@@ -364,14 +360,14 @@
           <p>
             それではClearfixで使われていた::afterについて学びましょう。<br><br>
             <HighlightWord word="疑似要素"></HighlightWord><br>
-            ::afterは疑似要素と呼ばれ、セレクタに付加するキーワードで、選択された要素の特定の部分にスタイル付けできるようにするものです。<br><br>
-            以下によく使われる疑似要素のため覚えましょう。<br>
+            ::afterは疑似要素と呼ばれるセレクタに付加するキーワード。選択された要素の特定の部分にスタイルをつけることができます。<br><br>
+            以下はよく使われる疑似要素のため覚えておきましょう。<br>
             <span class="markup-word-blue">::after</span><br>
-            要素の直後に内容を挿入したいスタイルがある時に使います。<br><br>
+            要素の直後に挿入したい内容のスタイルがある時に使います。<br><br>
             <span class="markup-word-blue">::before</span><br>
-            要素の直前に内容を挿入したいスタイルがある時に使います。<br><br>
+            要素の直前に挿入したい内容のスタイルがある時に使います。<br><br>
             <HighlightWord word="疑似クラス"></HighlightWord><br>
-            セレクタに付加するキーワードで、選択された要素の特定の部分にスタイル付けできるようにするものです。<br>
+            セレクタに付加するキーワードで、選択された要素の特定の部分にスタイル付けできるようにするもの。<br>
             指定した要素の中の一部に対して影響を与える擬似要素と違い、擬似クラスは指定したもの全体の変更に影響を与える点やコロン(:)の数に違いがあります。<br><br>
             <span class="markup-word-blue">:hover</span><br>
             カーソルがこの擬似クラスを与えた要素に乗った時にのみ適用されるスタイルになります。<br><br>
@@ -388,7 +384,7 @@
           </div><br>
           <p>
             つまりClearfixでは疑似要素「::after」でmiddleの後にスタイルを挿入していたという事になります。<br>
-            ではなにを挿入していたか見ていきましょう。<br>
+            では挿入したスタイルの内容を見ていきましょう。<br>
           </p>
         </Document>
         <Document>
@@ -397,31 +393,31 @@
             Clearfixで使われていたプロパティをおさらいしましょう。<br><br>
             プロパティ<br>
             <HighlightWord word="content: [挿入したい内容];"></HighlightWord><br>
-            ・要素の直前または直後に文字や画像などの内容を挿入したいときに、使われるプロパティでcontentプロパティと呼ばれます。<br><br>
+            ・要素の直前または直後に文字や画像などの内容を挿入したいときに使われるプロパティ。contentプロパティと呼ばれます。<br><br>
             挿入できるもの<br>
             ・url→URLで画像や音声等のファイルを指定します。<br>
-            ・"文字列"→テキストを入れることができます<br><br>
+            ・"文字列"→テキストを入れることができます。<br><br>
             <HighlightWord word="clear: both;"></HighlightWord><br>
-            ・floatプロパティによるボックスの回り込みを解除するプロパティでclearプロパティと呼ばれます。<br><br>
+            ・floatプロパティによるボックスの回り込みを解除するプロパティ。clearプロパティと呼ばれます。<br><br>
             それでは先ほどのClearfixの画像を見てみましょう。
           </p><br>
           <div>
             <img @click="openModal(imagePaths.step23)" :src="imagePaths.step23" class="powerpoint-image" alt="clearfix" />
           </div><br>
           <p>
-            つまり、今回だと回り込みを防ぐためにmiddleの後に「content: "";」で空欄の要素を作っています。<br>
-            また、contentで追加した要素はインライン要素になるため「display: block;」でブロック要素にし、横いっぱいに空欄を与えた事になります。<br>
-            これによってfloatで浮き上がった要素に下に空欄を埋め込み回り込みしないようにバリアしているためbottomが入らないというわけです。<br>
-            さらにcontentで追加したの要素がmiddleの下に回り込みまないようにclearプロパティで回り込みを解除しています。<br>
-            少しイメージしづらいかもしれませんが少しずつ復習して覚えられるようにしましょう。<br><br>
-            しかし現在CSS3ではこのやり方は推奨されていなく、もう一つの方法「display: flex;」を使った横並びの方法を使うことが多いです。<br>
-            最近追加されたプロパティのため、少し古いブラウザだと設定しても聞かない場合もあるのでデザインする環境によって使い分けられるようにしましょう。<br>
+            今回だと回り込みを防ぐためにmiddleの後に「content: "";」で空欄の要素を作りました。<br><br>
+            contentで追加した要素はインライン要素になるため「display: block;」でブロック要素にし、横いっぱいに空欄を与えています。<br>
+            これによってfloatで浮き上がった要素の下に空欄を埋め込み、回り込みしないようにバリアしているためbottomが入らないというわけです。<br><br>
+            さらにcontentで追加したの要素がmiddleの下に回り込みまないようにclearプロパティで回り込みを解除しています。<br><br>
+            少しイメージしづらいかもしれませんが少しずつ復習して覚えていきましょう。<br><br>
+            しかし現在CSS3ではこのやり方は推奨されておらず、もう一つの方法「display: flex;」を使った横並びの方法を使うことが多いです。<br>
+            最近追加されたプロパティのため、少し古いブラウザだと設定しても効かない場合もあるのでデザインする環境によって使い分けられるようにしましょう。<br><br>
             では「display: flex;」のやり方も学びましょう。
           </p>
-          <p>
+          <p><br><br>
             ①<br>
             次に先ほどのようにVisual Studio Codeで「html-css-lesson-7」を選択して「ctrl(command) + C」でコピーして「ctrl(command) + V」で作りましょう。<br>
-            そのあとは名前を「html-css-lesson-8」に変更し、以下のソースを貼り付けましょう。<br>
+            そのあとは名前を「html-css-lesson-8」に変更し、以下のソースを貼り付けましょう。<br><br>
             画像のようになればOKです。<br>
           </p><br>
           <Terminal :fileName="htmlSourceData.file13.filename" :copiedText="htmlSourceData.file11.code" :lang="htmlSourceData.file11.language" />
@@ -432,7 +428,7 @@
           <p>
             ②<br>
             ではmiddleの子要素left、rightを横並びにしていきましょう。<br>
-            style.cssのmiddleの子要素に以下を追加しましょう。<br>
+            style.cssのmiddleの子要素に以下を追加しましょう。<br><br>
             画像のようになればOKです。<br>
           </p><br>
           <div>
@@ -440,7 +436,7 @@
           </div><br>
           <p>
             ③<br>
-            Web上で確認しましょう。<br>
+            Web上で確認しましょう。<br><br>
             leftとrightは横並びにすることができました。<br>
             Clearfixよりも簡単に横並びにすることができます。<br>
           </p><br>
@@ -451,64 +447,66 @@
         <Document>
           <SectionTitle sectionTitle="3-7. 要素とプロパティ④" id="sectionTitle3-7"></SectionTitle>
           <p>
-            ここまでブロック要素とインライン要素の違いやボックスモデルの違いについて説明していきました。<br>
+            ここまでブロック要素とインライン要素の違いやボックスモデルの違いについて説明してきました。<br>
             ここからさらに様々な要素やプロパティについて学んでいきましょう!<br><br>
+            要素<br>
             <HighlightWord word="<input type=“フォームの種類” value=”最初から入る文字”>"></HighlightWord><br>
-            ・入力フォームやボタンを作る要素でこのタグはinputタグと呼ばれます。<br><br>
-            新しい属性を覚えましょう。<br><br>
+            ・入力フォームやボタンを作る要素。inputタグと呼ばれます。<br><br>
+            属性<br>
             <span class="markup-word-blue">type属性</span><br>
-            フォームの種類を設定できる属性です。<br><br>
+            ・フォームの種類を設定できる属性。<br>
             フォームの種類例<br>
             submit→指定するとボタンになります。<br>
             text→指定すると1行のみ入力できるテキストエリアになります。<br><br>
             <span class="markup-word-blue">value属性</span><br>
-            フォームの中の値を決められる属性です。<br><br>
+            フォームの中の値を決められる属性。<br><br>
             <span class="markup-word-blue">placefolder属性</span><br>
-            フォームの中に入力例を表示する属性です。<br><br>
+            フォームの中に入力例を表示する属性。<br><br>
             <HighlightWord word="<textarea></textarea>"></HighlightWord><br>
-            ・2行以上の入力フォームを作る要素でこのタグはtextareaタグと呼ばれます。<br><br>
+            ・2行以上の入力フォームを作る要素。textareaタグと呼ばれます。<br><br>
             プロパティ<br>
             <HighlightWord word="background-image: url[背景画像があるディレクトリのパス];"></HighlightWord><br>
-            ・背景画像を指定できるプロパティでbackground-imageプロパティと呼ばれます。<br><br>
+            ・背景画像を指定できるプロパティ。background-imageプロパティと呼ばれます。<br><br>
             <span class="markup-word-blue">【HTML要素のimgタグの何が違うの？】</span><br>
-              ページ全体を覆う背景画像として使う場合はbackground-imageを使い、ページの中のロゴやアイコンの一つとして画像を作りたい時はimgタグを使いましょう。
+              ページ全体を覆う背景画像として使う場合はbackground-imageを使い、ページの中のロゴやアイコンの一つとして画像を作りたい時はimgタグを使いましょう。<br>
               また、 background-imageを指定するときの要素はdivを使います。<br><br>
             <HighlightWord word="background-size: [背景画像のサイズ];"></HighlightWord><br>
-            ・背景画像のサイズを指定できるプロパティでbackground-sizeプロパティと呼ばれます。<br><br>
+            ・背景画像のサイズを指定できるプロパティ。background-sizeプロパティと呼ばれます。<br><br>
             背景画像の指定例<br>
-            <span class="markup-word-blue">auto</span>→特に指定をしません。元の画像サイズで表示されます<br>
-            <span class="markup-word-blue">contain</span>→縦横比を保持したまま背景画像の全体が表示される<br>
+            <span class="markup-word-blue">auto</span>→特に指定をしません。元の画像サイズで表示されます。<br>
+            <span class="markup-word-blue">contain</span>→縦横比を保持したまま背景画像の全体が表示されます。<br>
             <span class="markup-word-blue">cover</span>→要素全体を覆うように自動的に背景画像が広がります。<br><br>
             <HighlightWord word="opacity: [0.0〜1.0];"></HighlightWord><br>
-            ・要素の透明度を設定できるプロパティでopacityプロパティと呼ばれます。<br>
-            0に近いほど透明度は上がります<br><br>
+            ・要素の透明度を設定できるプロパティ。opacityプロパティと呼ばれます。<br>
+            0に近いほど透明度が上がります。<br><br>
             <HighlightWord word="box-shadow: [水平方向の影の長さ] [垂直方向の影の長さ] [色];"></HighlightWord><br>
-            ・要素の影を設定できるプロパティでbox-shadowプロパティと呼ばれます。<br><br>
+            ・要素の影を設定できるプロパティ。box-shadowプロパティと呼ばれます。<br><br>
             <HighlightWord word="border-radius: [丸めるサイズ(px,rem,%など)];"></HighlightWord><br>
-            ・要素の角の丸めるプロパティでborder-radiusプロパティと呼ばれます。<br><br>
+            ・要素の角の丸めるプロパティ。border-radiusプロパティと呼ばれます。<br><br>
             <HighlightWord word="list-style: [スタイルの種類];"></HighlightWord><br>
-            ・リストスタイルを設定できるプロパティでlist-styleプロパティと呼ばれます。<br><br>
+            ・リストスタイルを設定できるプロパティ。list-styleプロパティと呼ばれます。<br><br>
             リストスタイル例<br>
             <span class="markup-word-blue">none</span>→何も入れない<br>
             <span class="markup-word-blue">circle</span>→白丸<br>
             <span class="markup-word-blue">square</span>→四角<br>
             <span class="markup-word-blue">decimal</span>→数字<br><br>
             <HighlightWord word="text-align: [left,center,right] ;"></HighlightWord><br>
-            ・インライン要素・インラインブロックの配置を設定できるプロパティでtext-alignプロパティと呼ばれます。<br>
+            ・インライン要素<br>
+            ・インラインブロックの配置を設定できるプロパティ。text-alignプロパティと呼ばれます。<br>
             配置を変えたいインライン要素の親要素のスタイルに指定して、その親要素の横幅に対してleft、center、rightを決めることができます。<br><br>
             <HighlightWord word="line-height: [開けたい行間のサイズ(px,rem,%など)];"></HighlightWord><br>
             ・行間の設定ができるプロパティでline-heightプロパティと呼ばれます。<br><br>
             <HighlightWord word="box-sizing: [サイズの種類];"></HighlightWord><br>
-            ・要素の幅のサイズに余白を含めることができるプロパティでbox-sizingプロパティと呼ばれます。<br>
-            本来は要素の余白はwidthとheightので決まったサイズのさらに外側に作られますが、このプロパティを与えた要素はpaddingとborderをwidthとheightのサイズに含むことができます。<br>
-            例で考えるとwidthとheight両方500pxでpaddingを30pxで設定すると上下左右に30px分の余白が入ることになるので要素自体の大きさは少し小さくなるという事になります。<br><br>
+            ・要素の幅のサイズに余白を含めることができるプロパティ。box-sizingプロパティと呼ばれます。<br>
+            要素の余白はwidthとheightで設定した大きさの外側に作られますが、このプロパティを与えた要素はpaddingとborderをwidthとheightのサイズに含むことができます。<br>
+            例えばwidthとheightを両方500px、paddingを30pxで設定すると、上下左右に30px分の余白が入り要素自体の大きさは少し小さくなります。<br><br>
             サイズの種類例<br>
             <span class="markup-word-blue">border-box</span>→widthの幅にpaddingとborderを含めた幅にする。<br>
             <span class="markup-word-blue">content-box</span>→widthの幅にpaddingとborderを含めた幅にしない。<br><br>
             ①<br>
             Visual Studio Codeで「html-css-lesson-8」を選択して「ctrl(command) + C」でコピーして「ctrl(command) + V」で作りましょう。<br>
-            そのあとは名前を「html-css-lesson-9」に変更しましょう。<br>
-            以下をコピーして貼り付けてください。<br>
+            そのあとに名前を「html-css-lesson-9」に変更しましょう。<br>
+            以下をコピーして貼り付け、
             画像のようになればOKです。<br>
           </p><br>
           <Terminal :fileName="htmlSourceData.file15.filename" :copiedText="htmlSourceData.file15.code" :lang="htmlSourceData.file15.language" />
@@ -524,9 +522,9 @@
             <img @click="openModal(imagePaths.step31)" :src="imagePaths.step31" class="powerpoint-image" alt="sea" style="max-width: 30%; margin: 0 auto; display: block;"/>
           </div><br>
           <p>
-          ②<br>
+          ③<br>
             格納しソースコードをコピー出来たら以下のように実装しましょう。<br>
-            少し多いのでスペルミスに気をつけましょう。<br>
+            少し多いのでスペルミスに気をつけましょう！<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.step32)" :src="imagePaths.step32" class="screen-image" alt="vscode-16" />
@@ -535,11 +533,11 @@
             <img @click="openModal(imagePaths.step33)" :src="imagePaths.step33" class="screen-image" alt="vscode-17" />
           </div><br>
           <p>
-          ③<br>
+          ④<br>
             Web上で確認してみましょう。<br>
-            この様になればOKです。<br>
-            それぞれのスタイルの使い方を見て理解できるようにしましょう。<br>
-            また、値などを変えて見ると理解が深まると思います。<br>
+            画像のようになればOKです。<br><br>
+            それぞれのスタイルの使い方を見て理解できるようにしましょう！<br>
+            値などを変えてみると理解が深まると思います。<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.step34)" :src="imagePaths.step34" class="screen-image" alt="web-11" />

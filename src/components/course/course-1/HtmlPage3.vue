@@ -6,7 +6,7 @@
         <Title title="HTML・CSS 3" id="Title"></Title>
         <Document>
           <p>実際に作られているWebサイトのような見た目を作れるようになりましょう!</p>
-          <p>ここではWebサイトの構成やFlexbox、メディアクエリセクションです。</p>
+          <p>ここではWebサイトの構成やFlexbox、メディアクエリセクションについて学びます。</p>
         </Document>
 
         <!-- section 1 -->
@@ -20,17 +20,17 @@
           <HighlightWord word="ヘッダー"></HighlightWord>
           <p>
             ページの上部にあります。
-            他のページに遷移するナビゲーションなどそのサイトのロゴなどがある領域になります。
+            他のページに遷移するナビゲーションや、そのサイトのロゴなどがある領域になります。
           </p><br>
           <HighlightWord word="メイン"></HighlightWord>
           <p>
-            ページの中央部全体をさします。
-            そのページの必要な情報やコンテンツがあります。
+            ページの中央部全体を指します。
+            そのページの情報やコンテンツがある領域になります。
           </p><br>
           <HighlightWord word="フッター"></HighlightWord>
           <p>
             ページの下部にあります。
-            コピーライトやクレジット、捕捉情報などがある領域になります。
+            コピーライトやクレジット、補足情報などがある領域になります。
           </p>
           <br>
           <div>
@@ -40,30 +40,29 @@
         <Document>
           <SectionTitle sectionTitle="1-2. 要素とプロパティ①" id="sectionTitle1-2"></SectionTitle>
           <p>
-            それではHTMLの要素で記述するか学びましょう!<br><br>
+            それではHTMLの要素で何を記述するか学びましょう!<br><br>
             要素<br>
             <HighlightWord word="<header>・・・</header>"></HighlightWord><br>
-            ・ヘッダー部分を作る要素でこのタグはheaderタグと呼ばれます。<br>
+            ・ヘッダー部分を作る要素。headerタグと呼ばれます。<br>
             <br>
             <HighlightWord word="<main>・・・</main>"></HighlightWord><br>
-            ・メイン部分を作る要素でこのタグはheaderタグと呼ばれます。<br>
+            ・メイン部分を作る要素。mainタグと呼ばれます。<br>
             <br>
             <HighlightWord word="<footer>・・・</footer>"></HighlightWord><br>
-            ・フッター部分を作る要素でこのタグはheaderタグと呼ばれます。<br>
+            ・フッター部分を作る要素。footerタグと呼ばれます。<br>
           </p>
         </Document>
 
         <!-- section 2 -->
         <SubTitle subTitle="2. 要素の配置を学ぶ" id="subTitle2"></SubTitle>
         <Document>
-          <p>Webサイトのヘッダーやメイン、フッターにいろいろな要素を配置するにはどうすればよいか学んでいきましょう!</p>
           <SectionTitle sectionTitle="2-1. 要素とプロパティ②" id="sectionTitle2-1"></SectionTitle>
+          <p>Webサイトのヘッダーやメイン、フッターにいろいろな要素を配置するにはどうすればよいか学んでいきましょう!</p>
           <p>
-            新しいCSSのプロパティを覚えましょう。<br>
-            自由に配置場所の基準とその位置を決められるプロパティを学びましょう。<br><br>
+            新しいCSSのプロパティを覚えましょう。<br><br>
             プロパティ<br>
             <HighlightWord word="position: [配置基準];"></HighlightWord><br>
-            ・要素の配置の基準を設定するプロパティでpositionプロパティと呼ばれます。<br><br>
+            ・要素の配置の基準を設定するプロパティ。positionプロパティと呼ばれます。<br><br>
             例：<br>
             position : fixed; →画面のきまった位置に固定<br>
             position : relative;  →現在の位置を基準に相対的な位置を決める<br>
@@ -73,22 +72,22 @@
             <HighlightWord word="right: [位置(px,rem,%など)];"></HighlightWord><br>
             <HighlightWord word="bottom: [位置(px,rem,%など)];"></HighlightWord><br>
             <HighlightWord word="left: [位置(px,rem,%など)];"></HighlightWord><br>
-            ・要素の配置を設定するプロパティでtop,right,bottom,leftプロパティと呼ばれます。<br><br>
+            ・要素の配置を設定するプロパティ。top,right,bottom,leftプロパティと呼ばれます。<br><br>
             <br>
-            それではこの基準と位置を配置するプロパティの使い方を説明していきます。<br>
+            それではこの基準と位置を配置するプロパティの使い方を説明していきます。<br><br>
             まずはposition: fixed;はスクロールしても表示される様に固定したい時に使います。<br>
             ヘッダーのようなナビゲーションエリアなどの要素にこのプロパティを指定し、スクロールしても画面上に固定したい場合などに使用します。<br><br>
             次にposition: relative;はデフォルトの位置から要素を動かしたい時に使います。<br>
-            画像の例を見てください。
+            次の画像を見てください。
           </p><br>
           <br>
           <div>
             <img @click="openModal(imagePaths.step2)" :src="imagePaths.step2" class="powerpoint-image" alt="relative" />
           </div><br>
           <p>
-            このように元々デフォルトでは左上にある要素がpositionで配置の基準をrelativeで決定した事でそこからtop,leftで位置をずらしたという事です。<br>
+            このように元々デフォルトでは左上にある要素にposition: relative;で基準を設定し、そこからtop,leftで位置をずらしています。<br><br>
             最後にposition: absolute;は親要素内で自由に動かしたい時に使います。<br>
-            画像の例を見てください。<br>
+            次の画像を見てください。<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.step3)" :src="imagePaths.step3" class="powerpoint-image" alt="absolute" />
@@ -104,8 +103,8 @@
           <p>
             ではもう少し規則性のある柔軟に配置を行う方法を覚えていきましょう。<br><br>
             <HighlightWord word="Flexbox"></HighlightWord><br>
-            webサイトなどの装飾を行うCSSにおいて、短く柔軟なコードで配置を行うためのレイアウトモードのことをさします。<br>
-            HTML・CSSのコースで学習したfloatプロパティで横並びにしましたが、少し不便だと感じたかもしれません。<br>
+            webサイトなどの装飾を行うCSSにおいて、短く柔軟なコードで配置を行うためのレイアウトモードのことを指します。<br>
+            HTML・CSSのコースで学習したfloatプロパティで横並びにしましたが、少し不便だと感じたかもしれません。<br><br>
             しかし、このFlexboxのレイアウトモードを使うことで簡単に横並びにすることができます。<br>
             Flexboxを適用(横並び)する方法と例は以下のようになります。<br>
           </p><br>
@@ -123,7 +122,7 @@
             それではFlexboxを適用(横並び)した各要素の配置をさらに細かく設定していきましょう。<br><br>
             プロパティ<br>
             <HighlightWord word="justify-content: [位置];"></HighlightWord><br>
-            ・子要素の水平方向の位置を設定するプロパティでjustify-contentプロパティと呼ばれます。<br><br>
+            ・子要素の水平方向の位置を設定するプロパティ。justify-contentプロパティと呼ばれます。<br><br>
             例：<br>
             flex-start : 左寄せ（初期値）に指定します。<br>
             flex-end : 右寄せに指定します。<br>
@@ -132,7 +131,7 @@
             space-around : flexアイテムの両側の余白を均等に指定します。<br>
             space-evenly : flexアイテム間のすべての余白を均等に指定します。<br><br>
             設定する要素はdisplay: flex;を適用した所の下に続けて書くことで水平方向の位置を変えることができます。<br>
-            実際にどのように変わるか以下の画像を見て参考にしてみましょう。<br>
+            実際にどのように変わるか以下の画像を見てみましょう。<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.step6)" :src="imagePaths.step6" class="powerpoint-image" alt="justify-1" />
@@ -142,7 +141,7 @@
           </div><br>
           <p>
             <HighlightWord word="align-items: [位置];"></HighlightWord><br>
-            ・子要素の水平方向の位置を設定するプロパティでalign-itemsプロパティと呼ばれます。<br><br>
+            ・子要素の水平方向の位置を設定するプロパティ。align-itemsプロパティと呼ばれます。<br><br>
             例：<br>
             flex-start : 上寄せ（初期値）に指定します。<br>
             flex-end : 下寄せに指定します。<br>
@@ -151,32 +150,30 @@
             space-around : flexアイテムの両側の余白を均等に指定します。<br>
             space-evenly : flexアイテム間のすべての余白を均等に指定します。<br><br>
             設定する要素はdisplay: flex;を適用した所の下に続けて書くことで垂直方向の位置を変えることができます。<br>
-            flex-start、flex-end、centerは以下の画像を見て参考にしてみましょう。<br>
-            space-between、space-around、space-evenlyはjustify-contentを垂直にしたものなのでそちらを参考にして下さい。<br>
+            flex-start、flex-end、centerは以下の画像を見てみましょう。<br>
+            space-between、space-around、space-evenlyはjustify-contentを垂直にしたものなので、そちらを参考にして下さい。<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.step8)" :src="imagePaths.step8" class="powerpoint-image" alt="align-1" />
           </div><br>
           <p>
             <HighlightWord word="flex-direction: [位置];"></HighlightWord><br>
-            ・子要素の主軸の位置を設定するプロパティでflex-directionプロパティと呼ばれます。<br><br>
+            ・子要素の主軸の位置を設定するプロパティ。flex-directionプロパティと呼ばれます。<br><br>
             例：<br>
             column : flexboxアイテム(子要素)を<span class="markup-word-blue">上から下</span>に指定します。<br>
             column-reverse : flexboxアイテム(子要素)を<span class="markup-word-blue">下から上</span>に指定します。<br><br>
             設定する要素はdisplay: flex;を適用した所の下に続けて書くことで要素の順番を変えることができます。<br>
-            以下の画像を見て参考にしてみましょう。<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.step9)" :src="imagePaths.step9" class="powerpoint-image" alt="direction-1" />
           </div><br>
           <p>
             <HighlightWord word="flex-wrap: [折り返しのオプション];"></HighlightWord><br>
-            ・子要素の折り返しを設定するプロパティでflex-directionプロパティと呼ばれます。<br><br>
+            ・子要素の折り返しを設定するプロパティ。flex-directionプロパティと呼ばれます。<br><br>
             例：<br>
             no-wrap : flexboxアイテム(子要素)を折り返さないように指定します。<br>
             wrap : flexboxアイテム(子要素)を折り返すように指定します。<br><br>
             設定する要素はdisplay: flex;を適用した所の下に続けて書くことで子要素が親要素の幅を超えた時に折り返すようにする事ができます。<br>
-            以下の画像を見て参考にしてみましょう。<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.step10)" :src="imagePaths.step10" class="powerpoint-image" alt="wrap-1" />
@@ -186,26 +183,25 @@
         <!-- section 3 -->
         <SubTitle subTitle="3. デバイスごとのスタイルを作る" id="subTitle3"></SubTitle>
         <Document>
-          <p>
-            Webサイトは見る人の環境によってはPC、タブレット、スマートフォンなど画面幅が違います。<br>
-            そのため、自分が制作している画面を基準にスタイルを適用すると別の人が別デバイスで閲覧する時にスタイル崩れが起きてしまいます。<br>
-            どの画面で見ても違和感がないようにスタイルを作れるようになりましょう!<br>
-          </p>
           <SectionTitle sectionTitle="3-1. デバイスごとのスタイル設定" id="sectionTitle3-1"></SectionTitle>
           <p>
-            ではデバイス間でスタイルを変える方法をなんというか学びましょう。<br><br>
+            Webサイトは見る人の環境によってはPC、タブレット、スマートフォンなど画面幅が違います。<br>
+            そのため、自分が制作している画面を基準にスタイルを適用すると別デバイスで閲覧する時にスタイル崩れが起きてしまいます。<br>
+            どの画面で見ても違和感がないようにスタイルを作れるようになりましょう!<br><br>
+          </p>
+          <p>
+            デバイス間でスタイルを変える方法をなんと言うのでしょうか。<br><br>
             <HighlightWord word="メディアクエリ"></HighlightWord><br>
             ・ブラウザの画面サイズに応じてCSSのスタイルを設定できる手法。<br>
-            Webページのスタイル（見栄え）を記述するCSSの仕様の一つ。<br>
-            デバイス別にスタイルをわかることができます。<br>
-            以下のスタイルの適用方法を見て下さい。<br>
+            Webページのスタイル（見栄え）を記述するCSSの仕様の一つで、デバイスごとにスタイルをわけることができます。<br><br>
+            適用方法は画像のとおりです。<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.step11)" :src="imagePaths.step11" class="powerpoint-image" alt="media" />
           </div><br>
           <p>
             <HighlightWord word="レスポンシブデザイン"></HighlightWord><br>
-            レスポンシブデザインはメディアクエリを利用をすることでユーザーが使うデバイスやWebブラウザに合わせ、レイアウトを「Responsive（機敏に反応）」に最適化できるWebデザインの事です。<br><br>
+            メディアクエリを利用をすることでユーザーが使うデバイスやWebブラウザに合わせ、レイアウトを「Responsive（機敏に反応）」に最適化できるWebデザインのこと。<br><br>
           </p><br>
         </Document>
         <Document>
@@ -214,10 +210,10 @@
             それでは先ほどのメディアクエリの設定に記述されていた「CSSを適用したい最大幅、最小幅」とある部分に新しいプロパティを設定しましょう。<br><br>
             プロパティ<br>
             <HighlightWord word="max-width: [最大幅(px,rem,%など)];"></HighlightWord><br>
-            ・最大幅を設定するプロパティでmax-widthプロパティと呼ばれます。<br>
+            ・最大幅を設定するプロパティ。max-widthプロパティと呼ばれます。<br>
             メディアクエリとしてではなく要素に指定するとこれ以上は大きくならないように制限をかけることができます。<br><br>
             <HighlightWord word="min-width: [最大幅(px,rem,%など)];"></HighlightWord><br>
-            ・最小幅を設定するプロパティでmin-widthプロパティと呼ばれます。<br>
+            ・最小幅を設定するプロパティ。min-widthプロパティと呼ばれます。<br>
             メディアクエリとしてではなく要素に指定するとこれ以上は小さくならないように制限をかけることができます。<br>
           </p><br>
           <div>
@@ -228,7 +224,7 @@
           </p>
         </Document>
         <Document>
-          <SectionTitle sectionTitle="3-3. Webサイトを実際に作って見る" id="sectionTitle3-3"></SectionTitle>
+          <SectionTitle sectionTitle="3-3. Webサイトを実際に作ってみる" id="sectionTitle3-3"></SectionTitle>
           <p>
             それではここまで学習した内容を使って実際のWebサイトに近いサンプルを作ってみましょう!<br>
             以下のようなデザインを作っていきます。<br><br>
@@ -276,7 +272,6 @@
             Visual Studio Codeで「html-css-lesson-10」をプロジェクトを以下の画像のように作成しましょう。<br>
             フォルダやリセットCSSも以前作ったフォルダをコピーするなどして作りましょう。<br>
             それができたらhtml、cssファイルに以下をコピーして貼り付けてください。<br>
-            htmlの構造やCSSの当て方を見て復習しましょう!<br><br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.step22)" :src="imagePaths.step22" class="screen-image" alt="vscode-4" />
@@ -336,7 +331,7 @@ export default {
       { id: "subTitle3", title: "  3. デバイスごとのスタイルを作る" },
       { id: "sectionTitle3-1", title: "    3-1. デバイスごとのスタイル設定" },
       { id: "sectionTitle3-2", title: "    3-2. 要素とプロパティ④" },
-      { id: "sectionTitle3-3", title: "    3-3. Webサイトを実際に作って見る" },
+      { id: "sectionTitle3-3", title: "    3-3. Webサイトを実際に作ってみる" },
     ];
 
     onMounted(() => {

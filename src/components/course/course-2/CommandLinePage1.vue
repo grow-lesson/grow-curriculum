@@ -21,78 +21,78 @@
           </p><br>
           <HighlightWord word="コマンドライン"></HighlightWord>
           <p>
-            コンピュータのシステム制御をしているソフトウェアであるOSに命令を送る機能の事です。
+            ・コンピュータのシステム制御をしているソフトウェアであるOSに命令を送る機能のこと。<br>
             マウスなどでクリックしてコンピュータを操作するのに対して文字で命令して操作します。
             <br><br>
-            ではソフトウェアやOSというのは何か覚えましょう!
+            ではソフトウェアやOSとは何なのでしょうか。
           </p><br>
         </Document>
         <Document>
           <SectionTitle sectionTitle="1-2. コンピュータの基本的な仕組み" id="sectionTitle1-2-w"></SectionTitle>
           <HighlightWord word="ソフトウェア"></HighlightWord>
           <p>
-            コンピュータに対して命令を出すプログラム(アプリケーション)の事です。<br>
-            →<span class="markup-word-blue">プログラム</span>…コンピュータを動かすのに必要な命令の流れの事を指します。<br>
-            例 : Word、Edge、Google、Excelなどがあります。<br>
+            ・コンピュータに対して命令を出すプログラム(アプリケーション)<br>
+            →<span class="markup-word-blue">プログラム</span>…コンピュータを動かすのに必要な命令の流れのこと。<br>
+            例 : Word、Edge、Google、Excelなど<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.win.software)" :src="imagePaths.win.software" class="powerpoint-image" alt="software" />
           </div><br>
           <HighlightWord word="ハードウェア"></HighlightWord>
           <p>
-            パソコンの本体や周辺機器の事です。<br>
+            ・パソコンの本体や周辺機器<br>
+            例 : キーボード、マウス、ディスプレイ、プリンター、スピーカーなど<br><br>
             ソフトウェアと並べて覚えておきましょう。<br>
-            例 : キーボード、マウス、ディスプレイ、プリンター、スピーカーなどがあります。<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.win.hardware)" :src="imagePaths.win.hardware" class="powerpoint-image" alt="hardware" />
           </div><br>
           <HighlightWord word="OS(Operating System)"></HighlightWord>
           <p>
-            基本ソフトウェアとも呼ばれ、ハードウェアの制御やすべてのソフトウェアの管理を行います。<br>
-            例 : WindowsOS、macOS、Linux、UNIXなどがあります。<br>
-            次にOSはどんな役割があるか覚えましょう。<br><br>
+            ・基本ソフトウェアとも呼ばれ、ハードウェアの制御やすべてのソフトウェアの管理を行う。<br>
+            例 : WindowsOS、macOS、Linux、UNIXなど<br><br>
+            次にOSはどんな役割があるのでしょうか。<br><br>
             OSの役割<br>
-            (1)ファイル・ディレクトリ(フォルダ)の作成・管理・保持ができます。<br>
-            →<span class="markup-word-blue">ファイル</span>…文書や音楽、動画などの形式でコンピュータにおけるデータの管理単位の一つを指します。<br>
-            →<span class="markup-word-blue">ディレクトリ(フォルダ)</span>…ファイルをまとめる入れ物や置き場の事です。<br><br>
-            (2)タスク管理ができます。<br>
-            タスクとは、アプリケーションの処理を細分化したものです。<br>
+            (1)ファイル・ディレクトリ(フォルダ)の作成・管理・保持<br>
+            →<span class="markup-word-blue">ファイル</span>…文書や音楽、動画などの形式でコンピュータにおけるデータの管理単位の一つ<br>
+            →<span class="markup-word-blue">ディレクトリ(フォルダ)</span>…ファイルをまとめる入れ物や置き場<br><br>
+            (2)タスク管理<br>
+            タスクとは、アプリケーションの処理を細分化したもの。<br>
             OSは優先度などに応じて効率的にタスクを割り当て、アプリケーションの処理をしています。<br><br>
             (3)記憶管理<br>
-            プログラムにある命令やデータを記憶できます。<br><br>
+            プログラムにある命令やデータを記憶できる。<br><br>
           </p>
         </Document>
         <Document>
           <SectionTitle sectionTitle="1-3. プログラムの命令操作方法について" id="sectionTitle1-3-w"></SectionTitle>
           <p>
-            ではプログラムの命令はどのように行うのか学んでいきましょう!
+            ではプログラムの命令はどのように行うのでしょうか。
           </p><br>
           <HighlightWord word="GUI(Graphical User Interface)"></HighlightWord>
           <p>
-            グラフィカル(絵画的)にパソコンに操作するインターフェースです。<br>
+            ・グラフィカル(絵画的)にパソコンに操作するインターフェース。<br>
             デスクトップで見るアイコンやボタン、マウスポインターなどの事を指します。<br>
             プログラムの命令にはこのGUIを使った操作で行うことができます。<br>
             感覚的に操作が行える事がメリットです。<br>
-            →<span class="markup-word-blue">インターフェース</span>…機器同士や機器と人との間でやり取りをしやすくするソフトウェアの事を指します。<br><br>
+            →<span class="markup-word-blue">インターフェース</span>…機器同士や機器と人との間でやり取りをしやすくするソフトウェア<br><br>
           </p><br>
           <HighlightWord word="CUI(Character User Interface)"></HighlightWord>
           <p>
-            単語の通り文字でパソコンに操作するインターフェースです。<br>
-            コマンドラインはこのCUIを使った操作でプログラムに命令を行うことができます。<br>
+            ・文字でパソコンに操作するインターフェース。<br>
+            コマンドラインはこのCUIを使った操作でプログラムに命令できます。<br>
             Windowsならコマンドプロンプト、MacならターミナルがデフォルトでPCに入っています。<br><br>
             このCUIを使った命令を<span class="markup-word-blue">コマンド</span>といいます。<br><br>
-            今回コマンドラインのコースではUNIXコマンドをベースに学んでいきます。<br>
+            今回コマンドラインのコースではUNIXコマンドをベースに学んでいきます。<br><br><br>
             UNIXはOSの説明をしたときに例で出てきました。<br>
-            OSの歴史と違いを少しだけ覚えて置きましょう。<br><br>
+            OSの歴史と違いを少しだけ覚えておきましょう。<br><br>
             <span class="markup-word-red">UNIX</span><br>
-            →アメリカのベル研究所で開発された現存する中で最も古いOS(1969~)です。安全性が高く、余分な機能がないため軽くサーバ用途で用いられます。<br><br>
+            →アメリカのベル研究所で開発された現存する中で最も古いOS(1969~)。安全性が高く余分な機能がないため動作が軽く、サーバ用途で用いられます。<br><br>
             <span class="markup-word-red">Linux</span><br>
             →UNIXを元にして作られたOS(1991~)。UNIXの機能が不足していると感じたリーナス・トーバルズ氏らが開発しました。無料で改変も配布も自由にできるのが特徴です。<br><br>
             <span class="markup-word-red">WindowsOS</span><br>
-            →Microsoft社のビル・ゲイツ氏らによって開発されたOS(1985~)です。<br><br>
+            →Microsoft社のビル・ゲイツ氏らによって開発されたOS(1985~)<br><br>
             <span class="markup-word-red">MacOS</span><br>
-            →Apple社のスティーブ・ジョブズ氏らが開発したOS(1984~)です。<br><br>
+            →Apple社のスティーブ・ジョブズ氏らが開発したOS(1984~)<br><br>
             UNIX、LinuxはCUI、Windows、MacOSはGUI操作で命令を行います。<br><br>
           </p>
         </Document>
@@ -100,10 +100,10 @@
         <!-- section 2 -->
         <SubTitle subTitle="2. コマンドとファイル構造やパスを知る" id="subTitle2-w"></SubTitle>
         <Document>
-          <p>
-            それではCUI操作で必要なコマンドの種類やファイル構造、パスについて知りましょう。<br>
-          </p>
           <SectionTitle sectionTitle="2-1. プログラムの命令(作成・表示・移動)" id="sectionTitle2-1-w"></SectionTitle>
+          <p>
+            それではCUI操作で必要なコマンドの種類やファイル構造、パスについて知りましょう。<br><br>
+          </p>
           <p>
             コマンドはファイルやディレクトリの作成、表示、編集、削除、移動があります。<br>
             今回そのコマンドを実行するツールは「git bash」を使いましょう。<br><br>
@@ -115,30 +115,29 @@
             <img @click="openModal(imagePaths.win.step1)" :src="imagePaths.win.step1" class="screen-image" alt="git-bash-1" />
           </div><br>
           <p>
-            GUIでは主にマウスを使ってエクスプローラーを開いてファイルやディレクトリの作成、表示、編集、削除、移動を行います。<br>
-            それらをCUIではコマンドを入れることで行うことができます。<br>
+            GUIでは主にマウスを使ってエクスプローラーを開いて、ファイルやディレクトリの作成、表示、編集、削除、移動を行います。<br>
+            それらをCUIではコマンドを入れることで行うことができます。<br><br>
             まずはエクスプローラの構造について知りましょう。<br><br>
           </p>
           <HighlightWord word="ファイル構造"></HighlightWord>
           <p>
-            ディレクトリの中にディレクトリやファイルがあるような枝分かれした構造の事です。
+            ・ディレクトリの中にディレクトリやファイルがある、というような枝分かれした構造。<br>
             作業中のフォルダやプロジェクトのことを<span class="markup-word-blue">ワーキングツリー</span>といいます。<br><br>
           </p>
           <div>
             <img @click="openModal(imagePaths.win.tree)" :src="imagePaths.win.tree" class="powerpoint-image" alt="tree" />
           </div><br>
           <p>
-            コマンドラインのコースで重要なことは<span class="markup-word-red">作業しているディレクトリの位置を把握</span>する事です。<br>
-            イメージで言うとディレクトリの中に自分がいると思ってください。<br>
-            その自分がいるディレクトリを<span class="markup-word-blue">カレントディレクトリ</span>といいます。<br>
-            また、上の画像でカレントディレクトリがBディレクトリだとし、その一番上をたどるとAディレクトリが一番上になります。<br>
-            今いるディレクトリ構造の一番親のディレクトリのことを<span class="markup-word-blue">ルートディレクトリ</span>といいます。<br>
-            今回コースで作業するのはCドライブディレクトリで行います。<br>
-            それでは今作業しているディレクトリからCドライブディレクトリに移動しましょう。<br><br>
+            コマンドラインのコースで重要なことは<span class="markup-word-red">作業しているディレクトリの位置を把握</span>する事です。<br><br>
+            イメージで言うとディレクトリの中に自分がいるような感じです。<br>
+            その自分がいるディレクトリを<span class="markup-word-blue">カレントディレクトリ</span>といいます。<br><br>
+            また、上の画像でカレントディレクトリがBディレクトリだと、その一つ上のAディレクトリが一番親になります。<br>
+            今いるディレクトリ構造の一番親のディレクトリのことを<span class="markup-word-blue">ルートディレクトリ</span>といいます。<br><br>
+            今回のコースではCドライブディレクトリで作業を行うので、今作業しているディレクトリからCドライブディレクトリに移動しましょう。<br><br><br>
           </p>
           <HighlightWord word="cd ディレクトリ名"></HighlightWord>
           <p>
-            ・自分が今作業しているディレクトリからさらに下のディレクトリに移動ができます。<br>
+            ・自分が今作業しているディレクトリからさらに下のディレクトリ移動する。<br>
             逆に今作業しているディレクトリの上のディレクトリに戻るときは<span class="markup-word-blue">「cd ../」</span>を実行すれば戻ることができます。<br><br>
             ②<br>
             git bashに画像のように入力し、実行しましょう。<br>
@@ -155,11 +154,11 @@
           </div><br>
           <br>
           <p>
-            では次にディレクトリの作成を覚えましょう。<br>
+            では次にディレクトリの作成を覚えましょう。<br><br>
           </p>
           <HighlightWord word="mkdir ディレクトリ名"></HighlightWord><br>
           <p>
-            ・自分が今作業しているディレクトリの中に新たなディレクトリを作成します。<br>
+            ・自分が今作業しているディレクトリの中に新たなディレクトリを作成する。<br>
             「Make Directory」の略称です。<br><br>
             ③<br>
             git bashに画像のように入力し、実行しましょう。<br>
@@ -172,11 +171,11 @@
             <img @click="openModal(imagePaths.win.folder2)" :src="imagePaths.win.folder2" class="screen-image" alt="folder-2" />
           </div><br>
           <p>
-            では次に今作ったフォルダにファイルの作成してみましょう。<br>
+            では次に今作ったフォルダにファイルの作成してみましょう。<br><br>
           </p>
           <HighlightWord word="touch ファイル名"></HighlightWord><br>
           <p>
-            ・自分が今作業しているディレクトリ(カレントディレクトリ)の中に新たなファイルを作成します。<br><br>
+            ・自分が今作業しているディレクトリ(カレントディレクトリ)の中に新たなファイルを作成する。<br><br>
             ④<br>
             まずはgit bashに「sample-1」ディレクトリに移動するためcdコマンドを入力しましょう。
             その後、touchコマンドを入力し、実行しましょう。<br>
@@ -189,11 +188,11 @@
             <img @click="openModal(imagePaths.win.folder3)" :src="imagePaths.win.folder3" class="screen-image" alt="folder-3" />
           </div><br>
           <p>
-            次に作ったファイルの中身を表示してみましょう。<br>
+            次に作ったファイルの中身を表示してみましょう。<br><br>
           </p>
           <HighlightWord word="cat ファイル名"></HighlightWord><br>
           <p>
-            ・自分が今作業しているディレクトリ(カレントディレクトリ)の中にあるファイルの中身を表示します。<br><br>
+            ・自分が今作業しているディレクトリ(カレントディレクトリ)の中にあるファイルの中身を表示する。<br><br>
             ⑤<br>
             まずは先ほど作った「memo.txt」を開きましょう。<br>
             その中に画像のように入力しましょう。
@@ -216,9 +215,9 @@
           <p>
             次に自分の作業しているディレクトリ(カレントディレクトリ)までの経路(位置)を知りたい時に使うコマンドを学びましょう。
           </p>
-          <HighlightWord word="pwd"></HighlightWord>
+          <br><HighlightWord word="pwd"></HighlightWord>
           <p>
-            ・カレントディレクトリを表示をします。
+            ・カレントディレクトリを表示する。<br><br>
             ⑦<br>
             git bashに画像のように入力し、実行しましょう。<br>
             今いる位置が表示されればOKです。<br>
@@ -231,7 +230,7 @@
           </p>
           <HighlightWord word="ls"></HighlightWord>
           <p>
-            ・カレントディレクトリの中身を表示します。<br>
+            ・カレントディレクトリの中身を表示する。<br>
             「List」の略称です。<br><br>
             ⑧<br>
             まずはディレクトリを作りましょう。
@@ -245,25 +244,21 @@
             <img @click="openModal(imagePaths.win.folder4)" :src="imagePaths.win.folder4" class="screen-image" alt="folder-4" />
           </div><br>
           <p>
-            ⑧<br>
-            git bashに画像のように入力し、実行しましょう。<br>
-            git bashで確認するとこのようになっていればOKです。<br>
-          </p><br>
-          <p>
-            ⑨それでは今作ったディレクトリにテキストファイルを移動しましょう。<br><br>
+            ⑨<br>
+            それでは今作ったディレクトリにテキストファイルを移動しましょう。<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.win.step8)" :src="imagePaths.win.step8" class="screen-image" alt="git-bash-8" />
           </div><br>
           <HighlightWord word="mv 移動させたいファイル名 移動先のディレクトリ(フォルダ)名"></HighlightWord>
           <p>
-            ・指定したファイルを指定したディレクトリに移動することができます。<br>
-            「Move」の略称です。<br>
-            フォルダを移動する時は<br>
+            ・指定したファイルを指定したディレクトリに移動させる。<br>
+            「Move」の略称です。<br><br>
+            フォルダを移動させる時は<br>
             <HighlightWord word="mv 移動させたいディレクトリ名 移動先のディレクトリ名"></HighlightWord>となります。<br><br>
             ⑩<br>
             git bashに画像のように入力し、実行しましょう。<br>
-            git bashでは何も表示されませんが、エクスプローラで「test」ディレクトリを確認するとこのようになっています。<br><br>
+            git bashでは何も表示されませんが、エクスプローラで「test」ディレクトリを確認するとこのようになっています。<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.win.step9)" :src="imagePaths.win.step9" class="screen-image" alt="git-bash-9" />
@@ -276,10 +271,10 @@
           </p><br>
           <HighlightWord word="mv 名前を変えたいファイル名 新しいファイル名"></HighlightWord>
           <p>
-            ・ファイルの名前を変更することができます。<br><br>
+            ・ファイルの名前を変更する。<br><br>
             ⑪<br>
             まずは「test」ディレクトリに移動してgit bashに画像のように入力し、実行しましょう。<br>
-            git bashでは何も表示されませんが、エクスプローラで「test」ディレクトリの中のテキストファイルの名前が変わっているのが分かります。<br><br>
+            git bashでは何も表示されませんが、エクスプローラで「test」ディレクトリの中のテキストファイルの名前が変わっているのが分かります。<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.win.step10)" :src="imagePaths.win.step10" class="screen-image" alt="git-bash-10" />
@@ -295,7 +290,7 @@
           </p>
           <HighlightWord word="cp コピーするファイル名 新しいファイル名"></HighlightWord>
           <p>
-            ・自分の作業しているディレクトリ(カレントディレクトリ)の中にあるファイルを新しい名前で中身のデータの状態をコピーできます。<br><br>
+            ・自分の作業しているディレクトリ(カレントディレクトリ)の中にあるファイルを、新しい名前で中身のデータの状態をコピーする。<br><br>
             ディレクトリをコピーしたい場合は<br>
             <HighlightWord word="cp –r コピーするディレクトリ名 新しいディレクトリ名"></HighlightWord>となります。<br><br>
             ⑫<br>
@@ -306,17 +301,17 @@
             <img @click="openModal(imagePaths.win.step11)" :src="imagePaths.win.step11" class="screen-image" alt="git-bash-11" />
           </div><br>
           <div>
-            <img @click="openModal(imagePaths.win.folder7)" :src="imagePaths.win.folder6" class="screen-image" alt="folder-7" />
+            <img @click="openModal(imagePaths.win.folder7)" :src="imagePaths.win.folder7" class="screen-image" alt="folder-7" />
           </div><br>
           <div>
             <img @click="openModal(imagePaths.win.copy)" :src="imagePaths.win.copy" class="screen-image" alt="copy" />
           </div><br>
           <HighlightWord word="rm 削除するファイル名"></HighlightWord>
           <p>
-            ・自分の作業しているディレクトリ(カレントディレクトリ)の中にあるファイルを削除できます。<br><br>
+            ・自分の作業しているディレクトリ(カレントディレクトリ)の中にあるファイルを削除する。<br><br>
             ディレクトリごと削除したい場合は<br>
             <HighlightWord word="rm –r 削除するディレクトリ名 "></HighlightWord>となります。<br><br>
-            ⑫<br>
+            ⑬<br>
             git bashに画像のように入力し、実行しましょう。<br>
             git bashでは何も出てきませんが、エクスプローラで「test」ディレクトリを確認すると「memo.txt」というファイルが削除されていることがわかります。<br>
           </p><br>
@@ -332,51 +327,47 @@
         <SubTitle subTitle="3. パスとホームディレクトリについて" id="subTitle3-w"></SubTitle>
         <Document>
           <SectionTitle sectionTitle="3-1. パスについて" id="sectionTitle3-1-w"></SectionTitle>
-          <p>
-            パスについて学びましょう。<br>
-          </p><br>
           <HighlightWord word="パス"></HighlightWord>
           <p>
-            ・経路や道順を意味しています。<br>
-            コマンドラインやWebサイト上にある特定ファイルまでの道筋を表すものです。<br>
+            ・コマンドラインやWebサイト上にある特定ファイルまでの道筋。<br>
           </p><br>
           <HighlightWord word="絶対パス(absolute path)"></HighlightWord>
           <p>
-            ・ディレクトリなどの階層の一番上から特定のファイルまでの経路を階層ごとに全て記載するパスの事です。<br>
+            ・ディレクトリなどの階層の一番上から特定のファイルまでの道筋を階層ごとに全て記載するパス。<br>
             「フルパス」と呼ばれることもあり、コマンドラインやWebサイト上にある特定ファイルまでの道筋を表すものです。<br>
             webサイトでは、「ドメイン名 / フォルダ名 / … / ファイル名」、エクスプローラーだと「ルートディレクトリ / フォルダ名 / … / ファイル名」という表記になります。<br><br>
             例：<br>
-            http:www.hoge.com/test/index.html<br><br>
-            /about/test/home/about.html<br><br>
+            http:www.hoge.com/test/index.html<br>
+            /about/test/home/about.html<br>
             ↑最初のスラッシュはルートディレクトリを表します。
-            <span class="markup-word-blue">「cd /」</span>でルートディレクトリに移動できます。
+            <span class="markup-word-blue">「cd /」</span>でルートディレクトリに移動できます。<br><br>
             絶対パスのメリットとデメリット<br>
             メリット<br>
-            ・URLをすべて書いてファイルの場所を指定するため、リンク切れになるミスを防げます。<br>
+            ・URLをすべて書いてファイルの場所を指定するため、リンク切れになるミスを防げる。<br>
             デメリット<br>
             ・URLが長くなってしまう。<br>
           </p><br>
           <HighlightWord word="相対パス(relative path)"></HighlightWord>
           <p>
-            現在いるファイルを起点とした、目的ファイルまでの経路を記述する形式のこと。<br>
+            現在いるファイルを起点とした、目的ファイルまでの道筋。<br>
             現在の階層よりも1つ上位の階層への移動を「cd ../」で戻ることができると説明しましたが、
-            相対パスは現在地から目的地までの「道順」を記述する方法です<br><br>
-            例：<br><br><br>
+            相対パスは現在地から目的地までの「道順」を記述する方法です。<br><br>
+            例：<br>
             ../../contents/file01.png<br><br>
             絶対パスのメリットとデメリット<br>
             メリット<br>
-            ・URLが短くできます。<br>
+            ・URLが短くできる。<br>
             デメリット<br>
-            ・リンク切れになるミスが起こりやすいです。<br><br>
-            相対パスや絶対パスはここまで学習したコマンドで使うことができるので一気に作業したいディレクトリに移動したり、指定したディレクトリに削除や複製をすることができます。<br>
+            ・リンク切れになるミスが起こりやすい。<br><br>
+            相対パスや絶対パスはここまでに学習したコマンドで使うことができるので、作業したいディレクトリへの移動や、指定したディレクトリの削除・複製ができます。<br>
           </p><br>
         </Document>
         <Document>
           <SectionTitle sectionTitle="3-2 ホームディレクトリについて" id="sectionTitle3-2-w"></SectionTitle>
             <p>
               <HighlightWord word="ホームディレクトリ"></HighlightWord><br>
-              ・ユーザーが作業をするときに基準にするディレクトリの事です。<br>
-              ホームディレクトリとは、コンピューター上でログインしたユーザーが作業するための個人用フォルダーと覚えるとよいでしょう。<br><br>
+              ・ユーザーが作業をするときに基準にするディレクトリ。<br>
+              ホームディレクトリとは、コンピューター上でログインしたユーザーが作業するための個人用フォルダと覚えるとよいでしょう。<br><br>
               Windowsだと「C:/User/(自分で設定したパソコンのログイン名)」もしくは「C:/ユーザー/(自分で設定したパソコンのログイン名)」の経路にあるディレクトリになります。<br><br>
               <span class="markup-word-blue">「cd ~」</span>でホームディレクトリに移動できます。
             </p>
@@ -400,78 +391,78 @@
           </p><br>
           <HighlightWord word="コマンドライン"></HighlightWord>
           <p>
-            コンピュータのシステム制御をしているソフトウェアであるOSに命令を送る機能の事です。
+            コンピュータのシステム制御をしているソフトウェアであるOSに命令を送る機能のこと。<br>
             マウスなどでクリックしてコンピュータを操作するのに対して文字で命令して操作します。
             <br><br>
-            ではソフトウェアやOSというのは何か覚えましょう!
+            ではソフトウェアやOSとは何なのでしょうか。
           </p><br>
         </Document>
         <Document>
           <SectionTitle sectionTitle="1-2. コンピュータの基本的な仕組み" id="sectionTitle1-2-m"></SectionTitle>
           <HighlightWord word="ソフトウェア"></HighlightWord>
           <p>
-            コンピュータに対して命令を出すプログラム(アプリケーション)の事です。<br>
-            →<span class="markup-word-blue">プログラム</span>…コンピュータを動かすのに必要な命令の流れの事を指します。<br>
-            例 : Word、Edge、Google、Excelなどがあります。<br>
+            ・コンピュータに対して命令を出すプログラム(アプリケーション)<br>
+            →<span class="markup-word-blue">プログラム</span>…コンピュータを動かすのに必要な命令の流れのこと。<br>
+            例 : Word、Edge、Google、Excelなど<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.mac.software)" :src="imagePaths.mac.software" class="powerpoint-image" alt="software" />
           </div><br>
           <HighlightWord word="ハードウェア"></HighlightWord>
           <p>
-            パソコンの本体や周辺機器の事です。<br>
+            ・パソコンの本体や周辺機器<br>
             ソフトウェアと並べて覚えておきましょう。<br>
-            例 : キーボード、マウス、ディスプレイ、プリンター、スピーカーなどがあります。<br>
+            例 : キーボード、マウス、ディスプレイ、プリンター、スピーカーなど<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.mac.hardware)" :src="imagePaths.mac.hardware" class="powerpoint-image" alt="hardware" />
           </div><br>
           <HighlightWord word="OS(Operating System)"></HighlightWord>
           <p>
-            基本ソフトウェアとも呼ばれ、ハードウェアの制御やすべてのソフトウェアの管理を行います。<br>
-            例 : WindowsOS、macOS、Linux、UNIXなどがあります。<br>
-            次にOSはどんな役割があるか覚えましょう。<br><br>
+            ・基本ソフトウェアとも呼ばれ、ハードウェアの制御やすべてのソフトウェアの管理を行う。<br>
+            例 : WindowsOS、macOS、Linux、UNIXなど<br>
+            次にOSはどんな役割があるのでしょうか。<br><br>
             OSの役割<br>
-            (1)ファイル・ディレクトリ(フォルダ)の作成・管理・保持ができます。<br>
-            →<span class="markup-word-blue">ファイル</span>…文書や音楽、動画などの形式でコンピュータにおけるデータの管理単位の一つを指します。<br>
-            →<span class="markup-word-blue">ディレクトリ(フォルダ)</span>…ファイルをまとめる入れ物や置き場の事です。<br><br>
-            (2)タスク管理ができます。<br>
-            タスクとは、アプリケーションの処理を細分化したものです。<br>
+            (1)ファイル・ディレクトリ(フォルダ)の作成・管理・保持<br>
+            →<span class="markup-word-blue">ファイル</span>…文書や音楽、動画などの形式でコンピュータにおけるデータの管理単位の一つ<br>
+            →<span class="markup-word-blue">ディレクトリ(フォルダ)</span>…ファイルをまとめる入れ物や置き場<br><br>
+            (2)タスク管理<br>
+            タスクとは、アプリケーションの処理を細分化したもの。<br>
             OSは優先度などに応じて効率的にタスクを割り当て、アプリケーションの処理をしています。<br><br>
             (3)記憶管理<br>
-            プログラムにある命令やデータを記憶できます。<br><br>
+            プログラムにある命令やデータを記憶できる。<br><br>
           </p>
         </Document>
         <Document>
           <SectionTitle sectionTitle="1-3. プログラムの命令操作方法について" id="sectionTitle1-3-m"></SectionTitle>
           <p>
-            ではプログラムの命令はどのように行うのか学んでいきましょう!
+            ではプログラムの命令はどのように行うのでしょうか。
           </p><br>
           <HighlightWord word="GUI(Graphical User Interface)"></HighlightWord>
           <p>
-            グラフィカル(絵画的)にパソコンに操作するインターフェースです。<br>
+            ・グラフィカル(絵画的)にパソコンに操作するインターフェース。<br>
             デスクトップで見るアイコンやボタン、マウスポインターなどの事を指します。<br>
             プログラムの命令にはこのGUIを使った操作で行うことができます。<br>
             感覚的に操作が行える事がメリットです。<br>
-            →<span class="markup-word-blue">インターフェース</span>…機器同士や機器と人との間でやり取りをしやすくするソフトウェアの事を指します。<br><br>
+            →<span class="markup-word-blue">インターフェース</span>…機器同士や機器と人との間でやり取りをしやすくするソフトウェア<br><br>
           </p><br>
           <HighlightWord word="CUI(Character User Interface)"></HighlightWord>
           <p>
-            単語の通り文字でパソコンに操作するインターフェースです。<br>
+            ・文字でパソコンに操作するインターフェース。<br>
             コマンドラインはこのCUIを使った操作でプログラムに命令を行うことができます。<br>
             Windowsならコマンドプロンプト、MacならターミナルがデフォルトでPCに入っています。<br><br>
             このCUIを使った命令を<span class="markup-word-blue">コマンド</span>といいます。<br><br>
-            今回コマンドラインのコースではUNIXコマンドをベースに学んでいきます。<br>
+            今回コマンドラインのコースではUNIXコマンドをベースに学んでいきます。<br><br><br>
             UNIXはOSの説明をしたときに例で出てきました。<br>
             OSの歴史と違いを少しだけ覚えて置きましょう。<br><br>
             <span class="markup-word-red">UNIX</span><br>
-            →アメリカのベル研究所で開発された現存する中で最も古いOS(1969~)です。安全性が高く、余分な機能がないため軽くサーバ用途で用いられます。<br><br>
+            →アメリカのベル研究所で開発された現存する中で最も古いOS(1969~)。安全性が高く余分な機能がないため動作が軽く、サーバ用途で用いられます。<br><br>
             <span class="markup-word-red">Linux</span><br>
             →UNIXを元にして作られたOS(1991~)。UNIXの機能が不足していると感じたリーナス・トーバルズ氏らが開発しました。無料で改変も配布も自由にできるのが特徴です。<br><br>
             <span class="markup-word-red">WindowsOS</span><br>
-            →Microsoft社のビル・ゲイツ氏らによって開発されたOS(1985~)です。<br><br>
+            →Microsoft社のビル・ゲイツ氏らによって開発されたOS(1985~)<br><br>
             <span class="markup-word-red">MacOS</span><br>
-            →Apple社のスティーブ・ジョブズ氏らが開発したOS(1984~)です。<br><br>
+            →Apple社のスティーブ・ジョブズ氏らが開発したOS(1984~)<br><br>
             UNIX、LinuxはCUI、Windows、MacOSはGUI操作で命令を行います。<br><br>
           </p>
         </Document>
@@ -479,10 +470,10 @@
         <!-- section 2 -->
         <SubTitle subTitle="2. コマンドとファイル構造やパスを知る" id="subTitle2-m"></SubTitle>
         <Document>
-          <p>
-            それではCUI操作で必要なコマンドの種類やファイル構造、パスについて知りましょう。<br>
-          </p>
           <SectionTitle sectionTitle="2-1. プログラムの命令(作成・表示・移動)" id="sectionTitle2-1-m"></SectionTitle>
+          <p>
+            それではCUI操作で必要なコマンドの種類やファイル構造、パスについて知りましょう。<br><br>
+          </p>
           <p>
             コマンドはファイルやディレクトリの作成、表示、編集、削除、移動があります。<br>
             今回そのコマンドを実行するツールは「ターミナル」を使いましょう。<br><br>
@@ -500,28 +491,28 @@
           </p>
           <HighlightWord word="ファイル構造"></HighlightWord>
           <p>
-            ディレクトリの中にディレクトリやファイルがあるような枝分かれした構造の事です。
+            ・ディレクトリの中にディレクトリやファイルがある、というような枝分かれした構造。<br>
             作業中のフォルダやプロジェクトのことを<span class="markup-word-blue">ワーキングツリー</span>といいます。<br><br>
           </p>
           <div>
             <img @click="openModal(imagePaths.mac.tree)" :src="imagePaths.mac.tree" class="powerpoint-image" alt="tree" />
           </div><br>
           <p>
-            コマンドラインのコースで重要なことは<span class="markup-word-red">作業しているディレクトリの位置を把握</span>する事です。<br>
-            イメージで言うとディレクトリの中に自分がいると思ってください。<br>
-            その自分がいるディレクトリを<span class="markup-word-blue">カレントディレクトリ</span>といいます。<br>
-            また、上の画像でカレントディレクトリがBディレクトリだとし、その一番上をたどるとAディレクトリが一番上になります。<br>
+            コマンドラインのコースで重要なことは<span class="markup-word-red">作業しているディレクトリの位置を把握</span>する事です。<br><br>
+            イメージで言うとディレクトリの中に自分がいるような感じです。<br>
+            その自分がいるディレクトリを<span class="markup-word-blue">カレントディレクトリ</span>といいます。<br><br>
+            また、上の画像でカレントディレクトリがBディレクトリだと、その一つ上のAディレクトリが一番親になります。<br>
             今いるディレクトリ構造の一番親のディレクトリのことを<span class="markup-word-blue">ルートディレクトリ</span>といいます。<br>
             今回コースで作業するのはホームディレクトリで行います。<br>
-            ターミナルを開くとデフォルトで最初にホームディレクトリの位置にいます。<br><br>
+            ターミナルを開くとデフォルトで最初にホームディレクトリの位置にいます。<br><br><br>
           </p>
           <p>
             では早速コマンドを覚えていきましょう!<br>
-            まずはディレクトリの作成です。<br>
+            まずはディレクトリの作成です。<br><br>
           </p>
           <HighlightWord word="mkdir ディレクトリ名"></HighlightWord><br>
           <p>
-            ・自分が今作業しているディレクトリの中に新たなディレクトリを作成します。<br>
+            ・自分が今作業しているディレクトリの中に新たなディレクトリを作成する。<br>
             「Make Directory」の略称です。<br><br>
             ②<br>
             ターミナルに画像のように入力し、実行しましょう。<br>
@@ -531,11 +522,11 @@
             <img @click="openModal(imagePaths.mac.step2)" :src="imagePaths.mac.step2" class="screen-image" alt="git-bash-3" />
           </div><br>
           <div>
-            <img @click="openModal(imagePaths.mac.folder1)" :src="imagePaths.mac.folder1" class="screen-image" alt="folder-2" />
+            <img @click="openModal(imagePaths.mac.folder2)" :src="imagePaths.mac.folder2" class="screen-image" alt="folder-2" />
           </div><br>
           <HighlightWord word="cd ディレクトリ名"></HighlightWord>
           <p>
-            ・自分が今作業しているディレクトリからさらに下のディレクトリに移動ができます。<br>
+            ・自分が今作業しているディレクトリからさらに下のディレクトリに移動する。<br>
             逆に今作業しているディレクトリの上のディレクトリに戻るときは<span class="markup-word-blue">「cd ../」</span>を実行すれば戻ることができます。<br><br>
             ③<br>
             ターミナルに画像のように入力し、実行しましょう。<br>
@@ -545,18 +536,18 @@
             <img @click="openModal(imagePaths.mac.step3)" :src="imagePaths.mac.step3" class="screen-image" alt="git-bash-2" />
           </div><br>
           <p>
-            CUI操作ではこのようになりますが、GUI操作だとエクスプローラを開いてCドライブをクリックした時の画面という事になります。<br>
+            CUI操作ではこのようになりますが、GUI操作だとホームディレクトリを開いた時の画面という事になります。<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.mac.folder2)" :src="imagePaths.mac.folder2" class="screen-image" alt="folder-1" />
           </div><br>
           <br>
           <p>
-            では次に今作ったフォルダにファイルの作成してみましょう。<br>
+            では次に今作ったフォルダにファイルの作成してみましょう。<br><br>
           </p>
           <HighlightWord word="touch ファイル名"></HighlightWord><br>
           <p>
-            ・自分が今作業しているディレクトリ(カレントディレクトリ)の中に新たなファイルを作成します。<br><br>
+            ・自分が今作業しているディレクトリ(カレントディレクトリ)の中に新たなファイルを作成する。<br><br>
             ④<br>
             まずはターミナルに「sample-1」ディレクトリに移動するためcdコマンドを入力しましょう。
             その後、touchコマンドを入力し、実行しましょう。<br>
@@ -569,11 +560,11 @@
             <img @click="openModal(imagePaths.mac.folder3)" :src="imagePaths.mac.folder3" class="screen-image" alt="folder-3" />
           </div><br>
           <p>
-            次に作ったファイルの中身を表示してみましょう。<br>
+            次に作ったファイルの中身を表示してみましょう。<br><br>
           </p>
           <HighlightWord word="cat ファイル名"></HighlightWord><br>
           <p>
-            ・自分が今作業しているディレクトリ(カレントディレクトリ)の中にあるファイルの中身を表示します。<br><br>
+            ・自分が今作業しているディレクトリ(カレントディレクトリ)の中にあるファイルの中身を表示する。<br><br>
             ⑤<br>
             まずは先ほど作った「memo.txt」を開きましょう。<br>
             その中に画像のように入力しましょう。
@@ -594,11 +585,11 @@
         <Document>
           <SectionTitle sectionTitle="2-2. プログラムの命令(位置把握・確認・移動)" id="sectionTitle2-2-m"></SectionTitle>
           <p>
-            次に自分の作業しているディレクトリ(カレントディレクトリ)までの経路(位置)を知りたい時に使うコマンドを学びましょう。
+            次に自分の作業しているディレクトリ(カレントディレクトリ)までの経路(位置)を知りたい時に使うコマンドを学びましょう。<br>
           </p>
           <HighlightWord word="pwd"></HighlightWord>
           <p>
-            ・カレントディレクトリを表示をします。
+            ・カレントディレクトリを表示する。<br><br>
             ⑦<br>
             ターミナルに画像のように入力し、実行しましょう。<br>
             今いる位置が表示されればOKです。<br>
@@ -611,7 +602,7 @@
           </p>
           <HighlightWord word="ls"></HighlightWord>
           <p>
-            ・カレントディレクトリの中身を表示します。<br>
+            ・カレントディレクトリの中身を表示する。<br>
             「List」の略称です。<br><br>
             ⑧<br>
             まずはディレクトリを作りましょう。
@@ -625,21 +616,17 @@
             <img @click="openModal(imagePaths.mac.folder4)" :src="imagePaths.mac.folder4" class="screen-image" alt="folder-4" />
           </div><br>
           <p>
-            ⑧<br>
-            ターミナルに画像のように入力し、実行しましょう。<br>
-            ターミナルで確認するとこのようになっていればOKです。<br>
-          </p><br>
-          <p>
-            ⑨それでは今作ったディレクトリにテキストファイルを移動しましょう。<br><br>
+            ⑨<br>
+            それでは今作ったディレクトリにテキストファイルを移動しましょう。<br><br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.mac.step8)" :src="imagePaths.mac.step8" class="screen-image" alt="git-bash-8" />
           </div><br>
           <HighlightWord word="mv 移動させたいファイル名 移動先のディレクトリ(フォルダ)名"></HighlightWord>
           <p>
-            ・指定したファイルを指定したディレクトリに移動することができます。<br>
-            「Move」の略称です。<br>
-            フォルダを移動する時は<br>
+            ・指定したファイルを指定したディレクトリに移動させる。<br>
+            「Move」の略称です。<br><br>
+            フォルダを移動させる時は<br>
             <HighlightWord word="mv 移動させたいディレクトリ名 移動先のディレクトリ名"></HighlightWord>となります。<br><br>
             ⑩<br>
             ターミナルに画像のように入力し、実行しましょう。<br>
@@ -653,10 +640,10 @@
           </div><br>
           <p>
             mvコマンドは他にも使い方があるので覚えておきましょう。<br><br>
-          </p><br>
+          </p>
           <HighlightWord word="mv 名前を変えたいファイル名 新しいファイル名"></HighlightWord>
           <p>
-            ・ファイルの名前を変更することができます。<br><br>
+            ・ファイルの名前を変更する。<br><br>
             ⑪<br>
             まずは「test」ディレクトリに移動してターミナルに画像のように入力し、実行しましょう。<br>
             ターミナルでは何も表示されませんが、エクスプローラで「test」ディレクトリの中のテキストファイルの名前が変わっているのが分かります。<br><br>
@@ -675,7 +662,7 @@
           </p>
           <HighlightWord word="cp コピーするファイル名 新しいファイル名"></HighlightWord>
           <p>
-            ・自分の作業しているディレクトリ(カレントディレクトリ)の中にあるファイルを新しい名前で中身のデータの状態をコピーできます。<br><br>
+            ・自分の作業しているディレクトリ(カレントディレクトリ)の中にあるファイルを、新しい名前で中身のデータの状態をコピーする。<br><br>
             ディレクトリをコピーしたい場合は<br>
             <HighlightWord word="cp –r コピーするディレクトリ名 新しいディレクトリ名"></HighlightWord>となります。<br><br>
             ⑫<br>
@@ -686,17 +673,17 @@
             <img @click="openModal(imagePaths.mac.step11)" :src="imagePaths.mac.step11" class="screen-image" alt="git-bash-11" />
           </div><br>
           <div>
-            <img @click="openModal(imagePaths.mac.folder7)" :src="imagePaths.mac.folder6" class="screen-image" alt="folder-7" />
+            <img @click="openModal(imagePaths.mac.folder7)" :src="imagePaths.mac.folder7" class="screen-image" alt="folder-7" />
           </div><br>
           <div>
             <img @click="openModal(imagePaths.mac.copy)" :src="imagePaths.mac.copy" class="screen-image" alt="copy" />
           </div><br>
           <HighlightWord word="rm 削除するファイル名"></HighlightWord>
           <p>
-            ・自分の作業しているディレクトリ(カレントディレクトリ)の中にあるファイルを削除できます。<br><br>
+            ・自分の作業しているディレクトリ(カレントディレクトリ)の中にあるファイルを削除する。<br><br>
             ディレクトリごと削除したい場合は<br>
             <HighlightWord word="rm –r 削除するディレクトリ名 "></HighlightWord>となります。<br><br>
-            ⑫<br>
+            ⑬<br>
             ターミナルに画像のように入力し、実行しましょう。<br>
             ターミナルでは何も出てきませんが、エクスプローラで「test」ディレクトリを確認すると「memo.txt」というファイルが削除されていることがわかります。<br>
           </p><br>
@@ -712,52 +699,47 @@
         <SubTitle subTitle="3. パスとホームディレクトリについて" id="subTitle3-m"></SubTitle>
         <Document>
           <SectionTitle sectionTitle="3-1. パスについて" id="sectionTitle3-1-m"></SectionTitle>
-          <p>
-            パスについて学びましょう。<br>
-          </p><br>
           <HighlightWord word="パス"></HighlightWord>
           <p>
-            ・経路や道順を意味しています。<br>
-            コマンドラインやWebサイト上にある特定ファイルまでの道筋を表すものです。<br>
+            ・コマンドラインやWebサイト上にある特定ファイルまでの道筋。<br>
           </p><br>
           <HighlightWord word="絶対パス(absolute path)"></HighlightWord>
           <p>
-            ・ディレクトリなどの階層の一番上から特定のファイルまでの経路を階層ごとに全て記載するパスの事です。<br>
+            ・ディレクトリなどの階層の一番上から特定のファイルまでの道筋を階層ごとに全て記載するパス。<br>
             「フルパス」と呼ばれることもあり、コマンドラインやWebサイト上にある特定ファイルまでの道筋を表すものです。<br>
             webサイトでは、「ドメイン名 / フォルダ名 / … / ファイル名」、エクスプローラーだと「ルートディレクトリ / フォルダ名 / … / ファイル名」という表記になります。<br><br>
             例：<br>
-            http:www.hoge.com/test/index.html<br><br>
-            /about/test/home/about.html<br><br>
+            http:www.hoge.com/test/index.html<br>
+            /about/test/home/about.html<br>
             ↑最初のスラッシュはルートディレクトリを表します。
-            <span class="markup-word-blue">「cd /」</span>でルートディレクトリに移動できます。
+            <span class="markup-word-blue">「cd /」</span>でルートディレクトリに移動できます。<br><br>
             絶対パスのメリットとデメリット<br>
             メリット<br>
-            ・URLをすべて書いてファイルの場所を指定するため、リンク切れになるミスを防げます。<br>
+            ・URLをすべて書いてファイルの場所を指定するため、リンク切れになるミスを防げる。<br>
             デメリット<br>
             ・URLが長くなってしまう。<br>
           </p><br>
           <HighlightWord word="相対パス(relative path)"></HighlightWord>
           <p>
-            現在いるファイルを起点とした、目的ファイルまでの経路を記述する形式のこと。<br>
+            現在いるファイルを起点とした、目的ファイルまでの道筋。<br>
             現在の階層よりも1つ上位の階層への移動を「cd ../」で戻ることができると説明しましたが、
             相対パスは現在地から目的地までの「道順」を記述する方法です<br><br>
-            例：<br><br><br>
+            例：<br>
             ../../contents/file01.png<br><br>
             絶対パスのメリットとデメリット<br>
             メリット<br>
-            ・URLが短くできます。<br>
+            ・URLが短くできる。<br>
             デメリット<br>
-            ・リンク切れになるミスが起こりやすいです。<br><br>
-            相対パスや絶対パスはここまで学習したコマンドで使うことができるので一気に作業したいディレクトリに移動したり、指定したディレクトリに削除や複製をすることができます。<br>
+            ・リンク切れになるミスが起こりやすい。<br><br>
+            相対パスや絶対パスはここまでに学習したコマンドで使うことができるので、作業したいディレクトリへの移動や、指定したディレクトリの削除・複製ができます。<br>
           </p><br>
         </Document>
         <Document>
           <SectionTitle sectionTitle="3-2 ホームディレクトリについて" id="sectionTitle3-2-m"></SectionTitle>
           <p>
             <HighlightWord word="ホームディレクトリ"></HighlightWord><br>
-            ・ユーザーが作業をするときに基準にするディレクトリの事です。<br>
+            ・ユーザーが作業をするときに基準にするディレクトリ。<br>
             ホームディレクトリとは、コンピューター上でログインしたユーザーが作業するための個人用フォルダーと覚えるとよいでしょう。<br><br>
-            Windowsだと「C:/User/(自分で設定したパソコンのログイン名)」もしくは「C:/ユーザー/(自分で設定したパソコンのログイン名)」の経路にあるディレクトリになります。<br><br>
             <span class="markup-word-blue">「cd ~」</span>でホームディレクトリに移動できます。
           </p>
         </Document>
