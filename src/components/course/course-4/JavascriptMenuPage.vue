@@ -134,6 +134,9 @@ export default {
       this.$router.push({ name: "JavascriptPage7" });
     },
   },
+  mounted() {
+    window.scrollTo(0, 0);
+  },
 };
 </script>
 
