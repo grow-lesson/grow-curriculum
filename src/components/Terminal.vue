@@ -21,8 +21,9 @@ import Prism from "prismjs";
 import "prismjs/themes/prism.css";
 import "prismjs/components/prism-ruby";
 import "prismjs/components/prism-markup";
-import "prismjs/components/prism-css";
 import "prismjs/components/prism-javascript";
+import "prismjs/components/prism-bash";
+import "prismjs/components/prism-css";
 
 export default {
   props: {
@@ -41,7 +42,7 @@ export default {
   },
   data() {
     return {
-      buttonText: "コピー", // ボタンテキスト
+      buttonText: "copy", // ボタンテキスト
     };
   },
   computed: {
@@ -57,15 +58,15 @@ export default {
         .writeText(text)
         .then(() => {
           this.$emit("copied");
-          this.buttonText = "コピーしました"; // ボタンテキストを変更
+          this.buttonText = "copied"; // ボタンテキストを変更
 
           // 2秒後にコピー成功フラグとボタンテキストをリセット
           setTimeout(() => {
-            this.buttonText = "コピー";
+            this.buttonText = "copy";
           }, 2000);
         })
         .catch((error) => {
-          console.error("クリップボードへのコピーに失敗しました:", error);
+          console.error("copy failed:", error);
         });
     },
     deselectText() {
@@ -74,6 +75,13 @@ export default {
   },
   mounted() {
     Prism.highlightAll();
+    // コンポーネントがマウントされた後に実行されるコード
+    this.$nextTick(() => {
+      const operatorElements = this.$el.querySelectorAll('.token.operator');
+      operatorElements.forEach(element => {
+        element.style.background = 'none';
+      });
+    });
   },
 };
 </script>
@@ -96,7 +104,9 @@ export default {
   align-items: center;
   margin-bottom: 10px;
 }
-
+.terminal-title {
+  font-weight: bold;
+}
 .terminal-content {
   background-color: #282c34;
   border-top: none;
@@ -146,8 +156,10 @@ export default {
 .terminal-button {
   background-color: #fff;
   color: #000;
-  border: none;
-  padding: 8px 16px;
+  border: solid 2px rgb(46, 46, 46);
+  margin-top: 2px;
+  padding: 3px 14px;
+  border-radius: 4px;
   cursor: pointer;
 }
 
