@@ -103,7 +103,7 @@ export default {
     };
 
     const goToJavaScriptMenuPage = () => {
-      router.push({ name: "UnderConstruction" });
+      router.push({ name: "JavascriptMenuPage" });
     };
 
     const goToRubyMenuPage = () => {
