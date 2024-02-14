@@ -10,8 +10,8 @@
         <SubTitle subTitle="1. backlogにて課題を担当者に見てもらえるようにしよう!" id="subTitle1-w"></SubTitle>
         <Document>
           <p>
-            Growではbacklogはカリキュラムをダウンロードしたり自分がカリキュラムの課題をアップロードし、それを課題をチェックする担当者とやりとりするツールとして使います。<br>
-            まずは担当者とやりとりできる様に準備しましょう！
+            GROWでは、backlogでカリキュラムをダウンロードしたり、課題をアップロードして担当者とやりとりしたりします。<br>
+            まずは担当者とやりとりできるように準備しましょう！
           </p>
           <br>
           <p>
@@ -36,9 +36,9 @@
           <br>
           <p>
             ③<br>
-            「課題の追加」を開いたら件名を入力しましょう。件名は「【課題FB】名前」このカッコの部分をコピーして名前部分に自分の名前を入れましょう。<br>
-            まず最初は課題の詳細に「@」で担当者をメンションして、あいさつを送りましょう。<br>
-            入力ができたら、課題の詳細の下にある担当者を自分の担当を選択してください。 ここまで入力できたら右上にある「追加」を押して下さい。
+            「課題の追加」を開いたら件名を入力しましょう。<br>件名は「【課題FB】名前」にします。
+            <br><br>まず最初は課題の詳細に「@」で担当者をメンションして、あいさつを送りましょう。<br>
+            入力ができたら、課題の詳細の下にある担当者欄を自分の担当者にしてください。 <br>ここまで入力できたら右上にある「追加」を押して下さい。
           </p>
           <br>
           <div>
@@ -48,7 +48,6 @@
         </Document>
         <SubTitle subTitle="2. カリキュラム資材を自分のPCにダウンロードしよう!" id="subTitle2-w"></SubTitle>
         <Document>
-          <p>backlog上にあるカリキュラムの資材をダウンロードしよう!<br></p>
           <br>
           <p>
             ④<br>
@@ -99,7 +98,7 @@
             ⑨<br>
             二番目にあるテキストフィールドはカリキュラム資材をクローン場所を決める場所です。<br>
             格納先はCドライブ直下に「grow」フォルダを右クリックで作成しそのフォルダを参照しましょう。<br>
-            作れれば画像のようなフォルダパスになっています。<br>
+            正しく作れていれば画像のようなフォルダパスになっています。<br><br>
             三番目のテキストフィールドはそのカリキュラム資材をどういうフォルダで格納するかを指定するので初級カリキュラムであればそのまま「grow-frontend-beginner」としておきましょう。<br>
             中級以降でも同じ操作をするので中級ではその名前にしてください。<br>
           </p>
@@ -131,7 +130,7 @@
           <p>
             ⑫<br>
             画面左のブランチに自分が作成したブランチ名が作成され、〇がついていることを確認しましょう。ついていなければダブルクリックで切り替えて下さい。<br>
-            ここまでできればカリキュラムのダウンロードと提出までの準備は完了です。<br>
+            ここまでできればカリキュラムのダウンロードと提出の準備は完了です。<br>
           </p>
           <br>
           <div>
@@ -142,185 +141,184 @@
         <SubTitle subTitle="3. カリキュラムを進めて提出しよう!" id="subTitle3-w"></SubTitle>
         <Document>
           <p>
-            ⑭<br>
+            ⑬<br>
             カリキュラムを進めるためにVisual Studio Codeを開きましょう<br>
             開くとこのような画面が出てきます。<br>
           </p>
           <br>
           <div>
-            <img @click="openModal(imagePaths.win.step13)" :src="imagePaths.win.step13" alt="手順⑮" class="screen-image" />
+            <img @click="openModal(imagePaths.win.step13)" :src="imagePaths.win.step13" alt="手順⑬" class="screen-image" />
           </div>
           <br>
           <p>
-            ⑮<br>
+            ⑭<br>
             次にファイルを選択しましょう。<br>
             「フォルダーを開く」を選択してください。<br>
           </p>
           <br>
           <div>
-            <img @click="openModal(imagePaths.win.step14)" :src="imagePaths.win.step14" alt="手順⑮" class="screen-image" />
+            <img @click="openModal(imagePaths.win.step14)" :src="imagePaths.win.step14" alt="手順⑭" class="screen-image" />
           </div>
           <br>
           <p>
-            ⑯<br>
+            ⑮<br>
             画面から「Windows(C:)」をクリックしCドライブを開きます。<br>
             クローンした時の「grow」ファルダができているのでそこを開くとダウンロードしたカリキュラムの資材がありますのでそのフォルダをワンクリックし選択状態にしたら右下の「フォルダーの選択」を押してください。<br>
           </p>
           <br>
           <div>
-            <img @click="openModal(imagePaths.win.step15)" :src="imagePaths.win.step15" alt="手順⑯" class="screen-image" />
+            <img @click="openModal(imagePaths.win.step15)" :src="imagePaths.win.step15" alt="手順⑮" class="screen-image" />
           </div>
           <br>
           <p>
-            ⑰<br>
+            ⑯<br>
             するとそのフォルダの中身がVisual Studio Codeに表示されます。<br>
           </p>
           <br>
           <div>
-            <img @click="openModal(imagePaths.win.step16)" :src="imagePaths.win.step16" alt="手順⑰" class="screen-image" />
+            <img @click="openModal(imagePaths.win.step16)" :src="imagePaths.win.step16" alt="手順⑯" class="screen-image" />
+          </div>
+          <br>
+          <p>
+            ⑰<br>
+            「answer」は答えが入っています。<br>
+            「tool」のちに説明しますが、デザインをする上で必要なスタイルなどが格納されています。<br>
+            「tool」は特に編集する必要はないので触らないようにしましょう。<br>
+            今回は「work」と書かれた所にある課題を開きましょう。<br>
+          </p>
+          <br>
+          <div>
+            <img @click="openModal(imagePaths.win.step17)" :src="imagePaths.win.step17" alt="手順⑰" class="screen-image" />
           </div>
           <br>
           <p>
             ⑱<br>
-            「answer」は答えが入っています。<br>
-            「tool」のちに説明しますが、デザインをする上で必要なスタイルなどが格納されています。<br>
-            「tool」は特に編集する必要はないので触らないようにしましょう。<br>
-            今回使うのは「work」と書かれた所にある課題を開きましょう。<br>
+            「div-puzzle-pc」の「lesson-1」にある「index.html」と「style.css」を開きましょう。<br>
+            2画面にするときはファイルをドラッグアンドドロップで引っ張ると分けることができます。<br>
           </p>
           <br>
           <div>
-            <img @click="openModal(imagePaths.win.step17)" :src="imagePaths.win.step17" alt="手順⑱" class="screen-image" />
+            <img @click="openModal(imagePaths.win.step18)" :src="imagePaths.win.step18" alt="手順⑱" class="screen-image" />
           </div>
           <br>
           <p>
             ⑲<br>
-            「div-puzzle-pc」の「lesson-1」にある「index.html」と「style.css」を開きましょう。<br>
-            画面にするときは左の2つのファイルをドラッグアンドドロップで引っ張ると分けることができます。<br>
-          </p>
-          <br>
-          <div>
-            <img @click="openModal(imagePaths.win.step18)" :src="imagePaths.win.step18" alt="手順⑲" class="screen-image" />
-          </div>
-          <br>
-          <p>
-            ⑳<br>
-            「index.html」はbodyと呼ばれる部分の中に書きましょう。「style.css」は「ここから書く」と書かれた下から書いてください。4行目にある「.clearfix::after」の部分は消さないようにしましょう。<br>
-            画面のようにに画面にするときは左の2つのファイルをドラッグアンドドロップで引っ張ると分けることができます。<br>
+            「index.html」はbodyと呼ばれる部分の中に書きましょう。<br>「style.css」は「ここから書く」と書かれた下から書いてください。4行目にある「.clearfix::after」の部分は消さないようにしましょう。<br>
             今記述している事はあくまでも例になるのでbacklogの完成図を見て作りましょう。<br>
           </p>
           <br>
           <div>
-            <img @click="openModal(imagePaths.win.step19)" :src="imagePaths.win.step19" alt="手順⑳" class="screen-image" />
+            <img @click="openModal(imagePaths.win.step19)" :src="imagePaths.win.step19" alt="手順⑲" class="screen-image" />
           </div>
           <br>
           <p>
-            ㉑<br>
+            ⑳<br>
             課題の説明はbacklogの「Wiki」に記載があるのでやりたい課題のページリンクをクリックしましょう。<br>
           </p>
           <br>
           <div>
-            <img @click="openModal(imagePaths.win.step20)" :src="imagePaths.win.step20" alt="手順㉑" class="screen-image" />
+            <img @click="openModal(imagePaths.win.step20)" :src="imagePaths.win.step20" alt="手順⑳" class="screen-image" />
+          </div>
+          <br>
+          <p>
+            ㉑<br>
+            課題のデザインなどが完成したら、そのファイルの部分で「Ctrl」キーを押しながら「s」を押して保存しましょう。<br>
+            手順⑲の時にはついていたファイル名の隣にある白い丸がなくなれば保存完了です。<br>
+          </p>
+          <br>
+          <div>
+            <img @click="openModal(imagePaths.win.step21)" :src="imagePaths.win.step21" alt="手順㉑" class="screen-image" />
           </div>
           <br>
           <p>
             ㉒<br>
-            課題のデザインなどが完成したら、そのファイルの部分で「Ctrl」キーを押しながら「s」を押して保存しましょう。<br>
-            手順⑳の時にはついていたファイル名の隣にある白い丸がなくなれば保存完了です。<br>
-          </p>
-          <br>
-          <div>
-            <img @click="openModal(imagePaths.win.step21)" :src="imagePaths.win.step21" alt="手順㉒" class="screen-image" />
-          </div>
-          <br>
-          <p>
-            ㉓<br>
             次にSourceTreeを開き、「コミット」と書いてあるボタンを押しましょう。<br>
             すると以下のような画面になります。<br>
           </p>
           <br>
           <div>
-            <img @click="openModal(imagePaths.win.step22)" :src="imagePaths.win.step22" alt="手順㉓" class="screen-image" />
+            <img @click="openModal(imagePaths.win.step22)" :src="imagePaths.win.step22" alt="手順㉒" class="screen-image" />
           </div>
           <br>
           <p>
-            ㉔<br>
+            ㉓<br>
             画面下の「作業ツリーのファイル」にある二つのファイルの隣にあるプラスボタンを押すとファイルが二つが「Indexにステージしたファイル」に表示されます。<br>
             すると以下のような画面になります。ファイルをクリックすると画面右部分に差分を見ることができます。<br>
           </p>
           <br>
           <div>
-            <img @click="openModal(imagePaths.win.step23)" :src="imagePaths.win.step23" alt="手順㉔" class="screen-image" />
+            <img @click="openModal(imagePaths.win.step23)" :src="imagePaths.win.step23" alt="手順㉓" class="screen-image" />
           </div>
           <br>
           <p>
-            ㉕<br>
+            ㉔<br>
             次に画面下のテキストフィールドにコミットメッセージを書きましょう。<br>
             基本的には何をどう変えたか詳細に書きますが、デザインの修正はこの後なので初回のコミットは「○○の実装」と入力しましょう。<br>
             入力できたら右下の「コミット」ボタンを押しましょう。<br>
           </p>
           <br>
           <div>
-            <img @click="openModal(imagePaths.win.step24)" :src="imagePaths.win.step24" alt="手順㉕" class="screen-image" />
+            <img @click="openModal(imagePaths.win.step24)" :src="imagePaths.win.step24" alt="手順㉔" class="screen-image" />
           </div>
           <br>
           <p>
-            ㉖<br>
+            ㉕<br>
             入力できたら右下の「プッシュ」ボタンを押しましょう。<br>
             すると以下のような表示が出てきます。<br>
           </p>
           <br>
           <div>
-            <img @click="openModal(imagePaths.win.step25)" :src="imagePaths.win.step25" alt="手順㉖" class="screen-image" />
+            <img @click="openModal(imagePaths.win.step25)" :src="imagePaths.win.step25" alt="手順㉕" class="screen-image" />
           </div>
           <br>
           <p>
-            ㉗<br>
+            ㉖<br>
             自分が作ったブランチのみにチェックを入れましょう。<br>
             <HighlightWord word="絶対にmasterの方にチェックを入れないようにしましょう!"></HighlightWord><br>
             問題ないことを確認して「プッシュ」を押せばbacklog上にアップロード完了です。<br>
           </p>
           <br>
           <div>
-            <img @click="openModal(imagePaths.win.step26)" :src="imagePaths.win.step26" alt="手順㉗" class="screen-image" />
+            <img @click="openModal(imagePaths.win.step26)" :src="imagePaths.win.step26" alt="手順㉖" class="screen-image" />
           </div>
           <br>
           <p>
-            ㉘<br>
+            ㉗<br>
             backlogを開き「Git」をクリックしましょう。<br>
             右上にプッシュされたことが書かれていれば問題ないので「課題」をクリックしましょう。<br>
           </p>
           <br>
           <div>
-            <img @click="openModal(imagePaths.win.step27)" :src="imagePaths.win.step27" alt="手順㉘" class="screen-image" />
+            <img @click="openModal(imagePaths.win.step27)" :src="imagePaths.win.step27" alt="手順㉗" class="screen-image" />
           </div>
           <br>
           <p>
-            ㉙<br>
+            ㉘<br>
             自分の名前の課題をクリックしましょう。<br>
           </p>
           <br>
           <div>
-            <img @click="openModal(imagePaths.win.step28)" :src="imagePaths.win.step28" alt="手順㉙" class="screen-image" />
+            <img @click="openModal(imagePaths.win.step28)" :src="imagePaths.win.step28" alt="手順㉘" class="screen-image" />
+          </div>
+          <br>
+          <p>
+            ㉙<br>
+            下にある「コメント」フィールドを押しましょう。<br>
+          </p>
+          <br>
+          <div>
+            <img @click="openModal(imagePaths.win.step29)" :src="imagePaths.win.step29" alt="手順㉙" class="screen-image" />
           </div>
           <br>
           <p>
             ㉚<br>
-            下にある「コメントの詳細」フィールドを押しましょう。<br>
-          </p>
-          <br>
-          <div>
-            <img @click="openModal(imagePaths.win.step29)" :src="imagePaths.win.step29" alt="手順㉚" class="screen-image" />
-          </div>
-          <br>
-          <p>
-            ㉛<br>
-            FBをしてくれる先輩エンジニアの方の名前をメンションと、テンプレートとしては画像の例に沿って内容を入力してください。<br>
+            FBをしてくれる先輩エンジニアの方の名前をメンションし、画像の例に沿って内容を入力してください。<br>
             状態を「処理済み」に変更し、担当者はFBをしてくれる先輩エンジニアの方の名前を選択しましょう。<br>
             文章に問題がなければ「登録」ボタンを押して完了です。
           </p>
           <br>
           <div>
-            <img @click="openModal(imagePaths.win.step30)" :src="imagePaths.win.step30" alt="手順㉛" class="screen-image" />
+            <img @click="openModal(imagePaths.win.step30)" :src="imagePaths.win.step30" alt="手順㉚" class="screen-image" />
           </div>
           <br>
         </Document>
@@ -331,7 +329,7 @@
         <SubTitle subTitle="1. backlogにて課題を担当者に見てもらえるようにしよう!" id="subTitle1-m"></SubTitle>
         <Document>
           <p>
-            Growではbacklogはカリキュラムをダウンロードしたり自分がカリキュラムの課題をアップロードし、それを課題をチェックする担当者とやりとりするツールとして使います。<br>
+            GROWでは、backlogでカリキュラムをダウンロードしたり、課題をアップロードして担当者とやりとりしたりします。<br>
             まずは担当者とやりとりできる様に準備しましょう！
           </p>
           <br>
@@ -357,9 +355,9 @@
           <br>
           <p>
             ③<br>
-            「課題の追加」を開いたら件名を入力しましょう。件名は「【課題FB】名前」このカッコの部分をコピーして名前部分に自分の名前を入れましょう。<br>
-            まず最初は課題の詳細に「@」で担当者をメンションして、あいさつを送りましょう。<br>
-            入力ができたら、課題の詳細の下にある担当者を自分の担当を選択してください。 ここまで入力できたら右上にある「追加」を押して下さい。
+            「課題の追加」を開いたら件名を入力しましょう。<br>件名は「【課題FB】名前」にします。
+            <br><br>まず最初は課題の詳細に「@」で担当者をメンションして、あいさつを送りましょう。<br>
+            入力ができたら、課題の詳細の下にある担当者欄を自分の担当者にしてください。 <br>ここまで入力できたら右上にある「追加」を押して下さい。
           </p>
           <br>
           <div>
@@ -369,7 +367,6 @@
         </Document>
         <SubTitle subTitle="2. カリキュラム資材を自分のPCにダウンロードしよう!" id="subTitle2-m"></SubTitle>
         <Document>
-          <p>backlog上にあるカリキュラムの資材をダウンロードしよう!<br></p>
           <br>
           <p>
             ④<br>
@@ -448,7 +445,7 @@
           <p>
             ⑫<br>
             画面左のブランチに自分が作成したブランチ名が作成され、〇がついていることを確認しましょう。ついていなければダブルクリックで切り替えて下さい。<br>
-            ここまでできればカリキュラムのダウンロードと提出までの準備は完了です。<br>
+            ここまでできればカリキュラムのダウンロードと提出の準備は完了です。<br>
           </p>
           <br>
           <div>
@@ -459,38 +456,39 @@
         <SubTitle subTitle="3. カリキュラムを進めて提出しよう!" id="subTitle3-m"></SubTitle>
         <Document>
           <p>
-            ⑭<br>
+            ⑬<br>
             カリキュラムを進めるためにVisual Studio Codeを開きましょう<br>
             開くとこのような画面が出てきます。<br>
           </p>
           <br>
           <div>
-            <img @click="openModal(imagePaths.mac.step13)" :src="imagePaths.mac.step13" alt="手順⑮" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step13)" :src="imagePaths.mac.step13" alt="手順⑬" class="screen-image" />
           </div>
           <br>
           <p>
-            ⑮<br>
+            ⑭<br>
             次にファイルを選択しましょう。<br>
             「フォルダーを開く」を選択してください。<br>
           </p>
           <br>
           <div>
-            <img @click="openModal(imagePaths.mac.step14)" :src="imagePaths.mac.step14" alt="手順⑮" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step14)" :src="imagePaths.mac.step14" alt="手順⑭" class="screen-image" />
           </div>
           <br>
           <p>
-            ⑯<br>
+            ⑮<br>
             ファイル選択画面から家マークの「ホームディレクトリ」をクリックします。<br>
             「ホームディレクトリ」がない場合は<span><a href="https://dtmmethod.com/mac-finder-home" class="markup-word-red">こちら</a></span
             >をクリックして下さい。<br>
           </p>
           <br>
           <div>
-            <img @click="openModal(imagePaths.mac.step15)" :src="imagePaths.mac.step15" alt="手順⑯" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step15)" :src="imagePaths.mac.step15" alt="手順⑮" class="screen-image" />
           </div>
           <br>
-          <p>クローンした時の「grow-frontend-beginner」ファルダができているのでのフォルダをワンクリックし選択状態にしたら右下の「フォルダーの選択」を押してください。<br></p>
-          <div>
+          <p>⑯<br>
+            クローンした時の「grow-frontend-beginner」ファルダができているので、フォルダをワンクリックして選択状態にしたら「開く」を押してください。</p>
+          <div><br>
             <img @click="openModal(imagePaths.mac.step16)" :src="imagePaths.mac.step16" alt="手順⑯" class="screen-image" />
           </div>
           <br>
@@ -508,7 +506,7 @@
             「answer」は答えが入っています。<br>
             「tool」のちに説明しますが、デザインをする上で必要なスタイルなどが格納されています。<br>
             「tool」は特に編集する必要はないので触らないようにしましょう。<br>
-            今回使うのは「work」と書かれた所にある課題を開きましょう。<br>
+            今回は「work」と書かれた所にある課題を開きましょう。<br>
           </p>
           <br>
           <div>
@@ -518,22 +516,21 @@
           <p>
             ⑲<br>
             「div-puzzle-pc」の「lesson-1」にある「index.html」と「style.css」を開きましょう。<br>
-            に画面にするときは左の2つのファイルをドラッグアンドドロップで引っ張ると分けることができます。<br>
+            2画面にするときはファイルをドラッグアンドドロップで引っ張ると分けることができます。<br>
           </p>
           <br>
           <div>
-            <img @click="openModal(imagePaths.mac.step18)" :src="imagePaths.mac.step18" alt="手順⑲" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step19)" :src="imagePaths.mac.step19" alt="手順⑲" class="screen-image" />
           </div>
           <br>
           <p>
             ⑳<br>
-            「index.html」はbodyと呼ばれる部分の中に書きましょう。「style.css」は「ここから書く」と書かれた下から書いてください。4行目にある「.clearfix::after」の部分は消さないようにしましょう。<br>
-            画面にするときは左の2つのファイルをドラッグアンドドロップで引っ張ると分けることができます。<br>
+            「index.html」はbodyと呼ばれる部分の中に書きましょう。<br>「style.css」は「ここから書く」と書かれた下から書いてください。4行目にある「.clearfix::after」の部分は消さないようにしましょう。<br>
             今記述している事はあくまでも例になるのでbacklogの完成図を見て作りましょう。<br>
           </p>
           <br>
           <div>
-            <img @click="openModal(imagePaths.mac.step19)" :src="imagePaths.mac.step19" alt="手順⑳" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step20)" :src="imagePaths.mac.step20" alt="手順⑳" class="screen-image" />
           </div>
           <br>
           <p>
@@ -542,7 +539,7 @@
           </p>
           <br>
           <div>
-            <img @click="openModal(imagePaths.mac.step20)" :src="imagePaths.mac.step20" alt="手順㉑" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step21)" :src="imagePaths.mac.step21" alt="手順㉑" class="screen-image" />
           </div>
           <br>
           <p>
@@ -552,7 +549,7 @@
           </p>
           <br>
           <div>
-            <img @click="openModal(imagePaths.mac.step21)" :src="imagePaths.mac.step21" alt="手順㉒" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step22)" :src="imagePaths.mac.step22" alt="手順㉒" class="screen-image" />
           </div>
           <br>
           <p>
@@ -562,17 +559,17 @@
           </p>
           <br>
           <div>
-            <img @click="openModal(imagePaths.mac.step22)" :src="imagePaths.mac.step22" alt="手順㉓" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step23)" :src="imagePaths.mac.step23" alt="手順㉓" class="screen-image" />
           </div>
           <br>
           <p>
             ㉔<br>
-            画面下の「作業ツリーのファイル」にある二つのファイルの隣にあるプラスボタンを押すとファイルが二つが「Indexにステージしたファイル」に表示されます。<br>
+            画面左下の「ステージングに未登録のファイル」にある二つのファイルの隣にあるチェックボックスを押すとファイル二つが「ステージング済みのファイル」に表示されます。<br>
             すると以下のような画面になります。ファイルをクリックすると画面右部分に差分を見ることができます。<br>
           </p>
           <br>
           <div>
-            <img @click="openModal(imagePaths.mac.step23)" :src="imagePaths.mac.step23" alt="手順㉔" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step24)" :src="imagePaths.mac.step24" alt="手順㉔" class="screen-image" />
           </div>
           <br>
           <p>
@@ -583,28 +580,28 @@
           </p>
           <br>
           <div>
-            <img @click="openModal(imagePaths.mac.step24)" :src="imagePaths.mac.step24" alt="手順㉕" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step25)" :src="imagePaths.mac.step25" alt="手順㉕" class="screen-image" />
           </div>
           <br>
           <p>
             ㉖<br>
-            入力できたら右下の「プッシュ」ボタンを押しましょう。<br>
+            入力できたら「プッシュ」ボタンを押しましょう。<br>
             すると以下のような表示が出てきます。<br>
           </p>
           <br>
           <div>
-            <img @click="openModal(imagePaths.mac.step25)" :src="imagePaths.mac.step25" alt="手順㉖" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step26)" :src="imagePaths.mac.step26" alt="手順㉖" class="screen-image" />
           </div>
           <br>
           <p>
             ㉗<br>
             自分が作ったブランチのみにチェックを入れましょう。<br>
             <HighlightWord word="絶対にmasterの方にチェックを入れないようにしましょう!"></HighlightWord><br>
-            問題ないことを確認して「プッシュ」を押せばbacklog上にアップロード完了です。<br>
+            問題ないことを確認して「OK」を押せばbacklog上にアップロード完了です。<br>
           </p>
           <br>
           <div>
-            <img @click="openModal(imagePaths.mac.step26)" :src="imagePaths.mac.step26" alt="手順㉗" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step27)" :src="imagePaths.mac.step27" alt="手順㉗" class="screen-image" />
           </div>
           <br>
           <p>
@@ -614,7 +611,7 @@
           </p>
           <br>
           <div>
-            <img @click="openModal(imagePaths.mac.step27)" :src="imagePaths.mac.step27" alt="手順㉘" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step28)" :src="imagePaths.mac.step28" alt="手順㉘" class="screen-image" />
           </div>
           <br>
           <p>
@@ -623,27 +620,27 @@
           </p>
           <br>
           <div>
-            <img @click="openModal(imagePaths.mac.step28)" :src="imagePaths.mac.step28" alt="手順㉙" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step29)" :src="imagePaths.mac.step29" alt="手順㉙" class="screen-image" />
           </div>
           <br>
           <p>
             ㉚<br>
-            下にある「コメントの詳細」フィールドを押しましょう。<br>
+            下にある「コメント」フィールドを押しましょう。<br>
           </p>
           <br>
           <div>
-            <img @click="openModal(imagePaths.mac.step29)" :src="imagePaths.mac.step29" alt="手順㉚" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step30)" :src="imagePaths.mac.step30" alt="手順㉚" class="screen-image" />
           </div>
           <br>
           <p>
             ㉛<br>
-            FBをしてくれる先輩エンジニアの方の名前をメンションと、テンプレートとしては画像の例に沿って内容を入力してください。<br>
+            FBをしてくれる先輩エンジニアの方の名前をメンションし、画像の例に沿って内容を入力してください。<br>
             状態を「処理済み」に変更し、担当者はFBをしてくれる先輩エンジニアの方の名前を選択しましょう。<br>
             文章に問題がなければ「登録」ボタンを押して完了です。
           </p>
           <br>
           <div>
-            <img @click="openModal(imagePaths.mac.step30)" :src="imagePaths.mac.step30" alt="手順㉛" class="screen-image" />
+            <img @click="openModal(imagePaths.mac.step31)" :src="imagePaths.mac.step31" alt="手順㉛" class="screen-image" />
           </div>
           <br>
         </Document>
@@ -764,19 +761,20 @@ export default {
         step15: require("../../assets/images/procedure/home-1.png"),
         step16: require("../../assets/images/procedure/vscode-mac-3.png"),
         step17: require("../../assets/images/procedure/vscode-mac-4.png"),
-        step18: require("../../assets/images/procedure/vscode-mac-5.png"),
-        step19: require("../../assets/images/procedure/vscode-mac-6.png"),
-        step20: require("../../assets/images/procedure/vscode-mac-7.png"),
+        step18: require("../../assets/images/procedure/vscode-mac-4.png"),
+        step19: require("../../assets/images/procedure/vscode-mac-5.png"),
+        step20: require("../../assets/images/procedure/vscode-mac-6.png"),
         step21: require("../../assets/images/procedure/backlog-6.png"),
-        step22: require("../../assets/images/procedure/SourceTree-mac-13.png"),
-        step23: require("../../assets/images/procedure/SourceTree-mac-14.png"),
-        step24: require("../../assets/images/procedure/SourceTree-mac-15.png"),
-        step25: require("../../assets/images/procedure/SourceTree-mac-16.png"),
-        step26: require("../../assets/images/procedure/SourceTree-mac-17.png"),
-        step27: require("../../assets/images/procedure/backlog-7.png"),
-        step28: require("../../assets/images/procedure/backlog-8.png"),
-        step29: require("../../assets/images/procedure/backlog-9.png"),
-        step30: require("../../assets/images/procedure/backlog-10.png")
+        step22: require("../../assets/images/procedure/vscode-mac-7.png"),
+        step23: require("../../assets/images/procedure/SourceTree-mac-13.png"),
+        step24: require("../../assets/images/procedure/SourceTree-mac-14.png"),
+        step25: require("../../assets/images/procedure/SourceTree-mac-15.png"),
+        step26: require("../../assets/images/procedure/SourceTree-mac-16.png"),
+        step27: require("../../assets/images/procedure/SourceTree-mac-17.png"),
+        step28: require("../../assets/images/procedure/backlog-7.png"),
+        step29: require("../../assets/images/procedure/backlog-8.png"),
+        step30: require("../../assets/images/procedure/backlog-9.png"),
+        step31: require("../../assets/images/procedure/backlog-10.png")
       }
     };
 

@@ -13,29 +13,29 @@
         <!-- section 1 -->
         <SubTitle subTitle="1. HTMLとCSSについて知る" id="subTitle1"></SubTitle>
         <Document>
+          <SectionTitle sectionTitle="1. HTMLとCSSについて知る" id="sectionTitle1"></SectionTitle>
           <p>
             まずHTMLとCSSがの名称や意味を理解しましょう!
           言葉の意味や名称を学ぶことで専門用語やエンジニアの人との会話スムーズになるので覚えておきましょう。
           </p><br>
           <HighlightWord word="HTML(Hyper Text Markup Language)"></HighlightWord>
           <p>
-            ・HTMLとはWebサイトを作成する際に、コンピューターへ構成指示を出し、表示したい文章や写真などの情報を形作るマークアップ言語の略称です。<br>
-            ・Webサイトに表示させる為の骨組みを形作ります。<br><br>
-            ・また、<span class="markup-word-blue">マークアップ</span>とは文章の構成や役割を示すという意味になります。<br>
-            例えると、見出しや段落・表・リンクなど、文章が構成されている要素がどのような役割を持っているかを指示することができます。<br>
-            HTMLの記述によって、検索エンジンがWEBページの構造を把握しやすくなります。<br><br>
-            ・下のロゴに「5」と書いてあるのはHTMLのバージョン5、改訂第5版のことです。<br>
-            1993年初めてHTML1が開発され、1999年12月にバージョンアップされたHTML4が開発されました。<br>
-            そして2014年10月28日から現在までHTML5が使われ最新のHTMLのバージョンになります。
+            ・Webサイトを作成する際にコンピューターへ構成指示を出し、表示したい文章や写真などの情報を形作るマークアップ言語の略称。<br>
+            Webサイトに表示させる為の骨組みを形作ります。<br><br>
+            また、<span class="markup-word-blue">マークアップ</span>とは文章の構成や役割を示すという意味になります。<br>
+            見出しや段落・表・リンクなど、文章を構成している要素がどのような役割を持っているのかを示すことで、検索エンジンがWEBページの構造を把握しやすくなります。<br><br>
+            ○下の「5」と書いてあるロゴはHTMLのバージョン5、改訂第5版のことを指します。<br>
+            ○1993年にHTML1が開発され、<!--1999年12月にHTML4へバージョンアップされました。-->
+            2014年<!--10月28日-->に最新バージョンのHTML5になりました。
           </p><br>
           <div>
             <img @click="openModal(imagePaths.step1)" :src="imagePaths.step1" alt="html-logo" class="html-image" />
           </div>
           <HighlightWord word="CSS(Cascading Style Sheets)"></HighlightWord>
           <p>
-            ・CSSとはWebページの文字の色や大きさ、背景、配置といったスタイル（見た目）を設定する言語の略称です。
-            ・CSS1のバージョンは1996年に初めて開発され、仕様に改良を加えたCSS2が1998年に確率し、さらにCSS2.1が2011年にアップデートされました。
-            そこから2011年から現在まで使われているCSS3が最新のCSS3のバージョンです。
+            ・Webページの文字の色や大きさ、背景、配置といったスタイル（見た目）を設定する言語の略称。<br><br>
+            ○1996年にCSS1が開発され、1998年に改良を加えたCSS2が確立、2011年にCSS2.1へとアップデートされました。<br>
+            その後2011年から現在まで使われているCSS3が最新のCSSのバージョンです。
           </p>
           <div>
             <img @click="openModal(imagePaths.step2)" :src="imagePaths.step2" alt="css-logo" class="css-image" />
@@ -45,19 +45,20 @@
         <!-- section 2 -->
         <SubTitle subTitle="2. プログラミングとコーディング" id="subTitle2"></SubTitle>
         <Document>
+          <SectionTitle sectionTitle="2. プログラミングとコーディング" id="sectionTitle2"></SectionTitle>
           <p>
             ではこれから学ぶHTML・CSSを記述することはなんというのでしょうか。<br>
             よく聞くプログラミングとコーディングにどのような違いあるのか理解しましょう!<br>
           </p><br>
           <HighlightWord word="プログラミング"></HighlightWord>
-          <p>・プログラムを作成する作業全般の事をさします。</p>
+          <p>・プログラムを作成する作業全般のこと。</p>
           <HighlightWord word="コーディング"></HighlightWord>
-          <p>・プログラミング言語を使ってソースコードを作成する事です。</p><br>
+          <p>・プログラミング言語を使ってソースコードを作成すること。</p><br>
           <p>
-            おおまかな流れを説明した下の作業の順序を見てみましょう。<br>
+            おおまかな流れを説明した下の作業順序を見てみましょう。<br><br>
             まずはシステムやデザインを作るときには何をどうやって作るか<span class="markup-word-blue">設計</span>をする必要があります。<br>
-            そしてその設計書をもとに<span class="markup-word-blue">開発</span>し、バグ(デザインがずれていないか)がないか<span class="markup-word-blue">試験</span>をしてあればそれを<span class="markup-word-blue">改修</span>します。<br>
-            その工程が終わればお客様にお渡し(<span class="markup-word-blue">リリース</span>)をするのが基本的な流れになります。
+            そしてその設計書をもとに<span class="markup-word-blue">開発</span>し、バグ(デザインのずれ)がないか<span class="markup-word-blue">試験</span>をして、バグがあればそれを<span class="markup-word-blue">改修</span>します。<br>
+            その工程が終わればお客様にお渡し(<span class="markup-word-blue">リリース</span>)をする、というのが基本的な流れになります。
           </p><br>
           <div>
             <img @click="openModal(imagePaths.step3)" :src="imagePaths.step3" alt="prog-1" class="powerpoint-image"/>
@@ -69,15 +70,16 @@
         <Document>
           <SectionTitle sectionTitle="3-1. HTMLの名称" id="sectionTitle3-1"></SectionTitle>
           <p>まずはHTMLについて学んでいきましょう!</p>
-          <p>
-            HTMLではタグと呼ばれる中にテキストを入れていきます。最初に記述するタグを<span class="markup-word-blue">開始タグ</span>、
-            最後に記述するタグを<span class="markup-word-blue">終了タグ</span>といいます。
+          <p><br>
+            HTMLではタグと呼ばれる中にテキストを入れていきます。<br>
+            最初に記述するタグを<span class="markup-word-blue">開始タグ</span>、<br>
+            最後に記述するタグを<span class="markup-word-blue">終了タグ</span>といいます。<br><br>
           </p>
           <p>
             開始タグに入っている「h1」と書かれた部分を<span class="markup-word-blue">要素名</span>、
-            開始タグと終了タグまでのすべてをまとめて<span class="markup-word-blue">要素</span>といいます。
+            開始タグと終了タグまでのすべてをまとめて<span class="markup-word-blue">要素</span>と呼びます。
           </p>
-          <p>また、開始タグと終了タグの中身を<span class="markup-word-blue">要素内容</span>と呼ばれます。</p>
+          <p>また、開始タグと終了タグの中身を<span class="markup-word-blue">要素内容</span>と呼びます。</p>
           <div>
             <img @click="openModal(imagePaths.step4)" :src="imagePaths.step4" alt="html-1" class="powerpoint-image" />
           </div>
@@ -85,9 +87,9 @@
         <Document>
           <SectionTitle sectionTitle="3-2. CSSの名称" id="sectionTitle3-2"></SectionTitle>
           <p>次にCSSについて学んでいきましょう!</p>
-          <p>
-            CSSではhtmlでは要素名と呼ばれていたところが<span class="markup-word-blue">セレクタ</span>と呼ばれます。<br>
-            その次にそのカッコの中で記述してある左側部分を<span class="markup-word-blue">プロパティ</span>、右側を<span class="markup-word-blue">値</span>と呼びます。
+          <p><br>
+            CSSでは、HTMLでは要素名と呼ばれていたところを<span class="markup-word-blue">セレクタ</span>と呼びます。<br>
+            カッコの中で記述してある左側部分を<span class="markup-word-blue">プロパティ</span>、右側を<span class="markup-word-blue">値</span>と呼びます。
           </p>
           <div>
             <img @click="openModal(imagePaths.step5)" :src="imagePaths.step5" alt="css-1" class="powerpoint-image" />
@@ -96,12 +98,12 @@
         <Document>
           <SectionTitle sectionTitle="3-3. 要素とプロパティ①" id="sectionTitle3-3"></SectionTitle>
           <p>
-            まずはHTMLの要素から覚えていきましょう!<br>
+            まずはHTMLの要素から覚えていきましょう!<br><br>
             <HighlightWord word="<h1>・・・</h1>"></HighlightWord><br>
-            ・見出しを作成する要素でこのタグはhタグと呼ばれます。<br>
-            主にはページの全体やセクションの大きなタイトルに使い、h1〜h6まであり、大きくなれば画面に表示される文字は小さくなります。<br><br>
+            ・見出しを作成する要素。hタグと呼ばれます。<br>
+            主にはページの全体やセクションの大きなタイトルに使います。種類はh1〜h6まであり、数字が大きくなるほど画面に表示される文字は小さくなります。<br><br>
             <HighlightWord word="<p>・・・</p>"></HighlightWord><br>
-            ・段落を作成する要素でこのタグはpタグと呼ばれます。<br>
+            ・段落を作成する要素。pタグと呼ばれます。<br>
             段落を表し、タイトルの後の細かい文章に使います。<br><br>
             図であらわすとこのような感じです。<br>
             大きなタイトルの「PC カリキュラム」はh1を使い、サブタイトルの「最新の作品」、「自己紹介」などはh2を使用しましょう。<br>
@@ -114,33 +116,33 @@
             さっそくテキストエディタに書いて練習してみましょう!<br><br>
             ①<br>
             まずは環境構築の際にインストールしたVisual Studio Codeを開きましょう。<br>
-            開いたら以下のような画面になります。(Windows版ですが環境構築までは表示をMac版と対応させているのでボタンの位置や表記が若干違いますがここからはほとんど一緒なので読み替えて考えてください。)
+            開いたら以下のような画面になります。(画像はWindows版です。)
           </p><br>
           <div>
             <img @click="openModal(imagePaths.step7)" :src="imagePaths.step7" alt="vscode-1" class="screen-image" />
           </div><br>
           <p>
             ②<br>
-            そしたら「フォルダを開く」を押し、Windowsならエクスプローラーが開かれるのでCドライブ直下に作った「grow」フォルダに入りましょう。<br>
-            MacであればFinderが開かれるのでサイドバーにある家のマークのホームディレクトリを開きましょう。<br>
-            開きたら同環境とも右クリックを押し、フォルダを作成しましょう。<br>
-            名前は「カリキュラム練習用」などでOKです。フォルダが作成出来たらそれを選択した状態で「フォルダの選択」を押してください。
+            「フォルダーを開く」を押すと、Windowsの場合はエクスプローラーが開かれるのでCドライブ直下に作った「grow」フォルダに入りましょう。<br>
+            Macの場合はFinderが開かれるのでサイドバーにある家マークのホームディレクトリを開きましょう。<br><br>
+            開いたら同環境とも右クリックを押し、フォルダを作成しましょう。<br>
+            名前は「カリキュラム練習用」などでOKです。<br>フォルダが作成できたら、作成したフォルダを選択した状態で「フォルダーの選択」を押してください。
           </p><br>
           <div>
             <img @click="openModal(imagePaths.step8)" :src="imagePaths.step8" alt="vscode-2" class="screen-image" />
           </div><br>
           <p>
             ③<br>
-            するとこのように左に作ったファイルの名前が出てきます。<br>
-            このファイルの中で作業できるようになりました。
+            するとこのようにファイルの名前が出てきます。<br>
+            「カリキュラム練習用」ファイルの中で作業できるようになりました。
           </p><br>
           <div>
             <img @click="openModal(imagePaths.step9)" :src="imagePaths.step9" alt="vscode-3" class="screen-image" />
           </div><br>
           <p>
             ④<br>
-            次に「カリキュラム練習用」と表示されたフォルダの左の矢印「>」が下向きになっているか確認してください。<br>
-            されていなければそのファイルの名前をクリックしアイコンの左から2番目のフォルダマークをクリックします。<br>
+            次に「カリキュラム練習用」と表示されたフォルダの左の矢印「>」が下向きになっているか確認してください。<br><br>
+            なっていなければそのファイルの名前をクリックしアイコンの左から2番目のフォルダマークをクリックします。<br>
             名前は画像のようにして新しいフォルダを作成してください。
           </p><br>
           <div>
@@ -164,7 +166,7 @@
           </div><br>
           <p>
             ⑦<br>
-            開けたら2画面で見る方が見やすいので「style.css」をドラッグし2画面にしましょう<br>
+            開いたら2画面で見る方が見やすいので「style.css」をドラッグして2画面にしましょう。<br>
             左のファイルをドラッグし、右の大きい画面のタイトル部分に引っ張ると画面を分けることができます。
           </p><br>
           <div>
@@ -172,7 +174,7 @@
           </div><br>
           <p>
             ⑧<br>
-            次に「index.html」に以下の内容をコピーして貼り付けましょう<br>
+            次に「index.html」に以下の内容をコピーして貼り付けましょう。<br>
           </p><br>
           <Terminal :fileName="htmlSourceData.file1.filename" :copiedText="htmlSourceData.file1.code" :lang="htmlSourceData.file1.language" />
           <br>
@@ -184,14 +186,14 @@
           </div><br>
           <p>
             ⑨<br>
-            そしたら11行目に画像の記述を追加しましょう。<br>
+            次に11行目に画像の記述を追加しましょう。<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.step15)" :src="imagePaths.step15" alt="vscode-9" class="screen-image"/>
           </div><br>
           <p>
             ⑩<br>
-            編集し終わると「index.html」のタイトルの左側に白丸がある状態になっているので「Ctrl + S」で保存しましょう。Macは「Command + S」です。<br>
+            編集し終わると「index.html」のタイトルの左側に白丸がある状態になっているので、Windowsは「Ctrl + S」、Macは「Command + S」で保存しましょう。<br>
             すると白丸が消えるので保存が完了しました。
           </p><br>
           <div>
@@ -208,7 +210,7 @@
           </div><br>
           <p>
             ⑫<br>
-            Windowsならエクスプローラー、MacならFinderが開かれるのでそこにある「index.html」をダブルクリックしましょう。<br>
+            Windowsならエクスプローラー、MacならFinderが開かれるので、そこにある「index.html」をダブルクリックしましょう。<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.step18)" :src="imagePaths.step18" alt="folder-1" class="screen-image" />
@@ -225,22 +227,21 @@
           <SectionTitle sectionTitle="3-4. 要素とプロパティ②" id="sectionTitle3-4"></SectionTitle>
           <p>
             次にCSSのプロパティを覚えていきましょう!<br><br>
-            プロパティ<br><br>
             <HighlightWord word="color: [色の名前(rgb値・色コード)];"></HighlightWord><br>
-            ・文字の色を変えるプロパティでcolorプロパティと呼ばれます。<br><br>
+            ・文字の色を変えるプロパティ。colorプロパティと呼ばれます。<br><br>
             <HighlightWord word="font-size: [文字のサイズ(px,rem,%など)];"></HighlightWord><br>
-            ・文字の大きさを変えるプロパティでfont-sizeプロパティと呼ばれます。<br><br>
+            ・文字の大きさを変えるプロパティ。font-sizeプロパティと呼ばれます。<br><br>
             <HighlightWord word="font-family: [フォント名]; "></HighlightWord><br>
-            ・文字の種類を変えるプロパティでfont-familyプロパティと呼ばれます。
+            ・文字の種類を変えるプロパティ。font-familyプロパティと呼ばれます。<br>
             フォント名が「serif」のような1単語でなく「Lucida Grande」の様に2単語になった時は必ず「 "Lucida Grande"」とダブルクオーテーションで囲みましょう。<br><br>
-            それではCSSを適用してみましょう。<br>
+            それではCSSを適用してみましょう。<br><br>
             ①<br>
             テキストエディタの「style.css」に以下を入力しましょう<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.step20)" :src="imagePaths.step20" alt="vscode-12" class="screen-image" />
           </div>
-          <p>
+          <p><br>
             ②<br>
             ブラウザを更新してこのようなスタイルになればOKです。<br>
           </p><br>
@@ -252,36 +253,35 @@
           <SectionTitle sectionTitle="3-5. 要素とプロパティ③" id="sectionTitle3-5"></SectionTitle>
           <p>
             ここまででHTMLとCSSの役割がわかったと思います。<br>
-            さらにここから要素やプロパティを覚えましょう。<br><br>
+            さらにここから要素やプロパティを覚えましょう！<br><br>
             要素<br>
             <HighlightWord word="<a href='飛ばしたいURL'>・・・</a>"></HighlightWord><br>
-            ・リンクを作成する要素でこのタグはaタグと呼ばれます。<br>
+            ・リンクを作成する要素。aタグと呼ばれます。<br>
             クリックしたら他のページへ飛ぶ事ができます。<br><br>
-            <HighlightWord word="<img src='画像があるディレクトリのパス''>"></HighlightWord><br>
-            ・画像を表示する要素でこのタグはimgタグと呼ばれます。<br>
+            <HighlightWord word="<img src='画像があるディレクトリのパス'>"></HighlightWord><br>
+            ・画像を表示する要素。imgタグと呼ばれます。<br>
             <span class="markup-word-red">注意</span> : imgタグでは終了タグがないことに注意しましょう。<br>
             このような開始タグと終了タグの中に要素内容を記述できない要素の事を<span class="markup-word-blue">空要素</span>といいます。<br><br>
-            また、aタグやimgタグの中にある「href」や「src」の事を<span class="markup-word-blue">属性</span>といいます。<br><br>
-            では今出てきた属性について覚えましょう!<br>
-            <span class="markup-word-blue">href属性</span>→この属性を付与している属性をクリックすると遷移するURLを指定します。<br>
+            また、aタグやimgタグの中にある「href」や「src」の事を<span class="markup-word-blue">属性</span>といいます。<br>
+            <span class="markup-word-blue">href属性</span>→この属性を付与している要素をクリックすると遷移するURLを指定します。<br>
             <span class="markup-word-blue">src属性</span>→どこの画像を表示するか、参照するフォルダの場所を指定します。<br><br>
-            以下の画像はイメージです。<br>
+            図であらわすとこのような感じです。<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.step22)" :src="imagePaths.step22" alt="tag-2" class="powerpoint-image" />
           </div><br><br>
           <p>
-            それではaタグで画面遷移と画像を使って表示させてみましょう。<br>
+            それではaタグを使って画像を表示させてみましょう。<br><br>
             ①<br>
-            ・以下の画像を右クリックでダウンロードして下さい。
+            まず以下の画像を右クリックでダウンロードして下さい。
           </p><br>
           <div>
             <img @click="openModal(imagePaths.step23)" :src="imagePaths.step23" alt="cat" class="screen-image" />
           </div><br>
           <p>
             ②<br>
-            テキストエディタでassetsフォルダを作り、さらにその中にimagesフォルダを作りましょう。<br>
-            正しく作られたらこのような表示になります。<br>
+            次にテキストエディタでassetsフォルダを作り、さらにその中にimagesフォルダを作りましょう。<br>
+            正しく作れたらこのような表示になります。<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.step24)" :src="imagePaths.step24" alt="vscode-13" class="screen-image" />
@@ -314,15 +314,14 @@
         <Document>
           <SectionTitle sectionTitle="4-1. HTMLの親子関係" id="sectionTitle4-1"></SectionTitle>
           <p>
-            ここからHTMLの要素の関係に深堀りしていきましょう。<br>
+            ここからはHTMLの要素の関係について深堀りしていきましょう。<br><br>
             要素一つ一つにはそれぞれ<span class="markup-word-red">親子関係</span>や<span class="markup-word-red">兄弟関係</span>が必ず存在します。<br>
-            要素の構造は入れ子構造になっており、一つの要素の事を大きな箱だと考えるとイメージがしやすいです。<br>
+            要素の構造は入れ子構造になっており、一つの要素の事を大きな箱だと考えるとイメージがしやすいです。<br><br>
             それでは入れ子構造とは何か学びましょう!<br><br>
             <HighlightWord word="入れ子"></HighlightWord><br>
-            ・開始タグと終了タグで囲むことを入れ子といいます。<br><br>
-            
+            ・開始タグと終了タグで囲むこと。<br><br>
             その入れ子の中にさらに入れ子がある構造を<span class="markup-word-blue">入れ子構造</span>と呼びます。<br>
-            箱の中に箱が入る様なイメージです<br><br>
+            箱の中に箱が入る様なイメージです。<br><br>
           </p>
           <div>
             <img @click="openModal(imagePaths.step28)" :src="imagePaths.step28" alt="tag-2" class="screen-image" />
@@ -331,21 +330,21 @@
         <Document>
           <SectionTitle sectionTitle="4-2. 要素とプロパティ④" id="sectionTitle4-2"></SectionTitle>
           <p>
-            それではここからHTMLの要素の入れ子関係を理解できる様に新しい要素を覚えましょう。<br><br>
+            HTMLの要素の入れ子関係を理解できる様に新しい要素とプロパティを覚えましょう。<br><br>
             要素<br>
             <HighlightWord word="<div>・・・</div>"></HighlightWord><br>
-            ・文書に構造を付加する何も意味を持たない要素でこのタグはdivタグと呼ばれます。<br><br>
-            新しい属性を覚えましょう。<br>
-            <span class="markup-word-blue">class属性</span>→要素に名前をつけることができる属性です。
+            ・文書に構造を付加する何も意味を持たない要素。divタグと呼ばれます。<br><br>
+            属性<br>
+            <span class="markup-word-blue">class属性</span>→要素に名前をつけることができる属性。
             cssで指定するときは名前の前に「.」をつけましょう。<br><br>
             プロパティ<br>
             <HighlightWord word="background-color: [色の名前(rgb値・色コード)];"></HighlightWord><br>
-            ・背景色を変えるプロパティでbackground-colorプロパティと呼ばれます。<br><br>
+            ・背景色を変えるプロパティ。background-colorプロパティと呼ばれます。<br><br>
             <HighlightWord word="width: [横幅のサイズ(px,rem,%など)];"></HighlightWord><br>
-            ・要素の横幅を変えるプロパティでwidthプロパティと呼ばれます。<br><br>
+            ・要素の横幅を変えるプロパティ。widthプロパティと呼ばれます。<br><br>
             <HighlightWord word="height: [縦幅のサイズ(px,rem,%など)];"></HighlightWord><br>
-            ・要素の縦幅を変えるプロパティでheightプロパティと呼ばれます。<br><br>
-            それでは実践して試してみましょう!<br>
+            ・要素の縦幅を変えるプロパティ。heightプロパティと呼ばれます。<br><br><br>
+            それでは実践してみましょう!<br><br>
             ①<br>
             以下をコピーしてください。<br>
           </p>
@@ -353,23 +352,23 @@
           <br>
           <p>
             ②<br>
-            「html-css-lesson-2」フォルダを作り、「index.html」と「style.css」フォルダをlesson-1の時の様に作りましょう!<br>
+            「html-css-lesson-2」フォルダを作り、「index.html」と「style.css」フォルダをlesson-1と同じように作りましょう!<br><br>
           </p>
           <div>
             <img @click="openModal(imagePaths.step29)" :src="imagePaths.step29" alt="vscode-16" class="screen-image" />
           </div><br>
           <p>
             ③<br>
-            以下の画像の様にhtmlファイルとcssファイルを編集しましょう。
+            以下の画像のようにhtmlファイルとcssファイルを編集しましょう。
           </p>
-          <div>
+          <div><br>
             <img @click="openModal(imagePaths.step30)" :src="imagePaths.step30" alt="vscode-17" class="screen-image" />
           </div><br>
           <p>
             ④<br>
             先ほどのセクション3-3と同じように左のサイドバーの「index.html」を右クリックしてください。<br>
-            タブが開かれるので「エクスプローラーで開く」を押しましょう。<br>
-            ブラウザを確認すると、divタグで作った要素が表示されれば完了です。<br><br>
+            タブが開かれるので「エクスプローラーで開く」を押しましょう。<br><br>
+            ブラウザで、divタグで作った要素が表示されれば完了です。<br><br>
           </p>
           <div>
             <img @click="openModal(imagePaths.step31)" :src="imagePaths.step31" alt="web-4" class="screen-image" />
@@ -381,11 +380,11 @@
             <img @click="openModal(imagePaths.step32)" :src="imagePaths.step32" alt="tag-3" class="powerpoint-image" />
           </div><br><br>
           <p>
-            このようにまずは大きい赤い枠で囲み、中で画像を同じ大きさで並べています。<br>
+            このようにまずは大きい赤い枠で囲み、中で画像を同じ大きさで並べています。<br><br>
             まずは赤い大きなdivで囲み、青い小さな要素を入れていきます。これが親子関係になります。<br>
             この様な親子関係をdivタグだけで再現してみましょう!<br><br>
             ①<br>
-            以下の画像の様に先ほどのhtmlファイルとcssファイルに追記しましょう。<br>
+            以下の画像のように先ほどのhtmlファイルとcssファイルに追記しましょう。<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.step33)" :src="imagePaths.step33" alt="vscode-15" class="screen-image" />
@@ -412,52 +411,52 @@
             それでは新しい要素を学んでいきましょう!<br><br>
             要素<br>
             <HighlightWord word="<ul>・・・</ul>"></HighlightWord><br>
-            ・順序がない箇条書きのリストを表示する要素でこのタグはulタグと呼ばれます。<br><br>
+            ・順序がない箇条書きのリストを表示する要素。ulタグと呼ばれます。<br><br>
             <HighlightWord word="<li>・・・</li>"></HighlightWord><br>
-            ・リストの項目を表示するために使用する要素でこのタグはliタグと呼ばれます。<br>
-            ulとliタグはセットで使うという事を覚えておきましょう。<br><br>
-            それではリストを使ってメニュー部分を作ってみましょう!<br>
+            ・リストの項目を表示するために使用する要素。liタグと呼ばれます。<br>
+            ulとliタグはセットで使うという事を覚えておきましょう!<br><br>
+            それではリストを使ってメニュー部分を作ってみましょう。<br><br>
             ①<br>
-            「html-css-lesson-3」フォルダを作り、「index.html」と「style.css」フォルダをlesson-1の時の様に作りましょう!<br>
+            「html-css-lesson-3」フォルダを作り、「index.html」と「style.css」フォルダをlesson-1と同じように作りましょう!<br>
           </p>
-          <div>
+          <div><br>
             <img @click="openModal(imagePaths.step36)" :src="imagePaths.step36" alt="vscode-19" class="screen-image" />
           </div><br>
           <p>
             ②<br>
-            以下の画像の様にhtmlファイルとcssファイルを編集しましょう。
+            以下の画像のようにhtmlファイルとcssファイルを編集しましょう。
           </p>
-          <div>
+          <div><br>
             <img @click="openModal(imagePaths.step37)" :src="imagePaths.step37" alt="vscode-20" class="screen-image" />
           </div><br>
           <p>
             ③<br>
             編集ができたらWeb上で確認しましょう。画像と同じようにできていたらOKです。
           </p>
-          <div>
+          <div><br>
             <img @click="openModal(imagePaths.step38)" :src="imagePaths.step38" alt="web-6" class="screen-image" />
           </div><br>
           <p>
-            ここで属性も一つ覚えておきましょう。<br>
+            ここで属性も一つ覚えておきましょう。<br><br>
             <span class="markup-word-blue">id属性</span>→要素に名前をつけることができる属性です。
             cssで指定するときは名前の前に「#」をつけましょう。<br>
             class属性との違いはidでつけた名前はそのページでは<span class="markup-word-red">1回しか</span>使えないという事です。<br><br>
-            ではどのように使うか作りながら考えていきましょう。<br>
-            ①<br> 
+            ではどのように使うのか、作りながらみていきましょう。<br><br>
+            ①<br>
             以下を追記しましょう。
             </p>
-            <div>
+            <div><br>
               <img @click="openModal(imagePaths.step39)" :src="imagePaths.step39" alt="vscode-20" class="screen-image" />
             </div><br>
             <p>
-            ①<br>
+            ②<br>
             以下の画像の様にhtmlファイルとcssファイルを編集しましょう。<br>
             </p><br>
             
             <p>
-            ②<br>
+            ③<br>
             編集ができたらWeb上で確認しましょう。画像と同じようにできていたらOKです。<br>
-            この様に一つだけ特別な意味を持たせたりするスタイルを適用するときに使ったりしますが使用頻度はclassより使う機会が少ないという事を覚えておきましょう。<br>
+            このように一つだけ特別な意味を持たせるスタイルを適用するときに使いますが、使用頻度はclassより少ないという事を覚えておきましょう。<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.step40)" :src="imagePaths.step40" alt="web-7" class="screen-image" />
@@ -469,7 +468,6 @@
         <Document>
           <SectionTitle sectionTitle="5-1. HTMLの全体構造" id="sectionTitle5-1"></SectionTitle>
           <p>
-            HTMLとCSSについて少しだけ理解が深まったと思います。<br>
             それではHTMLの全体の構造についてみていきましょう。<br>
             以下の画像を見て下さい。
           </p><br>
@@ -480,29 +478,29 @@
             このようにHTMLで画面に表示する前に設定しないといけない事がたくさんあります。<br>
             この各要素がどのような役割を示すのか学んでいきましょう。<br><br>
             <HighlightWord word="<!DOCTYPE>"></HighlightWord><br>
-            ・HTML のバージョンを宣言をします。<br>
+            ・HTML のバージョンを宣言する。<br>
             ドキュメントタイプ宣言と呼ばれ、HTML 文書ファイルの先頭に記述します。タグではないので注意しましょう。<br><br>
             <HighlightWord word="<html>・・・</html>"></HighlightWord><br>
-            ・HTML文書であることを宣言します。<br>
+            ・HTML文書であることを宣言する。<br>
             ここからHTMLの記述を「開始する」または「終了する」という宣言に使います。<br><br>
             <HighlightWord word="<head>・・・</head>"></HighlightWord><br>
-            ・文書のヘッダ部分を指定します。<br>
+            ・文書のヘッダ部分を指定する。<br>
             Webページの設定(文字コードの設定など)の情報を記述するため使います。<br><br>
             <HighlightWord word="<body>・・・</body>"></HighlightWord><br>
-            ・文書のボディ部分を指定します。<br>
+            ・文書のボディ部分を指定する。<br>
             文章や画像など、実際にブラウザの画面上に表示される内容を指定するため使います。<br><br>
             <HighlightWord word="<meta charset=“文字コード”>"></HighlightWord><br>
-            ・Webサイトの情報を記載します。<br>
+            ・Webサイトの情報を記載する。<br>
             検索エンジンやブラウザにWebページの情報を伝えるため使います。<br><br>
-            <span class="markup-word-blue">charset属性</span>→文字コードを指定できる属性です。
+            <span class="markup-word-blue">charset属性</span>→文字コードを指定できる属性。
             例 : UTF8,unicode,shiftJisなど<br><br>
             <HighlightWord word="<title>・・・</title>"></HighlightWord><br>
-            ・Webページのタブに表示する文字を指定します。<br>
+            ・Webページのタブに表示する文字を指定する。<br>
             Webページのタイトルを表示するため使います。<br><br>
             <HighlightWord word="<link rel=“stylesheet” href=“読み込みたいファイルのパス”>"></HighlightWord><br>
-            ・関連する文書ファイルを指定してその関係を定義します。<br>
+            ・関連する文書ファイルを指定してその関係を定義する。<br>
             検索エンジンやブラウザにWebページの情報を伝えるため使います。(CSSの読み込みなど)<br><br>
-            <span class="markup-word-blue">rel属性</span>→そのページ、ファイルとの関係性を指定できる属性です。<br><br>
+            <span class="markup-word-blue">rel属性</span>→そのページ、ファイルとの関係性を指定できる属性。<br><br>
             このようにHTMLには決められた型があり、その構造を元に記述していく必要があります。<br>
             その決められた構造をHTMLの<span class="markup-word-red">雛形(ひながた)</span>といいます。
           </p><br>
@@ -510,11 +508,11 @@
         <Document>
           <SectionTitle sectionTitle="5-2. HTMLとCSSのコメント" id="sectionTitle5-2"></SectionTitle>
           <p>
-            HTMLとCSSのコメントの入れ方について学びましょう!<br>
+            HTMLとCSSのコメントの入れ方について学びましょう。<br><br>
             HTMLやCSSでは画面上に出さずに文字を入れたいときにコメントを残しておく事ができます。<br>
-            他の人が自分のデザインを見たときにわかりやすいようにするために残すように意識しましょう。<br>
+            他の人が自分のデザインを見たときにわかりやすいようにするために残すように意識しましょう。<br><br>
             HTML<br>
-            <HighlightWord word="<!-- 入れたいコメント -->"></HighlightWord><br>
+            <HighlightWord word="<!-- 入れたいコメント -->"></HighlightWord><br><br>
             CSS<br>
             <HighlightWord word="*/ 入れたいコメント */"></HighlightWord><br><br>
           </p>

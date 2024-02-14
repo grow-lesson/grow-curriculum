@@ -14,8 +14,8 @@
         <Document>
           <SectionTitle sectionTitle="1-1. 「アプリ一覧」から起動する" id="app-1-1-w11"></SectionTitle>
           <p>
-            1-1,1-2はどちらかでやりやすい方法を選んでください。<br>
-            ダウンロードしたアプリをアプリ一覧から開く方法<br>
+            1-1,1-2はどちらかやりやすい方法を選んでください。<br><br>
+            ダウンロードしたアプリをアプリ一覧から開く方法<br><br>
             ①<br>
             「windows」マークを押します。
           </p>
@@ -27,21 +27,21 @@
             ②<br>
             表示されたスタート画面、右上にある[すべてのアプリ] をクリックします。
           </p>
-          <div>
+          <div><br>
             <img @click="openModal(imagePaths.win.step2)" :src="imagePaths.win.step2" alt="setup-win-2" class="screen-image" />
           </div><br>
           <p>
             ③<br>
             開きたいアプリを開きます。
           </p>
-          <div>
+          <div><br>
             <img @click="openModal(imagePaths.win.step3)" :src="imagePaths.win.step3" alt="setup-win-3" class="screen-image" />
           </div><br>
         </Document>
         <Document>
           <SectionTitle sectionTitle="1-2. 「検索」機能を使用して起動する" id="app-1-2-w11"></SectionTitle>
           <p>
-            ダウンロードしたアプリを検索機能から開く方法<br>
+            ダウンロードしたアプリを検索機能から開く方法<br><br>
             ①<br>
             タスクバーにある検索アイコンをクリックします。
           </p>
@@ -53,7 +53,7 @@
             ②<br>
             「検索」画面が表示されるので、検索バーへ起動したいアプリ名を入力します。
           </p>
-          <div>
+          <div><br>
             <img @click="openModal(imagePaths.win.step5)" :src="imagePaths.win.step5" alt="setup-win-5" class="screen-image" />
           </div><br>
         </Document>
@@ -61,8 +61,8 @@
         <Document>
           <SectionTitle sectionTitle="2-1. 「アプリ一覧」から起動する" id="app-2-1-w10"></SectionTitle>
           <p>
-            2-1,2-2はどちらかでやりやすい方法を選んでください。<br>
-            ダウンロードしたアプリをアプリ一覧から開く方法<br>
+            2-1,2-2はどちらかやりやすい方法を選んでください。<br><br>
+            ダウンロードしたアプリをアプリ一覧から開く方法<br><br>
             ①<br>
             「windows」マークを押します。
           </p>
@@ -74,14 +74,14 @@
             ②<br>
             スタートメニューが表示されたら左のアルファベット順に並んでいるアプリから選びましょう。
           </p>
-          <div>
+          <div><br>
             <img @click="openModal(imagePaths.win.step7)" :src="imagePaths.win.step7" alt="setup-win-7" class="screen-image" />
           </div><br>
         </Document>
         <Document>
           <SectionTitle sectionTitle="2-2. 「検索」機能を使用して起動する" id="app-2-2-w10"></SectionTitle>
           <p>
-            ダウンロードしたアプリを検索機能から開く方法<br>
+            ダウンロードしたアプリを検索機能から開く方法<br><br>
             ①<br>
             「windows」マークを右クリックし、「検索」を押します。
           </p>
@@ -93,7 +93,7 @@
             ②<br>
             検索バーへ起動したいアプリ名を入力します。
           </p>
-          <div>
+          <div><br>
             <img @click="openModal(imagePaths.win.step9)" :src="imagePaths.win.step9" alt="setup-win-10" class="screen-image" />
           </div><br>
         </Document>
@@ -104,23 +104,22 @@
             ダウンロードした写真や動画、音楽やアプリを保存します。<br>
             今後このエクスプローラーを学習の中で利用する機会は多いので覚えましょう。
           </p>
-          <br>
         </Document>
         <SubTitle subTitle="3. エクスプローラーを知る(windows11の場合)" id="ex-3-w11"></SubTitle>
         <Document>
           <SectionTitle sectionTitle="3-1. エクスプローラーを起動する方法" id="ex-3-1-w11"></SectionTitle>
           <p>
-            タスクバー、クイックリンクメニューどちらかの操作で起動しましょう。<br>
-            タスクバーからの操作<br>
+            タスクバー、クイックリンクメニューどちらかの操作で起動しましょう。<br><br><br>
+            タスクバーからの操作<br><br>
             ①<br>
-            タスク バーにある（エクスプローラー）をクリックします。
+            タスクバーにある（エクスプローラー）をクリックします。
           </p>
           <br>
           <div>
             <img @click="openModal(imagePaths.win.step10)" :src="imagePaths.win.step10" alt="setup-win-11" class="screen-image" />
           </div><br>
-          <p>
-            [クイックリンク] メニューからの操作<br>
+          <p><br><br>
+            [クイックリンク] メニューからの操作<br><br>
             ①<br>
             「Windows」マークを右クリックし、表示された[クイック リンク] メニューから[エクスプローラー]をクリックします。
           </p>
@@ -133,21 +132,20 @@
         <Document>
           <SectionTitle sectionTitle="4-1. エクスプローラーを起動する方法" id="ex-4-1-w10"></SectionTitle>
           <p>
-            タスクバー、クイックリンクメニューどちらかの操作で起動しましょう。<br>
-            タスクバーからの操作<br>
+            タスクバー、クイックリンクメニューどちらかの操作で起動しましょう。<br><br><br>
+            タスクバーからの操作<br><br>
             ①<br>
             タスク バーにある（エクスプローラー）をクリックします。
           </p>
           <br>
-          <div>
+          <div><br><br><br>
             <img @click="openModal(imagePaths.win.step12)" :src="imagePaths.win.step12" alt="setup-win-13" class="screen-image" />
           </div><br>
           <p>
-            [クイックリンク] メニューからの操作<br>
+            [クイックリンク] メニューからの操作<br><br>
             ①<br>
-            「Windows」マークを右クリックし、表示された[クイック リンク] メニューから[エクスプローラー]をクリックします。
+            「Windows」マークを右クリックし、表示された[クイックリンク] メニューから[エクスプローラー]をクリックします。
           </p>
-          <br>
           <div>
             <img @click="openModal(imagePaths.win.step13)" :src="imagePaths.win.step13" alt="setup-win-14" class="screen-image" />
           </div><br>
@@ -181,7 +179,7 @@
         <Document>
           <SectionTitle sectionTitle="1-1. 「Launchpad」から起動する" id="app-1-1-m"></SectionTitle>
           <p>
-            ダウンロードしたアプリをアプリ一覧から開く方法<br>
+            ダウンロードしたアプリをアプリ一覧から開く方法<br><br>
             ①<br>
             macの画面の下にカーソルを移動させるとdocが浮き上がるのでその中のメニュー「Launchpad」マークを押します。
           </p>
@@ -195,7 +193,7 @@
             アプリを起動する場合は、アイコンをクリックすれば起動されます。<br>
             アプリが見当たらない場合は上部の検索窓から検索しましょう。<br>
           </p>
-          <div>
+          <div><br>
             <img @click="openModal(imagePaths.mac.step2)" :src="imagePaths.mac.step2" alt="setup-mac-2" class="screen-image" />
           </div><br>
         </Document>
@@ -206,7 +204,6 @@
             ダウンロードした写真や動画、音楽やアプリを保存します。<br>
             今後このエクスプローラーを学習の中で利用する機会は多いので覚えましょう。
           </p>
-          <br>
         </Document>
         <SubTitle subTitle="1. Finderを知る" id="finder-1-m"></SubTitle>
         <Document>
@@ -214,7 +211,7 @@
           <p>
             Finderアイコンは青いほほ笑んでいる顔のようなアイコンで、Dockのこのアイコンをクリックすると、Finderウインドウが開きます。<br>
             ①<br>
-            タスク バーにある（エクスプローラー）をクリックします。
+            タスクバーにある（エクスプローラー）をクリックします。
           </p>
           <br>
           <div>

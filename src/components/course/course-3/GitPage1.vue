@@ -9,9 +9,8 @@
         <Title title="Git 1 (Windowsの方)" id="Title-w"></Title>
         <Document>
           <p>Gitのコマンド基本的な操作と考え方を学びましょう。</p>
-          <p>まずはどういったものなのか図と照らし合わせながら覚えていきましょう。</p>
+          <p>まずはどういったものなのか図と照らし合わせながら覚えていきましょう！</p>
         </Document>
-
         <!-- section 1 -->
         <SubTitle subTitle="1. Gitについて学ぶ" id="subTitle1-w"></SubTitle>
         <Document>
@@ -21,28 +20,24 @@
           </p><br>
           <HighlightWord word="Git"></HighlightWord>
           <p> 
-            Gitは分散型バージョン管理システムと呼ばれます。<br>
+            ・分散型バージョン管理システム。<br>
             コンピュータ上のファイルに発生した変更を記録し、履歴を管理してくれる便利なツールになります。
             <br><br>
-            ではGitというのは具体的にどの様に使うものなのか深掘りしていきましょう!
+            ではGitというのは具体的にどのように使うものなのか深掘りしていきましょう!
           </p><br>
         </Document>
         <Document>
           <SectionTitle sectionTitle="1-2. Gitの使い方" id="sectionTitle1-2-w"></SectionTitle>
           <p>
-            例えば、この様にフォルダの中に3つのファイルがあるとしましょう。<br>
+            例えば、この様にフォルダの中に3つのファイルがあるとしましょう。<br><br>
             これらのファイルの作業を行うときすべてAさんという人だけで行うとするととても時間がかかってしまいます。<br>
-            そのため、BさんやCさんなどを入れて分担作業して作業する方が効率的になります。<br>
+            そのため、BさんやCさんなどを入れて分担作業して作業する方が効率的になります。<br><br>
             Gitはその管理をしやすくするツールだと覚えておきましょう。<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.win.solo)" :src="imagePaths.win.solo" class="powerpoint-image" alt="solo" />
           </div><br>
-          <p>
-            
-          </p>
         </Document>
-
         <!-- section 2 -->
         <SubTitle subTitle="2. Gitコマンドを覚える" id="subTitle2-w"></SubTitle>
         <Document>
@@ -52,11 +47,11 @@
             まずはGitHubというサイトで新規登録を行いましょう。<br><br>
           </p>
           <div class="download">
-            <a class="download-link" href="https://github.com/">GitHubで新規登録を行う</a>
+            <a class="download-link" href="https://github.com/">GitHubで新規登録を行う</a><br><br><br><br>
           </div>
           <SectionTitle sectionTitle="2-2. Gitの初期設定をする" id="sectionTitle2-2-w"></SectionTitle>
           <p>
-            まずは初期設定をしましょう。<br>
+            新規登録をおこなったら初期設定をしましょう。<br>
             このコマンドはGitHubアカウントを変えない限り変えることはなくほとんど変えることはないのでので覚えなくても大丈夫です。<br><br>
             ①<br>
             「環境構築やインストール」でインストールした「git bash」を開きましょう。
@@ -95,12 +90,12 @@
           <p>
             作成した練習ファイルの中でGitを使えるようにしましょう。<br><br>
             <HighlightWord word="git init"></HighlightWord><br>
-            ・gitを使えるようにするコマンドです。<br>
-              また、ローカルリポジトリを新規に作成するという意味もあります。<br><br>
+            ・gitを使えるようにするコマンド。<br>
+              ローカルリポジトリを新規に作成するという意味もあります。<br><br>
             <HighlightWord word="ローカルリポジトリ"></HighlightWord><br>
             ・そのコマンドを入力したフォルダ内のファイルやフォルダを管理できる専用の倉庫。<br>
               この倉庫は自分のパソコン上で作られます。<br><br>
-            図で表すと以下のようになります。<br>
+            図で表すと以下のようになります。<br><br>
           </p>
           <div>
             <img @click="openModal(imagePaths.win.init)" :src="imagePaths.win.init" class="screen-image" alt="init" />
@@ -108,17 +103,17 @@
           <p>
             ④<br>
             それではコマンドを入力しましょう。<br>
-            以下のようになればOKです。
+            以下のようになればOKです。<br><br>
           </p>
           <div>
             <img @click="openModal(imagePaths.win.step4)" :src="imagePaths.win.step4" class="screen-image" alt="git-bash-4" />
           </div><br>
           <SectionTitle sectionTitle="2-4. 共有場所の準備と登録" id="sectionTitle2-4-w"></SectionTitle>
           <p>
-            ではこの自分のPC上で作成したファイルを他の人に共有できるようにウェブ上に共有場所を作成しましょう。<br>
+            では自分のPC上で作成したファイルを他の人に共有できるようにウェブ上に共有場所を作成しましょう。<br><br>
             ⑤<br>
             先ほど登録したGitHubを開きましょう。<br>
-            その次に左にある「New」ボタンを押しましょう。<br>
+            その次に左にある「New」ボタンを押しましょう。<br><br>
           </p>
           <div>
             <img @click="openModal(imagePaths.win.github1)" :src="imagePaths.win.github1" class="screen-image" alt="github-1" />
@@ -127,8 +122,8 @@
             ⑥<br>
             次に「Repository name」に「git-practice」と入力しましょう。<br>
             「Description」は入力しなくても大丈夫です。<br>
-            リポジトリのタイプは「public」を選択しましょう。<br>
-            下の残りの設定はそのままで「Create repository」を押しましょう。<br>
+            リポジトリのタイプは「public」を選択しましょう。<br><br>
+            下の残りの設定はそのままで「Create repository」を押しましょう。<br><br>
           </p>
           <div>
             <img @click="openModal(imagePaths.win.github2)" :src="imagePaths.win.github2" class="screen-image" alt="github-2" />
@@ -137,7 +132,7 @@
             このような画面になれば共有場所の作成は完了です。<br>
             ではこの共有場所は何か覚えましょう。<br><br>
             <HighlightWord word="リモートリポジトリ"></HighlightWord><br>
-            ・ローカルリポジトリで管理したフォルダ内のファイルやフォルダを第三者に共有したり、管理ができるWeb上の倉庫です。<br><br>
+            ・ローカルリポジトリで管理したフォルダ内のファイルやフォルダを第三者に共有したり、管理ができるWeb上の倉庫。<br><br>
           </p>
           <div>
             <img @click="openModal(imagePaths.win.github3)" :src="imagePaths.win.github3" class="screen-image" alt="github-3" />
@@ -149,15 +144,15 @@
             <img @click="openModal(imagePaths.win.state1)" :src="imagePaths.win.state1" class="screen-image" alt="state-1" />
           </div><br>
           <p>
-            画像にある問題を整理しましょう。<br>
-            「git init」で作成したローカルリポジトリに管理されているフォルダはまだ自分のPC上でしか見ることができません。<br><br>
-            そのため、リモートリポジトリにアップロードするためには登録が必要になります。<br>
-            それでは登録のコマンドを覚えましょう。<br>
+            画像にある問題を整理しましょう。<br><br>
+            「git init」で作成したローカルリポジトリに管理されているフォルダはまだ自分のPC上でしか見ることができません。<br>
+            そのため、リモートリポジトリにアップロードするためには登録が必要になります。<br><br><br>
+            それでは登録のコマンドを覚えましょう。<br><br>
             <HighlightWord word="git remote add リモートリポジトリ名 URL"></HighlightWord><br>
-            ・リモートリポジトリを登録するコマンドです。<br>
+            ・リモートリポジトリを登録するコマンド。<br>
             ここで表記されている「リモートリポジトリ名」は、GitHubで作ったリモートリポジトリと通信するために必要なURLを簡単なキーワードにして指定することができます。<br>
-            よくデフォルトではoriginという名前で設定することが多いです。<br>
-            そのため以下のような手順を踏みましょう。<br>
+            デフォルトではoriginという名前で設定することが多いです。<br><br>
+            名前を設定するために以下のような手順を踏みましょう。<br><br>
             ⑦<br>
             以下をコピーして実行しましょう。<br><br>
           </p>
@@ -168,17 +163,16 @@
             <img @click="openModal(imagePaths.win.step5)" :src="imagePaths.win.step5" class="screen-image" alt="git-bash-5" />
           </div><br>
           <p>
-            登録が完了しました。<br>
-            ではGithub(リモートリポジトリ)上にアップロードしましょう。<br>
-            アップロードするためには手順が必要です。<br>
+            登録が完了しました。<br><br>
+            ではGithub(リモートリポジトリ)上にアップロードしましょう！<br>
             (1) まだアップロード(共有)してない、またはアップロードしてない編集情報をフォルダやファイルを選択する。<br>
             (2) フォルダやファイルにどのような編集や追加をしたか記録をする<br>
             (3) アップロード(共有)する<br><br>
             ⑧<br>
             ではアップロードするファイルを選択しましょう。<br><br>
             <HighlightWord word="git add (フォルダ名)ファイル名"></HighlightWord><br>
-            ・登録したリモートリポジトリにアップロードするファイルを選択するコマンドです。<br>
-            ファイルやフォルダ名を指定できますが、複数個ファイルなどがあると何回もこのコマンドを打つため一括で選択する方法があるので覚えておきましょう。<br>
+            ・登録したリモートリポジトリにアップロードするファイルを選択するコマンド。<br><br>
+            ファイルやフォルダすべてを一括で選択する方法。<br>
             →<HighlightWord word="git add ."></HighlightWord><br><br>
           </p>
           <div>
@@ -188,7 +182,7 @@
             ⑨<br>
             次にフォルダやファイルにどのような編集や追加をしたか記録をしましょう。<br><br>
             <HighlightWord word="git commit -m 'メッセージ'"></HighlightWord><br>
-            ・ファイルをaddコマンドで選択した理由は何か記録するコマンドです。
+            ・ファイルをaddコマンドで選択した理由は何か記録するコマンド。<br>
             メッセージには「□□ファイルの○○を修正」、「△△ファイルの名前を変更」、「××ファイルの作成」などを記載しますが、今回は初めてなので「first commit」や「initialize commit」と入力しましょう。<br><br>
             GitHubにあるコミットコマンドをコピーしコマンドを入力しましょう。<br><br>
           </p>
@@ -200,13 +194,13 @@
           </div><br>
           <p>
             ⑩<br>
-            最後にアップロードをしましょう。<br>
+            最後にアップロードをしましょう。<br><br>
             <HighlightWord word="git push リモートリポジトリ名 ローカルリポジトリ名"></HighlightWord><br>
-            ・ローカルリポジトリからリモートリポジトリにファイルをアップロード(共有)するコマンドです。
-            先ほどリモートリポジトリ名は「origin」と設定しました。ではローカルリポジトリの名前は何かというと、「git bash」の黄色文字の右に「master」と書かれていましたが今回はローカルリポジトリの名前だと覚えましょう。<br>
-            本来は別の意味があり、正確に言えば少し違いますが今はこの覚え方で大丈夫です。<br>
+            ・ローカルリポジトリからリモートリポジトリにファイルをアップロード(共有)するコマンド。<br><br>
+            先ほどリモートリポジトリ名は「origin」と設定しました。ではローカルリポジトリの名前は何かというと、「git bash」の黄色文字の右に「master」と書かれていましたが今回はローカルリポジトリの名前だと覚えましょう。<br><br>
+            本来は別の意味があり、正確に言えば少し違いますが今はこの覚え方で大丈夫です。<br><br>
             しかし、この「master」という単語は2021年6月7日以降GitHubでは使われなくなったデフォルト名になりました。<br>
-            現在は「main」という名前になっているため、これからgitでリモートリポジトリを作るときに「main」作られるように初期設定をしましょう。<br>
+            現在は「main」という名前になっているため、これからgitでリモートリポジトリを作るときに「main」作られるように初期設定をしましょう。<br><br>
             以下を入力して下さい。この設定は一回のみで大丈夫です。<br><br>
           </p>
           <div>
@@ -214,8 +208,8 @@
           </div><br>
           <p>
             ⑪<br>
-            それではアップロードコマンドを入力してください。<br>
-            アップロードが1回目の場合、少しオプションをつける必要があるため以下を入力しましょう。
+            それではアップロードコマンドを入力してください。<br><br>
+            アップロードが1回目の場合、少しオプションをつける必要があるため以下を入力しましょう。<br>
             →<HighlightWord word="git push -u origin main"></HighlightWord><br>
             2回目以降のアップロードは「-u」のオプションは必要ありません。<br>
             また以下のように省略してアップロードすることも出来ます。<br>
@@ -227,23 +221,23 @@
           <p>
             ⑫<br>
             ではGithubでアップロードできた確認してみましょう。<br>
-            Githubのページを更新すると以下のようにテキストファイルがアップロードされています。<br>
+            Githubのページを更新すると以下のようにテキストファイルがアップロードされています。<br><br>
           </p>
           <div>
             <img @click="openModal(imagePaths.win.github6)" :src="imagePaths.win.github6" class="screen-image" alt="github-6" />
           </div><br>
           <p>
-            ではここまでの流れを図で覚えましょう。<br>
+            ではここまでの流れを図で覚えましょう。<br><br>
           </p>
           <div>
             <img @click="openModal(imagePaths.win.state2)" :src="imagePaths.win.state2" class="screen-image" alt="state-2" />
           </div><br>
           <p>
-            Gitの管理下に置かれた、実際に作業をしているディレクトリのことをワークツリーと呼びます。<br>
+            Gitの管理下に置かれた、実際に作業をしているディレクトリのことをワークツリーと呼びます。<br><br>
             このワークツリーで編集、追加したファイルやフォルダを「git add」コマンドを使い選択します。<br>
             この操作をステージングと呼び、選択したファイルはインデックスという箱で管理されます。<br>
-            そして、このファイルがどのような理由で選択したのか記録(git commit)し、リモートリポジトリに共有します。(git push)。<br>
-            この一連の流れは必ず覚えましょう。<br>
+            そして、このファイルをどのような理由で選択したのか記録(git commit)し、リモートリポジトリに共有します。(git push)。<br>
+            この一連の流れは必ず覚えましょう。<br><br>
             また、この操作はファイルを編集したり追加するたびにリモートリポジトリに更新する必要があるので「git add」、「git commit」、「git push」を行いましょう。<br>
           </p>
         </Document>
@@ -254,13 +248,13 @@
           <SectionTitle sectionTitle="3-1. 変更したファイルの確認方法" id="sectionTitle3-1-w"></SectionTitle>
           <p>
             先ほどの一連の流れを行うと自分がadd,commitなどをしたのかわからなくなってしまうことがあります。<br>
-            そのために必要なファイルの状態を確認するコマンドを学びましょう。<br>
+            そのために必要なファイルの状態を確認するコマンドを学びましょう。<br><br>
             <HighlightWord word="git status"></HighlightWord><br>
-            ・自分が変更したファイルの状況を確認できるコマンドです。<br><br>
+            ・自分が変更したファイルの状況を確認できるコマンド。<br><br>
             ⑬<br>
             では新しいファイルをtouchコマンドで作成しましょう。
           </p>
-          <div>
+          <div><br>
             <img @click="openModal(imagePaths.win.step10)" :src="imagePaths.win.step10" class="screen-image" alt="git-bash-10" />
           </div><br>
           <p>
@@ -274,7 +268,7 @@
           <p>
             ⑮<br>
             では次にエクスプローラから「sample.txt」を開きましょう。<br>
-            開いたら以下のように編集し、保存(ctrl + S)ください。<br>
+            開いたら以下のように編集し、保存(ctrl + S)してください。<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.win.folder2)" :src="imagePaths.win.folder2" class="screen-image" alt="folder-2" />
@@ -285,31 +279,31 @@
           <p>
             ⑭<br>
             gitのステータスを確認してみましょう。<br>
-            赤色で「modified」という部分が増えましたがこれは編集(修正)はされたが「git add」ができていない事を意味しています。<br>
+            赤色で「modified」という部分が増えました。<br>これは編集(修正)はされたが「git add」ができていない事を意味しています。<br>
           </p><br>
           <div>
-            <img @click="openModal(imagePaths.win.step11)" :src="imagePaths.win.step11" class="screen-image" alt="git-bash-12" />
+            <img @click="openModal(imagePaths.win.step12)" :src="imagePaths.win.step12" class="screen-image" alt="git-bash-12" />
           </div><br>
           <p>
             ⑮<br>
             では「git add .」を行った後にgitのステータスを確認してみましょう。<br>
-            すると今度は緑色で「modified」という部分が増えましたがこれは編集(修正)はされたが「git commit」ができていない事を意味しています。<br>
+            すると今度は緑色で「modified」という部分が増えました。これは編集(修正)はされたが「git commit」ができていない事を意味しています。<br>
           </p><br>
           <div>
-            <img @click="openModal(imagePaths.win.step11)" :src="imagePaths.win.step11" class="screen-image" alt="git-bash-13" />
+            <img @click="openModal(imagePaths.win.step13)" :src="imagePaths.win.step13" class="screen-image" alt="git-bash-13" />
           </div><br>
           <p>
             ⑯<br>
             では次に「git commit」を行った後にgitのステータスを確認してみましょう。<br>
-            すると今度は白色で分が表示されましたが、「git commit」まで終わり、コミット対象が無い事を意味しています。<br>
+            すると今度は白色で文章が表示されました。これは「git commit」まで終わり、コミット対象が無い事を意味しています。<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.win.step14)" :src="imagePaths.win.step14" class="screen-image" alt="git-bash-14" />
           </div><br>
           <p>
-            次にファイルの中身を変えた履歴を確認したいは以下のコマンド使います。<br>
+            次にファイルの中身を変えた履歴を確認したいは以下のコマンド使います。<br><br>
             <HighlightWord word="git diff"></HighlightWord><br>
-            ・自分が変更したファイルの差分が見れるコマンドです。<br><br>
+            ・自分が変更したファイルの差分が見れるコマンド。<br><br>
             ⑰<br>
             先ほど記載した「sample.txt」を開き、以下のように内容を変更し保存しましょう。
           </p><br>
@@ -333,9 +327,9 @@
             <img @click="openModal(imagePaths.win.step16)" :src="imagePaths.win.step16" class="screen-image" alt="git-bash-16" />
           </div><br>
           <p>
-            最後にコミット履歴を確認したいは以下のコマンド使います。<br>
+            最後にコミット履歴を確認したい場合は以下のコマンド使います。<br><br>
             <HighlightWord word="git log"></HighlightWord><br>
-            ・コミット履歴を確認できるコマンドです。<br>
+            ・コミット履歴を確認できるコマンド。<br>
             →<HighlightWord word="git log -p"></HighlightWord><br>
             「git diff」と同じようなコマンドになるのでこの書き方も覚えておきましょう。<br><br>
             ⑳<br>
@@ -346,8 +340,8 @@
           </div><br>
           <p>
             ㉑<br>
-            最後にファイルを追加し、ファイルの中身を編集した情報を「git push」でアップロードしてましょう。<br>
-            これでlesson-1は終了です。<br>
+            最後にファイルを追加し、ファイルの中身を編集した情報を「git push」でアップロードしましょう。<br>
+            これでlesson-1は終了です。<br><br>
           </p>
           <div>
             <img @click="openModal(imagePaths.win.step18)" :src="imagePaths.win.step18" class="screen-image" alt="git-bash-18" />
@@ -356,6 +350,350 @@
         <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
       </div>
       <!-- Mac版の説明 -->
+      <div class="main-content" v-show="!isWindows">
+        <Title title="Git 1 (Macの方)" id="Title-m"></Title>
+        <Document>
+          <p>Gitのコマンド基本的な操作と考え方を学びましょう。</p>
+          <p>まずはどういったものなのか図と照らし合わせながら覚えていきましょう！</p>
+        </Document>
+        <!-- section 1 -->
+        <SubTitle subTitle="1. Gitについて学ぶ" id="subTitle1-m"></SubTitle>
+        <Document>
+          <SectionTitle sectionTitle="1-1. Gitとは?" id="sectionTitle1-1-m"></SectionTitle>
+          <p>
+            皆さんがこれから学ぶ「コマンドライン」について概要を理解しましょう!<br>
+          </p><br>
+          <HighlightWord word="Git"></HighlightWord>
+          <p>
+            ・分散型バージョン管理システム。<br>
+            コンピュータ上のファイルに発生した変更を記録し、履歴を管理してくれる便利なツールになります。
+            <br><br>
+            ではGitというのは具体的にどのように使うものなのか深掘りしていきましょう!
+          </p><br>
+        </Document>
+        <Document>
+          <SectionTitle sectionTitle="1-2. Gitの使い方" id="sectionTitle1-2-m"></SectionTitle>
+          <p>
+            例えば、この様にフォルダの中に3つのファイルがあるとしましょう。<br><br>
+            これらのファイルの作業を行うときすべてAさんという人だけで行うとするととても時間がかかってしまいます。<br>
+            そのため、BさんやCさんなどを入れて分担作業して作業する方が効率的になります。<br><br>
+            Gitはその管理をしやすくするツールだと覚えておきましょう。<br>
+          </p><br>
+          <div>
+            <img @click="openModal(imagePaths.mac.solo)" :src="imagePaths.mac.solo" class="powerpoint-image" alt="solo" />
+          </div><br>
+        </Document>
+        <!-- section 2 -->
+        <SubTitle subTitle="2. Gitコマンドを覚える" id="subTitle2-m"></SubTitle>
+        <Document>
+          <SectionTitle sectionTitle="2-1. GitHubに登録する" id="sectionTitle2-1-m"></SectionTitle>
+          <p>
+            Gitを使えるように準備をしましょう。<br>
+            まずはGitHubというサイトで新規登録を行いましょう。<br><br>
+          </p>
+          <div class="download">
+            <a class="download-link" href="https://github.com/">GitHubで新規登録を行う</a><br><br><br><br>
+          </div>
+          <SectionTitle sectionTitle="2-2. Gitの初期設定をする" id="sectionTitle2-2-m"></SectionTitle>
+          <p>
+            新規登録をおこなったら初期設定をしましょう。<br>
+            このコマンドはGitHubアカウントを変えない限り変えることはなくほとんど変えることはないのでので覚えなくても大丈夫です。<br><br>
+            ①<br>
+            「環境構築やインストール」でインストールした「ターミナル」を開きましょう。
+            開くとこのような画面になります。
+          </p><br>
+          <div>
+            <img @click="openModal(imagePaths.mac.step1)" :src="imagePaths.mac.step1" class="screen-image" alt="git-bash-1" />
+          </div><br>
+          <p>
+            ②<br>
+            開いたらCドライブに移動しましょう。<br>
+            移動したらユーザー名とメールアドレスを設定しましょう。<br>
+            以下の画像のようにすべて入力して実行しましょう。<br><br>
+          </p>
+          <div>
+            <img @click="openModal(imagePaths.mac.step2)" :src="imagePaths.mac.step2" class="screen-image" alt="git-bash-2" />
+          </div><br>
+          <p>
+            初期設定は以上で完了です。<br><br>
+          </p>
+          <SectionTitle sectionTitle="2-3. Gitを準備する" id="sectionTitle2-3-m"></SectionTitle>
+          <p>
+            <br>
+            では今回Gitを学習するための練習フォルダとファイルを作成しましょう。<br><br>
+            ③<br>
+            Cドライブに以下のフォルダを作成してください。<br>
+            作成したらそのフォルダに移動してテキストファイルを作成しましょう。<br>
+            エクスプローラで作成したフォルダの「git-practice」を確認すると以下のようにテキストファイルが作成されています。<br>
+          </p><br>
+          <div>
+            <img @click="openModal(imagePaths.mac.step3)" :src="imagePaths.mac.step3" class="screen-image" alt="git-bash-3" />
+          </div><br>
+          <div>
+            <img @click="openModal(imagePaths.mac.folder1)" :src="imagePaths.mac.folder1" class="screen-image" alt="folder1" />
+          </div><br>
+          <p>
+            作成した練習ファイルの中でGitを使えるようにしましょう。<br><br>
+            <HighlightWord word="git init"></HighlightWord><br>
+            ・gitを使えるようにするコマンド。<br>
+              ローカルリポジトリを新規に作成するという意味もあります。<br><br>
+            <HighlightWord word="ローカルリポジトリ"></HighlightWord><br>
+            ・そのコマンドを入力したフォルダ内のファイルやフォルダを管理できる専用の倉庫。<br>
+              この倉庫は自分のパソコン上で作られます。<br><br>
+            図で表すと以下のようになります。<br><br>
+          </p>
+          <div>
+            <img @click="openModal(imagePaths.mac.init)" :src="imagePaths.mac.init" class="screen-image" alt="init" />
+          </div><br>
+          <p>
+            ④<br>
+            それではコマンドを入力しましょう。<br>
+            以下のようになればOKです。<br><br>
+          </p>
+          <div>
+            <img @click="openModal(imagePaths.mac.step4)" :src="imagePaths.mac.step4" class="screen-image" alt="git-bash-4" />
+          </div><br>
+          <SectionTitle sectionTitle="2-4. 共有場所の準備と登録" id="sectionTitle2-4-m"></SectionTitle>
+          <p>
+            では自分のPC上で作成したファイルを他の人に共有できるようにウェブ上に共有場所を作成しましょう。<br><br>
+            ⑤<br>
+            先ほど登録したGitHubを開きましょう。<br>
+            その次に左にある「New」ボタンを押しましょう。<br><br>
+          </p>
+          <div>
+            <img @click="openModal(imagePaths.mac.github1)" :src="imagePaths.mac.github1" class="screen-image" alt="github-1" />
+          </div><br>
+          <p>
+            ⑥<br>
+            次に「Repository name」に「git-practice」と入力しましょう。<br>
+            「Description」は入力しなくても大丈夫です。<br>
+            リポジトリのタイプは「public」を選択しましょう。<br><br>
+            下の残りの設定はそのままで「Create repository」を押しましょう。<br><br>
+          </p>
+          <div>
+            <img @click="openModal(imagePaths.mac.github2)" :src="imagePaths.mac.github2" class="screen-image" alt="github-2" />
+          </div><br>
+          <p>
+            このような画面になれば共有場所の作成は完了です。<br>
+            ではこの共有場所は何か覚えましょう。<br><br>
+            <HighlightWord word="リモートリポジトリ"></HighlightWord><br>
+            ・ローカルリポジトリで管理したフォルダ内のファイルやフォルダを第三者に共有したり、管理ができるWeb上の倉庫。<br><br>
+          </p>
+          <div>
+            <img @click="openModal(imagePaths.mac.github3)" :src="imagePaths.mac.github3" class="screen-image" alt="github-3" />
+          </div><br>
+          <p>
+            まずは今の状態を確認しましょう。<br><br>
+          </p>
+          <div>
+            <img @click="openModal(imagePaths.mac.state1)" :src="imagePaths.mac.state1" class="screen-image" alt="state-1" />
+          </div><br>
+          <p>
+            画像にある問題を整理しましょう。<br><br>
+            「git init」で作成したローカルリポジトリに管理されているフォルダはまだ自分のPC上でしか見ることができません。<br>
+            そのため、リモートリポジトリにアップロードするためには登録が必要になります。<br><br><br>
+            それでは登録のコマンドを覚えましょう。<br><br>
+            <HighlightWord word="git remote add リモートリポジトリ名 URL"></HighlightWord><br>
+            ・リモートリポジトリを登録するコマンド。<br>
+            ここで表記されている「リモートリポジトリ名」は、GitHubで作ったリモートリポジトリと通信するために必要なURLを簡単なキーワードにして指定することができます。<br>
+            デフォルトではoriginという名前で設定することが多いです。<br><br>
+            名前を設定するために以下のような手順を踏みましょう。<br><br>
+            ⑦<br>
+            以下をコピーして実行しましょう。<br><br>
+          </p>
+          <div>
+            <img @click="openModal(imagePaths.mac.github4)" :src="imagePaths.mac.github4" class="screen-image" alt="github-4" />
+          </div><br>
+          <div>
+            <img @click="openModal(imagePaths.mac.step5)" :src="imagePaths.mac.step5" class="screen-image" alt="git-bash-5" />
+          </div><br>
+          <p>
+            登録が完了しました。<br><br>
+            ではGithub(リモートリポジトリ)上にアップロードしましょう！<br>
+            (1) まだアップロード(共有)してない、またはアップロードしてない編集情報をフォルダやファイルを選択する。<br>
+            (2) フォルダやファイルにどのような編集や追加をしたか記録をする<br>
+            (3) アップロード(共有)する<br><br>
+            ⑧<br>
+            ではアップロードするファイルを選択しましょう。<br><br>
+            <HighlightWord word="git add (フォルダ名)ファイル名"></HighlightWord><br>
+            ・登録したリモートリポジトリにアップロードするファイルを選択するコマンド。<br><br>
+            ファイルやフォルダすべてを一括で選択する方法。<br>
+            →<HighlightWord word="git add ."></HighlightWord><br><br>
+          </p>
+          <div>
+            <img @click="openModal(imagePaths.mac.step6)" :src="imagePaths.mac.step6" class="screen-image" alt="git-bash-6" />
+          </div><br>
+          <p>
+            ⑨<br>
+            次にフォルダやファイルにどのような編集や追加をしたか記録をしましょう。<br><br>
+            <HighlightWord word="git commit -m 'メッセージ'"></HighlightWord><br>
+            ・ファイルをaddコマンドで選択した理由は何か記録するコマンド。<br>
+            メッセージには「□□ファイルの○○を修正」、「△△ファイルの名前を変更」、「××ファイルの作成」などを記載しますが、今回は初めてなので「first commit」や「initialize commit」と入力しましょう。<br><br>
+            GitHubにあるコミットコマンドをコピーしコマンドを入力しましょう。<br><br>
+          </p>
+          <div>
+            <img @click="openModal(imagePaths.mac.github5)" :src="imagePaths.mac.github5" class="screen-image" alt="github-5" />
+          </div><br>
+          <div>
+            <img @click="openModal(imagePaths.mac.step7)" :src="imagePaths.mac.step7" class="screen-image" alt="git-bash-7" />
+          </div><br>
+          <p>
+            ⑩<br>
+            最後にアップロードをしましょう。<br><br>
+            <HighlightWord word="git push リモートリポジトリ名 ローカルリポジトリ名"></HighlightWord><br>
+            ・ローカルリポジトリからリモートリポジトリにファイルをアップロード(共有)するコマンド。<br><br>
+            先ほどリモートリポジトリ名は「origin」と設定しました。ではローカルリポジトリの名前は何かというと、「ターミナル」の黄色文字の右に「master」と書かれていましたが今回はローカルリポジトリの名前だと覚えましょう。<br><br>
+            本来は別の意味があり、正確に言えば少し違いますが今はこの覚え方で大丈夫です。<br><br>
+            しかし、この「master」という単語は2021年6月7日以降GitHubでは使われなくなったデフォルト名になりました。<br>
+            現在は「main」という名前になっているため、これからgitでリモートリポジトリを作るときに「main」作られるように初期設定をしましょう。<br><br>
+            以下を入力して下さい。この設定は一回のみで大丈夫です。<br><br>
+          </p>
+          <div>
+            <img @click="openModal(imagePaths.mac.step8)" :src="imagePaths.mac.step8" class="screen-image" alt="git-bash-8" />
+          </div><br>
+          <p>
+            ⑪<br>
+            それではアップロードコマンドを入力してください。<br><br>
+            アップロードが1回目の場合、少しオプションをつける必要があるため以下を入力しましょう。<br>
+            →<HighlightWord word="git push -u origin main"></HighlightWord><br>
+            2回目以降のアップロードは「-u」のオプションは必要ありません。<br>
+            また以下のように省略してアップロードすることも出来ます。<br>
+            →<HighlightWord word="git push"></HighlightWord><br><br>
+          </p>
+          <div>
+            <img @click="openModal(imagePaths.mac.step9)" :src="imagePaths.mac.step9" class="screen-image" alt="git-bash-9" />
+          </div><br>
+          <p>
+            ⑫<br>
+            ではGithubでアップロードできた確認してみましょう。<br>
+            Githubのページを更新すると以下のようにテキストファイルがアップロードされています。<br><br>
+          </p>
+          <div>
+            <img @click="openModal(imagePaths.mac.github6)" :src="imagePaths.mac.github6" class="screen-image" alt="github-6" />
+          </div><br>
+          <p>
+            ではここまでの流れを図で覚えましょう。<br><br>
+          </p>
+          <div>
+            <img @click="openModal(imagePaths.mac.state2)" :src="imagePaths.mac.state2" class="screen-image" alt="state-2" />
+          </div><br>
+          <p>
+            Gitの管理下に置かれた、実際に作業をしているディレクトリのことをワークツリーと呼びます。<br><br>
+            このワークツリーで編集、追加したファイルやフォルダを「git add」コマンドを使い選択します。<br>
+            この操作をステージングと呼び、選択したファイルはインデックスという箱で管理されます。<br>
+            そして、このファイルをどのような理由で選択したのか記録(git commit)し、リモートリポジトリに共有します。(git push)。<br>
+            この一連の流れは必ず覚えましょう。<br><br>
+            また、この操作はファイルを編集したり追加するたびにリモートリポジトリに更新する必要があるので「git add」、「git commit」、「git push」を行いましょう。<br>
+          </p>
+        </Document>
+
+        <!-- section 3 -->
+        <SubTitle subTitle="3. ファイルの状態を確認する" id="subTitle3-m"></SubTitle>
+        <Document>
+          <SectionTitle sectionTitle="3-1. 変更したファイルの確認方法" id="sectionTitle3-1-m"></SectionTitle>
+          <p>
+            先ほどの一連の流れを行うと自分がadd,commitなどをしたのかわからなくなってしまうことがあります。<br>
+            そのために必要なファイルの状態を確認するコマンドを学びましょう。<br><br>
+            <HighlightWord word="git status"></HighlightWord><br>
+            ・自分が変更したファイルの状況を確認できるコマンド。<br><br>
+            ⑬<br>
+            では新しいファイルをtouchコマンドで作成しましょう。
+          </p>
+          <div><br>
+            <img @click="openModal(imagePaths.mac.step10)" :src="imagePaths.mac.step10" class="screen-image" alt="git-bash-10" />
+          </div><br>
+          <p>
+            ⑭<br>
+            gitのステータスを確認してみましょう。<br>
+            これは追跡できていない新しいファイルがあることを意味しています。<br>
+          </p><br>
+          <div>
+            <img @click="openModal(imagePaths.mac.step11)" :src="imagePaths.mac.step11" class="screen-image" alt="git-bash-11" />
+          </div><br>
+          <p>
+            ⑮<br>
+            では次にエクスプローラから「sample.txt」を開きましょう。<br>
+            開いたら以下のように編集し、保存(ctrl + S)してください。<br>
+          </p><br>
+          <div>
+            <img @click="openModal(imagePaths.mac.folder2)" :src="imagePaths.mac.folder2" class="screen-image" alt="folder-2" />
+          </div><br>
+          <div>
+            <img @click="openModal(imagePaths.mac.memo1)" :src="imagePaths.mac.memo1" class="screen-image" alt="memo-1" />
+          </div><br>
+          <p>
+            ⑭<br>
+            gitのステータスを確認してみましょう。<br>
+            赤色で「modified」という部分が増えました。<br>これは編集(修正)はされたが「git add」ができていない事を意味しています。<br>
+          </p><br>
+          <div>
+            <img @click="openModal(imagePaths.mac.step12)" :src="imagePaths.mac.step12" class="screen-image" alt="git-bash-12" />
+          </div><br>
+          <p>
+            ⑮<br>
+            では「git add .」を行った後にgitのステータスを確認してみましょう。<br>
+            すると今度は緑色で「modified」という部分が増えました。これは編集(修正)はされたが「git commit」ができていない事を意味しています。<br>
+          </p><br>
+          <div>
+            <img @click="openModal(imagePaths.mac.step13)" :src="imagePaths.mac.step13" class="screen-image" alt="git-bash-13" />
+          </div><br>
+          <p>
+            ⑯<br>
+            では次に「git commit」を行った後にgitのステータスを確認してみましょう。<br>
+            すると今度は白色で文章が表示されました。これは「git commit」まで終わり、コミット対象が無い事を意味しています。<br>
+          </p><br>
+          <div>
+            <img @click="openModal(imagePaths.mac.step14)" :src="imagePaths.mac.step14" class="screen-image" alt="git-bash-14" />
+          </div><br>
+          <p>
+            次にファイルの中身を変えた履歴を確認したいは以下のコマンド使います。<br><br>
+            <HighlightWord word="git diff"></HighlightWord><br>
+            ・自分が変更したファイルの差分が見れるコマンド。<br><br>
+            ⑰<br>
+            先ほど記載した「sample.txt」を開き、以下のように内容を変更し保存しましょう。
+          </p><br>
+          <div>
+            <img @click="openModal(imagePaths.mac.memo2)" :src="imagePaths.mac.memo2" class="screen-image" alt="memo-2" />
+          </div><br>
+          <p>
+            ⑱<br>
+            「git diff」コマンドを入力しましょう。<br>
+            緑色で書かれている部分は今回の修正内容です。赤色は修正前の内容です。<br>
+          </p><br>
+          <div>
+            <img @click="openModal(imagePaths.mac.step15)" :src="imagePaths.mac.step15" class="screen-image" alt="git-bash-15" />
+          </div><br>
+          <p>
+            ⑲<br>
+            差分が見れたところで「git add」と「git commit」を行いましょう。<br>
+            以下の画像のようになればOKです。<br>
+          </p><br>
+          <div>
+            <img @click="openModal(imagePaths.mac.step16)" :src="imagePaths.mac.step16" class="screen-image" alt="git-bash-16" />
+          </div><br>
+          <p>
+            最後にコミット履歴を確認したい場合は以下のコマンド使います。<br><br>
+            <HighlightWord word="git log"></HighlightWord><br>
+            ・コミット履歴を確認できるコマンド。<br>
+            →<HighlightWord word="git log -p"></HighlightWord><br>
+            「git diff」と同じようなコマンドになるのでこの書き方も覚えておきましょう。<br><br>
+            ⑳<br>
+            それではコマンドを入力しましょう。以下の画像のようにコミット履歴が見られればOKです。<br>
+          </p><br>
+          <div>
+            <img @click="openModal(imagePaths.mac.step17)" :src="imagePaths.mac.step17" class="screen-image" alt="git-bash-17" />
+          </div><br>
+          <p>
+            ㉑<br>
+            最後にファイルを追加し、ファイルの中身を編集した情報を「git push」でアップロードしましょう。<br>
+            これでlesson-1は終了です。<br><br>
+          </p>
+          <div>
+            <img @click="openModal(imagePaths.mac.step18)" :src="imagePaths.mac.step18" class="screen-image" alt="git-bash-18" />
+          </div><br>
+        </Document>
+        <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
+      </div>
       <div class="side-content" v-show="isWindows && !isSmallScreen">
         <TableOfContents :sections="windowsSections" />
       </div>
@@ -414,18 +752,17 @@ export default {
     ];
 
     const macSections = [
-      { id: "Title-m", title: "コマンドライン 1 (Macの方)" },
-      { id: "subTitle1-m", title: "  1. コマンドラインとプログラミングについて" },
-      { id: "sectionTitle1-1-m", title: "    1-1. コマンドラインとは" },
-      { id: "sectionTitle1-2-m", title: "    1-2. コンピュータの基本的な仕組み" },
-      { id: "sectionTitle1-3-m", title: "    1-3. プログラムの命令操作方法について" },
-      { id: "subTitle2-m", title: "  2. コマンドとファイル構造やパスを知る" },
-      { id: "sectionTitle2-1-m", title: "    2-1. プログラムの命令(作成・表示・移動)②" },
-      { id: "sectionTitle2-2-m", title: "    2-2. プログラムの命令(位置把握・確認・移動)" },
-      { id: "sectionTitle2-3-m", title: "    2-3. プログラムの命令(複製・削除)" },
-      { id: "subTitle3-m", title: "  3. パスとホームディレクトリについて" },
-      { id: "sectionTitle3-1-m", title: "    3-1. パスについて" },
-      { id: "sectionTitle3-2-m", title: "    3-2 ホームディレクトリについて" },
+      { id: "Title-m", title: "Git 1 (Macの方)" },
+      { id: "subTitle1-m", title: "  1. Gitについて学ぶ" },
+      { id: "sectionTitle1-1-m", title: "    1-1. Gitとは?" },
+      { id: "sectionTitle1-2-m", title: "    1-2. Gitの使い方" },
+      { id: "subTitle2-m", title: "  2. Gitコマンドを覚える" },
+      { id: "sectionTitle2-1-m", title: "    2-1. GitHubに登録する" },
+      { id: "sectionTitle2-2-m", title: "    2-2. Gitの初期設定をする" },
+      { id: "sectionTitle2-3-m", title: "    2-3. Gitを準備する" },
+      { id: "sectionTitle2-4-m", title: "    2-4. 共有場所の準備と登録" },
+      { id: "subTitle3-m", title: "  3. ファイルの状態を確認する" },
+      { id: "sectionTitle3-1-m", title: "    3-1. 変更したファイルの確認方法" },
     ];
 
     const toggleOS = () => {
@@ -478,7 +815,38 @@ export default {
         step18: require("../../../assets/images/course/git-1/git-bash-18.png"),
       },
       mac: {
-        
+        solo: require("../../../assets/images/course/git-1/solo.png"),
+        step1: require("../../../assets/images/course/git-1/git-bash-1.png"),
+        step2: require("../../../assets/images/course/git-1/git-bash-2.png"),
+        step3: require("../../../assets/images/course/git-1/git-bash-3.png"),
+        folder1: require("../../../assets/images/course/git-1/folder-1.png"),
+        init: require("../../../assets/images/course/git-1/git-init.png"),
+        step4: require("../../../assets/images/course/git-1/git-bash-4.png"),
+        github1: require("../../../assets/images/course/git-1/github-1.png"),
+        github2: require("../../../assets/images/course/git-1/github-2.png"),
+        github3: require("../../../assets/images/course/git-1/github-3.png"),
+        state1: require("../../../assets/images/course/git-1/state-1.png"),
+        github4: require("../../../assets/images/course/git-1/github-4.png"),
+        step5: require("../../../assets/images/course/git-1/git-bash-5.png"),
+        step6: require("../../../assets/images/course/git-1/git-bash-6.png"),
+        github5: require("../../../assets/images/course/git-1/github-5.png"),
+        step7: require("../../../assets/images/course/git-1/git-bash-7.png"),
+        step8: require("../../../assets/images/course/git-1/git-bash-8.png"),
+        step9: require("../../../assets/images/course/git-1/git-bash-9.png"),
+        github6: require("../../../assets/images/course/git-1/github-6.png"),
+        state2: require("../../../assets/images/course/git-1/state-2.png"),
+        step10: require("../../../assets/images/course/git-1/git-bash-10.png"),
+        step11: require("../../../assets/images/course/git-1/git-bash-11.png"),
+        folder2: require("../../../assets/images/course/git-1/folder-2.png"),
+        memo1: require("../../../assets/images/course/git-1/memo-1-w.png"),
+        step12: require("../../../assets/images/course/git-1/git-bash-12.png"),
+        step13: require("../../../assets/images/course/git-1/git-bash-13.png"),
+        step14: require("../../../assets/images/course/git-1/git-bash-14.png"),
+        memo2: require("../../../assets/images/course/git-1/memo-1-w.png"),
+        step15: require("../../../assets/images/course/git-1/git-bash-15.png"),
+        step16: require("../../../assets/images/course/git-1/git-bash-16.png"),
+        step17: require("../../../assets/images/course/git-1/git-bash-17.png"),
+        step18: require("../../../assets/images/course/git-1/git-bash-18.png"),
       },
     };
 
