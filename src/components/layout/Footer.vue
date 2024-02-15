@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <footer class="footer">
-      <p class="footer-text">&copy; 2023 GROW 学習サイト. All rights reserved.</p>
-    </footer>
-  </div>
+  <footer class="footer">
+    <p class="footer-text">&copy; 2023 GROW 学習サイト. All rights reserved.</p>
+  </footer>
 </template>
 
 <script>
@@ -16,9 +14,12 @@ export default {
 <style scoped>
 /* Footer */
 .footer {
+  width: 100%;
   background-color: #333;
   padding: 20px;
   text-align: center;
+  position: sticky;
+  top: 100vh;
 }
 
 .footer-text {
