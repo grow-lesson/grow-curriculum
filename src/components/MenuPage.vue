@@ -75,24 +75,24 @@
           <a class="course-button" @click="goToJavaScriptMenuPage">受講する</a>
         </div>
         <div class="course-item">
-          <h2 class="course-title">Ruby</h2>
-          <p class="course-explanation">オブジェクト指向を学べるコース</p>
+          <h2 class="course-title">SQL</h2>
+          <p class="course-explanation">データベース操作を学べるコース</p>
           <div class="course-image">
             <div class="course-logo">
-              <img src="../assets/images/menu/ruby.png" class="course-icon" alt="ruby" />
+              <img src="../assets/images/menu/sql.png" class="course-icon" alt="SQL" />
             </div>
           </div>
-          <a class="course-button" @click="goToRubyMenuPage">受講する</a>
+          <a class="course-button" @click="goToSQLMenuPage">受講する</a>
         </div>
         <div class="course-item">
-          <h2 class="course-title">情報工学</h2>
-          <p class="course-explanation">情報技術者に必要な基本的な知識を学べるコース</p>
+          <h2 class="course-title">jQuery</h2>
+          <p class="course-explanation">動的な操作とイベント処理、コードの効率性を学べるコース</p>
           <div class="course-image">
             <div class="course-logo">
-              <img src="../assets/images/menu/information-technology.png" class="course-icon" alt="information-technology" />
+              <img src="../assets/images/menu/jquery.png" class="course-icon" alt="jquery" />
             </div>
           </div>
-          <a class="course-button" @click="goToITMenuPage">受講する</a>
+          <a class="course-button" @click="goToJqueryMenuPage">受講する</a>
         </div>
       </section>
     </main>
@@ -150,11 +150,11 @@ export default {
       router.push({ name: "JavascriptMenuPage" });
     };
 
-    const goToRubyMenuPage = () => {
+    const goToSQLMenuPage = () => {
       router.push({ name: "UnderConstruction" });
     };
 
-    const goToITMenuPage = () => {
+    const goToJqueryMenuPage = () => {
       router.push({ name: "UnderConstruction" });
     };
 
@@ -173,8 +173,8 @@ export default {
       goToCommandLineMenuPage,
       goToGitMenuPage,
       goToJavaScriptMenuPage,
-      goToRubyMenuPage,
-      goToITMenuPage,
+      goToSQLMenuPage,
+      goToJqueryMenuPage,
     };
   },
 };

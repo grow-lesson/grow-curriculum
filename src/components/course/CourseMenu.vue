@@ -49,24 +49,24 @@
             <a class="feature-button" @click="goToJavaScriptMenuPage">受講する</a>
           </div>
           <div class="feature">
-            <h2 class="feature-title">Ruby</h2>
-            <p class="feature-description">オブジェクト指向プログラミング言語Rubyの基礎を学びましょう。</p>
+            <h2 class="feature-title">SQL</h2>
+            <p class="feature-description">データベース管理言語(SQL)の基礎を学び、実践的な操作スキルを身につけましょう。</p>
             <div class="feature-image">
               <div class="feature-logo">
-                <img src="../../assets/images/menu/ruby.png" class="feature-icon" alt="ruby" />
+                <img src="../../assets/images/menu/sql.png" class="feature-icon" alt="SQL" />
               </div>
             </div>
-            <a class="feature-button" @click="goToRubyMenuPage">受講する</a>
+            <a class="feature-button" @click="goToSQLMenuPage">受講する</a>
           </div>
           <div class="feature">
-            <h2 class="feature-title">情報工学</h2>
-            <p class="feature-description">情報技術者に必要な基本的な知識を学びましょう。</p>
+            <h2 class="feature-title">jQuery</h2>
+            <p class="feature-description">jQueryを使った動的な操作とイベント処理を学び、ユーザビリティ向上とコードの効率性を学びましょう。</p>
             <div class="feature-image">
               <div class="feature-logo">
-                <img src="../../assets/images/menu/information-technology.png" class="feature-icon" alt="ruby" />
+                <img src="../../assets/images/menu/jquery.png" class="feature-icon" alt="SQL" />
               </div>
             </div>
-            <a class="feature-button" @click="goToITMenuPage">受講する</a>
+            <a class="feature-button" @click="goToJqueryMenuPage">受講する</a>
           </div>
         </div>
       </section>
@@ -106,11 +106,11 @@ export default {
       router.push({ name: "JavascriptMenuPage" });
     };
 
-    const goToRubyMenuPage = () => {
+    const goToSQLMenuPage = () => {
       router.push({ name: "UnderConstruction" });
     };
 
-    const goToITMenuPage = () => {
+    const goToJqueryMenuPage = () => {
       router.push({ name: "UnderConstruction" });
     };
 
@@ -123,8 +123,8 @@ export default {
       goToCommandLineMenuPage,
       goToGitMenuPage,
       goToJavaScriptMenuPage,
-      goToRubyMenuPage,
-      goToITMenuPage,
+      goToSQLMenuPage,
+      goToJqueryMenuPage,
     };
   },
 };
