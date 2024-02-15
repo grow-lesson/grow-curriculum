@@ -31,15 +31,16 @@
               <ul class="dropdown-list">
                 <li class="dropdown-item"><a @click="goToMyPage" class="dropdown-link">プロフィール</a></li>
                 <li class="dropdown-item"><a @click="goToProgressPage" class="dropdown-link">進捗管理</a></li >
-                <li class="dropdown-item"><a href="#" class="dropdown-link">給与の確認</a></li>
-                <li class="dropdown-item"><a href="#" target="_blank" class="dropdown-link">勤怠表を提出する</a></li>
+                <li class="dropdown-item"><a href="https://id.moneyforward.com/sign_in?client_id=8gQSNxOMhkM554G5OsbOAoesxrBbkdHfuESOGQ9uR1A&code_challenge=VbLqCHgXpFVqteT1FyLu653hpER4m_AW4KHRhpi9kiI&code_challenge_method=S256&nonce=a5c23fc9a62f11793fc481687ab3b14f&redirect_uri=https%3A%2F%2Ferp.moneyforward.com%3A443%2Fusers%2Fauth%2Fmfid%2Fcallback&response_type=code&scope=openid+email&state=182f662a45a785492f130fc5323c5a4e" target="_blank" class="dropdown-link">給与の確認</a></li>
+                <li class="dropdown-item"><a @click="goToReservationCalendarPage" class="dropdown-link">自習予約する</a></li>
+                <li class="dropdown-item"><a href="#" class="dropdown-link">勤怠表を提出する</a></li>
               </ul>
             </li>
             <li class="navigation-item">
               <button class="navigation-btn">その他</button>
               <ul class="dropdown-list">
                 <li class="dropdown-item"><a @click="goToContactPage" class="dropdown-link">お問い合わせ</a></li>
-                <li class="dropdown-item"><a @click="goToChatBotPage" class="dropdown-link">チャットボット</a></li>
+                <!-- <li class="dropdown-item"><a @click="goToChatBotPage" class="dropdown-link">チャットボット</a></li> -->
                 <li class="dropdown-item"><a href="https://grow-infotech.com" target="_blank" class="dropdown-link">会社のホームページを見る</a></li>
                 <li class="dropdown-item"><a href="https://www.wantedly.com/companies/company_7305723" target="_blank" class="dropdown-link">Wantedllyを見る</a></li>
               </ul>
@@ -83,7 +84,8 @@
           <ul class="dropdown-list">
             <li class="dropdown-item"><a @click="goToMyPage" class="dropdown-link">プロフィール</a></li>
             <li class="dropdown-item"><a @click="goToProgressPage" class="dropdown-link">進捗管理</a></li >
-            <li class="dropdown-item"><a href="#" class="dropdown-link">給与の確認</a></li>
+            <li class="dropdown-item"><a href="https://id.moneyforward.com/sign_in?client_id=8gQSNxOMhkM554G5OsbOAoesxrBbkdHfuESOGQ9uR1A&code_challenge=VbLqCHgXpFVqteT1FyLu653hpER4m_AW4KHRhpi9kiI&code_challenge_method=S256&nonce=a5c23fc9a62f11793fc481687ab3b14f&redirect_uri=https%3A%2F%2Ferp.moneyforward.com%3A443%2Fusers%2Fauth%2Fmfid%2Fcallback&response_type=code&scope=openid+email&state=182f662a45a785492f130fc5323c5a4e" target="_blank" class="dropdown-link">給与の確認</a></li>
+            <li class="dropdown-item"><a @click="goToReservationCalendarPage" class="dropdown-link">自習予約する</a></li>
             <li class="dropdown-item"><a href="#" class="dropdown-link">勤怠表を提出する</a></li>
           </ul>
         </li>
@@ -91,9 +93,9 @@
           <button>その他</button>
           <ul class="dropdown-list">
             <li class="dropdown-item"><a @click="goToContactPage" class="dropdown-link">お問い合わせ</a></li>
-            <li class="dropdown-item"><a @click="goToChatBotPage" class="dropdown-link">チャットボット</a></li>
-            <li class="dropdown-item"><a href="https://grow-infotech.com" class="dropdown-link">会社のホームページを見る</a></li>
-            <li class="dropdown-item"><a href="https://www.wantedly.com/companies/company_7305723" class="dropdown-link">Wantedllyを見る</a></li>
+            <!-- <li class="dropdown-item"><a @click="goToChatBotPage" class="dropdown-link">チャットボット</a></li> -->
+            <li class="dropdown-item"><a href="https://grow-infotech.com" target="_blank" class="dropdown-link">会社のホームページを見る</a></li>
+            <li class="dropdown-item"><a href="https://www.wantedly.com/companies/company_7305723" target="_blank" class="dropdown-link">Wantedllyを見る</a></li>
           </ul>
         </li>
       </ul>
@@ -158,13 +160,17 @@ export default {
       router.push({ name: "Progress" });
     };
 
+    const goToReservationCalendarPage = () => {
+      router.push({ name: "ReservationCalendar" });
+    };
+
     const goToContactPage = () => {
       router.push({ name: "Contact" });
     };
 
-    const goToChatBotPage = () => {
-      router.push({ name: "ChatBot" });
-    };
+    // const goToChatBotPage = () => {
+    //   router.push({ name: "ChatBot" });
+    // };
 
     // ウィンドウリサイズ時にモバイル画面の判定を行う
     const handleResize = () => {
@@ -194,8 +200,9 @@ export default {
       goToCourseMenuPage,
       goToMyPage,
       goToProgressPage,
+      goToReservationCalendarPage,
       goToContactPage,
-      goToChatBotPage,
+      // goToChatBotPage,
     };
   },
 };
