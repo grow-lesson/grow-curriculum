@@ -538,10 +538,10 @@ img {
 /* .headerのスタイル */
 .header {
   height: 100px;
-  display: flex;
+  display: /* 問①ここにプロパティ値を入れてください */;
   align-items: center;
-  justify-content: space-between;
-  background-color: #333;
+  justify-content: /* 問②ここにプロパティ値を入れてください */;
+  background-image: linear-gradient(90deg, rgba(89, 173, 241, 1), rgba(207, 253, 157, 1));
 }
 
 .header-logo {
@@ -590,7 +590,7 @@ img {
 }
 
 .shapes-container {
-  margin-top: 50px;
+  margin-top: 30px;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -598,11 +598,17 @@ img {
   align-items: center;
 }
 
-.shape-circle {
-  width: 200px;
-  height: 200px;
-  background-color: #e74c3c;
+.shapes-icon {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #333;
   border-radius: 50%;
+}
+
+.shape-lead {
+  margin-left: 10px;
+  margin-bottom: 20px;
+  font-size: 26px;
 }
 
 .shape-text {
@@ -613,19 +619,37 @@ img {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.category {
+  margin: 30px 20px;
+  position: relative;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.category::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  position: absolute;
+  top: 30px;
+}
+
 /* .image-listのスタイル */
 .image-list {
   max-width: 650px;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: /* 問③ここにプロパティ値を入れてください */;
   justify-content: center;
   margin: 20px auto;
 }
 
 .image-item {
-  width: 150px;
-  height: 150px;
-  margin: 30px;
+  width: 180px;
+  height: 180px;
+  margin: 10px;
 }
 
 .image-picture {
@@ -634,17 +658,17 @@ img {
 }
 
 .new-parent {
-  position: relative;
+  position: /* 問④ここにプロパティ値を入れてください */;
 }
 
 .new-child {
-  position: absolute;
-  top: 70px;
-  left: 50px;
-  padding: 5px 0;
-  width: 50px;
-  border-radius: 25%;
+  position: /* 問④ここにプロパティ値を入れてください */;
+  top: -8px;
+  left: -8px;
+  padding: 5px 10px;
+  border-radius: 3px;
   background-color: #ff4a36;
+  color: #fff;
   text-align: center;
   font-weight: bold;
 }
@@ -655,27 +679,33 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #333;
+  background-image: linear-gradient(90deg, rgba(89, 173, 241, 1), rgba(207, 253, 157, 1));
 }
 
 .footer-title {
   color: white;
 }
 
-@media screen and (min-width: 649px) {
+@media screen and (/* 問⑤ここにプロパティを入れてください */: 649px) {
+
   /* 画面サイズが649px以上はここを読み込む */
-  .shape-text { 
+  .shape-text {
+    margin-left: 30px;
+  }
+
+  .shape-lead {
     margin-left: 30px;
   }
 }
 
-@media screen and (max-width: 648px) {
+@media screen and (/* 問⑤ここにプロパティを入れてください */: 648px) {
+
   /* 画面サイズが648px以下はここを読み込む */
   .shapes-container {
     flex-direction: column;
   }
 
-  .shape-text { 
+  .shape-text {
     margin-top: 30px;
   }
 }`,
