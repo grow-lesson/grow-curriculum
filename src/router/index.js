@@ -181,6 +181,12 @@ const routes = [
     component: () => import("../components/user/Progress.vue"),
   },
   {
+    path: "/reservation",
+    name: "ReservationCalendar",
+    meta: { requiresAuth: true },
+    component: () => import("../components/user/ReservationCalendar.vue"),
+  },
+  {
     path: "/edit",
     name: "EditPage",
     meta: { requiresAuth: true },
@@ -192,12 +198,12 @@ const routes = [
     meta: { requiresAuth: true },
     component: () => import("../components/others/Contact.vue"),
   },
-  {
-    path: "/chat",
-    name: "ChatBot",
-    meta: { requiresAuth: true },
-    component: () => import("../components/others/ChatBot.vue"),
-  },
+  // {
+  //   path: "/chat",
+  //   name: "ChatBot",
+  //   meta: { requiresAuth: true },
+  //   component: () => import("../components/others/ChatBot.vue"),
+  // },
   {
     path: "/underConstruction",
     name: "UnderConstruction",
