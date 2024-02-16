@@ -1,23 +1,24 @@
 <template>
-  <div>
+  <div class="wrap">
     <Header />
     <div class="lesson-container">
       <div class="lesson-title">
         <div class="breadcrumb">
-          <a href="/menu">初級コース</a> > Gitコースを選ぼう
+          <a href="/course-menu">初級コース</a> > Git
         </div>
-        <h1 class="lesson-heading">Gitコースを選ぼう</h1>
+        <h1 class="lesson-heading">Git</h1>
       </div>
       <div class="lesson-sidebar"></div>
       <div class="lesson-main">
         <ul class="lesson-list">
           <li class="lesson-item">
             <div class="lesson-itemImg">
-              <img src="../../../assets/images/menu/lesson-menu.png" alt="SAMPLE" />
+              <img src="../../../assets/images/menu/lesson1.png" alt="lesson1" />
             </div>
             <div class="lesson-itemWrap">
-              <div class="lesson-itemTitle">LESSON 1</div>
-              <p class="lesson-itemText">Gitのコマンド基本的な操作と考え方を学びます。</p>
+              <div class="lesson-itemText">
+                <p>Gitのコマンド基本的な操作と考え方を学びます。</p>
+              </div>
               <div class="lesson-btn btn">
                 <a class="lesson-link btn" @click="goToPageLesson1"></a>
               </div>
@@ -25,11 +26,12 @@
           </li>
           <li class="lesson-item">
               <div class="lesson-itemImg">
-                <img src="../../../assets/images/menu/lesson-menu.png" alt="SAMPLE" />
+                <img src="../../../assets/images/menu/lesson2.png" alt="lesson2" />
               </div>
               <div class="lesson-itemWrap">
-                <div class="lesson-itemTitle">LESSON 2</div>
-                <p class="lesson-itemText">チーム開発を意識したGitの使い方を学びます。</p>
+                <div class="lesson-itemText">
+                  <p>チーム開発を意識したGitの使い方を学びます。</p>
+                </div>
                 <div class="lesson-btn btn">
                   <a class="lesson-link btn" @click="goToPageLesson2"></a>
                 </div>
@@ -37,11 +39,12 @@
             </li>
             <li class="lesson-item">
               <div class="lesson-itemImg">
-                <img src="../../../assets/images/menu/lesson-menu.png" alt="SAMPLE" />
+                <img src="../../../assets/images/menu/lesson3.png" alt="lesson3" />
               </div>
               <div class="lesson-itemWrap">
-                <div class="lesson-itemTitle">LESSON 3</div>
-                <p class="lesson-itemText">応用的なGitコマンドを学びます。</p>
+                <div class="lesson-itemText">
+                  <p>応用的なGitコマンドを学びます。</p>
+                </div>
                 <div class="lesson-btn btn">
                   <a class="lesson-link btn" @click="goToPageLesson3"></a>
                 </div>
@@ -78,9 +81,13 @@ export default {
 </script>
 
 <style scoped>
+.wrap{
+  min-height: 100vh;
+  color: #647D91;
+}
+
 .lesson-container {
   margin: 0 auto;
-  /* max-width: 600px; */
 }
 
 .breadcrumb{
@@ -91,36 +98,33 @@ export default {
   width: 100%;
   padding: 30px 0;
   margin: 1rem 0;
-  background-color: #E5F0F8;
+  background-color: #FFF;
 }
 
 .lesson-heading {
-  color: #2c3e50;
   text-align: center;
   font-size: 2.5em;
+  font-weight: bold;
 }
 
 .lesson-list {
-  /* display: grid; */
   justify-content: center;
   list-style: none;
-  /* padding-left: 0; */
-  padding: 50px 0px;
+  padding: 50px 0;
 }
 
 .lesson-item {
   width: 675px;
-  height: 170px;
+  height: 150px;
   margin: 0 auto 25px auto;
   display: flex;
 }
 
 .lesson-itemImg{
-  width: 25%;
   height: 100%;
+  padding: 30px;
   background-color: #FFFFFF;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  margin-right: 10px;
 }
 
 .lesson-itemImg img{
@@ -130,24 +134,15 @@ export default {
 
 .lesson-itemWrap{
   width: 75%;
-  height: 100%;
-  padding: 20px 50px;
-  background-color: #1C4977;
+  padding: 30px 50px;
+  background-color: #fff;
   position: relative;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-.lesson-itemTitle{
-  color: #E6EFF7;
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 10px;
 }
 
 .lesson-itemText{
   width: 80%;
-  color: #E6EFF7;
+  height: 52px;
+  color: #647D91;
 }
 
 .lesson-btn{
@@ -163,9 +158,9 @@ export default {
   width:100%;
   height:100%;
   text-decoration: none;
-  background:#1C4977;
+  background:#fff;
   text-align:center;
-  border:4px solid #E6EFF7;
+  border:4px solid #A8DADC;
   color:#FFFFFF;
   font-size:20px;
   font-weight:bold;
@@ -174,11 +169,8 @@ export default {
   -moz-border-radius:50px;
 }
 .lesson-btn a:hover{
-  background:#2F69A9;
-  color:#FFFFFF;
   margin-left:0px;
   margin-top:5px;
-  border:4px solid #E6EFF7;
   box-shadow:none;
 }
 
@@ -187,8 +179,8 @@ export default {
   display: block;
   width: 20px;
   height: 20px;
-  border-top: 4px solid #fff;
-  border-left: 4px solid #fff;
+  border-top: 4px solid #A8DADC;
+  border-left: 4px solid #A8DADC;
   transform: rotate(135deg);
   position: absolute;
   right: calc(50% - 5px);
@@ -247,5 +239,4 @@ export default {
     top: calc(50% - 7px);
   }
 }
-
 </style>

@@ -4,7 +4,7 @@
     <div class="lesson-container">
       <div class="lesson-title">
         <div class="breadcrumb">
-          <a href="/menu">初級コース</a> > コマンドラインコース
+          <a href="/course-menu">初級コース</a> > コマンドライン
         </div>
         <h1 class="lesson-heading">コマンドライン</h1>
       </div>
