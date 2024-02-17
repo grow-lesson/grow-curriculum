@@ -11,11 +11,13 @@
         </thead>
         <tbody>
           <tr v-for="(week, index) in calendar" :key="index">
-            <td v-for="day in week" :key="day.date" :class="['calendar-day', { today: isToday(day) }]" @click="showReservationPopup(day)">
-              <p>
-                {{ day.day }}
-              </p>
-              <p>編集</p>
+            <td v-for="day in week" :key="day.date" :class="['calendar-day', { today: isToday(day) }]">
+              <p>{{ day.day }}</p>
+              <p>18:00~22:00</p>
+              <div class="calendar-menu">
+                <p @click="showReservationPopup(day)" class="reservation-menu">予約</p>
+                <p @click="showEditPopupWindow(day)" class="edit-menu">編集</p>
+              </div>
             </td>
           </tr>
         </tbody>
@@ -29,9 +31,28 @@
         <h3>予約</h3>
         <p>{{ selectedDay.date }}の予約を設定</p>
         <label :class="['popup-label']" for="reservationTime">時間:</label>
-        <input :class="['popup-input']" type="time" id="reservationTime" v-model="reservationTime" />
+        <div class="reservation-studyTime">
+          <input :class="['popup-input']" type="time" id="reservationTime" v-model="reservationStartTime" />
+          <p>~</p>
+          <input :class="['popup-input']" type="time" id="reservationTime" v-model="reservationEndTime" />
+        </div>
         <button :class="['popup-button']" @click="submitReservation">予約する</button>
         <button :class="['popup-button', 'cancel-button']" @click="cancelReservation">キャンセル</button>
+      </div>
+    </div>
+    <!-- 編集ポップアップウィンドウ -->
+    <div v-if="showEditPopup" class="edit-popup" @click.self="closeEditPopup">
+      <div :class="['popup-content', 'edit-popup-content']">
+        <h3>編集</h3>
+        <p>{{ selectedDay.date }}の予定を編集</p>
+        <label :class="['popup-label']" for="editTime">新しい時間:</label>
+        <div class="edit-studyTime">
+          <input :class="['popup-input']" type="time" id="editTime" v-model="reservationStartTime" />
+          <p>~</p>
+          <input :class="['popup-input']" type="time" id="editTime" v-model="reservationEndTime" />
+        </div>
+        <button :class="['popup-button']" @click="submitEdit">変更する</button>
+        <button :class="['popup-button', 'cancel-button']" @click="closeEditPopup">キャンセル</button>
       </div>
     </div>
   </div>
@@ -59,7 +80,10 @@ export default {
 
     const showPopup = ref(false);
     const selectedDay = ref(null);
-    const reservationTime = ref("");
+    const reservationStartTime = ref("");
+    const reservationEndTime = ref("");
+    const reservationOpenTime = ref("");
+    const reservationCloseTime = ref("");
 
     // 週の日付の配列を生成
     const generateWeek = (startDate) => {
@@ -125,7 +149,8 @@ export default {
     const closeReservationPopup = () => {
       showPopup.value = false;
       selectedDay.value = null;
-      reservationTime.value = "";
+      reservationStartTime.value = "";
+      reservationEndTime.value = "";
     };
 
     const submitReservation = () => {
@@ -135,8 +160,34 @@ export default {
     };
 
     const cancelReservation = () => {
-      // キャンセルの処理を追加
       closeReservationPopup();
+    };
+
+    // 編集ポップアップの表示状態と対象の日付
+    const showEditPopup = ref(false);
+
+    // 編集ポップアップを表示する
+    const showEditPopupWindow = (day) => {
+      selectedDay.value = day;
+      showEditPopup.value = true;
+    };
+
+    // 編集ポップアップを閉じる
+    const closeEditPopup = () => {
+      showEditPopup.value = false;
+      selectedDay.value = null;
+    };
+
+    // 新しい時間を選択し、表示を変更するメソッド
+    const submitEdit = () => {
+      // 新しい時間の編集処理を追加
+      // selectedDay.value に選択された日付が含まれています
+      // reservationTime.value に新しい時間が含まれています
+      console.log(`編集日: ${selectedDay.value.date}, 解放開始時間: ${reservationOpenTime.value}, 解放終了時間: ${reservationCloseTime.value}`);
+      // ここでデータの更新処理などを行う
+
+      // 編集が完了したらポップアップを閉じる
+      closeEditPopup();
     };
 
     // カレンダーの初期データを生成
@@ -151,11 +202,16 @@ export default {
       isToday,
       showPopup,
       selectedDay,
-      reservationTime,
+      reservationStartTime,
+      reservationEndTime,
       showReservationPopup,
       closeReservationPopup,
       submitReservation,
       cancelReservation,
+      showEditPopup,
+      showEditPopupWindow,
+      closeEditPopup,
+      submitEdit,
     };
   },
 };
@@ -195,17 +251,23 @@ export default {
   border: 1px solid #ddd;
 }
 
-.calendar-day:hover {
-  background-color: #f0f0f0;
-}
-
 .today {
   font-weight: bold;
-  color: #ff0000;
+  background-color: #ffb3d9;
+}
+
+.calendar-menu {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.edit-menu{
+  margin-left: 5px;
 }
 
 /* 予約ポップアップウィンドウ全体に関するスタイル */
-.reservation-popup {
+.reservation-popup, .edit-popup {
   position: fixed;
   top: 0;
   left: 0;
@@ -218,7 +280,7 @@ export default {
 }
 
 /* 予約ポップアップウィンドウのコンテンツに関するスタイル */
-.reservation-popup-content {
+.reservation-popup-content, .edit-popup-content {
   background: #fff;
   padding: 20px;
   border-radius: 8px;
@@ -226,8 +288,13 @@ export default {
   width: 300px;
 }
 
-.reservation-popup-content h3 {
+.reservation-popup-content h3, .edit-popup-content h3 {
   margin-bottom: 10px;
+}
+
+.edit-studyTime, .reservation-studyTime {
+  display: flex;
+  align-items: center;
 }
 
 /* ラベルに関するスタイル */
@@ -242,6 +309,7 @@ export default {
   padding: 8px;
   margin-bottom: 10px;
   box-sizing: border-box;
+  border: solid 1px rgb(192, 192, 192);
 }
 
 /* ボタンに関するスタイル */
