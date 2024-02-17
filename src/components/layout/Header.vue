@@ -213,6 +213,7 @@ export default {
 .header {
   background-color: #fff;
   padding: 10px;
+  color: #647D91;
 }
 
 .header-wrapper {

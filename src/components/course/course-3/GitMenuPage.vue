@@ -83,11 +83,11 @@ export default {
 <style scoped>
 .wrap{
   min-height: 100vh;
-  color: #647D91;
 }
 
 .lesson-container {
   margin: 0 auto;
+  color: #647D91;
 }
 
 .breadcrumb{
