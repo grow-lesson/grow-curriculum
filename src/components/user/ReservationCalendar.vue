@@ -15,6 +15,7 @@
               <p>
                 {{ day.day }}
               </p>
+              <p>編集</p>
             </td>
           </tr>
         </tbody>
