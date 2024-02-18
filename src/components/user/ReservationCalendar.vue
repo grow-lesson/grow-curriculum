@@ -11,9 +11,9 @@
         </thead>
         <tbody>
           <tr v-for="(week, index) in calendar" :key="index">
-            <td v-for="day in week" :key="day.date" :class="['calendar-day', { today: isToday(day) }]">
+            <td v-for="day in week.days" :key="day.date" :class="['calendar-day', { today: isToday(day) }]">
               <p>{{ day.day }}</p>
-              <p>18:00~22:00</p>
+              <p>{{ day.startTime }}~{{ day.endTime }}</p>
               <div class="calendar-menu">
                 <p @click="showReservationPopup(day)" class="reservation-menu">予約</p>
                 <p @click="showEditPopupWindow(day)" class="edit-menu">編集</p>
@@ -30,14 +30,12 @@
       <div :class="['popup-content', 'reservation-popup-content']">
         <h3>予約</h3>
         <p>{{ selectedDay.date }}の予約を設定</p>
-        <label :class="['popup-label']" for="reservationTime">時間:</label>
-        <div class="reservation-studyTime">
-          <input :class="['popup-input']" type="time" id="reservationTime" v-model="reservationStartTime" />
-          <p>~</p>
-          <input :class="['popup-input']" type="time" id="reservationTime" v-model="reservationEndTime" />
-        </div>
+        <label :class="['popup-label']" for="reservationStartTime">開始時間:</label>
+        <input :class="['popup-input']" type="time" id="reservationStartTime" v-model="reservationStartTime" />
+        <label :class="['popup-label']" for="reservationEndTime">終了時間:</label>
+        <input :class="['popup-input']" type="time" id="reservationEndTime" v-model="reservationEndTime" />
         <button :class="['popup-button']" @click="submitReservation">予約する</button>
-        <button :class="['popup-button', 'cancel-button']" @click="cancelReservation">キャンセル</button>
+        <button :class="['popup-button', 'cancel-button']" @click="cancelReservation">キャンセルする</button>
       </div>
     </div>
     <!-- 編集ポップアップウィンドウ -->
@@ -45,14 +43,12 @@
       <div :class="['popup-content', 'edit-popup-content']">
         <h3>編集</h3>
         <p>{{ selectedDay.date }}の予定を編集</p>
-        <label :class="['popup-label']" for="editTime">新しい時間:</label>
-        <div class="edit-studyTime">
-          <input :class="['popup-input']" type="time" id="editTime" v-model="reservationStartTime" />
-          <p>~</p>
-          <input :class="['popup-input']" type="time" id="editTime" v-model="reservationEndTime" />
-        </div>
+        <label :class="['popup-label']" for="editStartTime">新しい開始時間:</label>
+        <input :class="['popup-input']" type="time" id="editStartTime" v-model="reservationStartTime" />
+        <label :class="['popup-label']" for="editEndTime">新しい終了時間:</label>
+        <input :class="['popup-input']" type="time" id="editEndTime" v-model="reservationEndTime" />
         <button :class="['popup-button']" @click="submitEdit">変更する</button>
-        <button :class="['popup-button', 'cancel-button']" @click="closeEditPopup">キャンセル</button>
+        <button :class="['popup-button', 'cancel-button']" @click="closeEditPopup">×</button>
       </div>
     </div>
   </div>
@@ -82,8 +78,6 @@ export default {
     const selectedDay = ref(null);
     const reservationStartTime = ref("");
     const reservationEndTime = ref("");
-    const reservationOpenTime = ref("");
-    const reservationCloseTime = ref("");
 
     // 週の日付の配列を生成
     const generateWeek = (startDate) => {
@@ -94,6 +88,8 @@ export default {
         week.push({
           day: date.getUTCDate(),
           date: date.toISOString().split('T')[0],
+          startTime: "18:00", // デフォルトの開始時間
+          endTime: "22:00", // デフォルトの終了時間
         });
       }
       return week;
@@ -112,13 +108,20 @@ export default {
         if (dayCounter > endDay) break;
 
         if (i === 0) {
-          // 最初の週は前月の末尾から始まる可能性がある
           const lastMonthEnd = new Date(currentYear.value, currentMonth.value - 1, 0);
           const lastMonthEndDay = lastMonthEnd.getUTCDate();
           const lastMonthStartDay = lastMonthEndDay - startDay + 1;
-          calendar.push(generateWeek(new Date(Date.UTC(currentYear.value, currentMonth.value - 2, lastMonthStartDay))));
+          calendar.push({
+            weekStart: new Date(Date.UTC(currentYear.value, currentMonth.value - 2, lastMonthStartDay)).toISOString().split('T')[0],
+            weekEnd: new Date(Date.UTC(currentYear.value, currentMonth.value - 2, lastMonthEndDay)).toISOString().split('T')[0],
+            days: generateWeek(new Date(Date.UTC(currentYear.value, currentMonth.value - 2, lastMonthStartDay))),
+          });
         } else {
-          calendar.push(generateWeek(new Date(Date.UTC(currentYear.value, currentMonth.value - 1, dayCounter))));
+          calendar.push({
+            weekStart: new Date(Date.UTC(currentYear.value, currentMonth.value - 1, dayCounter)).toISOString().split('T')[0],
+            weekEnd: new Date(Date.UTC(currentYear.value, currentMonth.value - 1, dayCounter + 6)).toISOString().split('T')[0],
+            days: generateWeek(new Date(Date.UTC(currentYear.value, currentMonth.value - 1, dayCounter))),
+          });
         }
 
         dayCounter += 7;
@@ -183,8 +186,8 @@ export default {
       // 新しい時間の編集処理を追加
       // selectedDay.value に選択された日付が含まれています
       // reservationTime.value に新しい時間が含まれています
-      console.log(`編集日: ${selectedDay.value.date}, 解放開始時間: ${reservationOpenTime.value}, 解放終了時間: ${reservationCloseTime.value}`);
-      // ここでデータの更新処理などを行う
+      selectedDay.value.startTime = reservationStartTime.value;
+      selectedDay.value.endTime = reservationEndTime.value;
 
       // 編集が完了したらポップアップを閉じる
       closeEditPopup();
