@@ -16,6 +16,9 @@
               <img src="../../../assets/images/menu/lesson1.png" alt="lesson1" />
             </div>
             <div class="lesson-itemWrap">
+              <div class="lesson-itemImg-sp">
+                <img src="../../../assets/images/menu/lesson1-sp.png" alt="lesson1" />
+              </div>
               <div class="lesson-itemText">
                 <p>HTML・CSSの書き方や確認の仕方、構成など基本的な知識を学びます。</p>
               </div>
@@ -29,6 +32,9 @@
                 <img src="../../../assets/images/menu/lesson2.png" alt="lesson2" />
               </div>
               <div class="lesson-itemWrap">
+                <div class="lesson-itemImg-sp">
+                  <img src="../../../assets/images/menu/lesson2-sp.png" alt="lesson2" />
+                </div>
                 <div class="lesson-itemText">
                   <p>要素の違いや、様々なプロパティ概念を学びます。</p>
                 </div>
@@ -42,6 +48,9 @@
                 <img src="../../../assets/images/menu/lesson3.png" alt="lesson3" />
               </div>
               <div class="lesson-itemWrap">
+                <div class="lesson-itemImg-sp">
+                  <img src="../../../assets/images/menu/lesson3-sp.png" alt="lesson3" />
+                </div>
                 <div class="lesson-itemText">
                   <p>本格的なWebサイトの作り方やレスポンシブ対応、FlexBoxを学びます。</p>
                 </div>
@@ -192,6 +201,12 @@ export default {
   margin-top: 5px;
 }
 
+@media (min-width: 649px) {
+  .lesson-itemImg-sp{
+    display: none;
+  }
+}
+
 @media (max-width: 648px) {
   .lesson-heading{
     font-size: 1.5rem;
@@ -219,6 +234,9 @@ export default {
 
   .lesson-itemImg {
     display: none;
+  }
+  .lesson-itemImg-sp{
+    margin-bottom: 10px;
   }
   .lesson-itemTitle{
     font-size: 1.0rem;

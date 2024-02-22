@@ -16,6 +16,9 @@
               <img src="../../../assets/images/menu/lesson1.png" alt="lesson1" />
             </div>
             <div class="lesson-itemWrap">
+              <div class="lesson-itemImg-sp">
+                <img src="../../../assets/images/menu/lesson1-sp.png" alt="lesson1" />
+              </div>
               <div class="lesson-itemText">
                 <p>本格的なWebサイトの作り方やレスポンシブ対応、FlexBoxを学びます。</p>
               </div>
@@ -160,6 +163,12 @@ export default {
   margin-top: 5px;
 }
 
+@media (min-width: 649px) {
+  .lesson-itemImg-sp{
+    display: none;
+  }
+}
+
 @media (max-width: 648px) {
   .lesson-heading{
     font-size: 1.5rem;
@@ -187,6 +196,9 @@ export default {
 
   .lesson-itemImg {
     display: none;
+  }
+  .lesson-itemImg-sp{
+    margin-bottom: 10px;
   }
   .lesson-itemTitle{
     font-size: 1.0rem;

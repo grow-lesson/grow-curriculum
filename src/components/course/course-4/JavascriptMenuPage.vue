@@ -16,6 +16,9 @@
               <img src="../../../assets/images/menu/lesson1.png" alt="lesson1" />
             </div>
             <div class="lesson-itemWrap">
+              <div class="lesson-itemImg-sp">
+                <img src="../../../assets/images/menu/lesson1-sp.png" alt="lesson1" />
+              </div>
               <div class="lesson-itemText">
                 <p>Javascriptの概要と算術演算子について学びます。</p>
               </div>
@@ -29,6 +32,9 @@
                 <img src="../../../assets/images/menu/lesson2.png" alt="lesson2" />
               </div>
               <div class="lesson-itemWrap">
+                <div class="lesson-itemImg-sp">
+                  <img src="../../../assets/images/menu/lesson2-sp.png" alt="lesson2" />
+                </div>
                 <div class="lesson-itemText">
                   <p>Javascriptの条件式について学びます。</p>
                 </div>
@@ -42,6 +48,9 @@
                 <img src="../../../assets/images/menu/lesson3.png" alt="lesson3" />
               </div>
               <div class="lesson-itemWrap">
+                <div class="lesson-itemImg-sp">
+                  <img src="../../../assets/images/menu/lesson3-sp.png" alt="lesson3" />
+                </div>
                 <div class="lesson-itemText">
                   <p>Javascriptの配列について学びます。</p>
                 </div>
@@ -55,6 +64,9 @@
                 <img src="../../../assets/images/menu/lesson4.png" alt="lesson4" />
               </div>
               <div class="lesson-itemWrap">
+                <div class="lesson-itemImg-sp">
+                  <img src="../../../assets/images/menu/lesson4-sp.png" alt="lesson4" />
+                </div>
                 <div class="lesson-itemText">
                   <p>Javascriptの繰り返し文について学びます。</p>
                 </div>
@@ -68,6 +80,9 @@
                 <img src="../../../assets/images/menu/lesson5.png" alt="lesson5" />
               </div>
               <div class="lesson-itemWrap">
+                <div class="lesson-itemImg-sp">
+                  <img src="../../../assets/images/menu/lesson5-sp.png" alt="lesson5" />
+                </div>
                 <div class="lesson-itemText">
                   <p>Javascriptのオブジェクトについて学びます。</p>
                 </div>
@@ -81,6 +96,9 @@
                 <img src="../../../assets/images/menu/lesson6.png" alt="lesson6" />
               </div>
               <div class="lesson-itemWrap">
+                <div class="lesson-itemImg-sp">
+                  <img src="../../../assets/images/menu/lesson6-sp.png" alt="lesson6" />
+                </div>
                 <div class="lesson-itemText">
                   <p>Javascriptの関数について学びます。</p>
                 </div>
@@ -94,6 +112,9 @@
                 <img src="../../../assets/images/menu/lesson7.png" alt="lesson7" />
               </div>
               <div class="lesson-itemWrap">
+                <div class="lesson-itemImg-sp">
+                  <img src="../../../assets/images/menu/lesson7-sp.png" alt="lesson7" />
+                </div>
                 <div class="lesson-itemText">
                   <p>JavascriptのDOM操作について学びます。</p>
                 </div>
@@ -259,6 +280,12 @@ export default {
   margin-top: 5px;
 }
 
+@media (min-width: 649px) {
+  .lesson-itemImg-sp{
+    display: none;
+  }
+}
+
 @media (max-width: 648px) {
   .lesson-heading{
     font-size: 1.5rem;
@@ -286,6 +313,9 @@ export default {
 
   .lesson-itemImg {
     display: none;
+  }
+  .lesson-itemImg-sp{
+    margin-bottom: 10px;
   }
   .lesson-itemTitle{
     font-size: 1.0rem;
