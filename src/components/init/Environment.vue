@@ -53,10 +53,6 @@
             </thead>
             <tbody>
               <tr>
-                <td class="table-cell">.ejs</td>
-                <td class="table-cell">テンプレート内のJavaScriptコードのシンタックスハイライト（色付け）や、コードの補完（自動入力）、エラーチェックなどの便利な機能を利用することができます。これにより、テンプレートの作成や編集が簡単になり、間違いを見つけやすくなります。</td>
-              </tr>
-              <tr>
                 <td class="table-cell">Editor Config for VS Code</td>
                 <td class="table-cell">複数の開発者やエディタ間でコードの書式設定を統一するためのツールです。異なる開発環境やエディタを使用している場合でも、コードの書式が一貫していることを確保することができます。</td>
               </tr>
@@ -345,10 +341,6 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td class="table-cell">.ejs</td>
-                <td class="table-cell">テンプレート内のJavaScriptコードのシンタックスハイライト（色付け）や、コードの補完（自動入力）、エラーチェックなどの便利な機能を利用することができます。これにより、テンプレートの作成や編集が簡単になり、間違いを見つけやすくなります。</td>
-              </tr>
               <tr>
                 <td class="table-cell">Editor Config for VS Code</td>
                 <td class="table-cell">複数の開発者やエディタ間でコードの書式設定を統一するためのツールです。異なる開発環境やエディタを使用している場合でも、コードの書式が一貫していることを確保することができます。</td>

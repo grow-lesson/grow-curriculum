@@ -12,7 +12,8 @@ export const environmentData = {
     },
   "files.associations": {
     "*.ejs": "html"
-  }
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }`,
     language: "language-json",
   },
