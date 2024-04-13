@@ -650,6 +650,27 @@ export default {
       selectedImage.value = imagePath;
     };
 
+    // CSSファイルをダウンロードする処理
+    const downloadCSS = () => {
+      // CSSファイルの内容を定義
+      const cssContent = htmlSourceData.file6.code;
+
+      // Blobオブジェクトを作成してダウンロードリンクを生成
+      const blob = new Blob([cssContent], { type: "text/css" });
+      const url = URL.createObjectURL(blob);
+
+      // ダウンロードリンクを生成
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "reset.css"; // ダウンロード時のファイル名を指定
+
+      // ダウンロードリンクをクリックしてダウンロードをトリガー
+      link.click();
+
+      // 不要になったURLオブジェクトを解放
+      URL.revokeObjectURL(url);
+    };
+
     return {
       htmlSourceData,
       sections,
@@ -657,6 +678,7 @@ export default {
       selectedImage,
       isModalOpen,
       openModal,
+      downloadCSS,
     };
   },
 };
