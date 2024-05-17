@@ -596,8 +596,8 @@ export default {
       { id: "sectionTitle3-3", title: "    3-3. 要素とプロパティ②" },
       { id: "sectionTitle3-4", title: "    3-4. 要素とプロパティ③" },
       { id: "sectionTitle3-5", title: "    3-5. floatの性質とclearfixの概念を知る" },
-      { id: "sectionTitle3-6", title: "    3-5. 要素とプロパティ③" },
-      { id: "sectionTitle3-7", title: "    3-5. 要素とプロパティ④" },
+      { id: "sectionTitle3-6", title: "    3-6. 要素とプロパティ③" },
+      { id: "sectionTitle3-7", title: "    3-7. 要素とプロパティ④" },
     ];
 
     onMounted(() => {
