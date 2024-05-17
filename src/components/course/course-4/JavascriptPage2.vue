@@ -81,7 +81,7 @@
             単純な条件だけでなく、条件が満たされない場合の処理も実行したい場合、if文と組み合わせてelse文を使用できます。<br>
           </p><br>
           <div>
-            <img @click="openModal(imagePaths.step8)" :src="imagePaths.step9" class="screen-image" alt="result-9" />
+            <img @click="openModal(imagePaths.step8)" :src="imagePaths.step8" class="screen-image" alt="result-8" />
           </div><br><br>
           <p> 
             <HighlightWord word='if-else if文'></HighlightWord><br>
