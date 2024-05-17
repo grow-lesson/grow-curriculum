@@ -23,6 +23,7 @@
     "yup": "^1.2.0"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.24.5",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "destyle.css": "^4.0.0",
@@ -40,7 +41,8 @@
       "eslint:recommended"
     ],
     "parserOptions": {
-      "parser": "@babel/eslint-parser"
+      "parser": "@babel/eslint-parser",
+      "requireConfigFile": false
     },
     "rules": {
       "vue/multi-word-component-names": "off"
