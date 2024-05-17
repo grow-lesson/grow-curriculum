@@ -20,7 +20,7 @@
                 <img src="../../../assets/images/menu/lesson1-sp.png" alt="lesson1" />
               </div>
               <div class="lesson-itemText">
-                <p>本格的なWebサイトの作り方やレスポンシブ対応、FlexBoxを学びます。</p>
+                <p>ターミナルの基本的な操作とコマンドの使用方法を学びます。</p>
               </div>
               <div class="lesson-btn btn">
                 <a class="lesson-link btn" @click="goToPageLesson1"></a>
