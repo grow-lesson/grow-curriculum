@@ -542,6 +542,10 @@
           <div>
             <img @click="openModal(imagePaths.step34)" :src="imagePaths.step34" class="screen-image" alt="web-11" />
           </div><br>
+          <NavigationButtons
+            :previousPageName="'HtmlPage1'"
+            :nextPageName="'HtmlPage3'"
+          />
         </Document>
         <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
       </div>
@@ -566,6 +570,7 @@ import Terminal from "@/components/Terminal.vue";
 import TableOfContents from "@/components/TableOfContents.vue";
 import { htmlSourceData } from "@/data/htmlSourceData.js";
 import Modal from "@/components/common/Modal.vue";
+import NavigationButtons from "@/components/NavigationButtons.vue";
 
 export default {
   name: "HtmlPage2",
@@ -580,6 +585,7 @@ export default {
     Terminal,
     TableOfContents,
     Modal,
+    NavigationButtons,
   },
   setup() {
     const sections =  [

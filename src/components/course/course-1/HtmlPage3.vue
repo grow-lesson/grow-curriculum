@@ -279,6 +279,10 @@
           <Terminal :fileName="htmlSourceData.file17.filename" :copiedText="htmlSourceData.file17.code" :lang="htmlSourceData.file17.language" />
           <Terminal :fileName="htmlSourceData.file18.filename" :copiedText="htmlSourceData.file18.code" :lang="htmlSourceData.file18.language" />
           <br>
+          <NavigationButtons
+            :previousPageName="'HtmlPage2'"
+            :nextPageName="'HtmlPage1'"
+          />
         </Document>
         <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
       </div>
@@ -303,6 +307,7 @@ import Terminal from "@/components/Terminal.vue";
 import TableOfContents from "@/components/TableOfContents.vue";
 import { htmlSourceData } from "@/data/htmlSourceData.js";
 import Modal from "@/components/common/Modal.vue";
+import NavigationButtons from "@/components/NavigationButtons.vue";
 
 export default {
   name: "HtmlPage3",
@@ -317,6 +322,7 @@ export default {
     Terminal,
     TableOfContents,
     Modal,
+    NavigationButtons,
   },
   setup() {
     const sections = [

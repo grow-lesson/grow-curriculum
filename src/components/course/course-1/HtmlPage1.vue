@@ -522,6 +522,10 @@
           <div>
             <img @click="openModal(imagePaths.step43)" :src="imagePaths.step43" alt="tag-7" class="powerpoint-image" />
           </div><br><br>
+          <NavigationButtons
+            :previousPageName="'HtmlPage3'"
+            :nextPageName="'HtmlPage2'"
+          />
         </Document>
         <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
       </div>
@@ -546,6 +550,7 @@ import Terminal from "@/components/Terminal.vue";
 import TableOfContents from "@/components/TableOfContents.vue";
 import { htmlSourceData } from "@/data/htmlSourceData.js";
 import Modal from "@/components/common/Modal.vue";
+import NavigationButtons from "@/components/NavigationButtons.vue";
 
 export default {
   name: "HtmlPage1",
@@ -560,6 +565,7 @@ export default {
     Terminal,
     TableOfContents,
     Modal,
+    NavigationButtons,
   },
   setup() {
     const sections = [
