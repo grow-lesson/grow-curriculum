@@ -25,16 +25,6 @@
       </div>
       <section class="course">
         <div class="course-item">
-          <h2 class="course-title">コマンドライン</h2>
-          <p class="course-explanation">ファイル・フォルダの作成や編集・移動・削除を学べるコース</p>
-          <div class="course-image">
-            <div class="course-logo">
-              <img src="../assets/images/menu/command-line.jpg" class="course-icon" alt="commandline" />
-            </div>
-          </div>
-          <a class="course-button" @click="goToCommandLineMenuPage">受講する</a>
-        </div>
-        <div class="course-item">
           <h2 class="course-title">HTML・CSS</h2>
           <p class="course-explanation">ウェブサイトの作成に必要な骨組みやデザインを学べるコース</p>
           <div class="course-image">
@@ -48,14 +38,14 @@
           <a class="course-button" @click="goToHtmlMenuPage">受講する</a>
         </div>
         <div class="course-item">
-          <h2 class="course-title">Git</h2>
-          <p class="course-explanation">ソースプログラムなどを保存・共有を学べるコース</p>
+          <h2 class="course-title">コマンドライン</h2>
+          <p class="course-explanation">ファイル・フォルダの作成や編集・移動・削除を学べるコース</p>
           <div class="course-image">
             <div class="course-logo">
-              <img src="../assets/images/menu/git.png" class="course-icon" alt="git" />
+              <img src="../assets/images/menu/command-line.jpg" class="course-icon" alt="commandline" />
             </div>
           </div>
-          <a class="course-button" @click="goToGitMenuPage">受講する</a>
+          <a class="course-button" @click="goToCommandLineMenuPage">受講する</a>
         </div>
       </section>
       <div class="hero">
@@ -75,16 +65,6 @@
           <a class="course-button" @click="goToJavaScriptMenuPage">受講する</a>
         </div>
         <div class="course-item">
-          <h2 class="course-title">SQL</h2>
-          <p class="course-explanation">データベース操作を学べるコース</p>
-          <div class="course-image">
-            <div class="course-logo">
-              <img src="../assets/images/menu/sql.png" class="course-icon" alt="SQL" />
-            </div>
-          </div>
-          <a class="course-button" @click="goToSQLMenuPage">受講する</a>
-        </div>
-        <div class="course-item">
           <h2 class="course-title">jQuery</h2>
           <p class="course-explanation">動的な操作とイベント処理、コードの効率性を学べるコース</p>
           <div class="course-image">
@@ -93,6 +73,33 @@
             </div>
           </div>
           <a class="course-button" @click="goToJqueryMenuPage">受講する</a>
+        </div>
+      </section>
+      <div class="hero">
+        <div class="hero-content">
+          <h1 class="hero-title">番外コース</h1>
+        </div>
+      </div>
+      <section class="course">
+        <div class="course-item">
+          <h2 class="course-title">Git</h2>
+          <p class="course-explanation">ソースプログラムなどを保存・共有を学べるコース</p>
+          <div class="course-image">
+            <div class="course-logo">
+              <img src="../assets/images/menu/git.png" class="course-icon" alt="git" />
+            </div>
+          </div>
+          <a class="course-button" @click="goToGitMenuPage">受講する</a>
+        </div>
+        <div class="course-item">
+          <h2 class="course-title">SQL</h2>
+          <p class="course-explanation">データベース操作を学べるコース</p>
+          <div class="course-image">
+            <div class="course-logo">
+              <img src="../assets/images/menu/sql.png" class="course-icon" alt="SQL" />
+            </div>
+          </div>
+          <a class="course-button" @click="goToSQLMenuPage">受講する</a>
         </div>
       </section>
     </main>
@@ -201,13 +208,13 @@ export default {
 /* Hero */
 .hero {
   background-color: #f9f9f9;
-  padding: 60px;
+  padding: 30px;
   text-align: center;
 }
 
 .hero-title {
   font-size: 36px;
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 /* flow */
@@ -266,6 +273,7 @@ export default {
 .course-explanation {
   text-align: center;
   color: #666;
+  padding: 30px 0;
 }
 
 .course-image {
