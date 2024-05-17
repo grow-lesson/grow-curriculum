@@ -80,10 +80,10 @@ export default {
       this.$router.push({ name: "GitPage1" });
     },
     goToPageLesson2() {
-      this.$router.push({ name: "GitPage2" });
+      this.$router.push({ name: "UnderConstruction" });
     },
     goToPageLesson3() {
-      this.$router.push({ name: "GitPage3" });
+      this.$router.push({ name: "UnderConstruction" });
     },
   },
 };
