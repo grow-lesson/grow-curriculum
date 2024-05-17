@@ -67,7 +67,7 @@ export default {
 
 .sidebar-button {
   position: fixed;
-  bottom: 40px;
+  bottom: 80px;
   right: 40px;
   padding: 10px 20px;
   border: none;
