@@ -1,6 +1,8 @@
 <template>
   <div class="sidebar">
-    <button class="sidebar-button" @click="scrollToTop">Top</button>
+    <button class="sidebar-button" @click="scrollToTop">
+      <div class="arrow-up"></div>
+    </button>
     <div class="sidebar-contents">
       <SubTitle subTitle="目次" />
       <ul class="menu">
@@ -37,7 +39,6 @@ export default {
 };
 </script>
 
-
 <style scoped>
 .sidebar-contents {
   position: fixed;
@@ -69,17 +70,29 @@ export default {
   position: fixed;
   bottom: 80px;
   right: 40px;
-  padding: 10px 20px;
+  width: 60px;
+  height: 60px;
+  padding: 0;
   border: none;
-  border-radius: 5px;
-  background-color: #6c757d;
+  border-radius: 50%;
+  background-color: #3fa0fa;
   color: white;
   cursor: pointer;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sidebar-button:hover {
-  background-color: #5a6268;
+  background-color: #ff9900;
+}
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 18px solid white;
 }
 </style>
-
