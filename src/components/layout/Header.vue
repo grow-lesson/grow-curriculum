@@ -30,10 +30,10 @@
               <button class="navigation-btn">マイページ</button>
               <ul class="dropdown-list">
                 <li class="dropdown-item"><a @click="goToMyPage" class="dropdown-link">プロフィール</a></li>
-                <li class="dropdown-item"><a @click="goToProgressPage" class="dropdown-link">進捗管理</a></li >
+                <!-- <li class="dropdown-item"><a @click="goToProgressPage" class="dropdown-link">進捗管理</a></li > -->
                 <li class="dropdown-item"><a href="https://id.moneyforward.com/sign_in?client_id=8gQSNxOMhkM554G5OsbOAoesxrBbkdHfuESOGQ9uR1A&code_challenge=VbLqCHgXpFVqteT1FyLu653hpER4m_AW4KHRhpi9kiI&code_challenge_method=S256&nonce=a5c23fc9a62f11793fc481687ab3b14f&redirect_uri=https%3A%2F%2Ferp.moneyforward.com%3A443%2Fusers%2Fauth%2Fmfid%2Fcallback&response_type=code&scope=openid+email&state=182f662a45a785492f130fc5323c5a4e" target="_blank" class="dropdown-link">給与の確認</a></li>
-                <li class="dropdown-item"><a @click="goToReservationCalendarPage" class="dropdown-link">自習予約する</a></li>
-                <li class="dropdown-item"><a href="#" class="dropdown-link">勤怠表を提出する</a></li>
+                <!-- <li class="dropdown-item"><a @click="goToReservationCalendarPage" class="dropdown-link">自習予約する</a></li> -->
+                <!-- <li class="dropdown-item"><a href="#" class="dropdown-link">勤怠表を提出する</a></li> -->
               </ul>
             </li>
             <li class="navigation-item">
@@ -83,10 +83,10 @@
           <button>マイページ</button>
           <ul class="dropdown-list">
             <li class="dropdown-item"><a @click="goToMyPage" class="dropdown-link">プロフィール</a></li>
-            <li class="dropdown-item"><a @click="goToProgressPage" class="dropdown-link">進捗管理</a></li >
+            <!-- <li class="dropdown-item"><a @click="goToProgressPage" class="dropdown-link">進捗管理</a></li > -->
             <li class="dropdown-item"><a href="https://id.moneyforward.com/sign_in?client_id=8gQSNxOMhkM554G5OsbOAoesxrBbkdHfuESOGQ9uR1A&code_challenge=VbLqCHgXpFVqteT1FyLu653hpER4m_AW4KHRhpi9kiI&code_challenge_method=S256&nonce=a5c23fc9a62f11793fc481687ab3b14f&redirect_uri=https%3A%2F%2Ferp.moneyforward.com%3A443%2Fusers%2Fauth%2Fmfid%2Fcallback&response_type=code&scope=openid+email&state=182f662a45a785492f130fc5323c5a4e" target="_blank" class="dropdown-link">給与の確認</a></li>
-            <li class="dropdown-item"><a @click="goToReservationCalendarPage" class="dropdown-link">自習予約する</a></li>
-            <li class="dropdown-item"><a href="#" class="dropdown-link">勤怠表を提出する</a></li>
+            <!-- <li class="dropdown-item"><a @click="goToReservationCalendarPage" class="dropdown-link">自習予約する</a></li> -->
+            <!-- <li class="dropdown-item"><a href="#" class="dropdown-link">勤怠表を提出する</a></li> -->
           </ul>
         </li>
         <li class="menu-item">
