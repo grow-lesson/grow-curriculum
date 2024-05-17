@@ -6,16 +6,6 @@
       <section id="features" class="features-section">
         <div class="features-container">
           <div class="feature">
-            <h2 class="feature-title">コマンドライン</h2>
-            <p class="feature-description">ターミナルやコマンドラインインターフェースの基本的な操作を学びましょう。</p>
-            <div class="feature-image">
-              <div class="feature-logo">
-                <img src="../../assets/images/menu/command-line.jpg" class="feature-icon" alt="commandline" />
-              </div>
-            </div>
-            <a class="feature-button" @click="goToCommandLineMenuPage">受講する</a>
-          </div>
-          <div class="feature">
             <h2 class="feature-title">HTMLとCSS</h2>
             <p class="feature-description">基本的なウェブページの作成やスタイリングを学びましょう。</p>
             <div class="feature-image">
@@ -29,14 +19,14 @@
             <a class="feature-button" @click="goToHtmlMenuPage">受講する</a>
           </div>
           <div class="feature">
-            <h2 class="feature-title">Git</h2>
-            <p class="feature-description">バージョン管理システムのGitを使ったチーム開発の基礎を学びましょう。</p>
+            <h2 class="feature-title">コマンドライン</h2>
+            <p class="feature-description">ターミナルやコマンドラインインターフェースの基本的な操作を学びましょう。</p>
             <div class="feature-image">
               <div class="feature-logo">
-                <img src="../../assets/images/menu/git.png" class="feature-icon" alt="git" />
+                <img src="../../assets/images/menu/command-line.jpg" class="feature-icon" alt="commandline" />
               </div>
             </div>
-            <a class="feature-button" @click="goToGitMenuPage">受講する</a>
+            <a class="feature-button" @click="goToCommandLineMenuPage">受講する</a>
           </div>
           <div class="feature">
             <h2 class="feature-title">JavaScript</h2>
@@ -49,16 +39,6 @@
             <a class="feature-button" @click="goToJavaScriptMenuPage">受講する</a>
           </div>
           <div class="feature">
-            <h2 class="feature-title">SQL</h2>
-            <p class="feature-description">データベース管理言語(SQL)の基礎を学び、実践的な操作スキルを身につけましょう。</p>
-            <div class="feature-image">
-              <div class="feature-logo">
-                <img src="../../assets/images/menu/sql.png" class="feature-icon" alt="SQL" />
-              </div>
-            </div>
-            <a class="feature-button" @click="goToSQLMenuPage">受講する</a>
-          </div>
-          <div class="feature">
             <h2 class="feature-title">jQuery</h2>
             <p class="feature-description">jQueryを使った動的な操作とイベント処理を学び、ユーザビリティ向上とコードの効率性を学びましょう。</p>
             <div class="feature-image">
@@ -67,6 +47,26 @@
               </div>
             </div>
             <a class="feature-button" @click="goToJqueryMenuPage">受講する</a>
+          </div>
+          <div class="feature">
+            <h2 class="feature-title">Git</h2>
+            <p class="feature-description">バージョン管理システムのGitを使ったチーム開発の基礎を学びましょう。</p>
+            <div class="feature-image">
+              <div class="feature-logo">
+                <img src="../../assets/images/menu/git.png" class="feature-icon" alt="git" />
+              </div>
+            </div>
+            <a class="feature-button" @click="goToGitMenuPage">受講する</a>
+          </div>
+          <div class="feature">
+            <h2 class="feature-title">SQL</h2>
+            <p class="feature-description">データベース管理言語(SQL)の基礎を学び、実践的な操作スキルを身につけましょう。</p>
+            <div class="feature-image">
+              <div class="feature-logo">
+                <img src="../../assets/images/menu/sql.png" class="feature-icon" alt="SQL" />
+              </div>
+            </div>
+            <a class="feature-button" @click="goToSQLMenuPage">受講する</a>
           </div>
         </div>
       </section>
