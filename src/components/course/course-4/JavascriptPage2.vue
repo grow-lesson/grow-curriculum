@@ -163,6 +163,10 @@
           <div>
             <img @click="openModal(imagePaths.step16)" :src="imagePaths.step16" class="screen-image" alt="result-16" />
           </div><br><br>
+          <NavigationButtons
+            :previousPageName="'JavascriptPage1'"
+            :nextPageName="'JavascriptPage3'"
+          />
         </Document>
         <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
         </div>
@@ -186,9 +190,10 @@ import Document from "@/components/Document.vue";
 import TableOfContents from "@/components/TableOfContents.vue";
 import { javascriptData } from "@/data/javascriptData.js";
 import Modal from "@/components/common/Modal.vue";
+import NavigationButtons from "@/components/NavigationButtons.vue";
 
 export default {
-  name: "JavaScript1",
+  name: "JavaScript2",
   components: {
     Header,
     Footer,
@@ -199,6 +204,7 @@ export default {
     Document,
     TableOfContents,
     Modal,
+    NavigationButtons,
   },
   setup() {
     const sections = [

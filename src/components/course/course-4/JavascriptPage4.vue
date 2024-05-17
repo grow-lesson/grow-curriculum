@@ -83,6 +83,10 @@
           <div>
             <img @click="openModal(imagePaths.step8)" :src="imagePaths.step8" class="screen-image" alt="result-8" />
           </div><br><br>
+          <NavigationButtons
+            :previousPageName="'JavascriptPage3'"
+            :nextPageName="'JavascriptPage5'"
+          />
         </Document>
         <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
         </div>
@@ -106,9 +110,10 @@ import Document from "@/components/Document.vue";
 import TableOfContents from "@/components/TableOfContents.vue";
 import { javascriptData } from "@/data/javascriptData.js";
 import Modal from "@/components/common/Modal.vue";
+import NavigationButtons from "@/components/NavigationButtons.vue";
 
 export default {
-  name: "JavaScript1",
+  name: "JavaScript4",
   components: {
     Header,
     Footer,
@@ -119,6 +124,7 @@ export default {
     Document,
     TableOfContents,
     Modal,
+    NavigationButtons,
   },
   setup() {
     const sections = [
@@ -152,6 +158,7 @@ export default {
       selectedImage.value = imagePath;
     };
 
+    
     return {
       javascriptData,
       sections,
@@ -311,6 +318,12 @@ export default {
 
 .siteImage:nth-child(n+4) {
   margin-top: 10px;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 
 /* タブレット版 */

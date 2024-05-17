@@ -385,6 +385,10 @@
             上記の例では、strNum は文字列ですが、num は数値です。<br>
             文字列と数値を「+」演算子で結合しようとすると、数値が文字列に変換されてから連結されます。<br>
           </p>
+          <NavigationButtons
+            :previousPageName="'JavascriptPage7'"
+            :nextPageName="'JavascriptPage2'"
+          />
         </Document>
         <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
         </div>
@@ -409,6 +413,7 @@ import Terminal from "@/components/Terminal.vue";
 import TableOfContents from "@/components/TableOfContents.vue";
 import { javascriptData } from "@/data/javascriptData.js";
 import Modal from "@/components/common/Modal.vue";
+import NavigationButtons from "@/components/NavigationButtons.vue";
 
 export default {
   name: "JavaScript1",
@@ -423,6 +428,7 @@ export default {
     Terminal,
     TableOfContents,
     Modal,
+    NavigationButtons,
   },
   setup() {
     const sections = [
