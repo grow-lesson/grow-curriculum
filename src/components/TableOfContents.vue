@@ -1,9 +1,12 @@
 <template>
   <div class="sidebar">
-    <SubTitle subTitle="目次" />
-    <ul class="menu">
-      <li class="menu-item" v-for="(section, index) in sections" :key="index" @click="scrollToSection(section.id)">{{ section.title }}</li>
-    </ul>
+    <button class="sidebar-button" @click="scrollToTop">Top</button>
+    <div class="sidebar-contents">
+      <SubTitle subTitle="目次" />
+      <ul class="menu">
+        <li class="menu-item" v-for="(section, index) in sections" :key="index" @click="scrollToSection(section.id)">{{ section.title }}</li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -27,12 +30,16 @@ export default {
         sectionElement.scrollIntoView({ behavior: "smooth" });
       }
     },
+    scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    },
   },
 };
 </script>
 
+
 <style scoped>
-.sidebar {
+.sidebar-contents {
   position: fixed;
   width: 23%;
   height: 40%;
@@ -57,4 +64,22 @@ export default {
   white-space: pre-wrap;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.sidebar-button {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #6c757d;
+  color: white;
+  cursor: pointer;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.sidebar-button:hover {
+  background-color: #5a6268;
+}
 </style>
+
