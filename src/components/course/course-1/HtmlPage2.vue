@@ -247,128 +247,10 @@
         <Document>
           <SectionTitle sectionTitle="3-4. 要素とプロパティ③" id="sectionTitle3-4"></SectionTitle>
           <p>
-            ここまでの学習で要素の種類を変えることができました。<br><br>
-            ではここでブロック要素の特徴を思い出してください。<br>
-            ブロック要素では横並びになることなく、必ずインライン要素のように横並びにならず要素同士が縦に並びます。<br>
-            横並びにしたいときに先ほどのdisplayで要素の種類を変えることで横並びにできますが、ブロック要素の特性を持ったまま横並びにしたい場合もあります。<br><br>
-            その方法は要素を変える以外に2つパターンがあります。<br>
-            ではどのように横並びにするか見ていきましょう。<br><br>
-            プロパティ<br>
-            <HighlightWord word="float: [left,right,none];"></HighlightWord><br>
-            ・ブロック要素を横並びにするプロパティ。floatプロパティと呼ばれます。<br><br>
-            left…左寄せに横に並べる<br>
-            right…右寄せに横に並べる<br>
-            none…特に配置を指定しない(デフォルト値)<br><br>
-            <HighlightWord word="display: flex;"></HighlightWord><br>
-            ・プロパティをflexにすると横並びにできる。<br><br>
-            それではfloatから確認していきましょう。<br><br>
-            ①<br>
-            先ほどのようにVisual Studio Codeで「html-css-lesson-5」を選択して「ctrl(command) + C」でコピーして「ctrl(command) + V」で作りましょう。<br>
-            名前を「html-css-lesson-6」に変更し、以下のソースを貼り付けましょう。<br><br>
-            画像のようになればOKです。<br>
-          </p><br>
-          <Terminal :fileName="htmlSourceData.file9.filename" :copiedText="htmlSourceData.file9.code" :lang="htmlSourceData.file9.language" />
-          <Terminal :fileName="htmlSourceData.file10.filename" :copiedText="htmlSourceData.file10.code" :lang="htmlSourceData.file10.language" />
-          <br>
-          <div>
-            <img @click="openModal(imagePaths.step15)" :src="imagePaths.step15" class="screen-image" alt="vscode-8" />
-          </div><br>
-          <div>
-            <img @click="openModal(imagePaths.step16)" :src="imagePaths.step16" class="screen-image" alt="web-5" />
-          </div><br>
-          <p>
-            ②<br>
-            では横並びにしていきましょう。<br>
-            style.cssのparentの子要素に以下を追加しましょう。<br><br>
-            画像のように設定できればOKです。<br>
-          </p><br>
-          <div>
-            <img @click="openModal(imagePaths.step17)" :src="imagePaths.step17" class="screen-image" alt="vscode-9" />
-          </div><br>
-          <p>
-            ③<br>
-            Web上で確認してみましょう。<br>
-            画像のように横並びになっていればOKです。<br>
-          </p><br>
-          <div>
-            <img @click="openModal(imagePaths.step18)" :src="imagePaths.step18" class="screen-image" alt="web-6" />
-          </div><br>
-          <p>
-            ①<br>
-            次に先ほどのようにVisual Studio Codeで「html-css-lesson-6」を選択して「ctrl(command) + C」でコピーして「ctrl(command) + V」で作りましょう。<br>
-            そのあとは名前を「html-css-lesson-7」に変更し、以下のソースを貼り付けましょう。<br><br>
-            画像のようになればOKです。<br>
-          </p><br>
-          <Terminal :fileName="htmlSourceData.file11.filename" :copiedText="htmlSourceData.file11.code" :lang="htmlSourceData.file11.language" />
-          <Terminal :fileName="htmlSourceData.file12.filename" :copiedText="htmlSourceData.file12.code" :lang="htmlSourceData.file12.language" />
-          <div>
-            <img @click="openModal(imagePaths.step19)" :src="imagePaths.step19" class="screen-image" alt="vscode-10" />
-          </div><br>
-          <div>
-            <img @click="openModal(imagePaths.step20)" :src="imagePaths.step20" class="screen-image" alt="web-7" />
-          </div><br>
-          <p>
-            ②<br>
-            ではmiddleの子要素left、rightを横並びにしていきましょう。<br>
-            style.cssのmiddleの子要素に以下を追加しましょう。<br><br>
-            画像のようになればOKです。<br>
-          </p><br>
-          <div>
-            <img @click="openModal(imagePaths.step21)" :src="imagePaths.step21" class="screen-image" alt="vscode-10" />
-          </div><br>
-          <p>
-            ③<br>
-            Web上で確認しましょう。<br>
-            leftとrightは横並びにすることができました。<br><br>
-            しかし、緑が半分下に入り込んでいます。<br>
-            なぜこのようなことになるのでしょうか？<br>
-          </p><br>
-          <div>
-            <img @click="openModal(imagePaths.step22)" :src="imagePaths.step22" class="screen-image" alt="web-8" />
-          </div><br>
-        </Document>
-        <Document>
-          <SectionTitle sectionTitle="3-5. floatの性質とclearfixの概念を知る" id="sectionTitle3-5"></SectionTitle>
-          <p>
-            floatの性質を理解していきましょう。<br>
-            floatを指定した要素は浮き上がる性質があるため、浮き上がったleftとrightの下にbottomが入り込んでかぶってしまうことがあります。<br>
-            この入り込みを解決する方法がClearfixという考え方です。<br><br>
-            <HighlightWord word="Clearfix"></HighlightWord><br>
-            floatプロパティを使って横並びになっている要素を回り込みの影響が出ないようにするテクニックのこと。<br>
-            <br>
-            ではこのテクニックを使って回り込みをしないようにしましょう。<br>
-            clearfixの記述の仕方は以下のように記述が決まっています。<br><br>
-            この記述の意味は後ほど説明しますので一旦入れてみましょう。
-          </p><br>
-          <div>
-            <img @click="openModal(imagePaths.step23)" :src="imagePaths.step23" class="powerpoint-image" alt="clearfix" />
-          </div><br>
-          <p>
-            ①<br>
-            以下の画像のようにmiddleにclearfixを適用させます。
-          </p><br>
-          <div>
-            <img @click="openModal(imagePaths.step24)" :src="imagePaths.step24" class="screen-image" alt="vscode-12" />
-          </div><br>
-          <p>
-            ②<br>
-            Web上で確認するとbottomの要素が回り込んでいないことがわかります。<br>
-          </p><br>
-          <div>
-            <img @click="openModal(imagePaths.step25)" :src="imagePaths.step25" class="screen-image" alt="web-9" />
-          </div><br>
-          <p>
-            それではClearfixで使われていた::afterについて学びましょう。<br><br>
-            <HighlightWord word="疑似要素"></HighlightWord><br>
-            ::afterは疑似要素と呼ばれるセレクタに付加するキーワード。選択された要素の特定の部分にスタイルをつけることができます。<br><br>
-            以下はよく使われる疑似要素のため覚えておきましょう。<br>
-            <span class="markup-word-blue">::after</span><br>
-            要素の直後に挿入したい内容のスタイルがある時に使います。<br><br>
-            <span class="markup-word-blue">::before</span><br>
-            要素の直前に挿入したい内容のスタイルがある時に使います。<br><br>
+            疑似クラスというものを覚えておきましょう。<br><br>
             <HighlightWord word="疑似クラス"></HighlightWord><br>
             セレクタに付加するキーワードで、選択された要素の特定の部分にスタイル付けできるようにするもの。<br>
-            指定した要素の中の一部に対して影響を与える擬似要素と違い、擬似クラスは指定したもの全体の変更に影響を与える点やコロン(:)の数に違いがあります。<br><br>
+            指定した要素の中の一部に対して影響を与える擬似要素と違い、擬似クラス(lesson-4 番外編)は指定したもの全体の変更に影響を与える点やコロン(:)の数に違いがあります。<br><br>
             <span class="markup-word-blue">:hover</span><br>
             カーソルがこの擬似クラスを与えた要素に乗った時にのみ適用されるスタイルになります。<br><br>
             <span class="markup-word-blue">:not</span><br>
@@ -378,48 +260,24 @@
             <span class="markup-word-blue">:nth-child(n)</span><br>
             同じ要素の集まりのliタグで使い、この擬似クラスを与えた要素のn番目の要素のみ適用されるスタイルになります。<br><br>
             例 ::first-childと::not使った場合
-          </p><br>
+          </p>
           <div>
             <img @click="openModal(imagePaths.step26)" :src="imagePaths.step26" class="powerpoint-image" alt="firstchild" />
           </div><br>
           <p>
-            つまりClearfixでは疑似要素「::after」でmiddleの後にスタイルを挿入していたという事になります。<br>
-            では挿入したスタイルの内容を見ていきましょう。<br>
-          </p>
-        </Document>
-        <Document>
-          <SectionTitle sectionTitle="3-6. 要素とプロパティ③" id="sectionTitle3-6"></SectionTitle>
-          <p>
-            Clearfixで使われていたプロパティをおさらいしましょう。<br><br>
-            プロパティ<br>
-            <HighlightWord word="content: [挿入したい内容];"></HighlightWord><br>
-            ・要素の直前または直後に文字や画像などの内容を挿入したいときに使われるプロパティ。contentプロパティと呼ばれます。<br><br>
-            挿入できるもの<br>
-            ・url→URLで画像や音声等のファイルを指定します。<br>
-            ・"文字列"→テキストを入れることができます。<br><br>
-            <HighlightWord word="clear: both;"></HighlightWord><br>
-            ・floatプロパティによるボックスの回り込みを解除するプロパティ。clearプロパティと呼ばれます。<br><br>
-            それでは先ほどのClearfixの画像を見てみましょう。
-          </p><br>
-          <div>
-            <img @click="openModal(imagePaths.step23)" :src="imagePaths.step23" class="powerpoint-image" alt="clearfix" />
-          </div><br>
-          <p>
-            今回だと回り込みを防ぐためにmiddleの後に「content: "";」で空欄の要素を作りました。<br><br>
-            contentで追加した要素はインライン要素になるため「display: block;」でブロック要素にし、横いっぱいに空欄を与えています。<br>
-            これによってfloatで浮き上がった要素の下に空欄を埋め込み、回り込みしないようにバリアしているためbottomが入らないというわけです。<br><br>
-            さらにcontentで追加したの要素がmiddleの下に回り込みまないようにclearプロパティで回り込みを解除しています。<br><br>
-            少しイメージしづらいかもしれませんが少しずつ復習して覚えていきましょう。<br><br>
-            しかし現在CSS3ではこのやり方は推奨されておらず、もう一つの方法「display: flex;」を使った横並びの方法を使うことが多いです。<br>
-            最近追加されたプロパティのため、少し古いブラウザだと設定しても効かない場合もあるのでデザインする環境によって使い分けられるようにしましょう。<br><br>
-            では「display: flex;」のやり方も学びましょう。
-          </p>
-          <p><br><br>
+            ここまでブロック要素やインライン要素、疑似クラスとたくさん覚えてきましたが、一旦ブロック要素の特徴を思い出してください。<br>
+            ブロック要素では横並びになることなく、必ずインライン要素のように横並びにならず要素同士が縦に並びます。<br>
+            横並びにしたいときに先ほどのdisplayで要素の種類を変えることで横並びにできますが、ブロック要素の特性を持ったまま横並びにしたい場合もあります。<br><br>
+            ではどのように横並びにするか見ていきましょう。<br><br>
+            <HighlightWord word="display: flex;"></HighlightWord><br>
+            ・プロパティをflexにすると横並びにできる。<br><br>
+            それでは確認していきましょう。<br><br>
             ①<br>
             次に先ほどのようにVisual Studio Codeで「html-css-lesson-7」を選択して「ctrl(command) + C」でコピーして「ctrl(command) + V」で作りましょう。<br>
             そのあとは名前を「html-css-lesson-8」に変更し、以下のソースを貼り付けましょう。<br><br>
             画像のようになればOKです。<br>
           </p><br>
+          <!-- floatの説明は番外編に移したのでstep15～26の変数はこのソースにはない -->
           <Terminal :fileName="htmlSourceData.file13.filename" :copiedText="htmlSourceData.file11.code" :lang="htmlSourceData.file11.language" />
           <Terminal :fileName="htmlSourceData.file14.filename" :copiedText="htmlSourceData.file12.code" :lang="htmlSourceData.file12.language" />
           <div>
@@ -438,7 +296,6 @@
             ③<br>
             Web上で確認しましょう。<br><br>
             leftとrightは横並びにすることができました。<br>
-            Clearfixよりも簡単に横並びにすることができます。<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.step29)" :src="imagePaths.step29" class="screen-image" alt="web-10" />
@@ -600,10 +457,7 @@ export default {
       { id: "sectionTitle3-1", title: "    3-1. ボックスモデル" },
       { id: "sectionTitle3-2", title: "    3-2. ブロック要素とインライン要素の違いをまとめる" },
       { id: "sectionTitle3-3", title: "    3-3. 要素とプロパティ②" },
-      { id: "sectionTitle3-4", title: "    3-4. 要素とプロパティ③" },
-      { id: "sectionTitle3-5", title: "    3-5. floatの性質とclearfixの概念を知る" },
-      { id: "sectionTitle3-6", title: "    3-6. 要素とプロパティ③" },
-      { id: "sectionTitle3-7", title: "    3-7. 要素とプロパティ④" },
+      { id: "sectionTitle3-7", title: "    3-4. 要素とプロパティ③" },
     ];
 
     onMounted(() => {
@@ -625,18 +479,8 @@ export default {
       step12: require("../../../assets/images/course/html-css-2/vscode-6.png"),
       step13: require("../../../assets/images/course/html-css-2/vscode-7.png"),
       step14: require("../../../assets/images/course/html-css-2/web-4.png"),
-      step15: require("../../../assets/images/course/html-css-2/vscode-8.png"),
-      step16: require("../../../assets/images/course/html-css-2/web-5.png"),
-      step17: require("../../../assets/images/course/html-css-2/vscode-9.png"),
-      step18: require("../../../assets/images/course/html-css-2/web-6.png"),
-      step19: require("../../../assets/images/course/html-css-2/vscode-10.png"),
-      step20: require("../../../assets/images/course/html-css-2/web-7.png"),
-      step21: require("../../../assets/images/course/html-css-2/vscode-11.png"),
-      step22: require("../../../assets/images/course/html-css-2/web-8.png"),
-      step23: require("../../../assets/images/course/html-css-2/clearfix.png"),
-      step24: require("../../../assets/images/course/html-css-2/vscode-12.png"),
-      step25: require("../../../assets/images/course/html-css-2/web-9.png"),
       step26: require("../../../assets/images/course/html-css-2/firstchild.png"),
+      // floatのパスは番外編へ移動
       step27: require("../../../assets/images/course/html-css-2/vscode-13.png"),
       step28: require("../../../assets/images/course/html-css-2/vscode-14.png"),
       step29: require("../../../assets/images/course/html-css-2/web-10.png"),

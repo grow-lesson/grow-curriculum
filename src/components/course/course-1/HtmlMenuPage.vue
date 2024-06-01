@@ -59,6 +59,38 @@
                 </div>
               </div>
             </li>
+            <li class="lesson-item">
+              <div class="lesson-itemImg">
+                <img src="../../../assets/images/menu/lesson4.png" alt="lesson4" />
+              </div>
+              <div class="lesson-itemWrap">
+                <div class="lesson-itemImg-sp">
+                  <img src="../../../assets/images/menu/lesson4-sp.png" alt="lesson4" />
+                </div>
+                <div class="lesson-itemText">
+                  <p>floatと疑似要素について学びます。</p>
+                </div>
+                <div class="lesson-btn btn">
+                  <a class="lesson-link btn" @click="goToPagelesson4"></a>
+                </div>
+              </div>
+            </li>
+            <li class="lesson-item">
+              <div class="lesson-itemImg">
+                <img src="../../../assets/images/menu/lesson5.png" alt="lesson5" />
+              </div>
+              <div class="lesson-itemWrap">
+                <div class="lesson-itemImg-sp">
+                  <img src="../../../assets/images/menu/lesson5-sp.png" alt="lesson5" />
+                </div>
+                <div class="lesson-itemText">
+                  <p>クラスの命名規則であるBEM設計・接頭辞について学びます。</p>
+                </div>
+                <div class="lesson-btn btn">
+                  <a class="lesson-link btn" @click="goToPagelesson5"></a>
+                </div>
+              </div>
+            </li>
         </ul>
       </div>
     </div>
@@ -84,6 +116,12 @@ export default {
     },
     goToPageLesson3() {
       this.$router.push({ name: "HtmlPage3" });
+    },
+    goToPagelesson4() {
+      this.$router.push({ name: "HtmlPage4" });
+    },
+    goToPagelesson5() {
+      this.$router.push({ name: "HtmlPage5" });
     },
   },
 };

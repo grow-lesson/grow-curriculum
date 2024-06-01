@@ -281,7 +281,7 @@
           <br>
           <NavigationButtons
             :previousPageName="'HtmlPage2'"
-            :nextPageName="'HtmlPage1'"
+            :nextPageName="'HtmlPageFloat'"
           />
         </Document>
         <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
