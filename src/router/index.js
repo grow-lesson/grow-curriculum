@@ -85,6 +85,18 @@ const routes = [
     component: () => import("../components/course/course-1/HtmlPage3.vue"),
   },
   {
+    path: "/html-lesson-4",
+    name: "HtmlPage4",
+    meta: { requiresAuth: true },
+    component: () => import("../components/course/course-1/HtmlPage4.vue"),
+  },
+  {
+    path: "/html-lesson-5",
+    name: "HtmlPage5",
+    meta: { requiresAuth: true },
+    component: () => import("../components/course/course-1/HtmlPage5.vue"),
+  },
+  {
     path: "/commandline-lesson-menu",
     name: "CommandLineMenuPage",
     meta: { requiresAuth: true },
