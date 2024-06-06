@@ -111,7 +111,7 @@ export default {
     };
 
     const goToJqueryMenuPage = () => {
-      router.push({ name: "UnderConstruction" });
+      router.push({ name: "JqueryMenuPage" });
     };
 
     onMounted(() => {
