@@ -76,11 +76,11 @@
             (3)clickData関数を呼び出してクリックイベントを設定します。<br>
           </p><br>
           <Terminal :fileName="jqueryData.file5.filename" :copiedText="jqueryData.file5.code" :lang="jqueryData.file5.language" />
-        </Document>
-        <NavigationButtons
-            :previousPageName="'JQueryPage9'"
-            :nextPageName="'JQueryPage1'"
+          <NavigationButtons
+            :previousPageName="'JqueryPage9'"
+            :nextPageName="'JqueryPage1'"
           />
+        </Document>
         <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
         </div>
       <div class="side-content">
@@ -123,9 +123,11 @@ export default {
   },
   setup() {
     const sections = [
-      { id: "Title", title: "1. API連携における前提知識" },
-      { id: "subTitle1", title: "  1. JQueryについて学ぶ" },
-      { id: "sectionTitle1-1", title: "    1-1. JQueryとは?" },
+      { id: "Title", title: "JQuery 10" },
+      { id: "subTitle1", title: "1. API連携における前提知識" },
+      { id: "sectionTitle1-1", title: "    1-1. APIとは?" },
+      { id: "subTitle2", title: "2. 楽天ブックスAPIを使ったデータ取得の実装" },
+      { id: "sectionTitle2-1", title: "    2-1. カリキュラムでの考え方やヒント" },
     ];
 
     onMounted(() => {

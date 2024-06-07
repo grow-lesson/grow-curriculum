@@ -64,8 +64,8 @@
           </p><br>
           <Terminal :fileName="jqueryData.file1.filename" :copiedText="jqueryData.file1.code" :lang="jqueryData.file1.language" />
           <NavigationButtons
-            :previousPageName="'JQueryPage10'"
-            :nextPageName="'JQueryPage2'"
+            :previousPageName="'JqueryPage10'"
+            :nextPageName="'JqueryPage2'"
           />
         </Document>
         <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
@@ -113,6 +113,8 @@ export default {
       { id: "Title", title: "JQuery 1" },
       { id: "subTitle1", title: "  1. JQueryについて学ぶ" },
       { id: "sectionTitle1-1", title: "    1-1. JQueryとは?" },
+      { id: "subTitle2", title: "  2. JQueryの概要と基本的なDOM操作を学びましょう" },
+      { id: "sectionTitle2-1", title: "    2-1. カリキュラムでの考え方やヒント" },
     ];
 
     onMounted(() => {

@@ -9,9 +9,9 @@
         </Document>
 
         <!-- section 1 -->
-        <SubTitle subTitle="1. スライダーの実装" id="subTitle2"></SubTitle>
+        <SubTitle subTitle="1. スライダーの実装" id="subTitle1"></SubTitle>
         <Document>
-          <SectionTitle sectionTitle="1-1. カリキュラムでの考え方やヒント" id="sectionTitle2-1"></SectionTitle>
+          <SectionTitle sectionTitle="1-1. カリキュラムでの考え方やヒント" id="sectionTitle1-1"></SectionTitle>
           <HighlightWord word="※このコードはあくまでも一つの参考としてのコードになるので効率の良い書き方やわからない所をうまく抜粋して使いましょう！"></HighlightWord>
           <p>
             このカリキュラムを行うときに必要になる工程を順にピックアップしていきましょう<br><br>
@@ -59,11 +59,11 @@
             (3)スライダーリストの位置をアニメーションで変更してください<br>
           </p><br>
           <Terminal :fileName="jqueryData.file4.filename" :copiedText="jqueryData.file4.code" :lang="jqueryData.file4.language" />
-        </Document>
-        <NavigationButtons
-            :previousPageName="'JQueryPage6'"
-            :nextPageName="'JQueryPage8'"
+          <NavigationButtons
+            :previousPageName="'JqueryPage6'"
+            :nextPageName="'JqueryPage8'"
           />
+        </Document>
         <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
         </div>
       <div class="side-content">
@@ -106,9 +106,9 @@ export default {
   },
   setup() {
     const sections = [
-      { id: "Title", title: "JQuery 1" },
-      { id: "subTitle1", title: "  1. JQueryについて学ぶ" },
-      { id: "sectionTitle1-1", title: "    1-1. JQueryとは?" },
+      { id: "Title", title: "JQuery 7" },
+      { id: "subTitle1", title: "  1. スライダーの実装" },
+      { id: "sectionTitle1-1", title: "    1-1. カリキュラムでの考え方やヒント" },
     ];
 
     onMounted(() => {

@@ -9,9 +9,9 @@
         </Document>
 
         <!-- section 1 -->
-        <SubTitle subTitle="1. JQueryのテンプレートリテラルと条件式・if文・for文、URLと日付の出力やアラートの問題" id="subTitle2"></SubTitle>
+        <SubTitle subTitle="1. JQueryのテンプレートリテラルと条件式・if文・for文、URLと日付の出力やアラートの問題" id="subTitle1"></SubTitle>
         <Document>
-          <SectionTitle sectionTitle="1-1. カリキュラムでの考え方やヒント" id="sectionTitle2-1"></SectionTitle>
+          <SectionTitle sectionTitle="1-1. カリキュラムでの考え方やヒント" id="sectionTitle1-1"></SectionTitle>
           <HighlightWord word="※このコードはあくまでも一つの参考としてのコードになるので効率の良い書き方やわからない所をうまく抜粋して使いましょう！"></HighlightWord>
           <p>
             このカリキュラムを行うときに必要になる工程を順にピックアップしていきましょう<br><br>
@@ -56,11 +56,11 @@
             ・2秒後にアラートで自分の名前を出力する処理を追加してください<br>
           </p><br>
           <Terminal :fileName="jqueryData.file1.filename" :copiedText="jqueryData.file1.code" :lang="jqueryData.file1.language" />
-        </Document>
-        <NavigationButtons
-            :previousPageName="'JQueryPage1'"
-            :nextPageName="'JQueryPage3'"
+          <NavigationButtons
+            :previousPageName="'JqueryPage1'"
+            :nextPageName="'JqueryPage3'"
           />
+        </Document>
         <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
         </div>
       <div class="side-content">
@@ -103,9 +103,9 @@ export default {
   },
   setup() {
     const sections = [
-      { id: "Title", title: "JQuery 1" },
-      { id: "subTitle1", title: "  1. JQueryについて学ぶ" },
-      { id: "sectionTitle1-1", title: "    1-1. JQueryとは?" },
+      { id: "Title", title: "JQuery 2" },
+      { id: "subTitle1", title: "  1. JQueryのテンプレートリテラルと条件式・if文・for文、URLと日付の出力やアラートの問題" },
+      { id: "sectionTitle1-1", title: "    1-1. カリキュラムでの考え方やヒント" },
     ];
 
     onMounted(() => {

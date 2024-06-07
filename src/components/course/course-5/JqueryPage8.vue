@@ -9,9 +9,9 @@
         </Document>
 
         <!-- section 1 -->
-        <SubTitle subTitle="1. スワイプの実装" id="subTitle2"></SubTitle>
+        <SubTitle subTitle="1. スワイプの実装" id="subTitle1"></SubTitle>
         <Document>
-          <SectionTitle sectionTitle="1-1. カリキュラムでの考え方やヒント" id="sectionTitle2-1"></SectionTitle>
+          <SectionTitle sectionTitle="1-1. カリキュラムでの考え方やヒント" id="sectionTitle1-1"></SectionTitle>
           <HighlightWord word="※このコードはあくまでも一つの参考としてのコードになるので効率の良い書き方やわからない所をうまく抜粋して使いましょう！"></HighlightWord>
           <p>
             このカリキュラムを行うときに必要になる工程を順にピックアップしていきましょう<br><br>
@@ -65,11 +65,11 @@
             (2)タッチ終了時の位置を計算してください<br>
           </p><br>
           <Terminal :fileName="jqueryData.file5.filename" :copiedText="jqueryData.file5.code" :lang="jqueryData.file5.language" />
-        </Document>
-        <NavigationButtons
-            :previousPageName="'JQueryPage7'"
-            :nextPageName="'JQueryPage9'"
+          <NavigationButtons
+            :previousPageName="'JqueryPage7'"
+            :nextPageName="'JqueryPage9'"
           />
+        </Document>
         <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
         </div>
       <div class="side-content">
@@ -112,9 +112,9 @@ export default {
   },
   setup() {
     const sections = [
-      { id: "Title", title: "JQuery 1" },
-      { id: "subTitle1", title: "  1. JQueryについて学ぶ" },
-      { id: "sectionTitle1-1", title: "    1-1. JQueryとは?" },
+    { id: "Title", title: "JQuery 8" },
+      { id: "subTitle1", title: "  1. スワイプの実装" },
+      { id: "sectionTitle1-1", title: "    1-1. カリキュラムでの考え方やヒント" },
     ];
 
     onMounted(() => {

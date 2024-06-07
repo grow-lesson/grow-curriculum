@@ -3,15 +3,15 @@
     <Header />
     <div class="container">
       <div class="main-content">
-        <Title title="JQuery 6" id="Title"></Title>
+        <Title title="JQuery 5" id="Title"></Title>
         <Document>
           <p>ツールチップの実装について学びましょう。</p>
         </Document>
 
         <!-- section 1 -->
-        <SubTitle subTitle="1. ツールチップの実装" id="subTitle2"></SubTitle>
+        <SubTitle subTitle="1. ツールチップの実装" id="subTitle1"></SubTitle>
         <Document>
-          <SectionTitle sectionTitle="1-1. カリキュラムでの考え方やヒント" id="sectionTitle2-1"></SectionTitle>
+          <SectionTitle sectionTitle="1-1. カリキュラムでの考え方やヒント" id="sectionTitle1-1"></SectionTitle>
           <HighlightWord word="※このコードはあくまでも一つの参考としてのコードになるので効率の良い書き方やわからない所をうまく抜粋して使いましょう！"></HighlightWord>
           <p>
             このカリキュラムを行うときに必要になる工程を順にピックアップしていきましょう<br><br>
@@ -55,11 +55,11 @@
             (4)マウスムーブ時のイベントを設定してください (関数名: mouseMoveDescription)<br>
           </p><br>
           <Terminal :fileName="jqueryData.file5.filename" :copiedText="jqueryData.file5.code" :lang="jqueryData.file5.language" />
-        </Document>
-        <NavigationButtons
-            :previousPageName="'JQueryPage4'"
-            :nextPageName="'JQueryPage6'"
+          <NavigationButtons
+            :previousPageName="'JqueryPage4'"
+            :nextPageName="'JqueryPage6'"
           />
+        </Document>
         <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
         </div>
       <div class="side-content">
@@ -102,9 +102,9 @@ export default {
   },
   setup() {
     const sections = [
-      { id: "Title", title: "JQuery 1" },
-      { id: "subTitle1", title: "  1. JQueryについて学ぶ" },
-      { id: "sectionTitle1-1", title: "    1-1. JQueryとは?" },
+      { id: "Title", title: "JQuery 5" },
+      { id: "subTitle1", title: "  1. ツールチップの実装" },
+      { id: "sectionTitle1-1", title: "    1-1. カリキュラムでの考え方やヒント" },
     ];
 
     onMounted(() => {

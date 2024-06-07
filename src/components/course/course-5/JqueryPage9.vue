@@ -9,9 +9,9 @@
         </Document>
 
         <!-- section 1 -->
-        <SubTitle subTitle="1. 神経衰弱の実装" id="subTitle2"></SubTitle>
+        <SubTitle subTitle="1. 神経衰弱の実装" id="subTitle1"></SubTitle>
         <Document>
-          <SectionTitle sectionTitle="1-1. カリキュラムでの考え方やヒント" id="sectionTitle2-1"></SectionTitle>
+          <SectionTitle sectionTitle="1-1. カリキュラムでの考え方やヒント" id="sectionTitle1-1"></SectionTitle>
           <HighlightWord word="※このコードはあくまでも一つの参考としてのコードになるので効率の良い書き方やわからない所をうまく抜粋して使いましょう！"></HighlightWord>
           <p>
             このカリキュラムを行うときに必要になる工程を順にピックアップしていきましょう<br><br>
@@ -89,11 +89,11 @@
             (3)開かれたカードはクリックできないようにしてください<br>
           </p><br>
           <Terminal :fileName="jqueryData.file7.filename" :copiedText="jqueryData.file7.code" :lang="jqueryData.file7.language" />
-        </Document>
-        <NavigationButtons
-            :previousPageName="'JQueryPage8'"
-            :nextPageName="'JQueryPage9'"
+          <NavigationButtons
+            :previousPageName="'JqueryPage8'"
+            :nextPageName="'JqueryPage10'"
           />
+        </Document>
         <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
         </div>
       <div class="side-content">
@@ -136,9 +136,9 @@ export default {
   },
   setup() {
     const sections = [
-      { id: "Title", title: "JQuery 1" },
-      { id: "subTitle1", title: "  1. JQueryについて学ぶ" },
-      { id: "sectionTitle1-1", title: "    1-1. JQueryとは?" },
+      { id: "Title", title: "JQuery 9" },
+      { id: "subTitle1", title: "  1. 神経衰弱の実装" },
+      { id: "sectionTitle1-1", title: "    1-1. カリキュラムでの考え方やヒント" },
     ];
 
     onMounted(() => {
