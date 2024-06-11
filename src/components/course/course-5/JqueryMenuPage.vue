@@ -374,6 +374,10 @@ export default {
   .lesson-itemImg-sp{
     margin-bottom: 10px;
   }
+  .lesson-itemImg-sp img{
+    width: 118px;
+    height: 29px;
+  }
   .lesson-itemTitle{
     font-size: 1.0rem;
   }
