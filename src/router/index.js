@@ -31,7 +31,7 @@ const routes = [
     component: () => import("../components/init/SetUp.vue"),
   },
   {
-    path: "/howto",
+    path: "/how-to",
     name: "HowTo",
     meta: { requiresAuth: true },
     component: () => import("../components/init/HowTo.vue"),
@@ -247,7 +247,7 @@ const routes = [
     component: () => import("../components/course/course-5/JqueryPage10.vue"),
   },
   {
-    path: "/mypage",
+    path: "/my-page",
     name: "MyPage",
     meta: { requiresAuth: true },
     component: () => import("../components/user/MyPage.vue"),
@@ -290,7 +290,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory("/grow-curriculum/"),
+  history: createWebHistory("/"),
   routes,
 });
 
@@ -306,13 +306,13 @@ function getCookie(name) {
 // ナビゲーションガード
 router.beforeEach(async (to, from, next) => {
   // テスト用
-  if(process.env.NODE_ENV === "development"){
+  if (process.env.NODE_ENV === "development") {
     if (to.meta.requiresAuth) {
       const response = await api.get('/auth/validate_token');
       if (response.status === 200) {
         // Vuexのミューテーションを呼び出してユーザー情報をストアに保存
         store.commit('setUser', response.data.data);
-        if(!store.state.user.loginData){
+        if (!store.state.user.loginData) {
           next({ name: "Login" });
           return; // テスト用の処理を終了
         }
@@ -323,7 +323,10 @@ router.beforeEach(async (to, from, next) => {
         return; // テスト用の処理を終了
       }
     }
+    next(); // テスト環境では認証が不要なルートも通過させる
+    return;
   }
+
   // 実際のAPI呼び出し
   if (to.meta.requiresAuth) {
     // 認証が必要な場合の処理
@@ -345,23 +348,27 @@ router.beforeEach(async (to, from, next) => {
         if (response.status === 200) {
           // Vuexのミューテーションを呼び出してユーザー情報をストアに保存
           store.commit('setUser', response.data.data);
-          if(!store.state.user.loginData){
+          if (!store.state.user.loginData) {
             next({ name: "Login" });
+            return;
           }
           next();
+          return;
         } else {
           next({ name: "Login" });
+          return;
         }
       } else {
         next({ name: "Login" });
+        return;
       }
     } catch (error) {
       console.error(error);
       next({ name: "Login" }); // エラーの場合もログインページにリダイレクト
+      return;
     }
-  } else {
-    next(); // 認証が不要な場合はそのまま遷移
   }
+  next(); // 認証が不要な場合はそのまま遷移
 });
 
 export default router;
