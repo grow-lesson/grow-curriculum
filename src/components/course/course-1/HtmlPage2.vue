@@ -173,7 +173,7 @@
             ボックスモデルはそのHTMLの要素の概念のことを指し、外側の余白、内側の余白というのは境界線より外側、内側をさします。
           </p><br>
           <div>
-            <img @click="openModal(imagePaths.step8)" :src="imagePaths.step8" class="powerpoint-image" alt="boxmodel" />
+            <img @click="openModal(imagePaths.step8)" :src="imagePaths.step8" class="powerpoint-image" alt="box-model" />
           </div>
         </Document>
         <Document>
@@ -262,7 +262,7 @@
             例 ::first-childと::not使った場合
           </p>
           <div>
-            <img @click="openModal(imagePaths.step26)" :src="imagePaths.step26" class="powerpoint-image" alt="firstchild" />
+            <img @click="openModal(imagePaths.step26)" :src="imagePaths.step26" class="powerpoint-image" alt="first-child" />
           </div><br>
           <p>
             ここまでブロック要素やインライン要素、疑似クラスとたくさん覚えてきましたが、一旦ブロック要素の特徴を思い出してください。<br>
@@ -317,7 +317,7 @@
             text→指定すると1行のみ入力できるテキストエリアになります。<br><br>
             <span class="markup-word-blue">value属性</span><br>
             フォームの中の値を決められる属性。<br><br>
-            <span class="markup-word-blue">placefolder属性</span><br>
+            <span class="markup-word-blue">placeholder属性</span><br>
             フォームの中に入力例を表示する属性。<br><br>
             <HighlightWord word="<textarea></textarea>"></HighlightWord><br>
             ・2行以上の入力フォームを作る要素。textareaタグと呼ばれます。<br><br>

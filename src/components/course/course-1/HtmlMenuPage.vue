@@ -71,7 +71,7 @@
                   <p>floatと疑似要素について学びます。</p>
                 </div>
                 <div class="lesson-btn btn">
-                  <a class="lesson-link btn" @click="goToPagelesson4"></a>
+                  <a class="lesson-link btn" @click="goToPageLesson4"></a>
                 </div>
               </div>
             </li>
@@ -87,7 +87,7 @@
                   <p>クラスの命名規則であるBEM設計・接頭辞について学びます。</p>
                 </div>
                 <div class="lesson-btn btn">
-                  <a class="lesson-link btn" @click="goToPagelesson5"></a>
+                  <a class="lesson-link btn" @click="goToPageLesson5"></a>
                 </div>
               </div>
             </li>
@@ -117,10 +117,10 @@ export default {
     goToPageLesson3() {
       this.$router.push({ name: "HtmlPage3" });
     },
-    goToPagelesson4() {
+    goToPageLesson4() {
       this.$router.push({ name: "HtmlPage4" });
     },
-    goToPagelesson5() {
+    goToPageLesson5() {
       this.$router.push({ name: "HtmlPage5" });
     },
   },

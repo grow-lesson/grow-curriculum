@@ -68,7 +68,7 @@ export default {
   },
   setup() {
     const sections =  [
-      { id: "Title", title: "HHTML・CSS 5" },
+      { id: "Title", title: "HTML・CSS 5" },
       { id: "subTitle", title: "1. BEM設計とは？" },
       { id: "sectionTitle1-1", title: "    1-1. タイトル①" },
     ];
