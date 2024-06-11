@@ -18,7 +18,7 @@
           <HighlightWord word="Javascript"></HighlightWord>
           <p> 
             JavaScript はウェブページを動的に操作し、対話的な体験を提供するためのプログラミング言語です。<br>
-            ウェブ開発において、HTML（構造）で骨組みを作り、CSS（スタイル）で装飾肉付けを行い、JavaScript（動作）でアニメーションや機能を作り出します。<br>
+            ウェブ開発において、HTML（構造）で骨組みを作り、CSS（スタイル）で装飾を行い、JavaScript（動作）でアニメーションや機能を作り出します。<br>
             JavaScript は、ウェブブラウザ内で動作するクライアントサイド言語として広く使われています。<br>
             <br>
             ではJavascript使う方法を学んでいきましょう!
@@ -169,7 +169,7 @@
             ディレクトリを作成したらtouchコマンドで「javascript-lesson-1.js」を作成しましょう。<br>
             作成出来たらVisual Studio Codeでディレクトリを開きましょう。<br>
             ここまでできれば以下の画像のようになっていると思います。<br>
-            Visual Studio Code出の開き方がわかない場合はHTML・CSSコースを、コマンドがわからない場合はコマンドラインコースをは一旦戻って復習しましょう。<br>
+            Visual Studio Codeの開き方がわからない場合はHTML・CSSコースに戻り、コマンドがわからない場合はコマンドラインコースに一旦戻って復習しましょう。<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.step4)" :src="imagePaths.step4" class="screen-image" alt="vscode-1" />
