@@ -1,19 +1,19 @@
 <template>
-  <div class="login-page">
+  <div class="loginPage">
     <div class="login-header">
-      <p class="login-title">GROW Learning Website</p>
+      <a @click="goToWelcomePage" class="logo">GROW Learning Website</a>
     </div>
     <div class="login-container">
-      <div class="login-text">
+      <div class="login-title">
         <div>Login</div>
       </div>
       <br>
       <div class="login">
-        <form @submit.prevent="onSubmit">
-          <input type="text" v-model="form.email" @input="validateField('email')" placeholder="メールアドレス" name="email" />
-          <p class="login-errorMessage">{{ errors.email }}</p>
-          <input type="password" v-model="form.password" @input="validateField('password')" placeholder="パスワード" name="password" />
-          <p class="login-errorMessage">{{ errors.password }}</p>
+        <form @submit="onSubmit">
+          <input type="text" v-model="email" placeholder="メールアドレス" name="email" />
+          <p class="login-errorMessage">{{ errors['form.email'] }}</p>
+          <input type="password" v-model="password" placeholder="パスワード" name="password" />
+          <p class="login-errorMessage">{{ errors['form.password'] }}</p>
           <button>ログイン</button>
         </form>
         <p class="btn-back"><a @click="goToWelcomePage">＞戻る</a></p>
@@ -23,57 +23,67 @@
 </template>
 
 <script>
-import { ref } from 'vue';
-import * as yup from 'yup';
+import { defineRule, useField, useForm } from 'vee-validate';
+import AllRules from '@vee-validate/rules';
+import { object, string, setLocale } from 'yup';
 import api from '@/axios';
 import { useRouter } from 'vue-router';
 
 export default {
   setup() {
+    setLocale({
+      mixed: {
+        defalut: '不正な値です。',
+        required:  ({ label }) => `${label}は必須の項目です。`,
+      },
+      string: {
+        email: ({ label }) => `${label}の形式ではありません。`,
+      },
+    });
+
+    Object.keys(AllRules).forEach((rule) => {
+      defineRule(rule, AllRules[rule]);
+    });
+
+
+    const schema = object({
+      form: object({
+        email: string().required().email().label('メールアドレス'),
+        password: string().required().label('パスワード'),
+      }),
+    });
+
+    const { errors, handleSubmit } = useForm({
+      validationSchema: schema,
+      initialValues: {
+        form: {
+          email: '',
+          password: '',
+        },
+      },
+    });
+
+    const { value: email, } = useField('form.email');
+    const { value: password, } = useField('form.password');
+
     const router = useRouter();
-    
-    const form = ref({
-      email: '',
-      password: '',
-    });
-
-    const errors = ref({
-      email: '',
-      password: '',
-    });
-
-    const schema = yup.object({
-      email: yup.string().required('メールアドレスは必須の項目です。').email('メールアドレスの形式ではありません。'),
-      password: yup.string().required('パスワードは必須の項目です。'),
-    });
-
-    const validateField = async (field) => {
-      try {
-        await yup.reach(schema, field).validate(form.value[field]);
-        errors.value[field] = '';
-      } catch (e) {
-        errors.value[field] = e.message;
-      }
-    };
 
     const goToWelcomePage = () => {
       router.push({ name: "Welcome" });
     };
 
-    const onSubmit = async () => {
-      try {
-        await schema.validate(form.value, { abortEarly: false });
-        const loginData = {
-          email: form.value.email,
-          password: form.value.password,
-        };
+    const onSubmit = handleSubmit(async (values) => {
+      const loginData = {
+        email: values.form.email,
+        password: values.form.password
+      }
 
-        api.post('/auth/sign_in', loginData, { withCredentials: true })
-          .then(response => {
-            if (response.data.status === 201) {
-              setCookie('access-token', response.headers['access-token']);
-              setCookie('client', response.headers['client']);
-              setCookie('uid', response.headers['uid']);
+      api.post('/auth/sign_in', loginData, { withCredentials: true })
+        .then(response => {
+          if (response.data.status === 201) {
+            setCookie('access-token', response.headers['access-token']);
+            setCookie('client', response.headers['client']);
+            setCookie('uid', response.headers['uid']);
 
             router.push({ name: 'MenuPage' });
           } else {
@@ -82,54 +92,69 @@ export default {
         })
         .catch(error => {
           console.error(error);
-          alert('ログインエラーが発生しました');
-        }
-      );
+          let errorMessage = 'ログインエラーが発生しました';
+          if (error.response) {
+            // サーバーがレスポンスを返したが、ステータスコードが2xxの範囲外
+            errorMessage = error.response.data.message || errorMessage;
+          } else if (error.request) {
+            // リクエストが送信されたが、レスポンスがない
+            errorMessage = 'サーバーから応答がありません。ネットワークを確認してください。';
+          } else {
+            // リクエストの設定中にエラーが発生
+            errorMessage = error.message;
+          }
+          alert(errorMessage);
+        });
 
 
-    function setCookie(name, value) {
-      const days = 7;
-      const date = new Date();
-      date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-      const expires = "expires=" + date.toUTCString();
-      const cookieValue = encodeURIComponent(value);
-      document.cookie = `${name}=${cookieValue};${expires};path=/;secure;SameSite=strict`;
-    }
+
+      function setCookie(name, value) {
+        const days = 7;
+        const date = new Date();
+        date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+        const expires = "expires=" + date.toUTCString();
+        const cookieValue = encodeURIComponent(value);
+        document.cookie = `${name}=${cookieValue};${expires};path=/;secure;SameSite=strict`;
+      }
+    });
 
     return {
-      form,
+      email,
+      password,
       errors,
       onSubmit,
       goToWelcomePage,
-      validateField,
     };
-  },
-};
-</script>
-
-<style>
-.login-page {
-  width: 100%;
-  background-color: #228bc8;
-  font-size: 12px;
-  height: 100vh;
-  padding-bottom: 40px;
+  }
 }
+</script>
+<style>
 
 .login-header {
+  position: fixed;
+  top: 0;
   width: 100%;
-  background-color: rgba(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.9);
   display: flex;
   align-items: center;
-  padding: 30px 30px 10px 30px;
-  margin-bottom: 50px;
+  padding: 20px;
 }
 
-.login-title {
+.logo {
   font-size: 24px;
   font-weight: bold;
+  text-decoration: none;
   color: #333;
   padding-left: 20px;
+  cursor: pointer;
+}
+
+.loginPage {
+  width: 100%;
+  height: 100vh;
+  padding: 150px 0;
+  background-color: #228bc8;
+  font-size: 12px;
 }
 
 .login-container {
@@ -142,7 +167,7 @@ export default {
   font-size: 16px;
 }
 
-.login-text {
+.login-title {
   text-align: center;
   margin-bottom: 20px;
   font-size: 24px;
@@ -215,10 +240,15 @@ export default {
   cursor: pointer;
 }
 
+.btn-back[disabled="false"] {
+  color: gray;
+}
+
 @media (max-width: 648px) {
-  .login-container {
+  .login-container{
     width: 300px;
     padding: 20px 20px 100px 20px;
   }
+
 }
 </style>
