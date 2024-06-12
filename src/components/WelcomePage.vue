@@ -93,8 +93,7 @@ export default {
   background-color: rgba(255, 255, 255, 0.9);
   display: flex;
   align-items: center;
-  padding: 20px;
-  padding: env(safe-area-inset-top, 40px); /* 上部の安全領域を考慮 */
+  padding: env(safe-area-inset-top, 20px) 20px 20px; /* 上部の安全領域を考慮 */
 }
 
 .welcome-title {
@@ -113,6 +112,7 @@ export default {
   justify-content: center;
   height: 100vh;
   font-family: Arial, sans-serif;
+  padding-top: env(safe-area-inset-top); /* 上部の安全領域を考慮 */
 }
 
 .box {
@@ -228,7 +228,7 @@ export default {
 
 @media (max-width: 648px) {
   .welcome-header {
-    padding: 10px;
+    padding: env(safe-area-inset-top, 10px) 10px 10px; /* 上部の安全領域を考慮 */
   }
 
   .welcome-title {
