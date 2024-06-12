@@ -307,7 +307,6 @@ function getCookie(name) {
 router.beforeEach(async (to, from, next) => {
   // テスト用
   if (process.env.NODE_ENV === "development") {
-    console.log("develop");
     if (to.meta.requiresAuth) {
       const response = await api.get('/auth/validate_token');
       if (response.status === 200) {
@@ -330,15 +329,11 @@ router.beforeEach(async (to, from, next) => {
   console.log(process.env.NODE_ENV)
   // 実際のAPI呼び出し
   if (to.meta.requiresAuth) {
-    console.log("実際のAPI");
     // 認証が必要な場合の処理
     try {
-      console.log('try')
       const accessToken = getCookie('access-token');
       const client = getCookie('client');
       const uid = decodeURIComponent(getCookie('uid')); // UIDをデコード
-
-      console.log(accessToken, client, uid)
 
       if (accessToken && client && uid) {
         const response = await api.get('/auth/validate_token', {
@@ -349,7 +344,6 @@ router.beforeEach(async (to, from, next) => {
           },
           withCredentials: true // クレデンシャル情報を含める設定
         });
-        console.log(response.status, response)
         if (response.status === 200) {
           // Vuexのミューテーションを呼び出してユーザー情報をストアに保存
           store.commit('setUser', response.data.data);
@@ -368,7 +362,6 @@ router.beforeEach(async (to, from, next) => {
         return;
       }
     } catch (error) {
-      console.log('catch')
       console.error(error);
       next({ name: "Login" }); // エラーの場合もログインページにリダイレクト
       return;
