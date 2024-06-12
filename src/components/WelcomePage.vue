@@ -75,6 +75,11 @@ export default {
 </script>
 
 <style scoped>
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .welcome-header {
   position: fixed;
   top: 0;
@@ -82,8 +87,8 @@ export default {
   background-color: rgba(255, 255, 255, 0.9);
   display: flex;
   align-items: center;
-  padding: 20px;
-  margin-top: env(safe-area-inset-top); /* 上部の安全領域を考慮 */
+  padding: calc(env(safe-area-inset-top) + 20px) 20px 20px;
+  box-sizing: border-box;
 }
 
 .welcome-title {
@@ -101,6 +106,8 @@ export default {
   justify-content: center;
   height: 100vh;
   font-family: Arial, sans-serif;
+  padding-top: calc(env(safe-area-inset-top) + 60px); /* 上部の安全領域を考慮してさらにスペースを追加 */
+  box-sizing: border-box;
 }
 
 .box {
@@ -211,8 +218,7 @@ export default {
 
 @media (max-width: 648px) {
   .welcome-header {
-    padding: 10px;
-    margin-top: calc(env(safe-area-inset-top) + 10px); /* 上部の安全領域を考慮 */
+    padding: calc(env(safe-area-inset-top) + 10px) 10px 10px;
   }
 
   .welcome-title {
