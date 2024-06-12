@@ -18,7 +18,18 @@ const isInWebView = () => {
 
 const applyWebViewPadding = () => {
   if (isInWebView() && app.value) {
-    app.value.style.padding = 'env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)';
+    // デバイスの種類に応じて異なるパディングを設定
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    if (/iPhone/i.test(userAgent)) {
+      // iPhoneの内カメラを避けるために十分な上部パディングを設定
+      app.value.style.paddingTop = 'calc(env(safe-area-inset-top) + 30px)';
+    } else if (/android/i.test(userAgent)) {
+      // Androidデバイスのための上部パディングを設定
+      app.value.style.paddingTop = '20px';
+    } else {
+      // 他のデバイスの場合の上部パディングを設定
+      app.value.style.paddingTop = '10px';
+    }
   }
 };
 
