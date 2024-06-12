@@ -94,6 +94,7 @@ export default {
   display: flex;
   align-items: center;
   padding: 20px;
+  padding: env(safe-area-inset-top, 40px); /* 上部の安全領域を考慮 */
 }
 
 .welcome-title {
@@ -112,7 +113,6 @@ export default {
   justify-content: center;
   height: 100vh;
   font-family: Arial, sans-serif;
-  padding: env(safe-area-inset-top, 20px) 20px 20px; /* 上部の安全領域を考慮 */
 }
 
 .box {
