@@ -1,6 +1,6 @@
 {
   "appId": "com.grow.curriculum",
   "appName": "GrowCurriculum",
-  "webDir": "docs",
+  "webDir": "dist",
   "bundledWebRuntime": false
 }
