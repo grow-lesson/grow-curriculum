@@ -346,7 +346,7 @@ router.beforeEach(async (to, from, next) => {
           },
           withCredentials: true // クレデンシャル情報を含める設定
         });
-
+        console.log(response.status, response)
         if (response.status === 200) {
           // Vuexのミューテーションを呼び出してユーザー情報をストアに保存
           store.commit('setUser', response.data.data);
