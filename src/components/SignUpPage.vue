@@ -1,7 +1,7 @@
 <template>
   <div class="signup-page">
     <div class="signup-header">
-      <a @click="goToWelcomePage" class="logo">GROW Learning Website</a>
+      <p class="signup-title">GROW Learning Website</p>
     </div>
     <div class="signup-container">
       <div class="signup-text">
@@ -9,27 +9,27 @@
       </div>
       <br>
       <div class="signup">
-        <form @submit="onSubmit">
-          <input v-model="username" type="text" placeholder="ユーザー名" name="username"><br>
-          <p class="signup-errorMessage">{{ errors['form.username'] }}</p>
+        <form @submit.prevent="onSubmit">
+          <input v-model="form.username" @input="validateField('username')" type="text" placeholder="ユーザー名" name="username"><br>
+          <p class="signup-errorMessage">{{ errors.username }}</p>
           <div class="signup-name">
-            <input v-model="lastName" type="text" placeholder="姓" name="lastName"><br>
-            <input v-model="firstName" type="text" placeholder="名" name="firstName"><br>
+            <input v-model="form.lastName" @input="validateField('lastName')" type="text" placeholder="姓" name="lastName"><br>
+            <input v-model="form.firstName" @input="validateField('firstName')" type="text" placeholder="名" name="firstName"><br>
           </div>
-          <p class="signup-errorMessage">{{ errors['form.lastName'] }}</p>
-          <p class="signup-errorMessage">{{ errors['form.firstName'] }}</p>
+          <p class="signup-errorMessage">{{ errors.lastName }}</p>
+          <p class="signup-errorMessage">{{ errors.firstName }}</p>
           <div class="signup-name-kana">
-            <input v-model="lastNameKana" type="text" placeholder="姓(カナ)" name="lastNameKana"><br>
-            <input v-model="firstNameKana" type="text" placeholder="名(カナ)" name="firstNameKana"><br>
+            <input v-model="form.lastNameKana" @input="validateField('lastNameKana')" type="text" placeholder="姓(カナ)" name="lastNameKana"><br>
+            <input v-model="form.firstNameKana" @input="validateField('firstNameKana')" type="text" placeholder="名(カナ)" name="firstNameKana"><br>
           </div>
-          <p class="signup-errorMessage">{{ errors['form.lastNameKana'] }}</p>
-          <p class="signup-errorMessage">{{ errors['form.firstNameKana'] }}</p>
-          <input v-model="email" type="text" placeholder="メールアドレス" name="email"><br>
-          <p class="signup-errorMessage">{{ errors['form.email'] }}</p>
-          <input v-model="password" type="password" placeholder="パスワード" name="password"><br>
-          <p class="signup-errorMessage">{{ errors['form.password'] }}</p>
-          <input v-model="confirmedPassword" type="password" placeholder="確認用パスワード" name="confirmedPassword"><br>
-          <p class="signup-errorMessage">{{ errors['form.confirmedPassword'] }}</p>
+          <p class="signup-errorMessage">{{ errors.lastNameKana }}</p>
+          <p class="signup-errorMessage">{{ errors.firstNameKana }}</p>
+          <input v-model="form.email" @input="validateField('email')" type="text" placeholder="メールアドレス" name="email"><br>
+          <p class="signup-errorMessage">{{ errors.email }}</p>
+          <input v-model="form.password" @input="validateField('password')" type="password" placeholder="パスワード" name="password"><br>
+          <p class="signup-errorMessage">{{ errors.password }}</p>
+          <input v-model="form.confirmedPassword" @input="validateField('confirmedPassword')" type="password" placeholder="確認用パスワード" name="confirmedPassword"><br>
+          <p class="signup-errorMessage">{{ errors.confirmedPassword }}</p>
           <button type="submit">新規登録</button>
         </form>
         <p class="btn-back"><a @click="goToWelcomePage">＞戻る</a></p>
@@ -39,156 +39,138 @@
 </template>
 
 <script>
-import { defineRule, useField, useForm } from 'vee-validate';
-import AllRules from '@vee-validate/rules';
-import { object, string, setLocale } from 'yup';
-import * as yup from "yup";
+import { ref, watch } from 'vue';
+import * as yup from 'yup';
 import api from '@/axios';
 import { useRouter } from 'vue-router';
 
 export default {
   setup() {
-    setLocale({
-      mixed: {
-        defalut: '不正な値です。',
-        required:  ({ label }) => `${label}は必須の項目です`,
-        oneOf:  ({ label }) => `${label}はパスワードと一致しません`,
-      },
-      string: {
-        email: ({ label }) => `${label}の形式ではありません`,
-        matches: ({ label }) => `${label}はカタカナのみで入力して下さい`,
-        max: ({ label }) => `${label}は30文字以下で入力してください`,
-        min: ({ label }) => `${label}は7文字以上で入力してください`,
-      },
+    const router = useRouter();
+    
+    const form = ref({
+      username: '',
+      lastName: '',
+      firstName: '',
+      lastNameKana: '',
+      firstNameKana: '',
+      email: '',
+      password: '',
+      confirmedPassword: '',
     });
 
-    Object.keys(AllRules).forEach((rule) => {
-      defineRule(rule, AllRules[rule]);
+    const errors = ref({
+      username: '',
+      lastName: '',
+      firstName: '',
+      lastNameKana: '',
+      firstNameKana: '',
+      email: '',
+      password: '',
+      confirmedPassword: '',
     });
 
-    const kanaPattern = /^[\u30A1-\u30FA\u30FCｦ-ﾝ]+$/u
+    const kanaPattern = /^[\u30A1-\u30FA\u30FCｦ-ﾝ]+$/u;
     const passwordPattern = /^[a-zA-Z0-9!@#$%^&*()_+{}[\]:;<>,.?~\\/-]+$/;
 
-    const schema = object({
-      form: object({
-        username: string().required().label('ユーザーネーム'),
-        lastName: string().required().label('苗字'),
-        firstName: string().required().label('名前'),
-        lastNameKana: string().required().matches(kanaPattern).label('苗字(カナ)'),
-        firstNameKana: string().required().matches(kanaPattern).label('名前(カナ)'),
-        email: string().required().email().label('メールアドレス'),
-        password: string().required().label('パスワード').max(30).min(7)
-          .test('matches-pattern', '記号を含む半角英数、数字のみ使用可能です', (value) => {
-            if (value === null || value === undefined || value.length === 0) {
-              return true; // バリデーションをスキップ
-            }
-            return passwordPattern.test(value);
-          }),
-        confirmedPassword: string().required().oneOf([yup.ref("password"),undefined]).label('確認用パスワード'),
-      }),
+    const schema = yup.object({
+      username: yup.string().required('ユーザーネームは必須の項目です'),
+      lastName: yup.string().required('苗字は必須の項目です'),
+      firstName: yup.string().required('名前は必須の項目です'),
+      lastNameKana: yup.string().required('苗字(カナ)は必須の項目です').matches(kanaPattern, '苗字(カナ)はカタカナのみで入力して下さい'),
+      firstNameKana: yup.string().required('名前(カナ)は必須の項目です').matches(kanaPattern, '名前(カナ)はカタカナのみで入力して下さい'),
+      email: yup.string().required('メールアドレスは必須の項目です').email('メールアドレスの形式ではありません'),
+      password: yup.string().required('パスワードは必須の項目です').min(7, 'パスワードは7文字以上で入力してください').max(30, 'パスワードは30文字以下で入力してください')
+        .matches(passwordPattern, '記号を含む半角英数、数字のみ使用可能です'),
+      confirmedPassword: yup.string().required('確認用パスワードは必須の項目です').oneOf([yup.ref('password'), null], '確認用パスワードはパスワードと一致しません'),
     });
 
-    const { errors, handleSubmit } = useForm({
-      validationSchema: schema,
-      initialValues: {
-        form: {
-          username: '',
-          lastName: '',
-          firstName: '',
-          lastNameKana: '',
-          firstNameKana: '',
-          email: '',
-          password: '',
-          confirmedPassword: '',
-        },
-      },
-    });
-
-    const { value: username, } = useField('form.username');
-    const { value: lastName, } = useField('form.lastName');
-    const { value: firstName, } = useField('form.firstName');
-    const { value: lastNameKana, } = useField('form.lastNameKana');
-    const { value: firstNameKana, } = useField('form.firstNameKana');
-    const { value: email, } = useField('form.email');
-    const { value: password, } = useField('form.password');
-    const { value: confirmedPassword, } = useField('form.confirmedPassword');
-
-    const router = useRouter();
+    const validateField = async (field) => {
+      try {
+        await yup.reach(schema, field).validate(form.value[field]);
+        errors.value[field] = '';
+      } catch (e) {
+        errors.value[field] = e.message;
+      }
+    };
 
     const goToWelcomePage = () => {
       router.push({ name: "Welcome" });
     };
 
-    const onSubmit = handleSubmit(async (values) => {
-      const loginData = {
-        username: values.form.username,
-        name: values.form.lastName + values.form.firstName,
-        last_name_kana: values.form.lastNameKana,
-        first_name_kana: values.form.firstNameKana,
-        email: values.form.email,
-        password: values.form.password,
-      }
+    const onSubmit = async () => {
+      try {
+        await schema.validate(form.value, { abortEarly: false });
+        const loginData = {
+          username: form.value.username,
+          name: form.value.lastName + form.value.firstName,
+          last_name_kana: form.value.lastNameKana,
+          first_name_kana: form.value.firstNameKana,
+          email: form.value.email,
+          password: form.value.password,
+        };
 
-      api.post('/auth', loginData, { withCredentials: true })
-        .then(response => {
-          if (response.data.status === 201) {
-            alert('新規登録が完了しました');
-            router.push({ name: 'Login' });
-          } else {
-            throw new Error('登録エラーが発生しました');
-          }
-        })
-        .catch(error => {
-          console.error(error);
-          alert('登録エラーが発生しました');
+        api.post('/auth', loginData, { withCredentials: true })
+          .then(response => {
+            if (response.data.status === 201) {
+              alert('新規登録が完了しました');
+              router.push({ name: 'Login' });
+            } else {
+              throw new Error('登録エラーが発生しました');
+            }
+          })
+          .catch(error => {
+            console.error(error);
+            alert('登録エラーが発生しました');
+          });
+      } catch (err) {
+        err.inner.forEach(e => {
+          errors.value[e.path] = e.message;
+        });
+      }
+    };
+
+    watch(form, (newVal, oldVal) => {
+      for (let key in newVal) {
+        if (newVal[key] !== oldVal[key]) {
+          validateField(key);
         }
-      );
-    });
+      }
+    }, { deep: true });
 
     return {
-      username,
-      lastName,
-      firstName,
-      lastNameKana,
-      firstNameKana,
-      email,
-      password,
-      confirmedPassword,
+      form,
       errors,
       onSubmit,
       goToWelcomePage,
+      validateField,
     };
-  }
-}
+  },
+};
 </script>
 
-
 <style>
-
-.signup-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
-  display: flex;
-  align-items: center;
-  padding: 20px;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #333;
-  padding-left: 20px;
-  cursor: pointer;
-}
-
 .signup-page {
   width: 100%;
-  padding: 150px 0;
   background-color: #228bc8;
   font-size: 12px;
+  padding-bottom: 40px;
+}
+
+.signup-header {
+  width: 100%;
+  background-color: rgba(255, 255, 255);
+  display: flex;
+  align-items: center;
+  padding: 30px 30px 10px 30px;
+  margin-bottom: 20px;
+}
+
+.signup-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  padding-left: 20px;
 }
 
 .signup-container {
@@ -287,10 +269,9 @@ export default {
 }
 
 @media (max-width: 648px) {
-  .signup-container{
+  .signup-container {
     width: 300px;
     padding: 20px 20px 100px 20px;
   }
-
 }
 </style>
