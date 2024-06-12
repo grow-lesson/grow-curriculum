@@ -1,4 +1,5 @@
 import UIKit
+import Alamofire
 import Capacitor
 
 @UIApplicationMain
@@ -11,39 +12,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+    func login(email: String, password: String, completion: @escaping (Result<Void, Error>) -> Void) {
+        let loginData: [String: Any] = [
+            "email": email,
+            "password": password
+        ]
+
+        let url = "https://grow-curriculum-backend-f10ce9239245.herokuapp.com/auth/sign_in"
+
+        AF.request(url, method: .post, parameters: loginData, encoding: JSONEncoding.default).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                if let json = value as? [String: Any], let status = json["status"] as? String, status == "success" {
+                    if let headers = response.response?.allHeaderFields as? [String: String] {
+                        self.setCookies(headers: headers)
+                    }
+                    completion(.success(()))
+                } else {
+                    completion(.failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "ログインエラーが発生しました"])))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
     }
 
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    private func setCookies(headers: [String: String]) {
+        if let accessToken = headers["access-token"],
+           let client = headers["client"],
+           let uid = headers["uid"] {
+            UserDefaults.standard.set(accessToken, forKey: "access-token")
+            UserDefaults.standard.set(client, forKey: "client")
+            UserDefaults.standard.set(uid, forKey: "uid")
+        }
     }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
-        // Called when the app was launched with a url. Feel free to add additional processing here,
-        // but if you want the App API to support tracking app url opens, make sure to keep this call
-        return ApplicationDelegateProxy.shared.application(app, open: url, options: options)
-    }
-
-    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
-        // Called when the app was launched with an activity, including Universal Links.
-        // Feel free to add additional processing here, but if you want the App API to support
-        // tracking app url opens, make sure to keep this call
-        return ApplicationDelegateProxy.shared.application(application, continue: userActivity, restorationHandler: restorationHandler)
-    }
-
 }
