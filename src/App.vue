@@ -16,25 +16,15 @@ const isInWebView = () => {
   return (/iphone|ipod|ipad|android/i.test(userAgent) && !window.MSStream);
 };
 
-const applyWebViewPadding = () => {
+const applyWebViewMargin = () => {
   if (isInWebView() && app.value) {
-    // デバイスの種類に応じて異なるパディングを設定
-    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    if (/iPhone/i.test(userAgent)) {
-      // iPhoneの内カメラを避けるために十分な上部パディングを設定
-      app.value.style.paddingTop = 'calc(env(safe-area-inset-top) + 30px)';
-    } else if (/android/i.test(userAgent)) {
-      // Androidデバイスのための上部パディングを設定
-      app.value.style.paddingTop = '20px';
-    } else {
-      // 他のデバイスの場合の上部パディングを設定
-      app.value.style.paddingTop = '10px';
-    }
+    // ノッチやカメラの位置を避けるための上部マージンを設定
+    app.value.style.marginTop = 'calc(env(safe-area-inset-top) + 44px)';
   }
 };
 
 onMounted(() => {
-  applyWebViewPadding();
+  applyWebViewMargin();
 });
 </script>
 
@@ -49,10 +39,7 @@ onMounted(() => {
 /* ノッチ対応 */
 @supports(padding: env(safe-area-inset-top)) {
   #app {
-    padding-top: env(safe-area-inset-top);
-    padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right);
-    padding-bottom: env(safe-area-inset-bottom);
+    margin-top: env(safe-area-inset-top);
   }
 }
 
