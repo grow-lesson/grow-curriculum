@@ -1,5 +1,5 @@
 <template>
-  <div id="app" ref="app">
+  <div id="app" :class="{ 'app-with-padding': isWebView }">
     <router-view />
   </div>
 </template>
@@ -9,22 +9,15 @@ import "normalize.css";
 import "destyle.css";
 import { ref, onMounted } from 'vue';
 
-const app = ref(null);
+const isWebView = ref(false);
 
 const isInWebView = () => {
   const userAgent = navigator.userAgent || navigator.vendor || window.opera;
   return (/iphone|ipod|ipad|android/i.test(userAgent) && !window.MSStream);
 };
 
-const applyWebViewMargin = () => {
-  if (isInWebView() && app.value) {
-    // ノッチやカメラの位置を避けるための上部マージンを設定
-    app.value.style.marginTop = 'calc(env(safe-area-inset-top) + 44px)';
-  }
-};
-
 onMounted(() => {
-  applyWebViewMargin();
+  isWebView.value = isInWebView();
 });
 </script>
 
@@ -36,11 +29,9 @@ onMounted(() => {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ノッチ対応 */
-@supports(padding: env(safe-area-inset-top)) {
-  #app {
-    margin-top: env(safe-area-inset-top);
-  }
+/* ノッチ対応のスタイルはスマホアプリでのみ適用 */
+.app-with-padding {
+  padding-top: 50px; /* ここで必要な上部の隙間を調整 */
 }
 
 /* Global Styles */
