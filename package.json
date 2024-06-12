@@ -11,6 +11,9 @@
     "mock-server": "node mirage/server.js"
   },
   "dependencies": {
+    "@capacitor/cli": "^6.1.0",
+    "@capacitor/core": "^6.1.0",
+    "@capacitor/ios": "^6.1.0",
     "@vee-validate/rules": "^4.11.3",
     "axios": "^1.4.0",
     "depcheck": "^1.4.7",
