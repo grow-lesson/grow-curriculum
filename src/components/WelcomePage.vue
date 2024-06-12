@@ -232,7 +232,6 @@ export default {
 
   .welcome-title {
     padding: 0 10px;
-    margin-top: 40px;
   }
 
   .background-image {
@@ -252,5 +251,14 @@ export default {
     width: 250px;
     color: #fff;
   }
+}
+/* iPhoneのノッチに対応 */
+@supports(padding: env(safe-area-inset-top)) {
+    .content {
+        padding-top: env(safe-area-inset-top);
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+        padding-bottom: env(safe-area-inset-bottom);
+    }
 }
 </style>
