@@ -162,7 +162,7 @@ export default {
   background-color: rgba(255, 255, 255, 0.9);
   display: flex;
   align-items: center;
-  padding: 30px;
+  padding: 30px 30px 20px 30px;
   margin-bottom: 20px;
 }
 

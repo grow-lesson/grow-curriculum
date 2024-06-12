@@ -1,20 +1,19 @@
 <template>
-  <transition name="fade">
-    <div class="welcome">
-      <div class="welcome-header">
-        <p class="welcome-title">GROW Learning Website</p>
-      </div>
-      <div class="background-image" :style="backgroundStyle">
-        <div class="welcome-container">
-          <div class="box">
-            <h1 class="title" :class="{ floating: isFloating }">カリキュラムを<span>受講しよう！</span></h1>
-            <button class="change_component_button" @click="goToSignUP" @focus="buttonFocus" @blur="buttonBlur">新規登録</button>
-            <button class="change_component_button" @click="goToLogin" @focus="buttonFocus" @blur="buttonBlur">ログイン</button>
-          </div>
+  <div class="welcome">
+    <div class="welcome-header">
+      <p class="welcome-title">GROW Learning Website</p>
+    </div>
+    <div class="background-image-wrapper">
+      <div :class="['background-image', { 'fade-in': isFloating }]" :style="backgroundStyle"></div>
+      <div class="welcome-container">
+        <div class="box">
+          <h1 class="title">カリキュラムを<span>受講しよう！</span></h1>
+          <button class="change_component_button" @click="goToSignUP">新規登録</button>
+          <button class="change_component_button" @click="goToLogin">ログイン</button>
         </div>
       </div>
     </div>
-  </transition>
+  </div>
 </template>
 
 <script setup>
@@ -36,7 +35,6 @@ const isFloating = ref(true);
 
 const backgroundStyle = computed(() => ({
   backgroundImage: `url(${backgroundImages[currentImageIndex.value]})`,
-  opacity: isFloating.value ? 1 : 0,
 }));
 
 const goToSignUP = () => {
@@ -51,25 +49,14 @@ const changeBackgroundImage = () => {
   currentImageIndex.value = (currentImageIndex.value + 1) % backgroundImages.length;
 };
 
-const buttonFocus = () => {
-  isFloating.value = true;
-};
-
-const buttonBlur = () => {
-  isFloating.value = false;
-};
-
 onMounted(() => {
   setInterval(() => {
     isFloating.value = false;
     setTimeout(() => {
       changeBackgroundImage();
       isFloating.value = true;
-    }, 500);
-    setTimeout(() => {
-      isFloating.value = false;
-    }, 4500);
-  }, 5000);
+    }, 2000); // Shorten this value for a faster fade-out time
+  }, 8000); // Adjust this value for the interval between images
 });
 </script>
 
@@ -85,7 +72,7 @@ onMounted(() => {
   background-color: rgba(255, 255, 255, 0.9);
   display: flex;
   align-items: center;
-  padding: 30px;
+  padding: 30px 30px 20px 30px;
 }
 
 .welcome-title {
@@ -95,18 +82,33 @@ onMounted(() => {
   padding-left: 20px;
 }
 
-.background-image {
+.background-image-wrapper {
+  position: relative;
   flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  transition: opacity 0.5s ease;
+  opacity: 0;
+  transition: opacity 2s ease-in-out; /* Opacity transition duration */
+}
+
+.background-image.fade-in {
+  opacity: 1;
 }
 
 .welcome-container {
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -129,30 +131,14 @@ onMounted(() => {
   justify-content: center;
 }
 
-/* フェードトランジションのクラス */
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 1.5s ease;
-}
-
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-
 .title {
   font-size: 32px;
   margin-bottom: 20px;
   padding: 10px 20px;
   border-radius: 4px;
-  transition: transform 0.3s ease;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-.title.floating {
-  transform: translateY(-5px);
 }
 
 .change_component_button {
