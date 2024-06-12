@@ -18,10 +18,18 @@ const isInWebView = () => {
 
 const applyWebViewPadding = () => {
   if (isInWebView() && app.value) {
-    app.value.style.paddingTop = 'env(safe-area-inset-top)';
-    app.value.style.paddingLeft = 'env(safe-area-inset-left)';
-    app.value.style.paddingRight = 'env(safe-area-inset-right)';
-    app.value.style.paddingBottom = 'env(safe-area-inset-bottom)';
+    // デバイスの種類に応じて異なるパディングを設定
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    if (/iPhone/i.test(userAgent)) {
+      // iPhoneの内カメラを避けるために十分な上部パディングを設定
+      app.value.style.paddingTop = 'calc(env(safe-area-inset-top) + 30px)';
+    } else if (/android/i.test(userAgent)) {
+      // Androidデバイスのための上部パディングを設定
+      app.value.style.paddingTop = '20px';
+    } else {
+      // 他のデバイスの場合の上部パディングを設定
+      app.value.style.paddingTop = '10px';
+    }
   }
 };
 
@@ -36,10 +44,9 @@ onMounted(() => {
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
-/* ノッチと内カメラ対応 */
+/* ノッチ対応 */
 @supports(padding: env(safe-area-inset-top)) {
   #app {
     padding-top: env(safe-area-inset-top);
@@ -55,7 +62,5 @@ body {
   line-height: 1.6;
   background-color: #f5f5f5;
   color: #2c3e50;
-  margin: 0; /* Bodyのマージンをリセット */
-  padding: 0; /* Bodyのパディングをリセット */
 }
 </style>
