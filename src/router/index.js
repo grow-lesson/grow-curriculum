@@ -307,6 +307,7 @@ function getCookie(name) {
 router.beforeEach(async (to, from, next) => {
   // テスト用
   if (process.env.NODE_ENV === "development") {
+    console.log("develop");
     if (to.meta.requiresAuth) {
       const response = await api.get('/auth/validate_token');
       if (response.status === 200) {
@@ -326,9 +327,10 @@ router.beforeEach(async (to, from, next) => {
     next(); // テスト環境では認証が不要なルートも通過させる
     return;
   }
-
+  console.log(process.env.NODE_ENV)
   // 実際のAPI呼び出し
   if (to.meta.requiresAuth) {
+    console.log("実際のAPI");
     // 認証が必要な場合の処理
     try {
       const accessToken = getCookie('access-token');
