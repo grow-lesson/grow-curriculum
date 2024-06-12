@@ -18,7 +18,10 @@ const isInWebView = () => {
 
 const applyWebViewPadding = () => {
   if (isInWebView() && app.value) {
-    app.value.style.padding = 'env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)';
+    app.value.style.paddingTop = 'env(safe-area-inset-top)';
+    app.value.style.paddingLeft = 'env(safe-area-inset-left)';
+    app.value.style.paddingRight = 'env(safe-area-inset-right)';
+    app.value.style.paddingBottom = 'env(safe-area-inset-bottom)';
   }
 };
 
@@ -33,9 +36,10 @@ onMounted(() => {
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
-/* ノッチ対応 */
+/* ノッチと内カメラ対応 */
 @supports(padding: env(safe-area-inset-top)) {
   #app {
     padding-top: env(safe-area-inset-top);
@@ -51,5 +55,7 @@ body {
   line-height: 1.6;
   background-color: #f5f5f5;
   color: #2c3e50;
+  margin: 0; /* Bodyのマージンをリセット */
+  padding: 0; /* Bodyのパディングをリセット */
 }
 </style>
