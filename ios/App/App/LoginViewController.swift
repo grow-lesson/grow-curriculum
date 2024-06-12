@@ -24,7 +24,13 @@ class LoginViewController: UIViewController {
       "password": password
     ]
 
-    AF.request("https://grow-curriculum-backend-f10ce9239245.herokuapp.com/login", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+    let apiUrl = "https://grow-curriculum-backend-f10ce9239245.herokuapp.com/login"
+
+    AF.request(apiUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+      print("Request: \(String(describing: response.request))")
+      print("Response: \(String(describing: response.response))")
+      print("Result: \(response.result)")
+
       switch response.result {
       case .success(let value):
         if let json = value as? [String: Any], let token = json["token"] as? String {
@@ -34,7 +40,6 @@ class LoginViewController: UIViewController {
           self.errorLabel.text = "Login failed. Please check your credentials."
           print("Response JSON: \(value)")
         }
-      case .failure(let error
       case .failure(let error):
         self.errorLabel.text = "Error: \(error.localizedDescription)"
         print("Request failed with error: \(error)")
