@@ -105,6 +105,7 @@ export default {
       const expires = "expires=" + date.toUTCString();
       const cookieValue = encodeURIComponent(value);
       document.cookie = `${name}=${cookieValue};${expires};path=/;secure;SameSite=strict`;
+      console.log("くっきー",document.cookie)
     }
 
     return {
