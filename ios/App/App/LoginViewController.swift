@@ -26,14 +26,14 @@ class LoginViewController: UIViewController {
 
     let apiUrl = "https://grow-curriculum-backend-f10ce9239245.herokuapp.com/login"
 
-    AF.request(apiUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
-      print("Request: \(String(describing: response.request))")
-      print("Response: \(String(describing: response.response))")
-      print("Result: \(response.result)")
+    AF.request(apiUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).validate().responseJSON { response in
+      debugPrint("Request: \(String(describing: response.request))")
+      debugPrint("Response: \(String(describing: response.response))")
+      debugPrint("Result: \(response.result)")
 
       switch response.result {
       case .success(let value):
-        print("Response JSON: \(value)")
+        debugPrint("Response JSON: \(value)")
         if let json = value as? [String: Any], let token = json["token"] as? String {
           UserDefaults.standard.set(token, forKey: "authToken")
           self.performSegue(withIdentifier: "LoginToHome", sender: self)
@@ -42,11 +42,11 @@ class LoginViewController: UIViewController {
         }
       case .failure(let error):
         self.errorLabel.text = "Error: \(error.localizedDescription)"
-        print("Request failed with error: \(error)")
+        debugPrint("Request failed with error: \(error)")
         if let data = response.data, let responseString = String(data: data, encoding: .utf8) {
-          print("Response data: \(responseString)")
+          debugPrint("Response data: \(responseString)")
         } else {
-          print("No response data received")
+          debugPrint("No response data received")
         }
       }
     }
