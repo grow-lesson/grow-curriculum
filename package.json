@@ -17,6 +17,7 @@
     "@vee-validate/rules": "^4.11.3",
     "axios": "^1.4.0",
     "depcheck": "^1.4.7",
+    "js-cookie": "^3.0.5",
     "miragejs": "^0.1.47",
     "prismjs": "^1.29.0",
     "vee-validate": "^4.11.3",
