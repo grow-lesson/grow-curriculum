@@ -36,7 +36,9 @@ export default {
   computed: {
     backgroundStyle() {
       return {
+        // 現在の背景画像をスタイルに反映
         backgroundImage: `url(${this.backgroundImages[this.currentImageIndex]})`,
+        // フローティング状態の場合は不透明度を1に、そうでない場合は0に設定
         opacity: this.isFloating ? 1 : 0,
       };
     },
@@ -49,37 +51,41 @@ export default {
       this.$router.push({ name: "Login" });
     },
     changeBackgroundImage() {
+      // 背景画像を次のインデックスに変更
       this.currentImageIndex =
         (this.currentImageIndex + 1) % this.backgroundImages.length;
     },
     buttonFocus() {
+      // ボタンにフォーカスが当たったときにフローティング状態に設定
       this.isFloating = true;
     },
     buttonBlur() {
+      // ボタンからフォーカスが外れたときにフローティング状態を解除
       this.isFloating = false;
     },
   },
   mounted() {
     setInterval(() => {
+      // フローティング状態を解除
       this.isFloating = false;
+
+      // 1秒後に背景画像を切り替え
       setTimeout(() => {
         this.changeBackgroundImage();
+        // フローティング状態を設定
         this.isFloating = true;
       }, 500);
+
+      // 2.5秒後にフローティング状態を解除
       setTimeout(() => {
         this.isFloating = false;
       }, 4500);
-    }, 5000);
+    }, 5000); // Changed the interval to 5000ms (5 seconds)
   },
 };
 </script>
 
-<style scoped>
-body {
-  margin: 0;
-  padding: 0;
-}
-
+<style>
 .welcome-header {
   position: fixed;
   top: 0;
@@ -87,8 +93,7 @@ body {
   background-color: rgba(255, 255, 255, 0.9);
   display: flex;
   align-items: center;
-  padding: calc(env(safe-area-inset-top) + 20px) 20px 20px;
-  box-sizing: border-box;
+  padding: 20px;
 }
 
 .welcome-title {
@@ -97,21 +102,20 @@ body {
   text-decoration: none;
   color: #333;
   padding-left: 20px;
+  text-decoration: none;
 }
 
 .welcome-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   height: 100vh;
   font-family: Arial, sans-serif;
-  padding-top: calc(env(safe-area-inset-top) + 100px); /* 上部の安全領域を考慮してさらにスペースを追加 */
-  box-sizing: border-box;
 }
 
 .box {
-  margin-top: 50px;
+  margin-left: auto;
   width: 40%;
   height: 300px;
   border-radius: 5px;
@@ -124,11 +128,13 @@ body {
 /* フェードトランジションのクラス */
 .fade-enter-active,
 .fade-leave-active {
+  /* opacityプロパティの変化を1.5秒かけて行う */
   transition: opacity 1.5s ease;
 }
 
 .fade-enter,
 .fade-leave-to {
+  /* 初期状態と終了状態のopacityを0に設定し、フェードイン・フェードアウトの効果を実現 */
   opacity: 0;
 }
 
@@ -144,6 +150,7 @@ body {
 }
 
 .title.floating {
+  /* フローティング状態の場合、タイトルを上に浮かせるアニメーション */
   transform: translateY(-5px);
 }
 
@@ -202,6 +209,8 @@ body {
   border-right: 2px solid #fff;
 }
 
+/* TODO: ここまで */
+
 .background-image {
   position: absolute;
   top: 0;
@@ -218,11 +227,12 @@ body {
 
 @media (max-width: 648px) {
   .welcome-header {
-    padding: calc(env(safe-area-inset-top) + 10px) 10px 10px;
+    padding: 10px;
   }
 
   .welcome-title {
     padding: 0 10px;
+    margin-top: 40px;
   }
 
   .background-image {
@@ -232,7 +242,6 @@ body {
 
   .box {
     width: 100%;
-    margin-top: 20px;
   }
 
   .title {
