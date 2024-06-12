@@ -27,7 +27,6 @@ import { ref } from 'vue';
 import * as yup from 'yup';
 import api from '@/axios';
 import { useRouter } from 'vue-router';
-import Cookies from 'js-cookie'; // js-cookieをインポート
 
 export default {
   setup() {
@@ -70,10 +69,8 @@ export default {
         };
 
         const response = await api.post('/auth/sign_in', loginData, { withCredentials: true });
-        console.log(response);
 
         if (response.status === 201 || response.status === 200) {
-          console.log('OK!',response.headers['access-token']);
           setCookie('access-token', response.headers['access-token']);
           setCookie('client', response.headers['client']);
           setCookie('uid', response.headers['uid']);
@@ -83,7 +80,6 @@ export default {
           throw new Error('ログインエラーが発生しました');
         }
       } catch (error) {
-        console.error('APIエラー:', error);
         if (error.response) {
           console.error('Response data:', error.response.data);
           console.error('Response status:', error.response.status);
@@ -106,8 +102,6 @@ export default {
       const expires = "expires=" + date.toUTCString();
       const cookieValue = encodeURIComponent(value);
       document.cookie = `${name}=${cookieValue};${expires};path=/;secure;SameSite=strict`;
-      console.log("くっきー",document.cookie)
-      Cookies.set(name, value, { secure: true, sameSite: 'Strict', path: '/' });  
     }
 
     return {
