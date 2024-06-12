@@ -103,15 +103,15 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   height: 100vh;
   font-family: Arial, sans-serif;
-  padding-top: calc(env(safe-area-inset-top) + 60px); /* 上部の安全領域を考慮してさらにスペースを追加 */
+  padding-top: calc(env(safe-area-inset-top) + 100px); /* 上部の安全領域を考慮してさらにスペースを追加 */
   box-sizing: border-box;
 }
 
 .box {
-  margin-left: auto;
+  margin-top: 50px;
   width: 40%;
   height: 300px;
   border-radius: 5px;
@@ -232,6 +232,7 @@ body {
 
   .box {
     width: 100%;
+    margin-top: 20px;
   }
 
   .title {
