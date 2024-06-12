@@ -69,10 +69,10 @@ onMounted(() => {
 
 .welcome-header {
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255);
   display: flex;
   align-items: center;
-  padding: 30px 30px 20px 30px;
+  padding: 30px 30px 10px 30px;
 }
 
 .welcome-title {
@@ -185,10 +185,6 @@ onMounted(() => {
 }
 
 @media (max-width: 648px) {
-  .welcome-title {
-    padding: 0 10px;
-  }
-
   .box {
     width: 100%;
     padding: 10px;

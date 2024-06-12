@@ -1,10 +1,10 @@
 <template>
   <div class="login-page">
     <div class="login-header">
-      <a @click="goToWelcomePage" class="logo">GROW Learning Website</a>
+      <p class="login-title">GROW Learning Website</p>
     </div>
     <div class="login-container">
-      <div class="login-title">
+      <div class="login-text">
         <div>Login</div>
       </div>
       <br>
@@ -122,20 +122,18 @@ export default {
 
 .login-header {
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255);
   display: flex;
   align-items: center;
-  padding: 30px 30px 20px 30px;
+  padding: 30px 30px 10px 30px;
   margin-bottom: 50px;
 }
 
-.logo {
+.login-title {
   font-size: 24px;
   font-weight: bold;
-  text-decoration: none;
   color: #333;
   padding-left: 20px;
-  cursor: pointer;
 }
 
 .login-container {
@@ -148,7 +146,7 @@ export default {
   font-size: 16px;
 }
 
-.login-title {
+.login-text {
   text-align: center;
   margin-bottom: 20px;
   font-size: 24px;

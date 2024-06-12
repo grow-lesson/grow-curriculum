@@ -1,7 +1,7 @@
 <template>
   <div class="signup-page">
     <div class="signup-header">
-      <a @click="goToWelcomePage" class="logo">GROW Learning Website</a>
+      <p class="signup-title">GROW Learning Website</p>
     </div>
     <div class="signup-container">
       <div class="signup-text">
@@ -159,20 +159,18 @@ export default {
 
 .signup-header {
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255);
   display: flex;
   align-items: center;
-  padding: 30px 30px 20px 30px;
+  padding: 30px 30px 10px 30px;
   margin-bottom: 20px;
 }
 
-.logo {
+.signup-title {
   font-size: 24px;
   font-weight: bold;
-  text-decoration: none;
   color: #333;
   padding-left: 20px;
-  cursor: pointer;
 }
 
 .signup-container {
