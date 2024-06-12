@@ -70,7 +70,8 @@ export default {
 
         const response = await api.post('/auth/sign_in', loginData, { withCredentials: true });
         console.log(response);
-        if (response.data.status === 201) {
+
+        if (response.status === 201) {
           setCookie('access-token', response.headers['access-token']);
           setCookie('client', response.headers['client']);
           setCookie('uid', response.headers['uid']);
@@ -110,6 +111,7 @@ export default {
   },
 };
 </script>
+
 
 <style>
 .login-page {
