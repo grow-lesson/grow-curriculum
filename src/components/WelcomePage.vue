@@ -1,106 +1,109 @@
 <template>
-  <div>
-    <div class="welcome-header">
-      <p class="welcome-title">GROW Learning Website</p>
-    </div>
-    <div class="welcome-container">
-      <div class="box">
-        <!-- フェードトランジションの名前を指定 -->
-        <transition name="fade">
-          <div class="background-image" :style="backgroundStyle"></div>
-        </transition>
-        <h1 class="title" :class="{ floating: isFloating }">カリキュラムを<span>受講しよう！</span></h1>
-        <button class="change_component_button" @click="goToSignUP" @focus="buttonFocus" @blur="buttonBlur">新規登録</button>
-        <button class="change_component_button" @click="goToLogin" @focus="buttonFocus" @blur="buttonBlur">ログイン</button>
+  <transition name="fade">
+    <div class="welcome">
+      <div class="welcome-header">
+        <p class="welcome-title">GROW Learning Website</p>
+      </div>
+      <div class="background-image" :style="backgroundStyle">
+        <div class="welcome-container">
+          <div class="box">
+            <h1 class="title" :class="{ floating: isFloating }">カリキュラムを<span>受講しよう！</span></h1>
+            <button class="change_component_button" @click="goToSignUP" @focus="buttonFocus" @blur="buttonBlur">新規登録</button>
+            <button class="change_component_button" @click="goToLogin" @focus="buttonFocus" @blur="buttonBlur">ログイン</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  </transition>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      backgroundImages: [
-        require("../assets/images/welcome/welcome-1.jpg"),
-        require("../assets/images/welcome/welcome-2.jpg"),
-        require("../assets/images/welcome/welcome-3.jpg"),
-        require("../assets/images/welcome/welcome-4.jpg"),
-        require("../assets/images/welcome/welcome-5.jpg"),
-        require("../assets/images/welcome/welcome-6.jpg"),
-      ],
-      currentImageIndex: 0,
-      isFloating: true,
-    };
-  },
-  computed: {
-    backgroundStyle() {
-      return {
-        // 現在の背景画像をスタイルに反映
-        backgroundImage: `url(${this.backgroundImages[this.currentImageIndex]})`,
-        // フローティング状態の場合は不透明度を1に、そうでない場合は0に設定
-        opacity: this.isFloating ? 1 : 0,
-      };
-    },
-  },
-  methods: {
-    goToSignUP() {
-      this.$router.push({ name: "Signup" });
-    },
-    goToLogin() {
-      this.$router.push({ name: "Login" });
-    },
-    changeBackgroundImage() {
-      // 背景画像を次のインデックスに変更
-      this.currentImageIndex =
-        (this.currentImageIndex + 1) % this.backgroundImages.length;
-    },
-    buttonFocus() {
-      // ボタンにフォーカスが当たったときにフローティング状態に設定
-      this.isFloating = true;
-    },
-    buttonBlur() {
-      // ボタンからフォーカスが外れたときにフローティング状態を解除
-      this.isFloating = false;
-    },
-  },
-  mounted() {
-    setInterval(() => {
-      // フローティング状態を解除
-      this.isFloating = false;
+<script setup>
+import { ref, computed, onMounted } from 'vue';
+import { useRouter } from 'vue-router';
 
-      // 1秒後に背景画像を切り替え
-      setTimeout(() => {
-        this.changeBackgroundImage();
-        // フローティング状態を設定
-        this.isFloating = true;
-      }, 500);
+const router = useRouter();
 
-      // 2.5秒後にフローティング状態を解除
-      setTimeout(() => {
-        this.isFloating = false;
-      }, 4500);
-    }, 5000); // Changed the interval to 5000ms (5 seconds)
-  },
+const backgroundImages = [
+  require("../assets/images/welcome/welcome-1.jpg"),
+  require("../assets/images/welcome/welcome-2.jpg"),
+  require("../assets/images/welcome/welcome-3.jpg"),
+  require("../assets/images/welcome/welcome-4.jpg"),
+  require("../assets/images/welcome/welcome-5.jpg"),
+  require("../assets/images/welcome/welcome-6.jpg"),
+];
+const currentImageIndex = ref(0);
+const isFloating = ref(true);
+
+const backgroundStyle = computed(() => ({
+  backgroundImage: `url(${backgroundImages[currentImageIndex.value]})`,
+  opacity: isFloating.value ? 1 : 0,
+}));
+
+const goToSignUP = () => {
+  router.push({ name: "Signup" });
 };
+
+const goToLogin = () => {
+  router.push({ name: "Login" });
+};
+
+const changeBackgroundImage = () => {
+  currentImageIndex.value = (currentImageIndex.value + 1) % backgroundImages.length;
+};
+
+const buttonFocus = () => {
+  isFloating.value = true;
+};
+
+const buttonBlur = () => {
+  isFloating.value = false;
+};
+
+onMounted(() => {
+  setInterval(() => {
+    isFloating.value = false;
+    setTimeout(() => {
+      changeBackgroundImage();
+      isFloating.value = true;
+    }, 500);
+    setTimeout(() => {
+      isFloating.value = false;
+    }, 4500);
+  }, 5000);
+});
 </script>
 
-<style>
+<style scoped>
+.welcome {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .welcome-header {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.9);
   display: flex;
   align-items: center;
-  padding: 20px;
+  padding: 30px;
 }
 
 .welcome-title {
   font-size: 24px;
   font-weight: bold;
-  text-decoration: none;
   color: #333;
   padding-left: 20px;
-  text-decoration: none;
+}
+
+.background-image {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity 0.5s ease;
 }
 
 .welcome-container {
@@ -108,15 +111,18 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  font-family: Arial, sans-serif;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .box {
-  margin-left: auto;
-  width: 40%;
-  height: 300px;
-  border-radius: 5px;
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -126,13 +132,11 @@ export default {
 /* フェードトランジションのクラス */
 .fade-enter-active,
 .fade-leave-active {
-  /* opacityプロパティの変化を1.5秒かけて行う */
   transition: opacity 1.5s ease;
 }
 
 .fade-enter,
 .fade-leave-to {
-  /* 初期状態と終了状態のopacityを0に設定し、フェードイン・フェードアウトの効果を実現 */
   opacity: 0;
 }
 
@@ -148,7 +152,6 @@ export default {
 }
 
 .title.floating {
-  /* フローティング状態の場合、タイトルを上に浮かせるアニメーション */
   transform: translateY(-5px);
 }
 
@@ -158,17 +161,15 @@ export default {
   align-items: center;
   width: 250px;
   height: 50px;
-  position: relative;
   background: #228bc8;
   border: 1px solid #228bc8;
   box-sizing: border-box;
-  margin-bottom: auto;
-  padding: 0 25px 0 40px;
+  margin-bottom: 10px;
   color: #fff;
   font-size: 16px;
   letter-spacing: 0.1em;
   line-height: 1.3;
-  text-align: left;
+  text-align: center;
   text-decoration: none;
   transition-duration: 0.3s;
 }
@@ -197,48 +198,14 @@ export default {
   border-right: 2px solid #228bc8;
 }
 
-.production:hover {
-  color: #fff;
-  background-color: gray;
-}
-
-.production:hover:before {
-  border-top: 2px solid #fff;
-  border-right: 2px solid #fff;
-}
-
-/* TODO: ここまで */
-
-.background-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  transition: opacity 0.5s ease;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 60%;
-}
-
 @media (max-width: 648px) {
-  .welcome-header {
-    padding: 10px;
-  }
-
   .welcome-title {
     padding: 0 10px;
   }
 
-  .background-image {
-    width: 100%;
-    filter: brightness(0.6);
-  }
-
   .box {
     width: 100%;
+    padding: 10px;
   }
 
   .title {
@@ -246,8 +213,7 @@ export default {
   }
 
   .change_component_button {
-    width: 250px;
-    color: #fff;
+    width: 100%;
   }
 }
 </style>
