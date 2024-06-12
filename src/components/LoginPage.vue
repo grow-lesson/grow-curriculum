@@ -72,6 +72,7 @@ export default {
         console.log(response);
 
         if (response.status === 201 || response.status === 200) {
+          console.log('OK!',response.headers['access-token']);
           setCookie('access-token', response.headers['access-token']);
           setCookie('client', response.headers['client']);
           setCookie('uid', response.headers['uid']);
