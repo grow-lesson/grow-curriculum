@@ -71,7 +71,7 @@ export default {
         const response = await api.post('/auth/sign_in', loginData, { withCredentials: true });
         console.log(response);
 
-        if (response.status === 201) {
+        if (response.status === 201 || response.status === 200) {
           setCookie('access-token', response.headers['access-token']);
           setCookie('client', response.headers['client']);
           setCookie('uid', response.headers['uid']);
@@ -83,10 +83,15 @@ export default {
       } catch (error) {
         console.error('APIエラー:', error);
         if (error.response) {
+          console.error('Response data:', error.response.data);
+          console.error('Response status:', error.response.status);
+          console.error('Response headers:', error.response.headers);
           alert(error.response.data.message || 'ログインエラーが発生しました');
         } else if (error.request) {
+          console.error('Request data:', error.request);
           alert('サーバーから応答がありません。ネットワークを確認してください。');
         } else {
+          console.error('Error message:', error.message);
           alert(error.message);
         }
       }
