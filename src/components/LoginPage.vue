@@ -73,6 +73,7 @@ export default {
         console.log(response);
 
         if (response.status === 201 || response.status === 200) {
+          console.log('OK!',response.headers['access-token']);
           setCookie('access-token', response.headers['access-token']);
           setCookie('client', response.headers['client']);
           setCookie('uid', response.headers['uid']);
@@ -102,8 +103,11 @@ export default {
       const days = 7;
       const date = new Date();
       date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+      const expires = "expires=" + date.toUTCString();
       const cookieValue = encodeURIComponent(value);
-      Cookies.set(name, value, { expires: 7, secure: true, sameSite: 'Strict', path: '/' });
+      document.cookie = `${name}=${cookieValue};${expires};path=/;secure;SameSite=strict`;
+      console.log("くっきー",document.cookie)
+      Cookies.set(name, value, { secure: true, sameSite: 'Strict', path: '/' });  
     }
 
     return {
@@ -116,7 +120,6 @@ export default {
   },
 };
 </script>
-
 
 
 <style>
