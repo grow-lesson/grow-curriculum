@@ -92,9 +92,20 @@ export default {
         })
         .catch(error => {
           console.error(error);
-          alert('ログインエラーが発生しました');
-        }
-      );
+          let errorMessage = 'ログインエラーが発生しました';
+          if (error.response) {
+            // サーバーがレスポンスを返したが、ステータスコードが2xxの範囲外
+            errorMessage = error.response.data.message || errorMessage;
+          } else if (error.request) {
+            // リクエストが送信されたが、レスポンスがない
+            errorMessage = 'サーバーから応答がありません。ネットワークを確認してください。';
+          } else {
+            // リクエストの設定中にエラーが発生
+            errorMessage = error.message;
+          }
+          alert(errorMessage);
+        });
+
 
 
       function setCookie(name, value) {
