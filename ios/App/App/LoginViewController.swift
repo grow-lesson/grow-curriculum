@@ -33,12 +33,12 @@ class LoginViewController: UIViewController {
 
       switch response.result {
       case .success(let value):
+        print("Response JSON: \(value)")
         if let json = value as? [String: Any], let token = json["token"] as? String {
           UserDefaults.standard.set(token, forKey: "authToken")
           self.performSegue(withIdentifier: "LoginToHome", sender: self)
         } else {
           self.errorLabel.text = "Login failed. Please check your credentials."
-          print("Response JSON: \(value)")
         }
       case .failure(let error):
         self.errorLabel.text = "Error: \(error.localizedDescription)"
