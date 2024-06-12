@@ -68,26 +68,26 @@ export default {
           password: form.value.password,
         };
 
-        api.post('/auth/sign_in', loginData, { withCredentials: true })
-          .then(response => {
-            if (response.data.status === 201) {
-              setCookie('access-token', response.headers['access-token']);
-              setCookie('client', response.headers['client']);
-              setCookie('uid', response.headers['uid']);
+        const response = await api.post('/auth/sign_in', loginData, { withCredentials: true });
+        console.log(response);
+        if (response.data.status === 201) {
+          setCookie('access-token', response.headers['access-token']);
+          setCookie('client', response.headers['client']);
+          setCookie('uid', response.headers['uid']);
 
-              router.push({ name: 'MenuPage' });
-            } else {
-              throw new Error('ログインエラーが発生しました');
-            }
-          })
-          .catch(error => {
-            console.error(error);
-            alert('ログインエラーが発生しました');
-          });
-      } catch (err) {
-        err.inner.forEach(e => {
-          errors.value[e.path] = e.message;
-        });
+          router.push({ name: 'MenuPage' });
+        } else {
+          throw new Error('ログインエラーが発生しました');
+        }
+      } catch (error) {
+        console.error('APIエラー:', error);
+        if (error.response) {
+          alert(error.response.data.message || 'ログインエラーが発生しました');
+        } else if (error.request) {
+          alert('サーバーから応答がありません。ネットワークを確認してください。');
+        } else {
+          alert(error.message);
+        }
       }
     };
 
