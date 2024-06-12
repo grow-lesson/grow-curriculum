@@ -32,9 +32,16 @@ class LoginViewController: UIViewController {
           self.performSegue(withIdentifier: "LoginToHome", sender: self)
         } else {
           self.errorLabel.text = "Login failed. Please check your credentials."
+          if let json = value as? [String: Any] {
+            print("Response JSON: \(json)")
+          }
         }
       case .failure(let error):
         self.errorLabel.text = "Error: \(error.localizedDescription)"
+        print("Request failed with error: \(error)")
+        if let data = response.data, let responseString = String(data: data, encoding: .utf8) {
+          print("Response data: \(responseString)")
+        }
       }
     }
   }
