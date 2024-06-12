@@ -333,9 +333,12 @@ router.beforeEach(async (to, from, next) => {
     console.log("実際のAPI");
     // 認証が必要な場合の処理
     try {
+      console.log('try')
       const accessToken = getCookie('access-token');
       const client = getCookie('client');
       const uid = decodeURIComponent(getCookie('uid')); // UIDをデコード
+
+      console.log(accessToken, client, uid)
 
       if (accessToken && client && uid) {
         const response = await api.get('/auth/validate_token', {
@@ -365,6 +368,7 @@ router.beforeEach(async (to, from, next) => {
         return;
       }
     } catch (error) {
+      console.log('catch')
       console.error(error);
       next({ name: "Login" }); // エラーの場合もログインページにリダイレクト
       return;
