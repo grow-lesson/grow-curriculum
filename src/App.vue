@@ -1,5 +1,5 @@
 <template>
-  <div id="app" :class="{ 'app-with-padding': isWebView }">
+  <div id="app" ref="app">
     <router-view />
   </div>
 </template>
@@ -9,15 +9,21 @@ import "normalize.css";
 import "destyle.css";
 import { ref, onMounted } from 'vue';
 
-const isWebView = ref(false);
+const app = ref(null);
 
 const isInWebView = () => {
   const userAgent = navigator.userAgent || navigator.vendor || window.opera;
   return (/iphone|ipod|ipad|android/i.test(userAgent) && !window.MSStream);
 };
 
+const applyWebViewPadding = () => {
+  if (isInWebView() && app.value) {
+    app.value.style.padding = 'env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)';
+  }
+};
+
 onMounted(() => {
-  isWebView.value = isInWebView();
+  applyWebViewPadding();
 });
 </script>
 
@@ -29,9 +35,14 @@ onMounted(() => {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ノッチ対応のスタイルはスマホアプリでのみ適用 */
-.app-with-padding {
-  padding-top: 50px; /* ここで必要な上部の隙間を調整 */
+/* ノッチ対応 */
+@supports(padding: env(safe-area-inset-top)) {
+  #app {
+    padding-top: env(safe-area-inset-top);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
 }
 
 /* Global Styles */
