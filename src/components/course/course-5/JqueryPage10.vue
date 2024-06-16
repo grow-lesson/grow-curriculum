@@ -21,7 +21,7 @@
             具体的な例を挙げると、天気予報のアプリがAPIを使う場合を考えてみましょう。このアプリが、インターネット上にある天気情報を提供するサービス（例えば、気象庁のサイト）から情報を取得したいとき、APIを使います。
             このAPIが「今日の天気を教えてください」という決まった形式でリクエストを送ると、気象庁のサイトは「今日は晴れです」とレスポンスをするのです。
             つまり、APIを使うと、異なるプログラムやサービスが簡単に情報をやり取りできるようになるのです。
-        </p><br>
+          </p><br>
         </Document>
         <SubTitle subTitle="2. 楽天ブックスAPIを使ったデータ取得の実装" id="subTitle2"></SubTitle>
         <Document>
@@ -35,13 +35,25 @@
             4: 検索結果が見つからない場合のメッセージを表示<br>
             5: 検索結果がヒットしたときに本の情報を表示<br>
             <br>
+            それでは初めに今回データのやり取りを行うAJAXについて説明します。<br>
+            <HighlightWord word="AJAX"></HighlightWord><br>
+            AJAXとはウェブページを再読み込みせずに、サーバーと非同期にデータをやり取りする技術です。<br>
+            今回はjQueryライブラリに簡単にAJAXでリクエストができる「$.ajax()」メソッドがあるのでそれを使います。<br>
+            <HighlightWord word="$.ajax()"></HighlightWord><br>
+            「$.ajax()」のそれぞれのパラメータはこのような形で記述します。<br>
+          </p>
+          <br>
+          <img @click="openModal(imagePaths.step1)" :src="imagePaths.step1" alt="tag-1" class="powerpoint-image" />
+          <br>
+          <p>
             まずは、ページが読み込まれたときに実行される関数と変数の定義を行います。<br>
             (1)ページが読み込まれたときに実行される関数を作成します。<br>
             (2)本のリストを表示する要素を指定する変数を作成します。<br>
             (3)ページ番号を追跡するための変数を作成します。<br>
             (4)前回の検索ワードを保存するための変数を作成します。<br>
           </p><br>
-          <Terminal :fileName="jqueryData.file1.filename" :copiedText="jqueryData.file1.code" :lang="jqueryData.file1.language" />
+          <Terminal :fileName="jqueryData.file1.filename" :copiedText="jqueryData.file1.code"
+            :lang="jqueryData.file1.language" />
           <p>
             <br>
             次に、取得した本のデータを使ってHTMLのリストアイテムを作成し、それを表示する関数を作成します。<br>
@@ -50,14 +62,16 @@
             (3)本の情報をHTML形式でテンプレートに埋め込みます。<br>
             (4)作成したテンプレートをリストの最初に追加します。<br>
           </p><br>
-          <Terminal :fileName="jqueryData.file2.filename" :copiedText="jqueryData.file2.code" :lang="jqueryData.file2.language" />
+          <Terminal :fileName="jqueryData.file2.filename" :copiedText="jqueryData.file2.code"
+            :lang="jqueryData.file2.language" />
           <p>
             <br>
             検索結果が見つからない場合に表示されるメッセージを追加する関数を作成します。<br>
             (1)emptyMessageという名前の関数を作成します。<br>
             (2)リストの前にメッセージを表示します。<br>
           </p><br>
-          <Terminal :fileName="jqueryData.file3.filename" :copiedText="jqueryData.file3.code" :lang="jqueryData.file3.language" />
+          <Terminal :fileName="jqueryData.file3.filename" :copiedText="jqueryData.file3.code"
+            :lang="jqueryData.file3.language" />
           <p>
             <br>
             AJAXを使って、楽天ブックスAPIからデータを取得する関数を作成します。<br>
@@ -67,7 +81,8 @@
             (4)検索ワードが前回と異なる場合の処理を行います。<br>
             (5)AJAXリクエストを送信します。<br>
           </p><br>
-          <Terminal :fileName="jqueryData.file4.filename" :copiedText="jqueryData.file4.code" :lang="jqueryData.file4.language" />
+          <Terminal :fileName="jqueryData.file4.filename" :copiedText="jqueryData.file4.code"
+            :lang="jqueryData.file4.language" />
           <p>
             <br>
             最後に、検索ボタンがクリックされたときにfetchBookData関数が実行されるように設定します。<br>
@@ -75,14 +90,12 @@
             (2)検索ボタンがクリックされたときにfetchBookData関数を実行します。<br>
             (3)clickData関数を呼び出してクリックイベントを設定します。<br>
           </p><br>
-          <Terminal :fileName="jqueryData.file5.filename" :copiedText="jqueryData.file5.code" :lang="jqueryData.file5.language" />
-          <NavigationButtons
-            :previousPageName="'JqueryPage9'"
-            :nextPageName="'JqueryPage1'"
-          />
+          <Terminal :fileName="jqueryData.file5.filename" :copiedText="jqueryData.file5.code"
+            :lang="jqueryData.file5.language" />
+          <NavigationButtons :previousPageName="'JqueryPage9'" :nextPageName="'JqueryPage1'" />
         </Document>
         <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
-        </div>
+      </div>
       <div class="side-content">
         <TableOfContents :sections="sections" />
       </div>
@@ -136,7 +149,7 @@ export default {
     });
 
     const imagePaths = {
-      step1: require("../../../assets/images/course/javascript-1/javascript.png"),
+      step1: require("../../../assets/images/course/jQuery-10/ajax-1.png"),
     };
 
     // モーダル関連のデータ
@@ -212,19 +225,22 @@ export default {
   border-right: 2px solid #228bc8;
 }
 
-.main-content{
+.main-content {
   width: 75%;
 }
-.side-content{
+
+.side-content {
   margin-left: 1%;
   margin-top: 5vh;
   width: 24%;
 }
+
 .markup-word-blue {
   white-space: pre;
   color: rgb(37, 139, 255);
   font-weight: bold;
 }
+
 .markup-word-red {
   white-space: pre;
   color: rgb(255, 37, 37);
@@ -268,6 +284,7 @@ export default {
   border: 1px solid rgb(175, 175, 175);
   cursor: pointer;
 }
+
 .powerpoint-image {
   max-width: 80%;
   height: auto;
@@ -278,24 +295,36 @@ export default {
 }
 
 .download-button {
-  background-color: #4caf50; /* ボタンの背景色 */
-  color: white; /* ボタンのテキストカラー */
-  border: none; /* ボーダーなし */
-  padding: 10px 20px; /* 上下左右のパディング */
-  text-align: center; /* テキストを中央に配置 */
-  text-decoration: none; /* テキスト装飾なし */
-  display: inline-block; /* インラインブロック要素にする */
-  font-size: 16px; /* フォントサイズ */
-  border-radius: 5px; /* 角丸 */
-  cursor: pointer; /* カーソルをポインターに変更 */
-  transition: background-color 0.3s; /* ホバー時の背景色変化にトランジションを追加 */
+  background-color: #4caf50;
+  /* ボタンの背景色 */
+  color: white;
+  /* ボタンのテキストカラー */
+  border: none;
+  /* ボーダーなし */
+  padding: 10px 20px;
+  /* 上下左右のパディング */
+  text-align: center;
+  /* テキストを中央に配置 */
+  text-decoration: none;
+  /* テキスト装飾なし */
+  display: inline-block;
+  /* インラインブロック要素にする */
+  font-size: 16px;
+  /* フォントサイズ */
+  border-radius: 5px;
+  /* 角丸 */
+  cursor: pointer;
+  /* カーソルをポインターに変更 */
+  transition: background-color 0.3s;
+  /* ホバー時の背景色変化にトランジションを追加 */
 }
 
 .download-button:hover {
-  background-color: #45a049; /* ホバー時の背景色 */
+  background-color: #45a049;
+  /* ホバー時の背景色 */
 }
 
-.siteImages{
+.siteImages {
   display: flex;
   flex-wrap: wrap;
 }
@@ -314,18 +343,23 @@ export default {
   .main-content {
     width: 100%;
   }
+
   .side-content {
     display: none;
   }
 
   .change_component_button {
-    width: auto; /* 幅を自動調整 */
-    text-align: center; /* テキストを中央揃え */
-    margin: 20px auto; /* 上下のマージンを調整 */
+    width: auto;
+    /* 幅を自動調整 */
+    text-align: center;
+    /* テキストを中央揃え */
+    margin: 20px auto;
+    /* 上下のマージンを調整 */
   }
 
   .change_component_button:before {
-    display: none; /* トライアングルアイコンを非表示 */
+    display: none;
+    /* トライアングルアイコンを非表示 */
   }
 }
 </style>

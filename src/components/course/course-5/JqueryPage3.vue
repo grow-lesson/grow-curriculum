@@ -17,33 +17,52 @@
             このカリキュラムを行うときに必要になる工程を順にピックアップしていきましょう<br><br>
             1: 初期設定と変数の定義を決める<br>
             2: モーダル表示ボタンのクリックイベントを設定<br>
-            3: モーダル閉じるボタンのクリックイベントを設定<br>
+            3: モーダル閉じるボタンのクリックイベントを設定<br><br>
+            ふわっと表示させるようなメソッドもjQuery1で実装した「fadeOut()」メソッドと同じような記述で作ることができます。<br>
+            <HighlightWord word="fadeIn()"></HighlightWord><br>
+            ふわっと指定された時間をかけて要素を表示させるには「fadeIn()」メソッドを使います。<br>
+            ・指定された時間で要素を表示させる<br>
+            <HighlightWord word="対象要素.fadeIn(時間)"></HighlightWord><br>
+          </p>
+          <br>
+          <img @click="openModal(imagePaths.step1)" :src="imagePaths.step1" alt="tag-1" class="powerpoint-image" />
+          <br>
+          <p>
+            <HighlightWord word="fadeTo()"></HighlightWord><br>
+            ふわっと指定された時間をかけて要素の透明度を変更させるには「fadeTo()」メソッドを使います。<br>
+            ・指定された時間で要素の透明度を変更する<br>
+            <HighlightWord word="対象要素.fadeTo(時間,透明度)"></HighlightWord><br>
+          </p>
+          <br>
+          <img @click="openModal(imagePaths.step2)" :src="imagePaths.step2" alt="tag-2" class="powerpoint-image" />
+          <br>
+          <p>
             <br>
             まずは、初期設定と変数の定義を行います。<br>
             (1)モーダル表示ボタンの要素を取得してください (変数名: $modalShow)<br>
             (2)モーダルの要素を取得してください (変数名: $modal)<br>
             (3)モーダル閉じるボタンの要素を取得してください (変数名: $modalClose)<br>
           </p><br>
-          <Terminal :fileName="jqueryData.file1.filename" :copiedText="jqueryData.file1.code" :lang="jqueryData.file1.language" />
+          <Terminal :fileName="jqueryData.file1.filename" :copiedText="jqueryData.file1.code"
+            :lang="jqueryData.file1.language" />
           <p>
             <br>
             ここまでできたらモーダル表示ボタンのクリックイベントを設定してください<br>
             (1)モーダルをフェードインしてください<br>
           </p><br>
-          <Terminal :fileName="jqueryData.file2.filename" :copiedText="jqueryData.file2.code" :lang="jqueryData.file2.language" />
+          <Terminal :fileName="jqueryData.file2.filename" :copiedText="jqueryData.file2.code"
+            :lang="jqueryData.file2.language" />
           <p>
             <br>
             ここまでできたらモーダル閉じるボタンのクリックイベントを設定してください<br>
             (1)モーダルをフェードアウトしてください<br>
           </p><br>
-          <Terminal :fileName="jqueryData.file3.filename" :copiedText="jqueryData.file3.code" :lang="jqueryData.file3.language" />
-          <NavigationButtons
-            :previousPageName="'JqueryPage2'"
-            :nextPageName="'JqueryPage4'"
-          />
+          <Terminal :fileName="jqueryData.file3.filename" :copiedText="jqueryData.file3.code"
+            :lang="jqueryData.file3.language" />
+          <NavigationButtons :previousPageName="'JqueryPage2'" :nextPageName="'JqueryPage4'" />
         </Document>
         <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
-        </div>
+      </div>
       <div class="side-content">
         <TableOfContents :sections="sections" />
       </div>
@@ -95,7 +114,8 @@ export default {
     });
 
     const imagePaths = {
-      step1: require("../../../assets/images/course/javascript-1/javascript.png"),
+      step1: require("../../../assets/images/course/jQuery-3/fadeIn-1.png"),
+      step2: require("../../../assets/images/course/jQuery-3/fadeTo-1.png"),
     };
 
     // モーダル関連のデータ
@@ -171,19 +191,22 @@ export default {
   border-right: 2px solid #228bc8;
 }
 
-.main-content{
+.main-content {
   width: 75%;
 }
-.side-content{
+
+.side-content {
   margin-left: 1%;
   margin-top: 5vh;
   width: 24%;
 }
+
 .markup-word-blue {
   white-space: pre;
   color: rgb(37, 139, 255);
   font-weight: bold;
 }
+
 .markup-word-red {
   white-space: pre;
   color: rgb(255, 37, 37);
@@ -227,6 +250,7 @@ export default {
   border: 1px solid rgb(175, 175, 175);
   cursor: pointer;
 }
+
 .powerpoint-image {
   max-width: 80%;
   height: auto;
@@ -237,24 +261,36 @@ export default {
 }
 
 .download-button {
-  background-color: #4caf50; /* ボタンの背景色 */
-  color: white; /* ボタンのテキストカラー */
-  border: none; /* ボーダーなし */
-  padding: 10px 20px; /* 上下左右のパディング */
-  text-align: center; /* テキストを中央に配置 */
-  text-decoration: none; /* テキスト装飾なし */
-  display: inline-block; /* インラインブロック要素にする */
-  font-size: 16px; /* フォントサイズ */
-  border-radius: 5px; /* 角丸 */
-  cursor: pointer; /* カーソルをポインターに変更 */
-  transition: background-color 0.3s; /* ホバー時の背景色変化にトランジションを追加 */
+  background-color: #4caf50;
+  /* ボタンの背景色 */
+  color: white;
+  /* ボタンのテキストカラー */
+  border: none;
+  /* ボーダーなし */
+  padding: 10px 20px;
+  /* 上下左右のパディング */
+  text-align: center;
+  /* テキストを中央に配置 */
+  text-decoration: none;
+  /* テキスト装飾なし */
+  display: inline-block;
+  /* インラインブロック要素にする */
+  font-size: 16px;
+  /* フォントサイズ */
+  border-radius: 5px;
+  /* 角丸 */
+  cursor: pointer;
+  /* カーソルをポインターに変更 */
+  transition: background-color 0.3s;
+  /* ホバー時の背景色変化にトランジションを追加 */
 }
 
 .download-button:hover {
-  background-color: #45a049; /* ホバー時の背景色 */
+  background-color: #45a049;
+  /* ホバー時の背景色 */
 }
 
-.siteImages{
+.siteImages {
   display: flex;
   flex-wrap: wrap;
 }
@@ -273,18 +309,23 @@ export default {
   .main-content {
     width: 100%;
   }
+
   .side-content {
     display: none;
   }
 
   .change_component_button {
-    width: auto; /* 幅を自動調整 */
-    text-align: center; /* テキストを中央揃え */
-    margin: 20px auto; /* 上下のマージンを調整 */
+    width: auto;
+    /* 幅を自動調整 */
+    text-align: center;
+    /* テキストを中央揃え */
+    margin: 20px auto;
+    /* 上下のマージンを調整 */
   }
 
   .change_component_button:before {
-    display: none; /* トライアングルアイコンを非表示 */
+    display: none;
+    /* トライアングルアイコンを非表示 */
   }
 }
 </style>
