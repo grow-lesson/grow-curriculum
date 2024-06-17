@@ -50,19 +50,39 @@
             ・現在の日付を取得する変数を定義してください (変数名: date)<br>
             ・URLをコンソールに出力してください<br>
             ・日付をコンソールに出力してください<br>
+            <HighlightWord word="location"></HighlightWord><br>
+            このような現在のURLに関する情報は「location」プロパティで確認できます。<br>
+          </p>
+          <br>
+          <img @click="openModal(imagePaths.step1)" :src="imagePaths.step1" alt="tag-1" class="powerpoint-image" />
+          <br>
+          <p>
+            ・現在のページのURLを取得する<br>
+            <HighlightWord word="location.href"></HighlightWord><br><br>
+            <HighlightWord word="Date()"></HighlightWord><br>
+            日付や時間などのデータを取得したい場合は「Date()」メソッドを使います。<br>
+            ・現在の日付を日本時間で取得する<br>
+            <HighlightWord word="new Date().toLocaleString()"></HighlightWord><br>
+            「new Date()」は現在の日付、「toLocaleString()」は現在の環境下(日本)を指定しています。<br>
+            ※より厳密に日本を指定する場合には「.toLocaleString('ja-JP')」で記述します。<br>
             第8問
             ・id="q8"の要素をクリックしたときの処理を追加してください<br>
             ・自分の名前を設定する変数を定義してください (変数名: myName)<br>
             ・2秒後にアラートで自分の名前を出力する処理を追加してください<br>
-          </p><br>
-          <Terminal :fileName="jqueryData.file1.filename" :copiedText="jqueryData.file1.code" :lang="jqueryData.file1.language" />
-          <NavigationButtons
-            :previousPageName="'JqueryPage1'"
-            :nextPageName="'JqueryPage3'"
-          />
+            <HighlightWord word="setTimeout()"></HighlightWord><br>
+            このような〇〇秒後のような遅延実行をさせる場合には「setTimeout()」メソッドを使います。<br>
+            ・〇秒後に任意の処理を遅延実行させる<br>
+            <HighlightWord word="setTimeout(関数,遅延時間)"></HighlightWord><br>
+          </p>
+          <br>
+          <img @click="openModal(imagePaths.step2)" :src="imagePaths.step2" alt="tag-2" class="powerpoint-image" />
+          <br>
+          <Terminal :fileName="jqueryData.file1.filename" :copiedText="jqueryData.file1.code"
+            :lang="jqueryData.file1.language" />
+          <NavigationButtons :previousPageName="'JqueryPage1'" :nextPageName="'JqueryPage3'" />
         </Document>
         <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
-        </div>
+      </div>
       <div class="side-content">
         <TableOfContents :sections="sections" />
       </div>
@@ -114,7 +134,8 @@ export default {
     });
 
     const imagePaths = {
-      step1: require("../../../assets/images/course/javascript-1/javascript.png"),
+      step1: require("../../../assets/images/course/jQuery-2/location-1.png"),
+      step2: require("../../../assets/images/course/jQuery-2/setTimeout-1.png"),
     };
 
     // モーダル関連のデータ
@@ -190,19 +211,22 @@ export default {
   border-right: 2px solid #228bc8;
 }
 
-.main-content{
+.main-content {
   width: 75%;
 }
-.side-content{
+
+.side-content {
   margin-left: 1%;
   margin-top: 5vh;
   width: 24%;
 }
+
 .markup-word-blue {
   white-space: pre;
   color: rgb(37, 139, 255);
   font-weight: bold;
 }
+
 .markup-word-red {
   white-space: pre;
   color: rgb(255, 37, 37);
@@ -246,6 +270,7 @@ export default {
   border: 1px solid rgb(175, 175, 175);
   cursor: pointer;
 }
+
 .powerpoint-image {
   max-width: 80%;
   height: auto;
@@ -256,24 +281,36 @@ export default {
 }
 
 .download-button {
-  background-color: #4caf50; /* ボタンの背景色 */
-  color: white; /* ボタンのテキストカラー */
-  border: none; /* ボーダーなし */
-  padding: 10px 20px; /* 上下左右のパディング */
-  text-align: center; /* テキストを中央に配置 */
-  text-decoration: none; /* テキスト装飾なし */
-  display: inline-block; /* インラインブロック要素にする */
-  font-size: 16px; /* フォントサイズ */
-  border-radius: 5px; /* 角丸 */
-  cursor: pointer; /* カーソルをポインターに変更 */
-  transition: background-color 0.3s; /* ホバー時の背景色変化にトランジションを追加 */
+  background-color: #4caf50;
+  /* ボタンの背景色 */
+  color: white;
+  /* ボタンのテキストカラー */
+  border: none;
+  /* ボーダーなし */
+  padding: 10px 20px;
+  /* 上下左右のパディング */
+  text-align: center;
+  /* テキストを中央に配置 */
+  text-decoration: none;
+  /* テキスト装飾なし */
+  display: inline-block;
+  /* インラインブロック要素にする */
+  font-size: 16px;
+  /* フォントサイズ */
+  border-radius: 5px;
+  /* 角丸 */
+  cursor: pointer;
+  /* カーソルをポインターに変更 */
+  transition: background-color 0.3s;
+  /* ホバー時の背景色変化にトランジションを追加 */
 }
 
 .download-button:hover {
-  background-color: #45a049; /* ホバー時の背景色 */
+  background-color: #45a049;
+  /* ホバー時の背景色 */
 }
 
-.siteImages{
+.siteImages {
   display: flex;
   flex-wrap: wrap;
 }
@@ -292,18 +329,23 @@ export default {
   .main-content {
     width: 100%;
   }
+
   .side-content {
     display: none;
   }
 
   .change_component_button {
-    width: auto; /* 幅を自動調整 */
-    text-align: center; /* テキストを中央揃え */
-    margin: 20px auto; /* 上下のマージンを調整 */
+    width: auto;
+    /* 幅を自動調整 */
+    text-align: center;
+    /* テキストを中央揃え */
+    margin: 20px auto;
+    /* 上下のマージンを調整 */
   }
 
   .change_component_button:before {
-    display: none; /* トライアングルアイコンを非表示 */
+    display: none;
+    /* トライアングルアイコンを非表示 */
   }
 }
 </style>
