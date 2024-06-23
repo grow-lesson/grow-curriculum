@@ -72,7 +72,8 @@
             例：<br>
             padding: 10px; 上下左右<br>
             padding: 10px 30px; →上下10px・左右30px<br>
-            padding: 0 10px 20px 30px; →上0px・下10px・左20px・右30px<br><br>
+            padding: 10px 20px 30px; →左10px・上下20px・右30px<br>
+            padding: 0 10px 20px 30px; →上0px・右10px・下20px・左30px<br><br>
             他の指定方法<br>
             <span class="markup-word-blue">padding-left: [余白のサイズ(px,rem,%など)];</span> →左だけ<br>
             <span class="markup-word-blue">padding-right: [余白のサイズ(px,rem,%など)];</span> →右だけ<br>
@@ -83,8 +84,14 @@
             例：<br>
             margin: 10px; 上下左右<br>
             margin: 10px 30px; →上下10px・左右30px<br>
-            margin: 0 10px 20px 30px; →上0px・下10px・左20px・右30px<br><br>
-            他の指定方法<br>
+            margin: 10px 20px 30px; →左10px・上下20px・右30px<br>
+            margin: 0 10px 20px 30px; →上0px・右10px・下20px・左30px<br><br>
+            <HighlightWord word="覚えておきたいmarginやpaddingの設定"></HighlightWord><br>
+            margin(padding): auto; 上下左右中央寄せ<br>
+            margin(padding): 0 auto; 上下0px・左右中央寄せ<br>
+            margin(padding): auto 0; 上下中央寄せ・左右0px<br>
+            margin(padding)-left: auto; 一番右に寄せるx<br>
+            margin(padding)-right: auto; 一番左に寄せるx<br>
             <span class="markup-word-blue">margin-left: [余白のサイズ(px,rem,%など)];</span> →左だけ<br>
             <span class="markup-word-blue">margin-right: [余白のサイズ(px,rem,%など)];</span> →右だけ<br>
             <span class="markup-word-blue">margin-top: [余白のサイズ(px,rem,%など)];</span> →上だけ<br>
