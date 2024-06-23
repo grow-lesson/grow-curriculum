@@ -177,5 +177,8 @@ pre code {
     margin-right: 0;
     margin-bottom: 10px;
   }
+  .terminal-textarea{
+    font-size: 11px;
+  }
 }
 </style>
