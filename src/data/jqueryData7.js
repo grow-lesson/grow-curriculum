@@ -60,25 +60,6 @@ function __() {
   },
   file4: {
     filename: "index.html(scriptタグの中)",
-    code: `// タッチ移動時の処理を定義してください (関数名: touchMove)
-function __(e) {
-  __.touchEndX = __(e);
-  if (__.touchEndX - __.touchStartX >= 0) {
-    __.touchMoveX = 0;
-  } else if (__.touchEndX - __.touchStartX <= __[swipeLength - 1]) {
-    __.touchMoveX = __[swipeLength - 1];
-  } else {
-    __.touchMoveX = __.touchEndX - __.touchStartX;
-  };
-  $swipeList.css({
-    left: __.touchMoveX
-  });
-};
-`,
-    language: "language-javascript",
-  },
-  file5: {
-    filename: "index.html(scriptタグの中)",
     code: `// スライダーの位置を変更する関数を定義してください (関数名: sliderMotion)
 // スライダーの位置を変更し、アニメーションで表示します
 function __() {
