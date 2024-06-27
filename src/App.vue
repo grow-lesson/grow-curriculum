@@ -22,7 +22,7 @@ const applyWebViewPadding = () => {
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
     if (/iPhone/i.test(userAgent)) {
       // iPhoneの内カメラを避けるために十分な上部パディングを設定
-      app.value.style.paddingTop = 'calc(env(safe-area-inset-top) + 60px)';
+      app.value.style.paddingTop = 'calc(env(safe-area-inset-top) + 30px)';
     } else if (/android/i.test(userAgent)) {
       // Androidデバイスのための上部パディングを設定
       app.value.style.paddingTop = '20px';

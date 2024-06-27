@@ -379,7 +379,7 @@ export default {
 }
 .close-button {
   position: absolute;
-  top: 50px;
+  top: 30px;
   right: 20px;
   display: flex;
   align-items: center;
@@ -507,7 +507,7 @@ export default {
   .dropdown-list {
     position: absolute;
     width: 200px;
-    top: 30px; /* スマホ版用に位置を上書き */
+    top: 20px; /* スマホ版用に位置を上書き */
     left: -50%;
   }
   .dropdown-link {
