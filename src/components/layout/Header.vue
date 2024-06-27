@@ -508,7 +508,7 @@ export default {
   .dropdown-list {
     position: absolute;
     width: 200px;
-    top: 30px; /* スマホ版用に位置を上書き */
+    top: 50px; /* スマホ版用に位置を上書き */
     left: -50%;
   }
   .dropdown-link {
