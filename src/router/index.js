@@ -296,6 +296,7 @@ const router = createRouter({
 
 // クッキーを読み取る関数
 function getCookie(name) {
+  console.log(document.cookie); // クッキーの内容をログに出力
   const value = `; ${document.cookie}`;
   const parts = value.split(`; ${name}=`);
   if (parts.length === 2) {
@@ -334,6 +335,7 @@ router.beforeEach(async (to, from, next) => {
       const accessToken = getCookie('access-token');
       const client = getCookie('client');
       const uid = decodeURIComponent(getCookie('uid')); // UIDをデコード
+      console.log('Cookies:', { accessToken, client, uid }); // クッキーの内容をログに出力
 
       if (accessToken && client && uid) {
         const response = await api.get('/auth/validate_token', {
