@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
 import api from '@/axios';
 import store from '@/store'; // Vuexストアのインポート
+import { CapacitorCookies } from '@capacitor/core';
+import { isCapacitor } from '@/utils'; // utils.jsからisCapacitor関数をインポート
+
 
 const routes = [
   {
@@ -295,46 +298,61 @@ const router = createRouter({
 });
 
 // クッキーを読み取る関数
-function getCookie(name) {
-  console.log(document.cookie); // クッキーの内容をログに出力
-  const value = `; ${document.cookie}`;
-  const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) {
-    return parts.pop().split(';').shift();
+const getCookie = async (name) => {
+  console.log("Inside getCookie function"); // デバッグ用ログ
+  if (isCapacitor()) {
+    console.log("Capacitor environment detected in getCookie function"); // デバッグ用ログ
+    const cookies = await CapacitorCookies.getCookies({
+      url: 'https://grow-curriculum-backend-f10ce9239245.herokuapp.com',
+    });
+    return cookies[name];
+  } else {
+    console.log("Web environment detected in getCookie function"); // デバッグ用ログ
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+      if (c.indexOf(nameEQ) == 0) return decodeURIComponent(c.substring(nameEQ.length, c.length));
+    }
+    return null;
   }
-}
+};
+
+
+
+
 
 // ナビゲーションガード
 router.beforeEach(async (to, from, next) => {
-  // テスト用
+  console.log("Inside navigation guard"); // デバッグ用ログ
   if (process.env.NODE_ENV === "development") {
     if (to.meta.requiresAuth) {
       const response = await api.get('/auth/validate_token');
       if (response.status === 200) {
-        // Vuexのミューテーションを呼び出してユーザー情報をストアに保存
         store.commit('setUser', response.data.data);
         if (!store.state.user.loginData) {
           next({ name: "Login" });
-          return; // テスト用の処理を終了
+          return;
         }
         next();
-        return; // テスト用の処理を終了
+        return;
       } else {
         next({ name: "Login" });
-        return; // テスト用の処理を終了
+        return;
       }
     }
-    next(); // テスト環境では認証が不要なルートも通過させる
+    next();
     return;
   }
-  console.log(process.env.NODE_ENV)
-  // 実際のAPI呼び出し
+
   if (to.meta.requiresAuth) {
-    // 認証が必要な場合の処理
     try {
-      const accessToken = getCookie('access-token');
-      const client = getCookie('client');
-      const uid = decodeURIComponent(getCookie('uid')); // UIDをデコード
+      console.log('Document cookies before get:', document.cookie); // クッキーの内容をログに出力
+
+      const accessToken = await getCookie('access-token');
+      const client = await getCookie('client');
+      const uid = await getCookie('uid');
       console.log('Cookies:', { accessToken, client, uid }); // クッキーの内容をログに出力
 
       if (accessToken && client && uid) {
@@ -344,10 +362,9 @@ router.beforeEach(async (to, from, next) => {
             'client': client,
             'uid': uid
           },
-          withCredentials: true // クレデンシャル情報を含める設定
+          withCredentials: true
         });
         if (response.status === 200) {
-          // Vuexのミューテーションを呼び出してユーザー情報をストアに保存
           store.commit('setUser', response.data.data);
           if (!store.state.user.loginData) {
             next({ name: "Login" });
@@ -365,11 +382,11 @@ router.beforeEach(async (to, from, next) => {
       }
     } catch (error) {
       console.error(error);
-      next({ name: "Login" }); // エラーの場合もログインページにリダイレクト
+      next({ name: "Login" });
       return;
     }
   }
-  next(); // 認証が不要な場合はそのまま遷移
+  next();
 });
 
 export default router;
