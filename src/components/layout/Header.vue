@@ -379,7 +379,7 @@ export default {
 }
 .close-button {
   position: absolute;
-  top: 20px;
+  top: 50px;
   right: 20px;
   display: flex;
   align-items: center;
@@ -435,9 +435,7 @@ export default {
   cursor: pointer;
   background-color: transparent;
   border: none;
-  padding: 0;
-  margin: 0;
-  top: 50px;
+  margin-top: 10px
 }
 
 .hamburger-button span {
@@ -516,7 +514,7 @@ export default {
     font-size: small;
   }
   .hamburger-button {
-    top: 15px;
+    top: 60px;
   }
 }
 </style>
