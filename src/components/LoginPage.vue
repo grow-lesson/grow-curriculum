@@ -101,7 +101,7 @@ export default {
       date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
       const expires = "expires=" + date.toUTCString();
       const cookieValue = encodeURIComponent(value);
-      document.cookie = `${name}=${cookieValue};${expires};path=/;secure;SameSite=strict`;
+      document.cookie = `${name}=${cookieValue};${expires};path=/;SameSite=None;Secure`;
     }
 
     return {

@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const instance = axios.create({
   baseURL: process.env.VUE_APP_API_URL,
+  withCredentials: true // クッキーを常に含める設定
 });
 
 console.log('API Base URL:', process.env.VUE_APP_API_URL);  // 環境変数をログ出力
