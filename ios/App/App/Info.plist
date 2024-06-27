@@ -50,5 +50,10 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>WKAppBoundDomains</key>
+	<array>
+		<string>grow-curriculum-backend-f10ce9239245.herokuapp.com</string>
+		<string>your-other-domain.com</string>
+	</array>
 </dict>
 </plist>

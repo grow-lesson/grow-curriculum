@@ -27,6 +27,8 @@ import { ref } from 'vue';
 import * as yup from 'yup';
 import api from '@/axios';
 import { useRouter } from 'vue-router';
+import { isCapacitor } from '@/utils'; // utils.jsからisCapacitor関数をインポート
+import { CapacitorCookies } from '@capacitor/core';
 
 export default {
   setup() {
@@ -71,9 +73,11 @@ export default {
         const response = await api.post('/auth/sign_in', loginData, { withCredentials: true });
 
         if (response.status === 201 || response.status === 200) {
-          setCookie('access-token', response.headers['access-token']);
-          setCookie('client', response.headers['client']);
-          setCookie('uid', response.headers['uid']);
+          await setCookie('access-token', response.headers['access-token']);
+          await setCookie('client', response.headers['client']);
+          await setCookie('uid', response.headers['uid']);
+
+          console.log('Cookies set via Capacitor:', document.cookie);
 
           router.push({ name: 'MenuPage' });
         } else {
@@ -95,14 +99,38 @@ export default {
       }
     };
 
-    function setCookie(name, value) {
-      const days = 7;
-      const date = new Date();
-      date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-      const expires = "expires=" + date.toUTCString();
-      const cookieValue = encodeURIComponent(value);
-      document.cookie = `${name}=${cookieValue};${expires};path=/;secure;SameSite=strict`;
-    }
+
+
+
+
+    const setCookie = async (name, value, days = 7) => {
+  console.log("Inside setCookie function"); // デバッグ用ログ
+  const date = new Date();
+  date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+  const expires = date.toUTCString();
+
+  if (isCapacitor()) {
+    console.log("Capacitor environment detected in setCookie function"); // デバッグ用ログ
+    await CapacitorCookies.setCookie({
+      url: 'https://grow-curriculum-backend-f10ce9239245.herokuapp.com',
+      key: name,
+      value: value,
+      expires: expires,
+      path: '/', // ルートパスに設定
+      secure: true,
+      sameSite: 'None',
+    });
+  } else {
+    console.log("Web environment detected in setCookie function"); // デバッグ用ログ
+    document.cookie = name + "=" + encodeURIComponent(value) + "; expires=" + expires + "; path=/; SameSite=None; Secure";
+  }
+
+  console.log(`Set cookie: ${name}=${value}; expires=${expires}; path=/; SameSite=None; Secure`);
+};
+
+
+
+
 
     return {
       form,
