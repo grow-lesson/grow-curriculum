@@ -468,7 +468,7 @@ img {
   <div class="wrap">
     <header class="header">
       <div class="header-logo">
-        <img src="images/logo.png" alt="grow-logo" class="header-picture">
+        <img src="assets/images/logo.png" alt="grow-logo" class="header-picture">
       </div>
       <ul class="header-list">
         <li class="header-item">
@@ -505,23 +505,23 @@ img {
       </div>
       <ul class="image-list">
         <li class="image-item new-parent">
-          <img src="images/img1.png" alt="sandwich" class="image-picture">
+          <img src="assets/images/img1.png" alt="sandwich" class="image-picture">
           <p class="new-child">new!</p>
           </li>
         <li class="image-item">
-          <img src="images/img2.png" alt="coffee" class="image-picture">
+          <img src="assets/images/img2.png" alt="coffee" class="image-picture">
         </li>
         <li class="image-item">
-          <img src="images/img3.png" alt="shoe" class="image-picture">
+          <img src="assets/images/img3.png" alt="shoe" class="image-picture">
         </li>
         <li class="image-item">
-          <img src="images/img4.png" alt="window" class="image-picture">
+          <img src="assets/images/img4.png" alt="window" class="image-picture">
         </li>
         <li class="image-item">
-          <img src="images/img5.png" alt="city" class="image-picture">
+          <img src="assets/images/img5.png" alt="city" class="image-picture">
         </li>
         <li class="image-item">
-          <img src="images/img6.png" alt="sunset" class="image-picture">
+          <img src="assets/images/img6.png" alt="sunset" class="image-picture">
         </li>
       </ul>
     </main>
