@@ -456,74 +456,80 @@ img {
     filename: "index.html",
     code: `<!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="assets/style.css" />
-    <link rel="stylesheet" href="assets/reset.css" />
-    <title>html-css-lesson-10</title>
-  </head>
-  <body>
-    <div class="wrap">
-      <header class="header">
-        <div class="header-logo">
-          <img src="assets/images/logo.png" alt="" class="header-picture">
-        </div>
-        <ul class="header-list">
-          <li class="header-item">
-            <a href="#" class="header-link">home</a>
-          </li>
-          <li class="header-item">
-            <a href="#" class="header-link">about</a>
-          </li>
-          <li class="header-item">
-            <a href="#" class="header-link">company</a>
-          </li>
-          <li class="header-item">
-            <a href="#" class="header-link">contact</a>
-          </li>
-        </ul>
-      </header>
-      <main class="main">
-        <div class="shape">
-          <h2 class="shape-title">Sample Site</h2>
-          <div class="shapes-container">
-            <div class="shape-circle"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="assets/reset.css" />
+  <title>html-css-lesson-10</title>
+</head>
+<body>
+  <div class="wrap">
+    <header class="header">
+      <div class="header-logo">
+        <img src="images/logo.png" alt="grow-logo" class="header-picture">
+      </div>
+      <ul class="header-list">
+        <li class="header-item">
+          <a href="#" class="header-link">home</a>
+        </li>
+        <li class="header-item">
+          <a href="#" class="header-link">about</a>
+        </li>
+        <li class="header-item">
+          <a href="#" class="header-link">company</a>
+        </li>
+        <li class="header-item">
+          <a href="#" class="header-link">contact</a>
+        </li>
+      </ul>
+    </header>
+    <main class="main">
+      <div class="shape">
+        <h2 class="shape-title">Sample Site</h2>
+        <div class="shapes-container">
+          <img src="assets/images/person_icon.png" alt="" class="shapes-icon">
+          <div>
+            <h2 class="shape-lead">Name</h2>
             <p class="shape-text">
-              The sunsets over the horizon,
-              painting the sky with shades of orange and pink,
-              as the day gives way to the calm of the night.
+                The sunsets over the horizon,
+                painting the sky with shades of orange and pink,
+                as the day gives way to the calm of the night.
             </p>
           </div>
         </div>
-        <ul class="image-list">
-          <li class="image-item">
-            <img src="assets/images/bag.png" alt="bag" class="image-picture">
+      </div>
+      <div class="category">
+        <p>投稿</p>
+      </div>
+      <ul class="image-list">
+        <li class="image-item new-parent">
+          <img src="images/img1.png" alt="sandwich" class="image-picture">
+          <p class="new-child">new!</p>
           </li>
-          <li class="image-item new-parent">
-            <img src="assets/images/book.png" alt="book" class="image-picture">
-            <p class="new-child">new!</p>
-          </li>
-          <li class="image-item">
-            <img src="assets/images/pen.png" alt="pen" class="image-picture">
-          </li>
-          <li class="image-item">
-            <img src="assets/images/phone.png" alt="phone" class="image-picture">
-          </li>
-          <li class="image-item">
-            <img src="assets/images/note.png" alt="note" class="image-picture">
-          </li>
-          <li class="image-item">
-            <img src="assets/images/movie.png" alt="movie" class="image-picture">
-          </li>
-        </ul>
-      </main>
-      <footer class="footer">
-        <p class="footer-title">&copy; 2023 Grow. All rights reserved.</p>
-      </footer>
-    </div>
-  </body>
+        <li class="image-item">
+          <img src="images/img2.png" alt="coffee" class="image-picture">
+        </li>
+        <li class="image-item">
+          <img src="images/img3.png" alt="shoe" class="image-picture">
+        </li>
+        <li class="image-item">
+          <img src="images/img4.png" alt="window" class="image-picture">
+        </li>
+        <li class="image-item">
+          <img src="images/img5.png" alt="city" class="image-picture">
+        </li>
+        <li class="image-item">
+          <img src="images/img6.png" alt="sunset" class="image-picture">
+        </li>
+      </ul>
+    </main>
+    <footer class="footer">
+      <p class="footer-title">&copy; 2023 Grow. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
 </html>`
 ,
     language: "language-html",
@@ -538,9 +544,9 @@ img {
 /* .headerのスタイル */
 .header {
   height: 100px;
-  display: /* 問①ここにプロパティ値を入れてください */;
+  display: flex; /* 問② */
   align-items: center;
-  justify-content: /* 問②ここにプロパティ値を入れてください */;
+  justify-content: space-between; /* 問③ */
   background-image: linear-gradient(90deg, rgba(89, 173, 241, 1), rgba(207, 253, 157, 1));
 }
 
@@ -641,7 +647,7 @@ img {
 .image-list {
   max-width: 650px;
   display: flex;
-  flex-wrap: /* 問③ここにプロパティ値を入れてください */;
+  flex-wrap: wrap; /* 問④ */
   justify-content: center;
   margin: 20px auto;
 }
@@ -658,11 +664,11 @@ img {
 }
 
 .new-parent {
-  position: /* 問④ここにプロパティ値を入れてください */;
+  position: relative; /* 問① */
 }
 
 .new-child {
-  position: /* 問④ここにプロパティ値を入れてください */;
+  position: absolute; /* 問① */
   top: -8px;
   left: -8px;
   padding: 5px 10px;
@@ -686,7 +692,7 @@ img {
   color: white;
 }
 
-@media screen and (/* 問⑤ここにプロパティを入れてください */: 649px) {
+@media screen and (min-width: 649px) { /* 問⑤ */
 
   /* 画面サイズが649px以上はここを読み込む */
   .shape-text {
@@ -698,7 +704,7 @@ img {
   }
 }
 
-@media screen and (/* 問⑤ここにプロパティを入れてください */: 648px) {
+@media screen and (max-width: 648px) { /* 問⑤ */
 
   /* 画面サイズが648px以下はここを読み込む */
   .shapes-container {
