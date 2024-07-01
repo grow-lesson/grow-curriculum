@@ -265,6 +265,9 @@
             <li class="siteImage">
               <img src="../../../assets/images/course/sample-site/logo.png" class="screen-image" alt="phone" />
             </li>
+            <li class="siteImage">
+              <img src="../../../assets/images/course/sample-site/person_icon.png" class="screen-image" alt="bag" />
+            </li>
           </ul>
           <br>
           <p>
