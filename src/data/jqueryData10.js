@@ -89,7 +89,10 @@ $.ajax({
   } else {
     _____(data);
   }
-});
+  // エラーメッセージを追加してください
+  }).fail(function (jqXHR, textStatus, errorThrown) {
+    alert("APIリクエストに失敗しました。もう一度試してください。");
+  });
 };
 `,
     language: "language-javascript",
