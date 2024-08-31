@@ -37,6 +37,8 @@ export const jqueryData = {
   $_____._____('<p class="message">検索結果が見つかりませんでした。<br>別のキーワードで検索して下さい。</p>');
 };
 function searchWordBlankCheck() {
+// 既存のメッセージを削除
+  $(".message").remove();
   // 検索フォームが未入力の場合のメッセージをリストの前に表示します。
   $_____._____('<p class="message" style="color: red;">検索ワードが未入力です。</p>')
 };
