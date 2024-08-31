@@ -66,20 +66,23 @@
             :lang="jqueryData.file2.language" />
           <p>
             <br>
-            検索結果が見つからない場合に表示されるメッセージを追加する関数を作成します。<br>
+            検索結果が見つからない場合、検索ワードが未入力の場合に表示されるメッセージを追加する関数を作成します。<br>
             (1)emptyMessageという名前の関数を作成します。<br>
             (2)リストの前にメッセージを表示します。<br>
+            (3)searchWordBlankCheckという名前の関数を作成します。<br>
+            (4)リストの前にメッセージを表示します。<br>
           </p><br>
           <Terminal :fileName="jqueryData.file3.filename" :copiedText="jqueryData.file3.code"
             :lang="jqueryData.file3.language" />
           <p>
             <br>
-            AJAXを使って、楽天ブックスAPIからデータを取得する関数を作成します。<br>
+            バリデーションチェックを行いAJAXを使って、楽天ブックスAPIからデータを取得する関数を作成します。<br>
             (1)fetchBookDataという名前の関数を作成します。<br>
             (2)検索ワードを取得します。<br>
             (3)ページ番号を1つ増やします。<br>
             (4)検索ワードが前回と異なる場合の処理を行います。<br>
-            (5)AJAXリクエストを送信します。<br>
+            (5)未入力チェックを行います。<br>
+            (6)AJAXリクエストを送信します。<br>
           </p><br>
           <Terminal :fileName="jqueryData.file4.filename" :copiedText="jqueryData.file4.code"
             :lang="jqueryData.file4.language" />
