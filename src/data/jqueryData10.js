@@ -18,8 +18,7 @@ export const jqueryData = {
   },
   file2: {
     filename: "index.html(scriptタグの中)",
-    code: `
-function showItems(data) {
+    code: `function showItems(data) {
   // 取得したデータを逆順に処理します
   data.Items._____().forEach(function(book) {
     // 本の情報をHTML形式でテンプレートに埋め込みます
@@ -36,6 +35,10 @@ function showItems(data) {
     code: `function emptyMessage() {
   // 検索結果が見つからない場合のメッセージをリストの前に表示します
   $_____._____('<p class="message">検索結果が見つかりませんでした。<br>別のキーワードで検索して下さい。</p>');
+};
+function searchWordBlankCheck() {
+  // 検索フォームが未入力の場合のメッセージをリストの前に表示します。
+  $_____._____('<p class="message" style="color: red;">検索ワードが未入力です。</p>')
 };
 `,
     language: "language-javascript",
@@ -55,6 +58,11 @@ if (searchWord != _____) {
   $_____._____();
   // ページ番号を1にリセットする処理を追加してください
   _____ = 1;
+}
+
+// 非同期通信前に検索ワードに文字が入力されているかのバリデーションチェックをしてください。
+if (searchWord._____ == _____) {
+  searchWordBlankCheck();
 }
 
 // 前回の検索ワードを現在の検索ワードに更新してください
@@ -90,7 +98,7 @@ $.ajax({
     _____(data);
   }
   // エラーメッセージを追加してください
-  }).fail(function (jqXHR, textStatus, errorThrown) {
+  })._____(function (jqXHR, textStatus, errorThrown) {
     alert("APIリクエストに失敗しました。もう一度試してください。");
   });
 };
