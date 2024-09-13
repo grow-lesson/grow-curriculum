@@ -68,6 +68,16 @@
             </div>
             <a class="feature-button" @click="goToJqueryMenuPage">受講する</a>
           </div>
+          <div class="feature">
+            <h2 class="feature-title">Photoshop</h2>
+            <p class="feature-description">Photoshopの基本的な使い方を学び、画像編集のスキルを身につけましょう。</p>
+            <div class="feature-image">
+              <div class="feature-logo">
+                <img src="../../assets/images/menu/photoshop.png" class="feature-icon" alt="photoshop" />
+              </div>
+            </div>
+            <a class="feature-button" @click="goToPhotoshopMenuPage">受講する</a>
+          </div>
         </div>
       </section>
     </div>
@@ -114,6 +124,10 @@ export default {
       router.push({ name: "UnderConstruction" });
     };
 
+    const goToPhotoshopMenuPage = () => {
+      router.push({ name: "PhotoshopMenuPage" });
+    };
+
     onMounted(() => {
       window.scrollTo(0, 0);
     });
@@ -125,6 +139,7 @@ export default {
       goToJavaScriptMenuPage,
       goToSQLMenuPage,
       goToJqueryMenuPage,
+      goToPhotoshopMenuPage,
     };
   },
 };

@@ -95,6 +95,23 @@
           <a class="course-button" @click="goToJqueryMenuPage">受講する</a>
         </div>
       </section>
+      <div class="hero">
+        <div class="hero-content">
+          <h1 class="hero-title">デザインコース</h1>
+        </div>
+      </div>
+      <section class="course">
+        <div class="course-item">
+          <h2 class="course-title">Photoshop</h2>
+          <p class="course-explanation">Photoshopの基本的な使い方が学べるコース</p>
+          <div class="course-image">
+            <div class="course-logo">
+              <img src="../assets/images/menu/photoshop.png" class="course-icon" alt="Photoshop" />
+            </div>
+          </div>
+          <a class="course-button" @click="goToPhotoshopMenuPage">受講する</a>
+        </div>
+      </section>
     </main>
     <Footer />
   </div>
@@ -158,6 +175,10 @@ export default {
       router.push({ name: "UnderConstruction" });
     };
 
+    const goToPhotoshopMenuPage = () => {
+      router.push({ name: "PhotoshopMenuPage" });
+    };
+
     onMounted(() => {
       window.scrollTo(0, 0);
     });
@@ -175,6 +196,7 @@ export default {
       goToJavaScriptMenuPage,
       goToSQLMenuPage,
       goToJqueryMenuPage,
+      goToPhotoshopMenuPage,
     };
   },
 };

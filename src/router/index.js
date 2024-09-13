@@ -169,6 +169,30 @@ const routes = [
     component: () => import("../components/course/course-4/JavascriptPage7.vue"),
   },
   {
+    path: "/photoshop-lesson-menu",
+    name: "PhotoshopMenuPage",
+    meta: { requiresAuth: true },
+    component: () => import("../components/course/course-7/PhotoshopMenuPage.vue"),
+  },
+  {
+    path: "/photoshop-lesson-1",
+    name: "PhotoshopPage1",
+    meta: { requiresAuth: true },
+    component: () => import("../components/course/course-7/PhotoshopPage1.vue"),
+  },
+  {
+    path: "/photoshop-lesson-2",
+    name: "PhotoshopPage2",
+    meta: { requiresAuth: true },
+    component: () => import("../components/course/course-7/PhotoshopPage2.vue"),
+  },
+  {
+    path: "/photoshop-lesson-3",
+    name: "PhotoshopPage3",
+    meta: { requiresAuth: true },
+    component: () => import("../components/course/course-7/PhotoshopPage3.vue"),
+  },
+  {
     path: "/mypage",
     name: "MyPage",
     meta: { requiresAuth: true },
