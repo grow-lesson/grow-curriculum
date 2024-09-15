@@ -65,6 +65,7 @@
             ・要素の配置の基準を設定するプロパティ。positionプロパティと呼ばれます。<br><br>
             例：<br>
             position : fixed; →画面のきまった位置に固定<br>
+            position : sticky; →親要素内で決まった位置に固定<br>
             position : relative;  →現在の位置を基準に相対的な位置を決める<br>
             position : absolute;  →親要素を基準に絶対的な位置を決める<br>
             <br><br>
@@ -77,8 +78,16 @@
             それではこの基準と位置を配置するプロパティの使い方を説明していきます。<br><br>
             まずはposition: fixed;はスクロールしても表示される様に固定したい時に使います。<br>
             ヘッダーのようなナビゲーションエリアなどの要素にこのプロパティを指定し、スクロールしても画面上に固定したい場合などに使用します。<br><br>
+            次にposition: sticky;は親要素内で固定したい場合に使います。<br>
+            スクロールで画面内に親要素が見えなくなればstickyで固定した要素も見えなくなります。fixedは画面上で固定され見えなくなることはないので、常に見えるか親要素内でのみ見えるかの違いで使い分けましょう。
+          </p><br>
+          <br>
+          <div>
+            <img @click="openModal(imagePaths.step23)" :src="imagePaths.step23" class="powerpoint-image" alt="sticky" />
+          </div><br><br>
+          <p>
             次にposition: relative;はデフォルトの位置から要素を動かしたい時に使います。<br>
-            次の画像を見てください。
+          次の画像を見てください。
           </p><br>
           <br>
           <div>
@@ -371,6 +380,7 @@ export default {
       step20: require("../../../assets/images/course/sample-site/pen.png"),
       step21: require("../../../assets/images/course/sample-site/phone.png"),
       step22: require("../../../assets/images/course/html-css-3/vscode-1.png"),
+      step23: require("../../../assets/images/course/html-css-3/sticky.png"),
     };
 
     // モーダル関連のデータ
