@@ -523,7 +523,7 @@
             <img @click="openModal(imagePaths.step43)" :src="imagePaths.step43" alt="tag-7" class="powerpoint-image" />
           </div><br><br>
           <NavigationButtons
-            :previousPageName="'HtmlPage3'"
+            :previousPageName="'HtmlPage5'"
             :nextPageName="'HtmlPage2'"
           />
         </Document>

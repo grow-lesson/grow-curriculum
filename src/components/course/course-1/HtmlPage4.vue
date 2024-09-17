@@ -161,7 +161,7 @@
           </p>
           <NavigationButtons
             :previousPageName="'HtmlPage3'"
-            :nextPageName="'HtmlPageBEM'"
+            :nextPageName="'HtmlPage5'"
           />
         </Document>
         <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
