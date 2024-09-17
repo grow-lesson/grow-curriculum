@@ -77,23 +77,16 @@ export default {
           await setCookie('client', response.headers['client']);
           await setCookie('uid', response.headers['uid']);
 
-          console.log('Cookies set via Capacitor:', document.cookie);
-
           router.push({ name: 'MenuPage' });
         } else {
           throw new Error('ログインエラーが発生しました');
         }
       } catch (error) {
         if (error.response) {
-          console.error('Response data:', error.response.data);
-          console.error('Response status:', error.response.status);
-          console.error('Response headers:', error.response.headers);
           alert(error.response.data.message || 'ログインエラーが発生しました');
         } else if (error.request) {
-          console.error('Request data:', error.request);
           alert('サーバーから応答がありません。ネットワークを確認してください。');
         } else {
-          console.error('Error message:', error.message);
           alert(error.message);
         }
       }
@@ -104,13 +97,11 @@ export default {
 
 
     const setCookie = async (name, value, days = 7) => {
-  console.log("Inside setCookie function"); // デバッグ用ログ
   const date = new Date();
   date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
   const expires = date.toUTCString();
 
   if (isCapacitor()) {
-    console.log("Capacitor environment detected in setCookie function"); // デバッグ用ログ
     await CapacitorCookies.setCookie({
       url: 'https://grow-curriculum-backend-f10ce9239245.herokuapp.com',
       key: name,
@@ -121,11 +112,8 @@ export default {
       sameSite: 'None',
     });
   } else {
-    console.log("Web environment detected in setCookie function"); // デバッグ用ログ
     document.cookie = name + "=" + encodeURIComponent(value) + "; expires=" + expires + "; path=/; SameSite=None; Secure";
   }
-
-  console.log(`Set cookie: ${name}=${value}; expires=${expires}; path=/; SameSite=None; Secure`);
 };
 
 

@@ -58,7 +58,6 @@ export default {
             messages.value.splice(index, 1, { text: botResponse, type: "bot" });
           }
         } catch (error) {
-          console.error('ChatGPT API エラー:', error);
           messages.value.push({ text: 'エラーが起こりました。更新してください。', type: "bot" });
         }
       }

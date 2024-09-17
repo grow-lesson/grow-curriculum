@@ -299,15 +299,12 @@ const router = createRouter({
 
 // クッキーを読み取る関数
 const getCookie = async (name) => {
-  console.log("Inside getCookie function"); // デバッグ用ログ
   if (isCapacitor()) {
-    console.log("Capacitor environment detected in getCookie function"); // デバッグ用ログ
     const cookies = await CapacitorCookies.getCookies({
       url: 'https://grow-curriculum-backend-f10ce9239245.herokuapp.com',
     });
     return cookies[name];
   } else {
-    console.log("Web environment detected in getCookie function"); // デバッグ用ログ
     const nameEQ = name + "=";
     const ca = document.cookie.split(';');
     for (let i = 0; i < ca.length; i++) {
@@ -325,7 +322,6 @@ const getCookie = async (name) => {
 
 // ナビゲーションガード
 router.beforeEach(async (to, from, next) => {
-  console.log("Inside navigation guard"); // デバッグ用ログ
   if (process.env.NODE_ENV === "development") {
     if (to.meta.requiresAuth) {
       const response = await api.get('/auth/validate_token');
@@ -348,13 +344,9 @@ router.beforeEach(async (to, from, next) => {
 
   if (to.meta.requiresAuth) {
     try {
-      console.log('Document cookies before get:', document.cookie); // クッキーの内容をログに出力
-
       const accessToken = await getCookie('access-token');
       const client = await getCookie('client');
       const uid = await getCookie('uid');
-      console.log('Cookies:', { accessToken, client, uid }); // クッキーの内容をログに出力
-
       if (accessToken && client && uid) {
         const response = await api.get('/auth/validate_token', {
           headers: {
