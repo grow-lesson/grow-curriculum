@@ -250,6 +250,18 @@ const routes = [
     component: () => import("../components/course/course-5/JqueryPage10.vue"),
   },
   {
+    path: "/sql-lesson-menu",
+    name: "SqlMenuPage",
+    meta: { requiresAuth: true },
+    component: () => import("../components/course/course-6/SqlMenuPage.vue"),
+  },
+  {
+    path: "/sql-lesson-1",
+    name: "SqlPage1",
+    meta: { requiresAuth: true },
+    component: () => import("../components/course/course-6/SqlPage1.vue"),
+  },
+  {
     path: "/my-page",
     name: "MyPage",
     meta: { requiresAuth: true },
