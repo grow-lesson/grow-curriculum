@@ -19,7 +19,7 @@ export default {
 .section-title {
   position: relative;
   padding: 8px 0;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: bold;
   border-radius: 4px;
   margin: 10px 0 30px;

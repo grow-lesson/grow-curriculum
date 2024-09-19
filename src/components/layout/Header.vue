@@ -447,7 +447,6 @@ export default {
   cursor: pointer;
   background-color: transparent;
   border: none;
-  margin-top: 10px
 }
 
 .hamburger-button span {
@@ -505,7 +504,6 @@ export default {
   }
 
   .hamburger-button {
-    top: 25px;
     display: none; /* ハンバーガーメニューボタンは非表示 */
   }
 }
@@ -524,9 +522,6 @@ export default {
   }
   .dropdown-link {
     font-size: small;
-  }
-  .hamburger-button {
-    top: 60px;
   }
 }
 </style>

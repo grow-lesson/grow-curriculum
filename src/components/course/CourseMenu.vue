@@ -40,7 +40,7 @@
           </div>
           <div class="feature">
             <h2 class="feature-title">jQuery</h2>
-            <p class="feature-description">jQueryを使った動的な操作とイベント処理を学び、ユーザビリティ向上とコードの効率性を学びましょう。</p>
+            <p class="feature-description">jQueryを使った動的な操作とイベント処理を学び、<br>ユーザビリティ向上とコードの効率性を学びましょう。</p>
             <div class="feature-image">
               <div class="feature-logo">
                 <img src="../../assets/images/menu/jquery.png" class="feature-icon" alt="SQL" />
@@ -60,7 +60,7 @@
           </div>
           <div class="feature">
             <h2 class="feature-title">SQL</h2>
-            <p class="feature-description">データベース管理言語(SQL)の基礎を学び、実践的な操作スキルを身につけましょう。</p>
+            <p class="feature-description">データベース管理言語(SQL)の基礎を学び、<br>実践的な操作スキルを身につけましょう。</p>
             <div class="feature-image">
               <div class="feature-logo">
                 <img src="../../assets/images/menu/sql.png" class="feature-icon" alt="SQL" />
@@ -142,6 +142,13 @@ export default {
 
 .hero-description {
   font-size: 20px;
+  font-weight: 600;
+  font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
 }
 
 .features-section {
@@ -171,6 +178,7 @@ export default {
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 10px;
+  color: #272727;
 }
 
 .feature-description {

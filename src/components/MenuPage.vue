@@ -77,7 +77,7 @@
       </section>
       <div class="hero">
         <div class="hero-content">
-          <h1 class="hero-title">番外コース</h1>
+          <h1 class="hero-title">発展コース</h1>
         </div>
       </div>
       <section class="course">
@@ -158,7 +158,7 @@ export default {
     };
 
     const goToSQLMenuPage = () => {
-      router.push({ name: "UnderConstruction" });
+      router.push({ name: "SqlMenuPage" });
     };
 
     const goToJqueryMenuPage = () => {
@@ -190,18 +190,23 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .main-content {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
 }
 
 .user-message {
-  font-size: 18px;
-  color: #3498db;
-  text-align: left;
+  font-size: 20px;
+  color: #4188b6;
+  text-align: center;
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 8px;
   margin: 20px auto;
-  width: 100%;
+  width: 80%;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -256,24 +261,25 @@ export default {
   padding: 60px;
   background-color: #fff;
 }
-.course-title {
-  text-align: center;
-}
+
 .course-item {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  width: 30%;
+  width: 40%;
 }
 
 .course-title {
+  text-align: center;
   font-size: 26px;
+  font-weight: 600;
 }
 
 .course-explanation {
   text-align: center;
-  color: #666;
+  color: #383838;
   padding: 30px 0;
+  font-size: 20px;
 }
 
 .course-image {
@@ -290,7 +296,7 @@ export default {
 .course-button {
   display: inline-block;
   text-align: center;
-  width: 120px;
+  width: 200px;
   margin: 0 auto;
   padding: 10px 20px;
   background-color: #4285f4;
@@ -376,7 +382,8 @@ export default {
 
   .course-explanation {
     text-align: center;
-    color: #666;
+    color: #383838;
+    font-size: small;
     margin-bottom: 10px;
   }
 
@@ -399,7 +406,7 @@ export default {
   .course-button {
     display: inline-block;
     text-align: center;
-    width: 120px;
+    width: 100%;
     margin: 0 auto;
     padding: 10px 20px;
     background-color: #4285f4;
