@@ -13,7 +13,6 @@
             <li class="navigation-item">
               <button class="navigation-btn" @click="goToIntroducePage">サイトについて</button>
             </li>
-
             <li class="navigation-item">
               <button class="navigation-btn">準備と提出</button>
               <ul class="dropdown-list">
@@ -30,17 +29,12 @@
               <button class="navigation-btn">マイページ</button>
               <ul class="dropdown-list">
                 <li class="dropdown-item"><a @click="goToMyPage" class="dropdown-link">プロフィール</a></li>
-                <!-- <li class="dropdown-item"><a @click="goToProgressPage" class="dropdown-link">進捗管理</a></li > -->
-                <li class="dropdown-item"><a href="https://id.moneyforward.com/sign_in?client_id=8gQSNxOMhkM554G5OsbOAoesxrBbkdHfuESOGQ9uR1A&code_challenge=VbLqCHgXpFVqteT1FyLu653hpER4m_AW4KHRhpi9kiI&code_challenge_method=S256&nonce=a5c23fc9a62f11793fc481687ab3b14f&redirect_uri=https%3A%2F%2Ferp.moneyforward.com%3A443%2Fusers%2Fauth%2Fmfid%2Fcallback&response_type=code&scope=openid+email&state=182f662a45a785492f130fc5323c5a4e" target="_blank" class="dropdown-link">給与の確認</a></li>
-                <!-- <li class="dropdown-item"><a @click="goToReservationCalendarPage" class="dropdown-link">自習予約する</a></li> -->
-                <!-- <li class="dropdown-item"><a href="#" class="dropdown-link">勤怠表を提出する</a></li> -->
               </ul>
             </li>
             <li class="navigation-item">
               <button class="navigation-btn">その他</button>
               <ul class="dropdown-list">
                 <li class="dropdown-item"><a @click="goToContactPage" class="dropdown-link">お問い合わせ</a></li>
-                <!-- <li class="dropdown-item"><a @click="goToChatBotPage" class="dropdown-link">チャットボット</a></li> -->
                 <li class="dropdown-item"><a href="https://grow-infotech.com" target="_blank" class="dropdown-link">会社のホームページを見る</a></li>
                 <li class="dropdown-item"><a href="https://www.wantedly.com/companies/company_7305723" target="_blank" class="dropdown-link">Wantedllyを見る</a></li>
               </ul>
@@ -83,17 +77,12 @@
           <button>マイページ</button>
           <ul class="dropdown-list">
             <li class="dropdown-item"><a @click="goToMyPage" class="dropdown-link">プロフィール</a></li>
-            <!-- <li class="dropdown-item"><a @click="goToProgressPage" class="dropdown-link">進捗管理</a></li > -->
-            <li class="dropdown-item"><a href="https://id.moneyforward.com/sign_in?client_id=8gQSNxOMhkM554G5OsbOAoesxrBbkdHfuESOGQ9uR1A&code_challenge=VbLqCHgXpFVqteT1FyLu653hpER4m_AW4KHRhpi9kiI&code_challenge_method=S256&nonce=a5c23fc9a62f11793fc481687ab3b14f&redirect_uri=https%3A%2F%2Ferp.moneyforward.com%3A443%2Fusers%2Fauth%2Fmfid%2Fcallback&response_type=code&scope=openid+email&state=182f662a45a785492f130fc5323c5a4e" target="_blank" class="dropdown-link">給与の確認</a></li>
-            <!-- <li class="dropdown-item"><a @click="goToReservationCalendarPage" class="dropdown-link">自習予約する</a></li> -->
-            <!-- <li class="dropdown-item"><a href="#" class="dropdown-link">勤怠表を提出する</a></li> -->
           </ul>
         </li>
         <li class="menu-item">
           <button>その他</button>
           <ul class="dropdown-list">
             <li class="dropdown-item"><a @click="goToContactPage" class="dropdown-link">お問い合わせ</a></li>
-            <!-- <li class="dropdown-item"><a @click="goToChatBotPage" class="dropdown-link">チャットボット</a></li> -->
             <li class="dropdown-item"><a href="https://grow-infotech.com" target="_blank" class="dropdown-link">会社のホームページを見る</a></li>
             <li class="dropdown-item"><a href="https://www.wantedly.com/companies/company_7305723" target="_blank" class="dropdown-link">Wantedllyを見る</a></li>
           </ul>
@@ -168,10 +157,6 @@ export default {
       router.push({ name: "Contact" });
     };
 
-    // const goToChatBotPage = () => {
-    //   router.push({ name: "ChatBot" });
-    // };
-
     // ウィンドウリサイズ時にモバイル画面の判定を行う
     const handleResize = () => {
       checkMobileScreen();
@@ -202,7 +187,6 @@ export default {
       goToProgressPage,
       goToReservationCalendarPage,
       goToContactPage,
-      // goToChatBotPage,
     };
   },
 };
@@ -236,52 +220,32 @@ export default {
   font-size: large;
   font-weight: bold;
   cursor: pointer;
-  font-family: "Helvetica Neue",
-    Arial,
-    "Hiragino Kaku Gothic ProN",
-    "Hiragino Sans",
-    Meiryo,
-    sans-serif;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 }
 
 .navigation-wrap {
   width: 70%;
   margin-left: auto;
 }
+
 .navigation-list {
   width: 100%;
   display: flex;
   justify-content: flex-end;
 }
+
 .navigation-item {
   width: 35%;
   height: 60px;
   background-color: #e5f0f8;
   position: relative;
   transition: all 0.3s;
-  font-family: "Helvetica Neue",
-    Arial,
-    "Hiragino Kaku Gothic ProN",
-    "Hiragino Sans",
-    Meiryo,
-    sans-serif;
 }
+
 .navigation-item:hover {
   background-color: #0071bb;
 }
-.navigation-item:not(:first-child)::before {
-  content: "";
-  width: 1px;
-  height: 100%;
-  background-color: #fff;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: all 0.3s;
-}
-.navigation-item:hover::before {
-  background-color: #0071bb;
-}
+
 .navigation-btn {
   display: flex;
   justify-content: center;
@@ -296,10 +260,12 @@ export default {
   transition: all 0.3s;
   cursor: pointer;
 }
+
 .navigation-btn:hover {
   color: #fff;
 }
 
+/* メニュー */
 .menu {
   position: fixed;
   top: 0;
@@ -311,11 +277,11 @@ export default {
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  background: #5ac3d3;
+  background: #404141;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  transform: translateX(100%); /* 初期状態ではメニューは画面外に移動 */
-  opacity: 0; /* 初期状態ではメニューは透明 */
-  pointer-events: none; /* 初期状態ではメニューはクリックイベントを受け付けない */
+  transform: translateX(100%);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .menu-item {
@@ -329,12 +295,9 @@ export default {
   cursor: pointer;
 }
 
-.menu-item:hover .dropdown-list {
-  display: block; /* ナビメニューにホバーしたら表示 */
-}
-
+/* ドロップダウンメニュー */
 .dropdown-list {
-  display: none; /*デフォルトでは非表示の状態にしておく*/
+  display: none;
   width: 160%;
   position: absolute;
   top: 60px;
@@ -343,14 +306,13 @@ export default {
 }
 
 .navigation-item:hover .dropdown-list {
-  display: block; /* ナビメニューにホバーしたら表示 */
+  display: block;
 }
 
 .dropdown-item {
   background-color: #004d80;
   height: 60px;
   transition: all 0.3s;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -376,19 +338,7 @@ export default {
   cursor: pointer;
 }
 
-.dropdown-link::before {
-  /* ドロップダウンの矢印部分 */
-  content: "";
-  display: block;
-  width: 6px;
-  height: 6px;
-  border-top: 2px solid #fff;
-  border-left: 2px solid #fff;
-  transform: rotate(135deg);
-  position: absolute;
-  right: 15px;
-  top: calc(50% - 5px);
-}
+/* 閉じるボタン */
 .close-button {
   position: absolute;
   top: 30px;
@@ -398,44 +348,37 @@ export default {
   justify-content: center;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  background-color: transparent;
   border: none;
+  background-color: transparent;
   cursor: pointer;
+  z-index: 2;
 }
 
 .close-button__line {
   position: absolute;
-  width: 20px;
+  width: 24px;
   height: 2px;
   background-color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.close-button__line:first-child {
   transform: rotate(45deg);
 }
 
-.close-button__line:before,
-.close-button__line:after {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 2px;
-  background-color: #fff;
+.close-button__line:last-child {
+  transform: rotate(-45deg);
 }
 
-.close-button__line:before {
-  transform: rotate(90deg);
-}
-
-.close-button__line:after {
-  transform: rotate(180deg);
-}
-
+/* メニューを開いた時のスタイル */
 .is-mobile .menu,
 .show-menu {
-  transform: translateX(0%); /* メニューが表示されるときは画面内に移動 */
-  opacity: 1; /* メニューが表示されるときは不透明になる */
-  pointer-events: auto; /* メニューが表示されるときはクリックイベントを受け付ける */
+  transform: translateX(0%);
+  opacity: 1;
+  pointer-events: auto;
 }
 
+/* ハンバーガーメニューボタン */
 .hamburger-button {
   position: fixed;
   left: 90%;
@@ -456,23 +399,6 @@ export default {
   background-color: #333;
 }
 
-.hamburger-button span:nth-child(1) {
-  transform-origin: top left;
-  transform: rotate(0);
-  transition: transform 0.3s ease-in-out;
-}
-
-.hamburger-button span:nth-child(2) {
-  opacity: 1;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.hamburger-button span:nth-child(3) {
-  transform-origin: bottom left;
-  transform: rotate(0);
-  transition: transform 0.3s ease-in-out;
-}
-
 .show-menu .hamburger-button span:nth-child(1) {
   transform: rotate(45deg);
 }
@@ -485,43 +411,35 @@ export default {
   transform: rotate(-45deg);
 }
 
-.show-menu .close-button__line {
-  transform: rotate(-45deg);
-}
-
-.show-menu .close-button__line:before {
-  transform: rotate(-90deg);
-}
-
-.show-menu .close-button__line:after {
-  transform: rotate(0);
-}
-
 /* PC版 */
 @media (min-width: 835px) {
   .menu {
-    display: none; /* メニューは非表示 */
+    display: none;
   }
 
   .hamburger-button {
-    display: none; /* ハンバーガーメニューボタンは非表示 */
+    display: none;
   }
 }
 
-/* タブレット版 */
-@media (max-width: 835px) {
-  .logo{
+/* タブレット・スマホ用スタイル */
+@media (max-width: 834px) {
+  .logo {
     width: 30px;
     height: 30px;
   }
-  .dropdown-list {
-    position: absolute;
-    width: 200px;
-    top: 20px; /* スマホ版用に位置を上書き */
-    left: -50%;
+
+  .logo-image {
+    width: 100%;
+    height: auto;
   }
-  .dropdown-link {
-    font-size: small;
+
+  .navigation-wrap {
+    display: none; /* スマホ版ではメニューを非表示にする */
+  }
+
+  .hamburger-button {
+    display: flex; /* スマホ版ではハンバーガーボタンを表示する */
   }
 }
 </style>

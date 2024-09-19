@@ -213,12 +213,24 @@ export default {
 }
 
 @media screen and (max-width: 834px) {
+  .hero-description{
+    font-size: 16px;
+  }
   .features-container {
     flex-direction: column;
     align-items: center;
   }
   .feature {
     width: 90%;
+  }
+  .feature-title{
+    font-size: 18px;
+  }
+  .feature-description{
+    font-size: small;
+  }
+  .feature-button{
+    width: 95%;
   }
 }
 </style>
