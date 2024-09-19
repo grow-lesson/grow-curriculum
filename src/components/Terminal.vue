@@ -17,13 +17,15 @@
 </template>
 
 <script>
-import Prism from "prismjs";
-import "prismjs/themes/prism.css";
-import "prismjs/components/prism-ruby";
-import "prismjs/components/prism-markup";
-import "prismjs/components/prism-javascript";
-import "prismjs/components/prism-bash";
-import "prismjs/components/prism-css";
+import { ref, computed, toRefs, onMounted, nextTick } from 'vue';
+import Prism from 'prismjs';
+import 'prismjs/themes/prism.css';
+import 'prismjs/components/prism-ruby';
+import 'prismjs/components/prism-markup';
+import 'prismjs/components/prism-javascript';
+import 'prismjs/components/prism-bash';
+import 'prismjs/components/prism-css';
+import 'prismjs/components/prism-sql';
 
 export default {
   props: {
@@ -37,54 +39,61 @@ export default {
     },
     lang: {
       type: String,
-      default: "ruby",
+      default: 'ruby',
     },
   },
-  data() {
-    return {
-      buttonText: "copy", // ボタンテキスト
-    };
-  },
-  computed: {
-    highlightedCode() {
-      return Prism.highlight(this.copiedText, Prism.languages[this.lang], this.lang);
-    },
-  },
-  methods: {
-    copyText() {
-      const text = this.copiedText;
+  setup(props, { emit }) {
+    // props を toRefs で展開しつつ、別名を付ける
+    const { fileName: file, copiedText: text, lang: language } = toRefs(props);
 
-      navigator.clipboard
-        .writeText(text)
+    const buttonText = ref('copy');
+
+    const highlightedCode = computed(() => {
+      return Prism.highlight(text.value, Prism.languages[language.value], language.value);
+    });
+
+    const copyText = () => {
+      navigator.clipboard.writeText(text.value)
         .then(() => {
-          this.$emit("copied");
-          this.buttonText = "copied"; // ボタンテキストを変更
-
-          // 2秒後にコピー成功フラグとボタンテキストをリセット
+          emit('copied');
+          buttonText.value = 'copied';
           setTimeout(() => {
-            this.buttonText = "copy";
+            buttonText.value = 'copy';
           }, 2000);
         })
         .catch((error) => {
-          console.error("copy failed:", error);
+          console.error('copy failed:', error);
         });
-    },
-    deselectText() {
+    };
+
+    const deselectText = () => {
       window.getSelection().removeAllRanges();
-    },
-  },
-  mounted() {
-    Prism.highlightAll();
-    // コンポーネントがマウントされた後に実行されるコード
-    this.$nextTick(() => {
-      const operatorElements = this.$el.querySelectorAll('.token.operator');
-      operatorElements.forEach(element => {
-        element.style.background = 'none';
+    };
+
+    onMounted(() => {
+      Prism.highlightAll();
+      nextTick(() => {
+        const operatorElements = document.querySelectorAll('.token.operator');
+        operatorElements.forEach((element) => {
+          element.style.background = 'none';
+        });
       });
     });
+
+    return {
+      buttonText,
+      copyText,
+      deselectText,
+      highlightedCode,
+      file,       // fileName を file として利用
+      text,       // copiedText を text として利用
+      language,   // lang を language として利用
+    };
   },
 };
 </script>
+
+
 
 <style scoped>
 .terminal {
