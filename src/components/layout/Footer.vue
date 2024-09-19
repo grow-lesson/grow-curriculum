@@ -24,6 +24,14 @@ export default {
 
 .footer-text {
   color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
 }
 
 /* スマホ版 */

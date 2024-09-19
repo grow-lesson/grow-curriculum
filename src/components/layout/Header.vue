@@ -236,6 +236,12 @@ export default {
   font-size: large;
   font-weight: bold;
   cursor: pointer;
+  font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
 }
 
 .navigation-wrap {
@@ -253,6 +259,12 @@ export default {
   background-color: #e5f0f8;
   position: relative;
   transition: all 0.3s;
+  font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
 }
 .navigation-item:hover {
   background-color: #0071bb;

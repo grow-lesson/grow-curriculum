@@ -63,7 +63,13 @@ export default {
   margin-bottom: 0.5em;
   cursor: pointer;
   white-space: pre-wrap;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
+  font-weight: 600;
 }
 
 .sidebar-button {
