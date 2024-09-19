@@ -107,7 +107,7 @@ export default {
     };
 
     const goToSQLMenuPage = () => {
-      router.push({ name: "UnderConstruction" });
+      router.push({ name: "SqlMenuPage" });
     };
 
     const goToJqueryMenuPage = () => {
@@ -159,15 +159,23 @@ export default {
   margin: 20px;
   text-align: center;
   border: 1px solid #d4d4e46e;
+  font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
 }
 
 .feature-title {
   font-size: 24px;
+  font-weight: 600;
   margin-bottom: 10px;
 }
 
 .feature-description {
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 600;
   color: #484848;
 }
 
