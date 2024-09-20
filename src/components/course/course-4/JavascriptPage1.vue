@@ -137,7 +137,7 @@
           <Terminal :fileName="javascriptData.file13.filename" :copiedText="javascriptData.file13.code" :lang="javascriptData.file13.language" />
           <p><br>
             ⑤<br>
-            Node.jsのインストールをインストールしましょう。<br>
+            Node.jsをインストールしましょう。<br>
           </p>
           <Terminal :fileName="javascriptData.file14.filename" :copiedText="javascriptData.file14.code" :lang="javascriptData.file14.language" />
           <p><br>
