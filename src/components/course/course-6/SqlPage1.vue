@@ -714,7 +714,7 @@
             図で表すと以下のようになります。<br><br>
           </p>
           <div>
-            <img @click="openModal(imagePaths.win.database)" :src="imagePaths.win.database" class="powerpoint-image" alt="database" />
+            <img @click="openModal(imagePaths.mac.database)" :src="imagePaths.mac.database" class="powerpoint-image" alt="database" />
           </div><br>
           <p>
             このようなテーブル形式で管理し、各テーブルが行と列で構成されているデータベースを<span class="markup-word-red">リレーショナルデータベース（RDB: Relational Database）</span>といいます。<br>
@@ -733,7 +733,7 @@
             →Webサイト、オンラインストア、コンテンツ管理システムなど、さまざまな用途に使用されます。<br><br>
           </p>
           <div>
-            <img @click="openModal(imagePaths.win.mysql)" :src="imagePaths.win.mysql" class="logo-image" alt="mysql" />
+            <img @click="openModal(imagePaths.mac.mysql)" :src="imagePaths.mac.mysql" class="logo-image" alt="mysql" />
           </div><br>
           <p>
             <HighlightWord word="PostgreSQL"></HighlightWord>
@@ -751,7 +751,7 @@
             →大規模なデータ処理や分析システムなどで広く使用されます。<br><br>
           </p>
           <div>
-            <img @click="openModal(imagePaths.win.postgres)" :src="imagePaths.win.postgres" class="logo-image" alt="postgres" />
+            <img @click="openModal(imagePaths.mac.postgres)" :src="imagePaths.mac.postgres" class="logo-image" alt="postgres" />
           </div><br>
           <p>
             <HighlightWord word="Oracle Database"></HighlightWord>
@@ -768,7 +768,7 @@
             →金融、医療、政府機関など、企業・組織の存続に欠かせない重大なシステムや大規模なエンタープライズシステムに広く利用されています。<br><br>
           </p>
           <div>
-            <img @click="openModal(imagePaths.win.oracle)" :src="imagePaths.win.oracle" class="logo-image" alt="oracle" />
+            <img @click="openModal(imagePaths.mac.oracle)" :src="imagePaths.mac.oracle" class="logo-image" alt="oracle" />
           </div><br>
           <p>
             リレーショナルデータベースの他にも<span class="markup-word-red">NoSQLデータベース</span>や、
@@ -793,162 +793,62 @@
             開くと以下のような画面が表示されます。<br>
           </p>
           <div>
-            <img @click="openModal(imagePaths.win.step1)" :src="imagePaths.win.step1" class="screen-image" alt="step-1" />
+            <img @click="openModal(imagePaths.mac.step1)" :src="imagePaths.mac.step1" class="screen-image" alt="step-1" />
           </div><br>
           <p>
             画面の一番下にある「MySQL Community (GPL) Downloads」を押下します。<br>
           </p>
           <div>
-            <img @click="openModal(imagePaths.win.step2)" :src="imagePaths.win.step2" class="screen-image" alt="step-2" />
+            <img @click="openModal(imagePaths.mac.step2)" :src="imagePaths.mac.step2" class="screen-image" alt="step-2" />
           </div><br>
           <p>
-            「MySQL Installer for Windows」を押下します。<br>
+            「MySQL Workbench」を押下します。<br>
           </p>
           <div>
-            <img @click="openModal(imagePaths.win.step3)" :src="imagePaths.win.step3" class="screen-image" alt="step-3" />
+            <img @click="openModal(imagePaths.mac.step3)" :src="imagePaths.mac.step3" class="screen-image" alt="step-3" />
           </div><br>
           <p>
-            「Select Operating System」で「Microsoft Windows」を選択しましょう。<br>
+            「Select Operating System」で「macOS」を選択しましょう。<br>
           </p>
           <div>
-            <img @click="openModal(imagePaths.win.step4)" :src="imagePaths.win.step4" class="screen-image" alt="step-4" />
+            <img @click="openModal(imagePaths.mac.step4)" :src="imagePaths.mac.step4" class="screen-image" alt="step-4" />
           </div><br>
           <p>
             「Windows (x86, 64-bit), MSI Installer」のサイズが大きい方を選び「Download」を選択しましょう。<br>
           </p>
           <div>
-            <img @click="openModal(imagePaths.win.step5)" :src="imagePaths.win.step5" class="screen-image" alt="step-5" />
+            <img @click="openModal(imagePaths.mac.step5)" :src="imagePaths.mac.step5" class="screen-image" alt="step-5" />
           </div><br>
           <p>
             「No thanks, just start my download.」を押下しダウンロードしましょう。<br>
           </p>
           <div>
-            <img @click="openModal(imagePaths.win.step6)" :src="imagePaths.win.step6" class="screen-image" alt="step-6" />
+            <img @click="openModal(imagePaths.mac.step6)" :src="imagePaths.mac.step6" class="screen-image" alt="step-6" />
           </div><br>
           <SectionTitle sectionTitle="2-2. SQLの環境構築をする" id="sectionTitle2-2-w"></SectionTitle>
           <p>
-            ダウンロードしたインストーラーを起動してください。<br>
-            「このアプリがデバイスに変更を加えることを許可しますか？」とでは、すべて「はい」を選択してください。<br>
-            すると以下の画面が起動するので「Choosing a Setup Type」の画面で「Full」を選択し、「Next」をクリックします。
-            「Full」を選択することですべてのパッケージをダウンロードできます。<br>
+            Finderを開きましょう。<br>
+            ダウンロードフォルダを開き、先ほどダウンロードしたdmgファイルを開いてインストールしてください。<br>
           </p>
           <div>
-            <img @click="openModal(imagePaths.win.step7)" :src="imagePaths.win.step7" class="screen-image" alt="step-7" />
+            <img @click="openModal(imagePaths.mac.step7)" :src="imagePaths.mac.step7" class="screen-image" alt="step-7" />
           </div><br>
           <p>
-            「Check Requirements」の画面で、「Execute」をクリックし、ポップアップ画面の同意にチェックを入れて「インストール」をクリックしてください。
+            ターミナルを開きましょう。<br>
+            ターミナルを使ったことがない方は「コマンドライン」のコースを受講してから始めるとスムーズに進みます。<br>
+            以下の画面が開けばOKです。<br>
           </p>
           <div>
-            <img @click="openModal(imagePaths.win.step8)" :src="imagePaths.win.step8" class="screen-image" alt="step-8" />
+            <img @click="openModal(imagePaths.mac.step8)" :src="imagePaths.mac.step8" class="screen-image" alt="step-8" />
           </div><br>
           <p>
-            「Installation」の画面で、「Execute」をクリックし、インストールを開始します。
+            mysqlをインストールしましょう。<br>
+            以下のコマンドを実行しましょう。もしエラーが出た場合、homebrewがインストールされていない可能性があるのでjavascriptコースのlesson1でnode.jsをインストールするセクションでhomebrewもインストールできるのでそちらを参照してください。<br>
+            最後まで実行されれば、環境構築は完了です。<br>
           </p>
+          <br><Terminal :fileName="sqlData.file29.filename" :copiedText="sqlData.file29.code" :lang="sqlData.file29.language" /><br>
           <div>
-            <img @click="openModal(imagePaths.win.step9)" :src="imagePaths.win.step9" class="screen-image" alt="step-9" />
-          </div><br>
-          <p>
-            インストールが終了したら「Next」をクリックします。
-          </p>
-          <div>
-            <img @click="openModal(imagePaths.win.step10)" :src="imagePaths.win.step10" class="screen-image" alt="step-10" />
-          </div><br>
-          <p>
-            「Product Configuration」の画面は、そのまま「Next」をクリックします。
-          </p>
-          <div>
-            <img @click="openModal(imagePaths.win.step11)" :src="imagePaths.win.step11" class="screen-image" alt="step-11" />
-          </div><br>
-          <p>
-            「Type and Networking」の画面は、そのまま「Next」をクリックします。
-          </p>
-          <div>
-            <img @click="openModal(imagePaths.win.step12)" :src="imagePaths.win.step12" class="screen-image" alt="step-12" />
-          </div><br>
-          <p>
-            「Authentication Method」の画面は、「RECOMMENDED」（推奨）の方を選択し、「Next」をクリックします。
-          </p>
-          <div>
-            <img @click="openModal(imagePaths.win.step13)" :src="imagePaths.win.step13" class="screen-image" alt="step-13" />
-          </div><br>
-          <p>
-            「Accunts and Roles」の画面は、管理者用パスワードを設定してから「Next」をクリックします。
-          </p>
-          <div>
-            <img @click="openModal(imagePaths.win.step14)" :src="imagePaths.win.step14" class="screen-image" alt="step-14" />
-          </div><br>
-          <p>
-            「Windows Service」の画面は、そのまま「Next」をクリックします。
-          </p>
-          <div>
-            <img @click="openModal(imagePaths.win.step15)" :src="imagePaths.win.step15" class="screen-image" alt="step-15" />
-          </div><br>
-          <p>
-            「Server File Permissions」の画面は、そのまま「Next」をクリックします。
-          </p>
-          <div>
-            <img @click="openModal(imagePaths.win.step16)" :src="imagePaths.win.step16" class="screen-image" alt="step-16" />
-          </div><br>
-          <p>
-            「Apply Configuration」の画面は、「Execute」をクリックし一度今までの設定を反映させます。
-          </p>
-          <div>
-            <img @click="openModal(imagePaths.win.step17)" :src="imagePaths.win.step17" class="screen-image" alt="step-17" />
-          </div><br>
-          <p>
-            設定の反映が完了したら「Finish」をクリックします。
-          </p>
-          <div>
-            <img @click="openModal(imagePaths.win.step18)" :src="imagePaths.win.step18" class="screen-image" alt="step-18" />
-          </div><br>
-          <p>
-            「Product Configuration」の画面は、そのまま「Next」をクリックします。
-          </p>
-          <div>
-            <img @click="openModal(imagePaths.win.step19)" :src="imagePaths.win.step19" class="screen-image" alt="step-19" />
-          </div><br>
-          <p>
-            「MySQL Router Configuration」の画面は、そのまま「Finish」をクリックします。
-          </p>
-          <div>
-            <img @click="openModal(imagePaths.win.step20)" :src="imagePaths.win.step20" class="screen-image" alt="step-20" />
-          </div><br>
-          <p>
-            「Product Configuration」の画面が再度表示されたら、そのまま「Next」をクリックします。
-          </p>
-          <div>
-            <img @click="openModal(imagePaths.win.step21)" :src="imagePaths.win.step21" class="screen-image" alt="step-21" />
-          </div><br>
-          <p>
-            「Connect To Server」の画面は、Password欄に「管理者用パスワード」と同じものを入力し、「Check」をクリックします。
-            Statusに緑色の応答が確認できれば「Next」をクリックします。
-          </p>
-          <div>
-            <img @click="openModal(imagePaths.win.step22)" :src="imagePaths.win.step22" class="screen-image" alt="step-22" />
-          </div><br>
-          <p>
-            「Apply Configuration」の画面が再度表示されたら、「Execute」をクリックし今までの設定を反映します。
-          </p>
-          <div>
-            <img @click="openModal(imagePaths.win.step23)" :src="imagePaths.win.step23" class="screen-image" alt="step-23" />
-          </div><br>
-          <p>
-            設定が反映出来たら「Finish」をクリックします。
-          </p>
-          <div>
-            <img @click="openModal(imagePaths.win.step24)" :src="imagePaths.win.step24" class="screen-image" alt="step-24" />
-          </div><br>
-          <p>
-            「Product Configuration」の画面が再度表示されたら、そのまま「Next」をクリックします。
-          </p>
-          <div>
-            <img @click="openModal(imagePaths.win.step25)" :src="imagePaths.win.step25" class="screen-image" alt="step-25" />
-          </div><br>
-          <p>
-            「Installation Complete」の画面は、「Finish」をクリックします。
-          </p>
-          <div>
-            <img @click="openModal(imagePaths.win.step26)" :src="imagePaths.win.step26" class="screen-image" alt="step-26" />
+            <img @click="openModal(imagePaths.mac.step9)" :src="imagePaths.mac.step9" class="screen-image" alt="step-9" />
           </div><br>
         </Document>
 
@@ -957,18 +857,29 @@
         <Document>
           <SectionTitle sectionTitle="3-1. SQLの起動" id="sectionTitle3-1-w"></SectionTitle>
           <p>
-            PCの下にあるWindowsマークを押して「MySQL Command Line Client」を探す、または検索しクリックして起動します。<br>
-            パスワードを入力するように出るので、インストール時に設定したPasswordを入力して接続しましょう。<br>
+            MySQLを起動しましょう。<br>
+            以下のコマンドを実行してください。<br>
           </p>
+          <br><Terminal :fileName="sqlData.file30.filename" :copiedText="sqlData.file30.code" :lang="sqlData.file30.language" /><br>
           <div>
-            <img @click="openModal(imagePaths.win.step27)" :src="imagePaths.win.step27" class="screen-image" alt="step-27" />
+            <img @click="openModal(imagePaths.mac.step10)" :src="imagePaths.mac.step10" class="screen-image" alt="step-10" />
           </div><br>
           <p>
-            <br>
+            MySQLにログインしましょう。<br>
             接続に成功すると「mysql > 」となります。<br>
+            インストール直後は、rootユーザーのパスワードは設定されていないので、そのままアクセスできます。セキュリティを強化するために、後でパスワードを設定しましょう。<br>
           </p>
+          <br><Terminal :fileName="sqlData.file31.filename" :copiedText="sqlData.file31.code" :lang="sqlData.file31.language" /><br>
           <div>
-            <img @click="openModal(imagePaths.win.step28)" :src="imagePaths.win.step28" class="screen-image" alt="step-28" />
+            <img @click="openModal(imagePaths.mac.step11)" :src="imagePaths.mac.step11" class="screen-image" alt="step-11" />
+          </div><br>
+          <p>
+            パスワードを変更しましょう。<br>
+            パスワードは自分の決めた文字で設定して必ず忘れないようにメモしておきましょう。<br>
+          </p>
+          <br><Terminal :fileName="sqlData.file32.filename" :copiedText="sqlData.file32.code" :lang="sqlData.file32.language" /><br>
+          <div>
+            <img @click="openModal(imagePaths.mac.step12)" :src="imagePaths.mac.step12" class="screen-image" alt="step-12" />
           </div><br>
         </Document>
         <Document>
@@ -990,26 +901,26 @@
 
           </p>
           <div>
-            <img @click="openModal(imagePaths.win.step29)" :src="imagePaths.win.step29" class="screen-image" alt="step-29" />
+            <img @click="openModal(imagePaths.mac.step29)" :src="imagePaths.mac.step29" class="screen-image" alt="step-29" />
           </div><br>
           <p>
             Connection Nameに好きな名前入れ、残りの設定は触らず「OK」を押下してください。<br>
           </p>
           <div>
-            <img @click="openModal(imagePaths.win.step30)" :src="imagePaths.win.step30" class="screen-image" alt="step-30" />
+            <img @click="openModal(imagePaths.mac.step30)" :src="imagePaths.mac.step30" class="screen-image" alt="step-30" />
           </div><br>
           <p>
             パスワードを入れて「OK」を押下しましょう。<br>
           </p>
           <div>
-            <img @click="openModal(imagePaths.win.step31)" :src="imagePaths.win.step31" class="screen-image" alt="step-31" />
+            <img @click="openModal(imagePaths.mac.step31)" :src="imagePaths.mac.step31" class="screen-image" alt="step-31" />
           </div><br>
           <p>
             <br>
             表示された画面の左の「Navigator」に自信が作成したテーブルが確認できればOKです。<br><br>
           </p>
           <div>
-            <img @click="openModal(imagePaths.win.step32)" :src="imagePaths.win.step32" class="screen-image" alt="step-32" />
+            <img @click="openModal(imagePaths.mac.step32)" :src="imagePaths.mac.step32" class="screen-image" alt="step-32" />
           </div><br>
           <p>
             <br>
@@ -1019,7 +930,7 @@
           </p>
           <Terminal :fileName="sqlData.file2.filename" :copiedText="sqlData.file2.code" :lang="sqlData.file2.language" />
           <div>
-            <img @click="openModal(imagePaths.win.step33)" :src="imagePaths.win.step33" class="screen-image" alt="step-33" />
+            <img @click="openModal(imagePaths.mac.step33)" :src="imagePaths.mac.step33" class="screen-image" alt="step-33" />
           </div><br>
           <p>
             <br>
@@ -1062,7 +973,7 @@
             自動的に連番を割り当てる際に使用します（主にIDなどのカラム）。<br><br>
           </p>
           <div>
-            <img @click="openModal(imagePaths.win.step34)" :src="imagePaths.win.step34" class="screen-image" alt="step-34" />
+            <img @click="openModal(imagePaths.mac.step34)" :src="imagePaths.mac.step34" class="screen-image" alt="step-34" />
           </div><br>
           <p>
             <br>
@@ -1078,7 +989,7 @@
           </p>
           <Terminal :fileName="sqlData.file4.filename" :copiedText="sqlData.file4.code" :lang="sqlData.file4.language" />
           <div>
-            <img @click="openModal(imagePaths.win.step35)" :src="imagePaths.win.step35" class="screen-image" alt="step-35" />
+            <img @click="openModal(imagePaths.mac.step35)" :src="imagePaths.mac.step35" class="screen-image" alt="step-35" />
           </div><br>
           <p>
             <br>
@@ -1088,7 +999,7 @@
           </p>
           <Terminal :fileName="sqlData.file5.filename" :copiedText="sqlData.file5.code" :lang="sqlData.file5.language" />
           <div>
-            <img @click="openModal(imagePaths.win.step36)" :src="imagePaths.win.step36" class="screen-image" alt="step-36" />
+            <img @click="openModal(imagePaths.mac.step36)" :src="imagePaths.mac.step36" class="screen-image" alt="step-36" />
           </div><br>
           <p>
             <br>
@@ -1097,21 +1008,21 @@
             usersテーブルが表示されるのでクリックしてみましょう。<br>
           </p>
           <div>
-            <img @click="openModal(imagePaths.win.step37)" :src="imagePaths.win.step37" class="screen-image" alt="step-37" />
+            <img @click="openModal(imagePaths.mac.step37)" :src="imagePaths.mac.step37" class="screen-image" alt="step-37" />
           </div><br>
           <p>
             <br>
             usersテーブルの詳細が開かれることを確認し、カーソルをusersに合わせると3つのアイコンが出てくるので一番右のマークを押してください。<br>
           </p>
           <div>
-            <img @click="openModal(imagePaths.win.step38)" :src="imagePaths.win.step38" class="screen-image" alt="step-38" />
+            <img @click="openModal(imagePaths.mac.step38)" :src="imagePaths.mac.step38" class="screen-image" alt="step-38" />
           </div><br>
           <p>
             <br>
             テーブル情報が表示され、カラムが追加されていることが確認できればOKです。<br>
           </p>
           <div>
-            <img @click="openModal(imagePaths.win.step39)" :src="imagePaths.win.step39" class="screen-image" alt="step-39" />
+            <img @click="openModal(imagePaths.mac.step39)" :src="imagePaths.mac.step39" class="screen-image" alt="step-39" />
           </div><br>
           <p>
             <br>
@@ -1122,7 +1033,7 @@
           </p>
           <Terminal :fileName="sqlData.file6.filename" :copiedText="sqlData.file6.code" :lang="sqlData.file6.language" />
           <div>
-            <img @click="openModal(imagePaths.win.step40)" :src="imagePaths.win.step40" class="screen-image" alt="step-40" />
+            <img @click="openModal(imagePaths.mac.step40)" :src="imagePaths.mac.step40" class="screen-image" alt="step-40" />
           </div><br>
           <p>
             <br>
@@ -1131,7 +1042,7 @@
             データが挿入されていることが確認できます。<br>
           </p>
           <div>
-            <img @click="openModal(imagePaths.win.step41)" :src="imagePaths.win.step41" class="screen-image" alt="step-41" />
+            <img @click="openModal(imagePaths.mac.step41)" :src="imagePaths.mac.step41" class="screen-image" alt="step-41" />
           </div><br>
           <p>
             <br>
@@ -1148,7 +1059,7 @@
           </p>
           <Terminal :fileName="sqlData.file7.filename" :copiedText="sqlData.file7.code" :lang="sqlData.file7.language" />
           <div>
-            <img @click="openModal(imagePaths.win.step42)" :src="imagePaths.win.step42" class="screen-image" alt="step-42" />
+            <img @click="openModal(imagePaths.mac.step42)" :src="imagePaths.mac.step42" class="screen-image" alt="step-42" />
           </div><br>
           <p>
             <br>
@@ -1160,7 +1071,7 @@
           </p>
           <Terminal :fileName="sqlData.file8.filename" :copiedText="sqlData.file8.code" :lang="sqlData.file8.language" />
           <div>
-            <img @click="openModal(imagePaths.win.step43)" :src="imagePaths.win.step43" class="screen-image" alt="step-43" />
+            <img @click="openModal(imagePaths.mac.step43)" :src="imagePaths.mac.step43" class="screen-image" alt="step-43" />
           </div><br>
           <p>
             <br>
@@ -1168,7 +1079,7 @@
           </p>
           <Terminal :fileName="sqlData.file9.filename" :copiedText="sqlData.file9.code" :lang="sqlData.file9.language" />
           <div>
-            <img @click="openModal(imagePaths.win.step44)" :src="imagePaths.win.step44" class="screen-image" alt="step-44" />
+            <img @click="openModal(imagePaths.mac.step44)" :src="imagePaths.mac.step44" class="screen-image" alt="step-44" />
           </div><br>
           <p>
             <br>
@@ -1178,7 +1089,7 @@
           </p>
           <Terminal :fileName="sqlData.file10.filename" :copiedText="sqlData.file10.code" :lang="sqlData.file10.language" />
           <div>
-            <img @click="openModal(imagePaths.win.step45)" :src="imagePaths.win.step45" class="screen-image" alt="step-45" />
+            <img @click="openModal(imagePaths.mac.step45)" :src="imagePaths.mac.step45" class="screen-image" alt="step-45" />
           </div><br>
           <p>
             <br>
@@ -1187,7 +1098,7 @@
           </p>
           <Terminal :fileName="sqlData.file11.filename" :copiedText="sqlData.file11.code" :lang="sqlData.file11.language" />
           <div>
-            <img @click="openModal(imagePaths.win.step46)" :src="imagePaths.win.step46" class="screen-image" alt="step-46" />
+            <img @click="openModal(imagePaths.mac.step46)" :src="imagePaths.mac.step46" class="screen-image" alt="step-46" />
           </div><br>
           <p>
             <br>
@@ -1197,7 +1108,7 @@
           </p>
           <Terminal :fileName="sqlData.file12.filename" :copiedText="sqlData.file12.code" :lang="sqlData.file12.language" />
           <div>
-            <img @click="openModal(imagePaths.win.step47)" :src="imagePaths.win.step47" class="screen-image" alt="step-47" />
+            <img @click="openModal(imagePaths.mac.step47)" :src="imagePaths.mac.step47" class="screen-image" alt="step-47" />
           </div><br>
           <p>
             <br>
@@ -1257,7 +1168,7 @@
           </p>
           <Terminal :fileName="sqlData.file22.filename" :copiedText="sqlData.file22.code" :lang="sqlData.file22.language" />
           <div>
-            <img @click="openModal(imagePaths.win.step48)" :src="imagePaths.win.step48" class="screen-image" alt="step-48" />
+            <img @click="openModal(imagePaths.mac.step48)" :src="imagePaths.mac.step48" class="screen-image" alt="step-48" />
           </div><br>
           <p>
             <br>
@@ -1269,18 +1180,22 @@
             また、逆にNULLでないデータを取得するときは以下のようになります。<br>
             <HighlightWord word="SELECT カラム名 FROM テーブル名 WHERE 条件 IS NOT NULL;"></HighlightWord><br>
           </p>
-          <Terminal :fileName="sqlData.file23.filename" :copiedText="sqlData.file23.code" :lang="sqlData.file23.language" />
           <p>
             <br>
             次に取得したデータを並び替えてみましょう。<br>
             <HighlightWord word="SELECT カラム名 FROM テーブル名 ORDER BY カラム名 [ASC|DESC];"></HighlightWord><br>
             取得したデータを昇順(ASC)、または降順(DESC)に並び替えることができるクエリです。<br>
             昇順の際は設定しなくてもデフォルトで設定されます。<br>
+            <br>
+            元々のデータの順番<br>
+          </p>
+          <Terminal :fileName="sqlData.file23.filename" :copiedText="sqlData.file23.code" :lang="sqlData.file23.language" />
+          <p>
             昇順<br>
           </p>
           <Terminal :fileName="sqlData.file24.filename" :copiedText="sqlData.file24.code" :lang="sqlData.file24.language" />
           <div>
-            <img @click="openModal(imagePaths.win.step49)" :src="imagePaths.win.step49" class="screen-image" alt="step-49" />
+            <img @click="openModal(imagePaths.mac.step49)" :src="imagePaths.mac.step49" class="screen-image" alt="step-49" />
           </div><br>
           <p>
             <br>
@@ -1288,7 +1203,7 @@
           </p>
           <Terminal :fileName="sqlData.file25.filename" :copiedText="sqlData.file25.code" :lang="sqlData.file25.language" />
           <div>
-            <img @click="openModal(imagePaths.win.step50)" :src="imagePaths.win.step50" class="screen-image" alt="step-50" />
+            <img @click="openModal(imagePaths.mac.step50)" :src="imagePaths.mac.step50" class="screen-image" alt="step-50" />
           </div><br>
           <p>
             <br>
@@ -1299,7 +1214,7 @@
           </p>
           <Terminal :fileName="sqlData.file26.filename" :copiedText="sqlData.file26.code" :lang="sqlData.file26.language" />
           <div>
-            <img @click="openModal(imagePaths.win.step51)" :src="imagePaths.win.step51" class="screen-image" alt="step-51" />
+            <img @click="openModal(imagePaths.mac.step51)" :src="imagePaths.mac.step51" class="screen-image" alt="step-51" />
           </div><br>
         </Document>
         <Document>
@@ -1314,7 +1229,7 @@
           </p>
           <Terminal :fileName="sqlData.file27.filename" :copiedText="sqlData.file27.code" :lang="sqlData.file27.language" />
           <div>
-            <img @click="openModal(imagePaths.win.step52)" :src="imagePaths.win.step52" class="screen-image" alt="step-52" />
+            <img @click="openModal(imagePaths.mac.step52)" :src="imagePaths.mac.step52" class="screen-image" alt="step-52" />
           </div><br>
           <p>
             <br>
@@ -1325,7 +1240,7 @@
           </p>
           <Terminal :fileName="sqlData.file28.filename" :copiedText="sqlData.file28.code" :lang="sqlData.file28.language" />
           <div>
-            <img @click="openModal(imagePaths.win.step53)" :src="imagePaths.win.step53" class="screen-image" alt="step-53" />
+            <img @click="openModal(imagePaths.mac.step53)" :src="imagePaths.mac.step53" class="screen-image" alt="step-53" />
           </div><br>
         </Document>
         <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
@@ -1483,37 +1398,47 @@ export default {
         step53: require("../../../assets/images/course/sql-1/sql-53.png"),
       },
       mac: {
-        solo: require("../../../assets/images/course/git-1/solo.png"),
-        step1: require("../../../assets/images/course/git-1/terminal-1.png"),
-        step2: require("../../../assets/images/course/git-1/terminal-2.png"),
-        step3: require("../../../assets/images/course/git-1/terminal-3.png"),
-        folder1: require("../../../assets/images/course/git-1/finder-1.png"),
-        init: require("../../../assets/images/course/git-1/git-init.png"),
-        step4: require("../../../assets/images/course/git-1/terminal-4.png"),
-        github1: require("../../../assets/images/course/git-1/github-1.png"),
-        github2: require("../../../assets/images/course/git-1/github-2.png"),
-        github3: require("../../../assets/images/course/git-1/github-3.png"),
-        state1: require("../../../assets/images/course/git-1/state-1.png"),
-        github4: require("../../../assets/images/course/git-1/github-4.png"),
-        step5: require("../../../assets/images/course/git-1/terminal-5.png"),
-        step6: require("../../../assets/images/course/git-1/terminal-6.png"),
-        github5: require("../../../assets/images/course/git-1/github-5.png"),
-        step7: require("../../../assets/images/course/git-1/terminal-7.png"),
-        step8: require("../../../assets/images/course/git-1/terminal-8.png"),
-        step9: require("../../../assets/images/course/git-1/terminal-9.png"),
-        github6: require("../../../assets/images/course/git-1/github-6.png"),
-        state2: require("../../../assets/images/course/git-1/state-2.png"),
-        step10: require("../../../assets/images/course/git-1/terminal-10.png"),
-        step11: require("../../../assets/images/course/git-1/terminal-11.png"),
-        folder2: require("../../../assets/images/course/git-1/finder-2.png"),
-        memo1: require("../../../assets/images/course/git-1/memo-1-m.png"),
-        step12: require("../../../assets/images/course/git-1/terminal-12.png"),
-        step13: require("../../../assets/images/course/git-1/terminal-13.png"),
-        step14: require("../../../assets/images/course/git-1/terminal-14.png"),
-        memo2: require("../../../assets/images/course/git-1/memo-2-m.png"),
-        step15: require("../../../assets/images/course/git-1/terminal-15.png"),
-        step16: require("../../../assets/images/course/git-1/terminal-16.png"),
-        step17: require("../../../assets/images/course/git-1/terminal-17.png"),
+        database: require("../../../assets/images/course/sql-1/database.png"),
+        mysql: require("../../../assets/images/course/sql-1/mysql.png"),
+        postgres: require("../../../assets/images/course/sql-1/postgres.png"),
+        oracle: require("../../../assets/images/course/sql-1/oracle.png"),
+        step1: require("../../../assets/images/course/sql-1/sql-1.png"),
+        step2: require("../../../assets/images/course/sql-1/sql-2.png"),
+        step3: require("../../../assets/images/course/sql-1/sql-3.png"),
+        step4: require("../../../assets/images/course/sql-1/sql-4-m.png"),
+        step5: require("../../../assets/images/course/sql-1/sql-5-m.png"),
+        step6: require("../../../assets/images/course/sql-1/sql-6.png"),
+        step7: require("../../../assets/images/course/sql-1/sql-7-m.png"),
+        step8: require("../../../assets/images/course/sql-1/sql-8-m.png"),
+        step9: require("../../../assets/images/course/sql-1/sql-9-m.png"),
+        step10: require("../../../assets/images/course/sql-1/sql-10-m.png"),
+        step11: require("../../../assets/images/course/sql-1/sql-11-m.png"),
+        step12: require("../../../assets/images/course/sql-1/sql-12-m.png"),
+        step29: require("../../../assets/images/course/sql-1/sql-29.png"),
+        step30: require("../../../assets/images/course/sql-1/sql-30.png"),
+        step31: require("../../../assets/images/course/sql-1/sql-31.png"),
+        step32: require("../../../assets/images/course/sql-1/sql-32.png"),
+        step33: require("../../../assets/images/course/sql-1/sql-33-m.png"),
+        step34: require("../../../assets/images/course/sql-1/sql-34-m.png"),
+        step35: require("../../../assets/images/course/sql-1/sql-35-m.png"),
+        step36: require("../../../assets/images/course/sql-1/sql-36-m.png"),
+        step37: require("../../../assets/images/course/sql-1/sql-37.png"),
+        step38: require("../../../assets/images/course/sql-1/sql-38.png"),
+        step39: require("../../../assets/images/course/sql-1/sql-39.png"),
+        step40: require("../../../assets/images/course/sql-1/sql-40-m.png"),
+        step41: require("../../../assets/images/course/sql-1/sql-41.png"),
+        step42: require("../../../assets/images/course/sql-1/sql-42-m.png"),
+        step43: require("../../../assets/images/course/sql-1/sql-43-m.png"),
+        step44: require("../../../assets/images/course/sql-1/sql-44-m.png"),
+        step45: require("../../../assets/images/course/sql-1/sql-45-m.png"),
+        step46: require("../../../assets/images/course/sql-1/sql-46-m.png"),
+        step47: require("../../../assets/images/course/sql-1/sql-47-m.png"),
+        step48: require("../../../assets/images/course/sql-1/sql-48-m.png"),
+        step49: require("../../../assets/images/course/sql-1/sql-49-m.png"),
+        step50: require("../../../assets/images/course/sql-1/sql-50-m.png"),
+        step51: require("../../../assets/images/course/sql-1/sql-51-m.png"),
+        step52: require("../../../assets/images/course/sql-1/sql-52-m.png"),
+        step53: require("../../../assets/images/course/sql-1/sql-53-m.png"),
       },
     };
 
