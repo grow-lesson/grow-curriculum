@@ -51,7 +51,7 @@ export const javascriptData = {
     language: "language-bash",
   },
   file8: {
-    filename: "ターミナル(GitBash)",
+    filename: "開いた「.zshrcファイル」に書いてください",
     code: `export PATH=$HOME/.nodebrew/current/bin:$PATH;`,
     language: "language-bash",
   },
@@ -71,7 +71,7 @@ export const javascriptData = {
     language: "language-bash",
   },
   file12: {
-    filename: "ターミナル(GitBash)",
+    filename: "開いた「.bash_profileファイル」に書いてください",
     code: `export PATH=$HOME/.nodebrew/current/bin:$PATH;`,
     language: "language-bash",
   },

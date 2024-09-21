@@ -88,72 +88,70 @@
           </p>
           <Terminal :fileName="javascriptData.file4.filename" :copiedText="javascriptData.file4.code" :lang="javascriptData.file4.language" />
           <p><br>
+            ③<br>
+            シェルのパスを確認しましょう。<br>
+          </p>
+          <Terminal :fileName="javascriptData.file5.filename" :copiedText="javascriptData.file5.code" :lang="javascriptData.file5.language" />
+          <p><br>
             <span class="markup-word-red">実行結果が「/usr/local/bin/zsh」だった場合</span><br><br>
             ③-1<br>
             「.zshrc」ファイルを作成しましょう。（.zshrcファイルがない方のみ）<br>
           </p>
-          <Terminal :fileName="javascriptData.file5.filename" :copiedText="javascriptData.file5.code" :lang="javascriptData.file5.language" />
-          <p><br>
-            ③-2<br>
-            作成した設定ファイルを編集しましょう。<br>
-          </p>
           <Terminal :fileName="javascriptData.file6.filename" :copiedText="javascriptData.file6.code" :lang="javascriptData.file6.language" />
           <p><br>
-            ③-3<br>
-            「.zshrc」ファイルを編集しましょう。<br>
+            ③-2<br>
+            作成した「.zshrc」ファイルを編集しましょう。<br>
           </p>
           <Terminal :fileName="javascriptData.file7.filename" :copiedText="javascriptData.file7.code" :lang="javascriptData.file7.language" />
+          <Terminal :fileName="javascriptData.file8.filename" :copiedText="javascriptData.file8.code" :lang="javascriptData.file8.language" />
           <p><br>
-            ③-4<br>
+            ③-3<br>
             「.zshrc」ファイルを適応させましょう。<br>
           </p>
-          <Terminal :fileName="javascriptData.file8.filename" :copiedText="javascriptData.file8.code" :lang="javascriptData.file8.language" />
+          <Terminal :fileName="javascriptData.file9.filename" :copiedText="javascriptData.file9.code" :lang="javascriptData.file9.language" />
           <p><br>
             <span class="markup-word-red">実行結果が「/usr/local/bin/bash」だった場合</span><br><br>
             ③-1<br>
             「.bash_profile」を作成しましょう。（.bash_profileファイルがない方のみ）<br>
           </p>
-          <Terminal :fileName="javascriptData.file9.filename" :copiedText="javascriptData.file9.code" :lang="javascriptData.file9.language" />
-          <p><br>
-            ③-2<br>
-            作成した設定ファイルを編集しましょう。<br>
-          </p>
           <Terminal :fileName="javascriptData.file10.filename" :copiedText="javascriptData.file10.code" :lang="javascriptData.file10.language" />
           <p><br>
-            ③-3<br>
+            ③-2<br>
             「.bash_profile」ファイルを編集しましょう。<br>
           </p>
           <Terminal :fileName="javascriptData.file11.filename" :copiedText="javascriptData.file11.code" :lang="javascriptData.file11.language" />
           <p><br>
-            ③-4<br>
+            ③-3<br>
             「.bash_profile」ファイルを適応させましょう。<br>
           </p>
-          <Terminal :fileName="javascriptData.file1.filename" :copiedText="javascriptData.file12.code" :lang="javascriptData.file12.language" />
+          <Terminal :fileName="javascriptData.file12.filename" :copiedText="javascriptData.file12.code" :lang="javascriptData.file12.language" />
+          <Terminal :fileName="javascriptData.file13.filename" :copiedText="javascriptData.file13.code" :lang="javascriptData.file13.language" />
+          <p><br>
+            ③-5<br>
+            nodebrewがインストールされているか確認しましょう。バージョンが表示されればOKです。<br>
+          </p>
+
           <p><br>
             <span class="markup-word-red">ここから共通です</span><br><br>
             ④<br>
-            nodebrewがインストールされているか確認しましょう。バージョンが表示されればOKです。<br>
-          </p>
-          <Terminal :fileName="javascriptData.file13.filename" :copiedText="javascriptData.file13.code" :lang="javascriptData.file13.language" />
-          <p><br>
-            ⑤<br>
             Node.jsをインストールしましょう。<br>
           </p>
           <Terminal :fileName="javascriptData.file14.filename" :copiedText="javascriptData.file14.code" :lang="javascriptData.file14.language" />
+
           <p><br>
-            ⑥<br>
+            ⑤<br>
             現在インストールされているNode.jsのバージョンを確認しましょう。<br>
           </p>
           <Terminal :fileName="javascriptData.file15.filename" :copiedText="javascriptData.file15.code" :lang="javascriptData.file15.language" />
           <p><br>
-            ⑦<br>
+            ⑥<br>
             使用するNode.jsのバージョンを設定しましょう。<br>
-            ⑥で表示されたバージョンを使用してください。<br>
+            ⑤で表示されたバージョンを使用してください。<br>
             例えば「v12.6.0」と表示されたならuseの後は「use v12.6.0」としましょう<br>
           </p>
           <Terminal :fileName="javascriptData.file16.filename" :copiedText="javascriptData.file16.code" :lang="javascriptData.file16.language" />
           <p><br>
-            ⑧<br>
+            ⑦<br>
             Node.jsが使用できるか確認しましょう。バージョンが表示されればOKです。<br>
           </p>
           <Terminal :fileName="javascriptData.file17.filename" :copiedText="javascriptData.file17.code" :lang="javascriptData.file17.language" />
