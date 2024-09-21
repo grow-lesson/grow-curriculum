@@ -150,4 +150,24 @@ VALUES
     code: `DELETE FROM users WHERE id = 3;`,
     language: "language-sql",
   },
+  file29: {
+    filename: "ターミナル",
+    code: `brew install mysql`,
+    language: "language-bash",
+  },
+  file30: {
+    filename: "ターミナル",
+    code: `mysql.server start`,
+    language: "language-bash",
+  },
+  file31: {
+    filename: "ターミナル",
+    code: `mysql -u root`,
+    language: "language-bash",
+  },
+  file32: {
+    filename: "ターミナル",
+    code: `SET PASSWORD FOR 'root'@'localhost' = PASSWORD('自分で設定したパスワード');`,
+    language: "language-bash",
+  },
 };
