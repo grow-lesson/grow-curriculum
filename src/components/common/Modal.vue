@@ -179,7 +179,7 @@ export default {
 
 .modal-image {
   border: none; /* 枠線を削除 */
-  width: 100%; /* 画像の幅を100%に */
+  width: 85%; /* 画像の幅を100%に */
   cursor: grabbing;
 }
 </style>
