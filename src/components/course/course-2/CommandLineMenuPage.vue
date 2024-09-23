@@ -22,9 +22,8 @@
               <div class="lesson-itemText">
                 <p>ターミナルの基本的な操作とコマンドの使用方法を学びます。</p>
               </div>
-              <div class="lesson-btn btn">
-                <a class="lesson-link btn" @click="goToPageLesson1"></a>
-              </div>
+              <!-- lesson-btn の div 全体をクリック可能に -->
+              <div class="lesson-btn btn" @click="goToPageLesson1"></div>
             </div>
           </li>
         </ul>
@@ -52,24 +51,24 @@ export default {
 </script>
 
 <style scoped>
-.wrap{
+.wrap {
   min-height: 100vh;
-  color: #647D91;
+  color: #101010;
 }
 
 .lesson-container {
   margin: 0 auto;
 }
 
-.breadcrumb{
+.breadcrumb {
   margin-left: 10%;
 }
 
-.lesson-title{
+.lesson-title {
   width: 100%;
   padding: 30px 0;
   margin: 1rem 0;
-  background-color: #FFF;
+  background-color: #fff;
 }
 
 .lesson-heading {
@@ -91,105 +90,86 @@ export default {
   display: flex;
 }
 
-.lesson-itemImg{
+.lesson-itemImg {
   height: 100%;
   padding: 30px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   margin-right: 10px;
 }
 
-.lesson-itemImg img{
-  widows: 100%;
+.lesson-itemImg img {
+  width: 100%;
   height: 100%;
 }
 
-.lesson-itemWrap{
+.lesson-itemWrap {
   width: 75%;
   padding: 30px 50px;
   background-color: #fff;
   position: relative;
 }
 
-.lesson-itemText{
+.lesson-itemText {
   width: 80%;
   height: 52px;
-  color: #647D91;
+  color: #101010;
 }
 
-.lesson-btn{
-  width:60px;
-  height:60px;
-  line-height:90px;
+.lesson-btn {
+  width: 60px;
+  height: 60px;
+  line-height: 90px;
   position: absolute;
   bottom: 25px;
   right: 50px;
-}
-.lesson-btn a{
-  display:block;
-  width:100%;
-  height:100%;
-  text-decoration: none;
-  background:#fff;
-  text-align:center;
-  border:4px solid #A8DADC;
-  color:#FFFFFF;
-  font-size:20px;
-  font-weight:bold;
-  border-radius:50px;
-  -webkit-border-radius:50px;
-  -moz-border-radius:50px;
-}
-.lesson-btn a:hover{
-  margin-left:0px;
-  margin-top:5px;
-  box-shadow:none;
+  cursor: pointer; /* ボタン全体がクリック可能になる */
 }
 
-.lesson-btn a::before{
+.lesson-btn::before {
   content: '';
   display: block;
   width: 20px;
   height: 20px;
-  border-top: 4px solid #A8DADC;
-  border-left: 4px solid #A8DADC;
+  border-top: 4px solid #a8dadc;
+  border-left: 4px solid #a8dadc;
   transform: rotate(135deg);
   position: absolute;
   right: calc(50% - 5px);
   top: calc(50% - 10px);
 }
 
-.lesson-btn:hover a::before {
+.lesson-btn:hover::before {
   margin-left: 0;
   margin-top: 5px;
 }
 
 @media (min-width: 649px) {
-  .lesson-itemImg-sp{
+  .lesson-itemImg-sp {
     display: none;
   }
 }
 
 @media (max-width: 648px) {
-  .lesson-heading{
+  .lesson-heading {
     font-size: 1.5rem;
   }
 
   .lesson-list {
-    padding: 0; /* Remove padding to ensure the list takes full width */
-    display: flex; /* Use flexbox to center the lesson items */
-    flex-direction: column; /* Stack the items vertically */
-    align-items: center; /* Center items horizontally */
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .lesson-item {
-    width: 90%; /* Make the items take full width */
+    width: 90%;
     height: 150px;
-    max-width: 400px; /* Set a maximum width for the items */
+    max-width: 400px;
     margin: 0 auto 25px auto;
   }
 
   .lesson-itemWrap {
-    width: 100%; /* Make the wrapping div take full width */
+    width: 100%;
     border-radius: 5px;
     padding: 20px 20px;
   }
@@ -197,31 +177,31 @@ export default {
   .lesson-itemImg {
     display: none;
   }
-  .lesson-itemImg-sp{
+
+  .lesson-itemImg-sp {
     margin-bottom: 10px;
   }
-  .lesson-itemImg-sp img{
+
+  .lesson-itemImg-sp img {
     width: 118px;
     height: 29px;
   }
-  .lesson-itemTitle{
-    font-size: 1.0rem;
-  }
-  .lesson-itemText{
+
+  .lesson-itemText {
     font-size: small;
   }
-  /* Adjust button positioning */
+
   .lesson-btn {
     width: 40px;
     height: 40px;
     right: 10px;
     left: auto;
   }
-  .lesson-btn a::before{
+
+  .lesson-btn::before {
     width: 15px;
     height: 15px;
     top: calc(50% - 7px);
   }
 }
-
 </style>

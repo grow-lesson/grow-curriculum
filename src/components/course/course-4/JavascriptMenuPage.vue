@@ -22,107 +22,95 @@
               <div class="lesson-itemText">
                 <p>Javascriptの概要と算術演算子について学びます。</p>
               </div>
-              <div class="lesson-btn btn">
-                <a class="lesson-link btn" @click="goToPageLesson1"></a>
-              </div>
+              <!-- lesson-btn の div 全体をクリック可能に -->
+              <div class="lesson-btn btn" @click="goToPageLesson1"></div>
             </div>
           </li>
           <li class="lesson-item">
-              <div class="lesson-itemImg">
-                <img src="../../../assets/images/menu/lesson2.png" alt="lesson2" />
+            <div class="lesson-itemImg">
+              <img src="../../../assets/images/menu/lesson2.png" alt="lesson2" />
+            </div>
+            <div class="lesson-itemWrap">
+              <div class="lesson-itemImg-sp">
+                <img src="../../../assets/images/menu/lesson2-sp.png" alt="lesson2" />
               </div>
-              <div class="lesson-itemWrap">
-                <div class="lesson-itemImg-sp">
-                  <img src="../../../assets/images/menu/lesson2-sp.png" alt="lesson2" />
-                </div>
-                <div class="lesson-itemText">
-                  <p>Javascriptの条件式について学びます。</p>
-                </div>
-                <div class="lesson-btn btn">
-                  <a class="lesson-link btn" @click="goToPageLesson2"></a>
-                </div>
+              <div class="lesson-itemText">
+                <p>Javascriptの条件式について学びます。</p>
               </div>
-            </li>
-            <li class="lesson-item">
-              <div class="lesson-itemImg">
-                <img src="../../../assets/images/menu/lesson3.png" alt="lesson3" />
+              <div class="lesson-btn btn" @click="goToPageLesson2"></div>
+            </div>
+          </li>
+          <li class="lesson-item">
+            <div class="lesson-itemImg">
+              <img src="../../../assets/images/menu/lesson3.png" alt="lesson3" />
+            </div>
+            <div class="lesson-itemWrap">
+              <div class="lesson-itemImg-sp">
+                <img src="../../../assets/images/menu/lesson3-sp.png" alt="lesson3" />
               </div>
-              <div class="lesson-itemWrap">
-                <div class="lesson-itemImg-sp">
-                  <img src="../../../assets/images/menu/lesson3-sp.png" alt="lesson3" />
-                </div>
-                <div class="lesson-itemText">
-                  <p>Javascriptの配列について学びます。</p>
-                </div>
-                <div class="lesson-btn btn">
-                  <a class="lesson-link btn" @click="goToPageLesson3"></a>
-                </div>
+              <div class="lesson-itemText">
+                <p>Javascriptの配列について学びます。</p>
               </div>
-            </li>
-            <li class="lesson-item">
-              <div class="lesson-itemImg">
-                <img src="../../../assets/images/menu/lesson4.png" alt="lesson4" />
+              <div class="lesson-btn btn" @click="goToPageLesson3"></div>
+            </div>
+          </li>
+          <!-- 他のレッスン項目も同様に修正 -->
+          <li class="lesson-item">
+            <div class="lesson-itemImg">
+              <img src="../../../assets/images/menu/lesson4.png" alt="lesson4" />
+            </div>
+            <div class="lesson-itemWrap">
+              <div class="lesson-itemImg-sp">
+                <img src="../../../assets/images/menu/lesson4-sp.png" alt="lesson4" />
               </div>
-              <div class="lesson-itemWrap">
-                <div class="lesson-itemImg-sp">
-                  <img src="../../../assets/images/menu/lesson4-sp.png" alt="lesson4" />
-                </div>
-                <div class="lesson-itemText">
-                  <p>Javascriptの繰り返し文について学びます。</p>
-                </div>
-                <div class="lesson-btn btn">
-                  <a class="lesson-link btn" @click="goToPageLesson4"></a>
-                </div>
+              <div class="lesson-itemText">
+                <p>Javascriptの繰り返し文について学びます。</p>
               </div>
-            </li>
-            <li class="lesson-item">
-              <div class="lesson-itemImg">
-                <img src="../../../assets/images/menu/lesson5.png" alt="lesson5" />
+              <div class="lesson-btn btn" @click="goToPageLesson4"></div>
+            </div>
+          </li>
+          <li class="lesson-item">
+            <div class="lesson-itemImg">
+              <img src="../../../assets/images/menu/lesson5.png" alt="lesson5" />
+            </div>
+            <div class="lesson-itemWrap">
+              <div class="lesson-itemImg-sp">
+                <img src="../../../assets/images/menu/lesson5-sp.png" alt="lesson5" />
               </div>
-              <div class="lesson-itemWrap">
-                <div class="lesson-itemImg-sp">
-                  <img src="../../../assets/images/menu/lesson5-sp.png" alt="lesson5" />
-                </div>
-                <div class="lesson-itemText">
-                  <p>Javascriptのオブジェクトについて学びます。</p>
-                </div>
-                <div class="lesson-btn btn">
-                  <a class="lesson-link btn" @click="goToPageLesson5"></a>
-                </div>
+              <div class="lesson-itemText">
+                <p>Javascriptのオブジェクトについて学びます。</p>
               </div>
-            </li>
-            <li class="lesson-item">
-              <div class="lesson-itemImg">
-                <img src="../../../assets/images/menu/lesson6.png" alt="lesson6" />
+              <div class="lesson-btn btn" @click="goToPageLesson5"></div>
+            </div>
+          </li>
+          <li class="lesson-item">
+            <div class="lesson-itemImg">
+              <img src="../../../assets/images/menu/lesson6.png" alt="lesson6" />
+            </div>
+            <div class="lesson-itemWrap">
+              <div class="lesson-itemImg-sp">
+                <img src="../../../assets/images/menu/lesson6-sp.png" alt="lesson6" />
               </div>
-              <div class="lesson-itemWrap">
-                <div class="lesson-itemImg-sp">
-                  <img src="../../../assets/images/menu/lesson6-sp.png" alt="lesson6" />
-                </div>
-                <div class="lesson-itemText">
-                  <p>Javascriptの関数について学びます。</p>
-                </div>
-                <div class="lesson-btn btn">
-                  <a class="lesson-link btn" @click="goToPageLesson6"></a>
-                </div>
+              <div class="lesson-itemText">
+                <p>Javascriptの関数について学びます。</p>
               </div>
-            </li>
-            <li class="lesson-item">
-              <div class="lesson-itemImg">
-                <img src="../../../assets/images/menu/lesson7.png" alt="lesson7" />
+              <div class="lesson-btn btn" @click="goToPageLesson6"></div>
+            </div>
+          </li>
+          <li class="lesson-item">
+            <div class="lesson-itemImg">
+              <img src="../../../assets/images/menu/lesson7.png" alt="lesson7" />
+            </div>
+            <div class="lesson-itemWrap">
+              <div class="lesson-itemImg-sp">
+                <img src="../../../assets/images/menu/lesson7-sp.png" alt="lesson7" />
               </div>
-              <div class="lesson-itemWrap">
-                <div class="lesson-itemImg-sp">
-                  <img src="../../../assets/images/menu/lesson7-sp.png" alt="lesson7" />
-                </div>
-                <div class="lesson-itemText">
-                  <p>JavascriptのDOM操作について学びます。</p>
-                </div>
-                <div class="lesson-btn btn">
-                  <a class="lesson-link btn" @click="goToPageLesson7"></a>
-                </div>
+              <div class="lesson-itemText">
+                <p>JavascriptのDOM操作について学びます。</p>
               </div>
-            </li>
+              <div class="lesson-btn btn" @click="goToPageLesson7"></div>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
@@ -169,24 +157,24 @@ export default {
 </script>
 
 <style scoped>
-.wrap{
+.wrap {
   min-height: 100vh;
 }
 
 .lesson-container {
   margin: 0 auto;
-  color: #647D91;
+  color: #101010;
 }
 
-.breadcrumb{
+.breadcrumb {
   margin-left: 10%;
 }
 
-.lesson-title{
+.lesson-title {
   width: 100%;
   padding: 30px 0;
   margin: 1rem 0;
-  background-color: #FFF;
+  background-color: #fff;
 }
 
 .lesson-heading {
@@ -208,105 +196,86 @@ export default {
   display: flex;
 }
 
-.lesson-itemImg{
+.lesson-itemImg {
   height: 100%;
   padding: 30px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   margin-right: 10px;
 }
 
-.lesson-itemImg img{
-  widows: 100%;
+.lesson-itemImg img {
+  width: 100%;
   height: 100%;
 }
 
-.lesson-itemWrap{
+.lesson-itemWrap {
   width: 75%;
   padding: 30px 50px;
   background-color: #fff;
   position: relative;
 }
 
-.lesson-itemText{
+.lesson-itemText {
   width: 80%;
   height: 52px;
-  color: #647D91;
+  color: #101010;
 }
 
-.lesson-btn{
-  width:60px;
-  height:60px;
-  line-height:90px;
+.lesson-btn {
+  width: 60px;
+  height: 60px;
+  line-height: 90px;
   position: absolute;
   bottom: 25px;
   right: 50px;
-}
-.lesson-btn a{
-  display:block;
-  width:100%;
-  height:100%;
-  text-decoration: none;
-  background:#fff;
-  text-align:center;
-  border:4px solid #A8DADC;
-  color:#FFFFFF;
-  font-size:20px;
-  font-weight:bold;
-  border-radius:50px;
-  -webkit-border-radius:50px;
-  -moz-border-radius:50px;
-}
-.lesson-btn a:hover{
-  margin-left:0px;
-  margin-top:5px;
-  box-shadow:none;
+  cursor: pointer; /* ボタン全体がクリック可能になる */
 }
 
-.lesson-btn a::before{
+.lesson-btn::before {
   content: '';
   display: block;
   width: 20px;
   height: 20px;
-  border-top: 4px solid #A8DADC;
-  border-left: 4px solid #A8DADC;
+  border-top: 4px solid #a8dadc;
+  border-left: 4px solid #a8dadc;
   transform: rotate(135deg);
   position: absolute;
   right: calc(50% - 5px);
   top: calc(50% - 10px);
 }
 
-.lesson-btn:hover a::before {
+.lesson-btn:hover::before {
   margin-left: 0;
   margin-top: 5px;
 }
 
 @media (min-width: 649px) {
-  .lesson-itemImg-sp{
+  .lesson-itemImg-sp {
     display: none;
   }
 }
 
 @media (max-width: 648px) {
-  .lesson-heading{
+  .lesson-heading {
     font-size: 1.5rem;
   }
 
   .lesson-list {
-    padding: 0; /* Remove padding to ensure the list takes full width */
-    display: flex; /* Use flexbox to center the lesson items */
-    flex-direction: column; /* Stack the items vertically */
-    align-items: center; /* Center items horizontally */
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .lesson-item {
-    width: 90%; /* Make the items take full width */
+    width: 90%;
     height: 150px;
-    max-width: 400px; /* Set a maximum width for the items */
+    max-width: 400px;
     margin: 0 auto 25px auto;
   }
 
   .lesson-itemWrap {
-    width: 100%; /* Make the wrapping div take full width */
+    width: 100%;
     border-radius: 5px;
     padding: 20px 20px;
   }
@@ -314,27 +283,28 @@ export default {
   .lesson-itemImg {
     display: none;
   }
-  .lesson-itemImg-sp{
+
+  .lesson-itemImg-sp {
     margin-bottom: 10px;
   }
-  .lesson-itemImg-sp img{
+
+  .lesson-itemImg-sp img {
     width: 118px;
     height: 29px;
   }
-  .lesson-itemTitle{
-    font-size: 1.0rem;
-  }
-  .lesson-itemText{
+
+  .lesson-itemText {
     font-size: small;
   }
-  /* Adjust button positioning */
+
   .lesson-btn {
     width: 40px;
     height: 40px;
     right: 10px;
     left: auto;
   }
-  .lesson-btn a::before{
+
+  .lesson-btn::before {
     width: 15px;
     height: 15px;
     top: calc(50% - 7px);

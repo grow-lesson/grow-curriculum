@@ -22,155 +22,137 @@
               <div class="lesson-itemText">
                 <p>JQueryの概要と基本的なDOM操作を学びます。</p>
               </div>
-              <div class="lesson-btn btn">
-                <a class="lesson-link btn" @click="goToPageLesson1"></a>
-              </div>
+              <!-- lesson-btn の div 全体をクリック可能に -->
+              <div class="lesson-btn btn" @click="goToPageLesson1"></div>
             </div>
           </li>
           <li class="lesson-item">
-              <div class="lesson-itemImg">
-                <img src="../../../assets/images/menu/lesson2.png" alt="lesson2" />
+            <div class="lesson-itemImg">
+              <img src="../../../assets/images/menu/lesson2.png" alt="lesson2" />
+            </div>
+            <div class="lesson-itemWrap">
+              <div class="lesson-itemImg-sp">
+                <img src="../../../assets/images/menu/lesson2-sp.png" alt="lesson2" />
               </div>
-              <div class="lesson-itemWrap">
-                <div class="lesson-itemImg-sp">
-                  <img src="../../../assets/images/menu/lesson2-sp.png" alt="lesson2" />
-                </div>
-                <div class="lesson-itemText">
-                  <p>JQueryのテンプレートリテラルと条件式・if文・for文、URLと日付の出力やアラートについて学びます。</p>
-                </div>
-                <div class="lesson-btn btn">
-                  <a class="lesson-link btn" @click="goToPageLesson2"></a>
-                </div>
+              <div class="lesson-itemText">
+                <p>JQueryのテンプレートリテラルと条件式・if文・for文、URLと日付の出力やアラートについて学びます。</p>
               </div>
-            </li>
-            <li class="lesson-item">
-              <div class="lesson-itemImg">
-                <img src="../../../assets/images/menu/lesson3.png" alt="lesson3" />
+              <div class="lesson-btn btn" @click="goToPageLesson2"></div>
+            </div>
+          </li>
+          <li class="lesson-item">
+            <div class="lesson-itemImg">
+              <img src="../../../assets/images/menu/lesson3.png" alt="lesson3" />
+            </div>
+            <div class="lesson-itemWrap">
+              <div class="lesson-itemImg-sp">
+                <img src="../../../assets/images/menu/lesson3-sp.png" alt="lesson3" />
               </div>
-              <div class="lesson-itemWrap">
-                <div class="lesson-itemImg-sp">
-                  <img src="../../../assets/images/menu/lesson3-sp.png" alt="lesson3" />
-                </div>
-                <div class="lesson-itemText">
-                  <p>JQueryのモーダルの作り方について学びます。</p>
-                </div>
-                <div class="lesson-btn btn">
-                  <a class="lesson-link btn" @click="goToPageLesson3"></a>
-                </div>
+              <div class="lesson-itemText">
+                <p>JQueryのモーダルの作り方について学びます。</p>
               </div>
-            </li>
-            <li class="lesson-item">
-              <div class="lesson-itemImg">
-                <img src="../../../assets/images/menu/lesson4.png" alt="lesson4" />
+              <div class="lesson-btn btn" @click="goToPageLesson3"></div>
+            </div>
+          </li>
+          <!-- 以降のボタンも同様に修正 -->
+          <li class="lesson-item">
+            <div class="lesson-itemImg">
+              <img src="../../../assets/images/menu/lesson4.png" alt="lesson4" />
+            </div>
+            <div class="lesson-itemWrap">
+              <div class="lesson-itemImg-sp">
+                <img src="../../../assets/images/menu/lesson4-sp.png" alt="lesson4" />
               </div>
-              <div class="lesson-itemWrap">
-                <div class="lesson-itemImg-sp">
-                  <img src="../../../assets/images/menu/lesson4-sp.png" alt="lesson4" />
-                </div>
-                <div class="lesson-itemText">
-                  <p>JQueryのタブメニューの作り方について学びます。</p>
-                </div>
-                <div class="lesson-btn btn">
-                  <a class="lesson-link btn" @click="goToPageLesson4"></a>
-                </div>
+              <div class="lesson-itemText">
+                <p>JQueryのタブメニューの作り方について学びます。</p>
               </div>
-            </li>
-            <li class="lesson-item">
-              <div class="lesson-itemImg">
-                <img src="../../../assets/images/menu/lesson5.png" alt="lesson5" />
+              <div class="lesson-btn btn" @click="goToPageLesson4"></div>
+            </div>
+          </li>
+          <li class="lesson-item">
+            <div class="lesson-itemImg">
+              <img src="../../../assets/images/menu/lesson5.png" alt="lesson5" />
+            </div>
+            <div class="lesson-itemWrap">
+              <div class="lesson-itemImg-sp">
+                <img src="../../../assets/images/menu/lesson5-sp.png" alt="lesson5" />
               </div>
-              <div class="lesson-itemWrap">
-                <div class="lesson-itemImg-sp">
-                  <img src="../../../assets/images/menu/lesson5-sp.png" alt="lesson5" />
-                </div>
-                <div class="lesson-itemText">
-                  <p>JQueryのツールチップの作り方について学びます。</p>
-                </div>
-                <div class="lesson-btn btn">
-                  <a class="lesson-link btn" @click="goToPageLesson5"></a>
-                </div>
+              <div class="lesson-itemText">
+                <p>JQueryのツールチップの作り方について学びます。</p>
               </div>
-            </li>
-            <li class="lesson-item">
-              <div class="lesson-itemImg">
-                <img src="../../../assets/images/menu/lesson6.png" alt="lesson6" />
+              <div class="lesson-btn btn" @click="goToPageLesson5"></div>
+            </div>
+          </li>
+          <li class="lesson-item">
+            <div class="lesson-itemImg">
+              <img src="../../../assets/images/menu/lesson6.png" alt="lesson6" />
+            </div>
+            <div class="lesson-itemWrap">
+              <div class="lesson-itemImg-sp">
+                <img src="../../../assets/images/menu/lesson6-sp.png" alt="lesson6" />
               </div>
-              <div class="lesson-itemWrap">
-                <div class="lesson-itemImg-sp">
-                  <img src="../../../assets/images/menu/lesson6-sp.png" alt="lesson6" />
-                </div>
-                <div class="lesson-itemText">
-                  <p>JQueryの文字チェッカーの作り方について学びます。</p>
-                </div>
-                <div class="lesson-btn btn">
-                  <a class="lesson-link btn" @click="goToPageLesson6"></a>
-                </div>
+              <div class="lesson-itemText">
+                <p>JQueryの文字チェッカーの作り方について学びます。</p>
               </div>
-            </li>
-            <li class="lesson-item">
-              <div class="lesson-itemImg">
-                <img src="../../../assets/images/menu/lesson7.png" alt="lesson7" />
+              <div class="lesson-btn btn" @click="goToPageLesson6"></div>
+            </div>
+          </li>
+          <li class="lesson-item">
+            <div class="lesson-itemImg">
+              <img src="../../../assets/images/menu/lesson7.png" alt="lesson7" />
+            </div>
+            <div class="lesson-itemWrap">
+              <div class="lesson-itemImg-sp">
+                <img src="../../../assets/images/menu/lesson7-sp.png" alt="lesson7" />
               </div>
-              <div class="lesson-itemWrap">
-                <div class="lesson-itemImg-sp">
-                  <img src="../../../assets/images/menu/lesson7-sp.png" alt="lesson7" />
-                </div>
-                <div class="lesson-itemText">
-                  <p>JQueryのスライドショーの作り方について学びます。</p>
-                </div>
-                <div class="lesson-btn btn">
-                  <a class="lesson-link btn" @click="goToPageLesson7"></a>
-                </div>
+              <div class="lesson-itemText">
+                <p>JQueryのスライドショーの作り方について学びます。</p>
               </div>
-            </li>
-            <li class="lesson-item">
-              <div class="lesson-itemImg">
-                <img src="../../../assets/images/menu/lesson8.png" alt="lesson8" />
+              <div class="lesson-btn btn" @click="goToPageLesson7"></div>
+            </div>
+          </li>
+          <li class="lesson-item">
+            <div class="lesson-itemImg">
+              <img src="../../../assets/images/menu/lesson8.png" alt="lesson8" />
+            </div>
+            <div class="lesson-itemWrap">
+              <div class="lesson-itemImg-sp">
+                <img src="../../../assets/images/menu/lesson8-sp.png" alt="lesson8" />
               </div>
-              <div class="lesson-itemWrap">
-                <div class="lesson-itemImg-sp">
-                  <img src="../../../assets/images/menu/lesson8-sp.png" alt="lesson8" />
-                </div>
-                <div class="lesson-itemText">
-                  <p>JQueryのフリックの作り方について学びます。</p>
-                </div>
-                <div class="lesson-btn btn">
-                  <a class="lesson-link btn" @click="goToPageLesson8"></a>
-                </div>
+              <div class="lesson-itemText">
+                <p>JQueryのフリックの作り方について学びます。</p>
               </div>
-            </li>
-            <li class="lesson-item">
-              <div class="lesson-itemImg">
-                <img src="../../../assets/images/menu/lesson9.png" alt="lesson9" />
+              <div class="lesson-btn btn" @click="goToPageLesson8"></div>
+            </div>
+          </li>
+          <li class="lesson-item">
+            <div class="lesson-itemImg">
+              <img src="../../../assets/images/menu/lesson9.png" alt="lesson9" />
+            </div>
+            <div class="lesson-itemWrap">
+              <div class="lesson-itemImg-sp">
+                <img src="../../../assets/images/menu/lesson9-sp.png" alt="lesson9" />
               </div>
-              <div class="lesson-itemWrap">
-                <div class="lesson-itemImg-sp">
-                  <img src="../../../assets/images/menu/lesson9-sp.png" alt="lesson9" />
-                </div>
-                <div class="lesson-itemText">
-                  <p>JQueryの神経衰弱の作り方について学びます。</p>
-                </div>
-                <div class="lesson-btn btn">
-                  <a class="lesson-link btn" @click="goToPageLesson9"></a>
-                </div>
+              <div class="lesson-itemText">
+                <p>JQueryの神経衰弱の作り方について学びます。</p>
               </div>
-            </li>
-            <li class="lesson-item">
-              <div class="lesson-itemImg">
-                <img src="../../../assets/images/menu/lesson10.png" alt="lesson10" />
+              <div class="lesson-btn btn" @click="goToPageLesson9"></div>
+            </div>
+          </li>
+          <li class="lesson-item">
+            <div class="lesson-itemImg">
+              <img src="../../../assets/images/menu/lesson10.png" alt="lesson10" />
+            </div>
+            <div class="lesson-itemWrap">
+              <div class="lesson-itemImg-sp">
+                <img src="../../../assets/images/menu/lesson10-sp.png" alt="lesson10" />
               </div>
-              <div class="lesson-itemWrap">
-                <div class="lesson-itemImg-sp">
-                  <img src="../../../assets/images/menu/lesson10-sp.png" alt="lesson10" />
-                </div>
-                <div class="lesson-itemText">
-                  <p>JQueryのAPI実装の作り方について学びます。</p>
-                </div>
-                <div class="lesson-btn btn">
-                  <a class="lesson-link btn" @click="goToPageLesson10"></a>
-                </div>
+              <div class="lesson-itemText">
+                <p>JQueryのAPI実装の作り方について学びます。</p>
               </div>
-            </li>
+              <div class="lesson-btn btn" @click="goToPageLesson10"></div>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
@@ -232,7 +214,7 @@ export default {
 
 .lesson-container {
   margin: 0 auto;
-  color: #647D91;
+  color: #101010;
 }
 
 .breadcrumb{
@@ -287,7 +269,7 @@ export default {
 .lesson-itemText{
   width: 80%;
   height: 52px;
-  color: #647D91;
+  color: #101010;
 }
 
 .lesson-btn{
@@ -297,29 +279,10 @@ export default {
   position: absolute;
   bottom: 25px;
   right: 50px;
-}
-.lesson-btn a{
-  display:block;
-  width:100%;
-  height:100%;
-  text-decoration: none;
-  background:#fff;
-  text-align:center;
-  border:4px solid #A8DADC;
-  color:#FFFFFF;
-  font-size:20px;
-  font-weight:bold;
-  border-radius:50px;
-  -webkit-border-radius:50px;
-  -moz-border-radius:50px;
-}
-.lesson-btn a:hover{
-  margin-left:0px;
-  margin-top:5px;
-  box-shadow:none;
+  cursor: pointer; /* クリック可能にするためのスタイル */
 }
 
-.lesson-btn a::before{
+.lesson-btn::before{
   content: '';
   display: block;
   width: 20px;
@@ -332,7 +295,7 @@ export default {
   top: calc(50% - 10px);
 }
 
-.lesson-btn:hover a::before {
+.lesson-btn:hover::before {
   margin-left: 0;
   margin-top: 5px;
 }
@@ -391,7 +354,7 @@ export default {
     right: 10px;
     left: auto;
   }
-  .lesson-btn a::before{
+  .lesson-btn::before{
     width: 15px;
     height: 15px;
     top: calc(50% - 7px);

@@ -16,10 +16,18 @@
             <li class="navigation-item">
               <button class="navigation-btn" @click="toggleDropdown('preparation')">準備と提出</button>
               <ul class="dropdown-list" :class="{ 'slide-down': activeDropdown === 'preparation' }">
-                <li class="dropdown-item"><a @click="goToHowToPage" class="dropdown-link">サイトの使い方</a></li>
-                <li class="dropdown-item"><a @click="goToSetUPPage" class="dropdown-link">PCの設定・使い方</a></li>
-                <li class="dropdown-item"><a @click="goToEnvironmentPage" class="dropdown-link">環境構築やインストール</a></li>
-                <li class="dropdown-item"><a @click="goToProcedurePage" class="dropdown-link">カリキュラムの始め方</a></li>
+                <li class="dropdown-item" @click="goToHowToPage">
+                  <a class="dropdown-link">サイトの使い方</a>
+                </li>
+                <li class="dropdown-item" @click="goToSetUPPage">
+                  <a class="dropdown-link">PCの設定・使い方</a>
+                </li>
+                <li class="dropdown-item" @click="goToEnvironmentPage">
+                  <a class="dropdown-link">環境構築やインストール</a>
+                </li>
+                <li class="dropdown-item" @click="goToProcedurePage">
+                  <a class="dropdown-link">カリキュラムの始め方</a>
+                </li>
               </ul>
             </li>
             <li class="navigation-item">
@@ -28,15 +36,23 @@
             <li class="navigation-item">
               <button class="navigation-btn" @click="toggleDropdown('mypage')">マイページ</button>
               <ul class="dropdown-list" :class="{ 'slide-down': activeDropdown === 'mypage' }">
-                <li class="dropdown-item"><a @click="goToMyPage" class="dropdown-link">プロフィール</a></li>
+                <li class="dropdown-item" @click="goToMyPage">
+                  <a class="dropdown-link">プロフィール</a>
+                </li>
               </ul>
             </li>
             <li class="navigation-item">
               <button class="navigation-btn" @click="toggleDropdown('others')">その他</button>
               <ul class="dropdown-list" :class="{ 'slide-down': activeDropdown === 'others' }">
-                <li class="dropdown-item"><a @click="goToContactPage" class="dropdown-link">お問い合わせ</a></li>
-                <li class="dropdown-item"><a href="https://grow-infotech.com" target="_blank" class="dropdown-link">会社HP</a></li>
-                <li class="dropdown-item"><a href="https://www.wantedly.com/companies/company_7305723" target="_blank" class="dropdown-link">Wantedllyを見る</a></li>
+                <li class="dropdown-item" @click="goToContactPage">
+                  <a class="dropdown-link">お問い合わせ</a>
+                </li>
+                <li class="dropdown-item">
+                  <a href="https://grow-infotech.com" target="_blank" class="dropdown-link">会社HP</a>
+                </li>
+                <li class="dropdown-item">
+                  <a href="https://www.wantedly.com/companies/company_7305723" target="_blank" class="dropdown-link">Wantedllyを見る</a>
+                </li>
               </ul>
             </li>
           </ul>
@@ -58,33 +74,49 @@
       </button>
       <!-- メニューアイテム -->
       <ul class="menu-list">
-        <li class="menu-item">
-          <button @click="goToIntroducePage">サイトについて</button>
+        <li class="menu-item" @click="goToIntroducePage">
+          <button>サイトについて</button>
         </li>
         <li class="menu-item">
           <button @click="toggleDropdown('preparation')">準備と提出</button>
           <ul class="dropdown-list" :class="{ 'slide-down': activeDropdown === 'preparation' }">
-            <li class="dropdown-item"><a @click="goToHowToPage" class="dropdown-link">サイトの使い方</a></li>
-            <li class="dropdown-item"><a @click="goToSetUPPage" class="dropdown-link">PCの設定・使い方</a></li>
-            <li class="dropdown-item"><a @click="goToEnvironmentPage" class="dropdown-link">環境構築やインストール</a></li>
-            <li class="dropdown-item"><a @click="goToProcedurePage" class="dropdown-link">カリキュラムの始め方</a></li>
+            <li class="dropdown-item" @click="goToHowToPage">
+              <a class="dropdown-link">サイトの使い方</a>
+            </li>
+            <li class="dropdown-item" @click="goToSetUPPage">
+              <a class="dropdown-link">PCの設定・使い方</a>
+            </li>
+            <li class="dropdown-item" @click="goToEnvironmentPage">
+              <a class="dropdown-link">環境構築やインストール</a>
+            </li>
+            <li class="dropdown-item" @click="goToProcedurePage">
+              <a class="dropdown-link">カリキュラムの始め方</a>
+            </li>
           </ul>
         </li>
-        <li class="menu-item">
-          <button @click="goToCourseMenuPage">コース一覧</button>
+        <li class="menu-item" @click="goToCourseMenuPage">
+          <button>コース一覧</button>
         </li>
         <li class="menu-item">
           <button @click="toggleDropdown('mypage')">マイページ</button>
           <ul class="dropdown-list" :class="{ 'slide-down': activeDropdown === 'mypage' }">
-            <li class="dropdown-item"><a @click="goToMyPage" class="dropdown-link">プロフィール</a></li>
+            <li class="dropdown-item" @click="goToMyPage">
+              <a class="dropdown-link">プロフィール</a>
+            </li>
           </ul>
         </li>
         <li class="menu-item">
           <button @click="toggleDropdown('others')">その他</button>
           <ul class="dropdown-list" :class="{ 'slide-down': activeDropdown === 'others' }">
-            <li class="dropdown-item"><a @click="goToContactPage" class="dropdown-link">お問い合わせ</a></li>
-            <li class="dropdown-item"><a href="https://grow-infotech.com" target="_blank" class="dropdown-link">会社HP</a></li>
-            <li class="dropdown-item"><a href="https://www.wantedly.com/companies/company_7305723" target="_blank" class="dropdown-link">Wantedllyを見る</a></li>
+            <li class="dropdown-item" @click="goToContactPage">
+              <a class="dropdown-link">お問い合わせ</a>
+            </li>
+            <li class="dropdown-item">
+              <a href="https://grow-infotech.com" target="_blank" class="dropdown-link">会社HP</a>
+            </li>
+            <li class="dropdown-item">
+              <a href="https://www.wantedly.com/companies/company_7305723" target="_blank" class="dropdown-link">Wantedllyを見る</a>
+            </li>
           </ul>
         </li>
       </ul>
@@ -328,7 +360,7 @@ export default {
 }
 
 .dropdown-item:hover {
-  background-color: #003558;
+  background-color: #c6c6c6;
 }
 
 .dropdown-link {

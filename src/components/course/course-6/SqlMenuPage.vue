@@ -22,9 +22,8 @@
               <div class="lesson-itemText">
                 <p>SQLのコマンド基本的な操作と考え方を学びます。</p>
               </div>
-              <div class="lesson-btn btn">
-                <a class="lesson-link btn" @click="goToPageLesson1"></a>
-              </div>
+              <!-- lesson-btn の div 全体をクリック可能に -->
+              <div class="lesson-btn btn" @click="goToPageLesson1"></div>
             </div>
           </li>
         </ul>
@@ -58,7 +57,7 @@ export default {
 
 .lesson-container {
   margin: 0 auto;
-  color: #647D91;
+  color: #101010;
 }
 
 .breadcrumb{
@@ -99,7 +98,7 @@ export default {
 }
 
 .lesson-itemImg img{
-  widows: 100%;
+  width: 100%;
   height: 100%;
 }
 
@@ -113,7 +112,7 @@ export default {
 .lesson-itemText{
   width: 80%;
   height: 52px;
-  color: #647D91;
+  color: #101010;
 }
 
 .lesson-btn{
@@ -123,29 +122,10 @@ export default {
   position: absolute;
   bottom: 25px;
   right: 50px;
-}
-.lesson-btn a{
-  display:block;
-  width:100%;
-  height:100%;
-  text-decoration: none;
-  background:#fff;
-  text-align:center;
-  border:4px solid #A8DADC;
-  color:#FFFFFF;
-  font-size:20px;
-  font-weight:bold;
-  border-radius:50px;
-  -webkit-border-radius:50px;
-  -moz-border-radius:50px;
-}
-.lesson-btn a:hover{
-  margin-left:0px;
-  margin-top:5px;
-  box-shadow:none;
+  cursor: pointer; /* クリック可能にするためのスタイル */
 }
 
-.lesson-btn a::before{
+.lesson-btn::before{
   content: '';
   display: block;
   width: 20px;
@@ -158,7 +138,7 @@ export default {
   top: calc(50% - 10px);
 }
 
-.lesson-btn:hover a::before {
+.lesson-btn:hover::before {
   margin-left: 0;
   margin-top: 5px;
 }
@@ -217,7 +197,7 @@ export default {
     right: 10px;
     left: auto;
   }
-  .lesson-btn a::before{
+  .lesson-btn::before{
     width: 15px;
     height: 15px;
     top: calc(50% - 7px);
