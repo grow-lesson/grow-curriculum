@@ -35,7 +35,7 @@
               <button class="navigation-btn" @click="toggleDropdown('others')">その他</button>
               <ul class="dropdown-list" :class="{ 'slide-down': activeDropdown === 'others' }">
                 <li class="dropdown-item"><a @click="goToContactPage" class="dropdown-link">お問い合わせ</a></li>
-                <li class="dropdown-item"><a href="https://grow-infotech.com" target="_blank" class="dropdown-link">会社のホームページを見る</a></li>
+                <li class="dropdown-item"><a href="https://grow-infotech.com" target="_blank" class="dropdown-link">会社HP</a></li>
                 <li class="dropdown-item"><a href="https://www.wantedly.com/companies/company_7305723" target="_blank" class="dropdown-link">Wantedllyを見る</a></li>
               </ul>
             </li>
@@ -83,7 +83,7 @@
           <button @click="toggleDropdown('others')">その他</button>
           <ul class="dropdown-list" :class="{ 'slide-down': activeDropdown === 'others' }">
             <li class="dropdown-item"><a @click="goToContactPage" class="dropdown-link">お問い合わせ</a></li>
-            <li class="dropdown-item"><a href="https://grow-infotech.com" target="_blank" class="dropdown-link">会社のホームページを見る</a></li>
+            <li class="dropdown-item"><a href="https://grow-infotech.com" target="_blank" class="dropdown-link">会社HP</a></li>
             <li class="dropdown-item"><a href="https://www.wantedly.com/companies/company_7305723" target="_blank" class="dropdown-link">Wantedllyを見る</a></li>
           </ul>
         </li>
@@ -242,7 +242,7 @@ export default {
 }
 
 .navigation-item:hover {
-  background-color: #0071bb;
+  background-color: #404141;
 }
 
 .navigation-btn {
@@ -309,7 +309,7 @@ export default {
 
 /* ドロップダウンの項目 */
 .dropdown-item {
-  background-color: #004d80;
+  background-color: #838d8d;
   height: 60px;
   transition: all 0.3s;
   display: flex;
@@ -321,7 +321,7 @@ export default {
   content: "";
   width: 100%;
   height: 1px;
-  background-color: #3492d1;
+  background-color: #404141;
   position: absolute;
   top: 0;
   left: 0;
