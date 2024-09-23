@@ -21,7 +21,7 @@
         </div>
         <div class="introduce-text">
           <h2 class="introduce-subTitle">学習サイトで学べる事</h2>
-          <p class="introduce-description">ここでは、HTMLとCSS、JavaScript、Git、コマンドライン、Rubyの学習に特化しており、 これらの言語やツールを使ってウェブ開発のスキルを身につけることができます。</p>
+          <p class="introduce-description">ここでは、HTMLとCSS、JavaScript、Git、コマンドライン、JQuery、SQLなどの基本的な学習に特化しており、 これらの言語やツールを使ってウェブ開発のスキルを身につけることができます。</p>
         </div>
       </li>
       <li class="introduce-contents is-odd">
