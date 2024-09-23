@@ -14,8 +14,8 @@
               <button class="navigation-btn" @click="goToIntroducePage">サイトについて</button>
             </li>
             <li class="navigation-item">
-              <button class="navigation-btn">準備と提出</button>
-              <ul class="dropdown-list">
+              <button class="navigation-btn" @click="toggleDropdown('preparation')">準備と提出</button>
+              <ul class="dropdown-list" :class="{ 'slide-down': activeDropdown === 'preparation' }">
                 <li class="dropdown-item"><a @click="goToHowToPage" class="dropdown-link">サイトの使い方</a></li>
                 <li class="dropdown-item"><a @click="goToSetUPPage" class="dropdown-link">PCの設定・使い方</a></li>
                 <li class="dropdown-item"><a @click="goToEnvironmentPage" class="dropdown-link">環境構築やインストール</a></li>
@@ -26,14 +26,14 @@
               <button class="navigation-btn" @click="goToCourseMenuPage">コース一覧</button>
             </li>
             <li class="navigation-item">
-              <button class="navigation-btn">マイページ</button>
-              <ul class="dropdown-list">
+              <button class="navigation-btn" @click="toggleDropdown('mypage')">マイページ</button>
+              <ul class="dropdown-list" :class="{ 'slide-down': activeDropdown === 'mypage' }">
                 <li class="dropdown-item"><a @click="goToMyPage" class="dropdown-link">プロフィール</a></li>
               </ul>
             </li>
             <li class="navigation-item">
-              <button class="navigation-btn">その他</button>
-              <ul class="dropdown-list">
+              <button class="navigation-btn" @click="toggleDropdown('others')">その他</button>
+              <ul class="dropdown-list" :class="{ 'slide-down': activeDropdown === 'others' }">
                 <li class="dropdown-item"><a @click="goToContactPage" class="dropdown-link">お問い合わせ</a></li>
                 <li class="dropdown-item"><a href="https://grow-infotech.com" target="_blank" class="dropdown-link">会社のホームページを見る</a></li>
                 <li class="dropdown-item"><a href="https://www.wantedly.com/companies/company_7305723" target="_blank" class="dropdown-link">Wantedllyを見る</a></li>
@@ -62,8 +62,8 @@
           <button @click="goToIntroducePage">サイトについて</button>
         </li>
         <li class="menu-item">
-          <button>準備と提出</button>
-          <ul class="dropdown-list">
+          <button @click="toggleDropdown('preparation')">準備と提出</button>
+          <ul class="dropdown-list" :class="{ 'slide-down': activeDropdown === 'preparation' }">
             <li class="dropdown-item"><a @click="goToHowToPage" class="dropdown-link">サイトの使い方</a></li>
             <li class="dropdown-item"><a @click="goToSetUPPage" class="dropdown-link">PCの設定・使い方</a></li>
             <li class="dropdown-item"><a @click="goToEnvironmentPage" class="dropdown-link">環境構築やインストール</a></li>
@@ -74,14 +74,14 @@
           <button @click="goToCourseMenuPage">コース一覧</button>
         </li>
         <li class="menu-item">
-          <button>マイページ</button>
-          <ul class="dropdown-list">
+          <button @click="toggleDropdown('mypage')">マイページ</button>
+          <ul class="dropdown-list" :class="{ 'slide-down': activeDropdown === 'mypage' }">
             <li class="dropdown-item"><a @click="goToMyPage" class="dropdown-link">プロフィール</a></li>
           </ul>
         </li>
         <li class="menu-item">
-          <button>その他</button>
-          <ul class="dropdown-list">
+          <button @click="toggleDropdown('others')">その他</button>
+          <ul class="dropdown-list" :class="{ 'slide-down': activeDropdown === 'others' }">
             <li class="dropdown-item"><a @click="goToContactPage" class="dropdown-link">お問い合わせ</a></li>
             <li class="dropdown-item"><a href="https://grow-infotech.com" target="_blank" class="dropdown-link">会社のホームページを見る</a></li>
             <li class="dropdown-item"><a href="https://www.wantedly.com/companies/company_7305723" target="_blank" class="dropdown-link">Wantedllyを見る</a></li>
@@ -100,6 +100,8 @@ export default {
   setup() {
     const isMobile = ref(false);
     const showMenu = ref(false);
+    const activeDropdown = ref(null); // ドロップダウンの状態を管理する
+
     const router = useRouter();
 
     // モバイル画面の判定を行うメソッド
@@ -112,7 +114,12 @@ export default {
       showMenu.value = !showMenu.value;
     };
 
-    // Vue Routerを使用してページ間の遷移を行うメソッド
+    // ドロップダウンの表示切替を行うメソッド
+    const toggleDropdown = (menuName) => {
+      activeDropdown.value = activeDropdown.value === menuName ? null : menuName;
+    };
+
+    // ページ遷移メソッド
     const goToMenuPage = () => {
       router.push({ name: "MenuPage" });
     };
@@ -145,14 +152,6 @@ export default {
       router.push({ name: "MyPage" });
     };
 
-    const goToProgressPage = () => {
-      router.push({ name: "Progress" });
-    };
-
-    const goToReservationCalendarPage = () => {
-      router.push({ name: "ReservationCalendar" });
-    };
-
     const goToContactPage = () => {
       router.push({ name: "Contact" });
     };
@@ -175,7 +174,9 @@ export default {
     return {
       isMobile,
       showMenu,
+      activeDropdown,
       toggleMenu,
+      toggleDropdown,
       goToMenuPage,
       goToIntroducePage,
       goToSetUPPage,
@@ -184,8 +185,6 @@ export default {
       goToProcedurePage,
       goToCourseMenuPage,
       goToMyPage,
-      goToProgressPage,
-      goToReservationCalendarPage,
       goToContactPage,
     };
   },
@@ -297,18 +296,18 @@ export default {
 
 /* ドロップダウンメニュー */
 .dropdown-list {
-  display: none;
-  width: 160%;
-  position: absolute;
-  top: 60px;
-  left: -60%;
-  z-index: 1;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
 }
 
-.navigation-item:hover .dropdown-list {
-  display: block;
+.slide-down {
+  max-height: 300px;
+  opacity: 1;
 }
 
+/* ドロップダウンの項目 */
 .dropdown-item {
   background-color: #004d80;
   height: 60px;
