@@ -1308,7 +1308,7 @@ export default {
     ];
 
     const macSections = [
-    { id: "Title-m", title: "SQL 1 (Macの方)" },
+      { id: "Title-m", title: "SQL 1 (Macの方)" },
       { id: "subTitle1-m", title: "  1. SQLについて学ぶ" },
       { id: "sectionTitle1-1-m", title: "    1-1. SQLとは?" },
       { id: "sectionTitle1-2-m", title: "    1-2. データベースの概要と種類" },
