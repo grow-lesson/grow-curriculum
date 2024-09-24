@@ -262,6 +262,30 @@ const routes = [
     component: () => import("../components/course/course-6/SqlPage1.vue"),
   },
   {
+    path: "/photoshop-lesson-menu",
+    name: "PhotoshopMenuPage",
+    meta: { requiresAuth: true },
+    component: () => import("../components/course/course-7/PhotoshopMenuPage.vue"),
+  },
+  {
+    path: "/photoshop-lesson-1",
+    name: "PhotoshopPage1",
+    meta: { requiresAuth: true },
+    component: () => import("../components/course/course-7/PhotoshopPage1.vue"),
+  },
+  {
+    path: "/photoshop-lesson-2",
+    name: "PhotoshopPage2",
+    meta: { requiresAuth: true },
+    component: () => import("../components/course/course-7/PhotoshopPage2.vue"),
+  },
+  {
+    path: "/photoshop-lesson-3",
+    name: "PhotoshopPage3",
+    meta: { requiresAuth: true },
+    component: () => import("../components/course/course-7/PhotoshopPage3.vue"),
+  },
+  {
     path: "/my-page",
     name: "MyPage",
     meta: { requiresAuth: true },
