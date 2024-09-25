@@ -31,7 +31,27 @@
               </ul>
             </li>
             <li class="navigation-item">
-              <button class="navigation-btn" @click="goToCourseMenuPage">コース一覧</button>
+              <button class="navigation-btn" @click="toggleDropdown('course')" >コース</button>
+              <ul class="dropdown-list" :class="{ 'slide-down': activeDropdown === 'course' }">
+                <li class="dropdown-item"  @click="goToHtmlMenuPage">
+                  <a class="dropdown-link">HTML・CSS</a>
+                </li>
+                <li class="dropdown-item"  @click="goToCommandLineMenuPage">
+                  <a class="dropdown-link">コマンドライン</a>
+                </li>
+                <li class="dropdown-item"  @click="goToJavaScriptMenuPage">
+                  <a class="dropdown-link">Javascript</a>
+                </li>
+                <li class="dropdown-item"  @click="goToJqueryMenuPage">
+                  <a class="dropdown-link">Jquery</a>
+                </li>
+                <li class="dropdown-item"  @click="goToGitMenuPage">
+                  <a class="dropdown-link">Git</a>
+                </li>
+                <li class="dropdown-item"  @click="goToSQLMenuPage">
+                  <a class="dropdown-link">SQL</a>
+                </li>
+              </ul>
             </li>
             <li class="navigation-item">
               <button class="navigation-btn" @click="toggleDropdown('mypage')">マイページ</button>
@@ -44,14 +64,14 @@
             <li class="navigation-item">
               <button class="navigation-btn" @click="toggleDropdown('others')">その他</button>
               <ul class="dropdown-list" :class="{ 'slide-down': activeDropdown === 'others' }">
-                <li class="dropdown-item" @click="goToContactPage">
+                <!-- <li class="dropdown-item" @click="goToContactPage">
                   <a class="dropdown-link">お問い合わせ</a>
-                </li>
+                </li> -->
                 <li class="dropdown-item">
                   <a href="https://grow-infotech.com" target="_blank" class="dropdown-link">会社HP</a>
                 </li>
                 <li class="dropdown-item">
-                  <a href="https://www.wantedly.com/companies/company_7305723" target="_blank" class="dropdown-link">Wantedllyを見る</a>
+                  <a href="https://www.wantedly.com/companies/company_7305723" target="_blank" class="dropdown-link">Wantedlly</a>
                 </li>
               </ul>
             </li>
@@ -94,8 +114,31 @@
             </li>
           </ul>
         </li>
-        <li class="menu-item" @click="goToCourseMenuPage">
-          <button>コース一覧</button>
+        <li class="menu-item">
+          <button @click="toggleDropdown('course')" >コース</button>
+          <ul class="dropdown-list" :class="{ 'slide-down': activeDropdown === 'course' }">
+            <li class="dropdown-item"  @click="goToCourseMenuPage">
+              <a class="dropdown-link">コース一覧</a>
+            </li>
+            <li class="dropdown-item"  @click="goToHtmlMenuPage">
+              <a class="dropdown-link">HTML・CSS</a>
+            </li>
+            <li class="dropdown-item"  @click="goToCommandLineMenuPage">
+              <a class="dropdown-link">コマンドライン</a>
+            </li>
+            <li class="dropdown-item"  @click="goToJavaScriptMenuPage">
+              <a class="dropdown-link">Javascript</a>
+            </li>
+            <li class="dropdown-item"  @click="goToJqueryMenuPage">
+              <a class="dropdown-link">Jquery</a>
+            </li>
+            <li class="dropdown-item"  @click="goToGitMenuPage">
+              <a class="dropdown-link">Git</a>
+            </li>
+            <li class="dropdown-item"  @click="goToSQLMenuPage">
+              <a class="dropdown-link">SQL</a>
+            </li>
+          </ul>
         </li>
         <li class="menu-item">
           <button @click="toggleDropdown('mypage')">マイページ</button>
@@ -108,14 +151,14 @@
         <li class="menu-item">
           <button @click="toggleDropdown('others')">その他</button>
           <ul class="dropdown-list" :class="{ 'slide-down': activeDropdown === 'others' }">
-            <li class="dropdown-item" @click="goToContactPage">
+            <!-- <li class="dropdown-item" @click="goToContactPage">
               <a class="dropdown-link">お問い合わせ</a>
-            </li>
+            </li> -->
             <li class="dropdown-item">
               <a href="https://grow-infotech.com" target="_blank" class="dropdown-link">会社HP</a>
             </li>
             <li class="dropdown-item">
-              <a href="https://www.wantedly.com/companies/company_7305723" target="_blank" class="dropdown-link">Wantedllyを見る</a>
+              <a href="https://www.wantedly.com/companies/company_7305723" target="_blank" class="dropdown-link">Wantedlly</a>
             </li>
           </ul>
         </li>
@@ -148,7 +191,12 @@ export default {
 
     // ドロップダウンの表示切替を行うメソッド
     const toggleDropdown = (menuName) => {
-      activeDropdown.value = activeDropdown.value === menuName ? null : menuName;
+      // 既に別のドロップダウンが開いている場合、それを閉じる
+      if (activeDropdown.value !== menuName) {
+        activeDropdown.value = menuName;
+      } else {
+        activeDropdown.value = null;
+      }
     };
 
     // ページ遷移メソッド
@@ -176,16 +224,54 @@ export default {
       router.push({ name: "Procedure" });
     };
 
-    const goToCourseMenuPage = () => {
-      router.push({ name: "CourseMenu" });
-    };
-
     const goToMyPage = () => {
       router.push({ name: "MyPage" });
     };
 
     const goToContactPage = () => {
       router.push({ name: "Contact" });
+    };
+
+    const goToHtmlMenuPage = () => {
+      router.push({ name: "HtmlMenuPage" });
+    };
+
+    const goToCommandLineMenuPage = () => {
+      router.push({ name: "CommandLineMenuPage" });
+    };
+
+    const goToGitMenuPage = () => {
+      router.push({ name: "GitMenuPage" });
+    };
+
+    const goToJavaScriptMenuPage = () => {
+      router.push({ name: "JavascriptMenuPage" });
+    };
+
+    const goToSQLMenuPage = () => {
+      router.push({ name: "SqlMenuPage" });
+    };
+
+    const goToJqueryMenuPage = () => {
+      router.push({ name: "JqueryMenuPage" });
+    };
+
+    // ドロップダウン以外をクリックしたときに閉じる処理
+    const handleClickOutside = (event) => {
+      const dropdowns = document.querySelectorAll('.dropdown-list');
+      let isClickInside = false;
+
+      // クリックした場所がドロップダウンかそのボタンであるかをチェック
+      dropdowns.forEach((dropdown) => {
+        if (dropdown.contains(event.target) || event.target.closest('.navigation-btn')) {
+          isClickInside = true;
+        }
+      });
+
+      // ドロップダウン外がクリックされたら閉じる
+      if (!isClickInside) {
+        activeDropdown.value = null;
+      }
     };
 
     // ウィンドウリサイズ時にモバイル画面の判定を行う
@@ -197,10 +283,12 @@ export default {
     onMounted(() => {
       checkMobileScreen();
       window.addEventListener("resize", handleResize);
+      document.addEventListener("click", handleClickOutside); // クリックイベントのリスナーを追加
     });
 
     onUnmounted(() => {
       window.removeEventListener("resize", handleResize);
+      document.removeEventListener("click", handleClickOutside); // クリックイベントのリスナーを削除
     });
 
     return {
@@ -215,12 +303,18 @@ export default {
       goToHowToPage,
       goToEnvironmentPage,
       goToProcedurePage,
-      goToCourseMenuPage,
       goToMyPage,
       goToContactPage,
+      goToHtmlMenuPage,
+      goToCommandLineMenuPage,
+      goToGitMenuPage,
+      goToJavaScriptMenuPage,
+      goToSQLMenuPage,
+      goToJqueryMenuPage,
     };
   },
 };
+
 </script>
 
 <style scoped>
@@ -268,7 +362,7 @@ export default {
 .navigation-item {
   width: 35%;
   height: 60px;
-  background-color: #e5f0f8;
+  background-color: #eef5f9;
   position: relative;
   transition: all 0.3s;
 }
@@ -332,11 +426,17 @@ export default {
   opacity: 0;
   overflow: hidden;
   transition: max-height 0.5s ease, opacity 0.5s ease;
+  position: absolute; /* 絶対位置 */
+  z-index: 1000;
+  width: 100%; /* 親要素に合わせて幅を100%に設定 */
+  left: 0; /* ドロップダウンを左揃えに */
 }
 
 .slide-down {
-  max-height: 300px;
+  max-height: 360px;
   opacity: 1;
+  z-index: 1000;
+  width: 100%; /* ドロップダウンの幅を親要素に合わせる */
 }
 
 /* ドロップダウンの項目 */
