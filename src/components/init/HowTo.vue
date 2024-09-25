@@ -88,7 +88,7 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import Header from "@/components/layout/Header.vue";
 import Footer from "@/components/layout/Footer.vue";
 import Title from "@/components/Title.vue";
@@ -133,6 +133,10 @@ export default {
       isModalOpen.value = true;
       selectedImage.value = imagePath;
     };
+
+    onMounted(() => {
+      window.scrollTo(0, 0);
+    });
 
     return {
       howToSections,
