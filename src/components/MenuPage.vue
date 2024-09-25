@@ -2,104 +2,48 @@
   <div>
     <Header />
     <main class="main-content">
+      <!-- ヒーローセクション -->
+      <section class="hero">
+        <div class="hero-content">
+          <h1 class="hero-title">ITエンジニアへの第一歩を踏み出そう</h1>
+          <p class="hero-description">私たちのカリキュラムを通じて、最先端の技術を学び、スキルを磨こう！</p>
+          <div class="hero-image-wrap">
+            <img class="hero-image" :src="require('@/assets/images/menu/hero.jpg')" alt="hero image">
+          </div>
+          <a class="cta-button" @click="goToIntroducePage">カリキュラムの始め方を知る</a>
+        </div>
+      </section>
+
+      <!-- ユーザーのメッセージセクション -->
       <div class="user">
         <h1 class="user-message">ようこそ{{ user.name }}さん!</h1>
       </div>
-      <div class="hero">
-        <div class="hero-content">
-          <h1 class="hero-title">カリキュラムの流れ</h1>
-        </div>
-      </div>
+
+      <!-- カリキュラム案内セクション（手順セクション） -->
       <section class="flow">
+        <h2 class="section-title">カリキュラムを進めるためのステップ</h2>
         <ul class="flow-list">
-          <li class="flow-item"><a class="flow-link" @click="goToHowToPage">学習サイトの使い方</a></li>
-          <li class="flow-item"><a class="flow-link" @click="goToSetUPPage">PCの初期設定や使い方を学ぶ</a></li>
-          <li class="flow-item"><a class="flow-link" @click="goToEnvironmentPage">インストールや環境構築の手順を知る</a></li>
-          <li class="flow-item"><a class="flow-link" @click="goToProcedurePage">カリキュラムの始め方</a></li>
+          <li class="flow-item"><a class="flow-link" @click="goToHowToPage">学習サイトの使い方を知ろう！</a></li>
+          <li class="flow-item"><a class="flow-link" @click="goToSetUPPage">パソコンの初期設定や使い方を学ぼう！</a></li>
+          <li class="flow-item"><a class="flow-link" @click="goToEnvironmentPage">必要なアプリのインストールや環境構築を学ぼう！</a></li>
+          <li class="flow-item"><a class="flow-link" @click="goToProcedurePage">カリキュラムの始め方や提出方法を知ろう！</a></li>
         </ul>
       </section>
-      <div class="hero">
-        <div class="hero-content">
-          <h1 class="hero-title">初級コース</h1>
-        </div>
-      </div>
-      <section class="course">
-        <div class="course-item">
-          <h2 class="course-title">HTML・CSS</h2>
-          <p class="course-explanation">ウェブサイトの作成に必要な骨組みやデザインを学べるコース</p>
-          <div class="course-image">
-            <div class="course-logo">
-              <img src="../assets/images/menu/html.png" class="course-icon" alt="html" />
+
+      <!-- コース案内セクション (Swiperスライド) -->
+      <section class="courses">
+        <h2 class="section-title">学べるコース</h2>
+        <swiper :slides-per-view="3" :space-between="30" loop>
+          <swiper-slide v-for="course in courses" :key="course.id" @click="navigateTo(course.route)">
+            <div class="course-card">
+              <img :src="require(`@/assets/images/menu/${course.image}`)" :alt="course.title" class="course-image">
+              <h3 class="course-title">{{ course.title }}</h3>
+              <p class="course-description">{{ course.description }}</p>
             </div>
-            <div class="course-logo">
-              <img src="../assets/images/menu/css.png" class="course-icon" alt="css" />
-            </div>
-          </div>
-          <a class="course-button" @click="goToHtmlMenuPage">受講する</a>
-        </div>
-        <div class="course-item">
-          <h2 class="course-title">コマンドライン</h2>
-          <p class="course-explanation">ファイル・フォルダの作成や編集・移動・削除を学べるコース</p>
-          <div class="course-image">
-            <div class="course-logo">
-              <img src="../assets/images/menu/command-line.jpg" class="course-icon" alt="commandline" />
-            </div>
-          </div>
-          <a class="course-button" @click="goToCommandLineMenuPage">受講する</a>
-        </div>
-      </section>
-      <div class="hero">
-        <div class="hero-content">
-          <h1 class="hero-title">中級コース</h1>
-        </div>
-      </div>
-      <section class="course">
-        <div class="course-item">
-          <h2 class="course-title">Javascript</h2>
-          <p class="course-explanation">Webサイトの動的な仕組みを作るのに必要な知識が学べるコース</p>
-          <div class="course-image">
-            <div class="course-logo">
-              <img src="../assets/images/menu/javascript.png" class="course-icon" alt="javascript" />
-            </div>
-          </div>
-          <a class="course-button" @click="goToJavaScriptMenuPage">受講する</a>
-        </div>
-        <div class="course-item">
-          <h2 class="course-title">jQuery</h2>
-          <p class="course-explanation">動的な操作とイベント処理、コードの効率性を学べるコース</p>
-          <div class="course-image">
-            <div class="course-logo">
-              <img src="../assets/images/menu/jquery.png" class="course-icon" alt="jquery" />
-            </div>
-          </div>
-          <a class="course-button" @click="goToJqueryMenuPage">受講する</a>
-        </div>
-      </section>
-      <div class="hero">
-        <div class="hero-content">
-          <h1 class="hero-title">発展コース</h1>
-        </div>
-      </div>
-      <section class="course">
-        <div class="course-item">
-          <h2 class="course-title">Git</h2>
-          <p class="course-explanation">ソースプログラムなどを保存・共有を学べるコース</p>
-          <div class="course-image">
-            <div class="course-logo">
-              <img src="../assets/images/menu/git.png" class="course-icon" alt="git" />
-            </div>
-          </div>
-          <a class="course-button" @click="goToGitMenuPage">受講する</a>
-        </div>
-        <div class="course-item">
-          <h2 class="course-title">SQL</h2>
-          <p class="course-explanation">データベース操作を学べるコース</p>
-          <div class="course-image">
-            <div class="course-logo">
-              <img src="../assets/images/menu/sql.png" class="course-icon" alt="SQL" />
-            </div>
-          </div>
-          <a class="course-button" @click="goToSQLMenuPage">受講する</a>
+          </swiper-slide>
+        </swiper>
+        <div class="course-button-container">
+          <button class="course-button" @click="goToCourseMenuPage">全コースの一覧を見る</button>
         </div>
       </section>
     </main>
@@ -110,6 +54,8 @@
 <script>
 import Header from "@/components/layout/Header.vue";
 import Footer from "@/components/layout/Footer.vue";
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/swiper-bundle.css'; // Swiperのスタイル
 import { computed, onMounted } from 'vue';
 import { useStore } from 'vuex';
 import { useRouter } from 'vue-router';
@@ -119,11 +65,61 @@ export default {
   components: {
     Header,
     Footer,
+    Swiper,
+    SwiperSlide,
   },
   setup() {
     const store = useStore();
-    const login = computed(() => store.state.user.loginData);
     const router = useRouter();
+
+    const courses = [
+      {
+        id: 1,
+        title: "HTML & CSS",
+        description: "ウェブサイトの基礎を学ぼう",
+        image: "html.png",
+        route: "HtmlMenuPage",
+      },
+      {
+        id: 2,
+        title: "コマンドライン",
+        description: "効率的にPCを操作しよう",
+        image: "command-line.jpg",
+        route: "CommandLineMenuPage",
+      },
+      {
+        id: 3,
+        title: "JavaScript",
+        description: "動的なウェブサイトを作成しよう",
+        image: "javascript.png",
+        route: "JavascriptMenuPage",
+      },
+      {
+        id: 4,
+        title: "Jquery",
+        description: "効率的にJavaScriptを活用しよう",
+        image: "jquery.png",
+        route: "JqueryMenuPage",
+      },
+      {
+        id: 5,
+        title: "Git",
+        description: "バージョン管理システムを学ぼう",
+        image: "git.png",
+        route: "GitMenuPage",
+      },
+      {
+        id: 6,
+        title: "SQL",
+        description: "データベースの操作を学ぼう",
+        image: "sql.png",
+        route: "SqlMenuPage",
+      },
+    ];
+
+    const goToIntroducePage = () => {
+      router.push({ name: "Introduce" });
+    };
 
     const goToSetUPPage = () => {
       router.push({ name: "Setup" });
@@ -141,90 +137,103 @@ export default {
       router.push({ name: "Procedure" });
     };
 
-    const goToHtmlMenuPage = () => {
-      router.push({ name: "HtmlMenuPage" });
+    const goToCourseMenuPage = () => {
+      router.push({ name: "CourseMenu" });
     };
 
-    const goToCommandLineMenuPage = () => {
-      router.push({ name: "CommandLineMenuPage" });
-    };
-
-    const goToGitMenuPage = () => {
-      router.push({ name: "GitMenuPage" });
-    };
-
-    const goToJavaScriptMenuPage = () => {
-      router.push({ name: "JavascriptMenuPage" });
-    };
-
-    const goToSQLMenuPage = () => {
-      router.push({ name: "SqlMenuPage" });
-    };
-
-    const goToJqueryMenuPage = () => {
-      router.push({ name: "JqueryMenuPage" });
+    const navigateTo = (route) => {
+      router.push({ name: route });
     };
 
     onMounted(() => {
+      // 画面表示時に一番上にスクロールする
       window.scrollTo(0, 0);
     });
 
     return {
-      login,
-      user: computed(() => login.value ? login.value : ''),
+      courses,
+      navigateTo,
+      goToIntroducePage,
       goToSetUPPage,
       goToHowToPage,
       goToEnvironmentPage,
       goToProcedurePage,
-      goToHtmlMenuPage,
-      goToCommandLineMenuPage,
-      goToGitMenuPage,
-      goToJavaScriptMenuPage,
-      goToSQLMenuPage,
-      goToJqueryMenuPage,
+      goToCourseMenuPage,
+      user: computed(() => store.state.user.loginData ? store.state.user.loginData : ''),
     };
   },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+/* Main layout */
 .main-content {
-  font-family: "Helvetica Neue",
-    Arial,
-    "Hiragino Kaku Gothic ProN",
-    "Hiragino Sans",
-    Meiryo,
-    sans-serif;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-color: #f5f5f5;
 }
 
-.user-message {
-  font-size: 20px;
-  color: #4188b6;
-  text-align: center;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  margin: 20px auto;
-  width: 80%;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Hero */
+/* Hero Section */
 .hero {
-  background-color: #f9f9f9;
-  padding: 30px;
+  background: linear-gradient(135deg, #1d1d1d, #4188b6);
+  color: #fff;
   text-align: center;
+  padding: 100px 20px;
 }
 
 .hero-title {
-  font-size: 36px;
-  margin-top: 20px;
+  font-size: 48px;
+  margin-bottom: 20px;
 }
 
-/* flow */
+.hero-description {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.hero-image-wrap {
+  text-align: center;
+}
+
+.hero-image {
+  object-fit: cover;
+  object-position: 50% 20%;
+  height: 400px;
+  width: 80%;
+  margin: 0 auto 40px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #ff9800;
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e57c00;
+}
+
+/* User Message */
+.user-message {
+  font-size: 24px;
+  color: #4188b6;
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  margin: 20px auto;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Flow Section */
 .flow {
   margin: 0 auto;
+  padding: 50px;
   background-color: #fff;
 }
 
@@ -233,186 +242,103 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 600px;
-  border: 1px solid #5492f5;
+  width: 80%;
 }
+
 .flow-item {
   list-style-type: decimal;
   height: 50px;
   cursor: pointer;
 }
-.flow-item:first-child {
-  margin-top: 20px;
-}
-.flow-item:not(:first-child) {
-  margin-top: 30px;
-}
+
 .flow-link {
-  color: #666;
+  color: #4188b6;
   font-size: 18px;
-  cursor: pointer;
   text-decoration: none;
-  border-bottom: 3px solid #5492f5;
-}
-/* course */
-.course {
-  display: flex;
-  justify-content: space-around;
-  padding: 60px;
-  background-color: #fff;
+  border-bottom: 2px solid #4188b6;
 }
 
-.course-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  width: 40%;
+.flow-link:hover {
+  color: #ff9800;
+  border-bottom: 2px solid #ff9800;
 }
 
-.course-title {
+/* Courses Section */
+.courses {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.section-title {
   text-align: center;
-  font-size: 26px;
-  font-weight: 600;
+  font-size: 36px;
+  margin-bottom: 40px;
 }
 
-.course-explanation {
+.course-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  color: #383838;
-  padding: 30px 0;
-  font-size: 20px;
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+}
+
+.course-card:hover {
+  transform: scale(1.05);
 }
 
 .course-image {
-  height: 120px;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.course-button-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.course-button {
+  padding: 15px 40px;
+  background-color: #4188b6;
+  color: white;
+  font-size: 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.course-button:hover {
+  background-color: #305f85;
+}
+
+/* Swiper Carousel Style */
+.swiper-container {
+  padding: 30px 0;
+}
+
+.swiper-slide {
   display: flex;
   justify-content: center;
 }
-.course-logo {
-  width: 100px;
-}
-.course-icon {
-  width: 100%;
-}
-.course-button {
-  display: inline-block;
-  text-align: center;
-  width: 200px;
-  margin: 0 auto;
-  padding: 10px 20px;
-  background-color: #4285f4;
-  color: #fff;
-  cursor: pointer;
-  text-decoration: none;
-  border-radius: 4px;
-}
-@media (max-width: 648px) {
-  /* Hero */
-  .hero {
-    padding: 10px;
-  }
 
+/* Media Queries */
+@media (max-width: 768px) {
   .hero-title {
-    font-size: 24px;
-    margin: auto;
+    font-size: 36px;
   }
 
-  /* flow */
-  .flow {
-    margin: 0 auto;
-    height: auto;
-    background-color: #fff;
-    padding: 20px;
+  .cta-button {
+    font-size: 16px;
   }
 
-  .flow-list {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 90%;
-    border: 1px solid #5492f5;
-    padding: 10px;
-  }
-
-  .flow-item {
-    list-style-type: decimal;
-    height: auto;
-    padding: 5px;
-    font-size: small;
-  }
-
-  .flow-item:first-child {
-    margin-top: 10px;
-  }
-  .flow-item:not(:first-child) {
-    margin-top: 20px;
-  }
-
-  .flow-link {
-    color: #666;
-    font-size: small;
-    text-decoration: none;
-    border-bottom: 2px solid #5492f5;
-  }
-
-  /* course */
-  .course {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 30px;
-    background-color: #fff;
-  }
-
-  .course-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    width: 90%;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #ccc;
-  }
-
-  .course-title {
-    font-size: 20px;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-
-  .course-explanation {
-    text-align: center;
-    color: #383838;
-    font-size: small;
-    margin-bottom: 10px;
-  }
-
-  .course-image {
-    height: 120px;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-  }
-
-  .course-logo {
-    width: 80px;
-    margin: 0 5px;
-  }
-
-  .course-icon {
+  .course-card {
     width: 100%;
-  }
-
-  .course-button {
-    display: inline-block;
-    text-align: center;
-    width: 100%;
-    margin: 0 auto;
-    padding: 10px 20px;
-    background-color: #4285f4;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
   }
 }
 </style>
