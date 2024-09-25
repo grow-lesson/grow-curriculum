@@ -4,7 +4,7 @@
     <div class="profile">
       <div class="profile-header">
         <img class="profile-picture" src="../../assets/images/user/dog.jpg" alt="ssss">
-        <h1>{{ user.name }}</h1>
+        <h1 class="profile-name">{{ user.name }}</h1> <!-- h1にクラスを追加 -->
       </div>
       <ul class="profile-details">
         <li class="profile-item">
@@ -14,7 +14,7 @@
         <li class="profile-item">
           <p class="profile-label">カナ</p>
           <p class="profile-text">{{ user.last_name_kana }} {{ user.first_name_kana }}</p>
-          </li>
+        </li>
         <li class="profile-item">
           <p class="profile-label">メールアドレス</p>
           <p class="profile-text">{{ user.email }}</p>
@@ -80,7 +80,7 @@ export default {
   align-items: center;
   justify-content: flex-start;
   background-color: #f0f0f0;
-  min-height: 100vh; /* 画面の高さいっぱいに表示 */
+  min-height: 100vh;
   padding: 20px;
 }
 
@@ -97,26 +97,27 @@ export default {
   margin-bottom: 10px;
 }
 
-h1 {
+.profile-name { /* h1のクラススタイル */
   font-size: 28px;
+  color: #333;
 }
 
 .profile-details {
   font-size: 16px;
 }
 
-.profile-item{
+.profile-item {
   display: flex;
   margin-top: 20px;
 }
 
-.profile-label{
+.profile-label {
   width: 200px;
   margin: auto 0;
   font-weight: normal;
 }
 
-.profile-text{
+.profile-text {
   border-bottom: solid 1px #1C4977;
   padding: 10px;
 }
@@ -129,7 +130,92 @@ h1 {
   border-radius: 5px;
 }
 
-@media (max-width: 425px) {
+/* メディアクエリの追加 */
+@media (max-width: 834px) {
+  .profile {
+    padding: 15px;
+  }
 
+  .profile-header {
+    margin-bottom: 15px;
+  }
+
+  .profile-picture {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-name {
+    font-size: 24px; /* タブレット向けのフォントサイズ */
+  }
+
+  .profile-details {
+    font-size: 14px;
+  }
+
+  .profile-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-label {
+    width: 100%;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+
+  .profile-text {
+    width: 100%;
+    padding: 8px;
+  }
+
+  .profile-btn {
+    padding: 5px 8px;
+  }
 }
+
+@media (max-width: 425px) {
+  .profile {
+    padding: 10px;
+  }
+
+  .profile-header {
+    margin-bottom: 10px;
+  }
+
+  .profile-picture {
+    width: 80px;
+    height: 80px;
+  }
+
+  .profile-name {
+    font-size: 20px; /* スマホ向けのフォントサイズ */
+  }
+
+  .profile-details {
+    font-size: 12px;
+  }
+
+  .profile-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-label {
+    width: 100%;
+    margin-bottom: 5px;
+    font-size: 12px;
+  }
+
+  .profile-text {
+    width: 100%;
+    padding: 6px;
+  }
+
+  .profile-btn {
+    padding: 5px 6px;
+    font-size: 12px;
+  }
+}
+
 </style>

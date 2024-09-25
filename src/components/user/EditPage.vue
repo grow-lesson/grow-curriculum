@@ -4,67 +4,77 @@
     <div class="edit">
       <div class="edit-wrap">
         <div class="edit-icon">
-          <img src="../../assets/images/user/dog.jpg" alt="">
+          <img src="../../assets/images/user/dog.jpg" alt="ユーザー画像">
         </div>
         <div class="edit-content">
-          <form action="" @submit="onSubmit">
+          <form @submit.prevent="onSubmit">
             <div class="edit-form username">
-              <label for=“username”>ユーザー名</label>
-              <input type="text" name="username" v-model="username"><br>
+              <label for="username">ユーザー名</label>
+              <input type="text" id="username" name="username" v-model="username"><br>
             </div>
             <p class="edit-errorMessage">{{ errors['form.username'] }}</p>
+
             <div class="edit-form name">
-              <label for=“username”>名前</label>
-              <input type="text" name="name" v-model="name"><br>
+              <label for="name">名前</label>
+              <input type="text" id="name" name="name" v-model="name"><br>
             </div>
             <p class="edit-errorMessage">{{ errors['form.name'] }}</p>
+
             <div class="edit-form lastName-kana">
-              <label for=“username”>苗字(カナ)</label>
-              <input type="text" name="lastName-kana" v-model="lastNameKana"><br>
+              <label for="lastName-kana">苗字(カナ)</label>
+              <input type="text" id="lastName-kana" name="lastName-kana" v-model="lastNameKana"><br>
             </div>
             <p class="edit-errorMessage">{{ errors['form.lastNameKana'] }}</p>
+
             <div class="edit-form firstName-kana">
-              <label for=“username”>名前(カナ)</label>
-              <input type="text" name="firstName-kana" v-model="firstNameKana"><br>
+              <label for="firstName-kana">名前(カナ)</label>
+              <input type="text" id="firstName-kana" name="firstName-kana" v-model="firstNameKana"><br>
             </div>
             <p class="edit-errorMessage">{{ errors['form.firstNameKana'] }}</p>
+
             <div class="edit-form mail">
-              <label for=“mailadress”>メールアドレス</label>
-              <input type="text" name="mail" v-model="email">
+              <label for="mail">メールアドレス</label>
+              <input type="text" id="mail" name="mail" v-model="email">
             </div>
             <p class="edit-errorMessage">{{ errors['form.email'] }}</p>
+
             <div class="edit-form hobby">
-              <label for=“hobby”>趣味</label>
-              <input type="text" name="hobby" v-model="login.hobbies"><br>
+              <label for="hobby">趣味</label>
+              <input type="text" id="hobby" name="hobby" v-model="login.hobbies"><br>
             </div>
+
             <div class="edit-form language">
-              <label for=“language”>触れたことがある言語</label>
-              <input type="text" name="language" v-model="login.languages">
+              <label for="language">触れたことがある言語</label>
+              <input type="text" id="language" name="language" v-model="login.languages">
             </div>
+
             <div class="edit-form bio">
-              <label for=“Bio”>自己紹介</label>
-              <textarea type="text" v-model="login.bio" name="bio"></textarea><br>
+              <label for="bio">自己紹介</label>
+              <textarea id="bio" v-model="login.bio" name="bio"></textarea><br>
             </div>
-            <!-- 現在のpassは表示するだけ -->
+
             <div class="edit-form password">
-              <label for=“password”>パスワード</label>
-              <p>現在のpass</p>
+              <label for="password">パスワード</label>
+              <p>現在のパスワード</p>
             </div>
-            <!-- passwordを変更する場合のみ入力する -->
+
             <div class="edit-form newPassword">
-              <label for=“newPassword”>新しいパスワード</label>
-              <input type="password" name="newPassword" v-model="password">
+              <label for="newPassword">新しいパスワード</label>
+              <input type="password" id="newPassword" name="newPassword" v-model="password">
             </div>
             <p class="edit-errorMessage">{{ errors['form.password'] }}</p>
+
             <div class="edit-form newConfirmedPassword">
-              <label for=“newConfirmedPassword”>確認用パスワード</label>
-              <input type="password" name="newConfirmedPassword" v-model="confirmedPassword">
+              <label for="newConfirmedPassword">確認用パスワード</label>
+              <input type="password" id="newConfirmedPassword" name="newConfirmedPassword" v-model="confirmedPassword">
             </div>
             <p class="edit-errorMessage">{{ errors['form.confirmedPassword'] }}</p>
+
             <div class="edit-form image">
-              <label for=“image”>Icon Image</label>
-              <input type="file" name="image">
+              <label for="image">アイコン画像</label>
+              <input type="file" id="image" name="image">
             </div>
+
             <button class="btn edit-btn" type="submit">更新</button>
           </form>
           <p class="btn-back"><a @click="goToMyPage">＞戻る</a></p>
@@ -256,75 +266,87 @@ export default {
   justify-content: flex-start;
   background-color: #f0f0f0;
   min-height: 100vh;
-  /* 画面の高さいっぱいに表示 */
   padding: 20px;
 }
 
-/* .edit-wrap{
-  widows: 300px;
-  display: flex;
-  margin: 20px 50px;
-} */
+.edit-wrap {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgb(244, 245, 255);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
 .edit-icon img {
   width: 120px;
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 10px;
-  ;
 }
 
 .edit-content label {
-  width: 200px;
-  margin: auto 0;
   font-weight: normal;
+  margin-right: 10px;
 }
 
 .edit-form {
   margin-top: 20px;
   display: flex;
-}
-
-.edit-form input {
-  display: flex;
-  border-bottom: solid 1px #1C4977;
+  flex-direction: column;
 }
 
 .edit-form input,
 .edit-form textarea {
   background-color: #e5f0f8;
   padding: 10px;
-  border-radius: 4px 4px 0 0;
+  border: solid 1px #1C4977;
+  border-radius: 4px;
+  width: 100%;
+  margin-top: 5px;
 }
 
-.bio textarea,
-.image input {
-  width: 330px;
+.bio textarea {
   height: 150px;
 }
 
 .edit-btn {
-  padding: 5px 10px;
-  margin: 10px auto;
+  padding: 10px 20px;
+  margin: 20px 0;
   background-color: #1C4977;
   color: #fff;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .edit-errorMessage {
   color: red;
-  font-size: 16px;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.btn-back {
+  text-align: right;
   font-weight: bold;
+  color: #228bc8;
+  cursor: pointer;
 }
 
 @media (max-width: 425px) {
-  .edit-content{
-    width: 330px;
-    margin: auto;
+  .edit-wrap {
+    padding: 10px;
   }
 
-  .edit-form{
-    display: block;
+  .edit-form input,
+  .edit-form textarea {
+    padding: 8px;
+  }
+
+  .edit-btn {
+    padding: 8px 16px;
   }
 }
+
 </style>
