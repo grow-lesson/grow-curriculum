@@ -33,7 +33,7 @@
       <!-- コース案内セクション (Swiperスライド) -->
       <section class="courses">
         <h2 class="section-title">学べるコース</h2>
-        <swiper :slides-per-view="3" :space-between="30" loop>
+        <swiper :slides-per-view="slidesPerView" :space-between="30" loop>
           <swiper-slide v-for="course in courses" :key="course.id" @click="navigateTo(course.route)">
             <div class="course-card">
               <img :src="require(`@/assets/images/menu/${course.image}`)" :alt="course.title" class="course-image">
@@ -42,8 +42,8 @@
             </div>
           </swiper-slide>
         </swiper>
-        <div class="course-button-container">
-          <button class="course-button" @click="goToCourseMenuPage">全コースの一覧を見る</button>
+        <div class="button-container">
+          <button class="view-all-button" @click="goToCourseMenuPage">全コースの一覧を見る</button>
         </div>
       </section>
     </main>
@@ -56,7 +56,7 @@ import Header from "@/components/layout/Header.vue";
 import Footer from "@/components/layout/Footer.vue";
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/swiper-bundle.css'; // Swiperのスタイル
-import { computed, onMounted } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import { useStore } from 'vuex';
 import { useRouter } from 'vue-router';
 
@@ -71,6 +71,25 @@ export default {
   setup() {
     const store = useStore();
     const router = useRouter();
+    const slidesPerView = ref(3); // デフォルトは3つ表示
+
+    // 画面サイズに応じたスライド数を設定
+    const updateSlidesPerView = () => {
+      const width = window.innerWidth;
+      if (width <= 425) {
+        slidesPerView.value = 1;
+      } else if (width <= 834) {
+        slidesPerView.value = 2;
+      } else {
+        slidesPerView.value = 3;
+      }
+    };
+
+    // 初期表示時とリサイズ時にスライド数を更新
+    onMounted(() => {
+      updateSlidesPerView();
+      window.addEventListener('resize', updateSlidesPerView);
+    });
 
     const courses = [
       {
@@ -145,11 +164,6 @@ export default {
       router.push({ name: route });
     };
 
-    onMounted(() => {
-      // 画面表示時に一番上にスクロールする
-      window.scrollTo(0, 0);
-    });
-
     return {
       courses,
       navigateTo,
@@ -159,6 +173,7 @@ export default {
       goToEnvironmentPage,
       goToProcedurePage,
       goToCourseMenuPage,
+      slidesPerView,
       user: computed(() => store.state.user.loginData ? store.state.user.loginData : ''),
     };
   },
@@ -297,24 +312,23 @@ export default {
   margin-bottom: 20px;
 }
 
-.course-button-container {
+.button-container {
   text-align: center;
   margin-top: 30px;
 }
 
-.course-button {
-  padding: 15px 40px;
+.view-all-button {
+  padding: 10px 20px;
   background-color: #4188b6;
-  color: white;
-  font-size: 18px;
-  border-radius: 8px;
+  color: #fff;
   border: none;
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.course-button:hover {
-  background-color: #305f85;
+.view-all-button:hover {
+  background-color: #2a6b93;
 }
 
 /* Swiper Carousel Style */
@@ -333,12 +347,38 @@ export default {
     font-size: 36px;
   }
 
+  .hero-image {
+    height: 300px;
+  }
+
   .cta-button {
     font-size: 16px;
   }
 
   .course-card {
     width: 100%;
+  }
+}
+
+@media (max-width: 425px) {
+  .hero-title {
+    font-size: 30px;
+  }
+
+  .hero-image {
+    height: 150px;
+  }
+
+  .flow-link {
+    font-size: 16px;
+  }
+
+  .section-title {
+    font-size: 30px;
+  }
+
+  .view-all-button {
+    width: 90%;
   }
 }
 </style>
