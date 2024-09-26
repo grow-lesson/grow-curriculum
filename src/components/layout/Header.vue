@@ -436,8 +436,8 @@ export default {
   top: 0;
   right: 0;
   z-index: 1001;
-  width: 85vw; /* メニュー幅を広げる */
-  max-width: 300px; /* 最大幅を調整 */
+  width: 75vw; /* メニュー幅を少し狭める */
+  max-width: 250px; /* 最大幅を調整 */
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -532,47 +532,49 @@ export default {
   display: block;
 }
 
-/* ハンバーガーメニューボタン */
 .hamburger-button {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* すべての線の間隔を均等に */
-  width: 30px;
-  height: 24px; /* 高さを24pxに設定して均等にする */
+  justify-content: space-between;
+  width: 31px;
+  height: 18px;
   cursor: pointer;
   background-color: transparent;
   border: none;
   z-index: 1002;
   position: fixed;
-  top: 35px;
-  right: 20px;
+  top: 35px; /* デフォルトはPCやブラウザ上での表示 */
+  right: 15px;
 }
 
 .hamburger-button span {
   display: block;
   width: 100%;
-  height: 3px;
+  height: 2px;
   background-color: #333;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* 横線の間隔を完全に均等に配置 */
 .hamburger-button span + span {
-  margin-top: 5px; /* すべての線の間隔を均等に */
+  margin-top: 5px;
 }
 
 .hamburger-button.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px); /* ×ボタンの角度と位置を調整 */
+  transform: rotate(45deg) translate(5px, 5px);
 }
 
 .hamburger-button.active span:nth-child(2) {
-  opacity: 0; /* 真ん中の線を隠す */
+  opacity: 0;
 }
 
 .hamburger-button.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px); /* ×ボタンの見た目を調整 */
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
+/* スマホサイズでの表示設定（isInWebViewでデバイス判定） */
+.mobile-view .hamburger-button {
+  top: 25px; /* 実際のスマホ使用時にはtopを25pxに変更 */
+}
 
 /* PC版 */
 @media (min-width: 835px) {
