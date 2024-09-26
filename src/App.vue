@@ -30,6 +30,9 @@ const applyWebViewPadding = () => {
       // 他のデバイスの場合の上部パディングを設定
       app.value.style.paddingTop = '10px';
     }
+    
+    // スマホを使用している場合は .mobile-view クラスを body に追加
+    document.body.classList.add('mobile-view');
   }
 };
 
@@ -37,6 +40,7 @@ onMounted(() => {
   applyWebViewPadding();
 });
 </script>
+
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
