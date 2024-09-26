@@ -435,9 +435,9 @@ export default {
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 1001; /* メニューよりも上に表示 */
-  width: 80vw;
-  max-width: 300px;
+  z-index: 1001;
+  width: 85vw; /* メニュー幅を広げる */
+  max-width: 300px; /* 最大幅を調整 */
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -459,7 +459,7 @@ export default {
 /* メニューアイテム（SP版） */
 .menu-list {
   list-style: none;
-  padding: 20px 0 0 0; /* 閉じるボタンとのスペース */
+  padding: 40px 0 0 0; /* アイテム上部に余白を追加 */
   margin: 0;
   width: 100%;
 }
@@ -467,7 +467,7 @@ export default {
 .menu-item {
   position: relative;
   width: 100%;
-  padding: 10px 0;
+  padding: 15px 0; /* アイテム間に十分なスペースを確保 */
   text-align: left;
   color: #fff;
   box-sizing: border-box;
@@ -536,14 +536,16 @@ export default {
 .hamburger-button {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; /* すべての線の間隔を均等に */
   width: 30px;
-  height: 21px;
+  height: 24px; /* 高さを24pxに設定して均等にする */
   cursor: pointer;
   background-color: transparent;
   border: none;
-  z-index: 1002; /* メニューよりも上 */
-  transition: transform 0.3s ease;
+  z-index: 1002;
+  position: fixed;
+  top: 35px;
+  right: 20px;
 }
 
 .hamburger-button span {
@@ -554,17 +556,23 @@ export default {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+/* 横線の間隔を完全に均等に配置 */
+.hamburger-button span + span {
+  margin-top: 5px; /* すべての線の間隔を均等に */
+}
+
 .hamburger-button.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(5px, 5px); /* ×ボタンの角度と位置を調整 */
 }
 
 .hamburger-button.active span:nth-child(2) {
-  opacity: 0;
+  opacity: 0; /* 真ん中の線を隠す */
 }
 
 .hamburger-button.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+  transform: rotate(-45deg) translate(5px, -5px); /* ×ボタンの見た目を調整 */
 }
+
 
 /* PC版 */
 @media (min-width: 835px) {
@@ -605,7 +613,7 @@ export default {
 
   .menu {
     width: 80vw;
-    max-width: 300px;
+    max-width: 255px; /* メニューの幅を調整 */
   }
 
   .dropdown-list {
