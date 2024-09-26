@@ -250,32 +250,46 @@ export default {
   margin: 0 auto;
   padding: 50px;
   background-color: #fff;
+  max-width: 1200px; /* セクション幅を制限して中央揃え */
+  text-align: center;
 }
 
 .flow-list {
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 80%;
+  align-items: flex-start; /* リストアイテムを左揃えにする */
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: none; /* リストマーカーを消す */
 }
 
 .flow-item {
-  list-style-type: decimal;
-  height: 50px;
+  width: 100%;
+  padding: 15px 0; /* 上下の余白を確保 */
+  font-size: 18px;
+  font-weight: 500;
+  border-bottom: 1px solid #ddd; /* 区切り線を追加 */
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.flow-item:hover {
+  background-color: #f9f9f9; /* ホバー時に背景色を変更 */
 }
 
 .flow-link {
   color: #4188b6;
   font-size: 18px;
   text-decoration: none;
-  border-bottom: 2px solid #4188b6;
+  display: inline-block;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
 .flow-link:hover {
-  color: #ff9800;
-  border-bottom: 2px solid #ff9800;
+  color: #ff9800; /* ホバー時に色を変更 */
+  border-bottom: 2px solid #ff9800; /* 下線もホバー時に表示 */
 }
 
 /* Courses Section */
@@ -302,7 +316,7 @@ export default {
 }
 
 .course-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* ホバー時にカードを拡大 */
 }
 
 .course-image {
@@ -328,7 +342,7 @@ export default {
 }
 
 .view-all-button:hover {
-  background-color: #2a6b93;
+  background-color: #2a6b93; /* ホバー時の色変更 */
 }
 
 /* Swiper Carousel Style */
@@ -343,42 +357,51 @@ export default {
 
 /* Media Queries */
 @media (max-width: 768px) {
-  .hero-title {
-    font-size: 36px;
-  }
-
   .hero-image {
     height: 300px;
   }
-
-  .cta-button {
-    font-size: 16px;
-  }
-
-  .course-card {
-    width: 100%;
-  }
 }
 
+/* SP版用のスタイル */
 @media (max-width: 425px) {
+  /* Hero Section */
   .hero-title {
-    font-size: 30px;
+    font-size: 22px; /* タイトルを少し小さく */
   }
 
   .hero-image {
     height: 150px;
   }
 
-  .flow-link {
-    font-size: 16px;
+  .hero-description {
+    font-size: 16px; /* 説明文の文字サイズを調整 */
   }
 
+  .cta-button {
+    font-size: 16px; /* ボタンの文字サイズを小さく */
+  }
+
+  /* User Message */
+  .user-message {
+    font-size: 20px; /* ユーザーメッセージの文字サイズを調整 */
+  }
+
+  /* Flow Section */
+  .flow-item {
+    font-size: 16px; /* リストアイテムの文字を少し小さく */
+  }
+
+  .flow-link {
+    font-size: 13px; /* リンクテキストを少し小さく */
+  }
+
+  /* Courses Section */
   .section-title {
-    font-size: 30px;
+    font-size: 28px; /* コースのタイトルサイズを少し小さく */
   }
 
   .view-all-button {
-    width: 90%;
+    width: 90%; /* ボタン幅を調整 */
   }
 }
 </style>
