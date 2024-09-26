@@ -3,12 +3,18 @@
     <!-- ヘッダー -->
     <header class="header">
       <div class="header-wrapper">
+        <!-- ロゴ（モバイル版） -->
         <div class="logo" v-show="isMobile">
-          <a @click="goToMenuPage"><img src="../../assets/images/header/logo.png" alt="GROWロゴ" class="logo-image" /></a>
+          <a @click="goToMenuPage">
+            <img src="../../assets/images/header/logo.png" alt="GROWロゴ" class="logo-image" />
+          </a>
         </div>
-        <p class="header-title" v-show="!isMobile"><a @click="goToMenuPage">GROW Learning Website</a></p>
-        <!-- ナビゲーションメニュー -->
-        <div class="navigation-wrap" v-show="!isMobile">
+        <!-- タイトル（PC版） -->
+        <p class="header-title" v-show="!isMobile">
+          <a @click="goToMenuPage">GROW Learning Website</a>
+        </p>
+        <!-- ナビゲーションメニュー（PC版） -->
+        <nav class="navigation-wrap" v-show="!isMobile">
           <ul class="navigation-list">
             <li class="navigation-item">
               <button class="navigation-btn" @click="goToIntroducePage">サイトについて</button>
@@ -31,24 +37,24 @@
               </ul>
             </li>
             <li class="navigation-item">
-              <button class="navigation-btn" @click="toggleDropdown('course')" >コース</button>
+              <button class="navigation-btn" @click="toggleDropdown('course')">コース</button>
               <ul class="dropdown-list" :class="{ 'slide-down': activeDropdown === 'course' }">
-                <li class="dropdown-item"  @click="goToHtmlMenuPage">
+                <li class="dropdown-item" @click="goToHtmlMenuPage">
                   <a class="dropdown-link">HTML・CSS</a>
                 </li>
-                <li class="dropdown-item"  @click="goToCommandLineMenuPage">
+                <li class="dropdown-item" @click="goToCommandLineMenuPage">
                   <a class="dropdown-link">コマンドライン</a>
                 </li>
-                <li class="dropdown-item"  @click="goToJavaScriptMenuPage">
+                <li class="dropdown-item" @click="goToJavaScriptMenuPage">
                   <a class="dropdown-link">Javascript</a>
                 </li>
-                <li class="dropdown-item"  @click="goToJqueryMenuPage">
+                <li class="dropdown-item" @click="goToJqueryMenuPage">
                   <a class="dropdown-link">Jquery</a>
                 </li>
-                <li class="dropdown-item"  @click="goToGitMenuPage">
+                <li class="dropdown-item" @click="goToGitMenuPage">
                   <a class="dropdown-link">Git</a>
                 </li>
-                <li class="dropdown-item"  @click="goToSQLMenuPage">
+                <li class="dropdown-item" @click="goToSQLMenuPage">
                   <a class="dropdown-link">SQL</a>
                 </li>
               </ul>
@@ -64,41 +70,33 @@
             <li class="navigation-item">
               <button class="navigation-btn" @click="toggleDropdown('others')">その他</button>
               <ul class="dropdown-list" :class="{ 'slide-down': activeDropdown === 'others' }">
-                <!-- <li class="dropdown-item" @click="goToContactPage">
-                  <a class="dropdown-link">お問い合わせ</a>
-                </li> -->
                 <li class="dropdown-item">
                   <a href="https://grow-infotech.com" target="_blank" class="dropdown-link">会社HP</a>
                 </li>
                 <li class="dropdown-item">
-                  <a href="https://www.wantedly.com/companies/company_7305723" target="_blank" class="dropdown-link">Wantedlly</a>
+                  <a href="https://www.wantedly.com/companies/company_7305723" target="_blank" class="dropdown-link">Wantedly</a>
                 </li>
               </ul>
             </li>
           </ul>
-        </div>
-        <!-- ハンバーガーメニューボタン -->
-        <button class="hamburger-button" v-show="isMobile" @click="toggleMenu">
+        </nav>
+        <!-- ハンバーガーメニューボタン（SP版） -->
+        <button :class="{ 'active': showMenu }" class="hamburger-button" v-show="isMobile" @click="toggleMenu">
           <span></span>
           <span></span>
           <span></span>
         </button>
       </div>
     </header>
-    <!-- メニューコンテンツ -->
+    <!-- メニューコンテンツ（SP版） -->
     <div class="menu" :class="{ 'show-menu': showMenu }">
-      <!-- 閉じるボタン -->
-      <button class="close-button" @click="toggleMenu">
-        <span class="close-button__line"></span>
-        <span class="close-button__line"></span>
-      </button>
       <!-- メニューアイテム -->
       <ul class="menu-list">
         <li class="menu-item" @click="goToIntroducePage">
-          <button>サイトについて</button>
+          <button class="menu-btn">サイトについて</button>
         </li>
         <li class="menu-item">
-          <button @click="toggleDropdown('preparation')">準備と提出</button>
+          <button class="menu-btn" @click="toggleDropdown('preparation')">準備と提出</button>
           <ul class="dropdown-list" :class="{ 'slide-down': activeDropdown === 'preparation' }">
             <li class="dropdown-item" @click="goToHowToPage">
               <a class="dropdown-link">サイトの使い方</a>
@@ -115,33 +113,33 @@
           </ul>
         </li>
         <li class="menu-item">
-          <button @click="toggleDropdown('course')" >コース</button>
+          <button class="menu-btn" @click="toggleDropdown('course')">コース</button>
           <ul class="dropdown-list" :class="{ 'slide-down': activeDropdown === 'course' }">
-            <li class="dropdown-item"  @click="goToCourseMenuPage">
+            <li class="dropdown-item" @click="goToCourseMenuPage">
               <a class="dropdown-link">コース一覧</a>
             </li>
-            <li class="dropdown-item"  @click="goToHtmlMenuPage">
+            <li class="dropdown-item" @click="goToHtmlMenuPage">
               <a class="dropdown-link">HTML・CSS</a>
             </li>
-            <li class="dropdown-item"  @click="goToCommandLineMenuPage">
+            <li class="dropdown-item" @click="goToCommandLineMenuPage">
               <a class="dropdown-link">コマンドライン</a>
             </li>
-            <li class="dropdown-item"  @click="goToJavaScriptMenuPage">
+            <li class="dropdown-item" @click="goToJavaScriptMenuPage">
               <a class="dropdown-link">Javascript</a>
             </li>
-            <li class="dropdown-item"  @click="goToJqueryMenuPage">
+            <li class="dropdown-item" @click="goToJqueryMenuPage">
               <a class="dropdown-link">Jquery</a>
             </li>
-            <li class="dropdown-item"  @click="goToGitMenuPage">
+            <li class="dropdown-item" @click="goToGitMenuPage">
               <a class="dropdown-link">Git</a>
             </li>
-            <li class="dropdown-item"  @click="goToSQLMenuPage">
+            <li class="dropdown-item" @click="goToSQLMenuPage">
               <a class="dropdown-link">SQL</a>
             </li>
           </ul>
         </li>
         <li class="menu-item">
-          <button @click="toggleDropdown('mypage')">マイページ</button>
+          <button class="menu-btn" @click="toggleDropdown('mypage')">マイページ</button>
           <ul class="dropdown-list" :class="{ 'slide-down': activeDropdown === 'mypage' }">
             <li class="dropdown-item" @click="goToMyPage">
               <a class="dropdown-link">プロフィール</a>
@@ -149,16 +147,13 @@
           </ul>
         </li>
         <li class="menu-item">
-          <button @click="toggleDropdown('others')">その他</button>
+          <button class="menu-btn" @click="toggleDropdown('others')">その他</button>
           <ul class="dropdown-list" :class="{ 'slide-down': activeDropdown === 'others' }">
-            <!-- <li class="dropdown-item" @click="goToContactPage">
-              <a class="dropdown-link">お問い合わせ</a>
-            </li> -->
             <li class="dropdown-item">
               <a href="https://grow-infotech.com" target="_blank" class="dropdown-link">会社HP</a>
             </li>
             <li class="dropdown-item">
-              <a href="https://www.wantedly.com/companies/company_7305723" target="_blank" class="dropdown-link">Wantedlly</a>
+              <a href="https://www.wantedly.com/companies/company_7305723" target="_blank" class="dropdown-link">Wantedly</a>
             </li>
           </ul>
         </li>
@@ -187,15 +182,17 @@ export default {
     // メニューの表示切替を行うメソッド
     const toggleMenu = () => {
       showMenu.value = !showMenu.value;
+      if (!showMenu.value) {
+        activeDropdown.value = null; // メニューを閉じる際にドロップダウンも閉じる
+      }
     };
 
     // ドロップダウンの表示切替を行うメソッド
     const toggleDropdown = (menuName) => {
-      // 既に別のドロップダウンが開いている場合、それを閉じる
-      if (activeDropdown.value !== menuName) {
-        activeDropdown.value = menuName;
-      } else {
+      if (activeDropdown.value === menuName) {
         activeDropdown.value = null;
+      } else {
+        activeDropdown.value = menuName;
       }
     };
 
@@ -258,25 +255,21 @@ export default {
 
     // ドロップダウン以外をクリックしたときに閉じる処理
     const handleClickOutside = (event) => {
-      const dropdowns = document.querySelectorAll('.dropdown-list');
-      let isClickInside = false;
-
-      // クリックした場所がドロップダウンかそのボタンであるかをチェック
-      dropdowns.forEach((dropdown) => {
-        if (dropdown.contains(event.target) || event.target.closest('.navigation-btn')) {
-          isClickInside = true;
-        }
-      });
-
-      // ドロップダウン外がクリックされたら閉じる
-      if (!isClickInside) {
+      const isClickInsideMenu = event.target.closest('.menu') || event.target.closest('.hamburger-button');
+      const isClickInsideNavigation = event.target.closest('.navigation-wrap');
+      if (!isClickInsideMenu && !isClickInsideNavigation) {
         activeDropdown.value = null;
+        showMenu.value = false;
       }
     };
 
     // ウィンドウリサイズ時にモバイル画面の判定を行う
     const handleResize = () => {
       checkMobileScreen();
+      if (!isMobile.value) {
+        showMenu.value = false; // PCサイズに戻ったらメニューを閉じる
+        activeDropdown.value = null;
+      }
     };
 
     // イベントリスナーの追加と削除
@@ -314,7 +307,6 @@ export default {
     };
   },
 };
-
 </script>
 
 <style scoped>
@@ -338,7 +330,7 @@ export default {
 
 .logo-image {
   width: auto;
-  height: 100%;
+  height: 30px; /* SP版のロゴ高さを固定 */
 }
 
 .header-title {
@@ -354,99 +346,68 @@ export default {
 }
 
 .navigation-list {
-  width: 100%;
   display: flex;
   justify-content: flex-end;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
 }
 
 .navigation-item {
-  width: 35%;
-  height: 60px;
-  background-color: #eef5f9;
   position: relative;
-  transition: all 0.3s;
-}
-
-.navigation-item:hover {
-  background-color: #404141;
+  flex-grow: 1; /* 各アイテムが利用可能なスペースを自動的に占有 */
 }
 
 .navigation-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  padding: 15px; /* PC版のボタンパディング */
   text-decoration: none;
   color: #1b4059;
-  font-size: 15px;
+  font-size: 14px; /* PC版のフォントサイズを調整 */
   letter-spacing: 0.05em;
   font-weight: 600;
-  transition: all 0.3s;
+  transition: color 0.3s;
   cursor: pointer;
-}
-
-.navigation-btn:hover {
-  color: #fff;
-}
-
-/* メニュー */
-.menu {
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 1;
-  width: 50vw;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-  background: #404141;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  transform: translateX(100%);
-  opacity: 0;
-  pointer-events: none;
-}
-
-.menu-item {
-  position: relative;
+  background-color: #eef5f9;
+  white-space: nowrap; /* テキストの折り返しを防止 */
   width: 100%;
-  height: auto;
-  padding: 0.5em 1em;
-  text-align: center;
-  color: #fff;
   box-sizing: border-box;
-  cursor: pointer;
 }
 
-/* ドロップダウンメニュー */
+.navigation-item:hover .navigation-btn {
+  color: #fff;
+  background-color: #404141;
+}
+
 .dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #838d8d;
+  list-style: none;
+  padding: 0;
+  margin: 0;
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease, opacity 0.5s ease;
-  position: absolute; /* 絶対位置 */
-  z-index: 1000;
-  width: 100%; /* 親要素に合わせて幅を100%に設定 */
-  left: 0; /* ドロップダウンを左揃えに */
-}
-
-.slide-down {
-  max-height: 360px;
-  opacity: 1;
-  z-index: 1000;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
   width: 100%; /* ドロップダウンの幅を親要素に合わせる */
+  z-index: 1000;
 }
 
-/* ドロップダウンの項目 */
+.navigation-item .dropdown-list.slide-down {
+  max-height: 500px; /* 必要に応じて調整 */
+  opacity: 1;
+}
+
 .dropdown-item {
-  background-color: #838d8d;
-  height: 60px;
-  transition: all 0.3s;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: relative;
 }
 
 .dropdown-item:not(:first-child)::before {
@@ -466,80 +427,143 @@ export default {
 .dropdown-link {
   color: #fff;
   text-decoration: none;
-  cursor: pointer;
+  display: block;
 }
 
-/* 閉じるボタン */
-.close-button {
-  position: absolute;
-  top: 30px;
-  right: 20px;
+/* メニュー（SP版） */
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1001; /* メニューよりも上に表示 */
+  width: 80vw;
+  max-width: 300px;
+  height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  z-index: 2;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  background: #404141;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transform: translateX(100%);
+  opacity: 0;
+  pointer-events: none;
 }
 
-.close-button__line {
-  position: absolute;
-  width: 24px;
-  height: 2px;
-  background-color: #fff;
-  transition: transform 0.3s ease;
-}
-
-.close-button__line:first-child {
-  transform: rotate(45deg);
-}
-
-.close-button__line:last-child {
-  transform: rotate(-45deg);
-}
-
-/* メニューを開いた時のスタイル */
-.is-mobile .menu,
-.show-menu {
+.menu.show-menu {
   transform: translateX(0%);
   opacity: 1;
   pointer-events: auto;
 }
 
+/* メニューアイテム（SP版） */
+.menu-list {
+  list-style: none;
+  padding: 20px 0 0 0; /* 閉じるボタンとのスペース */
+  margin: 0;
+  width: 100%;
+}
+
+.menu-item {
+  position: relative;
+  width: 100%;
+  padding: 10px 0;
+  text-align: left;
+  color: #fff;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  width: 100%;
+  text-align: left;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.menu-item button:hover {
+  color: #c6c6c6;
+}
+
+/* ドロップダウンメニュー（SP版） */
+.menu .dropdown-list {
+  position: static; /* メニュー内では絶対位置にしない */
+  background-color: #838d8d;
+  width: 100%;
+  padding-left: 15px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.menu .dropdown-list.slide-down {
+  max-height: 500px; /* 必要に応じて調整 */
+  opacity: 1;
+}
+
+.menu .dropdown-item {
+  padding: 10px 10px;
+  background-color: #838d8d;
+  height: auto;
+}
+
+.menu .dropdown-item:not(:first-child)::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #404141;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.menu .dropdown-item:hover {
+  background-color: #c6c6c6;
+}
+
+.menu .dropdown-link {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
 /* ハンバーガーメニューボタン */
 .hamburger-button {
-  position: fixed;
-  left: 90%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
-  height: 20px;
+  height: 21px;
   cursor: pointer;
   background-color: transparent;
   border: none;
+  z-index: 1002; /* メニューよりも上 */
+  transition: transform 0.3s ease;
 }
 
 .hamburger-button span {
   display: block;
   width: 100%;
-  height: 2px;
+  height: 3px;
   background-color: #333;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.show-menu .hamburger-button span:nth-child(1) {
-  transform: rotate(45deg);
+.hamburger-button.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
 }
 
-.show-menu .hamburger-button span:nth-child(2) {
+.hamburger-button.active span:nth-child(2) {
   opacity: 0;
 }
 
-.show-menu .hamburger-button span:nth-child(3) {
-  transform: rotate(-45deg);
+.hamburger-button.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* PC版 */
@@ -550,6 +574,12 @@ export default {
 
   .hamburger-button {
     display: none;
+  }
+
+  /* ドロップダウンメニューをホバーで開く */
+  .navigation-item:hover .dropdown-list {
+    max-height: 500px;
+    opacity: 1;
   }
 }
 
@@ -571,6 +601,15 @@ export default {
 
   .hamburger-button {
     display: flex; /* スマホ版ではハンバーガーボタンを表示する */
+  }
+
+  .menu {
+    width: 80vw;
+    max-width: 300px;
+  }
+
+  .dropdown-list {
+    width: 100%;
   }
 }
 </style>
