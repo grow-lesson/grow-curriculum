@@ -34,8 +34,8 @@
       <section class="courses">
         <h2 class="section-title">学べるコース</h2>
         <swiper :slides-per-view="slidesPerView" :space-between="30" loop>
-          <swiper-slide v-for="course in courses" :key="course.id" @click="navigateTo(course.route)">
-            <div class="course-card">
+          <swiper-slide v-for="course in courses" :key="course.id">
+            <div class="course-card"  @click="navigateTo(course.route)">
               <img :src="require(`@/assets/images/menu/${course.image}`)" :alt="course.title" class="course-image">
               <h3 class="course-title">{{ course.title }}</h3>
               <p class="course-description">{{ course.description }}</p>
