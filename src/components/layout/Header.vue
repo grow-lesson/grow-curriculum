@@ -57,6 +57,12 @@
                 <li class="dropdown-item" @click="goToSQLMenuPage">
                   <a class="dropdown-link">SQL</a>
                 </li>
+                <li class="dropdown-item" @click="goToPhotoshopMenuPage">
+                  <a class="dropdown-link">Photoshop</a>
+                </li>
+                <li class="dropdown-item" @click="goToDesignBasicMenuPage">
+                  <a class="dropdown-link">デザイン基礎</a>
+                </li>
               </ul>
             </li>
             <li class="navigation-item">
@@ -135,6 +141,12 @@
             </li>
             <li class="dropdown-item" @click="goToSQLMenuPage">
               <a class="dropdown-link">SQL</a>
+            </li>
+            <li class="dropdown-item" @click="goToPhotoshopMenuPage">
+              <a class="dropdown-link">Photoshop</a>
+            </li>
+            <li class="dropdown-item" @click="goToDesignBasicMenuPage">
+              <a class="dropdown-link">デザイン基礎</a>
             </li>
           </ul>
         </li>
@@ -237,20 +249,29 @@ export default {
       router.push({ name: "CommandLineMenuPage" });
     };
 
+    const goToJavaScriptMenuPage = () => {
+      router.push({ name: "JavascriptMenuPage" });
+    };
+
+    const goToJqueryMenuPage = () => {
+      router.push({ name: "JqueryMenuPage" });
+    };
+
     const goToGitMenuPage = () => {
       router.push({ name: "GitMenuPage" });
     };
 
-    const goToJavaScriptMenuPage = () => {
-      router.push({ name: "JavascriptMenuPage" });
-    };
 
     const goToSQLMenuPage = () => {
       router.push({ name: "SqlMenuPage" });
     };
 
-    const goToJqueryMenuPage = () => {
-      router.push({ name: "JqueryMenuPage" });
+    const goToPhotoshopMenuPage = () => {
+      router.push({ name: "PhotoshopMenuPage" });
+    };
+
+    const goToDesignBasicMenuPage = () => {
+      router.push({ name: "DesignBasicMenuPage" });
     };
 
     // ドロップダウン以外をクリックしたときに閉じる処理
@@ -304,6 +325,8 @@ export default {
       goToJavaScriptMenuPage,
       goToSQLMenuPage,
       goToJqueryMenuPage,
+      goToPhotoshopMenuPage,
+      goToDesignBasicMenuPage,
     };
   },
 };

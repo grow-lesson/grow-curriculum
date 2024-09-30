@@ -68,6 +68,26 @@
             </div>
             <a class="feature-button" @click="goToSQLMenuPage">受講する</a>
           </div>
+          <div class="feature">
+            <h2 class="feature-title">Photoshop</h2>
+            <p class="feature-description">Photoshopの基本的な使い方を学び、画像編集のスキルを身につけましょう。</p>
+            <div class="feature-image">
+              <div class="feature-logo">
+                <img src="../../assets/images/menu/photoshop.png" class="feature-icon" alt="SQL" />
+              </div>
+            </div>
+            <a class="feature-button" @click="goToPhotoshopMenuPage">受講する</a>
+          </div>
+          <div class="feature">
+            <h2 class="feature-title">デザイン基礎</h2>
+            <p class="feature-description">デザインの基本的な知識を学び、色彩と画面構成のスキルを身につけましょう。</p>
+            <div class="feature-image">
+              <div class="feature-logo">
+                <img src="../../assets/images/menu/DesignBasic.png" class="feature-icon" alt="DesignBasic" />
+              </div>
+            </div>
+            <a class="feature-button" @click="goToDesignBasicMenuPage">受講する</a>
+          </div>
         </div>
       </section>
     </div>
@@ -114,6 +134,14 @@ export default {
       router.push({ name: "JqueryMenuPage" });
     };
 
+    const goToPhotoshopMenuPage = () => {
+      router.push({ name: "PhotoshopMenuPage" });
+    };
+
+    const goToDesignBasicMenuPage = () => {
+      router.push({ name: "DesignBasicMenuPage" });
+    };
+
     onMounted(() => {
       window.scrollTo(0, 0);
     });
@@ -125,6 +153,8 @@ export default {
       goToJavaScriptMenuPage,
       goToSQLMenuPage,
       goToJqueryMenuPage,
+      goToPhotoshopMenuPage,
+      goToDesignBasicMenuPage,
     };
   },
 };

@@ -134,6 +134,20 @@ export default {
         image: "sql.png",
         route: "SqlMenuPage",
       },
+      {
+        id: 7,
+        title: "Photoshop",
+        description: "画像編集のスキルを学ぼう",
+        image: "photoshop.png",
+        route: "PhotoshopMenuPage",
+      },
+      {
+        id: 8,
+        title: "デザイン基礎",
+        description: "色彩と画面構成のスキルを学ぼう",
+        image: "DesignBasic.png",
+        route: "DesignBasicMenuPage",
+      },
     ];
 
     const goToIntroducePage = () => {
