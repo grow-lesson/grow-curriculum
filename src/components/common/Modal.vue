@@ -167,6 +167,7 @@ export default {
   align-items: center;
   z-index: 999; /* 他の要素より上に表示 */
   overflow: hidden; /* コンテンツのはみ出しを制御 */
+  border: 1px solid black;
 }
 
 .image-container {
