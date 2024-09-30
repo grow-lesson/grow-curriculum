@@ -22,9 +22,7 @@
               <div class="lesson-itemText">
                 <p>色彩について学びます。</p>
               </div>
-              <div class="lesson-btn btn">
-                <a class="lesson-link btn" @click="goToPageLesson1"></a>
-              </div>
+              <div class="lesson-btn btn" @click="goToPageLesson1"></div>
             </div>
           </li>
           <li class="lesson-item">
@@ -38,9 +36,7 @@
                 <div class="lesson-itemText">
                   <p>画面構成ついて学びます。</p>
                 </div>
-                <div class="lesson-btn btn">
-                  <a class="lesson-link btn" @click="goToPageLesson2"></a>
-                </div>
+                <div class="lesson-btn btn" @click="goToPageLesson2"></div>
               </div>
             </li>
             <li class="lesson-item">
@@ -54,9 +50,7 @@
                 <div class="lesson-itemText">
                   <p>最終課題</p>
                 </div>
-                <div class="lesson-btn btn">
-                  <a class="lesson-link btn" @click="goToPageLesson3"></a>
-                </div>
+                <div class="lesson-btn btn" @click="goToPageLesson3"></div>
               </div>
             </li>
           </ul>
