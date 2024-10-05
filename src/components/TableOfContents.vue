@@ -63,12 +63,7 @@ export default {
   margin-bottom: 0.5em;
   cursor: pointer;
   white-space: pre-wrap;
-  font-family: "Helvetica Neue",
-    Arial,
-    "Hiragino Kaku Gothic ProN",
-    "Hiragino Sans",
-    Meiryo,
-    sans-serif;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-weight: 600;
 }
 
@@ -81,24 +76,28 @@ export default {
   padding: 0;
   border: none;
   border-radius: 50%;
-  background-color: #3fa0fa;
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* グラデーションの追加 */
   color: white;
   cursor: pointer;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* 立体感のある影 */
+  transition: all 0.3s ease;
 }
 
 .sidebar-button:hover {
-  background-color: #ff9900;
+  background: linear-gradient(135deg, #a8d0fa, #706bff); /* ホバー時に柔らかいグラデーションに変更 */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* ホバー時の影を強化 */
+  transform: translateY(-3px); /* ホバー時に少し浮く効果 */
 }
 
 .arrow-up {
   width: 0;
   height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-bottom: 18px solid white;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid white;
 }
 </style>
