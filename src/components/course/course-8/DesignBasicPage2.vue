@@ -3,7 +3,7 @@
     <Header />
     <div class="container">
       <div class="main-content">
-        <Title title="DesignBasic 2" id="Title"></Title>
+        <Title title="デザイン基礎 2" id="Title"></Title>
         <Document>
           <p>テキストや画像・オブジェクトを組み合わせる際、適切に配置・構成をすることで視認性や読みやすさが向上します。これにより、バランスの取れた美しいデザインを作成し、情報がより効果的に伝わるデザインが可能になります。
           </p>
@@ -59,6 +59,10 @@
             左のように全て同じ大きさ・色ではメリハリのないデザインになってしまいます。<br>
             このコンテンツをパーツで分けると「SUMMER」「SALE」「Max」「50」「%」「OFF」となります。このうち最も重要な情報である「SALE」「50」のサイズを大きくし、その他の情報より目立つように色を赤にして強調しました。
           </p>
+          <NavigationButtons
+            :previousPageName="'DesignBasicPage1'"
+            :nextPageName="'DesignBasicPage3'"
+          />
         </Document>
         <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
         </div>
@@ -82,9 +86,11 @@ import Document from "@/components/Document.vue";
 import TableOfContents from "@/components/TableOfContents.vue";
 import { javascriptData } from "@/data/javascriptData.js";
 import Modal from "@/components/common/Modal.vue";
+import NavigationButtons from "@/components/NavigationButtons.vue";
+
 
 export default {
-  name: "JavaScript1",
+  name: "DesignBasicPage2",
   components: {
     Header,
     Footer,
@@ -95,10 +101,11 @@ export default {
     Document,
     TableOfContents,
     Modal,
+    NavigationButtons,
   },
   setup() {
     const sections = [
-      { id: "Title", title: "DesignBasic 2" },
+      { id: "Title", title: "デザイン基礎 2" },
       { id: "subTitle1", title: "  1. レイヤーについて学ぶ" },
       { id: "sectionTitle1-1", title: "    1-1. レイヤーとは" },
       { id: "sectionTitle1-2", title: "    1-2. アップロード" },
@@ -221,6 +228,7 @@ export default {
   max-width: 20%;
   height: auto;
   cursor: pointer;
+  border: 1px solid rgb(175, 175, 175);
 }
 
 .nodejs-logo {
@@ -247,7 +255,9 @@ export default {
   max-width: 70%;
   height: auto;
   cursor: pointer;
+  border: 1px solid rgb(175, 175, 175);
 }
+
 .powerpoint-image {
   max-width: 80%;
   height: auto;

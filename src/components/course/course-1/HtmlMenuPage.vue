@@ -11,74 +11,18 @@
       <div class="lesson-sidebar"></div>
       <div class="lesson-main">
         <ul class="lesson-list">
-          <li class="lesson-item">
+          <li class="lesson-item" v-for="(lesson, index) in lessons" :key="index">
             <div class="lesson-itemImg">
-              <img src="../../../assets/images/menu/lesson1.png" alt="lesson1" />
+              <img :src="getImageUrl(lesson.img)" :alt="lesson.alt" />
             </div>
             <div class="lesson-itemWrap">
               <div class="lesson-itemImg-sp">
-                <img src="../../../assets/images/menu/lesson1-sp.png" alt="lesson1" />
+                <img :src="getImageUrl(lesson.imgSp)" :alt="lesson.alt" />
               </div>
               <div class="lesson-itemText">
-                <p>HTML・CSSの書き方や確認の仕方、構成など基本的な知識を学びます。</p>
+                <p>{{ lesson.text }}</p>
               </div>
-              <div class="lesson-btn btn" @click="goToPageLesson1"></div>
-            </div>
-          </li>
-          <li class="lesson-item">
-            <div class="lesson-itemImg">
-              <img src="../../../assets/images/menu/lesson2.png" alt="lesson2" />
-            </div>
-            <div class="lesson-itemWrap">
-              <div class="lesson-itemImg-sp">
-                <img src="../../../assets/images/menu/lesson2-sp.png" alt="lesson2" />
-              </div>
-              <div class="lesson-itemText">
-                <p>要素の違いや、様々なプロパティ概念を学びます。</p>
-              </div>
-              <div class="lesson-btn btn" @click="goToPageLesson2"></div>
-            </div>
-          </li>
-          <li class="lesson-item">
-            <div class="lesson-itemImg">
-              <img src="../../../assets/images/menu/lesson3.png" alt="lesson3" />
-            </div>
-            <div class="lesson-itemWrap">
-              <div class="lesson-itemImg-sp">
-                <img src="../../../assets/images/menu/lesson3-sp.png" alt="lesson3" />
-              </div>
-              <div class="lesson-itemText">
-                <p>本格的なWebサイトの作り方やレスポンシブ対応、FlexBoxを学びます。</p>
-              </div>
-              <div class="lesson-btn btn" @click="goToPageLesson3"></div>
-            </div>
-          </li>
-          <li class="lesson-item">
-            <div class="lesson-itemImg">
-              <img src="../../../assets/images/menu/lesson4.png" alt="lesson4" />
-            </div>
-            <div class="lesson-itemWrap">
-              <div class="lesson-itemImg-sp">
-                <img src="../../../assets/images/menu/lesson4-sp.png" alt="lesson4" />
-              </div>
-              <div class="lesson-itemText">
-                <p>floatと疑似要素について学びます。</p>
-              </div>
-              <div class="lesson-btn btn" @click="goToPageLesson4"></div>
-            </div>
-          </li>
-          <li class="lesson-item">
-            <div class="lesson-itemImg">
-              <img src="../../../assets/images/menu/lesson5.png" alt="lesson5" />
-            </div>
-            <div class="lesson-itemWrap">
-              <div class="lesson-itemImg-sp">
-                <img src="../../../assets/images/menu/lesson5-sp.png" alt="lesson5" />
-              </div>
-              <div class="lesson-itemText">
-                <p>クラスの命名規則であるBEM設計・接頭辞について学びます。</p>
-              </div>
-              <div class="lesson-btn btn" @click="goToPageLesson5"></div>
+              <div class="lesson-btn btn" @click="goToPage(lesson.pageName)"></div>
             </div>
           </li>
         </ul>
@@ -89,32 +33,42 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue';
+import { useRouter } from 'vue-router';
 import Header from "@/components/layout/Header.vue";
 import Footer from "@/components/layout/Footer.vue";
 
-export default {
+export default defineComponent({
   components: {
     Header,
     Footer,
   },
-  methods: {
-    goToPageLesson1() {
-      this.$router.push({ name: "HtmlPage1" });
-    },
-    goToPageLesson2() {
-      this.$router.push({ name: "HtmlPage2" });
-    },
-    goToPageLesson3() {
-      this.$router.push({ name: "HtmlPage3" });
-    },
-    goToPageLesson4() {
-      this.$router.push({ name: "HtmlPage4" });
-    },
-    goToPageLesson5() {
-      this.$router.push({ name: "HtmlPage5" });
-    },
+  setup() {
+    const router = useRouter();
+    
+    const lessons = [
+      { img: require("@/assets/images/menu/lesson1.png"), imgSp: require("@/assets/images/menu/lesson1-sp.png"), alt: "lesson1", text: "HTML・CSSの書き方や確認の仕方、構成など基本的な知識を学びます。", pageName: "HtmlPage1" },
+      { img: require("@/assets/images/menu/lesson2.png"), imgSp: require("@/assets/images/menu/lesson2-sp.png"), alt: "lesson2", text: "要素の違いや、様々なプロパティ概念を学びます。", pageName: "HtmlPage2" },
+      { img: require("@/assets/images/menu/lesson3.png"), imgSp: require("@/assets/images/menu/lesson3-sp.png"), alt: "lesson3", text: "本格的なWebサイトの作り方やレスポンシブ対応、FlexBoxを学びます。", pageName: "HtmlPage3" },
+      { img: require("@/assets/images/menu/lesson4.png"), imgSp: require("@/assets/images/menu/lesson4-sp.png"), alt: "lesson4", text: "floatと疑似要素について学びます。", pageName: "HtmlPage4" },
+      { img: require("@/assets/images/menu/lesson5.png"), imgSp: require("@/assets/images/menu/lesson5-sp.png"), alt: "lesson5", text: "クラスの命名規則であるBEM設計・接頭辞について学びます。", pageName: "HtmlPage5" },
+    ];
+
+    const getImageUrl = (img) => {
+      return img;
+    };
+
+    const goToPage = (pageName) => {
+      router.push({ name: pageName });
+    };
+
+    return {
+      lessons,
+      getImageUrl,
+      goToPage
+    };
   },
-};
+});
 </script>
 
 <style scoped>
@@ -189,7 +143,22 @@ export default {
   position: absolute;
   bottom: 25px;
   right: 50px;
-  cursor: pointer; /* ボタン全体がクリック可能になる */
+  cursor: pointer;
+  background: linear-gradient(135deg, #3498db, #2ecc71); /* モダンな青緑のグラデーション */
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lesson-btn:hover {
+  background: linear-gradient(135deg, #a8d0fa, #6bffba); /* ホバー時に洗練された赤系のグラデーションに変更 */
+  transform: scale(1.1);
+}
+
+.lesson-btn:active {
+  transform: scale(0.95);
 }
 
 .lesson-btn::before {
@@ -197,8 +166,8 @@ export default {
   display: block;
   width: 20px;
   height: 20px;
-  border-top: 4px solid #a8dadc;
-  border-left: 4px solid #a8dadc;
+  border-top: 4px solid #ffffff;
+  border-left: 4px solid #ffffff;
   transform: rotate(135deg);
   position: absolute;
   right: calc(50% - 5px);

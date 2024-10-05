@@ -3,7 +3,7 @@
     <Header />
     <div class="container">
       <div class="main-content">
-        <Title title="DesignBasic 3" id="Title"></Title>
+        <Title title="デザイン基礎 3" id="Title"></Title>
         <Document>
           <p>最終課題</p>
         </Document>
@@ -28,15 +28,15 @@
             50社以上の企業が参加する合同就職説明会開催決定!<br><br>
             この夏、キャリアの扉を開く絶好のチャンスが到来します。多様な業界から一流の企業が集結し、あなたの夢を実現するための機会を提供します。ここでは、キャリアアドバイス、履歴書の書き方、面接テクニックのワークショップなど、就職活動を成功に導くための貴重な情報を得ることができます。<br><br>
             ・中段右に下記の情報を記載してください。<br><br>
-            日時　　2024年8月1日（木）<br><br>
-            場所　　サイバーアドベンチャーズ株式会社<br>
-            参加資格　　就職を希望する高校生以上の方<br>
-            参加費用　　無料<br>
-            申し込み方法　　弊社サイトからお申込みください<br>
-            イベント内容　　50社以上の企業ブース<br>
-            　　　　　　　　キャリアアドバイス<br>
-            　　　　　　　　履歴書の書き方／面接テクニック　など<br>
-            主催者　　サイバーアドベンチャーズ株式会社<br><br>
+            日時    2024年8月1日（木）<br><br>
+            場所    サイバーアドベンチャーズ株式会社<br>
+            参加資格    就職を希望する高校生以上の方<br>
+            参加費用    無料<br>
+            申し込み方法    弊社サイトからお申込みください<br>
+            イベント内容    50社以上の企業ブース<br>
+                            キャリアアドバイス<br>
+                            履歴書の書き方／面接テクニック  など<br>
+            主催者    サイバーアドベンチャーズ株式会社<br><br>
             ・下段に素材③会社ロゴを配置してください。<br><br><br><br>
             素材①：女性の写真<br>
           </p>
@@ -55,6 +55,10 @@
           <div>
             <img @click="openModal(imagePaths.step4)" :src="imagePaths.step4" class="DesignBasic-image" alt="会社ロゴ" />
           </div>
+          <NavigationButtons
+            :previousPageName="'DesignBasicPage2'"
+            :nextPageName="'DesignBasicPage1'"
+          />
         </Document>
         <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
         </div>
@@ -78,9 +82,11 @@ import Document from "@/components/Document.vue";
 import TableOfContents from "@/components/TableOfContents.vue";
 import { javascriptData } from "@/data/javascriptData.js";
 import Modal from "@/components/common/Modal.vue";
+import NavigationButtons from "@/components/NavigationButtons.vue";
+
 
 export default {
-  name: "JavaScript1",
+  name: "DesignBasicPage3",
   components: {
     Header,
     Footer,
@@ -91,10 +97,11 @@ export default {
     Document,
     TableOfContents,
     Modal,
+    NavigationButtons,
   },
   setup() {
     const sections = [
-      { id: "Title", title: "DesignBasic 3" },
+      { id: "Title", title: "デザイン基礎 3" },
       { id: "subTitle1", title: "  最終課題" },
     ];
 
@@ -210,9 +217,10 @@ export default {
 .DesignBasic-image {
   display: block;
   margin: 0 auto;
-  max-width: 20%;
+  max-width: 70%;
   height: auto;
   cursor: pointer;
+  border: 1px solid rgb(175, 175, 175);
 }
 
 .nodejs-logo {
@@ -221,6 +229,7 @@ export default {
   max-width: 20%;
   height: auto;
   cursor: pointer;
+  border: 1px solid rgb(175, 175, 175);
 }
 
 .download {
@@ -231,14 +240,6 @@ export default {
 
 .download-link {
   color: rgb(72, 0, 255);
-}
-
-.DesignBasic-image {
-  display: block;
-  margin: 0 auto;
-  max-width: 70%;
-  height: auto;
-  cursor: pointer;
 }
 
 .download-button {

@@ -3,7 +3,7 @@
     <Header />
     <div class="container">
       <div class="main-content">
-        <Title title="DesignBasic 1" id="Title"></Title>
+        <Title title="デザイン基礎 1" id="Title"></Title>
         <Document>
           <p>色彩について学びましょう</p>
         </Document>
@@ -77,6 +77,10 @@
             黒：高級、重厚さ、洗練、神秘、恐怖、都会<br>
             白：純粋、清潔、無垢、シンプル、クリーン<br>
           </p>
+          <NavigationButtons
+            :previousPageName="'DesignBasicPage3'"
+            :nextPageName="'DesignBasicPage2'"
+          />
         </Document>
         <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
         </div>
@@ -100,9 +104,10 @@ import Document from "@/components/Document.vue";
 import TableOfContents from "@/components/TableOfContents.vue";
 import { javascriptData } from "@/data/javascriptData.js";
 import Modal from "@/components/common/Modal.vue";
+import NavigationButtons from "@/components/NavigationButtons.vue";
 
 export default {
-  name: "JavaScript1",
+  name: "DesignBasicPage1",
   components: {
     Header,
     Footer,
@@ -113,10 +118,11 @@ export default {
     Document,
     TableOfContents,
     Modal,
+    NavigationButtons,
   },
   setup() {
     const sections = [
-      { id: "Title", title: "DesignBasic 1" },
+      { id: "Title", title: "デザイン基礎 1" },
       // { id: "subTitle1", title: "  1.とは" },
       { id: "sectionTitle1-1", title: "    1-1. カラーモード" },
       { id: "sectionTitle1-2", title: "    1-2. 彩度と明度" },
@@ -242,6 +248,7 @@ export default {
   max-width: 70%;
   height: auto;
   cursor: pointer;
+  border: 1px solid rgb(175, 175, 175);
 }
 
 .DesignBasic-icon{

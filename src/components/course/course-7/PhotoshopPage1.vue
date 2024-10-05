@@ -62,6 +62,10 @@
           <div>
             <img @click="openModal(imagePaths.step6)" :src="imagePaths.step6" class="photoshop-image" alt="ウィンドウ" />
           </div>
+          <NavigationButtons
+            :previousPageName="'PhotoshopPage3'"
+            :nextPageName="'PhotoshopPage2'"
+          />
         </Document>
         <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
         </div>
@@ -85,9 +89,11 @@ import Document from "@/components/Document.vue";
 import TableOfContents from "@/components/TableOfContents.vue";
 import { javascriptData } from "@/data/javascriptData.js";
 import Modal from "@/components/common/Modal.vue";
+import NavigationButtons from "@/components/NavigationButtons.vue";
+
 
 export default {
-  name: "JavaScript1",
+  name: "PhotoshopPage11",
   components: {
     Header,
     Footer,
@@ -98,6 +104,7 @@ export default {
     Document,
     TableOfContents,
     Modal,
+    NavigationButtons,
   },
   setup() {
     const sections = [
@@ -224,6 +231,7 @@ export default {
   max-width: 70%;
   height: auto;
   cursor: pointer;
+  border: 1px solid rgb(175, 175, 175);
 }
 
 .photoshop-icon{
@@ -232,6 +240,7 @@ export default {
   max-width: 30%;
   height: auto;
   cursor: pointer;
+  border: 1px solid rgb(175, 175, 175);
 }
 
 .nodejs-logo {

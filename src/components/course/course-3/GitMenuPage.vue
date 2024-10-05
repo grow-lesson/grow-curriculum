@@ -11,47 +11,18 @@
       <div class="lesson-sidebar"></div>
       <div class="lesson-main">
         <ul class="lesson-list">
-          <li class="lesson-item">
+          <li class="lesson-item" v-for="(lesson, index) in lessons" :key="index">
             <div class="lesson-itemImg">
-              <img src="../../../assets/images/menu/lesson1.png" alt="lesson1" />
+              <img :src="getImageUrl(lesson.img)" :alt="lesson.alt" />
             </div>
             <div class="lesson-itemWrap">
               <div class="lesson-itemImg-sp">
-                <img src="../../../assets/images/menu/lesson1-sp.png" alt="lesson1" />
+                <img :src="getImageUrl(lesson.imgSp)" :alt="lesson.alt" />
               </div>
               <div class="lesson-itemText">
-                <p>Gitのコマンド基本的な操作と考え方を学びます。</p>
+                <p>{{ lesson.text }}</p>
               </div>
-              <!-- lesson-btn の div 全体をクリック可能に -->
-              <div class="lesson-btn btn" @click="goToPageLesson1"></div>
-            </div>
-          </li>
-          <li class="lesson-item">
-            <div class="lesson-itemImg">
-              <img src="../../../assets/images/menu/lesson2.png" alt="lesson2" />
-            </div>
-            <div class="lesson-itemWrap">
-              <div class="lesson-itemImg-sp">
-                <img src="../../../assets/images/menu/lesson2-sp.png" alt="lesson2" />
-              </div>
-              <div class="lesson-itemText">
-                <p>チーム開発を意識したGitの使い方を学びます。</p>
-              </div>
-              <div class="lesson-btn btn" @click="goToPageLesson2"></div>
-            </div>
-          </li>
-          <li class="lesson-item">
-            <div class="lesson-itemImg">
-              <img src="../../../assets/images/menu/lesson3.png" alt="lesson3" />
-            </div>
-            <div class="lesson-itemWrap">
-              <div class="lesson-itemImg-sp">
-                <img src="../../../assets/images/menu/lesson3-sp.png" alt="lesson3" />
-              </div>
-              <div class="lesson-itemText">
-                <p>応用的なGitコマンドを学びます。</p>
-              </div>
-              <div class="lesson-btn btn" @click="goToPageLesson3"></div>
+              <div class="lesson-btn btn" @click="goToPage(lesson.pageName)"></div>
             </div>
           </li>
         </ul>
@@ -62,36 +33,50 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue';
+import { useRouter } from 'vue-router';
 import Header from "@/components/layout/Header.vue";
 import Footer from "@/components/layout/Footer.vue";
 
-export default {
+export default defineComponent({
   components: {
     Header,
     Footer,
   },
-  methods: {
-    goToPageLesson1() {
-      this.$router.push({ name: "GitPage1" });
-    },
-    goToPageLesson2() {
-      this.$router.push({ name: "UnderConstruction" });
-    },
-    goToPageLesson3() {
-      this.$router.push({ name: "UnderConstruction" });
-    },
+  setup() {
+    const router = useRouter();
+    
+    const lessons = [
+      { img: require("@/assets/images/menu/lesson1.png"), imgSp: require("@/assets/images/menu/lesson1-sp.png"), alt: "lesson1", text: "Gitのコマンド基本的な操作と考え方を学びます。", pageName: "GitPage1" },
+      { img: require("@/assets/images/menu/lesson2.png"), imgSp: require("@/assets/images/menu/lesson2-sp.png"), alt: "lesson2", text: "チーム開発を意識したGitの使い方を学びます。", pageName: "UnderConstruction" },
+      { img: require("@/assets/images/menu/lesson3.png"), imgSp: require("@/assets/images/menu/lesson3-sp.png"), alt: "lesson3", text: "応用的なGitコマンドを学びます。", pageName: "UnderConstruction" },
+    ];
+
+    const getImageUrl = (img) => {
+      return img;
+    };
+
+    const goToPage = (pageName) => {
+      router.push({ name: pageName });
+    };
+
+    return {
+      lessons,
+      getImageUrl,
+      goToPage
+    };
   },
-};
+});
 </script>
 
 <style scoped>
 .wrap {
   min-height: 100vh;
+  color: #101010;
 }
 
 .lesson-container {
   margin: 0 auto;
-  color: #101010;
 }
 
 .breadcrumb {
@@ -156,7 +141,22 @@ export default {
   position: absolute;
   bottom: 25px;
   right: 50px;
-  cursor: pointer; /* ボタン全体がクリック可能になる */
+  cursor: pointer;
+  background: linear-gradient(135deg, #3498db, #2ecc71); /* モダンな青緑のグラデーション */
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lesson-btn:hover {
+  background: linear-gradient(135deg, #a8d0fa, #8ef9c7); /* ホバー時に洗練された赤系のグラデーションに変更 */
+  transform: scale(1.1);
+}
+
+.lesson-btn:active {
+  transform: scale(0.95);
 }
 
 .lesson-btn::before {
@@ -164,8 +164,8 @@ export default {
   display: block;
   width: 20px;
   height: 20px;
-  border-top: 4px solid #a8dadc;
-  border-left: 4px solid #a8dadc;
+  border-top: 4px solid #ffffff;
+  border-left: 4px solid #ffffff;
   transform: rotate(135deg);
   position: absolute;
   right: calc(50% - 5px);

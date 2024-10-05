@@ -27,11 +27,23 @@
           </p>
           <div>
             <img @click="openModal(imagePaths.step1)" :src="imagePaths.step1" class="photoshop-image" alt="女性の画像" />
+            <br>
+            <br>
             <img @click="openModal(imagePaths.step2)" :src="imagePaths.step2" class="photoshop-image" alt="会社ロゴ" />
+            <br>
+            <br>
             <img @click="openModal(imagePaths.step3)" :src="imagePaths.step3" class="photoshop-image" alt="チェック" />
+            <br>
+            <br>
             <img @click="openModal(imagePaths.step4)" :src="imagePaths.step4" class="photoshop-image" alt="ビルの画像" />
+            <br>
+            <br>
             <img @click="openModal(imagePaths.step5)" :src="imagePaths.step5" class="photoshop-image" alt="グラデーション画像" />
           </div>
+          <NavigationButtons
+            :previousPageName="'PhotoshopPage2'"
+            :nextPageName="'PhotoshopPage1'"
+          />
         </Document>
         <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
         </div>
@@ -55,9 +67,10 @@ import Document from "@/components/Document.vue";
 import TableOfContents from "@/components/TableOfContents.vue";
 import { javascriptData } from "@/data/javascriptData.js";
 import Modal from "@/components/common/Modal.vue";
+import NavigationButtons from "@/components/NavigationButtons.vue";
 
 export default {
-  name: "JavaScript1",
+  name: "PhotoshopPage3",
   components: {
     Header,
     Footer,
@@ -68,6 +81,7 @@ export default {
     Document,
     TableOfContents,
     Modal,
+    NavigationButtons,
   },
   setup() {
     const sections = [
@@ -192,6 +206,7 @@ export default {
   max-width: 20%;
   height: auto;
   cursor: pointer;
+  border: 1px solid rgb(175, 175, 175);
 }
 
 .nodejs-logo {
@@ -218,6 +233,7 @@ export default {
   max-width: 70%;
   height: auto;
   cursor: pointer;
+  border: 1px solid rgb(175, 175, 175);
 }
 
 .download-button {

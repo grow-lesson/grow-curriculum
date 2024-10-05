@@ -309,6 +309,10 @@
           <p>
             全て設定ができたら「保存」を押して、保存完了です。
           </p>
+          <NavigationButtons
+            :previousPageName="'PhotoshopPage1'"
+            :nextPageName="'PhotoshopPage3'"
+          />
         </Document>
         <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
         </div>
@@ -332,9 +336,10 @@ import Document from "@/components/Document.vue";
 import TableOfContents from "@/components/TableOfContents.vue";
 import { javascriptData } from "@/data/javascriptData.js";
 import Modal from "@/components/common/Modal.vue";
+import NavigationButtons from "@/components/NavigationButtons.vue";
 
 export default {
-  name: "JavaScript1",
+  name: "PhotoshopPage2",
   components: {
     Header,
     Footer,
@@ -345,6 +350,7 @@ export default {
     Document,
     TableOfContents,
     Modal,
+    NavigationButtons,
   },
   setup() {
     const sections = [
@@ -513,6 +519,7 @@ export default {
   max-width: 20%;
   height: auto;
   cursor: pointer;
+  border: 1px solid rgb(175, 175, 175);
 }
 
 .nodejs-logo {
@@ -521,6 +528,7 @@ export default {
   max-width: 20%;
   height: auto;
   cursor: pointer;
+  border: 1px solid rgb(175, 175, 175);
 }
 
 .download {
