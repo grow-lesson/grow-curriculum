@@ -31,19 +31,23 @@ export default {
 }
 
 .navigation-buttons button {
-  width: 70px;
-  height: 40px;
-  background-color: #3fa0fa;
+  width: 80px;
+  height: 45px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* サイドバーボタンと同じグラデーション */
   color: #ffffff;
   border: none;
-  border-radius: 7px; /* 四角いボタン */
+  border-radius: 50px; /* 丸みを帯びたボタン */
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
   position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* 立体感のある影 */
+  font-family: 'Roboto', sans-serif; /* モダンなフォントを使用 */
 }
 
 .navigation-buttons button:hover {
-  background-color: #ff9900;
+  background: linear-gradient(135deg, #a8d0fa, #706bff); /* ホバー時に柔らかいグラデーションに変更 */
+  transform: translateY(-3px); /* ホバー時に浮く効果 */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* ホバー時の影を強化 */
 }
 
 .arrow-left, .arrow-right {
@@ -56,14 +60,14 @@ export default {
 }
 
 .arrow-left {
-  border-width: 10px 20px 10px 0;
+  border-width: 8px 12px 8px 0;
   border-color: transparent #ffffff transparent transparent;
-  left: 20px; /* 矢印の位置 */
+  left: 20px;
 }
 
 .arrow-right {
-  border-width: 10px 0 10px 20px;
+  border-width: 8px 0 8px 12px;
   border-color: transparent transparent transparent #ffffff;
-  right: 20px; /* 矢印の位置 */
+  right: 20px;
 }
 </style>
