@@ -39,6 +39,9 @@
             <li class="navigation-item">
               <button class="navigation-btn" @click="toggleDropdown('course')">コース</button>
               <ul class="dropdown-list" :class="{ 'slide-down': activeDropdown === 'course' }">
+                <li class="dropdown-item" @click="goToCourseMenuPage">
+                  <a class="dropdown-link">コース一覧</a>
+                </li>
                 <li class="dropdown-item" @click="goToHtmlMenuPage">
                   <a class="dropdown-link">HTML・CSS</a>
                 </li>
@@ -49,7 +52,7 @@
                   <a class="dropdown-link">Javascript</a>
                 </li>
                 <li class="dropdown-item" @click="goToJqueryMenuPage">
-                  <a class="dropdown-link">Jquery</a>
+                  <a class="dropdown-link">jQuery</a>
                 </li>
                 <li class="dropdown-item" @click="goToGitMenuPage">
                   <a class="dropdown-link">Git</a>
@@ -134,7 +137,7 @@
               <a class="dropdown-link">Javascript</a>
             </li>
             <li class="dropdown-item" @click="goToJqueryMenuPage">
-              <a class="dropdown-link">Jquery</a>
+              <a class="dropdown-link">jQuery</a>
             </li>
             <li class="dropdown-item" @click="goToGitMenuPage">
               <a class="dropdown-link">Git</a>
@@ -241,6 +244,10 @@ export default {
       router.push({ name: "Contact" });
     };
 
+    const goToCourseMenuPage = () => {
+      router.push({ name: "CourseMenu" });
+    };
+
     const goToHtmlMenuPage = () => {
       router.push({ name: "HtmlMenuPage" });
     };
@@ -319,6 +326,7 @@ export default {
       goToProcedurePage,
       goToMyPage,
       goToContactPage,
+      goToCourseMenuPage,
       goToHtmlMenuPage,
       goToCommandLineMenuPage,
       goToGitMenuPage,
