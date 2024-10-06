@@ -29,23 +29,25 @@
       </div>
     </div>
     <Footer />
+    <Spinner v-if="isLoading" />
   </div>
 </template>
 
 <script>
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import Header from "@/components/layout/Header.vue";
 import Footer from "@/components/layout/Footer.vue";
+import Spinner from "@/components/Spinner.vue";
 
 export default defineComponent({
   components: {
     Header,
     Footer,
+    Spinner,  // スピナーコンポーネントを追加
   },
   setup() {
     const router = useRouter();
-    
     const lessons = [
       { img: require("@/assets/images/menu/lesson1.png"), imgSp: require("@/assets/images/menu/lesson1-sp.png"), alt: "lesson1", text: "HTML・CSSの書き方や確認の仕方、構成など基本的な知識を学びます。", pageName: "HtmlPage1" },
       { img: require("@/assets/images/menu/lesson2.png"), imgSp: require("@/assets/images/menu/lesson2-sp.png"), alt: "lesson2", text: "要素の違いや、様々なプロパティ概念を学びます。", pageName: "HtmlPage2" },
@@ -58,14 +60,26 @@ export default defineComponent({
       return img;
     };
 
+    const isLoading = ref(false);
+    
+    const toggleOS = () => {
+      isLoading.value = true;
+    };
+
     const goToPage = (pageName) => {
-      router.push({ name: pageName });
+      toggleOS(); // スピナーを表示
+      setTimeout(() => {
+        router.push({ name: pageName }).finally(() => {
+          isLoading.value = false;  // 遷移完了後にスピナーを非表示
+        });
+      }, 500);  // 500msの遅延を挟んで遷移開始
     };
 
     return {
       lessons,
       getImageUrl,
-      goToPage
+      goToPage,
+      isLoading
     };
   },
 });
