@@ -14,11 +14,12 @@
           <p class="login-errorMessage">{{ errors.email }}</p>
           <input type="password" v-model="form.password" @input="validateField('password')" placeholder="パスワード" name="password" />
           <p class="login-errorMessage">{{ errors.password }}</p>
-          <button>ログイン</button>
+          <button type="submit" :disabled="isLoading">{{ isLoading ? 'ログイン中...' : 'ログイン' }}</button> <!-- ローディング時にボタン表示を変更 -->
         </form>
         <p class="btn-back"><a @click="goToWelcomePage">＞戻る</a></p>
       </div>
     </div>
+    <Spinner :isLoading="isLoading" /> <!-- スピナーを追加 -->
   </div>
 </template>
 
@@ -27,10 +28,14 @@ import { ref } from 'vue';
 import * as yup from 'yup';
 import api from '@/axios';
 import { useRouter } from 'vue-router';
-import { isCapacitor } from '@/utils'; // utils.jsからisCapacitor関数をインポート
+import { isCapacitor } from '@/utils';
 import { CapacitorCookies } from '@capacitor/core';
+import Spinner from '@/components/Spinner.vue'; // スピナーコンポーネントをインポート
 
 export default {
+  components: {
+    Spinner, // スピナーをコンポーネントに追加
+  },
   setup() {
     const router = useRouter();
     
@@ -43,6 +48,8 @@ export default {
       email: '',
       password: '',
     });
+
+    const isLoading = ref(false); // ローディング状態を管理
 
     const schema = yup.object({
       email: yup.string().required('メールアドレスは必須の項目です。').email('メールアドレスの形式ではありません。'),
@@ -63,6 +70,7 @@ export default {
     };
 
     const onSubmit = async () => {
+      isLoading.value = true; // ローディング開始
       try {
         await schema.validate(form.value, { abortEarly: false });
         const loginData = {
@@ -89,40 +97,33 @@ export default {
         } else {
           alert(error.message);
         }
-      }
+      } 
     };
 
-
-
-
-
     const setCookie = async (name, value, days = 7) => {
-  const date = new Date();
-  date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-  const expires = date.toUTCString();
+      const date = new Date();
+      date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+      const expires = date.toUTCString();
 
-  if (isCapacitor()) {
-    await CapacitorCookies.setCookie({
-      url: 'https://grow-curriculum-backend-f10ce9239245.herokuapp.com',
-      key: name,
-      value: value,
-      expires: expires,
-      path: '/', // ルートパスに設定
-      secure: true,
-      sameSite: 'None',
-    });
-  } else {
-    document.cookie = name + "=" + encodeURIComponent(value) + "; expires=" + expires + "; path=/; SameSite=None; Secure";
-  }
-};
-
-
-
-
+      if (isCapacitor()) {
+        await CapacitorCookies.setCookie({
+          url: 'https://grow-curriculum-backend-f10ce9239245.herokuapp.com',
+          key: name,
+          value: value,
+          expires: expires,
+          path: '/', // ルートパスに設定
+          secure: true,
+          sameSite: 'None',
+        });
+      } else {
+        document.cookie = name + "=" + encodeURIComponent(value) + "; expires=" + expires + "; path=/; SameSite=None; Secure";
+      }
+    };
 
     return {
       form,
       errors,
+      isLoading, // ローディング状態を返す
       onSubmit,
       goToWelcomePage,
       validateField,
@@ -131,11 +132,10 @@ export default {
 };
 </script>
 
-
 <style>
 .login-page {
   width: 100%;
-  background-color: #228bc8;
+  background: linear-gradient(135deg, #1d1d1d, #4188b6);
   font-size: 12px;
   height: 100vh;
   padding-bottom: 40px;

@@ -5,33 +5,33 @@
       <div class="header-wrapper">
         <!-- ロゴ（モバイル版） -->
         <div class="logo" v-show="isMobile">
-          <a @click="goToMenuPage">
+          <a @click="handleClick(goToMenuPage)">
             <img src="../../assets/images/header/logo.png" alt="GROWロゴ" class="logo-image" />
           </a>
         </div>
         <!-- タイトル（PC版） -->
         <p class="header-title" v-show="!isMobile">
-          <a @click="goToMenuPage">GROW Learning Website</a>
+          <a @click="handleClick(goToMenuPage)">GROW Learning Website</a>
         </p>
         <!-- ナビゲーションメニュー（PC版） -->
         <nav class="navigation-wrap" v-show="!isMobile">
           <ul class="navigation-list">
             <li class="navigation-item">
-              <button class="navigation-btn" @click="goToIntroducePage">サイトについて</button>
+              <button class="navigation-btn" @click="handleClick(goToIntroducePage)">サイトについて</button>
             </li>
             <li class="navigation-item">
               <button class="navigation-btn" @click="toggleDropdown('preparation')">準備と提出</button>
               <ul class="dropdown-list" :class="{ 'slide-down': activeDropdown === 'preparation' }">
-                <li class="dropdown-item" @click="goToHowToPage">
+                <li class="dropdown-item" @click="handleClick(goToHowToPage)">
                   <a class="dropdown-link">サイトの使い方</a>
                 </li>
-                <li class="dropdown-item" @click="goToSetUPPage">
+                <li class="dropdown-item" @click="handleClick(goToSetUPPage)">
                   <a class="dropdown-link">PCの設定・使い方</a>
                 </li>
-                <li class="dropdown-item" @click="goToEnvironmentPage">
+                <li class="dropdown-item" @click="handleClick(goToEnvironmentPage)">
                   <a class="dropdown-link">環境構築やインストール</a>
                 </li>
-                <li class="dropdown-item" @click="goToProcedurePage">
+                <li class="dropdown-item" @click="handleClick(goToProcedurePage)">
                   <a class="dropdown-link">カリキュラムの始め方</a>
                 </li>
               </ul>
@@ -39,31 +39,31 @@
             <li class="navigation-item">
               <button class="navigation-btn" @click="toggleDropdown('course')">コース</button>
               <ul class="dropdown-list" :class="{ 'slide-down': activeDropdown === 'course' }">
-                <li class="dropdown-item" @click="goToCourseMenuPage">
+                <li class="dropdown-item" @click="handleClick(goToCourseMenuPage)">
                   <a class="dropdown-link">コース一覧</a>
                 </li>
-                <li class="dropdown-item" @click="goToHtmlMenuPage">
+                <li class="dropdown-item" @click="handleClick(goToHtmlMenuPage)">
                   <a class="dropdown-link">HTML・CSS</a>
                 </li>
-                <li class="dropdown-item" @click="goToCommandLineMenuPage">
+                <li class="dropdown-item" @click="handleClick(goToCommandLineMenuPage)">
                   <a class="dropdown-link">コマンドライン</a>
                 </li>
-                <li class="dropdown-item" @click="goToJavaScriptMenuPage">
+                <li class="dropdown-item" @click="handleClick(goToJavaScriptMenuPage)">
                   <a class="dropdown-link">Javascript</a>
                 </li>
-                <li class="dropdown-item" @click="goToJqueryMenuPage">
+                <li class="dropdown-item" @click="handleClick(goToJqueryMenuPage)">
                   <a class="dropdown-link">jQuery</a>
                 </li>
-                <li class="dropdown-item" @click="goToGitMenuPage">
+                <li class="dropdown-item" @click="handleClick(goToGitMenuPage)">
                   <a class="dropdown-link">Git</a>
                 </li>
-                <li class="dropdown-item" @click="goToSQLMenuPage">
+                <li class="dropdown-item" @click="handleClick(goToSQLMenuPage)">
                   <a class="dropdown-link">SQL</a>
                 </li>
-                <li class="dropdown-item" @click="goToPhotoshopMenuPage">
+                <li class="dropdown-item" @click="handleClick(goToPhotoshopMenuPage)">
                   <a class="dropdown-link">Photoshop</a>
                 </li>
-                <li class="dropdown-item" @click="goToDesignBasicMenuPage">
+                <li class="dropdown-item" @click="handleClick(goToDesignBasicMenuPage)">
                   <a class="dropdown-link">デザイン基礎</a>
                 </li>
               </ul>
@@ -71,7 +71,7 @@
             <li class="navigation-item">
               <button class="navigation-btn" @click="toggleDropdown('mypage')">マイページ</button>
               <ul class="dropdown-list" :class="{ 'slide-down': activeDropdown === 'mypage' }">
-                <li class="dropdown-item" @click="goToMyPage">
+                <li class="dropdown-item" @click="handleClick(goToMyPage)">
                   <a class="dropdown-link">プロフィール</a>
                 </li>
               </ul>
@@ -101,22 +101,22 @@
     <div class="menu" :class="{ 'show-menu': showMenu }">
       <!-- メニューアイテム -->
       <ul class="menu-list">
-        <li class="menu-item" @click="goToIntroducePage">
+        <li class="menu-item" @click="handleClick(goToIntroducePage)">
           <button class="menu-btn">サイトについて</button>
         </li>
         <li class="menu-item">
           <button class="menu-btn" @click="toggleDropdown('preparation')">準備と提出</button>
           <ul class="dropdown-list" :class="{ 'slide-down': activeDropdown === 'preparation' }">
-            <li class="dropdown-item" @click="goToHowToPage">
+            <li class="dropdown-item" @click="handleClick(goToHowToPage)">
               <a class="dropdown-link">サイトの使い方</a>
             </li>
-            <li class="dropdown-item" @click="goToSetUPPage">
+            <li class="dropdown-item" @click="handleClick(goToSetUPPage)">
               <a class="dropdown-link">PCの設定・使い方</a>
             </li>
-            <li class="dropdown-item" @click="goToEnvironmentPage">
+            <li class="dropdown-item" @click="handleClick(goToEnvironmentPage)">
               <a class="dropdown-link">環境構築やインストール</a>
             </li>
-            <li class="dropdown-item" @click="goToProcedurePage">
+            <li class="dropdown-item" @click="handleClick(goToProcedurePage)">
               <a class="dropdown-link">カリキュラムの始め方</a>
             </li>
           </ul>
@@ -124,31 +124,31 @@
         <li class="menu-item">
           <button class="menu-btn" @click="toggleDropdown('course')">コース</button>
           <ul class="dropdown-list" :class="{ 'slide-down': activeDropdown === 'course' }">
-            <li class="dropdown-item" @click="goToCourseMenuPage">
+            <li class="dropdown-item" @click="handleClick(goToCourseMenuPage)">
               <a class="dropdown-link">コース一覧</a>
             </li>
-            <li class="dropdown-item" @click="goToHtmlMenuPage">
+            <li class="dropdown-item" @click="handleClick(goToHtmlMenuPage)">
               <a class="dropdown-link">HTML・CSS</a>
             </li>
-            <li class="dropdown-item" @click="goToCommandLineMenuPage">
+            <li class="dropdown-item" @click="handleClick(goToCommandLineMenuPage)">
               <a class="dropdown-link">コマンドライン</a>
             </li>
-            <li class="dropdown-item" @click="goToJavaScriptMenuPage">
+            <li class="dropdown-item" @click="handleClick(goToJavaScriptMenuPage)">
               <a class="dropdown-link">Javascript</a>
             </li>
-            <li class="dropdown-item" @click="goToJqueryMenuPage">
+            <li class="dropdown-item" @click="handleClick(goToJqueryMenuPage)">
               <a class="dropdown-link">jQuery</a>
             </li>
-            <li class="dropdown-item" @click="goToGitMenuPage">
+            <li class="dropdown-item" @click="handleClick(goToGitMenuPage)">
               <a class="dropdown-link">Git</a>
             </li>
-            <li class="dropdown-item" @click="goToSQLMenuPage">
+            <li class="dropdown-item" @click="handleClick(goToSQLMenuPage)">
               <a class="dropdown-link">SQL</a>
             </li>
-            <li class="dropdown-item" @click="goToPhotoshopMenuPage">
+            <li class="dropdown-item" @click="handleClick(goToPhotoshopMenuPage)">
               <a class="dropdown-link">Photoshop</a>
             </li>
-            <li class="dropdown-item" @click="goToDesignBasicMenuPage">
+            <li class="dropdown-item" @click="handleClick(goToDesignBasicMenuPage)">
               <a class="dropdown-link">デザイン基礎</a>
             </li>
           </ul>
@@ -156,7 +156,7 @@
         <li class="menu-item">
           <button class="menu-btn" @click="toggleDropdown('mypage')">マイページ</button>
           <ul class="dropdown-list" :class="{ 'slide-down': activeDropdown === 'mypage' }">
-            <li class="dropdown-item" @click="goToMyPage">
+            <li class="dropdown-item" @click="handleClick(goToMyPage)">
               <a class="dropdown-link">プロフィール</a>
             </li>
           </ul>
@@ -174,35 +174,45 @@
         </li>
       </ul>
     </div>
+    <Spinner :isLoading="isLoading" /> <!-- スピナーを追加 -->
   </div>
 </template>
 
 <script>
 import { ref, onMounted, onUnmounted } from 'vue';
 import { useRouter } from 'vue-router';
+import Spinner from '@/components/Spinner.vue'; // スピナーコンポーネントをインポート
 
 export default {
+  components: {
+    Spinner,
+  },
   setup() {
     const isMobile = ref(false);
     const showMenu = ref(false);
-    const activeDropdown = ref(null); // ドロップダウンの状態を管理する
+    const activeDropdown = ref(null);
+    const isLoading = ref(false); // ローディング状態を管理
 
     const router = useRouter();
 
-    // モバイル画面の判定を行うメソッド
+    // ローディングとページ遷移をまとめて処理する関数
+    const handleClick = async (navigateFunc) => {
+      isLoading.value = true;
+      await navigateFunc();
+      isLoading.value = false;
+    };
+
     const checkMobileScreen = () => {
       isMobile.value = window.innerWidth <= 834;
     };
 
-    // メニューの表示切替を行うメソッド
     const toggleMenu = () => {
       showMenu.value = !showMenu.value;
       if (!showMenu.value) {
-        activeDropdown.value = null; // メニューを閉じる際にドロップダウンも閉じる
+        activeDropdown.value = null;
       }
     };
 
-    // ドロップダウンの表示切替を行うメソッド
     const toggleDropdown = (menuName) => {
       if (activeDropdown.value === menuName) {
         activeDropdown.value = null;
@@ -211,77 +221,24 @@ export default {
       }
     };
 
-    // ページ遷移メソッド
-    const goToMenuPage = () => {
-      router.push({ name: "MenuPage" });
-    };
+    const goToMenuPage = () => router.push({ name: "MenuPage" });
+    const goToSetUPPage = () => router.push({ name: "Setup" });
+    const goToHowToPage = () => router.push({ name: "HowTo" });
+    const goToIntroducePage = () => router.push({ name: "Introduce" });
+    const goToEnvironmentPage = () => router.push({ name: "Environment" });
+    const goToProcedurePage = () => router.push({ name: "Procedure" });
+    const goToMyPage = () => router.push({ name: "MyPage" });
+    const goToContactPage = () => router.push({ name: "Contact" });
+    const goToCourseMenuPage = () => router.push({ name: "CourseMenu" });
+    const goToHtmlMenuPage = () => router.push({ name: "HtmlMenuPage" });
+    const goToCommandLineMenuPage = () => router.push({ name: "CommandLineMenuPage" });
+    const goToJavaScriptMenuPage = () => router.push({ name: "JavascriptMenuPage" });
+    const goToJqueryMenuPage = () => router.push({ name: "JqueryMenuPage" });
+    const goToGitMenuPage = () => router.push({ name: "GitMenuPage" });
+    const goToSQLMenuPage = () => router.push({ name: "SqlMenuPage" });
+    const goToPhotoshopMenuPage = () => router.push({ name: "PhotoshopMenuPage" });
+    const goToDesignBasicMenuPage = () => router.push({ name: "DesignBasicMenuPage" });
 
-    const goToSetUPPage = () => {
-      router.push({ name: "Setup" });
-    };
-
-    const goToHowToPage = () => {
-      router.push({ name: "HowTo" });
-    };
-
-    const goToIntroducePage = () => {
-      router.push({ name: "Introduce" });
-    };
-
-    const goToEnvironmentPage = () => {
-      router.push({ name: "Environment" });
-    };
-
-    const goToProcedurePage = () => {
-      router.push({ name: "Procedure" });
-    };
-
-    const goToMyPage = () => {
-      router.push({ name: "MyPage" });
-    };
-
-    const goToContactPage = () => {
-      router.push({ name: "Contact" });
-    };
-
-    const goToCourseMenuPage = () => {
-      router.push({ name: "CourseMenu" });
-    };
-
-    const goToHtmlMenuPage = () => {
-      router.push({ name: "HtmlMenuPage" });
-    };
-
-    const goToCommandLineMenuPage = () => {
-      router.push({ name: "CommandLineMenuPage" });
-    };
-
-    const goToJavaScriptMenuPage = () => {
-      router.push({ name: "JavascriptMenuPage" });
-    };
-
-    const goToJqueryMenuPage = () => {
-      router.push({ name: "JqueryMenuPage" });
-    };
-
-    const goToGitMenuPage = () => {
-      router.push({ name: "GitMenuPage" });
-    };
-
-
-    const goToSQLMenuPage = () => {
-      router.push({ name: "SqlMenuPage" });
-    };
-
-    const goToPhotoshopMenuPage = () => {
-      router.push({ name: "PhotoshopMenuPage" });
-    };
-
-    const goToDesignBasicMenuPage = () => {
-      router.push({ name: "DesignBasicMenuPage" });
-    };
-
-    // ドロップダウン以外をクリックしたときに閉じる処理
     const handleClickOutside = (event) => {
       const isClickInsideMenu = event.target.closest('.menu') || event.target.closest('.hamburger-button');
       const isClickInsideNavigation = event.target.closest('.navigation-wrap');
@@ -291,37 +248,37 @@ export default {
       }
     };
 
-    // ウィンドウリサイズ時にモバイル画面の判定を行う
     const handleResize = () => {
       checkMobileScreen();
       if (!isMobile.value) {
-        showMenu.value = false; // PCサイズに戻ったらメニューを閉じる
+        showMenu.value = false;
         activeDropdown.value = null;
       }
     };
 
-    // イベントリスナーの追加と削除
     onMounted(() => {
       checkMobileScreen();
       window.addEventListener("resize", handleResize);
-      document.addEventListener("click", handleClickOutside); // クリックイベントのリスナーを追加
+      document.addEventListener("click", handleClickOutside);
     });
 
     onUnmounted(() => {
       window.removeEventListener("resize", handleResize);
-      document.removeEventListener("click", handleClickOutside); // クリックイベントのリスナーを削除
+      document.removeEventListener("click", handleClickOutside);
     });
 
     return {
       isMobile,
       showMenu,
       activeDropdown,
+      isLoading, // ローディング状態を返す
       toggleMenu,
       toggleDropdown,
+      handleClick,
       goToMenuPage,
-      goToIntroducePage,
       goToSetUPPage,
       goToHowToPage,
+      goToIntroducePage,
       goToEnvironmentPage,
       goToProcedurePage,
       goToMyPage,

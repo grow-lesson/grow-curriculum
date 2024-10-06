@@ -29,19 +29,22 @@
       </div>
     </div>
     <Footer />
+    <Spinner :isLoading="isLoading" /> <!-- スピナーを isLoading フラグで制御 -->
   </div>
 </template>
 
 <script>
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import Header from "@/components/layout/Header.vue";
 import Footer from "@/components/layout/Footer.vue";
+import Spinner from "@/components/Spinner.vue"; // スピナーをインポート
 
 export default defineComponent({
   components: {
     Header,
     Footer,
+    Spinner,  // スピナーをコンポーネントとして追加
   },
   setup() {
     const router = useRouter();
@@ -60,14 +63,22 @@ export default defineComponent({
       return img;
     };
 
+    const isLoading = ref(false);  // ローディング状態のフラグ
+
+    const toggleOS = () => {
+      isLoading.value = true;  // スピナーを表示
+    };
+
     const goToPage = (pageName) => {
-      router.push({ name: pageName });
+      toggleOS();  // スピナーを表示
+      router.push({ name: pageName });  // ページ遷移
     };
 
     return {
       lessons,
       getImageUrl,
-      goToPage
+      goToPage,
+      isLoading
     };
   },
   mounted() {

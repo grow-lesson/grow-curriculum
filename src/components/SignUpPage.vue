@@ -30,11 +30,12 @@
           <p class="signup-errorMessage">{{ errors.password }}</p>
           <input v-model="form.confirmedPassword" @input="validateField('confirmedPassword')" type="password" placeholder="確認用パスワード" name="confirmedPassword"><br>
           <p class="signup-errorMessage">{{ errors.confirmedPassword }}</p>
-          <button type="submit">新規登録</button>
+          <button type="submit" :disabled="isLoading">{{ isLoading ? '登録中...' : '新規登録' }}</button> <!-- ローディング中にボタンを変更 -->
         </form>
         <p class="btn-back"><a @click="goToWelcomePage">＞戻る</a></p>
       </div>
     </div>
+    <Spinner :isLoading="isLoading" /> <!-- スピナーを追加 -->
   </div>
 </template>
 
@@ -43,8 +44,12 @@ import { ref, watch } from 'vue';
 import * as yup from 'yup';
 import api from '@/axios';
 import { useRouter } from 'vue-router';
+import Spinner from '@/components/Spinner.vue'; 
 
 export default {
+  components: {
+    Spinner,
+  },
   setup() {
     const router = useRouter();
     
@@ -70,6 +75,8 @@ export default {
       confirmedPassword: '',
     });
 
+    const isLoading = ref(false); 
+
     const kanaPattern = /^[\u30A1-\u30FA\u30FCｦ-ﾝ]+$/u;
     const passwordPattern = /^[a-zA-Z0-9!@#$%^&*()_+{}[\]:;<>,.?~\\/-]+$/;
 
@@ -85,22 +92,45 @@ export default {
       confirmedPassword: yup.string().required('確認用パスワードは必須の項目です').oneOf([yup.ref('password'), null], '確認用パスワードはパスワードと一致しません'),
     });
 
+    // 各フィールドごとのバリデーション
     const validateField = async (field) => {
       try {
         await yup.reach(schema, field).validate(form.value[field]);
-        errors.value[field] = '';
+        errors.value[field] = '';  // 問題なしであればエラーをクリア
       } catch (e) {
-        errors.value[field] = e.message;
+        errors.value[field] = e.message;  // エラーメッセージを設定
+      }
+
+      // パスワードと確認用パスワードが変更された場合にリアルタイムで一致チェック
+      if (field === 'password' || field === 'confirmedPassword') {
+        if (form.value.password === form.value.confirmedPassword) {
+          errors.value.confirmedPassword = ''; // 一致していればエラーメッセージを消す
+        } else {
+          errors.value.confirmedPassword = '確認用パスワードはパスワードと一致しません';
+        }
       }
     };
 
-    const goToWelcomePage = () => {
-      router.push({ name: "Welcome" });
-    };
+    // フォーム全体のリアルタイムチェック
+    watch(
+      [() => form.value.password, () => form.value.confirmedPassword],
+      () => {
+        if (form.value.password === form.value.confirmedPassword) {
+          errors.value.confirmedPassword = ''; // 一致している場合はエラーメッセージをクリア
+        } else {
+          errors.value.confirmedPassword = '確認用パスワードはパスワードと一致しません'; // 一致していない場合はエラーメッセージを表示
+        }
+      },
+      { immediate: true } // 初回も即座にチェック
+    );
 
+
+    // フォーム全体のバリデーションと送信処理
     const onSubmit = async () => {
+      isLoading.value = true;
       try {
         await schema.validate(form.value, { abortEarly: false });
+        
         const loginData = {
           username: form.value.username,
           name: form.value.lastName + form.value.firstName,
@@ -110,37 +140,33 @@ export default {
           password: form.value.password,
         };
 
-        api.post('/auth', loginData, { withCredentials: true })
-          .then(response => {
-            if (response.data.status === 201) {
-              alert('新規登録が完了しました');
-              router.push({ name: 'Login' });
-            } else {
-              throw new Error('登録エラーが発生しました');
-            }
-          })
-          .catch(error => {
-            console.error(error);
-            alert('登録エラーが発生しました');
-          });
+        const response = await api.post('/auth', loginData, { withCredentials: true });
+
+        if (response.data.status === 201) {
+          alert('新規登録が完了しました');
+          router.push({ name: 'Login' });
+        } else {
+          throw new Error('登録エラーが発生しました');
+        }
       } catch (err) {
-        err.inner.forEach(e => {
-          errors.value[e.path] = e.message;
-        });
+        if (err.inner) {
+          err.inner.forEach(e => {
+            errors.value[e.path] = e.message;
+          });
+        }
+      } finally {
+        isLoading.value = false;
       }
     };
 
-    watch(form, (newVal, oldVal) => {
-      for (let key in newVal) {
-        if (newVal[key] !== oldVal[key]) {
-          validateField(key);
-        }
-      }
-    }, { deep: true });
+    const goToWelcomePage = () => {
+      router.push({ name: "Welcome" });
+    };
 
     return {
       form,
       errors,
+      isLoading,
       onSubmit,
       goToWelcomePage,
       validateField,
@@ -152,7 +178,7 @@ export default {
 <style>
 .signup-page {
   width: 100%;
-  background-color: #228bc8;
+  background: linear-gradient(135deg, #1d1d1d, #4188b6);
   font-size: 12px;
   padding-bottom: 40px;
 }

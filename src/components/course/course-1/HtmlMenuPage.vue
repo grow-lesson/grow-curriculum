@@ -29,7 +29,7 @@
       </div>
     </div>
     <Footer />
-    <Spinner v-if="isLoading" />
+    <Spinner :isLoading="isLoading" /> <!-- スピナーを isLoading フラグで制御 -->
   </div>
 </template>
 
@@ -38,13 +38,13 @@ import { defineComponent, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import Header from "@/components/layout/Header.vue";
 import Footer from "@/components/layout/Footer.vue";
-import Spinner from "@/components/Spinner.vue";
+import Spinner from "@/components/Spinner.vue"; // スピナーをインポート
 
 export default defineComponent({
   components: {
     Header,
     Footer,
-    Spinner,  // スピナーコンポーネントを追加
+    Spinner,  // スピナーをコンポーネントとして追加
   },
   setup() {
     const router = useRouter();
@@ -60,19 +60,16 @@ export default defineComponent({
       return img;
     };
 
-    const isLoading = ref(false);
-    
+    const isLoading = ref(false);  // ローディング状態のフラグ
+
     const toggleOS = () => {
-      isLoading.value = true;
+      isLoading.value = true;  // スピナーを表示
     };
 
     const goToPage = (pageName) => {
-      toggleOS(); // スピナーを表示
-      setTimeout(() => {
-        router.push({ name: pageName }).finally(() => {
-          isLoading.value = false;  // 遷移完了後にスピナーを非表示
-        });
-      }, 500);  // 500msの遅延を挟んで遷移開始
+      toggleOS();  // スピナーを表示
+      // ページ遷移を行い、遷移後もスピナーは表示されたままにする
+      router.push({ name: pageName });
     };
 
     return {
