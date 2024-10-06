@@ -19,7 +19,8 @@ export default {
   text-align: center;
   color: #fff;
   font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  position: relative;
+  position: sticky;
+  top: 100vh;
   box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3); /* 少しのシャドウで立体感を追加 */
 }
 
