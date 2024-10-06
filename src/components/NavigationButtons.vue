@@ -6,18 +6,28 @@
 </template>
 
 <script>
+import { useRouter } from 'vue-router';
+
 export default {
   props: {
     previousPageName: String,
     nextPageName: String
   },
-  methods: {
-    goToPrevious() {
-      this.$router.push({ name: this.previousPageName });
-    },
-    goToNext() {
-      this.$router.push({ name: this.nextPageName });
-    }
+  setup(props) {
+    const router = useRouter();
+
+    const goToPrevious = () => {
+      router.push({ name: props.previousPageName });
+    };
+
+    const goToNext = () => {
+      router.push({ name: props.nextPageName });
+    };
+
+    return {
+      goToPrevious,
+      goToNext
+    };
   }
 };
 </script>
@@ -48,6 +58,13 @@ export default {
   background: linear-gradient(135deg, #a8d0fa, #706bff); /* ホバー時に柔らかいグラデーションに変更 */
   transform: translateY(-3px); /* ホバー時に浮く効果 */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* ホバー時の影を強化 */
+}
+
+/* フォーカスが外れたときの色（ブラー時） */
+.navigation-buttons button:focus, .navigation-buttons button:active {
+  background: linear-gradient(135deg, #ff758c, #ff7eb3); /* フォーカス外れたときの色 */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* フォーカス時の影を変更 */
+  outline: none; /* デフォルトのフォーカスアウトラインを消す */
 }
 
 .arrow-left, .arrow-right {
