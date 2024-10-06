@@ -315,7 +315,7 @@ export default {
         isLoading.value = false;
         isWindows.value = !isWindows.value;
         // 画面のレイアウトを切り替えるロジックを追加
-      }, 1000);
+      }, 1200);
     };
 
     // 画像ファイルのパスをオブジェクトで格納する

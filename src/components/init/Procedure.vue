@@ -707,7 +707,7 @@ export default {
       setTimeout(() => {
         isLoading.value = false;
         isWindows.value = !isWindows.value;
-      }, 1000);
+      }, 1200);
     };
 
     const imagePaths = {
