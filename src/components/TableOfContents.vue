@@ -1,6 +1,12 @@
 <template>
   <div class="sidebar">
-    <button class="sidebar-button" @click="scrollToTop" @blur="onBlur">
+    <button
+      class="sidebar-button"
+      @click="scrollToTop"
+      @focus="onFocus"
+      @blur="onBlur"
+      :class="{ focused: isFocused, blurred: !isFocused }"
+    >
       <div class="arrow-up"></div>
     </button>
     <div class="sidebar-contents">
@@ -11,7 +17,6 @@
           v-for="(section, index) in sections"
           :key="index"
           @click="scrollToSection(section.id)"
-          @blur="onBlur"
         >
           {{ section.title }}
         </li>
@@ -21,6 +26,7 @@
 </template>
 
 <script>
+import { ref } from "vue";
 import SubTitle from "@/components/SubTitle.vue";
 
 export default {
@@ -34,6 +40,12 @@ export default {
     },
   },
   setup() {
+    const isFocused = ref(false); // フォーカス状態を管理
+
+    const scrollToTop = () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
     const scrollToSection = (sectionId) => {
       const sectionElement = document.getElementById(sectionId);
       if (sectionElement) {
@@ -41,21 +53,22 @@ export default {
       }
     };
 
-    const scrollToTop = () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+    const onFocus = () => {
+      isFocused.value = true; // フォーカス時にフラグをtrueに
     };
 
-    const onBlur = (event) => {
-      event.target.style.background = "linear-gradient(135deg, #ff758c, #ff7eb3)";
-      event.target.style.boxShadow = "0 4px 15px rgba(0, 0, 0, 0.3)";
+    const onBlur = () => {
+      isFocused.value = false; // ブラー時にフラグをfalseに
     };
 
     return {
-      scrollToSection,
       scrollToTop,
-      onBlur
+      scrollToSection,
+      onFocus,
+      onBlur,
+      isFocused,
     };
-  }
+  },
 };
 </script>
 
@@ -64,7 +77,6 @@ export default {
   position: fixed;
   width: 23%;
   height: 40%;
-  grid-column: 2 / span 1;
   margin-right: 20px;
   padding-bottom: 10px;
   border-radius: 5px;
@@ -102,7 +114,7 @@ export default {
   padding: 0;
   border: none;
   border-radius: 50%;
-  background: linear-gradient(135deg, #6a11cb, #2575fc); /* グラデーション */
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* 通常の青色 */
   color: white;
   cursor: pointer;
   display: flex;
@@ -112,17 +124,19 @@ export default {
   transition: all 0.3s ease;
 }
 
+.sidebar-button.focused {
+  opacity: 0.7; /* フォーカス時に薄くする */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* フォーカス時の影を強化 */
+}
+
+.sidebar-button.blurred {
+  opacity: 1; /* ブラー後は元の不透明度に戻す */
+}
+
 .sidebar-button:hover {
   background: linear-gradient(135deg, #a8d0fa, #706bff); /* ホバー時に柔らかいグラデーション */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* ホバー時の影を強化 */
   transform: translateY(-3px); /* ホバー時に少し浮く効果 */
-}
-
-/* フォーカスが外れた（ブラー）時のスタイル */
-.sidebar-button:focus, .sidebar-button:active {
-  background: linear-gradient(135deg, #ff758c, #ff7eb3); /* フォーカスが外れたときの色 */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* フォーカス外れ時の影 */
-  outline: none; /* デフォルトのアウトラインを消す */
 }
 
 .arrow-up {
