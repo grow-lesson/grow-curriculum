@@ -50,7 +50,7 @@
           </p><br><br>
           <p>
             下の画像を見てみましょう。<br><br>
-            ブロック要素だと幅や高さの指定を指定していないとブラウザ上で横いっぱいまで広がってしまいます。<br>
+            ブロック要素だと幅や高さの指定をしないとブラウザ上で横いっぱいまで広がってしまいます。<br>
             それに対して、インライン要素は文字数分しか幅がないことがわかります。<br>
             さらにブロック要素だと横いっぱいに広がっているため次の要素を入れると改行されますが、インライン要素は横並びになってしまうという特徴があります。<br>
           </p>
@@ -66,13 +66,13 @@
           <p>
             新しいCSSのプロパティを覚えましょう。<br>
             隣り合う要素に余白をつけたい時に使うプロパティを学びましょう。<br><br>
-          プロパティ<br>
+            プロパティ<br>
             <HighlightWord word="padding: [余白のサイズ(px,rem,%など)];"></HighlightWord><br>
             ・内側の余白をつけるプロパティ。paddingプロパティと呼ばれます。<br><br>
             例：<br>
             padding: 10px; 上下左右<br>
             padding: 10px 30px; →上下10px・左右30px<br>
-            padding: 10px 20px 30px; →左10px・上下20px・右30px<br>
+            padding: 10px 20px 30px; →上10px・左右20px・下30px<br>
             padding: 0 10px 20px 30px; →上0px・右10px・下20px・左30px<br><br>
             他の指定方法<br>
             <span class="markup-word-blue">padding-left: [余白のサイズ(px,rem,%など)];</span> →左だけ<br>
@@ -84,14 +84,15 @@
             例：<br>
             margin: 10px; 上下左右<br>
             margin: 10px 30px; →上下10px・左右30px<br>
-            margin: 10px 20px 30px; →左10px・上下20px・右30px<br>
+            margin: 10px 20px 30px; →上10px・左右20px・下30px<br>
             margin: 0 10px 20px 30px; →上0px・右10px・下20px・左30px<br><br>
             <HighlightWord word="覚えておきたいmarginやpaddingの設定"></HighlightWord><br>
-            margin(padding): auto; 上下左右中央寄せ<br>
+            margin(padding): auto; 左右中央寄せ<br>
             margin(padding): 0 auto; 上下0px・左右中央寄せ<br>
-            margin(padding): auto 0; 上下中央寄せ・左右0px<br>
+            margin(padding): auto 0; 上下auto・左右0px<br>
             margin(padding)-left: auto; 一番右に寄せるx<br>
             margin(padding)-right: auto; 一番左に寄せるx<br>
+            ※縦方向の余白をautoに設定しても特に効果はないため、左右中央寄せにする場合はmargin(padding): 0 auto;を使用しましょう<br>
             <span class="markup-word-blue">margin-left: [余白のサイズ(px,rem,%など)];</span> →左だけ<br>
             <span class="markup-word-blue">margin-right: [余白のサイズ(px,rem,%など)];</span> →右だけ<br>
             <span class="markup-word-blue">margin-top: [余白のサイズ(px,rem,%など)];</span> →上だけ<br>
@@ -221,7 +222,7 @@
             <img @click="openModal(imagePaths.step11)" :src="imagePaths.step11" class="screen-image" alt="vscode-5" />
           </div><br>
           <p>
-          ②<br>
+            ②<br>
             以下をコピーして貼り付けてください。<br>
           </p><br>
           <Terminal :fileName="htmlSourceData.file7.filename" :copiedText="htmlSourceData.file7.code" :lang="htmlSourceData.file7.language" />
@@ -281,12 +282,16 @@
             それでは確認していきましょう。<br><br>
             ①<br>
             次に先ほどのようにVisual Studio Codeで「html-css-lesson-7」を選択して「ctrl(command) + C」でコピーして「ctrl(command) + V」で作りましょう。<br>
-            そのあとは名前を「html-css-lesson-8」に変更し、以下のソースを貼り付けましょう。<br><br>
+            そのあとは名前を「html-css-lesson-8」に変更し、以下のソースを貼り付けましょう。<br>
+            <HighlightWord word="※html-css-lesson-6,7は廃止になりましたので、lesson-5をコピーして実装しましょう"></HighlightWord><br><br>
             画像のようになればOKです。<br>
+
           </p><br>
           <!-- floatの説明は番外編に移したのでstep15～26の変数はこのソースにはない -->
-          <Terminal :fileName="htmlSourceData.file13.filename" :copiedText="htmlSourceData.file11.code" :lang="htmlSourceData.file11.language" />
-          <Terminal :fileName="htmlSourceData.file14.filename" :copiedText="htmlSourceData.file12.code" :lang="htmlSourceData.file12.language" />
+          <Terminal :fileName="htmlSourceData.file13.filename" :copiedText="htmlSourceData.file13.code"
+            :lang="htmlSourceData.file13.language" />
+          <Terminal :fileName="htmlSourceData.file14.filename" :copiedText="htmlSourceData.file14.code"
+            :lang="htmlSourceData.file14.language" />
           <div>
             <img @click="openModal(imagePaths.step27)" :src="imagePaths.step27" class="screen-image" alt="vscode-13" />
           </div><br>
@@ -332,8 +337,8 @@
             <HighlightWord word="background-image: url[背景画像があるディレクトリのパス];"></HighlightWord><br>
             ・背景画像を指定できるプロパティ。background-imageプロパティと呼ばれます。<br><br>
             <span class="markup-word-blue">【HTML要素のimgタグの何が違うの？】</span><br>
-              ページ全体を覆う背景画像として使う場合はbackground-imageを使い、ページの中のロゴやアイコンの一つとして画像を作りたい時はimgタグを使いましょう。<br>
-              また、 background-imageを指定するときの要素はdivを使います。<br><br>
+            ページ全体を覆う背景画像として使う場合はbackground-imageを使い、ページの中のロゴやアイコンの一つとして画像を作りたい時はimgタグを使いましょう。<br>
+            また、 background-imageを指定するときの要素はdivを使います。<br><br>
             <HighlightWord word="background-size: [背景画像のサイズ];"></HighlightWord><br>
             ・背景画像のサイズを指定できるプロパティ。background-sizeプロパティと呼ばれます。<br><br>
             背景画像の指定例<br>
@@ -379,14 +384,14 @@
             <img @click="openModal(imagePaths.step30)" :src="imagePaths.step30" class="screen-image" alt="vscode-15" />
           </div><br>
           <p>
-          ②<br>
+            ②<br>
             以下を写真をダウンロードしてassets/imagesの中に入れましょう。<br>
           </p><br>
           <div>
             <img @click="openModal(imagePaths.step31)" :src="imagePaths.step31" class="powerpoint-image" alt="sea" style="max-width: 30%; margin: 0 auto; display: block;"/>
           </div><br>
           <p>
-          ③<br>
+            ③<br>
             格納しソースコードをコピー出来たら以下のように実装しましょう。<br>
             少し多いのでスペルミスに気をつけましょう！<br>
           </p><br>
@@ -397,7 +402,7 @@
             <img @click="openModal(imagePaths.step33)" :src="imagePaths.step33" class="screen-image" alt="vscode-17" />
           </div><br>
           <p>
-          ④<br>
+            ④<br>
             Web上で確認してみましょう。<br>
             画像のようになればOKです。<br><br>
             それぞれのスタイルの使い方を見て理解できるようにしましょう！<br>
