@@ -50,12 +50,13 @@
           </p><br><br>
           <p>
             下の画像を見てみましょう。<br><br>
-            ブロック要素だと幅や高さの指定を指定していないとブラウザ上で横いっぱいまで広がってしまいます。<br>
+            ブロック要素だと幅や高さの指定をしないとブラウザ上で横いっぱいまで広がってしまいます。<br>
             それに対して、インライン要素は文字数分しか幅がないことがわかります。<br>
             さらにブロック要素だと横いっぱいに広がっているため次の要素を入れると改行されますが、インライン要素は横並びになってしまうという特徴があります。<br>
           </p>
           <div>
-            <img @click="openModal(imagePaths.step1)" :src="imagePaths.step1" class="powerpoint-image" alt="block-inline" />
+            <img @click="openModal(imagePaths.step1)" :src="imagePaths.step1" class="powerpoint-image"
+              alt="block-inline" />
           </div>
         </Document>
 
@@ -66,13 +67,13 @@
           <p>
             新しいCSSのプロパティを覚えましょう。<br>
             隣り合う要素に余白をつけたい時に使うプロパティを学びましょう。<br><br>
-          プロパティ<br>
+            プロパティ<br>
             <HighlightWord word="padding: [余白のサイズ(px,rem,%など)];"></HighlightWord><br>
             ・内側の余白をつけるプロパティ。paddingプロパティと呼ばれます。<br><br>
             例：<br>
             padding: 10px; 上下左右<br>
             padding: 10px 30px; →上下10px・左右30px<br>
-            padding: 10px 20px 30px; →左10px・上下20px・右30px<br>
+            padding: 10px 20px 30px; →上10px・左右20px・下30px<br>
             padding: 0 10px 20px 30px; →上0px・右10px・下20px・左30px<br><br>
             他の指定方法<br>
             <span class="markup-word-blue">padding-left: [余白のサイズ(px,rem,%など)];</span> →左だけ<br>
@@ -84,14 +85,15 @@
             例：<br>
             margin: 10px; 上下左右<br>
             margin: 10px 30px; →上下10px・左右30px<br>
-            margin: 10px 20px 30px; →左10px・上下20px・右30px<br>
+            margin: 10px 20px 30px; →上10px・左右20px・下30px<br>
             margin: 0 10px 20px 30px; →上0px・右10px・下20px・左30px<br><br>
             <HighlightWord word="覚えておきたいmarginやpaddingの設定"></HighlightWord><br>
-            margin(padding): auto; 上下左右中央寄せ<br>
+            margin(padding): auto; 左右中央寄せ<br>
             margin(padding): 0 auto; 上下0px・左右中央寄せ<br>
-            margin(padding): auto 0; 上下中央寄せ・左右0px<br>
+            margin(padding): auto 0; 上下auto・左右0px<br>
             margin(padding)-left: auto; 一番右に寄せるx<br>
             margin(padding)-right: auto; 一番左に寄せるx<br>
+            ※縦方向の余白をautoに設定しても特に効果はないため、左右中央寄せにする場合はmargin(padding): 0 auto;を使用しましょう<br>
             <span class="markup-word-blue">margin-left: [余白のサイズ(px,rem,%など)];</span> →左だけ<br>
             <span class="markup-word-blue">margin-right: [余白のサイズ(px,rem,%など)];</span> →右だけ<br>
             <span class="markup-word-blue">margin-top: [余白のサイズ(px,rem,%など)];</span> →上だけ<br>
@@ -107,8 +109,10 @@
             新しい「html-css-lesson-4」ファイルをVisual Studio Codeで作り、以下をコピーしましょう。<br>
             本来はstyle.cssはassetsのフォルダに入れる必要があるので作成してフォルダの中に入れましょう。
           </p><br>
-          <Terminal :fileName="htmlSourceData.file4.filename" :copiedText="htmlSourceData.file4.code" :lang="htmlSourceData.file4.language" />
-          <Terminal :fileName="htmlSourceData.file5.filename" :copiedText="htmlSourceData.file5.code" :lang="htmlSourceData.file5.language" />
+          <Terminal :fileName="htmlSourceData.file4.filename" :copiedText="htmlSourceData.file4.code"
+            :lang="htmlSourceData.file4.language" />
+          <Terminal :fileName="htmlSourceData.file5.filename" :copiedText="htmlSourceData.file5.code"
+            :lang="htmlSourceData.file5.language" />
           <br>
           <p>
             このようにファイルを作り、貼り付けたらWeb上でみればこのようになります。
@@ -136,7 +140,8 @@
             ではリセットCSSを実行してみましょう!<br><br>
             ①<br>
             以下のボタンを押してリセットCSSをダウンロードしましょう。<br>
-            ダウンロードをしたらそのファイルをWindowsであればエクスプローラー、MacであればFinderを開いてドラックアンドドロップでVisual Studio Codeの先ほど作ったファイルに入れましょう。<br><br>
+            ダウンロードをしたらそのファイルをWindowsであればエクスプローラー、MacであればFinderを開いてドラックアンドドロップでVisual Studio
+            Codeの先ほど作ったファイルに入れましょう。<br><br>
             <button @click="downloadCSS" class="download-button">リセットCSSファイルをダウンロード</button>
             <br><br>
             「index.html」の8行目に以下の画像のようにリセットCSSを適用させるようにlink要素を入れましょう。
@@ -180,7 +185,8 @@
             ボックスモデルはそのHTMLの要素の概念のことを指し、外側の余白、内側の余白というのは境界線より外側、内側をさします。
           </p><br>
           <div>
-            <img @click="openModal(imagePaths.step8)" :src="imagePaths.step8" class="powerpoint-image" alt="box-model" />
+            <img @click="openModal(imagePaths.step8)" :src="imagePaths.step8" class="powerpoint-image"
+              alt="box-model" />
           </div>
         </Document>
         <Document>
@@ -195,7 +201,8 @@
             次のセクションではこの要素に変換したり、ブロック要素をインライン要素にしたりその逆にするにはどうすればよいのか学んでいきます。<br>
           </p><br>
           <div>
-            <img @click="openModal(imagePaths.step9)" :src="imagePaths.step9" class="powerpoint-image" alt="difference" />
+            <img @click="openModal(imagePaths.step9)" :src="imagePaths.step9" class="powerpoint-image"
+              alt="difference" />
           </div>
         </Document>
         <Document>
@@ -221,11 +228,13 @@
             <img @click="openModal(imagePaths.step11)" :src="imagePaths.step11" class="screen-image" alt="vscode-5" />
           </div><br>
           <p>
-          ②<br>
+            ②<br>
             以下をコピーして貼り付けてください。<br>
           </p><br>
-          <Terminal :fileName="htmlSourceData.file7.filename" :copiedText="htmlSourceData.file7.code" :lang="htmlSourceData.file7.language" />
-          <Terminal :fileName="htmlSourceData.file8.filename" :copiedText="htmlSourceData.file8.code" :lang="htmlSourceData.file8.language" />
+          <Terminal :fileName="htmlSourceData.file7.filename" :copiedText="htmlSourceData.file7.code"
+            :lang="htmlSourceData.file7.language" />
+          <Terminal :fileName="htmlSourceData.file8.filename" :copiedText="htmlSourceData.file8.code"
+            :lang="htmlSourceData.file8.language" />
           <br>
           <p>
             この様になればOKです。<br>
@@ -269,7 +278,8 @@
             例 ::first-childと::not使った場合
           </p>
           <div>
-            <img @click="openModal(imagePaths.step26)" :src="imagePaths.step26" class="powerpoint-image" alt="first-child" />
+            <img @click="openModal(imagePaths.step26)" :src="imagePaths.step26" class="powerpoint-image"
+              alt="first-child" />
           </div><br>
           <p>
             ここまでブロック要素やインライン要素、疑似クラスとたくさん覚えてきましたが、一旦ブロック要素の特徴を思い出してください。<br>
@@ -281,12 +291,16 @@
             それでは確認していきましょう。<br><br>
             ①<br>
             次に先ほどのようにVisual Studio Codeで「html-css-lesson-7」を選択して「ctrl(command) + C」でコピーして「ctrl(command) + V」で作りましょう。<br>
-            そのあとは名前を「html-css-lesson-8」に変更し、以下のソースを貼り付けましょう。<br><br>
+            そのあとは名前を「html-css-lesson-8」に変更し、以下のソースを貼り付けましょう。<br>
+            <HighlightWord word="※html-css-lesson-6,7は廃止になりましたので、lesson-5をコピーして実装しましょう"></HighlightWord><br><br>
             画像のようになればOKです。<br>
+
           </p><br>
           <!-- floatの説明は番外編に移したのでstep15～26の変数はこのソースにはない -->
-          <Terminal :fileName="htmlSourceData.file13.filename" :copiedText="htmlSourceData.file11.code" :lang="htmlSourceData.file11.language" />
-          <Terminal :fileName="htmlSourceData.file14.filename" :copiedText="htmlSourceData.file12.code" :lang="htmlSourceData.file12.language" />
+          <Terminal :fileName="htmlSourceData.file13.filename" :copiedText="htmlSourceData.file13.code"
+            :lang="htmlSourceData.file13.language" />
+          <Terminal :fileName="htmlSourceData.file14.filename" :copiedText="htmlSourceData.file14.code"
+            :lang="htmlSourceData.file14.language" />
           <div>
             <img @click="openModal(imagePaths.step27)" :src="imagePaths.step27" class="screen-image" alt="vscode-13" />
           </div><br>
@@ -332,8 +346,8 @@
             <HighlightWord word="background-image: url[背景画像があるディレクトリのパス];"></HighlightWord><br>
             ・背景画像を指定できるプロパティ。background-imageプロパティと呼ばれます。<br><br>
             <span class="markup-word-blue">【HTML要素のimgタグの何が違うの？】</span><br>
-              ページ全体を覆う背景画像として使う場合はbackground-imageを使い、ページの中のロゴやアイコンの一つとして画像を作りたい時はimgタグを使いましょう。<br>
-              また、 background-imageを指定するときの要素はdivを使います。<br><br>
+            ページ全体を覆う背景画像として使う場合はbackground-imageを使い、ページの中のロゴやアイコンの一つとして画像を作りたい時はimgタグを使いましょう。<br>
+            また、 background-imageを指定するときの要素はdivを使います。<br><br>
             <HighlightWord word="background-size: [背景画像のサイズ];"></HighlightWord><br>
             ・背景画像のサイズを指定できるプロパティ。background-sizeプロパティと呼ばれます。<br><br>
             背景画像の指定例<br>
@@ -373,20 +387,23 @@
             以下をコピーして貼り付け、
             画像のようになればOKです。<br>
           </p><br>
-          <Terminal :fileName="htmlSourceData.file15.filename" :copiedText="htmlSourceData.file15.code" :lang="htmlSourceData.file15.language" />
-          <Terminal :fileName="htmlSourceData.file16.filename" :copiedText="htmlSourceData.file16.code" :lang="htmlSourceData.file16.language" />
+          <Terminal :fileName="htmlSourceData.file15.filename" :copiedText="htmlSourceData.file15.code"
+            :lang="htmlSourceData.file15.language" />
+          <Terminal :fileName="htmlSourceData.file16.filename" :copiedText="htmlSourceData.file16.code"
+            :lang="htmlSourceData.file16.language" />
           <div>
             <img @click="openModal(imagePaths.step30)" :src="imagePaths.step30" class="screen-image" alt="vscode-15" />
           </div><br>
           <p>
-          ②<br>
+            ②<br>
             以下を写真をダウンロードしてassets/imagesの中に入れましょう。<br>
           </p><br>
           <div>
-            <img @click="openModal(imagePaths.step31)" :src="imagePaths.step31" class="powerpoint-image" alt="sea" style="max-width: 30%; margin: 0 auto; display: block;"/>
+            <img @click="openModal(imagePaths.step31)" :src="imagePaths.step31" class="powerpoint-image" alt="sea"
+              style="max-width: 30%; margin: 0 auto; display: block;" />
           </div><br>
           <p>
-          ③<br>
+            ③<br>
             格納しソースコードをコピー出来たら以下のように実装しましょう。<br>
             少し多いのでスペルミスに気をつけましょう！<br>
           </p><br>
@@ -397,7 +414,7 @@
             <img @click="openModal(imagePaths.step33)" :src="imagePaths.step33" class="screen-image" alt="vscode-17" />
           </div><br>
           <p>
-          ④<br>
+            ④<br>
             Web上で確認してみましょう。<br>
             画像のようになればOKです。<br><br>
             それぞれのスタイルの使い方を見て理解できるようにしましょう！<br>
@@ -406,10 +423,7 @@
           <div>
             <img @click="openModal(imagePaths.step34)" :src="imagePaths.step34" class="screen-image" alt="web-11" />
           </div><br>
-          <NavigationButtons
-            :previousPageName="'HtmlPage1'"
-            :nextPageName="'HtmlPage3'"
-          />
+          <NavigationButtons :previousPageName="'HtmlPage1'" :nextPageName="'HtmlPage3'" />
         </Document>
         <Modal :selectedImage="selectedImage" :showModal="isModalOpen" @closeModal="isModalOpen = false" />
       </div>
@@ -452,7 +466,7 @@ export default {
     NavigationButtons,
   },
   setup() {
-    const sections =  [
+    const sections = [
       { id: "Title", title: "HTML・CSS 2" },
       { id: "subTitle1", title: "  1. ブロック要素とインライン要素" },
       { id: "sectionTitle1-1", title: "    1-1. ブロック要素とインライン要素とは？" },
@@ -546,19 +560,23 @@ export default {
   display: flex;
   width: 100%;
 }
-.main-content{
+
+.main-content {
   width: 75%;
 }
-.side-content{
+
+.side-content {
   margin-left: 1%;
   margin-top: 5vh;
   width: 24%;
 }
+
 .markup-word-blue {
   white-space: pre;
   color: rgb(37, 139, 255);
   font-weight: bold;
 }
+
 .markup-word-red {
   white-space: pre;
   color: rgb(255, 37, 37);
@@ -571,6 +589,7 @@ export default {
   border: 1px solid rgb(175, 175, 175);
   cursor: pointer;
 }
+
 .powerpoint-image {
   max-width: 80%;
   height: auto;
@@ -581,21 +600,33 @@ export default {
 }
 
 .download-button {
-  background-color: #4caf50; /* ボタンの背景色 */
-  color: white; /* ボタンのテキストカラー */
-  border: none; /* ボーダーなし */
-  padding: 10px 20px; /* 上下左右のパディング */
-  text-align: center; /* テキストを中央に配置 */
-  text-decoration: none; /* テキスト装飾なし */
-  display: inline-block; /* インラインブロック要素にする */
-  font-size: 16px; /* フォントサイズ */
-  border-radius: 5px; /* 角丸 */
-  cursor: pointer; /* カーソルをポインターに変更 */
-  transition: background-color 0.3s; /* ホバー時の背景色変化にトランジションを追加 */
+  background-color: #4caf50;
+  /* ボタンの背景色 */
+  color: white;
+  /* ボタンのテキストカラー */
+  border: none;
+  /* ボーダーなし */
+  padding: 10px 20px;
+  /* 上下左右のパディング */
+  text-align: center;
+  /* テキストを中央に配置 */
+  text-decoration: none;
+  /* テキスト装飾なし */
+  display: inline-block;
+  /* インラインブロック要素にする */
+  font-size: 16px;
+  /* フォントサイズ */
+  border-radius: 5px;
+  /* 角丸 */
+  cursor: pointer;
+  /* カーソルをポインターに変更 */
+  transition: background-color 0.3s;
+  /* ホバー時の背景色変化にトランジションを追加 */
 }
 
 .download-button:hover {
-  background-color: #45a049; /* ホバー時の背景色 */
+  background-color: #45a049;
+  /* ホバー時の背景色 */
 }
 
 /* タブレット版 */
@@ -603,6 +634,7 @@ export default {
   .main-content {
     width: 100%;
   }
+
   .side-content {
     display: none;
   }
