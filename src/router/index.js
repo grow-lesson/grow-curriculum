@@ -350,6 +350,18 @@ const routes = [
     name: "UnderConstruction",
     component: () => import("../components/UnderConstruction.vue"),
   },
+  {
+    path: "/vue-lesson-menu",
+    name: "VueMenuPage",
+    meta: { requiresAuth: true },
+    component: () => import("../components/course/course-9/VueMenuPage.vue"),
+  },
+  {
+    path: "/vue-lesson-1",
+    name: "VuePage1",
+    meta: { requiresAuth: true },
+    component: () => import("../components/course/course-9/VuePage1.vue"),
+  },
 ];
 
 const router = createRouter({

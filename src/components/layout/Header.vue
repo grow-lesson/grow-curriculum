@@ -66,6 +66,9 @@
                 <li class="dropdown-item" @click="handleClick(goToDesignBasicMenuPage)">
                   <a class="dropdown-link">デザイン基礎</a>
                 </li>
+                <li class="dropdown-item" @click="handleClick(goToVueMenuPage)">
+                  <a class="dropdown-link">Vue</a>
+                </li>
               </ul>
             </li>
             <li class="navigation-item">
@@ -238,6 +241,7 @@ export default {
     const goToSQLMenuPage = () => router.push({ name: "SqlMenuPage" });
     const goToPhotoshopMenuPage = () => router.push({ name: "PhotoshopMenuPage" });
     const goToDesignBasicMenuPage = () => router.push({ name: "DesignBasicMenuPage" });
+    const goToVueMenuPage = () => router.push({ name: "VueMenuPage" });
 
     const handleClickOutside = (event) => {
       const isClickInsideMenu = event.target.closest('.menu') || event.target.closest('.hamburger-button');
@@ -292,6 +296,7 @@ export default {
       goToJqueryMenuPage,
       goToPhotoshopMenuPage,
       goToDesignBasicMenuPage,
+      goToVueMenuPage,
     };
   },
 };
