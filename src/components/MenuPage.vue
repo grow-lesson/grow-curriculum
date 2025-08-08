@@ -148,6 +148,13 @@ export default {
         image: "DesignBasic.png",
         route: "DesignBasicMenuPage",
       },
+      {
+        id: 9,
+        title: "Vue",
+        description: "SPA構築のスキルを学ぼう",
+        image: "vue.png",
+        route: "VueMenuPage",
+      },
     ];
 
     const goToIntroducePage = () => {
