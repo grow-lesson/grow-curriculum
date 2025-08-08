@@ -88,6 +88,16 @@
             </div>
             <a class="feature-button" @click="goToDesignBasicMenuPage">受講する</a>
           </div>
+          <div class="feature">
+            <h2 class="feature-title">Vue</h2>
+            <p class="feature-description">Vueの基本的な知識を学び、スキルを身につけましょう。</p>
+            <div class="feature-image">
+              <div class="feature-logo">
+                <img src="../../assets/images/menu/vue.png" class="feature-icon" alt="vue" />
+              </div>
+            </div>
+            <a class="feature-button" @click="goToVueMenuPage">受講する</a>
+          </div>
         </div>
       </section>
     </div>
@@ -142,6 +152,10 @@ export default {
       router.push({ name: "DesignBasicMenuPage" });
     };
 
+    const goToVueMenuPage = () => {
+      router.push({ name: "VueMenuPage" });
+    };
+
     onMounted(() => {
       window.scrollTo(0, 0);
     });
@@ -155,6 +169,7 @@ export default {
       goToJqueryMenuPage,
       goToPhotoshopMenuPage,
       goToDesignBasicMenuPage,
+      goToVueMenuPage,
     };
   },
 };
