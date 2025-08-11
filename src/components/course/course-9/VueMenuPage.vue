@@ -50,9 +50,19 @@ export default defineComponent({
     const router = useRouter();
 
     const lessons = [
-      { img: require("@/assets/images/menu/lesson1.png"), imgSp: require("@/assets/images/menu/lesson1-sp.png"), alt: "lesson1", text: "色彩について学びます。", pageName: "DesignBasicPage1" },
-      { img: require("@/assets/images/menu/lesson2.png"), imgSp: require("@/assets/images/menu/lesson2-sp.png"), alt: "lesson2", text: "画面構成ついて学びます。", pageName: "DesignBasicPage2" },
-      { img: require("@/assets/images/menu/lesson3.png"), imgSp: require("@/assets/images/menu/lesson3-sp.png"), alt: "lesson3", text: "最終課題", pageName: "DesignBasicPage3" },
+      { img: require("@/assets/images/menu/lesson1.png"), imgSp: require("@/assets/images/menu/lesson1-sp.png"), alt: "lesson1", text: "Vue.jsをはじめる", pageName: "VuePage1" },
+      { img: require("@/assets/images/menu/lesson2.png"), imgSp: require("@/assets/images/menu/lesson2-sp.png"), alt: "lesson2", text: "Vue.jsの基礎", pageName: "DesignBasicPage2" },
+      { img: require("@/assets/images/menu/lesson3.png"), imgSp: require("@/assets/images/menu/lesson3-sp.png"), alt: "lesson3", text: "「条件付きレンダリング」と「リストレンダリング」", pageName: "DesignBasicPage3" },
+      { img: require("@/assets/images/menu/lesson4.png"), imgSp: require("@/assets/images/menu/lesson4-sp.png"), alt: "lesson4", text: "コンポーネントの使い方", pageName: "DesignBasicPage3" },
+      { img: require("@/assets/images/menu/lesson5.png"), imgSp: require("@/assets/images/menu/lesson5-sp.png"), alt: "lesson5", text: "親子間のコンポーネントでデータを受け渡す方法", pageName: "DesignBasicPage3" },
+      { img: require("@/assets/images/menu/lesson6.png"), imgSp: require("@/assets/images/menu/lesson6-sp.png"), alt: "lesson6", text: "食事選択アプリをVue.jsで作る", pageName: "DesignBasicPage3" },
+      { img: require("@/assets/images/menu/lesson7.png"), imgSp: require("@/assets/images/menu/lesson7-sp.png"), alt: "lesson7", text: "Vue.jsの内部構造", pageName: "DesignBasicPage3" },
+      { img: require("@/assets/images/menu/lesson8.png"), imgSp: require("@/assets/images/menu/lesson8-sp.png"), alt: "lesson8", text: "コンポーネントの高度な機能", pageName: "DesignBasicPage3" },
+      { img: require("@/assets/images/menu/lesson9.png"), imgSp: require("@/assets/images/menu/lesson9-sp.png"), alt: "lesson9", text: "簡単にVue.jsでフォームを作る", pageName: "DesignBasicPage3" },
+      { img: require("@/assets/images/menu/lesson10.png"), imgSp: require("@/assets/images/menu/lesson10-sp.png"), alt: "lesson10", text: "Composableを使って処理の部分を再利用する", pageName: "DesignBasicPage3" },
+      { img: require("@/assets/images/menu/lesson11.png"), imgSp: require("@/assets/images/menu/lesson11-sp.png"), alt: "lesson11", text: "Vue.jsにおけるアニメーション", pageName: "DesignBasicPage3" },
+      { img: require("@/assets/images/menu/lesson12.png"), imgSp: require("@/assets/images/menu/lesson12-sp.png"), alt: "lesson12", text: "Vue RouterでURLごとに違うコンポーネントを表示する", pageName: "DesignBasicPage3" },
+      { img: require("@/assets/images/menu/lesson13.png"), imgSp: require("@/assets/images/menu/lesson13-sp.png"), alt: "lesson13", text: "Piniaを使ってプロジェクト全体で使うデータを管理する", pageName: "DesignBasicPage3" },
     ];
 
     const getImageUrl = (img) => {

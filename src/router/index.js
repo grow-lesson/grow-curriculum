@@ -362,6 +362,78 @@ const routes = [
     meta: { requiresAuth: true },
     component: () => import("../components/course/course-9/VuePage1.vue"),
   },
+  {
+    path: "/vue-lesson-2",
+    name: "VuePage2",
+    meta: { requiresAuth: true },
+    component: () => import("../components/course/course-9/VuePage2.vue"),
+  },
+  {
+    path: "/vue-lesson-3",
+    name: "VuePage3",
+    meta: { requiresAuth: true },
+    component: () => import("../components/course/course-9/VuePage3.vue"),
+  },
+  {
+    path: "/vue-lesson-4",
+    name: "VuePage4",
+    meta: { requiresAuth: true },
+    component: () => import("../components/course/course-9/VuePage4.vue"),
+  },
+  {
+    path: "/vue-lesson-5",
+    name: "VuePage5",
+    meta: { requiresAuth: true },
+    component: () => import("../components/course/course-9/VuePage5.vue"),
+  },
+  {
+    path: "/vue-lesson-6",
+    name: "VuePage6",
+    meta: { requiresAuth: true },
+    component: () => import("../components/course/course-9/VuePage6.vue"),
+  },
+  {
+    path: "/vue-lesson-7",
+    name: "VuePage7",
+    meta: { requiresAuth: true },
+    component: () => import("../components/course/course-9/VuePage7.vue"),
+  },
+  {
+    path: "/vue-lesson-8",
+    name: "VuePage8",
+    meta: { requiresAuth: true },
+    component: () => import("../components/course/course-9/VuePage8.vue"),
+  },
+  {
+    path: "/vue-lesson-9",
+    name: "VuePage9",
+    meta: { requiresAuth: true },
+    component: () => import("../components/course/course-9/VuePage9.vue"),
+  },
+  {
+    path: "/vue-lesson-10",
+    name: "VuePage10",
+    meta: { requiresAuth: true },
+    component: () => import("../components/course/course-9/VuePage10.vue"),
+  },
+  {
+    path: "/vue-lesson-11",
+    name: "VuePage11",
+    meta: { requiresAuth: true },
+    component: () => import("../components/course/course-9/VuePage11.vue"),
+  },
+  {
+    path: "/vue-lesson-12",
+    name: "VuePage12",
+    meta: { requiresAuth: true },
+    component: () => import("../components/course/course-9/VuePage12.vue"),
+  },
+  {
+    path: "/vue-lesson-13",
+    name: "VuePage13",
+    meta: { requiresAuth: true },
+    component: () => import("../components/course/course-9/VuePage13.vue"),
+  },
 ];
 
 const router = createRouter({
